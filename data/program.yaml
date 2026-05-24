@@ -25,7 +25,7 @@ days:
         title: "Afternoon keynote"
         kind: "keynote"
       - time: "Evening"
-        title: "Reception · Trainee activity"
+        title: "Trainees event"
         kind: "social"
 
   - label: "Day 2 · Fri Oct 2, 2026"
@@ -51,3 +51,6 @@ days:
       - time: "17:00"
         title: "Closing keynote · Poster awards"
         kind: "keynote"
+      - time: "Evening"
+        title: "Reception"
+        kind: "social"

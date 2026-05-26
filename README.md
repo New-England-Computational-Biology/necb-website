@@ -39,7 +39,8 @@ necb-website/
 ├── assets/css/main.css           # all styling, palette C ("Modern Bio-Tech")
 ├── static/img/                   # logo, favicon
 ├── static/js/nav.js              # mobile nav toggle
-├── netlify.toml                  # Netlify build config
+├── .github/workflows/deploy.yml  # builds with Hugo + publishes to GitHub Pages
+├── static/CNAME                  # custom domain (newenglandcompbio.org)
 └── .gitignore
 ```
 
@@ -72,11 +73,13 @@ When ISCB registration is ready: set `params.registrationURL` in `config/_defaul
 
 ## Deploy
 
-1. Push to a private GitHub repo
-2. Sign in to [netlify.com](https://www.netlify.com), "Add new site" → "Import from Git"
-3. Pick the repo, leave the auto-detected settings (they come from `netlify.toml`)
-4. Site goes live at `<random>.netlify.app`; rename in Site settings to `necb2026.netlify.app`
-5. When ready, point a custom domain (e.g. `necb2026.org`) at Netlify
+The site is deployed automatically to **GitHub Pages** on every push to `main` by
+`.github/workflows/deploy.yml` (installs Hugo extended, runs `hugo --gc --minify`,
+publishes `public/`). The custom domain `newenglandcompbio.org` is configured via
+`static/CNAME`.
+
+To deploy a change: edit, commit, push to `main` — the Action does the rest.
+Watch runs at https://github.com/New-England-Computational-Biology/necb-website/actions.
 
 ## Open items / TBD
 

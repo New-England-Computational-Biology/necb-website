@@ -47,5 +47,47 @@
       </ul>
     </div>
     {{ end }}
+
+    {{ with site.Data.organizers.trainees }}{{ if .members }}
+    <div class="organizer-group">
+      <h3 class="organizer-group-title">{{ .title }}</h3>
+      <ul class="organizer-list">
+        {{ range .members }}
+        <li class="organizer">
+          <span class="organizer-name">{{ .name }}</span>
+          {{ with .affiliation }}<span class="organizer-affil"> · {{ . }}</span>{{ end }}
+        </li>
+        {{ end }}
+      </ul>
+    </div>
+    {{ end }}{{ end }}
+
+    {{ with site.Data.organizers.friends }}{{ if .members }}
+    <div class="organizer-group">
+      <h3 class="organizer-group-title">{{ .title }}</h3>
+      <ul class="organizer-list">
+        {{ range .members }}
+        <li class="organizer">
+          <span class="organizer-name">{{ .name }}</span>
+          {{ with .affiliation }}<span class="organizer-affil"> · {{ . }}</span>{{ end }}
+        </li>
+        {{ end }}
+      </ul>
+    </div>
+    {{ end }}{{ end }}
+
+    {{ with site.Data.organizers.founders }}{{ if .members }}
+    <div class="organizer-group">
+      <h3 class="organizer-group-title">{{ .title }}</h3>
+      <ul class="organizer-list">
+        {{ range .members }}
+        <li class="organizer">
+          <span class="organizer-name">{{ .name }}</span>
+          {{ with .affiliation }}<span class="organizer-affil"> · {{ . }}</span>{{ end }}
+        </li>
+        {{ end }}
+      </ul>
+    </div>
+    {{ end }}{{ end }}
   </div>
 </section>

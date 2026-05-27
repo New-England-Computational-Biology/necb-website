@@ -45,3 +45,20 @@ organizing:
       affiliation: "Dana-Farber Cancer Institute · Harvard Medical School"
     - name: "Ruben Dries"
       affiliation: "Boston University"
+
+trainees:
+  title: "Trainees"
+  members: []
+
+friends:
+  title: "Friends of the conference"
+  members:
+    - name: "Jason Buenrostro"
+
+founders:
+  title: "Founding Chairs"
+  members:
+    - name: "Predrag (Pedja) Radivojac"
+      affiliation: "Northeastern University"
+    - name: "Luca Pinello"
+      affiliation: "Massachusetts General Hospital · Harvard Medical School"

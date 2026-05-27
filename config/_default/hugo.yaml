@@ -27,7 +27,7 @@ params:
   contactEmail: "newenglandcompbio@gmail.com"
   conferenceDate: "October 1–2, 2026"
   conferenceLocation: "Cambridge, MA"
-  venueName: "Microsoft Research Cambridge"
+  venueName: "Microsoft Research New England"
   venueAddress: "One Memorial Drive, Cambridge, MA 02142"
   attendeeCap: 350
   format: "In-person only"

@@ -58,7 +58,7 @@ friends:
 founders:
   title: "Founding Chairs"
   members:
-    - name: "Predrag (Pedja) Radivojac"
-      affiliation: "Northeastern University"
     - name: "Luca Pinello"
       affiliation: "Massachusetts General Hospital · Harvard Medical School"
+    - name: "Predrag (Pedja) Radivojac"
+      affiliation: "Northeastern University"

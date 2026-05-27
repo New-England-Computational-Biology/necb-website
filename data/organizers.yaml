@@ -17,6 +17,8 @@ steering:
       affiliation: "Google · University of Cambridge"
     - name: "Nils Gehlenborg"
       affiliation: "Harvard Medical School"
+    - name: "Manolis Kellis"
+      affiliation: "MIT"
     - name: "Smita Krishnaswamy"
       affiliation: "Yale University"
     - name: "Xihong Lin"

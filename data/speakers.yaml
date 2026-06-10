@@ -1,0 +1,11 @@
+keynotes:
+  title: "Keynote speakers"
+  members:
+    - name: "Caroline Uhler"
+      affiliation: "MIT"
+
+invited:
+  title: "Invited speakers"
+  members:
+    - name: "Armita Nourmohammad"
+      affiliation: "University of Washington"

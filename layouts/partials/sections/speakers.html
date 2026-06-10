@@ -4,14 +4,37 @@
     <p class="section-sub">
       Speakers will be announced on a rolling basis as invitations are confirmed.
     </p>
-    <div class="card-grid grid-4 speakers-placeholder">
-      {{ range seq 8 }}
-      <div class="card speaker-card speaker-card--placeholder" aria-hidden="true">
-        <div class="speaker-avatar"></div>
-        <div class="speaker-name-bar"></div>
-        <div class="speaker-affil-bar"></div>
+
+    {{ with site.Data.speakers.keynotes }}{{ if .members }}
+    <div class="speaker-group">
+      <h3 class="speaker-group-title">{{ .title }}</h3>
+      <div class="card-grid grid-4">
+        {{ range .members }}
+        <article class="card speaker-card">
+          <div class="speaker-avatar speaker-avatar--initials">{{ substr .name 0 1 }}</div>
+          <div class="speaker-name">{{ .name }}</div>
+          <div class="speaker-affil">{{ .affiliation }}</div>
+        </article>
+        {{ end }}
       </div>
-      {{ end }}
     </div>
+    {{ end }}{{ end }}
+
+    {{ with site.Data.speakers.invited }}{{ if .members }}
+    <div class="speaker-group">
+      <h3 class="speaker-group-title">{{ .title }}</h3>
+      <div class="card-grid grid-4">
+        {{ range .members }}
+        <article class="card speaker-card">
+          <div class="speaker-avatar speaker-avatar--initials">{{ substr .name 0 1 }}</div>
+          <div class="speaker-name">{{ .name }}</div>
+          <div class="speaker-affil">{{ .affiliation }}</div>
+        </article>
+        {{ end }}
+      </div>
+    </div>
+    {{ end }}{{ end }}
+
+    <p class="speakers-more">More speakers to be announced.</p>
   </div>
 </section>

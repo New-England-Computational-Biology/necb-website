@@ -349,6 +349,10 @@ a:focus-visible { outline: 2px solid var(--c-accent); outline-offset: 2px; borde
   font-weight: 600;
   font-size: 2rem;
 }
+.speaker-avatar--photo {
+  object-fit: cover;
+  background: var(--c-bg-alt);
+}
 .speaker-name {
   font-weight: 600;
   color: var(--c-primary-dark);
@@ -431,6 +435,10 @@ a:focus-visible { outline: 2px solid var(--c-accent); outline-offset: 2px; borde
   font-weight: 600;
   font-family: var(--font-display);
   flex: 0 0 auto;
+}
+.organizer-avatar--photo {
+  object-fit: cover;
+  background: var(--c-bg-alt);
 }
 .organizer-name { font-weight: 500; color: var(--c-text); }
 .organizer-affil { color: var(--c-text-muted); font-size: 0.92rem; }

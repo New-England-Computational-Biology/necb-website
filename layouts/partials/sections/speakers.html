@@ -11,7 +11,11 @@
       <div class="card-grid grid-4">
         {{ range .members }}
         <article class="card speaker-card">
-          <div class="speaker-avatar speaker-avatar--initials">{{ substr .name 0 1 }}</div>
+          {{ if .photo }}
+          <img class="speaker-avatar speaker-avatar--photo" src="{{ .photo | relURL }}" alt="{{ .name }}" loading="lazy" width="80" height="80">
+          {{ else }}
+          <div class="speaker-avatar speaker-avatar--initials" aria-hidden="true">{{ substr .name 0 1 }}</div>
+          {{ end }}
           <div class="speaker-name">{{ .name }}</div>
           <div class="speaker-affil">{{ .affiliation }}</div>
         </article>
@@ -26,7 +30,11 @@
       <div class="card-grid grid-4">
         {{ range .members }}
         <article class="card speaker-card">
-          <div class="speaker-avatar speaker-avatar--initials">{{ substr .name 0 1 }}</div>
+          {{ if .photo }}
+          <img class="speaker-avatar speaker-avatar--photo" src="{{ .photo | relURL }}" alt="{{ .name }}" loading="lazy" width="80" height="80">
+          {{ else }}
+          <div class="speaker-avatar speaker-avatar--initials" aria-hidden="true">{{ substr .name 0 1 }}</div>
+          {{ end }}
           <div class="speaker-name">{{ .name }}</div>
           <div class="speaker-affil">{{ .affiliation }}</div>
         </article>

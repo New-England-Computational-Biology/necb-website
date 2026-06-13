@@ -3,10 +3,13 @@ cochairs:
   members:
     - name: "Luca Pinello"
       affiliation: "Massachusetts General Hospital · Harvard Medical School"
+      photo: "img/people/luca-pinello.jpg"
     - name: "Predrag (Pedja) Radivojac"
       affiliation: "Northeastern University"
+      photo: "img/people/pedja-radivojac.jpg"
     - name: "Kevin Yang"
       affiliation: "Microsoft Research New England"
+      photo: "img/people/kevin-yang.jpg"
 
 steering:
   title: "Steering Committee"

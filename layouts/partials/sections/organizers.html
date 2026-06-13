@@ -9,7 +9,11 @@
       <ul class="organizer-list organizer-list--featured">
         {{ range .members }}
         <li class="organizer">
+          {{ if .photo }}
+          <img class="organizer-avatar organizer-avatar--photo" src="{{ .photo | relURL }}" alt="{{ .name }}" loading="lazy" width="38" height="38">
+          {{ else }}
           <div class="organizer-avatar" aria-hidden="true">{{ substr .name 0 1 }}</div>
+          {{ end }}
           <div class="organizer-info">
             <span class="organizer-name">{{ .name }}</span>
             {{ with .affiliation }}<span class="organizer-affil">{{ . }}</span>{{ end }}

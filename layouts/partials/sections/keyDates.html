@@ -14,5 +14,8 @@
         {{ end }}
       </tbody>
     </table>
+    {{ with site.Data.keyDates.note }}
+    <p class="key-dates-note"><strong>Note:</strong> {{ . }}</p>
+    {{ end }}
   </div>
 </section>

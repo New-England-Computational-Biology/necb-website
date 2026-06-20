@@ -482,6 +482,16 @@ a:focus-visible { outline: 2px solid var(--c-accent); outline-offset: 2px; borde
   font-weight: 600;
   color: var(--c-primary-dark);
 }
+.key-dates-note {
+  margin-top: 1rem;
+  padding: 0.85rem 1rem;
+  background: rgba(30,58,138,0.05);
+  border-left: 3px solid var(--c-primary);
+  border-radius: var(--radius-sm);
+  font-size: 0.92rem;
+  color: var(--c-text-muted);
+}
+.key-dates-note strong { color: var(--c-primary-dark); }
 
 /* ---------- Contact ---------- */
 .contact-block { text-align: center; }

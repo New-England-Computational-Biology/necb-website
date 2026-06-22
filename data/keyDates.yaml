@@ -1,4 +1,4 @@
-note: "No on-site registration — the attendee list must be finalized 48 hours before the event for venue access."
+note: "No on-site registration. Late registration closes the evening of Mon Sep 28 so the final attendee list can be sent to Microsoft Research New England the morning of Sep 29, meeting their 48-hour advance-notice requirement for venue access."
 
 items:
   - label: "Registration opens"
@@ -14,7 +14,7 @@ items:
   - label: "Regular registration closes"
     date: "Fri Sep 25, 2026"
   - label: "Late registration closes"
-    date: "Tue Sep 29, 2026"
+    date: "Mon Sep 28, 2026 · 23:59 ET"
   - label: "Conference"
     date: "October 1–2, 2026"
     highlight: true

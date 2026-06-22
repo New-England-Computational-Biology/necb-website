@@ -1,12 +1,15 @@
 keynotes:
   title: "Keynote speakers"
   members:
-    - name: "Caroline Uhler"
-      affiliation: "Broad Institute · MIT"
-      photo: "img/people/caroline-uhler.jpg"
+    - name: "Sergey Ovchinnikov"
+      affiliation: "MIT"
+      photo: "img/people/sergey-ovchinnikov.jpg"
     - name: "G.V. Shivashankar"
       affiliation: "ETH Zurich · Paul Scherrer Institute"
       photo: "img/people/gv-shivashankar.jpg"
+    - name: "Caroline Uhler"
+      affiliation: "Broad Institute · MIT"
+      photo: "img/people/caroline-uhler.jpg"
     - name: "Marc Vidal"
       affiliation: "Dana-Farber Cancer Institute · Harvard Medical School"
       photo: "img/people/marc-vidal.jpg"

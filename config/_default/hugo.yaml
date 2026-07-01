@@ -32,9 +32,9 @@ params:
   attendeeCap: 350
   format: "In-person only"
   registrationStatus: "Registration — coming soon"
-  registrationURL: ""
-  abstractStatus: "Call for abstracts via OpenReview — coming soon"
-  abstractURL: ""
+  registrationURL: "https://iscb.swoogo.com/necb2026/begin"
+  abstractStatus: "Call for abstracts — coming soon"
+  abstractURL: "https://www.iscb.org/application?formId=49"
   logo: "img/logo.svg"
   favicon: "img/favicon.svg"
   ogImage: "img/og-image.png"

@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NECB 2026 — Flyer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================================
+       NECB 2026 flyer — palette C (Modern Bio-Tech)
+       ============================================================ */
+    @page {
+      size: Letter portrait;
+      margin: 0;
+    }
+
+    :root {
+      --c-primary:        #1E3A8A;
+      --c-primary-dark:   #172554;
+      --c-primary-light:  #3B5BCB;
+      --c-accent:         #10B981;
+      --c-accent-dark:    #047857;
+      --c-bg:             #F8FAFC;
+      --c-bg-alt:         #EEF2F7;
+      --c-text:           #1F2937;
+      --c-text-muted:     #4B5563;
+      --c-border:         #E5E7EB;
+      --font-ui:      "Inter", system-ui, sans-serif;
+      --font-display: "Lora", Georgia, serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      font-family: var(--font-ui);
+      color: var(--c-text);
+      background: var(--c-bg);
+      line-height: 1.4;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    body {
+      width: 8.5in;
+      min-height: 11in;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    h1, h2, h3 {
+      font-family: var(--font-display);
+      color: var(--c-primary-dark);
+      font-weight: 600;
+    }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      background: linear-gradient(135deg, var(--c-primary-dark) 0%, var(--c-primary) 60%, var(--c-primary-light) 100%);
+      color: #fff;
+      padding: 0.55in 0.55in 0.4in;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: "";
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(60% 100% at 20% 0%, rgba(16,185,129,0.35), transparent 60%),
+        radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px);
+      background-size: auto, 20px 20px;
+      opacity: 0.7;
+      pointer-events: none;
+    }
+    .hero-eyebrow {
+      font-size: 10pt;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.85);
+      font-weight: 500;
+      margin-bottom: 6pt;
+      position: relative; z-index: 1;
+    }
+    .hero-title {
+      font-size: 48pt;
+      color: #fff;
+      letter-spacing: -0.02em;
+      line-height: 1;
+      margin-bottom: 4pt;
+      position: relative; z-index: 1;
+    }
+    .hero-year { color: var(--c-accent); }
+    .hero-tagline {
+      font-size: 12pt;
+      color: rgba(255,255,255,0.95);
+      margin-bottom: 12pt;
+      position: relative; z-index: 1;
+    }
+    .hero-meta {
+      display: flex;
+      gap: 10pt;
+      align-items: center;
+      font-size: 11pt;
+      color: rgba(255,255,255,0.95);
+      position: relative; z-index: 1;
+      flex-wrap: wrap;
+    }
+    .hero-meta strong { color: #fff; }
+    .hero-meta .dot { opacity: 0.5; }
+
+    /* ---------- Sections ---------- */
+    .section {
+      padding: 0.3in 0.55in;
+    }
+    .section-title {
+      font-size: 14pt;
+      color: var(--c-primary-dark);
+      margin-bottom: 8pt;
+      border-bottom: 2px solid var(--c-accent);
+      padding-bottom: 4pt;
+      display: inline-block;
+    }
+    .pitch {
+      font-size: 10.5pt;
+      color: var(--c-text);
+      line-height: 1.55;
+      max-width: 100%;
+    }
+
+    /* ---------- Themes ---------- */
+    .themes {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10pt;
+      margin-top: 10pt;
+    }
+    .theme {
+      background: #fff;
+      border: 1px solid var(--c-border);
+      border-left: 3px solid var(--c-accent);
+      border-radius: 6pt;
+      padding: 10pt;
+    }
+    .theme-icon { font-size: 16pt; margin-bottom: 4pt; }
+    .theme-title {
+      font-family: var(--font-display);
+      font-size: 10.5pt;
+      color: var(--c-primary-dark);
+      font-weight: 600;
+      margin-bottom: 3pt;
+      line-height: 1.2;
+    }
+    .theme-desc {
+      font-size: 8.5pt;
+      color: var(--c-text-muted);
+      line-height: 1.4;
+    }
+
+    /* ---------- Speakers ---------- */
+    .speakers {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14pt;
+      margin-top: 8pt;
+    }
+    .speaker-group h3 {
+      font-size: 10pt;
+      color: var(--c-primary-dark);
+      margin-bottom: 6pt;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .speaker-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 3pt;
+    }
+    .speaker-list li {
+      font-size: 9.5pt;
+      color: var(--c-text);
+      line-height: 1.35;
+    }
+    .speaker-list li strong {
+      color: var(--c-primary-dark);
+      font-weight: 600;
+    }
+    .speaker-list li .affil {
+      color: var(--c-text-muted);
+    }
+
+    /* ---------- Dates ---------- */
+    .dates-wrap {
+      background: var(--c-bg-alt);
+      border-radius: 6pt;
+      padding: 12pt 14pt;
+      margin-top: 8pt;
+    }
+    .dates-title {
+      font-family: var(--font-display);
+      font-size: 11pt;
+      color: var(--c-primary-dark);
+      font-weight: 600;
+      margin-bottom: 6pt;
+    }
+    .dates {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4pt 20pt;
+      font-size: 9.5pt;
+    }
+    .dates .k {
+      color: var(--c-text-muted);
+    }
+    .dates .v {
+      color: var(--c-primary-dark);
+      font-weight: 500;
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* ---------- Footer / CTA ---------- */
+    .cta {
+      margin-top: auto;
+      background: var(--c-primary-dark);
+      color: #fff;
+      padding: 0.3in 0.55in;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 20pt;
+      align-items: center;
+    }
+    .cta-text .cta-eyebrow {
+      font-size: 9pt;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 4pt;
+    }
+    .cta-text .cta-url {
+      font-family: var(--font-display);
+      font-size: 18pt;
+      color: var(--c-accent);
+      font-weight: 600;
+      margin-bottom: 6pt;
+    }
+    .cta-links {
+      display: flex;
+      gap: 10pt;
+      flex-wrap: wrap;
+      font-size: 9.5pt;
+      color: rgba(255,255,255,0.9);
+    }
+    .cta-links .link {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 4pt;
+      padding: 4pt 8pt;
+    }
+    .cta-links .link strong { color: var(--c-accent); font-weight: 600; }
+    .qr {
+      width: 90pt;
+      height: 90pt;
+      background: #fff;
+      padding: 4pt;
+      border-radius: 4pt;
+    }
+    .qr img { width: 100%; height: 100%; }
+    .qr-label {
+      text-align: center;
+      font-size: 7.5pt;
+      color: rgba(255,255,255,0.7);
+      margin-top: 2pt;
+    }
+    .qr-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hero">
+    <div class="hero-eyebrow">Inaugural symposium</div>
+    <h1 class="hero-title">NECB <span class="hero-year">2026</span></h1>
+    <div class="hero-tagline">New England Computational Biology Symposium</div>
+    <div class="hero-meta">
+      <span><strong>October 1–2, 2026</strong></span>
+      <span class="dot">·</span>
+      <span>Microsoft Research New England, Cambridge, MA</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">About</h2>
+    <p class="pitch">
+      A two-day, in-person symposium bringing the New England computational biology community
+      together — keynotes, contributed talks, lightning talks, open-problem sessions, and posters.
+      Our focus is <strong>local networking</strong>, <strong>trainee visibility</strong>, and
+      seeding new collaborations at the frontier of computation and the life sciences.
+    </p>
+
+    <div class="themes">
+      <div class="theme">
+        <div class="theme-icon">🧬</div>
+        <div class="theme-title">Generative AI · Virtual Cells · Protein Design</div>
+        <div class="theme-desc">Foundation models for biology, virtual cell simulation, and computational protein design.</div>
+      </div>
+      <div class="theme">
+        <div class="theme-icon">🔬</div>
+        <div class="theme-title">Spatial &amp; Single-Cell Omics</div>
+        <div class="theme-desc">Methods, models, and applications at the single-cell and spatial transcriptomics frontier.</div>
+      </div>
+      <div class="theme">
+        <div class="theme-icon">🤖</div>
+        <div class="theme-title">Agentic AI for Biology</div>
+        <div class="theme-desc">Autonomous agents, reasoning systems, and agent–scientist collaboration for discovery.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Confirmed speakers</h2>
+    <div class="speakers">
+      <div class="speaker-group">
+        <h3>Keynote speakers</h3>
+        <ul class="speaker-list">
+          <li><strong>Sergey Ovchinnikov</strong> <span class="affil">— MIT</span></li>
+          <li><strong>G.V. Shivashankar</strong> <span class="affil">— ETH Zurich · Paul Scherrer Institute</span></li>
+          <li><strong>Caroline Uhler</strong> <span class="affil">— Broad Institute · MIT</span></li>
+          <li><strong>Marc Vidal</strong> <span class="affil">— Dana-Farber · Harvard Medical School</span></li>
+        </ul>
+      </div>
+      <div class="speaker-group">
+        <h3>Invited speakers</h3>
+        <ul class="speaker-list">
+          <li><strong>Alex Lu</strong> <span class="affil">— Microsoft Research New England</span></li>
+          <li><strong>Rong Ma</strong> <span class="affil">— Harvard T.H. Chan School of Public Health</span></li>
+          <li><strong>Sahin Naqvi</strong> <span class="affil">— Boston Children's Hospital · HMS</span></li>
+          <li><strong>Armita Nourmohammad</strong> <span class="affil">— Yale University</span></li>
+          <li><strong>Yuri Pritykin</strong> <span class="affil">— Princeton University</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="dates-wrap">
+      <div class="dates-title">Key dates</div>
+      <div class="dates">
+        <div class="k">Abstract submission opens</div><div class="v">Mon Jul 6, 2026</div>
+        <div class="k">Abstract deadline</div><div class="v">Fri Aug 14, 2026 · 23:59 ET</div>
+        <div class="k">Author notifications</div><div class="v">Fri Sep 4, 2026</div>
+        <div class="k">Early-bird registration ends</div><div class="v">Fri Sep 11, 2026 · 23:59 ET</div>
+        <div class="k">Regular registration closes</div><div class="v">Mon Sep 21, 2026 · 23:59 ET</div>
+        <div class="k">Late registration closes</div><div class="v">Fri Sep 25, 2026 · 23:59 ET</div>
+        <div class="k">Conference</div><div class="v" style="color: var(--c-accent-dark)"><strong>Oct 1–2, 2026</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta">
+    <div class="cta-text">
+      <div class="cta-eyebrow">Register · Submit · Learn more</div>
+      <div class="cta-url">newenglandcompbio.org</div>
+      <div class="cta-links">
+        <span class="link"><strong>Register:</strong> iscb.swoogo.com/necb2026</span>
+        <span class="link"><strong>Submit abstract:</strong> via ISCB</span>
+      </div>
+    </div>
+    <div class="qr-block">
+      <div class="qr"><img src="qr.png" alt="QR code linking to newenglandcompbio.org"></div>
+      <div class="qr-label">Scan for details</div>
+    </div>
+  </div>
+
+</body>
+</html>

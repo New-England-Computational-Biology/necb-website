@@ -6,6 +6,23 @@
       and recognize outstanding contributions. We welcome partners — academic, industry,
       and foundations — whose missions align with the symposium.
     </p>
+
+    {{ with site.Data.sponsors.sponsors }}
+    <ul class="sponsor-grid">
+      {{ range . }}
+      <li class="sponsor-logo">
+        {{ if .url }}
+        <a href="{{ .url }}" target="_blank" rel="noopener" aria-label="{{ .name }}">
+          <img src="{{ .logo | relURL }}" alt="{{ .name }}" loading="lazy">
+        </a>
+        {{ else }}
+        <img src="{{ .logo | relURL }}" alt="{{ .name }}" loading="lazy">
+        {{ end }}
+      </li>
+      {{ end }}
+    </ul>
+    {{ end }}
+
     <div class="sponsor-cta">
       <p><strong>Interested in sponsoring NECB 2026?</strong></p>
       <a class="btn btn-primary" href="mailto:{{ site.Params.contactEmail }}?subject=NECB%202026%20Sponsorship">Get in touch</a>

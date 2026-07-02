@@ -395,6 +395,71 @@ a:focus-visible { outline: 2px solid var(--c-accent); outline-offset: 2px; borde
 .venue-facts li { border-left: 2px solid var(--c-accent); padding-left: 0.65rem; }
 .venue-note { color: var(--c-text-muted); font-size: 0.9rem; }
 
+/* ---------- Hotels ---------- */
+.hotels-block { margin-top: 2rem; }
+.hotels-heading {
+  font-size: 1.2rem;
+  color: var(--c-primary-dark);
+  margin: 0 0 0.5rem;
+}
+.hotels-intro { margin: 0 0 0.5rem; }
+.hotels-cutoff {
+  margin: 0 0 1.25rem;
+  font-size: 0.92rem;
+  color: var(--c-text-muted);
+}
+.hotels-cutoff strong { color: var(--c-primary-dark); }
+.hotel-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+.hotel-card {
+  background: var(--c-card);
+  border: 1px solid var(--c-border);
+  border-left: 3px solid var(--c-primary);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.35rem;
+  box-shadow: var(--c-shadow);
+}
+.hotel-name {
+  font-size: 1.05rem;
+  color: var(--c-primary-dark);
+  margin: 0 0 0.5rem;
+}
+.hotel-rates {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0.75rem;
+  font-weight: 500;
+  color: var(--c-accent-dark);
+}
+.hotel-rates li { padding: 0.15rem 0; }
+.hotel-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0.5rem;
+  font-size: 0.92rem;
+  color: var(--c-text);
+}
+.hotel-features li {
+  padding: 0.2rem 0 0.2rem 1.1rem;
+  position: relative;
+}
+.hotel-features li::before {
+  content: "•";
+  position: absolute;
+  left: 0.35rem;
+  color: var(--c-accent);
+  font-weight: 700;
+}
+.hotel-note {
+  font-size: 0.85rem;
+  color: var(--c-text-muted);
+  font-style: italic;
+  margin: 0.5rem 0 0;
+}
+
 /* ---------- Organizers ---------- */
 .organizer-group { margin-bottom: 2.5rem; }
 .organizer-group:last-child { margin-bottom: 0; }

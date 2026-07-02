@@ -1,0 +1,21 @@
+intro: "We have secured group rates at two hotels near the venue for the nights of Sep 30 – Oct 2. Booking codes will be shared closer to the reservation cutoff."
+cutoff: "Sun Aug 16, 2026 (45 days prior to arrival)"
+
+items:
+  - name: "AC Hotel Cambridge"
+    rates:
+      - "$239/night Double/Double or King (plus tax)"
+    features:
+      - "Sleek, European-inspired design"
+      - "AC Lounge for evening networking"
+      - "Steps from the MBTA Red Line"
+    note: "Breakfast not included."
+
+  - name: "Holiday Inn Express & Suites Cambridge"
+    rates:
+      - "$289/night Double/Double (plus tax)"
+      - "$249/night King (plus tax)"
+    features:
+      - "Complimentary hot breakfast daily"
+      - "Spacious rooms"
+      - "Close to local labs and venues"

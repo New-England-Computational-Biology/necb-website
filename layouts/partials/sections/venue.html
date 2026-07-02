@@ -13,10 +13,32 @@
         heart of Kendall Square — a short walk from the MBTA Red Line and easily accessible
         from across the Boston area and beyond.
       </p>
-      <p>
-        Detailed travel directions, accommodation suggestions, and special-rate hotel
-        information will be posted here closer to the conference dates.
-      </p>
     </div>
+
+    {{ with site.Data.hotels }}
+    <div class="hotels-block">
+      <h3 class="hotels-heading">Accommodation</h3>
+      {{ with .intro }}<p class="hotels-intro">{{ . }}</p>{{ end }}
+      {{ with .cutoff }}<p class="hotels-cutoff"><strong>Reservation cutoff:</strong> {{ . }}</p>{{ end }}
+      <div class="hotel-grid">
+        {{ range .items }}
+        <article class="hotel-card">
+          <h4 class="hotel-name">{{ .name }}</h4>
+          {{ with .rates }}
+          <ul class="hotel-rates">
+            {{ range . }}<li>{{ . }}</li>{{ end }}
+          </ul>
+          {{ end }}
+          {{ with .features }}
+          <ul class="hotel-features">
+            {{ range . }}<li>{{ . }}</li>{{ end }}
+          </ul>
+          {{ end }}
+          {{ with .note }}<p class="hotel-note">{{ . }}</p>{{ end }}
+        </article>
+        {{ end }}
+      </div>
+    </div>
+    {{ end }}
   </div>
 </section>

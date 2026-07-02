@@ -12,9 +12,9 @@ items:
   - label: "Early-bird registration ends"
     date: "Fri Sep 11, 2026 · 23:59 ET"
   - label: "Regular registration closes"
-    date: "Fri Sep 25, 2026 · 23:59 ET"
+    date: "Mon Sep 21, 2026 · 23:59 ET"
   - label: "Late registration closes"
-    date: "Mon Sep 28, 2026 · 23:59 ET"
+    date: "Fri Sep 25, 2026 · 23:59 ET"
   - label: "Conference"
     date: "October 1–2, 2026"
     highlight: true

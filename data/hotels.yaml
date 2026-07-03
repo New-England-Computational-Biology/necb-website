@@ -1,5 +1,4 @@
-intro: "We have secured group rates at two hotels near the venue for the nights of Sep 30 – Oct 2. Booking codes will be shared closer to the reservation cutoff."
-cutoff: "Sun Aug 16, 2026 (45 days prior to arrival)"
+intro: "We have secured group rates at four hotels near the venue for the nights of Sep 30 – Oct 2. Group code (where applicable): NECB / New England Computational Biology."
 
 items:
   - name: "AC Hotel Cambridge"
@@ -10,6 +9,7 @@ items:
       - "AC Lounge for evening networking"
       - "Steps from the MBTA Red Line"
     note: "Breakfast not included."
+    cutoff: "Sun Aug 16, 2026 (45 days prior to arrival)"
 
   - name: "Holiday Inn Express & Suites Cambridge"
     rates:
@@ -19,3 +19,27 @@ items:
       - "Complimentary hot breakfast daily"
       - "Spacious rooms"
       - "Close to local labs and venues"
+    cutoff: "Sun Aug 16, 2026 (45 days prior to arrival)"
+
+  - name: "Porter Square Hotel"
+    address: "1924 Massachusetts Ave, Cambridge, MA"
+    rates:
+      - "Petite Double Twin: $279/night"
+      - "Petite Queen or Deluxe Double Twin: $290/night"
+      - "Deluxe Queen: $300/night"
+      - "King: $310/night"
+      - "Queen Suite: $330/night"
+    features:
+      - "Near Porter Square (MBTA Red Line)"
+    note: "Rates plus tax. Valet parking $28/night."
+    booking: "Call 617-499-3399, reference group code NECB."
+
+  - name: "Hotel 1868"
+    address: "1868 Massachusetts Ave, Cambridge, MA"
+    rates:
+      - "Mini Queen: $265/night"
+      - "Standard Queen: $285/night"
+    features:
+      - "Near Porter Square (MBTA Red Line)"
+    note: "Rates plus tax. Valet parking $28/night."
+    booking: "Call 617-499-2998, reference group code NECB."

@@ -2,23 +2,25 @@ intro: "We have secured group rates at four hotels near the venue for the nights
 
 items:
   - name: "AC Hotel Cambridge"
+    address: "10 Acorn Park Drive, Cambridge, MA"
     rates:
       - "From $239/night (Double/Double or King)"
     features:
       - "Sleek, European-inspired design"
       - "AC Lounge for evening networking"
-      - "Steps from the MBTA Red Line"
+      - "Near Alewife (MBTA Red Line)"
     note: "Rates plus tax. Breakfast not included."
     cutoff: "Sun Aug 16, 2026 (45 days prior to arrival)"
 
   - name: "Holiday Inn Express & Suites Cambridge"
+    address: "250 Monsignor O'Brien Hwy, Cambridge, MA"
     rates:
       - "From $249/night (King)"
       - "$289/night Double/Double"
     features:
       - "Complimentary hot breakfast daily"
       - "Spacious rooms"
-      - "Close to local labs and venues"
+      - "Near Lechmere (Green Line) · walking distance to Kendall"
     note: "Rates plus tax."
     cutoff: "Sun Aug 16, 2026 (45 days prior to arrival)"
 

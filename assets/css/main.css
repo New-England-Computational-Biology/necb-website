@@ -396,73 +396,89 @@ a:focus-visible { outline: 2px solid var(--c-accent); outline-offset: 2px; borde
 .venue-note { color: var(--c-text-muted); font-size: 0.9rem; }
 
 /* ---------- Hotels ---------- */
+.hotels-container { max-width: 1200px; }
 .hotels-block { margin-top: 2rem; }
 .hotels-heading {
   font-size: 1.2rem;
   color: var(--c-primary-dark);
   margin: 0 0 0.5rem;
+  text-align: center;
 }
-.hotels-intro { margin: 0 0 1.25rem; }
+.hotels-intro {
+  margin: 0 auto 1.5rem;
+  text-align: center;
+  max-width: 70ch;
+}
 .hotel-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1rem;
+  align-items: stretch;
 }
 .hotel-card {
+  display: flex;
+  flex-direction: column;
   background: var(--c-card);
   border: 1px solid var(--c-border);
-  border-left: 3px solid var(--c-primary);
+  border-top: 3px solid var(--c-primary);
   border-radius: var(--radius);
-  padding: 1.25rem 1.35rem;
+  padding: 1rem 1.1rem;
   box-shadow: var(--c-shadow);
+  font-size: 0.9rem;
+  line-height: 1.4;
 }
 .hotel-name {
-  font-size: 1.05rem;
+  font-size: 1rem;
   color: var(--c-primary-dark);
-  margin: 0 0 0.5rem;
+  margin: 0 0 0.35rem;
+}
+.hotel-address {
+  font-size: 0.8rem;
+  color: var(--c-text-muted);
+  margin: 0 0 0.65rem;
 }
 .hotel-rates {
   list-style: none;
   padding: 0;
-  margin: 0 0 0.75rem;
+  margin: 0 0 0.65rem;
   font-weight: 500;
   color: var(--c-accent-dark);
+  font-size: 0.88rem;
 }
-.hotel-rates li { padding: 0.15rem 0; }
+.hotel-rates li { padding: 0.1rem 0; }
 .hotel-features {
   list-style: none;
   padding: 0;
   margin: 0 0 0.5rem;
-  font-size: 0.92rem;
   color: var(--c-text);
 }
 .hotel-features li {
-  padding: 0.2rem 0 0.2rem 1.1rem;
+  padding: 0.15rem 0 0.15rem 0.9rem;
   position: relative;
 }
 .hotel-features li::before {
   content: "•";
   position: absolute;
-  left: 0.35rem;
+  left: 0.15rem;
   color: var(--c-accent);
   font-weight: 700;
 }
-.hotel-address {
-  font-size: 0.85rem;
-  color: var(--c-text-muted);
-  margin: -0.25rem 0 0.75rem;
+.hotel-card-footer {
+  margin-top: auto;
+  padding-top: 0.35rem;
 }
 .hotel-note {
-  font-size: 0.85rem;
+  font-size: 0.78rem;
   color: var(--c-text-muted);
   font-style: italic;
-  margin: 0.5rem 0 0;
+  margin: 0.4rem 0 0;
 }
 .hotel-booking,
 .hotel-cutoff {
-  font-size: 0.88rem;
-  margin: 0.5rem 0 0;
+  font-size: 0.82rem;
+  margin: 0.4rem 0 0;
   color: var(--c-text);
+  line-height: 1.35;
 }
 .hotel-booking strong,
 .hotel-cutoff strong { color: var(--c-primary-dark); }

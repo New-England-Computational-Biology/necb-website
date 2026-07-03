@@ -14,8 +14,10 @@
         from across the Boston area and beyond.
       </p>
     </div>
+  </div>
 
-    {{ with site.Data.hotels }}
+  {{ with site.Data.hotels }}
+  <div class="container hotels-container">
     <div class="hotels-block">
       <h3 class="hotels-heading">Accommodation</h3>
       {{ with .intro }}<p class="hotels-intro">{{ . }}</p>{{ end }}
@@ -34,13 +36,15 @@
             {{ range . }}<li>{{ . }}</li>{{ end }}
           </ul>
           {{ end }}
-          {{ with .note }}<p class="hotel-note">{{ . }}</p>{{ end }}
-          {{ with .booking }}<p class="hotel-booking"><strong>Booking:</strong> {{ . }}</p>{{ end }}
-          {{ with .cutoff }}<p class="hotel-cutoff"><strong>Reservation cutoff:</strong> {{ . }}</p>{{ end }}
+          <div class="hotel-card-footer">
+            {{ with .note }}<p class="hotel-note">{{ . }}</p>{{ end }}
+            {{ with .booking }}<p class="hotel-booking"><strong>Booking:</strong> {{ . }}</p>{{ end }}
+            {{ with .cutoff }}<p class="hotel-cutoff"><strong>Cutoff:</strong> {{ . }}</p>{{ end }}
+          </div>
         </article>
         {{ end }}
       </div>
     </div>
-    {{ end }}
   </div>
+  {{ end }}
 </section>

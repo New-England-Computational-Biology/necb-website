@@ -58,15 +58,18 @@ menus:
     - name: Speakers
       url: "#speakers"
       weight: 40
-    - name: Venue
-      url: "#venue"
-      weight: 50
     - name: Organizers
       url: "#organizers"
+      weight: 50
+    - name: Venue
+      url: "#venue"
       weight: 60
+    - name: Accommodation
+      url: "#accommodation"
+      weight: 70
     - name: Sponsors
       url: "#sponsors"
-      weight: 70
+      weight: 80
     - name: Contact
       url: "#contact"
-      weight: 80
+      weight: 90

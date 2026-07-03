@@ -1,0 +1,31 @@
+{{ with site.Data.hotels }}
+<section class="section" id="accommodation">
+  <div class="container hotels-container">
+    <h2 class="section-title">Accommodation</h2>
+    {{ with .intro }}<p class="hotels-intro">{{ . }}</p>{{ end }}
+    <div class="hotel-grid">
+      {{ range .items }}
+      <article class="hotel-card">
+        <h4 class="hotel-name">{{ .name }}</h4>
+        {{ with .address }}<p class="hotel-address">{{ . }}</p>{{ end }}
+        {{ with .rates }}
+        <ul class="hotel-rates">
+          {{ range . }}<li>{{ . }}</li>{{ end }}
+        </ul>
+        {{ end }}
+        {{ with .features }}
+        <ul class="hotel-features">
+          {{ range . }}<li>{{ . }}</li>{{ end }}
+        </ul>
+        {{ end }}
+        <div class="hotel-card-footer">
+          {{ with .note }}<p class="hotel-note">{{ . }}</p>{{ end }}
+          {{ with .booking }}<p class="hotel-booking"><strong>Booking:</strong> {{ . }}</p>{{ end }}
+          {{ with .cutoff }}<p class="hotel-cutoff"><strong>Cutoff:</strong> {{ . }}</p>{{ end }}
+        </div>
+      </article>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

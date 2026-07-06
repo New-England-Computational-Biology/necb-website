@@ -395,6 +395,57 @@ a:focus-visible { outline: 2px solid var(--c-accent); outline-offset: 2px; borde
 .venue-facts li { border-left: 2px solid var(--c-accent); padding-left: 0.65rem; }
 .venue-note { color: var(--c-text-muted); font-size: 0.9rem; }
 
+/* ---------- Submissions / Guidelines ---------- */
+.guidelines {
+  background: var(--c-card);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  box-shadow: var(--c-shadow);
+}
+.guidelines-title {
+  font-size: 1.15rem;
+  color: var(--c-primary-dark);
+  margin: 1.75rem 0 0.5rem;
+  border-bottom: 2px solid var(--c-accent);
+  padding-bottom: 0.35rem;
+}
+.guidelines-title:first-of-type { margin-top: 0; }
+.guidelines-steps { padding-left: 1.25rem; margin: 0.5rem 0 1rem; }
+.guidelines-steps li { padding: 0.2rem 0; }
+.guidelines-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem 1.5rem;
+  margin-top: 0.75rem;
+}
+.guidelines-grid h4 {
+  font-size: 0.95rem;
+  color: var(--c-primary-dark);
+  margin: 0 0 0.4rem;
+  font-family: var(--font-ui);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.guidelines-grid ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.92rem;
+}
+.guidelines-grid li {
+  position: relative;
+  padding: 0.15rem 0 0.15rem 0.9rem;
+}
+.guidelines-grid li::before {
+  content: "•";
+  position: absolute;
+  left: 0.15rem;
+  color: var(--c-accent);
+  font-weight: 700;
+}
+
 /* ---------- Hotels ---------- */
 .hotels-container { max-width: 1200px; }
 .hotels-block { margin-top: 2rem; }

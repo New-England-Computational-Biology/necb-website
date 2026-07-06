@@ -58,6 +58,9 @@ menus:
     - name: Speakers
       url: "#speakers"
       weight: 40
+    - name: Submit
+      url: "#submissions"
+      weight: 45
     - name: Organizers
       url: "#organizers"
       weight: 50

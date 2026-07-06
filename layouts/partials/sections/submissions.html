@@ -1,0 +1,75 @@
+<section class="section section-alt" id="submissions">
+  <div class="container narrow">
+    <h2 class="section-title">Call for abstracts</h2>
+    <p class="lead">
+      Abstract submissions are open through <strong>Fri Aug 14, 2026</strong>. Selected
+      abstracts will be considered for oral presentation (lightning talks or selected talks)
+      or poster presentation. Accepted abstracts will be reproduced in the conference abstract
+      book, so submissions should be print-ready.
+    </p>
+
+    <p style="text-align:center; margin-bottom:2rem;">
+      {{ if site.Params.abstractURL }}
+      <a class="btn btn-primary" href="{{ site.Params.abstractURL }}" target="_blank" rel="noopener">Submit abstract</a>
+      {{ else if site.Params.abstractStatus }}
+      <span class="badge badge-soon">{{ site.Params.abstractStatus }}</span>
+      {{ end }}
+    </p>
+
+    <div class="guidelines">
+      <h3 class="guidelines-title">Submission format</h3>
+      <p>
+        Each submission has two parts, entered through the ISCB submission form:
+      </p>
+      <ol class="guidelines-steps">
+        <li>A short text abstract of up to <strong>250 words</strong>.</li>
+        <li>A <strong>single-page, print-ready PDF</strong> attachment — used directly in the
+        conference abstract book (no copyediting or reformatting will be applied).</li>
+      </ol>
+
+      <h3 class="guidelines-title">Print-ready PDF specifications</h3>
+      <div class="guidelines-grid">
+        <div>
+          <h4>Page format</h4>
+          <ul>
+            <li>Paper size: US Letter (8.5 × 11 in)</li>
+            <li>Maximum length: one page</li>
+            <li>Margins: 0.5 in left/right/bottom, 0.75 in top</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Title &amp; authors</h4>
+          <ul>
+            <li>Title bold, centered, 14–16 pt</li>
+            <li>Authors and affiliations directly below the title</li>
+            <li>Mark the presenting author with an asterisk (*)</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Body text</h4>
+          <ul>
+            <li>Two-column layout, single-spaced</li>
+            <li>Column gap ≈ 0.25 in</li>
+            <li>Font: 11 pt Times New Roman or similar serif</li>
+            <li>Figures, tables, and references OK if within one page</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Print-ready</h4>
+          <ul>
+            <li>Submit in final form — no copyediting will be performed</li>
+            <li>Authors are responsible for spelling, grammar, and layout</li>
+            <li>Ensure figures are of publication quality</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 class="guidelines-title">Poster guidelines</h3>
+      <p>
+        Posters will be displayed on the wall (no boards). Please size posters
+        <strong>no wider than 24 inches (61 cm)</strong>; height is flexible. Removable
+        tape will be provided on site.
+      </p>
+    </div>
+  </div>
+</section>

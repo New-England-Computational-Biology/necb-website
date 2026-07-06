@@ -10,9 +10,11 @@ keynotes:
     - name: "Caroline Uhler"
       affiliation: "Broad Institute · MIT"
       photo: "img/people/caroline-uhler.jpg"
+      bio: "Professor at MIT and Co-Director of the Eric and Wendy Schmidt Center at the Broad Institute. Her research bridges statistics, machine learning, and biology, with a focus on causal inference for gene regulation and single-cell analysis."
     - name: "Marc Vidal"
       affiliation: "Dana-Farber Cancer Institute · Harvard Medical School"
       photo: "img/people/marc-vidal.jpg"
+      bio: "Professor of Genetics at Harvard Medical School and Founding Director of the Center for Cancer Systems Biology (CCSB) at Dana-Farber Cancer Institute. His group pioneered systems-scale mapping of the human protein–protein interactome to understand how mutations perturb networks in disease."
 
 invited:
   title: "Invited speakers"

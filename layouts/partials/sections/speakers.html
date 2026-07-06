@@ -18,6 +18,12 @@
           {{ end }}
           <div class="speaker-name">{{ .name }}</div>
           <div class="speaker-affil">{{ .affiliation }}</div>
+          {{ with .bio }}
+          <details class="speaker-bio">
+            <summary>Read bio</summary>
+            <p>{{ . }}</p>
+          </details>
+          {{ end }}
         </article>
         {{ end }}
       </div>
@@ -37,6 +43,12 @@
           {{ end }}
           <div class="speaker-name">{{ .name }}</div>
           <div class="speaker-affil">{{ .affiliation }}</div>
+          {{ with .bio }}
+          <details class="speaker-bio">
+            <summary>Read bio</summary>
+            <p>{{ . }}</p>
+          </details>
+          {{ end }}
         </article>
         {{ end }}
       </div>

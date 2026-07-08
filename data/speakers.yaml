@@ -17,6 +17,10 @@ keynotes:
       affiliation: "Dana-Farber Cancer Institute · Harvard Medical School"
       photo: "img/people/marc-vidal.jpg"
       bio: "Professor of Genetics at Harvard Medical School and Founding Director of the Center for Cancer Systems Biology (CCSB) at Dana-Farber Cancer Institute. His group pioneered systems-scale mapping of the human protein–protein interactome to understand how mutations perturb networks in disease."
+    - name: "Zhiping Weng"
+      affiliation: "UMass Chan Medical School"
+      photo: "img/people/zhiping-weng.jpg"
+      bio: "Li Weibo Professor of Biomedical Research and founding Chair of the Department of Genomics and Computational Biology at UMass Chan Medical School. Her group develops computational methods for functional annotation of the human genome and leads the data analysis center of the ENCODE Consortium."
 
 invited:
   title: "Invited speakers"

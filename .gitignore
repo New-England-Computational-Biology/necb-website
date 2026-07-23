@@ -8,3 +8,9 @@ node_modules/
 
 # Private / raw source materials — internal only
 /*.pdf
+
+# Email attachment junk
+ATT*.html
+# Raw flyer source (kept locally, not tracked)
+/Flyer_NECB*.png
+/Flyer_NECB*.pdf

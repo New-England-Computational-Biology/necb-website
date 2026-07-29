@@ -52,37 +52,21 @@
     </div>
     {{ end }}
 
-    {{ with site.Data.organizers.trainees }}{{ if .members }}
-    <div class="organizer-group">
-      <h3 class="organizer-group-title">{{ .title }}</h3>
-      <ul class="organizer-list">
-        {{ range .members }}
-        <li class="organizer">
-          <span class="organizer-name">{{ .name }}</span>
-          {{ with .affiliation }}<span class="organizer-affil"> · {{ . }}</span>{{ end }}
-        </li>
-        {{ end }}
-      </ul>
-    </div>
-    {{ end }}{{ end }}
+    {{ $founders := site.Data.organizers.founders }}
+    {{ $friends := site.Data.organizers.friends }}
+    {{ if or (and $founders $founders.members) (and $friends $friends.members) }}
+    <p class="organizer-note">
+      {{ if and $founders $founders.members }}<strong>{{ $founders.title }}:</strong>
+        {{ range $i, $m := $founders.members }}{{ if $i }} &amp; {{ end }}{{ $m.name }}{{ end }}.{{ end }}
+      {{ if and $friends $friends.members }} &nbsp;·&nbsp; <strong>{{ $friends.title }}:</strong>
+        {{ range $i, $m := $friends.members }}{{ if $i }}, {{ end }}{{ $m.name }}{{ end }}.{{ end }}
+    </p>
+    {{ end }}
 
-    {{ with site.Data.organizers.friends }}{{ if .members }}
+    {{ with site.Data.organizers.reviewers }}{{ if .members }}
     <div class="organizer-group">
       <h3 class="organizer-group-title">{{ .title }}</h3>
-      <ul class="organizer-list">
-        {{ range .members }}
-        <li class="organizer">
-          <span class="organizer-name">{{ .name }}</span>
-          {{ with .affiliation }}<span class="organizer-affil"> · {{ . }}</span>{{ end }}
-        </li>
-        {{ end }}
-      </ul>
-    </div>
-    {{ end }}{{ end }}
-
-    {{ with site.Data.organizers.founders }}{{ if .members }}
-    <div class="organizer-group">
-      <h3 class="organizer-group-title">{{ .title }}</h3>
+      {{ with .intro }}<p class="organizer-intro">{{ . }}</p>{{ end }}
       <ul class="organizer-list">
         {{ range .members }}
         <li class="organizer">

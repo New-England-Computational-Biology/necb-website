@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Protein Design">
+  <g fill="none" stroke="#3B7368" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M18 12 C 38 12 46 20 46 26 C 46 32 38 34 24 34 C 12 34 8 40 8 46 C 8 52 16 54 24 54"
+          stroke-width="4"/>
+    <path d="M18 12 C 38 12 46 20 46 26 C 46 32 38 34 24 34 C 12 34 8 40 8 46 C 8 52 16 54 24 54"
+          stroke="#3B7368" stroke-width="1.5" opacity="0.35"/>
+    <ellipse cx="46" cy="46" rx="10" ry="6" stroke-width="3" transform="rotate(-15 46 46)"/>
+  </g>
+</svg>

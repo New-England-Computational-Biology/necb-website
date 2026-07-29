@@ -58,6 +58,9 @@ menus:
     - name: Speakers
       url: "#speakers"
       weight: 40
+    - name: Register
+      url: "#registration"
+      weight: 43
     - name: Submit
       url: "#submissions"
       weight: 45

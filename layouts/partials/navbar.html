@@ -9,12 +9,19 @@
       <span></span><span></span><span></span>
     </button>
 
-    <nav id="primary-nav" class="primary-nav" aria-label="Primary">
-      <ul>
-        {{ range site.Menus.main }}
-          <li><a href="{{ .URL }}">{{ .Name }}</a></li>
-        {{ end }}
-      </ul>
-    </nav>
+    <div class="navbar-right">
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary">
+        <ul>
+          {{ range site.Menus.main }}
+            <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+          {{ end }}
+        </ul>
+      </nav>
+      <a class="nav-partner" href="https://www.iscb.org/" target="_blank" rel="noopener"
+         aria-label="In partnership with ISCB — International Society for Computational Biology">
+        <span class="nav-partner-label">In partnership with</span>
+        <img alt="ISCB" src="{{ "img/partners/iscb-color.jpg" | relURL }}">
+      </a>
+    </div>
   </div>
 </header>

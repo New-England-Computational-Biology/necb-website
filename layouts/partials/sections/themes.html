@@ -1,15 +1,24 @@
 <section class="section section-alt" id="themes">
   <div class="container">
-    <h2 class="section-title">Themes</h2>
-    <p class="section-sub">NECB 2026 will focus on three intersecting frontiers.</p>
-    <div class="card-grid grid-3">
+    <h2 class="section-title">Focus Areas</h2>
+    <p class="section-sub">Submissions are welcome across all of computational biology. Five intersecting themes we'll spotlight in 2026:</p>
+    <div class="card-grid grid-5">
       {{ range site.Data.themes.items }}
-      <article class="card theme-card">
+      <article class="card theme-card theme-{{ .accent | default "primary" }}">
         <div class="theme-icon" aria-hidden="true">{{ .icon }}</div>
         <h3 class="card-title">{{ .title }}</h3>
         <p class="card-body">{{ .description }}</p>
       </article>
       {{ end }}
     </div>
+    {{ with site.Data.themes.topics }}
+    <div class="topics-strip" aria-label="Additional topics">
+      <span class="topics-label">Topics</span>
+      {{ range $i, $t := . }}
+        {{ if $i }}<span class="topics-sep" aria-hidden="true">·</span>{{ end }}
+        <span>{{ $t }}</span>
+      {{ end }}
+    </div>
+    {{ end }}
   </div>
 </section>

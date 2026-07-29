@@ -1,17 +1,15 @@
 <section class="hero" id="top">
-  <div class="hero-bg" aria-hidden="true"></div>
   <div class="container hero-inner">
-    <p class="hero-eyebrow">New England Computational Biology Symposium</p>
-    <h1 class="hero-title">NECB <span class="hero-year">2026</span></h1>
+    <p class="hero-eyebrow"><span class="dot" aria-hidden="true"></span>Inaugural Symposium · Cambridge, MA</p>
+    <h1 class="hero-title">New England<br>Computational<br>Biology <span class="hero-year">2026</span></h1>
     <p class="hero-meta">
       <span><strong>{{ site.Params.conferenceDate }}</strong></span>
       <span class="dot" aria-hidden="true">·</span>
       <span>{{ site.Params.venueName }}</span>
     </p>
     <p class="hero-pitch">
-      A two-day, in-person symposium bringing the New England computational biology community
-      together at Microsoft Research New England — keynotes, talks, posters, and connections
-      across institutions.
+      Join researchers across New England for a two-day, in-person, student-friendly symposium
+      at the frontier of computation and the life sciences.
     </p>
     <div class="hero-cta">
       {{ if site.Params.registrationURL }}
@@ -24,7 +22,6 @@
       {{ else if site.Params.abstractStatus }}
         <span class="badge badge-soon">{{ site.Params.abstractStatus }}</span>
       {{ end }}
-      <a class="btn btn-ghost" href="#about">Learn more →</a>
     </div>
   </div>
 </section>

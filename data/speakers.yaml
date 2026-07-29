@@ -1,5 +1,5 @@
 keynotes:
-  title: "Keynote speakers"
+  title: "Keynote Speakers"
   members:
     - name: "Sergey Ovchinnikov"
       affiliation: "MIT"
@@ -23,7 +23,7 @@ keynotes:
       bio: "Li Weibo Professor of Biomedical Research and founding Chair of the Department of Genomics and Computational Biology at UMass Chan Medical School. Her group develops computational methods for functional annotation of the human genome and leads the data analysis center of the ENCODE Consortium."
 
 invited:
-  title: "Invited speakers"
+  title: "Invited Speakers"
   members:
     - name: "Alex Lu"
       affiliation: "Microsoft Research New England"

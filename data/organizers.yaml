@@ -51,10 +51,6 @@ organizing:
     - name: "Ignacio Vázquez-García"
       affiliation: "Massachusetts General Hospital · Harvard Medical School"
 
-trainees:
-  title: "Trainees"
-  members: []
-
 friends:
   title: "Friends of the Conference"
   members:
@@ -67,3 +63,26 @@ founders:
       affiliation: "Massachusetts General Hospital · Harvard Medical School"
     - name: "Predrag (Pedja) Radivojac"
       affiliation: "Northeastern University"
+
+reviewers:
+  title: "Abstract Reviewers"
+  intro: "With thanks to the trainees volunteering their time to review submissions."
+  members:
+    - name: "Andrew Caruso"
+      affiliation: "AbbVie"
+    - name: "Kit Gallagher"
+      affiliation: "MGH · HMS · Broad"
+    - name: "Aditya Gorla"
+      affiliation: "UCLA"
+    - name: "Lei Huang"
+      affiliation: "MGH · HMS · Broad"
+    - name: "Zain Patel"
+      affiliation: "MGH · HMS · Broad"
+    - name: "Anna Sappington"
+      affiliation: "MIT · HMS"
+    - name: "Kristen Severson"
+      affiliation: "Microsoft"
+    - name: "Ruohan Wang"
+      affiliation: "Brown"
+    - name: "Laura Yeoh"
+      affiliation: "BWH · Boston Children's · HMS"

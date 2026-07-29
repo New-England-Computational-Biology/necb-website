@@ -27,8 +27,8 @@
   --radius:    12px;
   --radius-lg: 18px;
 
-  --max-w:       1280px;
-  --max-w-narrow: 820px;
+  --max-w:       1120px;
+  --max-w-narrow: 760px;
 
   --nav-h: 64px;
 
@@ -37,7 +37,7 @@
 
 * { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-h) + 12px); font-size: 17px; }
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-h) + 12px); }
 body {
   margin: 0;
   font-family: var(--font-ui);
@@ -282,13 +282,15 @@ a:focus-visible { outline: 2px solid var(--c-accent); outline-offset: 2px; borde
 .theme-card.theme-gold    { border-top: 3px solid var(--c-gold); }
 .theme-card.theme-purple  { border-top: 3px solid var(--c-purple); }
 
+.topics-bar {
+  padding: 0.9rem 0;
+  background: var(--c-bg-alt);
+  border-bottom: 1px solid var(--c-border);
+}
 .topics-strip {
   display: flex; flex-wrap: wrap; gap: 0.35rem 1rem;
   align-items: center; justify-content: center;
-  margin: 1.5rem auto 0; padding: 0.9rem 1rem;
-  background: var(--c-card); border: 1px solid var(--c-border);
-  border-radius: var(--radius); font-size: 0.85rem; color: var(--c-text);
-  max-width: 900px;
+  font-size: 0.82rem; color: var(--c-text);
 }
 .topics-label {
   color: var(--c-accent); font-weight: 700;
@@ -385,10 +387,10 @@ a:focus-visible { outline: 2px solid var(--c-accent); outline-offset: 2px; borde
 }
 .speaker-card:hover { transform: none; box-shadow: none; }
 .speaker-avatar {
-  width: 96px; height: 96px;
+  width: 76px; height: 76px;
   border-radius: 50%;
   background: linear-gradient(135deg, #DBE3F0 0%, #C7D2FE 100%);
-  margin: 0 auto 0.6rem;
+  margin: 0 auto 0.5rem;
   box-shadow: 0 0 0 3px var(--c-bg), 0 0 0 4px var(--c-border);
 }
 .speaker-avatar--initials {
@@ -661,12 +663,12 @@ a:focus-visible { outline: 2px solid var(--c-accent); outline-offset: 2px; borde
   display: flex; flex-direction: column; align-items: center; gap: 0.1rem;
 }
 .organizer-avatar {
-  width: 96px; height: 96px;
+  width: 76px; height: 76px;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--c-primary) 0%, var(--c-primary-light) 100%);
   color: #fff;
   display: flex; align-items: center; justify-content: center;
-  font-weight: 600; font-size: 2rem;
+  font-weight: 600; font-size: 1.6rem;
   font-family: var(--font-display);
   flex: 0 0 auto;
   box-shadow: 0 0 0 3px var(--c-bg), 0 0 0 4px var(--c-border);

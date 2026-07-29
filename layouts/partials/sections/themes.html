@@ -15,14 +15,5 @@
       </article>
       {{ end }}
     </div>
-    {{ with site.Data.themes.topics }}
-    <div class="topics-strip" aria-label="Additional topics">
-      <span class="topics-label">Topics</span>
-      {{ range $i, $t := . }}
-        {{ if $i }}<span class="topics-sep" aria-hidden="true">·</span>{{ end }}
-        <span>{{ $t }}</span>
-      {{ end }}
-    </div>
-    {{ end }}
   </div>
 </section>

@@ -1,0 +1,13 @@
+{{ with site.Data.themes.topics }}
+<div class="topics-bar" aria-label="Topics">
+  <div class="container">
+    <div class="topics-strip">
+      <span class="topics-label">Topics</span>
+      {{ range $i, $t := . }}
+        {{ if $i }}<span class="topics-sep" aria-hidden="true">·</span>{{ end }}
+        <span>{{ $t }}</span>
+      {{ end }}
+    </div>
+  </div>
+</div>
+{{ end }}

@@ -256,12 +256,9 @@ a:focus-visible { outline: 2px solid var(--c-accent); outline-offset: 2px; borde
 .grid-4 { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
 .grid-5 { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
 
-.theme-card { text-align: center; padding: 1.1rem 0.85rem 1rem; }
-.theme-card.theme-primary { border-top: 3px solid var(--c-primary); }
-.theme-card.theme-accent  { border-top: 3px solid var(--c-accent); }
-.theme-card.theme-teal    { border-top: 3px solid var(--c-teal); }
-.theme-card.theme-gold    { border-top: 3px solid var(--c-gold); }
-.theme-card.theme-purple  { border-top: 3px solid var(--c-purple); }
+.theme-card { text-align: center; padding: 0.5rem 0.5rem 1rem; background: transparent; border: 0; box-shadow: none; }
+.theme-card:hover { transform: none; box-shadow: none; }
+.theme-chip { width: 100%; max-width: 200px; height: auto; margin: 0 auto 0.5rem; display: block; }
 
 .topics-strip {
   display: flex; flex-wrap: wrap; gap: 0.35rem 1rem;

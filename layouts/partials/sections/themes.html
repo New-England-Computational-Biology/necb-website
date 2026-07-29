@@ -5,8 +5,12 @@
     <div class="card-grid grid-5">
       {{ range site.Data.themes.items }}
       <article class="card theme-card theme-{{ .accent | default "primary" }}">
+        {{ if .image }}
+        <img class="theme-chip" src="{{ .image | relURL }}" alt="{{ .title }}" loading="lazy">
+        {{ else if .icon }}
         <div class="theme-icon" aria-hidden="true">{{ .icon }}</div>
         <h3 class="card-title">{{ .title }}</h3>
+        {{ end }}
         <p class="card-body">{{ .description }}</p>
       </article>
       {{ end }}

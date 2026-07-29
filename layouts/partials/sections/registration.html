@@ -1,0 +1,60 @@
+<section class="section section-alt" id="registration">
+  <div class="container">
+    <h2 class="section-title">Registration</h2>
+    <p class="section-sub">
+      Kept intentionally affordable so trainees and researchers across New England can attend.
+      Pricing rises as we approach the meeting.
+    </p>
+
+    {{ with site.Data.registration }}
+    <div class="registration-card">
+      <table class="registration-table">
+        <thead>
+          <tr>
+            <th class="reg-tier">Category</th>
+            {{ range .windows }}
+            <th class="reg-window">
+              <div class="reg-window-label">{{ .label }}</div>
+              <div class="reg-window-deadline">{{ .deadline }}</div>
+            </th>
+            {{ end }}
+          </tr>
+        </thead>
+        <tbody>
+          {{ $windows := .windows }}
+          {{ range .categories }}
+          {{ $prices := .prices }}
+          <tr>
+            <td class="reg-tier">
+              <div class="reg-label">{{ .label }}</div>
+              {{ with .detail }}<div class="reg-detail">{{ . }}</div>{{ end }}
+            </td>
+            {{ range $windows }}
+            {{ $p := index $prices .key }}
+            <td class="reg-price">
+              <span class="reg-member" title="ISCB member">${{ $p.member }}</span>
+              <span class="reg-sep" aria-hidden="true">/</span>
+              <span class="reg-nonmember" title="Non-member">${{ $p.nonMember }}</span>
+            </td>
+            {{ end }}
+          </tr>
+          {{ end }}
+        </tbody>
+      </table>
+      {{ with .notes }}
+      <ul class="registration-notes">
+        {{ range . }}<li>{{ . | safeHTML }}</li>{{ end }}
+      </ul>
+      {{ end }}
+    </div>
+
+    <div class="registration-cta">
+      {{ if site.Params.registrationURL }}
+      <a class="btn btn-primary" href="{{ site.Params.registrationURL }}" target="_blank" rel="noopener">Register</a>
+      {{ else if site.Params.registrationStatus }}
+      <span class="badge badge-soon">{{ site.Params.registrationStatus }}</span>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+</section>

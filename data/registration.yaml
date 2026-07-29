@@ -1,0 +1,35 @@
+windows:
+  - key: "early"
+    label: "Early bird"
+    deadline: "By Sep 11, 2026"
+  - key: "regular"
+    label: "Regular"
+    deadline: "By Sep 21, 2026"
+  - key: "late"
+    label: "Late"
+    deadline: "By Sep 25, 2026"
+
+categories:
+  - label: "Trainee"
+    detail: "Students, post-docs, research staff"
+    prices:
+      early:   { member: 50,  nonMember: 105 }
+      regular: { member: 65,  nonMember: 120 }
+      late:    { member: 100, nonMember: 155 }
+  - label: "Academic"
+    detail: "Academic, government, media"
+    prices:
+      early:   { member: 150, nonMember: 300 }
+      regular: { member: 180, nonMember: 330 }
+      late:    { member: 399, nonMember: 549 }
+  - label: "Industry"
+    detail: ""
+    prices:
+      early:   { member: 200, nonMember: 350 }
+      regular: { member: 230, nonMember: 380 }
+      late:    { member: 525, nonMember: 675 }
+
+notes:
+  - "All prices in USD. Each column shows <strong>ISCB&nbsp;member&nbsp;/&nbsp;non-member</strong>."
+  - "No on-site registration. Late registration closes Sep 25, 2026 (hard deadline)."
+  - "Not an ISCB member? Join at <a href=\"https://www.iscb.org/\" target=\"_blank\" rel=\"noopener\">iscb.org</a> and register at member rates."

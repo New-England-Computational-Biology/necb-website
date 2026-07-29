@@ -663,12 +663,12 @@ a:focus-visible { outline: 2px solid var(--c-accent); outline-offset: 2px; borde
   display: flex; flex-direction: column; align-items: center; gap: 0.1rem;
 }
 .organizer-avatar {
-  width: 76px; height: 76px;
+  width: 110px; height: 110px;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--c-primary) 0%, var(--c-primary-light) 100%);
   color: #fff;
   display: flex; align-items: center; justify-content: center;
-  font-weight: 600; font-size: 1.6rem;
+  font-weight: 600; font-size: 2.2rem;
   font-family: var(--font-display);
   flex: 0 0 auto;
   box-shadow: 0 0 0 3px var(--c-bg), 0 0 0 4px var(--c-border);
@@ -903,7 +903,7 @@ a:focus-visible { outline: 2px solid var(--c-accent); outline-offset: 2px; borde
 }
 .reg-member { color: var(--c-primary); font-weight: 600; }
 .reg-nonmember { color: var(--c-text); }
-.reg-sep { color: var(--c-border); margin: 0 0.15rem; }
+.reg-sep { color: var(--c-text); margin: 0 0.2rem; font-weight: 500; }
 .registration-notes {
   list-style: none; margin: 0.85rem 0 0; padding: 0;
   color: var(--c-text-muted); font-size: 0.85rem; line-height: 1.5;

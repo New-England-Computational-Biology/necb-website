@@ -30,6 +30,6 @@ categories:
       late:    { member: 525, nonMember: 675 }
 
 notes:
-  - "All prices in USD. Each column shows <strong>ISCB&nbsp;member&nbsp;/&nbsp;non-member</strong>."
+  - "All prices in USD. Each column shows <strong style=\"color:var(--c-primary)\">ISCB&nbsp;member</strong>&nbsp;/&nbsp;<strong>non-member</strong>."
   - "No on-site registration. Late registration closes Sep 25, 2026 (hard deadline)."
   - "Not an ISCB member? Join at <a href=\"https://www.iscb.org/\" target=\"_blank\" rel=\"noopener\">iscb.org</a> and register at member rates."

@@ -77,9 +77,9 @@ a:focus-visible { outline: 2px solid var(--c-accent); outline-offset: 2px; borde
 /* ---------- Navbar ---------- */
 .navbar {
   position: sticky; top: 0; z-index: 50;
-  background: rgba(252,244,247,0.92);
+  background: rgba(240,245,251,0.92);
   backdrop-filter: saturate(180%) blur(10px);
-  border-bottom: 1px solid rgba(179,30,75,0.12);
+  border-bottom: 1px solid rgba(28,61,123,0.14);
   height: var(--nav-h);
   display: flex; align-items: center;
 }
@@ -284,8 +284,8 @@ a:focus-visible { outline: 2px solid var(--c-accent); outline-offset: 2px; borde
 
 .topics-bar {
   padding: 0.9rem 0;
-  background: linear-gradient(90deg, rgba(179,30,75,0.055) 0%, rgba(28,61,123,0.055) 100%);
-  border-top: 1px solid rgba(179,30,75,0.10);
+  background: rgba(28,61,123,0.06);
+  border-top: 1px solid rgba(28,61,123,0.10);
   border-bottom: 1px solid rgba(28,61,123,0.10);
 }
 .topics-strip {

@@ -10,7 +10,14 @@
           {{ range .sessions }}
           <li class="program-row program-row--{{ .kind }}">
             <span class="program-time">{{ .time }}</span>
-            <span class="program-title">{{ .title }}</span>
+            <span class="program-title">
+              {{ .title }}
+              {{ with .speakers }}
+              <ul class="program-speakers">
+                {{ range . }}<li>{{ . }}</li>{{ end }}
+              </ul>
+              {{ end }}
+            </span>
           </li>
           {{ end }}
         </ul>

@@ -6,6 +6,8 @@ days:
       - time: "9:00 AM"
         title: "Opening keynote"
         kind: "keynote"
+        speakers:
+          - "Marc Vidal"
       - time: "10:00–10:30 AM"
         title: "Coffee break"
         kind: "break"
@@ -28,6 +30,8 @@ days:
       - time: "4:00 PM"
         title: "Afternoon keynote"
         kind: "keynote"
+        speakers:
+          - "Sergey Ovchinnikov"
       - time: "Evening"
         title: "Trainees event"
         kind: "social"
@@ -35,8 +39,11 @@ days:
   - label: "Day 2 · Fri Oct 2, 2026"
     sessions:
       - time: "9:00 AM"
-        title: "Morning keynote"
+        title: "Joint keynote"
         kind: "keynote"
+        speakers:
+          - "Caroline Uhler"
+          - "G.V. Shivashankar"
       - time: "10:00–10:30 AM"
         title: "Coffee break"
         kind: "break"
@@ -59,6 +66,8 @@ days:
       - time: "4:00 PM"
         title: "Closing keynote · Poster awards"
         kind: "keynote"
+        speakers:
+          - "Zhiping Weng"
       - time: "Evening"
         title: "Reception"
         kind: "social"

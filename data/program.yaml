@@ -33,7 +33,7 @@ days:
         speakers:
           - "Sergey Ovchinnikov"
       - time: "Evening"
-        title: "The Future of Computational Biology"
+        title: "Evening event · The Future of Computational Biology"
         kind: "social"
 
   - label: "Day 2 · Fri Oct 2, 2026"

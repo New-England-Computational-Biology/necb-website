@@ -39,7 +39,7 @@ days:
   - label: "Day 2 · Fri Oct 2, 2026"
     sessions:
       - time: "9:00 AM"
-        title: "Joint keynote"
+        title: "Morning keynote"
         kind: "keynote"
         speakers:
           - "Caroline Uhler"

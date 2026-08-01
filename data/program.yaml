@@ -10,7 +10,7 @@ days:
         title: "Coffee break"
         kind: "break"
       - time: "10:30 AM – 12:00 PM"
-        title: "Invited talks · Regulation & Evolution"
+        title: "Invited talks"
         kind: "talks"
         speakers:
           - "Sahin Naqvi"
@@ -47,7 +47,7 @@ days:
         title: "Lunch"
         kind: "break"
       - time: "12:30–2:00 PM"
-        title: "Invited talks · Cellular Data & Machine Learning"
+        title: "Invited talks"
         kind: "talks"
         speakers:
           - "Alex Lu"

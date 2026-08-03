@@ -21,6 +21,7 @@
         <div class="hotel-card-footer">
           {{ with .note }}<p class="hotel-note">{{ . }}</p>{{ end }}
           {{ with .booking }}<p class="hotel-booking"><strong>Booking:</strong> {{ . }}</p>{{ end }}
+          {{ with .bookingUrl }}<p class="hotel-booking"><a class="btn btn-ghost btn-sm" href="{{ . }}" target="_blank" rel="noopener">Book online →</a></p>{{ end }}
           {{ with .cutoff }}<p class="hotel-cutoff"><strong>Cutoff:</strong> {{ . }}</p>{{ end }}
         </div>
       </article>

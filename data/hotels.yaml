@@ -1,16 +1,17 @@
-intro: "We have secured group rates at four hotels near the venue for the nights of Sep 30 – Oct 2. Group code (where applicable): NECB / New England Computational Biology."
+intro: "We have secured group rates at hotels near the venue for the nights of Sep 30 – Oct 2. Rooms are limited — please book by each hotel's cutoff date."
 
 items:
   - name: "AC Hotel Cambridge"
     address: "10 Acorn Park Drive, Cambridge, MA"
     rates:
-      - "From $239/night (Double/Double or King)"
+      - "From $239/night (Queen/Queen)"
     features:
       - "Sleek, European-inspired design"
       - "AC Lounge for evening networking"
       - "Near Alewife (MBTA Red Line)"
-    note: "Rates plus tax. Breakfast not included."
-    cutoff: "Sun Aug 16, 2026 (45 days prior to arrival)"
+    note: "Rates plus tax. Breakfast not included. Booked via Marriott under the NECB block."
+    bookingUrl: "https://www.marriott.com/event-reservations/reservation-link.mi?id=1785789979657&key=GRP&app=resvlink"
+    cutoff: "Fri Sep 25, 2026"
 
   - name: "Holiday Inn Express & Suites Cambridge"
     address: "250 Monsignor O'Brien Hwy, Cambridge, MA"
@@ -21,8 +22,9 @@ items:
       - "Complimentary hot breakfast daily"
       - "Spacious rooms"
       - "Near Lechmere (Green Line) · walking distance to Kendall"
-    note: "Rates plus tax."
-    cutoff: "Sun Aug 16, 2026 (45 days prior to arrival)"
+    note: "Rates plus tax. Block code NEC. Also bookable by phone at 1-888-465-4329 (IHG Reservations)."
+    bookingUrl: "https://www.ihg.com/holidayinnexpress/hotels/us/en/cambridge/boscb/hoteldetail?fromRedirect=true&qSrt=sBR&qIta=99801505&icdv=99801505&qSlH=BOSCB&qGrpCd=NEC&setPMCookies=true&qSHBrC=EX&qDest=250%20Monsignor%20O%27Brien%20Highway%2C%20Cambridge%2C%20MA%2C%20US&showApp=true&adjustMonth=false&srb_u=1"
+    cutoff: "Mon Aug 31, 2026"
 
   - name: "Porter Square Hotel"
     address: "1924 Massachusetts Ave, Cambridge, MA"

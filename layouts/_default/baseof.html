@@ -21,6 +21,11 @@
   <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
 
   {{ block "head" . }}{{ end }}
+
+  {{/* Google Analytics — only in production builds */}}
+  {{ if hugo.IsProduction }}
+    {{ template "_internal/google_analytics.html" . }}
+  {{ end }}
 </head>
 <body>
   {{ partial "navbar.html" . }}

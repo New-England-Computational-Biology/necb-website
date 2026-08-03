@@ -3,6 +3,8 @@ title: "NECB 2026"
 languageCode: "en-us"
 defaultContentLanguage: "en"
 
+googleAnalytics: "G-WK1YTWSXZD"
+
 enableRobotsTXT: true
 enableEmoji: true
 enableGitInfo: false

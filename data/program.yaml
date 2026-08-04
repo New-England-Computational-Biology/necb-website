@@ -16,7 +16,7 @@ days:
         kind: "talks"
         speakers:
           - "Alex Lu"
-          - "Armita Nourmohammad"
+          - "Rong Ma"
           - "Samantha Petti"
       - time: "12:00–1:00 PM"
         title: "Lunch"
@@ -57,8 +57,8 @@ days:
         title: "Invited talks"
         kind: "talks"
         speakers:
-          - "Rong Ma"
           - "Sahin Naqvi"
+          - "Armita Nourmohammad"
           - "Yuri Pritykin"
       - time: "2:00–4:00 PM"
         title: "Poster session"

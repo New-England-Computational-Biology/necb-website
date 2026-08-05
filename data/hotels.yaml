@@ -11,7 +11,7 @@ items:
       - "Near Alewife (MBTA Red Line)"
     note: "Rates plus tax. Breakfast not included. Booked via Marriott under the NECB block."
     bookingUrl: "https://www.marriott.com/event-reservations/reservation-link.mi?id=1785789979657&key=GRP&app=resvlink"
-    cutoff: "Fri Sep 25, 2026"
+    cutoff: "Sun Aug 30, 2026"
 
   - name: "Holiday Inn Express & Suites Cambridge"
     address: "250 Monsignor O'Brien Hwy, Cambridge, MA"
@@ -24,7 +24,7 @@ items:
       - "Near Lechmere (Green Line) · walking distance to Kendall"
     note: "Rates plus tax. Block code NEC. Also bookable by phone at 1-888-465-4329 (IHG Reservations)."
     bookingUrl: "https://www.ihg.com/holidayinnexpress/hotels/us/en/cambridge/boscb/hoteldetail?fromRedirect=true&qSrt=sBR&qIta=99801505&icdv=99801505&qSlH=BOSCB&qGrpCd=NEC&setPMCookies=true&qSHBrC=EX&qDest=250%20Monsignor%20O%27Brien%20Highway%2C%20Cambridge%2C%20MA%2C%20US&showApp=true&adjustMonth=false&srb_u=1"
-    cutoff: "Mon Aug 31, 2026"
+    cutoff: "Sun Aug 30, 2026"
 
   - name: "Porter Square Hotel"
     address: "1924 Massachusetts Ave, Cambridge, MA"

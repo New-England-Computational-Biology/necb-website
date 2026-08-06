@@ -51,6 +51,14 @@ organizing:
     - name: "Ignacio Vázquez-García"
       affiliation: "Massachusetts General Hospital · Harvard Medical School"
 
+coordinators:
+  title: "Coordinators"
+  members:
+    - name: "Glenda Pay"
+      affiliation: "MGH · HMS"
+    - name: "Diane Kovats"
+      affiliation: "ISCB"
+
 friends:
   title: "Friends of the Conference"
   members:

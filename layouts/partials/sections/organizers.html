@@ -52,6 +52,20 @@
     </div>
     {{ end }}
 
+    {{ with site.Data.organizers.coordinators }}{{ if .members }}
+    <div class="organizer-group">
+      <h3 class="organizer-group-title">{{ .title }}</h3>
+      <ul class="organizer-list">
+        {{ range .members }}
+        <li class="organizer">
+          <span class="organizer-name">{{ .name }}</span>
+          {{ with .affiliation }}<span class="organizer-affil"> · {{ . }}</span>{{ end }}
+        </li>
+        {{ end }}
+      </ul>
+    </div>
+    {{ end }}{{ end }}
+
     {{ $founders := site.Data.organizers.founders }}
     {{ $friends := site.Data.organizers.friends }}
     {{ if or (and $founders $founders.members) (and $friends $friends.members) }}

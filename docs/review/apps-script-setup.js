@@ -22,10 +22,11 @@
 const FORM_ID = '17rcU50jlrDbl8xGAdPvYYWJTDL3lbFrda3OPvhCVoXc';
 const SHEET_ID = '1WSe1ONckffM-SBeBWpoZN-FORCF2LC1ZHB9ljG_dLSY';
 const REVIEWERS = [
-  'Andrew Caruso', 'Curie Cha', 'Kit Gallagher', 'Aditya Gorla',
-  'Lei Huang', 'Senbao Lu', 'Karna Mendonca', 'Zain Patel',
-  'Ben Perry', 'Anna Sappington', 'Kristen Severson', 'Ross Stewart',
-  'Ruohan Wang', 'Will White', 'Laura Yeoh', 'Nanxiang (Sam) Zhao'
+  'Andrew Caruso', 'Curie Cha', 'Kishalay Das', 'Kit Gallagher',
+  'Aditya Gorla', 'Lei Huang', 'Benjamin Jones', 'Senbao Lu',
+  'Karna Mendonca', 'Zain Patel', 'Ben Perry', 'Anna Sappington',
+  'Kristen Severson', 'Ross Stewart', 'Ruohan Wang', 'Will White',
+  'Laura Yeoh', 'Nanxiang (Sam) Zhao'
 ];
 
 const LEAVE_SCORES_ALONE = true;

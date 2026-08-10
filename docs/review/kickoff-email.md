@@ -28,14 +28,9 @@ Thank you again for volunteering to review abstracts for NECB 2026! Submissions 
 
 Please read the COI section in the **Reviewer Packet** (https://newenglandcompbio.org/reviewer-packet.pdf). If any assigned abstract has a conflict (same institution, recent co-author, advisor/advisee, close collaborator, personal or financial), reply and we'll reassign within 24 hours.
 
-Also, if you haven't already, please fill in the **COI declaration form** — deadline **Wed Aug 20**: [LINK]. Takes ~5 minutes; helps us catch conflicts before the next round of assignments.
-
 ## Timeline
 
 - **Sat Aug 15** — today, assignments live.
-- **Wed Aug 20** — COI declaration form due.
-- **Fri Aug 22** — mid-window check-in from us.
-- **Mon Sep 1** — 48-hour deadline reminder.
 - **Thu Sep 3 · 11:59 PM ET** — reviews due.
 - **Fri Sep 4** — author notifications go out (no action needed from you).
 
@@ -62,6 +57,5 @@ NECB 2026 Organizing Committee
 - Fill in `[N]` per reviewer from the Assignments sheet.
 - Replace `[LINK TO SHARED SHEET]` with a *filter view URL* so each reviewer only sees their own assignments (Google Sheets → View → Filter views → save filter as URL with `?fvid=`).
 - Form responder link (`https://forms.gle/pPmsrcyYVuyBfGWR8`) is already in the body.
-- Replace `[LINK]` (COI form) with the actual Google Form URL.
 - Send BCC so reviewers can't see each other's addresses.
 - Consider adding one personalized line per reviewer thanking them for a specific expertise you're leaning on (optional; nice touch for a first-year meeting).

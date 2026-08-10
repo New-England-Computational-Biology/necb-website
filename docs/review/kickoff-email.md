@@ -16,7 +16,7 @@ Thank you again for volunteering to review abstracts for NECB 2026! Submissions 
 
 - Reading **[N]** abstracts (250-word text + 1-page PDF).
 - Scoring each on four 1–5 dimensions + an overall recommendation + confidence + a two-sentence rationale.
-- Rubric + COI policy in the **Reviewer Packet**: https://newenglandcompbio.org/reviewer-packet.pdf (~2 pages).
+- Rubric + COI policy in the **Reviewer Packet**: https://newenglandcompbio.org/files/reviewer-packet.pdf (~2 pages).
 
 ## Where the abstracts + form live
 
@@ -26,7 +26,7 @@ Thank you again for volunteering to review abstracts for NECB 2026! Submissions 
 
 ## COI
 
-Please read the COI section in the **Reviewer Packet** (https://newenglandcompbio.org/reviewer-packet.pdf). If any assigned abstract has a conflict (same institution, recent co-author, advisor/advisee, close collaborator, personal or financial), reply and we'll reassign within 24 hours.
+Please read the COI section in the **Reviewer Packet** (https://newenglandcompbio.org/files/reviewer-packet.pdf). If any assigned abstract has a conflict (same institution, recent co-author, advisor/advisee, close collaborator, personal or financial), reply and we'll reassign within 24 hours.
 
 ## Timeline
 

@@ -35,7 +35,7 @@ A reminder that reviews are due **Thu Sep 3 · 11:59 PM ET** — 48 hours from n
 
 We currently have **[X of N]** reviews in. If you're behind, please prioritize completing what you can; even a partial review is better than a missing one. If any of your assignments won't get done, reply now so we can reassign or note the gap for the chairs' pass.
 
-Reviewer Packet (rubric + COI): https://newenglandcompbio.org/reviewer-packet.pdf
+Reviewer Packet (rubric + COI): https://newenglandcompbio.org/files/reviewer-packet.pdf
 
 Thanks so much — we couldn't do this without you.
 

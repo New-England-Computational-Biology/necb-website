@@ -7,13 +7,15 @@ brand template in scripts/templates/packet.typ.
 Usage:
     python3 scripts/render_pdf.py                        # reviewer packet
     python3 scripts/render_pdf.py docs/review/foo.md     # any markdown file
-    python3 scripts/render_pdf.py --publish              # render into static/
+    python3 scripts/render_pdf.py --publish              # render into static/files/
     python3 scripts/render_pdf.py --keep-typst           # keep intermediate .typ
 
 Requires: pandoc (>= 3.x) and typst (>= 0.15). Output lands in
 docs/review/build/ (gitignored — regenerate rather than commit), or in
-static/ with --publish, where Hugo serves it from the site root:
-https://newenglandcompbio.org/<name>.pdf — that copy is committed.
+static/files/ with --publish, which Hugo serves as
+https://newenglandcompbio.org/files/<name>.pdf — that copy is committed.
+Keeping every public document under /files/ means crawler rules and
+link audits have a single prefix to target.
 """
 
 from __future__ import annotations
@@ -29,7 +31,7 @@ ROOT = Path(__file__).resolve().parent.parent
 TEMPLATE = ROOT / "scripts" / "templates" / "packet.typ"
 DEFAULT_SOURCE = ROOT / "docs" / "review" / "reviewer-packet.md"
 BUILD_DIR = ROOT / "docs" / "review" / "build"
-STATIC_DIR = ROOT / "static"
+PUBLISH_DIR = ROOT / "static" / "files"
 
 # Pandoc emits equal-percentage column widths, which wastes space on narrow
 # first columns (e.g. "Score"). Let the first column size to content instead.
@@ -70,8 +72,10 @@ def render(source: Path, keep_typst: bool, publish: bool) -> Path:
         sys.exit(f"error: no such file: {source}")
 
     BUILD_DIR.mkdir(parents=True, exist_ok=True)
+    if publish:
+        PUBLISH_DIR.mkdir(parents=True, exist_ok=True)
     typ_path = BUILD_DIR / (source.stem + ".typ")
-    pdf_path = (STATIC_DIR if publish else BUILD_DIR) / (source.stem + ".pdf")
+    pdf_path = (PUBLISH_DIR if publish else BUILD_DIR) / (source.stem + ".pdf")
 
     typst_src = subprocess.run(
         [
@@ -110,7 +114,7 @@ def main() -> None:
     )
     parser.add_argument(
         "--publish", action="store_true",
-        help="write the PDF into static/ so Hugo serves it from the site root",
+        help="write the PDF into static/files/, published under /files/ on the site",
     )
     parser.add_argument(
         "--keep-typst", action="store_true",
@@ -120,7 +124,7 @@ def main() -> None:
     pdf = render(args.source.resolve(), args.keep_typst, args.publish)
     print(f"wrote {pdf.relative_to(ROOT)}")
     if args.publish:
-        print(f"       https://newenglandcompbio.org/{pdf.name} (after deploy)")
+        print(f"       https://newenglandcompbio.org/files/{pdf.name} (after deploy)")
 
 
 if __name__ == "__main__":

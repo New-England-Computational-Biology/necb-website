@@ -11,17 +11,7 @@ The following relationships between you (reviewer) and any co-author on an abstr
 5. **Grant or funding** — you are or have been on the same grant / cooperative award within the last 3 years.
 6. **Personal or financial relationship** — family, close friendship, or any financial interest in the work.
 
-## Soft flags — check with the chairs
-
-If any of the below apply, tell the chairs and let them decide whether to reassign:
-
-- Casual acquaintance from conferences (not a co-author, not a collaborator).
-- Same broader institution but different department / building / never collaborated.
-- Previously reviewed the same author's grants or papers — but no personal working relationship.
-
-## Flagging a COI
-
-Upon receiving your assignments, please check for any conflicts (hard or soft) and let the chairs know as soon as possible so we can reassign.
+Upon receiving your assignments, please check for any of the above and email `newenglandcompbio@gmail.com` as soon as possible so we can reassign.
 
 ## Confidentiality
 

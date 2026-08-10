@@ -277,9 +277,10 @@ function setupForm() {
 
   form.setTitle('NECB 2026 · Abstract review');
   form.setDescription(
-    'Score each assigned abstract on the four dimensions, pick a recommendation ' +
-    'and confidence, and leave a two-sentence rationale (one strength + one concern). ' +
-    'Rubric: see the reviewer packet or docs/review/rubric.md. Reviews due Thu Sep 3, 11:59 PM ET.'
+    'Thanks for helping select NECB 2026 abstracts. For each submission assigned to you: ' +
+    'score the four rubric dimensions (1–5), pick an overall recommendation, note your ' +
+    'confidence, and add a two-sentence rationale — one strength, one concern. ' +
+    'Rubric in your kickoff email packet. Reviews close Thu Sep 3 · 11:59 PM ET.'
   );
   form.setCollectEmail(false);
   form.setAllowResponseEdits(false);

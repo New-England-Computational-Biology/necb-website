@@ -15,3 +15,7 @@ ATT*.html
 /Flyer_NECB*.png
 /Flyer_NECB*.pdf
 /Flyer_NECB*.ai
+/iscb-necb-banner.png
+
+# Rendered review artifacts (regenerable via scripts/render_pdf.py)
+/docs/review/build/

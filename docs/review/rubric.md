@@ -2,9 +2,11 @@
 
 **Reviewers:** please read this before you start scoring. Adapted from the NeurIPS reviewer guidelines and scaled to a 1-page abstract.
 
-Each abstract has two pieces:
-1. A **250-word text abstract** (from the ISCB submission form).
-2. A **1-page print-ready PDF** (single-column, 11 pt serif, US Letter — this goes directly into the conference abstract book).
+Each submission has up to two pieces:
+1. A **250-word text abstract** (from the ISCB submission form) — required.
+2. A **1-page print-ready PDF** (single-column, 11 pt serif, US Letter — goes directly into the conference abstract book) — optional.
+
+**Important:** the 1-page PDF is optional. Submissions **without** a PDF are considered **poster-only** — they cannot be selected for a talk. If a submission has no PDF, cap your Recommendation at **Accept as poster** (or Reject if the science warrants).
 
 Score every dimension for every assigned abstract. Reviews are due **Thu Sep 3, 2026 · 11:59 PM ET**.
 
@@ -65,10 +67,10 @@ Give each of these four a **1–5 integer score**.
 Pick **one**:
 
 - **Accept as talk** — top ~10–15%. Should be presented from the podium.
-- **Accept as poster** — solid contribution worth showing at the meeting.
+- **Accept as poster** — solid contribution worth showing at the meeting. Also the ceiling for submissions with no 1-page PDF.
 - **Reject** — out of scope, seriously flawed, or clearly below the poster bar.
 
-**Your overall recommendation carries more weight than the individual dimension scores.** Use it decisively; don't hide behind "poster" as a default.
+**Your overall recommendation carries more weight than the individual dimension scores.** Use it decisively; don't hide behind "poster" as a default. And remember: **no PDF → maximum recommendation is poster.**
 
 ## Confidence
 

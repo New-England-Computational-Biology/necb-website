@@ -147,7 +147,7 @@ Copy-paste these exactly so the response column headers match the `Aggregate` fo
 
 3. **Significance** (Linear scale 1–5, required)
    - Label 1: `Not significant` · Label 5: `Groundbreaking`
-   - Description: paste the significance dimension from `rubric.md`.
+   - Description: paste the significance dimension from the Reviewer Packet.
 
 4. **Rigor** (Linear scale 1–5, required)
    - Label 1: `Not sound` · Label 5: `Rigorous`

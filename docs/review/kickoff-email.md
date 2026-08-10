@@ -16,7 +16,7 @@ Thank you again for volunteering to review abstracts for NECB 2026! Submissions 
 
 - Reading **[N]** abstracts (250-word text + 1-page PDF).
 - Scoring each on four 1–5 dimensions + an overall recommendation + confidence + a two-sentence rationale.
-- Full rubric attached (`rubric.md`, ~1 page).
+- Rubric + COI policy attached as the **Reviewer Packet** (`reviewer-packet.md`, ~2 pages).
 
 ## Where the abstracts + form live
 
@@ -26,7 +26,7 @@ Thank you again for volunteering to review abstracts for NECB 2026! Submissions 
 
 ## COI
 
-Please read the attached `coi-policy.md`. If any assigned abstract has a conflict (same institution, recent co-author, advisor/advisee, close collaborator, personal or financial), reply and we'll reassign within 24 hours.
+Please read the COI section in the attached **Reviewer Packet**. If any assigned abstract has a conflict (same institution, recent co-author, advisor/advisee, close collaborator, personal or financial), reply and we'll reassign within 24 hours.
 
 Also, if you haven't already, please fill in the **COI declaration form** — deadline **Wed Aug 20**: [LINK]. Takes ~5 minutes; helps us catch conflicts before the next round of assignments.
 
@@ -58,8 +58,7 @@ NECB 2026 Organizing Committee
 ---
 
 **Attachments**
-- `rubric.md` (or attached PDF version)
-- `coi-policy.md` (or attached PDF version)
+- `reviewer-packet.md` (or attached PDF version — combined rubric + COI policy)
 
 ---
 

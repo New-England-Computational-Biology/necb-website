@@ -13,15 +13,13 @@
     </p>
     <div class="hero-cta">
       {{ if site.Params.registrationURL }}
-        <a class="btn btn-primary" href="{{ site.Params.registrationURL }}" target="_blank" rel="noopener">Register</a>
+        <a class="btn btn-primary" href="{{ site.Params.registrationURL }}" target="_blank" rel="noopener">Register to attend</a>
       {{ else }}
         <span class="badge badge-soon">{{ site.Params.registrationStatus }}</span>
       {{ end }}
-      {{ if site.Params.abstractURL }}
-        <a class="btn btn-ghost" href="{{ site.Params.abstractURL }}" target="_blank" rel="noopener">Submit Abstract</a>
-      {{ else if site.Params.abstractStatus }}
-        <span class="badge badge-soon">{{ site.Params.abstractStatus }}</span>
-      {{ end }}
     </div>
+    <p class="hero-cta-note">
+      Abstract submissions closed <strong>Fri Aug 14, 2026</strong>. Notifications by <strong>Fri Sep 4, 2026</strong>.
+    </p>
   </div>
 </section>

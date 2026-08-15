@@ -186,6 +186,12 @@ a:focus-visible { outline: 2px solid var(--c-accent); outline-offset: 2px; borde
   margin: 0 0 1.1rem;
 }
 .hero-cta { display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center; }
+.hero-cta-note {
+  margin: 0.75rem 0 0;
+  font-size: 0.92rem;
+  color: var(--c-text-muted);
+}
+.hero-cta-note strong { color: var(--c-text); font-weight: 600; }
 
 /* ---------- Buttons & badges ---------- */
 .btn {

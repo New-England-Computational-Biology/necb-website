@@ -370,6 +370,103 @@ function addScale_(form, title, helpText, low, high) {
     .setRequired(true);
 }
 
+/* =========================================================
+ * FILTER-VIEW GENERATOR
+ * Creates one filter view per reviewer on the Assignments tab.
+ * Each filter shows only that reviewer's queue with coi_flag != TRUE.
+ *
+ * PREREQUISITE — enable Sheets Advanced Service (one-time):
+ *   Apps Script editor → Services (left sidebar, "+" icon) →
+ *   Google Sheets API → Add.
+ *
+ * Safe to re-run: any existing filter view whose title begins with
+ * "Queue — " is deleted first, then rebuilt.
+ * ========================================================= */
+
+function generateFilterViews() {
+  const ss = SpreadsheetApp.openById(SHEET_ID);
+  const assignments = ss.getSheetByName('Assignments');
+  if (!assignments) {
+    SpreadsheetApp.getUi().alert('No Assignments tab. Run setupSheets first.');
+    return;
+  }
+
+  // Look up sheet ID + existing filter views
+  const meta = Sheets.Spreadsheets.get(SHEET_ID, {
+    fields: 'sheets(properties(sheetId,title),filterViews(filterViewId,title))',
+  });
+  const sheetMeta = meta.sheets.find(s => s.properties.title === 'Assignments');
+  const sheetId = sheetMeta.properties.sheetId;
+
+  // Delete previous per-reviewer filter views so re-runs land cleanly
+  const oldFilters = sheetMeta.filterViews || [];
+  const deleteRequests = oldFilters
+    .filter(fv => fv.title && fv.title.startsWith('Queue — '))
+    .map(fv => ({ deleteFilterView: { filterId: fv.filterViewId } }));
+  if (deleteRequests.length) {
+    Sheets.Spreadsheets.batchUpdate({ requests: deleteRequests }, SHEET_ID);
+  }
+
+  // One addFilterView request per reviewer
+  const addRequests = REVIEWERS.map(reviewer => ({
+    addFilterView: {
+      filter: {
+        title: `Queue — ${reviewer}`,
+        range: {
+          sheetId: sheetId,
+          startRowIndex: 0,
+          endRowIndex: 501,
+          startColumnIndex: 0,
+          endColumnIndex: 7,
+        },
+        criteria: {
+          '3': {  // reviewer column D (0-indexed 3)
+            condition: {
+              type: 'TEXT_EQ',
+              values: [{ userEnteredValue: reviewer }],
+            },
+          },
+          '4': {  // coi_flag column E (0-indexed 4)
+            condition: {
+              type: 'BOOLEAN',
+              values: [{ userEnteredValue: 'FALSE' }],
+            },
+          },
+        },
+      },
+    },
+  }));
+
+  const resp = Sheets.Spreadsheets.batchUpdate({ requests: addRequests }, SHEET_ID);
+  const replies = resp.replies || [];
+
+  // Collect URLs
+  const urls = [];
+  for (let i = 0; i < REVIEWERS.length; i++) {
+    const fvid = replies[i].addFilterView.filter.filterViewId;
+    const url = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/edit?gid=${sheetId}&fvid=${fvid}`;
+    urls.push([REVIEWERS[i], url]);
+    Logger.log(`${REVIEWERS[i]}\t${url}`);
+  }
+
+  // Persist to a "Reviewer URLs" tab for copy-paste into the kickoff email
+  let urlSheet = ss.getSheetByName('Reviewer URLs');
+  if (urlSheet) urlSheet.clear();
+  else urlSheet = ss.insertSheet('Reviewer URLs');
+  urlSheet.getRange(1, 1, 1, 2).setValues([['reviewer', 'filter_view_url']]);
+  urlSheet.getRange(2, 1, urls.length, 2).setValues(urls);
+  urlSheet.getRange(1, 1, 1, 2)
+    .setFontWeight('bold').setBackground('#1C3D7B').setFontColor('#FFFFFF');
+  urlSheet.setFrozenRows(1);
+  urlSheet.setColumnWidths(1, 1, 200);
+  urlSheet.setColumnWidths(2, 1, 600);
+
+  SpreadsheetApp.getUi().alert(
+    `Generated ${REVIEWERS.length} filter views.\n\n` +
+    `URLs are on the "Reviewer URLs" tab — copy into the kickoff email.`
+  );
+}
+
 function renameResponseSheetToScores_(ss) {
   // The Form auto-creates a sheet named 'Form Responses N' — find the newest one.
   const existingScores = ss.getSheetByName('Scores');

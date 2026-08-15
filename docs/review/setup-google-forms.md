@@ -16,18 +16,21 @@ Assumptions:
 
 ---
 
-## Fast path (~5 min)
+## Fast path (~10 min)
 
 The folder, sheet, and form already exist but are empty. To fill them:
 
 1. Open the Master Sheet → **Extensions → Apps Script**.
 2. Paste the contents of `docs/review/apps-script-setup.js` into `Code.gs`. Save.
-3. Grant permissions on first run (Sheets + Forms + Drive scopes).
-4. From the function picker, run **`setupSheets`** — builds the four tabs (`Submissions`, `Assignments`, `Scores`, `Aggregate`) with headers, formulas, dropdowns, conditional formatting.
-5. Run **`setupForm`** — builds the 9 Form fields matching the rubric and links responses to the `Scores` tab.
-6. In the Sheet, create per-reviewer filter views (Step 4 below) — 15 min.
-7. In the Form, grab the responder link (Send → Link icon) and paste it into `kickoff-email.md`.
-8. Dry-run with three dummy submissions (Step 6 below).
+3. Enable **Sheets Advanced Service** (Services `+` in sidebar → Google Sheets API → Add) — needed for filter-view generation.
+4. Grant permissions on first run (Sheets + Forms + Drive scopes).
+5. From the function picker:
+   - Run **`setupSheets`** — builds the four tabs (`Submissions`, `Assignments`, `Scores`, `Aggregate`) with headers, formulas, dropdowns, conditional formatting.
+   - Run **`setupForm`** — builds the 9 Form fields matching the rubric and links responses to the `Scores` tab.
+6. Populate `Submissions` + `Assignments` from the ISCB export:
+   - `python3 scripts/ingest_submissions.py` → produces `docs/review/build/submissions_reviewer.csv` (paste into `Submissions`) + `submissions_chair.csv` (paste into a new hidden `Chair notes` tab) + `assignments.csv` (paste into `Assignments`). PDFs extracted to `docs/review/build/pdfs/`.
+7. Run **`generateFilterViews`** — creates one filter view per reviewer on `Assignments` and writes each URL to a `Reviewer URLs` tab. Copy those into the kickoff email.
+8. In the Form, confirm the responder link (Send → Link icon) matches the one in `kickoff-email.md`.
 
 Everything else in this guide is the reference for what those scripts do — read on if you want to know why each formula or field is there, or if you'd rather build it by hand.
 

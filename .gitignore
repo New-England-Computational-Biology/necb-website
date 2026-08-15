@@ -19,3 +19,17 @@ ATT*.html
 
 # Rendered review artifacts (regenerable via scripts/render_pdf.py)
 /docs/review/build/
+
+# Submitted-abstract data — never commit
+/NECB-2026-Submission_*.csv
+/NECB2026_submissions*.zip
+/NECB2026_submissions/
+# Any exported / derived review CSVs, PDFs, or PPTs at the repo root
+/submissions_*.csv
+/assignments*.csv
+/scores*.csv
+/ranked*.csv
+/reviewer_urls*.csv
+/*.pptx
+# Extracted PDF folders, in case someone lands them outside /docs/review/build/
+/pdfs/

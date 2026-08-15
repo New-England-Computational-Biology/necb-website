@@ -4,25 +4,26 @@ Send **Sat Aug 15, 2026**, immediately after the Aug 14 submission deadline and 
 
 ---
 
-**To:** All 16 abstract reviewers (BCC)
+**To:** All 25 abstract reviewers (BCC)
 **Reply-To:** newenglandcompbio@gmail.com
 **Subject:** NECB 2026 · Your abstract review assignments — due Sep 3
 
 Dear reviewers,
 
-Thank you again for volunteering to review abstracts for NECB 2026! Submissions closed last night and we're now ready to hand out assignments.
+Thank you again for volunteering to review abstracts for NECB 2026! Submissions closed yesterday (196 in total — a great haul) and we're now ready to hand out assignments.
 
 ## What you're doing
 
-- Reading **[N]** abstracts (250-word text + 1-page PDF).
+- Reading **[N]** abstracts. Each has a 250-word text abstract; ~2/3 also include an optional 1-page PDF.
 - Scoring each on four 1–5 dimensions + an overall recommendation + confidence + a two-sentence rationale.
 - Rubric + COI policy in the **Reviewer Packet**: https://newenglandcompbio.org/files/reviewer-packet.pdf (~2 pages).
 
 ## Where the abstracts + form live
 
 - **Your queue:** [LINK TO SHARED SHEET, filtered to your name]
+- **PDFs folder** (files named by `abstract_id`, e.g. `A017.pdf`): https://drive.google.com/drive/folders/1YhzB_JrRkeTlEV2kuf1jffLPsSd7vtYi
 - **Score-submission form:** https://forms.gle/pPmsrcyYVuyBfGWR8
-- Each row has the abstract title, authors' presenting affiliation, the 250-word text, and a link to the PDF.
+- Reviews are **blinded** — the queue shows title + 250-word abstract only, no author or affiliation info. If an abstract has a PDF, click through to the folder link above and open the matching `A###.pdf`.
 
 ## COI
 
@@ -54,8 +55,9 @@ NECB 2026 Organizing Committee
 
 ## Notes for the chairs preparing the send
 
-- Fill in `[N]` per reviewer from the Assignments sheet.
-- Replace `[LINK TO SHARED SHEET]` with a *filter view URL* so each reviewer only sees their own assignments (Google Sheets → View → Filter views → save filter as URL with `?fvid=`).
+- Fill in `[N]` per reviewer — see `docs/review/build/reviewer_load.tsv` (13 reviewers at 24, 12 at 23).
+- Replace `[LINK TO SHARED SHEET, filtered to your name]` with each reviewer's filter-view URL from the `Reviewer URLs` tab (produced by the `generateFilterViews` Apps Script function).
 - Form responder link (`https://forms.gle/pPmsrcyYVuyBfGWR8`) is already in the body.
+- PDFs folder link (`.../folders/1YhzB_JrRkeTlEV2kuf1jffLPsSd7vtYi`) is already in the body — share it with each reviewer as Viewer before send.
 - Send BCC so reviewers can't see each other's addresses.
 - Consider adding one personalized line per reviewer thanking them for a specific expertise you're leaning on (optional; nice touch for a first-year meeting).

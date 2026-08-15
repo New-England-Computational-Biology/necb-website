@@ -426,11 +426,8 @@ function generateFilterViews() {
               values: [{ userEnteredValue: reviewer }],
             },
           },
-          '4': {  // coi_flag column E (0-indexed 4)
-            condition: {
-              type: 'BOOLEAN',
-              values: [{ userEnteredValue: 'FALSE' }],
-            },
+          '4': {  // coi_flag column E (0-indexed 4) — hide any row marked TRUE
+            hiddenValues: ['TRUE'],
           },
         },
       },

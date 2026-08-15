@@ -90,8 +90,8 @@ function setupAssignments_(ss) {
   sh.setColumnWidths(6, 1, 110);
   sh.setColumnWidths(7, 1, 260);
 
-  // Fill formulas for rows 2..500 (bump if you expect more assignments)
-  const N = 500;
+  // Fill formulas for rows 2..N (bump if you expect more assignments)
+  const N = 1000;
   const rng = sh.getRange(2, 2, N, 1);
   const formulas = Array.from({ length: N }, (_, i) => {
     const row = i + 2;
@@ -415,7 +415,7 @@ function generateFilterViews() {
         range: {
           sheetId: sheetId,
           startRowIndex: 0,
-          endRowIndex: 501,
+          endRowIndex: 1001,
           startColumnIndex: 0,
           endColumnIndex: 7,
         },

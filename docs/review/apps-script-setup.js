@@ -22,7 +22,7 @@
 const FORM_ID = '17rcU50jlrDbl8xGAdPvYYWJTDL3lbFrda3OPvhCVoXc';
 const SHEET_ID = '1WSe1ONckffM-SBeBWpoZN-FORCF2LC1ZHB9ljG_dLSY';
 const REVIEWERS = [
-  'Andrew Caruso', 'Curie Cha', 'Xiwei Cheng', 'Kishalay Das',
+  'Ritwik Anand', 'Andrew Caruso', 'Curie Cha', 'Xiwei Cheng', 'Kishalay Das',
   'Kit Gallagher', 'Jocelyn Garcia', 'Aditya Gorla', 'Lei Huang',
   'Benjamin Jones', 'Panos Ketonis', 'Anurendra Kumar', 'Senbao Lu',
   'Karna Mendonca', 'Zain Patel', 'Ben Perry', 'Anna Sappington',

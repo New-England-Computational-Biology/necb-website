@@ -76,6 +76,8 @@ reviewers:
   title: "Abstract Reviewers"
   intro: "With thanks to the trainees volunteering their time to review submissions."
   members:
+    - name: "Ritwik Anand"
+      affiliation: "Northeastern"
     - name: "Andrew Caruso"
       affiliation: "AbbVie"
     - name: "Curie Cha"

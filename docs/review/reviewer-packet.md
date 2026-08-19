@@ -9,6 +9,8 @@ Everything you need to review abstracts for NECB 2026. Please read both parts be
 **Score at:** https://forms.gle/pPmsrcyYVuyBfGWR8
 **Questions:** `newenglandcompbio@gmail.com`
 
+**Reviews are not blinded** — author names and affiliations are visible on both the text abstract and the 1-page PDFs, since the optional PDFs almost always embed them. See COI policy in Part 2; score on the science alone (see "What NOT to score" in Part 1).
+
 ---
 
 # Part 1 · Abstract Review Rubric
@@ -111,7 +113,7 @@ Chairs read every rationale. Please write them.
 
 ## What NOT to score
 
-- Author names / affiliations. Reviews should be based on the science.
+- **Author names / affiliations** — you'll see them (reviews are not blinded), but they should not factor into your scores. Score on the science alone.
 - The formatting of the PDF (11 pt vs 12 pt, etc.) — chairs will handle any formatting issues at the abstract-book stage.
 - Whether the presenting author is a trainee or a PI.
 

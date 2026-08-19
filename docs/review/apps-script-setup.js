@@ -42,6 +42,21 @@ function setupSheets() {
   SpreadsheetApp.getUi().alert('NECB review sheet: four tabs ready.');
 }
 
+/* Recovery entry points — invoke these individually from the function picker
+ * to rebuild just one tab without touching the others.
+ * Use `rebuildAggregate` if the Aggregate tab lost references to Scores after
+ * a setupForm re-run (Scores tab gets recreated and formula refs go stale).
+ */
+function rebuildAggregate() {
+  setupAggregate_(SpreadsheetApp.openById(SHEET_ID));
+  SpreadsheetApp.getUi().alert('Aggregate tab rebuilt.');
+}
+
+function rebuildScoresHeader() {
+  setupScoresHeader_(SpreadsheetApp.openById(SHEET_ID));
+  SpreadsheetApp.getUi().alert('Scores header rebuilt.');
+}
+
 /* ---------- Submissions ---------- */
 function setupSubmissions_(ss) {
   const sh = getOrCreate_(ss, 'Submissions');

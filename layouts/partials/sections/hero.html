@@ -12,8 +12,11 @@
       at the frontier of computation and the life sciences.
     </p>
     <div class="hero-cta">
+      {{ if site.Params.abstractURL }}
+        <a class="btn btn-primary" href="{{ site.Params.abstractURL }}" target="_blank" rel="noopener">Submit late-breaking abstract</a>
+      {{ end }}
       {{ if site.Params.registrationURL }}
-        <a class="btn btn-primary" href="{{ site.Params.registrationURL }}" target="_blank" rel="noopener">Register to attend</a>
+        <a class="btn btn-secondary" href="{{ site.Params.registrationURL }}" target="_blank" rel="noopener">Register to attend</a>
       {{ else }}
         <span class="badge badge-soon">{{ site.Params.registrationStatus }}</span>
       {{ end }}

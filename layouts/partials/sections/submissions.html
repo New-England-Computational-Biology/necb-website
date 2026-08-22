@@ -2,20 +2,31 @@
   <div class="container narrow">
     <h2 class="section-title">Call for Abstracts</h2>
     <p class="lead">
-      <strong>Abstract submissions closed Fri Aug 14, 2026.</strong> Thank you to everyone
-      who submitted — notifications will go out by <strong>Fri Sep 4, 2026</strong>.
+      <strong>Late-breaking poster submissions open through Sun Aug 31, 2026.</strong>
+      The main round closed Fri Aug 14; late submissions are accepted for <strong>posters
+      only</strong>, are not eligible for the poster awards, and <strong>presenters must
+      register</strong> to secure a spot. Author notifications from the main round go out by
+      <strong>Fri Sep 4, 2026</strong>.
     </p>
 
     <p style="text-align:center; margin-bottom:2rem;">
+      {{ if site.Params.abstractURL }}
+      <a class="btn btn-primary" href="{{ site.Params.abstractURL }}" target="_blank" rel="noopener">Submit late-breaking poster</a>
+      {{ end }}
       {{ if site.Params.registrationURL }}
-      <a class="btn btn-primary" href="{{ site.Params.registrationURL }}" target="_blank" rel="noopener">Register to attend</a>
+      <a class="btn btn-secondary" href="{{ site.Params.registrationURL }}" target="_blank" rel="noopener">Register to attend</a>
       {{ end }}
     </p>
 
     <div class="guidelines">
       <h3 class="guidelines-title">Submission format</h3>
       <p>
-        Each submission has two parts, entered through the ISCB submission form:
+        Late-breaking poster submissions consist of a <strong>250-word text abstract</strong>
+        only, entered through the ISCB submission form. The 1-page print-ready PDF from the
+        main round is not required for late-breaking posters.
+      </p>
+      <p style="margin-top:1rem;">
+        For reference, the main-round format (closed Fri Aug 14) was:
       </p>
       <ol class="guidelines-steps">
         <li>A short text abstract of up to <strong>250 words</strong>.</li>

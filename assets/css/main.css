@@ -831,23 +831,14 @@ a:focus-visible { outline: 2px solid var(--c-accent); outline-offset: 2px; borde
 }
 .footer-nav a { color: rgba(248,250,252,0.85); }
 .footer-nav a:hover { color: var(--c-accent); }
-.footer-conduct {
-  grid-column: 1 / -1;
-  text-align: center;
-  font-size: 0.85rem;
-  color: rgba(248,250,252,0.75);
-  margin: 1rem 0 0;
-  padding-top: 1rem;
-  border-top: 1px solid rgba(248,250,252,0.15);
-}
-.footer-conduct a { color: var(--c-accent); text-decoration: underline; }
-.footer-conduct a:hover { color: rgba(248,250,252,0.95); }
 .footer-copy {
   grid-column: 1 / -1;
   text-align: center;
   font-size: 0.85rem;
   color: rgba(248,250,252,0.6);
-  margin: 0.5rem 0 0;
+  margin: 1rem 0 0;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(248,250,252,0.15);
 }
 
 /* Navbar partner mark (ISCB) */

@@ -91,7 +91,8 @@ function setupAssignments_(ss) {
 
   const headers = [
     'abstract_id', 'title', 'topic_keywords', 'reviewer',
-    'coi_flag', 'status', 'pdf_link'
+    'coi_flag', 'status', 'pdf_link', 'topic_affinity', 'abstract_text',
+    'authors', 'presenting_affiliation'
   ];
   sh.getRange(1, 1, 1, headers.length).setValues([headers]);
   styleHeader_(sh, headers.length);
@@ -104,27 +105,37 @@ function setupAssignments_(ss) {
   sh.setColumnWidths(5, 1, 80);
   sh.setColumnWidths(6, 1, 110);
   sh.setColumnWidths(7, 1, 260);
+  sh.setColumnWidths(8, 1, 110);   // topic_affinity
+  sh.setColumnWidths(9, 1, 500);   // abstract_text (wide)
+  sh.setColumnWidths(10, 1, 340);  // authors (medium)
+  sh.setColumnWidths(11, 1, 240);  // presenting_affiliation
 
-  // Fill formulas for rows 2..N (bump if you expect more assignments)
+  // Fill formulas for rows 2..N (bump if you expect more assignments).
+  // All VLOOKUP formulas self-reference via INDIRECT("A"&ROW()) so they
+  // survive paste-shift when reviewers or ops paste new rows.
   const N = 1000;
-  const rng = sh.getRange(2, 2, N, 1);
-  const formulas = Array.from({ length: N }, (_, i) => {
-    const row = i + 2;
-    return [`=IFERROR(VLOOKUP(A${row}, Submissions!A:F, 2, FALSE),)`];
-  });
-  rng.setFormulas(formulas);
+  const titleFormula = '=IFERROR(VLOOKUP(INDIRECT("A"&ROW()), Submissions!A:I, 2, FALSE),)';
+  const topicsFormula = '=IFERROR(VLOOKUP(INDIRECT("A"&ROW()), Submissions!A:I, 7, FALSE),)';
+  const pdfFormula = '=IFERROR(VLOOKUP(INDIRECT("A"&ROW()), Submissions!A:I, 6, FALSE),)';
+  const abstractFormula = '=IFERROR(VLOOKUP(INDIRECT("A"&ROW()), Submissions!A:I, 5, FALSE),)';
+  const authorsFormula = '=IFERROR(VLOOKUP(INDIRECT("A"&ROW()), Submissions!A:I, 3, FALSE),)';
+  const affilFormula = '=IFERROR(VLOOKUP(INDIRECT("A"&ROW()), Submissions!A:I, 4, FALSE),)';
 
-  const rng3 = sh.getRange(2, 3, N, 1);
-  rng3.setFormulas(Array.from({ length: N }, (_, i) => {
-    const row = i + 2;
-    return [`=IFERROR(VLOOKUP(A${row}, Submissions!A:G, 7, FALSE),)`];
-  }));
+  const fill = (col, formula) => {
+    const rng = sh.getRange(2, col, N, 1);
+    rng.setFormulas(Array.from({ length: N }, () => [formula]));
+  };
+  fill(2, titleFormula);      // title
+  fill(3, topicsFormula);     // topic_keywords
+  fill(7, pdfFormula);        // pdf_link
+  fill(9, abstractFormula);   // abstract_text (col I)
+  fill(10, authorsFormula);   // authors (col J)
+  fill(11, affilFormula);     // presenting_affiliation (col K)
 
-  const rng7 = sh.getRange(2, 7, N, 1);
-  rng7.setFormulas(Array.from({ length: N }, (_, i) => {
-    const row = i + 2;
-    return [`=IFERROR(VLOOKUP(A${row}, Submissions!A:F, 6, FALSE),)`];
-  }));
+  // Wrap the wide columns so reviewers can read them inline.
+  sh.getRange(2, 9, N, 1).setWrapStrategy(SpreadsheetApp.WrapStrategy.WRAP);   // abstract_text
+  sh.getRange(2, 10, N, 1).setWrapStrategy(SpreadsheetApp.WrapStrategy.WRAP);  // authors
+  sh.getRange(2, 11, N, 1).setWrapStrategy(SpreadsheetApp.WrapStrategy.WRAP);  // presenting_affiliation
 
   // Reviewer dropdown — validated against the 16-name list
   const revRule = SpreadsheetApp.newDataValidation()
@@ -149,7 +160,7 @@ function setupAssignments_(ss) {
     .whenFormulaSatisfied('=$E2=TRUE')
     .setBackground('#EEEEEE')
     .setFontColor('#888888')
-    .setRanges([sh.getRange(2, 1, N, 7)])
+    .setRanges([sh.getRange(2, 1, N, 11)])
     .build();
   sh.setConditionalFormatRules([coiFormat]);
 }
@@ -205,35 +216,36 @@ function setupAggregate_(ss) {
     `=IFERROR(SORT(UNIQUE(FILTER(Scores!C2:C, Scores!C2:C<>""))),)`
   );
 
-  // Row-2 formulas that spread down as new abstracts show up
-  // (We use per-row array formulas anchored to A:A so they extend automatically.)
+  // Row-2 formulas that spread down as new abstracts show up.
+  // {R} is a placeholder for the row number — we substitute it below so we
+  // don't accidentally hit constants like the *2 poster/Med weight.
   const perRow = [
     // B: n_reviews
-    `=IF(A2="","",COUNTIF(Scores!C:C, A2))`,
+    `=IF(A{R}="","",COUNTIF(Scores!C:C, A{R}))`,
     // C: mean_significance
-    `=IF(A2="","",IFERROR(AVERAGEIF(Scores!C:C, A2, Scores!D:D),))`,
+    `=IF(A{R}="","",IFERROR(AVERAGEIF(Scores!C:C, A{R}, Scores!D:D),))`,
     // D: mean_rigor
-    `=IF(A2="","",IFERROR(AVERAGEIF(Scores!C:C, A2, Scores!E:E),))`,
+    `=IF(A{R}="","",IFERROR(AVERAGEIF(Scores!C:C, A{R}, Scores!E:E),))`,
     // E: mean_clarity
-    `=IF(A2="","",IFERROR(AVERAGEIF(Scores!C:C, A2, Scores!F:F),))`,
+    `=IF(A{R}="","",IFERROR(AVERAGEIF(Scores!C:C, A{R}, Scores!F:F),))`,
     // F: mean_fit
-    `=IF(A2="","",IFERROR(AVERAGEIF(Scores!C:C, A2, Scores!G:G),))`,
+    `=IF(A{R}="","",IFERROR(AVERAGEIF(Scores!C:C, A{R}, Scores!G:G),))`,
     // G: n_talk
-    `=IF(A2="","",COUNTIFS(Scores!C:C, A2, Scores!H:H, "Accept as talk"))`,
+    `=IF(A{R}="","",COUNTIFS(Scores!C:C, A{R}, Scores!H:H, "Accept as talk"))`,
     // H: n_poster
-    `=IF(A2="","",COUNTIFS(Scores!C:C, A2, Scores!H:H, "Accept as poster"))`,
+    `=IF(A{R}="","",COUNTIFS(Scores!C:C, A{R}, Scores!H:H, "Accept as poster"))`,
     // I: n_reject
-    `=IF(A2="","",COUNTIFS(Scores!C:C, A2, Scores!H:H, "Reject"))`,
-    // J: mean_overall
-    `=IF(OR(A2="",B2=0),,IFERROR((G2*3+H2*2+I2*1)/B2,))`,
-    // K: mean_confidence
-    `=IF(OR(A2="",B2=0),,IFERROR((COUNTIFS(Scores!C:C,A2,Scores!I:I,"Low")*1+COUNTIFS(Scores!C:C,A2,Scores!I:I,"Med")*2+COUNTIFS(Scores!C:C,A2,Scores!I:I,"High")*3)/B2,))`,
+    `=IF(A{R}="","",COUNTIFS(Scores!C:C, A{R}, Scores!H:H, "Reject"))`,
+    // J: mean_overall  (weights: talk=3, poster=2, reject=1)
+    `=IF(OR(A{R}="",B{R}=0),,IFERROR((G{R}*3+H{R}*2+I{R}*1)/B{R},))`,
+    // K: mean_confidence  (weights: Low=1, Med=2, High=3)
+    `=IF(OR(A{R}="",B{R}=0),,IFERROR((COUNTIFS(Scores!C:C,A{R},Scores!I:I,"Low")*1+COUNTIFS(Scores!C:C,A{R},Scores!I:I,"Med")*2+COUNTIFS(Scores!C:C,A{R},Scores!I:I,"High")*3)/B{R},))`,
     // L: weighted_score
-    `=IF(OR(J2="",K2=""),,J2*K2)`,
+    `=IF(OR(J{R}="",K{R}=""),,J{R}*K{R})`,
     // M: disagreement_flag
-    `=IF(A2="","",IF(AND(G2>0,I2>0),"talk_vs_reject",""))`,
+    `=IF(A{R}="","",IF(AND(G{R}>0,I{R}>0),"talk_vs_reject",""))`,
     // N: rationales
-    `=IF(A2="","",TEXTJOIN(" | ", TRUE, FILTER(Scores!J:J, Scores!C:C=A2)))`
+    `=IF(A{R}="","",TEXTJOIN(" | ", TRUE, FILTER(Scores!J:J, Scores!C:C=A{R})))`
   ];
 
   const N = 500;
@@ -242,7 +254,7 @@ function setupAggregate_(ss) {
     const rng = sh.getRange(2, col, N, 1);
     const arr = [];
     for (let r = 0; r < N; r++) {
-      arr.push([formula.replace(/2/g, String(r + 2))]);
+      arr.push([formula.replace(/\{R\}/g, String(r + 2))]);
     }
     rng.setFormulas(arr);
   });
@@ -432,7 +444,7 @@ function generateFilterViews() {
           startRowIndex: 0,
           endRowIndex: 1001,
           startColumnIndex: 0,
-          endColumnIndex: 7,
+          endColumnIndex: 11,
         },
         criteria: {
           '3': {  // reviewer column D (0-indexed 3)

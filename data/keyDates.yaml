@@ -7,6 +7,8 @@ items:
     date: "Mon Jul 6, 2026"
   - label: "Abstract submission deadline"
     date: "Fri Aug 14, 2026 · 11:59 PM ET"
+  - label: "Late-breaking poster submission deadline"
+    date: "Mon Aug 31, 2026 · 11:59 PM ET"
   - label: "Author notifications"
     date: "Fri Sep 4, 2026"
   - label: "Early-bird registration ends"

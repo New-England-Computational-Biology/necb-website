@@ -195,7 +195,7 @@ function setupAggregate_(ss) {
   sh.clear();
 
   const headers = [
-    'abstract_id', 'n_reviews',
+    'abstract_id', 'title', 'authors', 'presenting_affiliation', 'n_reviews',
     'mean_significance', 'mean_rigor', 'mean_clarity', 'mean_fit',
     'n_talk', 'n_poster', 'n_reject', 'recommendation',
     'mean_overall', 'mean_confidence', 'weighted_score',
@@ -204,16 +204,19 @@ function setupAggregate_(ss) {
   sh.getRange(1, 1, 1, headers.length).setValues([headers]);
   styleHeader_(sh, headers.length);
   sh.setFrozenRows(1);
-  sh.setColumnWidths(1, 1, 100);
-  sh.setColumnWidths(2, 1, 80);
-  sh.setColumnWidths(3, 4, 110);
-  sh.setColumnWidths(7, 3, 70);
-  sh.setColumnWidths(10, 1, 120);  // recommendation
-  sh.setColumnWidths(11, 3, 130);  // mean_overall / mean_confidence / weighted_score
-  sh.setColumnWidths(14, 1, 160);  // disagreement_flag
-  sh.setColumnWidths(15, 1, 500);  // rationales
+  sh.setColumnWidths(1, 1, 100);   // abstract_id
+  sh.setColumnWidths(2, 1, 320);   // title
+  sh.setColumnWidths(3, 1, 260);   // authors
+  sh.setColumnWidths(4, 1, 220);   // presenting_affiliation
+  sh.setColumnWidths(5, 1, 80);    // n_reviews
+  sh.setColumnWidths(6, 4, 110);   // mean_significance..mean_fit
+  sh.setColumnWidths(10, 3, 70);   // n_talk / n_poster / n_reject
+  sh.setColumnWidths(13, 1, 120);  // recommendation
+  sh.setColumnWidths(14, 3, 130);  // mean_overall / mean_confidence / weighted_score
+  sh.setColumnWidths(17, 1, 160);  // disagreement_flag
+  sh.setColumnWidths(18, 1, 500);  // rationales
 
-  // A2 spills the unique abstract IDs from Scores; B-N compute per-abstract
+  // A2 spills the unique abstract IDs from Scores; B-R compute per-abstract
   sh.getRange('A2').setFormula(
     `=IFERROR(SORT(UNIQUE(FILTER(Scores!C2:C, Scores!C2:C<>""))),)`
   );
@@ -222,39 +225,45 @@ function setupAggregate_(ss) {
   // {R} is a placeholder for the row number — we substitute it below so we
   // don't accidentally hit constants like the *2 poster/Med weight.
   const perRow = [
-    // B: n_reviews
+    // B: title (from Submissions)
+    `=IFERROR(VLOOKUP(A{R}, Submissions!$A:$I, 2, FALSE),)`,
+    // C: authors (from Submissions)
+    `=IFERROR(VLOOKUP(A{R}, Submissions!$A:$I, 3, FALSE),)`,
+    // D: presenting_affiliation (from Submissions)
+    `=IFERROR(VLOOKUP(A{R}, Submissions!$A:$I, 4, FALSE),)`,
+    // E: n_reviews
     `=IF(A{R}="","",COUNTIF(Scores!C:C, A{R}))`,
-    // C: mean_significance
+    // F: mean_significance
     `=IF(A{R}="","",IFERROR(AVERAGEIF(Scores!C:C, A{R}, Scores!D:D),))`,
-    // D: mean_rigor
+    // G: mean_rigor
     `=IF(A{R}="","",IFERROR(AVERAGEIF(Scores!C:C, A{R}, Scores!E:E),))`,
-    // E: mean_clarity
+    // H: mean_clarity
     `=IF(A{R}="","",IFERROR(AVERAGEIF(Scores!C:C, A{R}, Scores!F:F),))`,
-    // F: mean_fit
+    // I: mean_fit
     `=IF(A{R}="","",IFERROR(AVERAGEIF(Scores!C:C, A{R}, Scores!G:G),))`,
-    // G: n_talk
+    // J: n_talk
     `=IF(A{R}="","",COUNTIFS(Scores!C:C, A{R}, Scores!H:H, "Accept as talk"))`,
-    // H: n_poster
+    // K: n_poster
     `=IF(A{R}="","",COUNTIFS(Scores!C:C, A{R}, Scores!H:H, "Accept as poster"))`,
-    // I: n_reject
+    // L: n_reject
     `=IF(A{R}="","",COUNTIFS(Scores!C:C, A{R}, Scores!H:H, "Reject"))`,
-    // J: recommendation (plurality of reviewer votes; ties → higher category talk>poster>reject)
-    `=IF(OR(A{R}="",B{R}=0),,IFS(G{R}>=MAX(H{R},I{R}),"talk",H{R}>=I{R},"poster",TRUE,"reject"))`,
-    // K: mean_overall  (weights: talk=3, poster=2, reject=1)
-    `=IF(OR(A{R}="",B{R}=0),,IFERROR((G{R}*3+H{R}*2+I{R}*1)/B{R},))`,
-    // L: mean_confidence  (weights: Low=1, Med=2, High=3)
-    `=IF(OR(A{R}="",B{R}=0),,IFERROR((COUNTIFS(Scores!C:C,A{R},Scores!I:I,"Low")*1+COUNTIFS(Scores!C:C,A{R},Scores!I:I,"Med")*2+COUNTIFS(Scores!C:C,A{R},Scores!I:I,"High")*3)/B{R},))`,
-    // M: weighted_score
-    `=IF(OR(K{R}="",L{R}=""),,K{R}*L{R})`,
-    // N: disagreement_flag
-    `=IF(A{R}="","",IF(AND(G{R}>0,I{R}>0),"talk_vs_reject",""))`,
-    // O: rationales
+    // M: recommendation (plurality of reviewer votes; ties → higher category talk>poster>reject)
+    `=IF(OR(A{R}="",E{R}=0),,IFS(J{R}>=MAX(K{R},L{R}),"talk",K{R}>=L{R},"poster",TRUE,"reject"))`,
+    // N: mean_overall  (weights: talk=3, poster=2, reject=1)
+    `=IF(OR(A{R}="",E{R}=0),,IFERROR((J{R}*3+K{R}*2+L{R}*1)/E{R},))`,
+    // O: mean_confidence  (weights: Low=1, Med=2, High=3)
+    `=IF(OR(A{R}="",E{R}=0),,IFERROR((COUNTIFS(Scores!C:C,A{R},Scores!I:I,"Low")*1+COUNTIFS(Scores!C:C,A{R},Scores!I:I,"Med")*2+COUNTIFS(Scores!C:C,A{R},Scores!I:I,"High")*3)/E{R},))`,
+    // P: weighted_score
+    `=IF(OR(N{R}="",O{R}=""),,N{R}*O{R})`,
+    // Q: disagreement_flag
+    `=IF(A{R}="","",IF(AND(J{R}>0,L{R}>0),"talk_vs_reject",""))`,
+    // R: rationales
     `=IF(A{R}="","",TEXTJOIN(" | ", TRUE, FILTER(Scores!J:J, Scores!C:C=A{R})))`
   ];
 
   const N = 500;
   perRow.forEach((formula, colIdx) => {
-    const col = colIdx + 2; // B..N → 2..14
+    const col = colIdx + 2; // B..R → 2..18
     const rng = sh.getRange(2, col, N, 1);
     const arr = [];
     for (let r = 0; r < N; r++) {
@@ -263,19 +272,20 @@ function setupAggregate_(ss) {
     rng.setFormulas(arr);
   });
 
-  // Format numeric columns to 2 decimals (C-F means; K-M mean_overall/mean_conf/weighted)
-  sh.getRange(2, 3, N, 4).setNumberFormat('0.00');
-  sh.getRange(2, 11, N, 3).setNumberFormat('0.00');
+  // Format numeric columns to 2 decimals (F-I means; N-P mean_overall/mean_conf/weighted)
+  sh.getRange(2, 6, N, 4).setNumberFormat('0.00');
+  sh.getRange(2, 14, N, 3).setNumberFormat('0.00');
 
-  // Wrap rationales so col O is readable at any row height
-  sh.getRange(2, 15, N, 1).setWrapStrategy(SpreadsheetApp.WrapStrategy.WRAP);
+  // Wrap title / authors / affiliation / rationales so long text is readable
+  sh.getRange(2, 2, N, 3).setWrapStrategy(SpreadsheetApp.WrapStrategy.WRAP);
+  sh.getRange(2, 18, N, 1).setWrapStrategy(SpreadsheetApp.WrapStrategy.WRAP);
 
-  // Highlight disagreements (col N)
+  // Highlight disagreements (col Q)
   const flagFormat = SpreadsheetApp.newConditionalFormatRule()
     .whenTextContains('_')
     .setBackground('#F4C7C3')
     .setFontColor('#8B0000')
-    .setRanges([sh.getRange(2, 14, N, 1)])
+    .setRanges([sh.getRange(2, 17, N, 1)])
     .build();
   sh.setConditionalFormatRules([flagFormat]);
 }

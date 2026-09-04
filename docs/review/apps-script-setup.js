@@ -49,7 +49,9 @@ function setupSheets() {
  */
 function rebuildAggregate() {
   setupAggregate_(SpreadsheetApp.openById(SHEET_ID));
-  SpreadsheetApp.getUi().alert('Aggregate tab rebuilt.');
+  // getUi() only works when invoked from a bound sheet context; wrap so the
+  // rebuild is never blocked by a UI toast that can't be shown.
+  try { SpreadsheetApp.getUi().alert('Aggregate tab rebuilt.'); } catch (e) { Logger.log('Aggregate tab rebuilt.'); }
 }
 
 function rebuildScoresHeader() {
@@ -261,16 +263,21 @@ function setupAggregate_(ss) {
     `=IF(A{R}="","",TEXTJOIN(" | ", TRUE, FILTER(Scores!J:J, Scores!C:C=A{R})))`
   ];
 
-  const N = 500;
-  perRow.forEach((formula, colIdx) => {
-    const col = colIdx + 2; // B..R → 2..18
-    const rng = sh.getRange(2, col, N, 1);
-    const arr = [];
-    for (let r = 0; r < N; r++) {
-      arr.push([formula.replace(/\{R\}/g, String(r + 2))]);
-    }
-    rng.setFormulas(arr);
-  });
+  // Sized for our current abstract ID space (197 regular + 25 late-breaking
+  // = 222, with headroom). Keep small — every extra row multiplies the
+  // per-column FILTER/VLOOKUP recalc cost against Scores and Submissions.
+  const N = 250;
+
+  // Build a single N × perRow.length grid and write all formulas in ONE
+  // setFormulas call. Writing column-by-column used to trigger an
+  // intermediate recalc after every column and made rebuildAggregate
+  // effectively hang; batching keeps the whole rebuild under ~15 s.
+  const grid = [];
+  for (let r = 0; r < N; r++) {
+    const rowNum = String(r + 2);
+    grid.push(perRow.map(f => f.replace(/\{R\}/g, rowNum)));
+  }
+  sh.getRange(2, 2, N, perRow.length).setFormulas(grid);
 
   // Format numeric columns to 2 decimals (F-I means; N-P mean_overall/mean_conf/weighted)
   sh.getRange(2, 6, N, 4).setNumberFormat('0.00');

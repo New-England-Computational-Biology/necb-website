@@ -17,6 +17,16 @@
                 {{ range . }}<li>{{ . }}</li>{{ end }}
               </ul>
               {{ end }}
+              {{ with .talks }}
+              <ul class="program-talks">
+                {{ range . }}
+                <li>
+                  <span class="program-talk-title">{{ .title }}</span>
+                  <span class="program-talk-presenter">{{ .presenter }} · {{ .affiliation }}</span>
+                </li>
+                {{ end }}
+              </ul>
+              {{ end }}
             </span>
           </li>
           {{ end }}

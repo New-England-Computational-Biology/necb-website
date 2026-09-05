@@ -11,7 +11,10 @@
           <li class="program-row program-row--{{ .kind }}">
             <span class="program-time">{{ .time }}</span>
             <span class="program-title">
-              {{ .title }}
+              {{/* Drop the session title on pure contributed-talk rows —
+                   the talk list speaks for itself. Keep it wherever the
+                   session also has invited speakers or is not a talk row. */}}
+              {{ if or (not .talks) .speakers }}{{ .title }}{{ end }}
               {{ with .speakers }}
               <ul class="program-speakers">
                 {{ range . }}<li>{{ . }}</li>{{ end }}

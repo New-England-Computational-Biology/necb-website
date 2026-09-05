@@ -9,7 +9,7 @@ days:
         speakers:
           - "Marc Vidal"
       - time: "9:45–10:00 AM"
-        title: "Contributed talk"
+        title: "Selected talk"
         kind: "talks"
         talks:
           - abstract_id: "A093"
@@ -20,7 +20,7 @@ days:
         title: "Coffee break"
         kind: "break"
       - time: "10:30 AM – 12:00 PM"
-        title: "Invited talks + contributed talks"
+        title: "Invited talks + selected talks"
         kind: "talks"
         speakers:
           - "Alex Lu"
@@ -39,7 +39,7 @@ days:
         title: "Lunch"
         kind: "break"
       - time: "1:00–2:00 PM"
-        title: "Contributed talks · Protein design & function"
+        title: "Selected talks · Protein design & function"
         kind: "talks"
         talks:
           - abstract_id: "A076"
@@ -62,7 +62,7 @@ days:
         title: "Poster session"
         kind: "posters"
       - time: "4:00–5:00 PM"
-        title: "Contributed talks · Genomics & regulation"
+        title: "Selected talks · Genomics & regulation"
         kind: "talks"
         talks:
           - abstract_id: "A079"
@@ -99,7 +99,7 @@ days:
           - "Caroline Uhler"
           - "G.V. Shivashankar"
       - time: "9:45–10:00 AM"
-        title: "Contributed talk"
+        title: "Selected talk"
         kind: "talks"
         talks:
           - abstract_id: "A111"
@@ -110,7 +110,7 @@ days:
         title: "Coffee break"
         kind: "break"
       - time: "10:30 AM – 12:00 PM"
-        title: "Invited talks + contributed talks"
+        title: "Invited talks + selected talks"
         kind: "talks"
         speakers:
           - "Sahin Naqvi"
@@ -129,7 +129,7 @@ days:
         title: "Lunch"
         kind: "break"
       - time: "1:00–2:00 PM"
-        title: "Contributed talks · Clinical & translational"
+        title: "Selected talks · Clinical & translational"
         kind: "talks"
         talks:
           - abstract_id: "A156"
@@ -152,7 +152,7 @@ days:
         title: "Poster session"
         kind: "posters"
       - time: "4:00–5:00 PM"
-        title: "Contributed talks · AI methods & applications"
+        title: "Selected talks · AI methods & applications"
         kind: "talks"
         talks:
           - abstract_id: "A172"

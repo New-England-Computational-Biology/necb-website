@@ -2,6 +2,16 @@
   <div class="container">
     <h2 class="section-title">Program at a Glance</h2>
     <p class="section-sub">{{ site.Data.program.note }}</p>
+    {{/* One-time name→short-affiliation lookup so schedule bullets can
+         append e.g. "Marc Vidal · DFCI · HMS" without embedding the
+         mapping in the schedule data. */}}
+    {{ $speakerAffils := dict }}
+    {{ range site.Data.speakers.keynotes.members }}
+      {{ if .short_affiliation }}{{ $speakerAffils = merge $speakerAffils (dict .name .short_affiliation) }}{{ end }}
+    {{ end }}
+    {{ range site.Data.speakers.invited.members }}
+      {{ if .short_affiliation }}{{ $speakerAffils = merge $speakerAffils (dict .name .short_affiliation) }}{{ end }}
+    {{ end }}
     <div class="program-grid">
       {{ range site.Data.program.days }}
       <div class="program-day">
@@ -16,7 +26,9 @@
               {{ with .speakers }}
               {{ if $hasBoth }}<span class="program-subhead">Invited talks</span>{{ end }}
               <ul class="program-speakers">
-                {{ range . }}<li>{{ . }}</li>{{ end }}
+                {{ range . }}
+                <li>{{ . }}{{ with index $speakerAffils . }} · <span class="program-speaker-affil">{{ . }}</span>{{ end }}</li>
+                {{ end }}
               </ul>
               {{ end }}
               {{ with .talks }}

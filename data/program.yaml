@@ -9,7 +9,7 @@ days:
         speakers:
           - "Marc Vidal"
       - time: "9:45–10:30 AM"
-        title: "Selected talks · Opening session"
+        title: "Selected talks · Single-cell & spatial"
         kind: "talks"
         talks:
           - abstract_id: "A093"
@@ -98,7 +98,7 @@ days:
           - "Caroline Uhler"
           - "G.V. Shivashankar"
       - time: "9:45–10:30 AM"
-        title: "Selected talks · Opening session"
+        title: "Selected talks · Genomics & immunology"
         kind: "talks"
         talks:
           - abstract_id: "A111"

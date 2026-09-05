@@ -8,19 +8,19 @@
         <h3 class="program-day-title">{{ .label }}</h3>
         <ul class="program-list">
           {{ range .sessions }}
+          {{ $hasBoth := and .speakers .talks }}
           <li class="program-row program-row--{{ .kind }}">
             <span class="program-time">{{ .time }}</span>
             <span class="program-title">
-              {{/* Drop the session title on pure contributed-talk rows —
-                   the talk list speaks for itself. Keep it wherever the
-                   session also has invited speakers or is not a talk row. */}}
-              {{ if or (not .talks) .speakers }}{{ .title }}{{ end }}
+              {{ .title }}
               {{ with .speakers }}
+              {{ if $hasBoth }}<span class="program-subhead">Invited talks</span>{{ end }}
               <ul class="program-speakers">
                 {{ range . }}<li>{{ . }}</li>{{ end }}
               </ul>
               {{ end }}
               {{ with .talks }}
+              {{ if $hasBoth }}<span class="program-subhead">Selected talks</span>{{ end }}
               {{/* At-a-glance schedule shows presenter + affiliation only —
                    full paper titles live in the abstract book (program-
                    book.pdf) and would double every row's height here. */}}

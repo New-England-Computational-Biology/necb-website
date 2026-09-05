@@ -390,6 +390,13 @@ a:focus-visible { outline: 2px solid var(--c-accent); outline-offset: 2px; borde
   content: "\2022"; position: absolute; left: 0.15rem;
   color: var(--c-primary); font-weight: 700;
 }
+/* Small uppercase separator used inside mixed slots to distinguish
+   the invited-talk list from the selected-talk list. */
+.program-subhead {
+  display: block; margin: 0.5rem 0 0.15rem;
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--c-teal);
+}
 .program-row--posters .program-title,
 .program-row--session .program-title { font-weight: 500; }
 

@@ -21,13 +21,11 @@
               </ul>
               {{ end }}
               {{ with .talks }}
+              {{/* At-a-glance schedule shows presenter + affiliation only —
+                   full paper titles live in the abstract book (program-
+                   book.pdf) and would double every row's height here. */}}
               <ul class="program-talks">
-                {{ range . }}
-                <li>
-                  <span class="program-talk-title">{{ .title }}</span>
-                  <span class="program-talk-presenter">{{ .presenter }} · {{ .affiliation }}</span>
-                </li>
-                {{ end }}
+                {{ range . }}<li>{{ .presenter }} · {{ .affiliation }}</li>{{ end }}
               </ul>
               {{ end }}
             </span>

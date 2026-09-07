@@ -43,7 +43,7 @@ days:
         talks:
           - abstract_id: "A076"
             title: "Generating proteins with computationally predicted functions and multiple states via multimodal diffusion"
-            presenter: "Bowen Jing"
+            presenter: "Anna Sappington"
             affiliation: "MIT CSAIL"
           - abstract_id: "A126"
             title: "Deconvolving mutation effects on protein stability and function with disentangled protein language models"

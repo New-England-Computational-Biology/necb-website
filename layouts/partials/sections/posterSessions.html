@@ -5,7 +5,7 @@
 
     <div class="poster-sessions">
       {{ range site.Data.posterSessions.days }}
-      <details class="poster-day" open>
+      <details class="poster-day">
         <summary class="poster-day-summary">
           <span class="poster-day-title">{{ .label }} · {{ .time }}</span>
           <span class="poster-day-count">{{ .count }} posters</span>

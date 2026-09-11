@@ -24,9 +24,46 @@ Algorithm:
 Deterministic — same input, same output.
 """
 from __future__ import annotations
-import csv, random, argparse
+import csv, random, argparse, re
 from collections import Counter, defaultdict
 from pathlib import Path
+
+
+def clean_affiliation(s: str) -> str:
+    """Strip trailing zip codes, US state abbreviations, and country tokens
+    from an affiliation string so the site shows just the institution.
+    Idempotent — running twice is a no-op.
+
+    State codes must be uppercase to match (avoids eating "al" from "Hospital"
+    or "hi" from "Ohio"). Country tokens are case-insensitive.
+    """
+    if not s: return s
+    s = s.strip().rstrip(".").strip()
+    # Uppercase-only, word-bounded state codes so "Hospital" and "Ohio" are safe.
+    US_ST = r"\b(?:A[LKZR]|C[AOT]|DE|FL|GA|HI|I[ADLN]|K[SY]|LA|M[ADEINOST]|N[CDEHJMVY]|O[HKR]|PA|RI|S[CD]|T[NX]|UT|V[AT]|W[AIVY]|DC)\b"
+
+    def strip_country(s):
+        return re.sub(r",?\s*(USA|U\.S\.A\.?|US|U\.S\.?|United States(?: of America)?)\s*$",
+                      "", s, flags=re.I).strip().rstrip(".").rstrip(",").strip()
+    def strip_zip(s):
+        return re.sub(r",?\s*\d{5}(?:-\d{4})?\s*$", "", s).strip().rstrip(",").strip()
+    def strip_st_zip(s):
+        return re.sub(rf",?\s*{US_ST}\s+\d{{5}}(?:-\d{{4}})?\s*$", "", s).strip().rstrip(",").strip()
+    def strip_city_st(s):
+        # ", City, ST" at end — city is a capitalized word run
+        return re.sub(rf",\s*[A-Z][A-Za-z .'’-]+,\s*{US_ST}\s*$", "", s).strip().rstrip(",").strip()
+    def strip_trailing_st(s):
+        return re.sub(rf",\s*{US_ST}\s*$", "", s).strip().rstrip(",").strip()
+
+    for _ in range(4):
+        prev = s
+        s = strip_country(s)
+        s = strip_zip(s)
+        s = strip_st_zip(s)
+        s = strip_city_st(s)
+        s = strip_trailing_st(s)
+        if s == prev: break
+    return s.strip().rstrip(",").rstrip(".").strip()
 
 ROOT = Path(__file__).resolve().parent.parent
 BUILD = ROOT / "docs" / "review" / "build"
@@ -144,13 +181,17 @@ def load_submissions():
     # bad data (title = job title, malformed email, etc.). These pin the
     # submitter to a specific abstract they represent.
     MANUAL_EMAIL_TO_AID = {
-        "temi@attentionlab.ai":     "A002",   # Temitope Sobodu, Attention Labs (submitter)
-        "you.yu@northeastern.edu":  "A208",   # Yukai You (ISCB record has typo you.yu@Northeastern)
+        # (email, abstract_id, presenter_name-fallback if ISCB match missed it)
+        "temi@attentionlab.ai":     ("A002", "Noah Abasciano"),        # Temitope was the submitter; Noah is first author
+        "you.yu@northeastern.edu":  ("A208", "Yukai You"),
+        "gani@umass.edu":           ("A219", "Godwin Ani"),
     }
     # Force these — the ISCB row's email may already be set but wrong (typo)
-    for email, aid in MANUAL_EMAIL_TO_AID.items():
+    for email, (aid, fallback_name) in MANUAL_EMAIL_TO_AID.items():
         if aid in subs:
             subs[aid]["email"] = email
+            if not subs[aid].get("name"):
+                subs[aid]["name"] = fallback_name
     return subs
 
 
@@ -292,7 +333,7 @@ def main():
             lines.append(f'      - abstract_id: {esc(aid)}')
             lines.append(f'        title: {esc(s["title"])}')
             lines.append(f'        presenter: {esc(s.get("name",""))}')
-            lines.append(f'        affiliation: {esc(s["affiliation"])}')
+            lines.append(f'        affiliation: {esc(clean_affiliation(s["affiliation"]))}')
             lines.append(f'        round: {esc(s["round"])}')
     yaml_path.write_text("\n".join(lines) + "\n")
     print(f"wrote {yaml_path.relative_to(ROOT)}")

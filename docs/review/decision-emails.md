@@ -68,8 +68,8 @@ on display.
 We'll assign your poster to one of the two sessions (per available board
 space) and share your session + board number by **Fri Sep 18**.
 
-**Poster format:** portrait, up to **48 in × 36 in (122 × 91 cm)**. Push-pins
-provided. Please bring your poster with you — no on-site printing.
+**Poster format:** portrait, up to **36 in wide × 42 in tall (91 × 107 cm)**.
+Push-pins provided. Please bring your poster with you — no on-site printing.
 
 **Please confirm attendance by Wed Sep 10** by replying to this email so we
 can plan the poster layout. Presenters must be present at their poster during

@@ -1,0 +1,29 @@
+<section class="section section-alt" id="poster-sessions">
+  <div class="container">
+    <h2 class="section-title">Poster Sessions</h2>
+    <p class="section-sub">{{ site.Data.posterSessions.note }}</p>
+
+    <div class="poster-sessions">
+      {{ range site.Data.posterSessions.days }}
+      <details class="poster-day" open>
+        <summary class="poster-day-summary">
+          <span class="poster-day-title">{{ .label }} · {{ .time }}</span>
+          <span class="poster-day-count">{{ .count }} posters</span>
+        </summary>
+        <ul class="poster-list">
+          {{ range .posters }}
+          <li class="poster-row">
+            <span class="poster-id">{{ .abstract_id }}</span>
+            <span class="poster-title">
+              {{ .title }}
+              {{ if eq .round "late-breaking" }}<span class="poster-round-tag">late-breaking</span>{{ end }}
+            </span>
+            <span class="poster-presenter">{{ .presenter }}{{ with .affiliation }} · {{ . }}{{ end }}</span>
+          </li>
+          {{ end }}
+        </ul>
+      </details>
+      {{ end }}
+    </div>
+  </div>
+</section>

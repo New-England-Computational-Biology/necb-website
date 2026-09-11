@@ -400,6 +400,91 @@ a:focus-visible { outline: 2px solid var(--c-accent); outline-offset: 2px; borde
 .program-row--posters .program-title,
 .program-row--session .program-title { font-weight: 500; }
 
+/* ---------- Poster Sessions ---------- */
+.poster-sessions { margin-top: 1rem; }
+.poster-day {
+  border: 1px solid var(--c-border);
+  border-radius: 8px;
+  margin-bottom: 1.25rem;
+  background: var(--c-card);
+}
+.poster-day-summary {
+  cursor: pointer;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  font-family: var(--font-display);
+  list-style: none;
+}
+.poster-day-summary::-webkit-details-marker { display: none; }
+.poster-day-summary::before {
+  content: "\25B6";
+  color: var(--c-primary);
+  font-size: 0.7rem;
+  margin-right: 0.5rem;
+  transition: transform 0.15s ease;
+}
+.poster-day[open] .poster-day-summary::before { transform: rotate(90deg); display: inline-block; }
+.poster-day-title { font-weight: 700; color: var(--c-primary-dark); flex: 1; }
+.poster-day-count {
+  font-size: 0.8rem;
+  color: var(--c-text-muted);
+  font-weight: 500;
+  background: var(--c-bg-alt);
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+}
+.poster-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--c-border);
+}
+.poster-row {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  gap: 0.5rem 1rem;
+  padding: 0.65rem 1rem;
+  border-bottom: 1px solid var(--c-border);
+  font-size: 0.9rem;
+}
+.poster-row:last-child { border-bottom: 0; }
+.poster-row:nth-child(even) { background: var(--c-bg-alt); }
+.poster-id {
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.8rem;
+  color: var(--c-primary);
+  font-weight: 600;
+  align-self: start;
+  padding-top: 0.1rem;
+}
+.poster-title { color: var(--c-text); line-height: 1.35; }
+.poster-round-tag {
+  display: inline-block;
+  margin-left: 0.4rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--c-teal);
+  background: rgba(59, 115, 104, 0.1);
+  padding: 0.05rem 0.4rem;
+  border-radius: 4px;
+  vertical-align: 0.05rem;
+}
+.poster-presenter {
+  grid-column: 2;
+  color: var(--c-text-muted);
+  font-size: 0.82rem;
+  margin-top: 0.1rem;
+}
+@media (max-width: 600px) {
+  .poster-row { grid-template-columns: 60px 1fr; font-size: 0.85rem; }
+  .poster-id  { font-size: 0.75rem; }
+}
+
 /* ---------- Speakers ---------- */
 .speaker-group { margin-bottom: 2.5rem; }
 .speaker-group:last-of-type { margin-bottom: 1.25rem; }

@@ -71,7 +71,9 @@ BCC_FILE = BUILD / "poster_bcc.txt"        # optional; else fallback to hard-cod
 WITHDRAW = BUILD / "withdrawals.csv"
 OVR = BUILD / "poster_day_overrides.csv"
 OUT = BUILD / "poster_day_assignments.csv"
-BOUNCED = {"seanrjohnson@neb.com"}         # bounce, drop from allocation
+BOUNCED: set[str] = set()   # A008 seanrjohnson bounced originally, but Kevin
+                            # reached Sean directly (sjohnson@neb.com) — he
+                            # confirmed attendance, so A008 stays in the pool.
 
 # The 190 BCC recipients from the Sep 5 poster acceptance email. Hard-coded so
 # the script is self-contained. If the list changes, regenerate from the

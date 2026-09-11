@@ -182,9 +182,10 @@ def load_submissions():
     # submitter to a specific abstract they represent.
     MANUAL_EMAIL_TO_AID = {
         # (email, abstract_id, presenter_name-fallback if ISCB match missed it)
-        "temi@attentionlab.ai":     ("A002", "Noah Abasciano"),        # Temitope was the submitter; Noah is first author
-        "you.yu@northeastern.edu":  ("A208", "Yukai You"),
-        "gani@umass.edu":           ("A219", "Godwin Ani"),
+        "temi@attentionlab.ai":                    ("A002", "Noah Abasciano"),   # Temitope was the submitter; Noah is first author
+        "you.yu@northeastern.edu":                 ("A208", "Yukai You"),
+        "gani@umass.edu":                          ("A219", "Godwin Ani"),
+        "giacomo.ceoldo@childrens.harvard.edu":    ("A077", "Giacomo Ceoldo"),   # ISCB Title was 'PhD'; corrected working title in-place
     }
     # Force these — the ISCB row's email may already be set but wrong (typo)
     for email, (aid, fallback_name) in MANUAL_EMAIL_TO_AID.items():

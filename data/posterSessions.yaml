@@ -646,7 +646,7 @@ days:
       - abstract_id: "A103"
         title: "Developmentally Informed AlphaGenome Modeling to Prioritize Noncoding Variants in Genetically Unresolved Congenital Heart Disease"
         presenter: "Kristine Yang"
-        affiliation: "Department of Biomedical Informatics, Harvard Medical School, Boston, MA; Boston Children's Hospital"
+        affiliation: "Department of Biomedical Informatics, Harvard Medical School; Boston Children's Hospital"
         round: "regular"
       - abstract_id: "A106"
         title: "Enhancing causal network-based perturbation inference through literature-derived knowledge"

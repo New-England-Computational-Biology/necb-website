@@ -400,6 +400,63 @@ a:focus-visible { outline: 2px solid var(--c-accent); outline-offset: 2px; borde
 .program-row--posters .program-title,
 .program-row--session .program-title { font-weight: 500; }
 
+/* Expandable selected-talk details: keeps the compact presenter list
+   visible; a small toggle beneath reveals full talk titles + abstract
+   IDs. Mirrors the .poster-day <details> pattern below. */
+.program-talk-details { margin-top: 0.4rem; }
+.program-talk-details-summary {
+  cursor: pointer;
+  font-size: 0.72rem; letter-spacing: 0.05em;
+  color: var(--c-teal); font-weight: 600;
+  list-style: none; user-select: none;
+  padding: 0.15rem 0;
+}
+.program-talk-details-summary::-webkit-details-marker { display: none; }
+.program-talk-details-summary::before {
+  content: "\25B6";
+  font-size: 0.6rem;
+  margin-right: 0.35rem;
+  color: var(--c-primary);
+  transition: transform 0.15s ease;
+  display: inline-block;
+}
+.program-talk-details[open] .program-talk-details-summary::before {
+  transform: rotate(90deg);
+}
+.program-talk-titles {
+  list-style: none;
+  margin: 0.4rem 0 0.25rem;
+  padding: 0;
+  border-top: 1px solid var(--c-border);
+}
+.program-talk-titles li {
+  display: grid;
+  grid-template-columns: 3rem 1fr;
+  gap: 0.15rem 0.6rem;
+  padding: 0.55rem 0.25rem;
+  border-bottom: 1px solid var(--c-border);
+  font-size: 0.85rem;
+}
+.program-talk-titles li:last-child { border-bottom: 0; }
+.talk-id {
+  grid-column: 1; grid-row: 1 / 3;
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.75rem;
+  color: var(--c-primary);
+  font-weight: 600;
+  padding-top: 0.1rem;
+}
+.talk-title {
+  grid-column: 2;
+  color: var(--c-text);
+  line-height: 1.35;
+}
+.talk-presenter {
+  grid-column: 2;
+  font-size: 0.78rem;
+  color: var(--c-text-muted);
+}
+
 /* ---------- Poster Sessions ---------- */
 .poster-sessions { margin-top: 1rem; }
 .poster-day {

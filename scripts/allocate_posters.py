@@ -336,7 +336,7 @@ def main():
         for aid in aids:
             s = subs[aid]
             lines.append(f'      - abstract_id: {esc(aid)}')
-            lines.append(f'        title: {esc(s["title"])}')
+            lines.append(f'        title: {esc(s["title"].rstrip(" .").strip())}')
             lines.append(f'        presenter: {esc(s.get("name",""))}')
             lines.append(f'        affiliation: {esc(clean_affiliation(s["affiliation"]))}')
             lines.append(f'        round: {esc(s["round"])}')

@@ -135,32 +135,39 @@ def render_covers(entries: list[dict]) -> None:
     cover fills exactly one page.
     """
     lines: list[str] = []
-    # Front-matter title page
+    # Front-matter title page — matches the program book's cover style.
     lines += [
         "```{=typst}",
-        "#align(center)[",
-        "  #v(1.6in)",
-        "  #text(font: \"Avenir Next\", size: 32pt, weight: 700, fill: c-fuchsia)[",
-        "    Extended Abstracts",
+        "#v(1.4in)",
+        "#align(left)[",
+        "  #block[",
+        "    #box(fill: c-fuchsia, radius: 999pt, width: 0.35em, "
+        "height: 0.35em, [])",
+        "    #h(0.4em)",
+        "    #text(font: \"Avenir Next\", size: 9pt, weight: 600, "
+        "fill: c-teal, tracking: 1pt)[",
+        "      #upper[Inaugural Symposium · Cambridge, MA]",
+        "    ]",
         "  ]",
         "  #v(10pt)",
-        "  #line(length: 1.6in, stroke: 1pt + c-fuchsia)",
+        "  #text(font: \"Avenir Next\", size: 38pt, weight: 700, fill: c-fuchsia)[",
+        "    NECB 2026 \\",
+        "    #text(size: 32pt, fill: c-navy)[Extended Abstracts]",
+        "  ]",
         "  #v(14pt)",
-        "  #text(font: \"Avenir Next\", size: 12pt, fill: c-navy)[",
-        "    NECB 2026 · Author-submitted PDFs",
+        "  #text(font: \"Avenir Next\", size: 11pt, weight: 600, fill: c-navy)[",
+        "    October 1–2, 2026",
         "  ]",
-        "  #v(6pt)",
-        "  #text(font: \"Avenir Next\", size: 10pt, fill: c-muted)[",
-        "    October 1–2, 2026 · Cambridge, MA",
+        "  #text(font: \"Avenir Next\", size: 11pt, fill: c-muted)[",
+        "    #h(0.3em) · #h(0.3em) Microsoft Research New England",
         "  ]",
-        "  #v(0.6in)",
+        "  #v(20pt)",
         "  #block(width: 4in)[",
         "    #set text(font: \"Charter\", size: 10.5pt, fill: c-ink)",
-        "    #set par(leading: 0.6em, spacing: 0.9em, justify: true)",
-        "    Companion volume to the program book: full-fidelity author-",
-        "    submitted PDFs (native text, sharp figures) for each accepted",
-        "    abstract, prefaced by a short cover sheet with abstract ID,",
-        "    title, presenter, and session.",
+        "    #set par(leading: 0.6em, justify: false)",
+        "    Companion to the NECB 2026 program book. One page per "
+        "accepted talk and poster, exactly as the presenter submitted "
+        "it — with a short cover sheet in front of each.",
         "  ]",
         "]",
         "```",
@@ -319,10 +326,14 @@ def main():
     for aid in sorted(pdf_files):
         if aid in withdrawn:
             continue
-        info = talks.get(aid) or posters.get(aid)
-        if info is None:
+        if aid in talks:
+            presenter, affil, session_label = talks[aid]
+            kind = "Selected talk"
+        elif aid in posters:
+            presenter, affil, session_label = posters[aid]
+            kind = "Selected poster"
+        else:
             continue
-        presenter, affil, session_label = info
         sub = subs.get(aid, {})
         title = sub.get("title") or "(title TBD)"
         affil = affil or sub.get("affiliation") or ""
@@ -331,7 +342,7 @@ def main():
             "title": title,
             "presenter": presenter,
             "affiliation": affil,
-            "session": session_label,
+            "session": f"{kind} · {session_label}",
             "pdf_path": pdf_files[aid],
         })
 

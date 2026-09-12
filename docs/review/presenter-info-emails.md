@@ -43,7 +43,9 @@ The full program is live at
 - **Talks will run from a single venue Windows laptop.** No
   bring-your-own-device and no laptop switching between speakers.
 - **Load your slides on the venue laptop the morning of your talk day.**
-  We'll have someone at the AV table before the first session to help.
+  The AV table opens at **8:30 AM** on both days (Thu Oct 1 and Fri Oct 2)
+  — please plan to upload your slides then, before the first session at
+  9:00 AM.
 - **Format:** PowerPoint (`.pptx`) is preferred. PDF works as a backup.
   Please avoid Keynote / Google Slides exports unless you have tested
   the resulting file on Windows — fonts and animations sometimes
@@ -109,9 +111,9 @@ Physical board numbers will be assigned onsite and shared at check-in.
 ### Setup and takedown
 
 - **Set up:** please hang your poster on your assigned board the
-  **morning of your session day**, before the first talk. A member of
-  the organizing team will be onsite from 8:30 AM to direct you to
-  your board.
+  **morning of your session day**, before the first talk (9:00 AM).
+  A member of the organizing team will be onsite from **8:30 AM** to
+  direct you to your board.
 - **Presence:** please be at your poster for the full 2-hour session
   ({DAY_LABEL} · 2:15–4:15 PM). Attendees, judges, and other presenters
   use this window to discuss your work.
@@ -149,8 +151,6 @@ NECB 2026 Organizing Committee
 - **Talk order within each session** — will we assign specific slot
   numbers (e.g. speaker 1 / 2 / 3 / 4) and share them alongside these
   emails, or leave them "TBD closer to the meeting"?
-- **AV table timing** — confirm the AV table opens at 8:30 AM on both
-  days (for slide upload and poster board assignment).
 - **Registration deadline** — Mon Sep 21 is the regular-registration
   cutoff per the decision emails; please confirm this still holds.
 - **Program book PDF** — should we include a link to the full

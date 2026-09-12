@@ -516,6 +516,7 @@ def render_cover() -> list[str]:
         "New England in Cambridge, MA.",
         "  ]",
         "]",
+        "#pagebreak(weak: true)",
         "```",
         "",
         "# Welcome",

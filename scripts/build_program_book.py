@@ -413,7 +413,7 @@ def _split_authors(raw: str) -> list[str]:
         # Otherwise take the leading name portion before the first
         # affiliation separator.
         seg = ln
-        for sep in (" (", " — ", " – ", " -- ", " - ", " : ", "- ", "; ", ";", ","):
+        for sep in (" (", " — ", " – ", " -- ", " - ", " : ", ":", "- ", "; ", ";", ","):
             if sep in seg:
                 seg = seg.split(sep, 1)[0]
                 break
@@ -466,17 +466,59 @@ def render_toc() -> list[str]:
 
 
 def render_cover() -> list[str]:
-    # Flyer image is committed as a tracked JPEG under static/img/. Typst
-    # is invoked with --root <repo_root>, so leading-slash paths resolve
-    # relative to the repo root.
+    """Minimal cover for now — a wordmark title, subtitle, dates, and
+    venue. Kept text-only until we have a proper cover asset.
+
+    Followed by a Welcome page (H1) with the co-chair message on its
+    own page so the cover reads as a clean title sheet.
+    """
     return [
-        "# NECB 2026",
+        # Modeled on the hero section at the top of the website:
+        # small teal eyebrow, big three-line fuchsia wordmark title
+        # (the year lives on its own line, no year separator), a navy
+        # meta line with the dates + venue, and a short pitch.
+        "```{=typst}",
+        "#v(1.4in)",
+        "#align(left)[",
+        "  // eyebrow",
+        "  #block[",
+        "    #box(fill: c-fuchsia, radius: 999pt, width: 0.35em, "
+        "height: 0.35em, [])",
+        "    #h(0.4em)",
+        "    #text(font: \"Avenir Next\", size: 9pt, weight: 600, fill: c-teal, "
+        "tracking: 1pt)[",
+        "      #upper[Inaugural Symposium · Cambridge, MA]",
+        "    ]",
+        "  ]",
+        "  #v(10pt)",
+        "  // title stack",
+        "  #text(font: \"Avenir Next\", size: 38pt, weight: 700, fill: c-fuchsia)[",
+        "    New England \\",
+        "    Computational \\",
+        "    Biology  ",
+        "    #text(size: 32pt, fill: c-navy)[2026]",
+        "  ]",
+        "  #v(14pt)",
+        "  // meta",
+        "  #text(font: \"Avenir Next\", size: 11pt, weight: 600, fill: c-navy)[",
+        "    October 1–2, 2026",
+        "  ]",
+        "  #text(font: \"Avenir Next\", size: 11pt, fill: c-muted)[",
+        "    #h(0.3em) · #h(0.3em) Microsoft Research New England",
+        "  ]",
+        "  #v(20pt)",
+        "  // pitch",
+        "  #block(width: 4in)[",
+        "    #set text(font: \"Charter\", size: 10.5pt, fill: c-ink)",
+        "    #set par(leading: 0.6em, justify: false)",
+        "    Two days of talks, posters, and conversations at the frontier of "
+        "computation and the life sciences, hosted by Microsoft Research "
+        "New England in Cambridge, MA.",
+        "  ]",
+        "]",
+        "```",
         "",
-        "![](/static/img/flyer.jpg){width=6.5in}",
-        "",
-        "---",
-        "",
-        "## Welcome",
+        "# Welcome",
         "",
         (
             "Welcome to the **New England Computational Biology Symposium 2026**. "
@@ -739,8 +781,6 @@ def render_posters(poster_ids, subs, day_map,
             md += [
                 "```{=typst}",
                 f"#day-banner([{label}], page_break: {pb})",
-                f"#heading(level: 2, outlined: true, "
-                f"bookmarked: true)[{label}] <day>",
                 "```",
                 "",
             ]

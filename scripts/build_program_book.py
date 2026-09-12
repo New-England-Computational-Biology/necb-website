@@ -421,26 +421,49 @@ def render_cover() -> list[str]:
         "",
         "![](/static/img/flyer.jpg){width=6.5in}",
         "",
-        "*Conference program & abstract book*",
+        "*October 1–2, 2026 · Cambridge, MA*",
         "",
         "---",
         "",
+        "## Welcome",
+        "",
         (
-            "This book contains the full two-day program — keynote and "
-            "invited speaker biographies, all 22 selected talk abstracts, "
-            "and every accepted poster abstract. Selected talks are listed "
-            "in program order; posters are indexed by abstract id, which "
-            "will match the physical board number in the poster hall."
+            "Welcome to the **New England Computational Biology Symposium 2026**. "
+            "We are delighted to bring together researchers, students, and "
+            "practitioners from across the region for two days of talks, "
+            "posters, and conversations at the intersection of computation and "
+            "biology."
         ),
         "",
         (
-            "Presenting authors: please refer to the acceptance email you "
-            "received on Fri Sep 4, 2026 for logistics and slot assignment. "
-            "For any corrections, contact "
-            "`newenglandcompbio@gmail.com`."
+            "This year's program features **5 keynote speakers**, **6 invited "
+            "talks**, **23 selected talks**, and **180 poster presentations**, "
+            "chosen from a large and exceptional pool of submissions. Sessions "
+            "span single-cell and spatial biology, protein design and function, "
+            "genomics and regulation, immunology and vaccines, clinical and "
+            "translational applications, and AI methods and applications."
         ),
+        "",
+        (
+            "We are grateful to our sponsors, our host at Microsoft Research "
+            "New England, ISCB for coordinating registration and logistics, "
+            "and the many volunteer reviewers who made the selection process "
+            "possible. Above all, thank you for joining us."
+        ),
+        "",
+        "*Luca Pinello, Predrag Radivojac, and Kevin Yang*  ",
+        "*Conference Co-Chairs, NECB 2026*",
         "",
     ]
+
+
+def _typ(s: str) -> str:
+    """Escape a plain-text field for embedding inside a typst content
+    block [ ... ] via a raw {=typst} pass-through."""
+    return (s.replace("\\", "\\\\")
+             .replace("[", "\\[").replace("]", "\\]")
+             .replace("#", "\\#").replace("@", "\\@")
+             .replace("<", "\\<").replace(">", "\\>"))
 
 
 def render_schedule(program) -> list[str]:
@@ -449,14 +472,35 @@ def render_schedule(program) -> list[str]:
         md += [f"## {day['label']}", ""]
         for sess in day["sessions"]:
             md += [f"### {sess['time']} · {sess['title']}", ""]
-            for name in sess.get("speakers") or []:
-                md.append(f"- **{name}**")
-            for t in sess.get("talks") or []:
-                aid = t["abstract_id"]
-                md.append(
-                    f"- **{aid}** · {t['title']}  "
-                    f"\n  {t['presenter']} · {t['affiliation']}"
-                )
+            speakers = sess.get("speakers") or []
+            talks = sess.get("talks") or []
+            if speakers:
+                md.append("```{=typst}")
+                for name in speakers:
+                    md.append(
+                        f"#block(above: 3pt, below: 3pt)[#text(weight: 600)[{_typ(name)}]]"
+                    )
+                md.append("```")
+                md.append("")
+            if talks:
+                md.append("```{=typst}")
+                for t in talks:
+                    aid = _typ(t["abstract_id"])
+                    title = _typ(t["title"])
+                    presenter = _typ(t.get("presenter", ""))
+                    affil = _typ(t.get("affiliation", ""))
+                    md.append(
+                        "#block(above: 5pt, below: 5pt, breakable: false)["
+                        "#grid(columns: (0.4in, 1fr), column-gutter: 6pt, "
+                        "align: (right + top, left + top), "
+                        "[#text(font: \"Menlo\", size: 8pt, fill: c-fuchsia, "
+                        f"weight: 600)[{aid}]], "
+                        f"[#text(weight: 600)[{title}]\\ "
+                        "#text(size: 0.85em, fill: c-muted)["
+                        f"{presenter} · {affil}]])]"
+                    )
+                md.append("```")
+                md.append("")
             md.append("")
     return md
 
@@ -689,7 +733,9 @@ def render_organizers(orgs) -> list[str]:
         if not isinstance(group, dict) or "members" not in group:
             continue
         title = group.get("title") or key.replace("_", " ").title()
-        md.append(f"## {title}")
+        # H3 so committee subsections don't clutter the outline (which
+        # caps at depth 2). Visually still bold navy via the H3 rule.
+        md.append(f"### {title}")
         md.append("")
         intro = group.get("intro")
         if intro:

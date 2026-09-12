@@ -63,18 +63,29 @@ def _unescape_lines(s: str) -> str:
     return s.replace("\\n", "\n").replace("\\t", "\t")
 
 
+import re as _re
+
+
 def _unescape_prose(s: str) -> str:
-    """For running prose (abstract body): the ISCB form encodes user
-    paragraph breaks as either the 2-char '\\n' or the 4-char '\\n\\n'
-    sequence — both represent a paragraph split in the author's original
-    entry. Emit a real double-newline for either so pandoc renders them
-    as paragraph breaks (not soft breaks that would otherwise fuse into
-    a single wall of text)."""
-    return (
-        s.replace("\\n\\n", "\n\n")
-         .replace("\\n", "\n\n")
-         .replace("\\t", " ")
-    )
+    """For running prose (abstract body): the ISCB form encodes
+    paragraph breaks as literal '\\n\\n' but many authors also submit
+    manually wrapped text where a single '\\n' at ~80 chars is a soft
+    line break within a paragraph (see A076, A172, A185, A221).
+
+    Strategy: split on paragraph markers (either escaped '\\n\\n' or
+    real '\\n\\n'), then flatten every remaining '\\n' or real newline
+    inside a paragraph to a single space. This preserves author-intended
+    paragraph structure while healing the ragged soft-wrap that would
+    otherwise render as blank lines between every wrapped source line."""
+    s = s.replace("\r\n", "\n").replace("\r", "\n")
+    parts = _re.split(r"\\n\\n|\n\n", s)
+    out = []
+    for p in parts:
+        p = _re.sub(r"\\n|\n|\\t|\t", " ", p)
+        p = " ".join(p.split())
+        if p:
+            out.append(p)
+    return "\n\n".join(out)
 
 
 def _flatten_line(s: str) -> str:

@@ -320,11 +320,11 @@ def main():
     def esc(s: str) -> str:
         return '"' + s.replace("\\", "\\\\").replace('"', '\\"') + '"'
     day_meta = [
-        (1, "Day 1 · Thu Oct 1, 2026", "2:00–4:00 PM"),
-        (2, "Day 2 · Fri Oct 2, 2026", "2:00–4:00 PM"),
+        (1, "Day 1 · Thu Oct 1, 2026", "2:15–4:15 PM"),
+        (2, "Day 2 · Fri Oct 2, 2026", "2:15–4:15 PM"),
     ]
     lines = [
-        'note: "Poster sessions run 2:00–4:00 PM on both days. Full abstract text and board numbers will be published in the program book (PDF) closer to the meeting."',
+        'note: "Poster sessions run 2:15–4:15 PM on both days. Full abstract text and board numbers will be published in the program book (PDF) closer to the meeting."',
         "days:",
     ]
     for day_num, label, time in day_meta:

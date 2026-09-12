@@ -1,7 +1,7 @@
-note: "Poster sessions run 2:00–4:00 PM on both days. Full abstract text and board numbers will be published in the program book (PDF) closer to the meeting."
+note: "Poster sessions run 2:15–4:15 PM on both days. Full abstract text and board numbers will be published in the program book (PDF) closer to the meeting."
 days:
   - label: "Day 1 · Thu Oct 1, 2026"
-    time: "2:00–4:00 PM"
+    time: "2:15–4:15 PM"
     count: 90
     posters:
       - abstract_id: "A003"
@@ -455,7 +455,7 @@ days:
         affiliation: "Brigham and Women’s Hospital, Harvard Medical School"
         round: "late-breaking"
   - label: "Day 2 · Fri Oct 2, 2026"
-    time: "2:00–4:00 PM"
+    time: "2:15–4:15 PM"
     count: 90
     posters:
       - abstract_id: "A002"

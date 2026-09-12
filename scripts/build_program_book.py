@@ -411,12 +411,22 @@ def _split_authors(raw: str) -> list[str]:
                     names.append(nm)
             continue
         # Otherwise take the leading name portion before the first
-        # affiliation separator.
+        # affiliation separator. Pick the separator whose *earliest*
+        # occurrence in the string is smallest, so 'Neil Zhao, University
+        # of Michigan - Ann Arbor' splits on ',' (earlier) rather than
+        # on ' - ' (later) which would leak the university into the name.
         seg = ln
-        for sep in (" (", " — ", " – ", " -- ", " - ", " : ", ":", "- ", "; ", ";", ","):
-            if sep in seg:
-                seg = seg.split(sep, 1)[0]
-                break
+        seps = (" (", " — ", " – ", " -- ", " - ", " : ", ":",
+                "- ", "; ", ";", ",")
+        earliest = None
+        earliest_sep = None
+        for sep in seps:
+            idx = seg.find(sep)
+            if idx >= 0 and (earliest is None or idx < earliest):
+                earliest = idx
+                earliest_sep = sep
+        if earliest_sep is not None:
+            seg = seg[:earliest]
         if "*" in seg and presenter_idx is None:
             presenter_idx = len(names)
         nm = _clean(seg)

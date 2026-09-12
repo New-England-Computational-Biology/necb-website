@@ -338,19 +338,16 @@ def _split_authors(raw: str) -> list[str]:
         first_word = low.split(maxsplit=1)[0].rstrip(",.:")
         if first_word in INSTITUTION_WORDS:
             continue
-        # If the pre-comma segment itself contains any strong
-        # institution keyword, treat the whole line as an affiliation
-        # continuation rather than an author name (personal names
-        # rarely include 'University', 'Institute', 'Department', etc.).
-        # Catches lines like 'Vanderbilt Institute for Infection,
-        # Immunity and Inflammation, Vanderbilt University Medical
-        # Center, Nashville, TN, USA'.
-        low_head = low.split(",", 1)[0]
-        strong_kw = ("university", "institute", "hospital", "school",
-                     "department", "laboratory", " lab", "center", "centre",
-                     "college", "division", "faculty", "program",
-                     "clinic", "medical")
-        if any(kw in low_head for kw in strong_kw):
+        # Catch affiliation lines like 'Vanderbilt Institute for Infection,
+        # …' by checking the first *two* words for institution keywords.
+        # Personal names rarely have 'Institute' / 'University' /
+        # 'Department' as their second word, but real affiliation lines
+        # commonly do ('Vanderbilt Institute', 'Northeastern University',
+        # 'Harvard Department'). Anything with a keyword only in a later
+        # position ('Yuncheng Duan Department of Genomics …') still
+        # reads as a legitimate name-then-affiliation line.
+        first_two = " ".join(low.split()[:2])
+        if any(kw in first_two for kw in INSTITUTION_WORDS):
             continue
         lines.append(chunk)
 
@@ -866,7 +863,7 @@ def _round_banner(label: str, force_break: bool = False) -> list[str]:
         "  #set text(font: \"Avenir Next\", size: 10pt, weight: 700,",
         "    fill: c-navy, tracking: 1.5pt)",
         f"  #upper[{label}]",
-        "  #v(-3pt, weak: true)",
+        "  #v(3pt, weak: true)",
         "  #line(length: 100%, stroke: 0.5pt + c-navy)",
         "]",
         "```",

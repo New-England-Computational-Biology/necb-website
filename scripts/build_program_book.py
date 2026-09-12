@@ -392,16 +392,16 @@ def _split_authors(raw: str) -> list[str]:
             nm = nm[:m.start()].rstrip()
         # If the residual name has more than 2 words and one of the
         # later words is an institution keyword ('Yuncheng Duan
-        # Department of Genomics …', 'Wonyl Choi Boston University'),
-        # truncate at max(2, i-1). The i-1 lets city-plus-university
-        # forms like 'Boston University' drop cleanly ('Wonyl Choi
-        # Boston University' -> 'Wonyl Choi'), while a plain
-        # 'Yuncheng Duan Department …' still keeps the first 2 tokens.
+        # Department of Genomics …'), truncate at that word so only
+        # the leading name portion survives. Truncates AT the keyword
+        # position (not before) so 'Hana I. Wasserman Program …' keeps
+        # 'Hana I. Wasserman'; edge case 'Wonyl Choi Boston University'
+        # would keep 'Wonyl Choi Boston' but those are patched at the
+        # CSV source when they show up.
         words = nm.split()
         for i in range(2, len(words)):
             if words[i].lower().rstrip(",.:;") in INSTITUTION_WORDS:
-                cut = max(2, i - 1) if i >= 3 else i
-                nm = " ".join(words[:cut]).rstrip(",")
+                nm = " ".join(words[:i]).rstrip(",")
                 break
         # Strip honorific title prefixes (A182: "Dr. Amanda Storm").
         parts = nm.split()

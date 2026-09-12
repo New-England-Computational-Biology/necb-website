@@ -338,17 +338,19 @@ def _split_authors(raw: str) -> list[str]:
         first_word = low.split(maxsplit=1)[0].rstrip(",.:")
         if first_word in INSTITUTION_WORDS:
             continue
-        # If the line contains strong institution keywords anywhere AND
-        # doesn't look like it starts with a personal name (short prefix
-        # before the first comma), treat it as an affiliation line.
-        # Prefix rule: name portion should be at most 6 words before
-        # the first separator. Longer prefixes suggest 'Vanderbilt
-        # Institute for Infection Immunity and Inflammation, …'.
+        # If the pre-comma segment itself contains any strong
+        # institution keyword, treat the whole line as an affiliation
+        # continuation rather than an author name (personal names
+        # rarely include 'University', 'Institute', 'Department', etc.).
+        # Catches lines like 'Vanderbilt Institute for Infection,
+        # Immunity and Inflammation, Vanderbilt University Medical
+        # Center, Nashville, TN, USA'.
         low_head = low.split(",", 1)[0]
         strong_kw = ("university", "institute", "hospital", "school",
-                     "department", "laboratory", "center", "centre",
-                     "college", "division", "faculty")
-        if any(kw in low for kw in strong_kw) and len(low_head.split()) > 5:
+                     "department", "laboratory", " lab", "center", "centre",
+                     "college", "division", "faculty", "program",
+                     "clinic", "medical")
+        if any(kw in low_head for kw in strong_kw):
             continue
         lines.append(chunk)
 

@@ -256,22 +256,27 @@ def _split_authors(raw: str) -> list[str]:
     # Latin-1 legacy trio (¹²³) and the Unicode superscript block (⁰⁴-⁹).
     SUPS = "¹²³⁰⁴⁵⁶⁷⁸⁹"
     # Lines that are section headers or metadata inside the authors
-    # blob, not names to keep.
-    SKIP_PREFIXES = (
-        "authors:", "author:", "corresponding", "affiliations:",
-        "affiliation:", "presenting", "note:", "notes:",
-        "to whom",
-    )
+    # blob, not names to keep. Matched with and without trailing ':'.
+    SKIP_HEADINGS = {
+        "authors", "author", "corresponding", "corresponding author",
+        "affiliations", "affiliation", "presenting", "presenting author",
+        "note", "notes", "to whom",
+    }
     # Institution keywords — if a line's leading word is one of these,
     # treat the whole line as an affiliation continuation, not a name.
     INSTITUTION_WORDS = (
         "university", "institute", "hospital", "college", "school",
         "department", "laboratory", "center", "centre", "program",
-        "graduate", "faculty", "division", "clinic",
+        "graduate", "faculty", "division", "clinic", "section",
         "national", "harvard", "hms", "mit", "stanford", "yale",
-        "columbia", "cornell", "duke",
+        "columbia", "cornell", "duke", "bioinformatics",
         "licenciatura",  # A024 specifically has this in a Spanish institution
     )
+    # 'Name (1,2)' style affiliation markers — remove the whole
+    # parenthesized numeric group so the authors on the line survive
+    # via a plain comma split (see A041: 'Andrew Chen (1,2), Stefano
+    # Monti (1,2,3)').
+    NUM_PAREN = _re.compile(r"\s*\(\s*\d+(?:\s*[,\s]\s*\d+)*\s*\)")
 
     # Strip leading '1. ', '2. ', '10. ' style enumerator prefixes from
     # numbered author lists (see A088: '1. Arif Ahmad Rather - Dept…').
@@ -290,10 +295,23 @@ def _split_authors(raw: str) -> list[str]:
             chunk = chunk[m.end():]
         if not chunk:
             continue
-        # Skip section headers / affiliation blocks.
-        low = chunk.lower()
-        if low.startswith(SKIP_PREFIXES):
+        # Skip section headers / affiliation blocks (matched bare or with
+        # trailing colon).
+        low = chunk.lower().rstrip(":").strip()
+        if low in SKIP_HEADINGS or low + ":" in SKIP_HEADINGS:
             continue
+        # Strip 'Name (1,2)' style numeric-affiliation markers so downstream
+        # comma-splitting yields individual authors instead of tangling
+        # the marker into a name. Remember if any were stripped — that
+        # signals commas on the line are author separators, not
+        # name/affiliation separators (same logic as the SUPS branch).
+        new_chunk, sub_count = NUM_PAREN.subn("", chunk)
+        chunk = new_chunk.strip().strip(";").strip(",").strip()
+        if sub_count and chunk:
+            chunk = " __NUMPAREN__" + chunk  # marker keyed off later
+        if not chunk:
+            continue
+        low = chunk.lower()
         if chunk[0] in SUPS:
             continue
         if "@" in chunk:  # email / contact line
@@ -355,6 +373,18 @@ def _split_authors(raw: str) -> list[str]:
     names: list[str] = []
     presenter_idx: int | None = None
     for ln in lines:
+        # Numeric-affiliation-marker lines (removed markers left a
+        # __NUMPAREN__ sentinel): treat commas as author separators.
+        if ln.startswith(" __NUMPAREN__"):
+            ln = ln[len(" __NUMPAREN__"):].strip()
+            parts = [p.strip() for p in ln.split(",") if p.strip()]
+            for p in parts:
+                if "*" in p and presenter_idx is None:
+                    presenter_idx = len(names)
+                nm = _clean(p)
+                if nm and nm not in names:
+                    names.append(nm)
+            continue
         # If the line carries superscript markers (¹²³ etc.), commas are
         # author separators, not name/affiliation separators. Split each
         # marker-bearing name off, strip the marker, keep going.
@@ -430,8 +460,6 @@ def render_cover() -> list[str]:
         "# NECB 2026",
         "",
         "![](/static/img/flyer.jpg){width=6.5in}",
-        "",
-        "*October 1–2, 2026 · Cambridge, MA*",
         "",
         "---",
         "",

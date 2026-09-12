@@ -277,6 +277,16 @@ def _split_authors(raw: str) -> list[str]:
     # via a plain comma split (see A041: 'Andrew Chen (1,2), Stefano
     # Monti (1,2,3)').
     NUM_PAREN = _re.compile(r"\s*\(\s*\d+(?:\s*[,\s]\s*\d+)*\s*\)")
+    # Parenthesized role notes tacked onto a name — 'Name — Affil (co-
+    # corresp.)' etc. Strip them so downstream separator splitting
+    # doesn't lock onto ' (' first and steal the whole affiliation.
+    ROLE_PAREN = _re.compile(
+        r"\s*\(\s*(?:co-?corresp(?:onding)?\.?|corresp(?:onding)?\.?|"
+        r"co-?first(?:\s+author)?|first\s+author|equal\s+contribution|"
+        r"presenting(?:\s+author)?|senior(?:\s+author)?|lead(?:\s+author)?"
+        r")\s*\)",
+        _re.I,
+    )
 
     # Strip leading '1. ', '2. ', '10. ' style enumerator prefixes from
     # numbered author lists (see A088: '1. Arif Ahmad Rather - Dept…').
@@ -300,6 +310,9 @@ def _split_authors(raw: str) -> list[str]:
         low = chunk.lower().rstrip(":").strip()
         if low in SKIP_HEADINGS or low + ":" in SKIP_HEADINGS:
             continue
+        # Strip 'Name — Affil (co-corresp.)' style role notes first so
+        # the ' (' separator doesn't fire on them.
+        chunk = ROLE_PAREN.sub("", chunk)
         # Strip 'Name (1,2)' style numeric-affiliation markers so downstream
         # comma-splitting yields individual authors instead of tangling
         # the marker into a name. Remember if any were stripped — that

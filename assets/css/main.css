@@ -400,48 +400,45 @@ a:focus-visible { outline: 2px solid var(--c-accent); outline-offset: 2px; borde
 .program-row--posters .program-title,
 .program-row--session .program-title { font-weight: 500; }
 
-/* Expandable selected-talk details: keeps the compact presenter list
-   visible; a small toggle beneath reveals full talk titles + abstract
-   IDs. Mirrors the .poster-day <details> pattern below. */
-.program-talk-details { margin-top: 0.4rem; }
-.program-talk-details-summary {
+/* Per-talk expandable rows: presenter · affiliation stays in the
+   compact schedule; clicking a row reveals abstract-ID + title
+   inline beneath it. Zero duplication — each piece of info appears
+   in exactly one place. */
+.program-talk-row summary {
   cursor: pointer;
-  font-size: 0.72rem; letter-spacing: 0.05em;
-  color: var(--c-teal); font-weight: 600;
-  list-style: none; user-select: none;
-  padding: 0.15rem 0;
+  list-style: none;
+  user-select: none;
+  padding-right: 0.25rem;
 }
-.program-talk-details-summary::-webkit-details-marker { display: none; }
-.program-talk-details-summary::before {
-  content: "\25B6";
-  font-size: 0.6rem;
-  margin-right: 0.35rem;
+.program-talk-row summary::-webkit-details-marker { display: none; }
+.program-talk-row summary::after {
+  content: "\25B8";
   color: var(--c-primary);
+  font-size: 0.65rem;
+  margin-left: 0.35rem;
   transition: transform 0.15s ease;
   display: inline-block;
+  opacity: 0.55;
 }
-.program-talk-details[open] .program-talk-details-summary::before {
+.program-talk-row[open] summary::after {
   transform: rotate(90deg);
+  opacity: 1;
 }
-.program-talk-titles {
-  list-style: none;
-  margin: 0.4rem 0 0.25rem;
-  padding: 0;
-  border-top: 1px solid var(--c-border);
-}
-.program-talk-titles li {
+.program-talk-detail {
   display: grid;
   grid-template-columns: 3rem 1fr;
-  gap: 0.15rem 0.6rem;
-  padding: 0.4rem 0.25rem;
-  border-bottom: 1px solid var(--c-border);
-  font-size: 0.85rem;
+  gap: 0.5rem;
+  margin: 0.3rem 0 0.15rem;
+  padding: 0.35rem 0.5rem 0.35rem 0.85rem;
+  background: var(--c-bg-alt);
+  border-left: 2px solid var(--c-primary);
+  border-radius: 0 3px 3px 0;
+  font-size: 0.82rem;
   line-height: 1.35;
 }
-.program-talk-titles li:last-child { border-bottom: 0; }
 .talk-id {
   font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   color: var(--c-primary);
   font-weight: 600;
   padding-top: 0.1rem;

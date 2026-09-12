@@ -34,19 +34,18 @@
               {{ with .talks }}
               {{ if $hasBoth }}<span class="program-subhead">Selected talks</span>{{ end }}
               <ul class="program-talks">
-                {{ range . }}<li>{{ .presenter }} · {{ .affiliation }}</li>{{ end }}
+                {{ range . }}
+                <li>
+                  <details class="program-talk-row">
+                    <summary>{{ .presenter }} · {{ .affiliation }}</summary>
+                    <div class="program-talk-detail">
+                      <span class="talk-id">{{ .abstract_id }}</span>
+                      <span class="talk-title">{{ .title }}</span>
+                    </div>
+                  </details>
+                </li>
+                {{ end }}
               </ul>
-              <details class="program-talk-details">
-                <summary class="program-talk-details-summary">Show talk titles</summary>
-                <ol class="program-talk-titles">
-                  {{ range . }}
-                  <li>
-                    <span class="talk-id">{{ .abstract_id }}</span>
-                    <span class="talk-title">{{ .title }}</span>
-                  </li>
-                  {{ end }}
-                </ol>
-              </details>
               {{ end }}
             </span>
           </li>

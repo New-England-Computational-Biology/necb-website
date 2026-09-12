@@ -214,9 +214,15 @@ def _split_authors(raw: str) -> list[str]:
     affiliation attached with em-dash / en-dash / hyphen-with-spaces /
     open-paren / a comma. Drop the presenter '*' marker.
     """
+    # Bullet glyphs the ISCB form users sometimes prefix each author with
+    # (unicode bullet, hyphen-bullet, en/em dash, asterisk, ASCII dash…).
+    BULLETS = "•·⁃∙◦▪▫●○*-–—+"
     lines: list[str] = []
     for chunk in raw.replace("\t", "\n").split("\n"):
         chunk = chunk.strip().strip(";").strip(",").strip()
+        # Strip any leading bullet glyph + whitespace before the name.
+        while chunk and chunk[0] in BULLETS:
+            chunk = chunk[1:].lstrip()
         if chunk:
             lines.append(chunk)
     names: list[str] = []

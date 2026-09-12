@@ -8,7 +8,7 @@ days:
         kind: "keynote"
         speakers:
           - "Marc Vidal"
-      - time: "9:45–10:30 AM"
+      - time: "9:45–10:45 AM"
         title: "Selected talks · Single-cell & spatial"
         kind: "talks"
         talks:
@@ -24,7 +24,11 @@ days:
             title: "GeoSinkhorn Flow: Geometry-Aware Flow Matching for Conditional Dynamics in Single-Cell Data Phenoscapes"
             presenter: "Ke Xu"
             affiliation: "Yale University"
-      - time: "10:30–11:00 AM"
+          - abstract_id: "A111"
+            title: "Spatial transcriptome and whole-genome characterization of single nuclei in human tissues"
+            presenter: "Claudia Chu"
+            affiliation: "Broad Institute · Harvard University"
+      - time: "10:45–11:00 AM"
         title: "Coffee break"
         kind: "break"
       - time: "11:00 AM – 12:00 PM"
@@ -80,7 +84,7 @@ days:
             title: "Cherimoya: Lightweight modeling of genomic modalities enables organism-wide analyses"
             presenter: "Jacob Schreiber"
             affiliation: "UMass Chan Medical School"
-      - time: "5:00 PM"
+      - time: "5:00–5:45 PM"
         title: "Afternoon keynote"
         kind: "keynote"
         speakers:
@@ -91,20 +95,16 @@ days:
 
   - label: "Day 2 · Fri Oct 2, 2026"
     sessions:
-      - time: "9:00–9:45 AM"
+      - time: "9:00–10:00 AM"
         title: "Morning keynote"
         kind: "keynote"
         speakers:
           - "Caroline Uhler"
           - "G.V. Shivashankar"
-      - time: "9:45–10:30 AM"
+      - time: "10:00–10:30 AM"
         title: "Selected talks · Genomics & immunology"
         kind: "talks"
         talks:
-          - abstract_id: "A111"
-            title: "Spatial transcriptome and whole-genome characterization of single nuclei in human tissues"
-            presenter: "Claudia Chu"
-            affiliation: "Broad Institute · Harvard University"
           - abstract_id: "A034"
             title: "Learned Immune Architectures of Durable Antibody Responses Across Vaccines"
             presenter: "Stephanie P. Hao"
@@ -169,7 +169,7 @@ days:
             title: "Scaling CAR-T Targeting of HLA-presented Intracellular Antigens with AI-Driven Experimentation"
             presenter: "Elizabeth B. Wood"
             affiliation: "JURA Bio"
-      - time: "5:00 PM"
+      - time: "5:00–5:45 PM"
         title: "Closing keynote · Poster awards"
         kind: "keynote"
         speakers:

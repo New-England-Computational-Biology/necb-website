@@ -2,12 +2,12 @@
 
 Two emails to be sent before the conference:
 
-1. **Selected talk presenters** — 23 recipients, BCC list from `data/program.yaml`
-2. **Poster presenters** — ~180 recipients, BCC list per day from `data/posterSessions.yaml`
+1. **Selected talk presenters** — 23 recipients, single BCC list from `data/program.yaml`
+2. **Poster presenters** — ~180 recipients, single BCC list from `data/posterSessions.yaml`
 
-Send after committee review. Personalization fields `{FIRST_NAME}`,
-`{ABSTRACT_ID}`, `{DAY_LABEL}`, `{SESSION_TITLE}`, `{SESSION_TIME}` filled
-via mail-merge helper (same pattern as the decision emails).
+Both emails go out as **single BCC blasts** (no per-recipient
+personalization). Presenters look up their own day/session on the
+website.
 
 **From:** `newenglandcompbio@gmail.com`
 **Cc (both emails):** `LPINELLO@mgh.harvard.edu`, `predrag@northeastern.edu`, `Yang.Kevin@microsoft.com`
@@ -16,22 +16,20 @@ via mail-merge helper (same pattern as the decision emails).
 
 ## 1. Selected talk presenters
 
-**Subject:** NECB 2026 · Logistics for your selected talk — {ABSTRACT_ID}
+**Subject:** NECB 2026 · Logistics for your selected talk
 
-Dear {FIRST_NAME},
+Dear NECB 2026 presenter,
 
 Thanks again for confirming your NECB 2026 selected talk. Here is
 everything you need for the day.
 
 ### Your slot
 
-- **Day:** {DAY_LABEL}
-- **Session:** {SESSION_TITLE}
-- **Time:** {SESSION_TIME}
-
-Order of speakers within the session will be shared closer to the meeting.
-The full program is live at
+The full program with day, session, and time for each selected talk is
+live at
 [newenglandcompbio.org/#program](https://newenglandcompbio.org/#program).
+Order of speakers within each session will be shared closer to the
+meeting.
 
 ### Presentation format
 
@@ -82,22 +80,19 @@ NECB 2026 Organizing Committee
 
 ## 2. Poster presenters
 
-**Subject:** NECB 2026 · Logistics for your poster — {ABSTRACT_ID}
+**Subject:** NECB 2026 · Logistics for your poster
 
-Dear {FIRST_NAME},
+Dear NECB 2026 presenter,
 
 Thanks again for confirming your NECB 2026 poster. Here is everything
 you need for the day.
 
 ### Your session
 
-- **Day:** {DAY_LABEL}
-- **Poster session:** 2:15–4:15 PM
-
-The full day-by-day poster listing is live at
-[newenglandcompbio.org/#poster-sessions](https://newenglandcompbio.org/#poster-sessions)
-— you can find your abstract ID **{ABSTRACT_ID}** there.
-
+The day-by-day poster listing is live at
+[newenglandcompbio.org/#poster-sessions](https://newenglandcompbio.org/#poster-sessions).
+Please check which day (Day 1 · Thu Oct 1 or Day 2 · Fri Oct 2) your
+poster is assigned to. Both poster sessions run from **2:15–4:15 PM**.
 Physical board numbers will be assigned onsite and shared at check-in.
 
 ### Poster format
@@ -115,8 +110,8 @@ Physical board numbers will be assigned onsite and shared at check-in.
   A member of the organizing team will be onsite from **8:30 AM** to
   direct you to your board.
 - **Presence:** please be at your poster for the full 2-hour session
-  ({DAY_LABEL} · 2:15–4:15 PM). Attendees, judges, and other presenters
-  use this window to discuss your work.
+  (2:15–4:15 PM on your assigned day). Attendees, judges, and other
+  presenters use this window to discuss your work.
 - **Poster awards:** judges will circulate during both poster sessions.
   **Winners will be announced at the closing keynote on Day 2
   (Fri Oct 2, 5:15–6:00 PM).** All presenters are encouraged to attend.

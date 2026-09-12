@@ -196,6 +196,41 @@ def load_poster_day_map() -> dict[str, tuple[str, str]]:
     return m
 
 
+def load_poster_presenter_map() -> dict[str, tuple[str, str]]:
+    """Map abstract_id -> (presenter_name, affiliation) for accepted
+    posters. Used as a fallback when the submissions CSV has an empty
+    authors field (see A171)."""
+    if not POSTER_SESSIONS.exists():
+        return {}
+    y = yaml.safe_load(POSTER_SESSIONS.read_text())
+    m: dict[str, tuple[str, str]] = {}
+    for day in y.get("days", []):
+        for p in day.get("posters", []):
+            aid = p.get("abstract_id", "").strip()
+            if aid:
+                m[aid] = (
+                    p.get("presenter", "").strip(),
+                    p.get("affiliation", "").strip(),
+                )
+    return m
+
+
+def load_talk_presenter_map(program) -> dict[str, tuple[str, str]]:
+    """Map abstract_id -> (presenter_name, affiliation) for talks in
+    the schedule (program.yaml)."""
+    m: dict[str, tuple[str, str]] = {}
+    for day in program["days"]:
+        for sess in day["sessions"]:
+            for t in (sess.get("talks") or []):
+                aid = t.get("abstract_id", "").strip()
+                if aid:
+                    m[aid] = (
+                        t.get("presenter", "").strip(),
+                        t.get("affiliation", "").strip(),
+                    )
+    return m
+
+
 # ---------------------------------------------------------------------------
 # Author formatting
 # ---------------------------------------------------------------------------
@@ -225,13 +260,17 @@ def _split_authors(raw: str) -> list[str]:
     SKIP_PREFIXES = (
         "authors:", "author:", "corresponding", "affiliations:",
         "affiliation:", "presenting", "note:", "notes:",
+        "to whom",
     )
     # Institution keywords — if a line's leading word is one of these,
     # treat the whole line as an affiliation continuation, not a name.
     INSTITUTION_WORDS = (
         "university", "institute", "hospital", "college", "school",
         "department", "laboratory", "center", "centre", "program",
-        "graduate",
+        "graduate", "faculty", "division", "clinic",
+        "national", "harvard", "hms", "mit", "stanford", "yale",
+        "columbia", "cornell", "duke",
+        "licenciatura",  # A024 specifically has this in a Spanish institution
     )
 
     lines: list[str] = []
@@ -250,13 +289,52 @@ def _split_authors(raw: str) -> list[str]:
             continue
         if "@" in chunk:  # email / contact line
             continue
+        # Skip lines that start with a digit — those are ASCII-numbered
+        # affiliation continuations (e.g. '1 McLean Hospital',
+        # '1Center for Theoretical Biological Physics').
+        if chunk[0].isdigit():
+            continue
         first_word = low.split(maxsplit=1)[0].rstrip(",.:")
         if first_word in INSTITUTION_WORDS:
             continue
         lines.append(chunk)
 
+    # Honorifics we strip from the front of a name — 'Dr.', 'Prof.',
+    # 'Mr.', 'Ms.', 'Mrs.', 'Miss'. Matched with a trailing dot or space.
+    TITLES = (
+        "dr.", "dr", "prof.", "prof", "professor",
+        "mr.", "mr", "ms.", "ms", "mrs.", "mrs", "miss",
+    )
+
+    # Trailing ASCII digit-group affiliation markers ('Yukai You1',
+    # 'Aarti Jajoo * 1,2,3', 'Name1,2'). Strip everything after the last
+    # letter that looks like a marker string.
+    TAIL_MARKER = _re.compile(r"[\s*]*\d[\d,\s*]*$")
+    # Some authors use 'Name-Word Word ...' with no spaces around the
+    # dash to attach an institution (A199: 'Fowler-Department of Genome
+    # Sciences'). If the name still carries such a tail after the sep
+    # split, strip everything from the dash on. Only fires when the
+    # dash is followed by a Latin word-character run that looks like an
+    # institution keyword; leaves 'Chi-Ping', 'Maria-Elena' alone.
+    INSTITUTION_KEYWORDS_RE = _re.compile(
+        r"[-](Department|Center|Centre|Division|Faculty|Institute|"
+        r"School|College|University|Laboratory|Program|Hospital|"
+        r"National|Broad|Harvard|MIT|Yale|Stanford|Columbia|Duke)\b"
+    )
+
     def _clean(nm: str) -> str:
         nm = nm.rstrip("*").rstrip(SUPS).strip()
+        # Strip ASCII digit markers at the end of the name.
+        nm = TAIL_MARKER.sub("", nm).strip()
+        nm = nm.rstrip("*").rstrip(",").strip()
+        # Snip any 'Name-InstitutionKeyword…' tail.
+        m = INSTITUTION_KEYWORDS_RE.search(nm)
+        if m:
+            nm = nm[:m.start()].rstrip()
+        # Strip honorific title prefixes (A182: "Dr. Amanda Storm").
+        parts = nm.split()
+        if parts and parts[0].lower() in TITLES:
+            nm = " ".join(parts[1:]).strip()
         # Title-case names submitted entirely in lowercase (e.g. A017).
         # Skip if the string already mixes cases — we don't want to
         # clobber "de Silva" or "van der Berg" style names.
@@ -282,7 +360,7 @@ def _split_authors(raw: str) -> list[str]:
         # Otherwise take the leading name portion before the first
         # affiliation separator.
         seg = ln
-        for sep in (" — ", " – ", " - ", " : ", " (", ","):
+        for sep in (" — ", " – ", " - ", " : ", "- ", "; ", " (", ","):
             if sep in seg:
                 seg = seg.split(sep, 1)[0]
                 break
@@ -310,6 +388,29 @@ def presenter_name(raw: str) -> str:
 # ---------------------------------------------------------------------------
 # Markdown renderers
 # ---------------------------------------------------------------------------
+
+def render_toc() -> list[str]:
+    """Two-level table of contents built by typst from the H1/H2 headings
+    already in the document. Landing on its own page just after the
+    cover keeps the front-matter tidy."""
+    return [
+        "```{=typst}",
+        "#pagebreak(weak: true)",
+        "#block(above: 0pt, below: 16pt)[",
+        "  #set text(font: \"Avenir Next\", size: 18pt, weight: 700, fill: c-fuchsia)",
+        "  Contents",
+        "  #v(6pt, weak: true)",
+        "  #line(length: 100%, stroke: 1.8pt + c-fuchsia)",
+        "]",
+        "#outline(",
+        "  title: none,",
+        "  depth: 2,",
+        "  indent: 1em,",
+        ")",
+        "```",
+        "",
+    ]
+
 
 def render_cover() -> list[str]:
     # Flyer image is committed as a tracked JPEG under static/img/. Typst
@@ -409,7 +510,8 @@ def render_invited_bios(speakers) -> list[str]:
     return md
 
 
-def render_abstract(aid: str, sub: dict, session_label: str | None = None) -> list[str]:
+def render_abstract(aid: str, sub: dict, session_label: str | None = None,
+                    presenter_hint: tuple[str, str] | None = None) -> list[str]:
     # Every abstract starts on its own page. The template's H3 rule is
     # shared with the schedule H3s (which should not pagebreak), so we
     # emit an explicit typst pagebreak here rather than folding it into
@@ -422,9 +524,23 @@ def render_abstract(aid: str, sub: dict, session_label: str | None = None) -> li
         f"### {aid} · {sub['title']}",
         "",
     ]
-    md.append(f"**Presenter:** {presenter_name(sub['authors'])} — {sub['affiliation']}")
+    # Presenter line — prefer the curated map from program.yaml /
+    # posterSessions.yaml when available (it's the source of truth for
+    # who's presenting + which affiliation to display); parse from the
+    # authors field only as a fallback. Authors list still comes from
+    # the CSV so co-authors are preserved.
+    author_field = (sub.get("authors") or "").strip()
+    if presenter_hint and presenter_hint[0]:
+        presenter, affil = presenter_hint
+        md.append(f"**Presenter:** {presenter} — {affil or sub.get('affiliation','')}")
+    else:
+        presenter = presenter_name(sub["authors"]) if author_field else "(presenter TBD)"
+        md.append(f"**Presenter:** {presenter} — {sub.get('affiliation','')}")
     md.append("")
-    md.append(f"**Authors:** {author_list(sub['authors'])}")
+    if author_field:
+        md.append(f"**Authors:** {author_list(author_field)}")
+    elif presenter_hint and presenter_hint[0]:
+        md.append(f"**Authors:** {presenter_hint[0]}")
     md.append("")
     if session_label:
         md.append(f"**Session:** {session_label}")
@@ -447,18 +563,28 @@ def render_talks(program, subs) -> tuple[list[str], list[str]]:
                     missing.append(aid)
                     continue
                 session_label = f"{day['label']} · {sess['time']}"
-                md += render_abstract(aid, sub, session_label)
+                presenter_hint = (
+                    (t.get("presenter") or "").strip(),
+                    (t.get("affiliation") or "").strip(),
+                )
+                md += render_abstract(aid, sub, session_label, presenter_hint)
     return md, missing
 
 
-def render_posters(poster_ids, subs, day_map) -> tuple[list[str], list[str]]:
+def render_posters(poster_ids, subs, day_map,
+                   presenter_map: dict[str, tuple[str, str]] | None = None
+                   ) -> tuple[list[str], list[str]]:
     md: list[str] = ["# Poster Presentations · Abstracts", ""]
     missing: list[str] = []
+    presenter_map = presenter_map or {}
     # Split by day when available (day_map from posterSessions.yaml); each
     # day still splits into regular / late-breaking so late-breaking rows
     # get a visible section header.
     unknown = [aid for aid in poster_ids if aid not in subs]
     missing.extend(unknown)
+
+    def hint(aid: str) -> tuple[str, str] | None:
+        return presenter_map.get(aid)
 
     if day_map:
         # Group by day label preserving posterSessions.yaml order
@@ -469,33 +595,69 @@ def render_posters(poster_ids, subs, day_map) -> tuple[list[str], list[str]]:
             label = day_map.get(aid, ("Unassigned", ""))[0]
             day_buckets.setdefault(label, []).append(aid)
         for label, ids in day_buckets.items():
-            md += [f"## {label}", ""]
+            # Emit an unmistakable full-width day banner *and* register
+            # the label as a level-2 outline entry so the TOC lists both
+            # poster days without also stamping a duplicate visible
+            # heading on the banner page. The typst template's day-heading
+            # show rule handles the special outlined + bookmarked flag.
+            md += [
+                "```{=typst}",
+                f"#day-banner[{label}]",
+                f"#heading(level: 2, outlined: true, "
+                f"bookmarked: true)[{label}] <day>",
+                "```",
+                "",
+            ]
             reg = [aid for aid in ids if subs[aid].get("round") == "regular"]
             late = [aid for aid in ids if subs[aid].get("round") == "late-breaking"]
             if reg:
-                md += ["### Regular round", ""]
+                md += _round_banner("Regular round")
                 for aid in sorted(reg):
                     time = day_map.get(aid, ("", ""))[1]
                     session_label = f"{label} · {time}" if time else label
-                    md += render_abstract(aid, subs[aid], session_label)
+                    md += render_abstract(aid, subs[aid], session_label, hint(aid))
             if late:
-                md += ["### Late-breaking", ""]
+                md += _round_banner("Late-breaking")
                 for aid in sorted(late):
                     time = day_map.get(aid, ("", ""))[1]
                     session_label = f"{label} · {time}" if time else label
-                    md += render_abstract(aid, subs[aid], session_label)
+                    md += render_abstract(aid, subs[aid], session_label, hint(aid))
     else:
         regular = sorted(aid for aid in poster_ids if subs.get(aid, {}).get("round") == "regular")
         late = sorted(aid for aid in poster_ids if subs.get(aid, {}).get("round") == "late-breaking")
         if regular:
-            md += ["## Regular round", ""]
+            md += _round_banner("Regular round")
             for aid in regular:
-                md += render_abstract(aid, subs[aid])
+                md += render_abstract(aid, subs[aid], presenter_hint=hint(aid))
         if late:
-            md += ["## Late-breaking", ""]
+            md += _round_banner("Late-breaking")
             for aid in late:
-                md += render_abstract(aid, subs[aid])
+                md += render_abstract(aid, subs[aid], presenter_hint=hint(aid))
     return md, missing
+
+
+def _round_banner(label: str) -> list[str]:
+    """Compact section separator between round groups inside a day —
+    renders as a small navy uppercase banner in the typst template, not
+    as another heading level, so it doesn't compete visually with the
+    day (H2) or the abstract entries (H3).
+
+    Also starts a fresh page so the banner never lands orphan-style at
+    the bottom of a page.
+    """
+    return [
+        "```{=typst}",
+        "#pagebreak(weak: true)",
+        "#block(above: 12pt, below: 10pt)[",
+        "  #set text(font: \"Avenir Next\", size: 10pt, weight: 700,",
+        "    fill: c-navy, tracking: 1.5pt)",
+        f"  #upper[{label}]",
+        "  #v(-3pt, weak: true)",
+        "  #line(length: 100%, stroke: 0.5pt + c-navy)",
+        "]",
+        "```",
+        "",
+    ]
 
 
 def render_organizers(orgs) -> list[str]:
@@ -588,13 +750,17 @@ def main():
 
     lines: list[str] = []
     lines += render_cover()
+    lines += render_toc()
     lines += render_schedule(program)
     lines += render_keynote_bios(speakers)
     lines += render_invited_bios(speakers)
     talks_md, talks_missing = render_talks(program, subs)
     lines += talks_md
     if poster_ids:
-        posters_md, posters_missing = render_posters(poster_ids, subs, poster_day_map)
+        poster_presenter_map = load_poster_presenter_map()
+        posters_md, posters_missing = render_posters(
+            poster_ids, subs, poster_day_map, poster_presenter_map,
+        )
         lines += posters_md
     else:
         posters_missing = []

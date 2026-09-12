@@ -55,15 +55,41 @@
   ]
 }
 
-#show heading.where(level: 2): it => block(above: 16pt, below: 7pt, sticky: true)[
-  #set text(font: "Avenir Next", size: 12pt, weight: 700, fill: c-navy)
+// Day-banner headings from the poster part carry a <day> label so we
+// can suppress their default heading render (the visible banner is
+// drawn by #day-banner just before this heading emits its outline
+// entry). Without this the label would render again in default H2
+// style right after the banner page.
+#show heading.where(level: 2): it => if it.label == <day> {
+  // no-op body; the outline entry still registers via the heading itself.
+  []
+} else {
+  block(above: 16pt, below: 7pt, sticky: true)[
+    #set text(font: "Avenir Next", size: 12pt, weight: 700, fill: c-navy)
+    #it.body
+  ]
+}
+
+// H3 = abstract entries + schedule slots. Slightly larger and darker so
+// each abstract's heading reads as the anchor of its page.
+#show heading.where(level: 3): it => block(above: 0pt, below: 6pt, sticky: true)[
+  #set text(font: "Avenir Next", size: 11pt, weight: 700, fill: c-teal)
   #it.body
 ]
 
-#show heading.where(level: 3): it => block(above: 12pt, below: 5pt, sticky: true)[
-  #set text(font: "Avenir Next", size: 10.5pt, weight: 700, fill: c-teal)
-  #it.body
-]
+// Day banner — emitted directly by the builder for the Poster
+// Presentations part so Day 1 and Day 2 open on fresh, unmistakable
+// section pages.
+#let day-banner(label) = {
+  pagebreak(weak: true)
+  v(1in)
+  align(center)[
+    #text(font: "Avenir Next", size: 26pt, weight: 700, fill: c-fuchsia)[#label]
+    #v(10pt, weak: true)
+    #line(length: 40%, stroke: 1.5pt + c-fuchsia)
+  ]
+  v(0.3in)
+}
 
 #show heading.where(level: 4): it => block(above: 8pt, below: 3pt, sticky: true)[
   #set text(font: "Avenir Next", size: 9.5pt, weight: 700, fill: c-navy)

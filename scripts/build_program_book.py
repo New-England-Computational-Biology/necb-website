@@ -273,12 +273,21 @@ def _split_authors(raw: str) -> list[str]:
         "licenciatura",  # A024 specifically has this in a Spanish institution
     )
 
+    # Strip leading '1. ', '2. ', '10. ' style enumerator prefixes from
+    # numbered author lists (see A088: '1. Arif Ahmad Rather - Dept…').
+    ENUM_PREFIX = _re.compile(r"^\d+[.\)]\s+")
+
     lines: list[str] = []
     for chunk in raw.replace("\t", "\n").split("\n"):
         chunk = chunk.strip().strip(";").strip(",").strip()
         # Strip any leading bullet glyph + whitespace before the name.
         while chunk and chunk[0] in BULLETS:
             chunk = chunk[1:].lstrip()
+        # Strip '1. ' / '2. ' / '1) ' enumerator prefixes so a numbered
+        # author list survives; must run *before* the digit-leading skip.
+        m = ENUM_PREFIX.match(chunk)
+        if m:
+            chunk = chunk[m.end():]
         if not chunk:
             continue
         # Skip section headers / affiliation blocks.
@@ -291,7 +300,8 @@ def _split_authors(raw: str) -> list[str]:
             continue
         # Skip lines that start with a digit — those are ASCII-numbered
         # affiliation continuations (e.g. '1 McLean Hospital',
-        # '1Center for Theoretical Biological Physics').
+        # '1Center for Theoretical Biological Physics'). Numbered-author
+        # prefixes were already trimmed above.
         if chunk[0].isdigit():
             continue
         first_word = low.split(maxsplit=1)[0].rstrip(",.:")
@@ -573,18 +583,21 @@ def render_abstract(aid: str, sub: dict, session_label: str | None = None,
         f"### {aid} · {sub['title']}",
         "",
     ]
-    # Presenter line — prefer the curated map from program.yaml /
-    # posterSessions.yaml when available (it's the source of truth for
-    # who's presenting + which affiliation to display); parse from the
-    # authors field only as a fallback. Authors list still comes from
-    # the CSV so co-authors are preserved.
+    # Presenter line — prefer the curated map (program.yaml /
+    # posterSessions.yaml) for the *name*, but prefer the CSV
+    # presenting_affiliation for the *affiliation* since the program
+    # book has room to spell things out and the map's affiliation is
+    # tuned for the compact website (e.g. 'BCH · HMS'). Author list
+    # still comes from the CSV so co-authors are preserved.
     author_field = (sub.get("authors") or "").strip()
+    csv_affil = (sub.get("affiliation") or "").strip()
     if presenter_hint and presenter_hint[0]:
-        presenter, affil = presenter_hint
-        md.append(f"**Presenter:** {presenter} — {affil or sub.get('affiliation','')}")
+        presenter, hint_affil = presenter_hint
+        affil = csv_affil or hint_affil
+        md.append(f"**Presenter:** {presenter} — {affil}")
     else:
         presenter = presenter_name(sub["authors"]) if author_field else "(presenter TBD)"
-        md.append(f"**Presenter:** {presenter} — {sub.get('affiliation','')}")
+        md.append(f"**Presenter:** {presenter} — {csv_affil}")
     md.append("")
     if author_field:
         md.append(f"**Authors:** {author_list(author_field)}")

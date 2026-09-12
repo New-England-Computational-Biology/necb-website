@@ -60,6 +60,9 @@ menus:
     - name: Speakers
       url: "#speakers"
       weight: 40
+    - name: Posters
+      url: "#poster-sessions"
+      weight: 42
     - name: Register
       url: "#registration"
       weight: 43

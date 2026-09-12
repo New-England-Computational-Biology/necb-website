@@ -411,7 +411,7 @@ days:
         round: "regular"
       - abstract_id: "A200"
         title: "A top-down/bottom-up pipeline for the automatic construction of mechanistic mathematical models: reconstructing the regulatory network of tamoxifen resistance in breast cancer"
-        presenter: "vikas pandey"
+        presenter: "Vikas Pandey"
         affiliation: "The University of Osaka"
         round: "late-breaking"
       - abstract_id: "A203"

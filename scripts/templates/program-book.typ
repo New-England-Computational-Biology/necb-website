@@ -95,9 +95,13 @@
   ]
 }
 
-// H3 = abstract entries + schedule slots. Slightly larger and darker so
-// each abstract's heading reads as the anchor of its page.
-#show heading.where(level: 3): it => block(above: 0pt, below: 6pt, sticky: true)[
+// H3 = abstract entries + schedule slots + committee subsections.
+// 12pt breathing room above keeps organizer subsection titles from
+// sitting on top of the previous section's last line. At the top of a
+// fresh page (abstract entries after a pagebreak) typst collapses the
+// spacing to the page-top margin, so we don't lose vertical real
+// estate there.
+#show heading.where(level: 3): it => block(above: 12pt, below: 6pt, sticky: true)[
   #set text(font: "Avenir Next", size: 11pt, weight: 700, fill: c-teal)
   #it.body
 ]

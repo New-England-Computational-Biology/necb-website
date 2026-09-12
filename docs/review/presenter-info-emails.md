@@ -95,9 +95,8 @@ Physical board numbers will be assigned onsite and shared at check-in.
 - **Presence:** please be at your poster for the full 2-hour session
   (Thu 2:15–4:15 PM). Attendees, judges, and other presenters use this
   window to discuss your work.
-- **Poster awards:** judges will circulate during both poster sessions.
-  **Winners will be announced at the closing keynote on Day 2
-  (Fri Oct 2, 5:15–6:00 PM).** All presenters are encouraged to attend.
+- **Poster awards:** Winners will be announced at the closing keynote
+  on Day 2 (Fri Oct 2, 5:15–6:00 PM).
 - **Takedown:** please remove your poster at the end of the Thursday
   session. Any posters left overnight cannot be preserved.
 
@@ -142,9 +141,8 @@ Physical board numbers will be assigned onsite and shared at check-in.
 - **Presence:** please be at your poster for the full 2-hour session
   (Fri 2:15–4:15 PM). Attendees, judges, and other presenters use this
   window to discuss your work.
-- **Poster awards:** judges will circulate during both poster sessions.
-  **Winners will be announced at the closing keynote later the same day
-  (Fri Oct 2, 5:15–6:00 PM).** All presenters are encouraged to attend.
+- **Poster awards:** Winners will be announced at the closing keynote
+  later the same day (Fri Oct 2, 5:15–6:00 PM).
 - **Takedown:** please remove your poster at the end of the Friday
   session.
 

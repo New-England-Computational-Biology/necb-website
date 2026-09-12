@@ -383,6 +383,15 @@ def _split_authors(raw: str) -> list[str]:
         m = INSTITUTION_KEYWORDS_RE.search(nm)
         if m:
             nm = nm[:m.start()].rstrip()
+        # If the residual name has more than 2 words and one of the
+        # later words is an institution keyword ('Yuncheng Duan
+        # Department of Genomics …'), truncate at that word so only
+        # the leading name portion survives.
+        words = nm.split()
+        for i in range(2, len(words)):
+            if words[i].lower().rstrip(",.:;") in INSTITUTION_WORDS:
+                nm = " ".join(words[:i]).rstrip(",")
+                break
         # Strip honorific title prefixes (A182: "Dr. Amanda Storm").
         parts = nm.split()
         if parts and parts[0].lower() in TITLES:

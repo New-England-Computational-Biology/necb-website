@@ -135,11 +135,15 @@ def render_covers(entries: list[dict]) -> None:
     cover fills exactly one page.
     """
     lines: list[str] = []
-    # Front-matter title page — matches the program book's cover style.
+    # Cover page — mirrors the program book's cover exactly (same
+    # eyebrow, wordmark, and meta), with an added 'Extended Abstracts'
+    # sub-wordmark under the year so the reader immediately knows this
+    # is the companion volume.
     lines += [
         "```{=typst}",
         "#v(1.4in)",
         "#align(left)[",
+        "  // eyebrow",
         "  #block[",
         "    #box(fill: c-fuchsia, radius: 999pt, width: 0.35em, "
         "height: 0.35em, [])",
@@ -150,11 +154,21 @@ def render_covers(entries: list[dict]) -> None:
         "    ]",
         "  ]",
         "  #v(10pt)",
+        "  // title stack — same three-line wordmark as the program book",
         "  #text(font: \"Avenir Next\", size: 38pt, weight: 700, fill: c-fuchsia)[",
-        "    NECB 2026 \\",
-        "    #text(size: 32pt, fill: c-navy)[Extended Abstracts]",
+        "    New England \\",
+        "    Computational \\",
+        "    Biology  ",
+        "    #text(size: 32pt, fill: c-navy)[2026]",
+        "  ]",
+        "  #v(6pt)",
+        "  // sub-wordmark that names this volume",
+        "  #text(font: \"Avenir Next\", size: 16pt, weight: 600, fill: c-teal, "
+        "tracking: 1pt)[",
+        "    #upper[Extended Abstracts]",
         "  ]",
         "  #v(14pt)",
+        "  // meta",
         "  #text(font: \"Avenir Next\", size: 11pt, weight: 600, fill: c-navy)[",
         "    October 1–2, 2026",
         "  ]",
@@ -162,12 +176,13 @@ def render_covers(entries: list[dict]) -> None:
         "    #h(0.3em) · #h(0.3em) Microsoft Research New England",
         "  ]",
         "  #v(20pt)",
+        "  // pitch — one line specific to this volume",
         "  #block(width: 4in)[",
         "    #set text(font: \"Charter\", size: 10.5pt, fill: c-ink)",
         "    #set par(leading: 0.6em, justify: false)",
-        "    Companion to the NECB 2026 program book. One page per "
-        "accepted talk and poster, exactly as the presenter submitted "
-        "it — with a short cover sheet in front of each.",
+        "    Companion to the program book. One page per accepted talk "
+        "and poster, exactly as the presenter submitted it, with a short "
+        "cover sheet in front of each.",
         "  ]",
         "]",
         "```",

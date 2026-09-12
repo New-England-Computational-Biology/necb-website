@@ -307,11 +307,35 @@ def _split_authors(raw: str) -> list[str]:
             chunk = chunk[1:].lstrip()
         # Strip '1. ' / '2. ' / '1) ' enumerator prefixes so a numbered
         # author list survives; must run *before* the digit-leading skip.
+        # A prefixed line that immediately opens with an institution
+        # keyword-adjacent word is an affiliation continuation ("1. Gene
+        # Regulation Observatory …", "5. Bioinformatics and Integrative
+        # Genomics PhD Program …", "8. Harvard Stem Cell Institute …")
+        # so we drop it whether or not the leading tokens hit the
+        # institution filter later.
         m = ENUM_PREFIX.match(chunk)
+        had_enum = bool(m)
         if m:
             chunk = chunk[m.end():]
         if not chunk:
             continue
+        if had_enum:
+            # Numbered-list lines: if the residue contains any
+            # institution keyword anywhere, treat as an affiliation
+            # continuation (numbered author lists — like A088's
+            # '1. Arif Ahmad Rather - Department of …' — still survive
+            # because the ' - ' split extracts the name before the
+            # institution keyword hits).
+            low_full = chunk.lower()
+            if any(kw in low_full for kw in INSTITUTION_WORDS):
+                # If the *pre-separator* segment already contains an
+                # institution keyword, drop the whole line. Otherwise
+                # keep it — a name like '1. Arif Ahmad Rather' with a
+                # ' - Department of …' tail lets the separator handling
+                # do the work and needs to survive.
+                pre = _re.split(r"[-—–:;,(]", low_full, maxsplit=1)[0]
+                if any(kw in pre for kw in INSTITUTION_WORDS):
+                    continue
         # Skip section headers / affiliation blocks (matched bare or with
         # trailing colon).
         low = chunk.lower().rstrip(":").strip()

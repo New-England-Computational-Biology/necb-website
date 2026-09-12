@@ -280,9 +280,12 @@ def interleave(entries: list[dict]) -> None:
     for i, e in enumerate(entries):
         # Cover sheet for this abstract
         writer.add_page(covers.pages[i + 1])
-        # Author PDF pages — scaled to half-letter
+        # Author PDF pages — scaled to half-letter. Cap at page 1 only:
+        # the extended-abstract call is for a single-page submission,
+        # anything longer is overflow (A040, A182, A185) that we don't
+        # want mixed into the companion.
         author = PdfReader(str(e["pdf_path"]))
-        for page in author.pages:
+        for page in author.pages[:1]:
             writer.add_page(_scale_page_to_half_letter(page))
     # Set /PageLayout /TwoPageRight to match the program book.
     writer.page_layout = "/TwoPageRight"

@@ -402,27 +402,49 @@ a:focus-visible { outline: 2px solid var(--c-accent); outline-offset: 2px; borde
 
 /* Per-talk expandable rows: presenter · affiliation stays in the
    compact schedule; clicking a row reveals abstract-ID + title
-   inline beneath it. Zero duplication — each piece of info appears
-   in exactly one place. */
+   inline beneath it. The "▸ show title" hint spells out that the
+   row expands (a bare chevron reads as decoration to most users). */
 .program-talk-row summary {
   cursor: pointer;
   list-style: none;
   user-select: none;
-  padding-right: 0.25rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  flex-wrap: wrap;
 }
 .program-talk-row summary::-webkit-details-marker { display: none; }
-.program-talk-row summary::after {
-  content: "\25B8";
-  color: var(--c-primary);
-  font-size: 0.65rem;
-  margin-left: 0.35rem;
-  transition: transform 0.15s ease;
-  display: inline-block;
-  opacity: 0.55;
+.talk-presenter-line { flex: 1 1 auto; min-width: 0; }
+.talk-toggle-hint {
+  flex: 0 0 auto;
+  font-size: 0.72rem;
+  color: var(--c-teal);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 0.05rem 0.45rem;
+  border: 1px solid var(--c-teal);
+  border-radius: 999px;
+  background: rgba(59, 115, 104, 0.08);
+  white-space: nowrap;
+  transition: background 0.15s ease, color 0.15s ease;
 }
-.program-talk-row[open] summary::after {
+.talk-toggle-hint::before {
+  content: "\25B8";
+  font-size: 0.7em;
+  margin-right: 0.3em;
+  display: inline-block;
+  transition: transform 0.15s ease;
+}
+.program-talk-row summary:hover .talk-toggle-hint {
+  background: var(--c-teal);
+  color: white;
+}
+.program-talk-row[open] .talk-toggle-hint::before {
   transform: rotate(90deg);
-  opacity: 1;
+}
+.program-talk-row[open] .talk-toggle-hint {
+  background: var(--c-teal);
+  color: white;
 }
 .program-talk-detail {
   display: grid;

@@ -37,7 +37,10 @@
                 {{ range . }}
                 <li>
                   <details class="program-talk-row">
-                    <summary>{{ .presenter }} · {{ .affiliation }}</summary>
+                    <summary>
+                      <span class="talk-presenter-line">{{ .presenter }} · {{ .affiliation }}</span>
+                      <span class="talk-toggle-hint">show title</span>
+                    </summary>
                     <div class="program-talk-detail">
                       <span class="talk-id">{{ .abstract_id }}</span>
                       <span class="talk-title">{{ .title }}</span>

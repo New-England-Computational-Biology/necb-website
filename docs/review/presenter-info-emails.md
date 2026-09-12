@@ -47,8 +47,6 @@ meeting.
   Please avoid Keynote / Google Slides exports unless you have tested
   the resulting file on Windows — fonts and animations sometimes
   misrender.
-- **Fonts & videos:** embed any custom fonts in your `.pptx`. Bring
-  source `.mp4` files alongside embedded video as backup.
 - Please **bring your slides on a USB stick** as a fallback in case
   cloud upload has issues.
 

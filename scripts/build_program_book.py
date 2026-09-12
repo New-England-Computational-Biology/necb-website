@@ -272,11 +272,11 @@ def _split_authors(raw: str) -> list[str]:
         "columbia", "cornell", "duke", "bioinformatics",
         "licenciatura",  # A024 specifically has this in a Spanish institution
     )
-    # 'Name (1,2)' style affiliation markers — remove the whole
-    # parenthesized numeric group so the authors on the line survive
-    # via a plain comma split (see A041: 'Andrew Chen (1,2), Stefano
-    # Monti (1,2,3)').
-    NUM_PAREN = _re.compile(r"\s*\(\s*\d+(?:\s*[,\s]\s*\d+)*\s*\)")
+    # 'Name (1,2)' or 'Name[1,2]' style numeric affiliation markers.
+    # Both remove the whole marker group so downstream comma-splitting
+    # yields individual authors instead of tangling the marker into a
+    # name (see A041, A037).
+    NUM_PAREN = _re.compile(r"\s*[(\[]\s*\d+(?:\s*[,\s]\s*\d+)*\s*[)\]]")
     # Parenthesized role notes tacked onto a name — 'Name — Affil (co-
     # corresp.)' etc. Strip them so downstream separator splitting
     # doesn't lock onto ' (' first and steal the whole affiliation.
@@ -337,6 +337,18 @@ def _split_authors(raw: str) -> list[str]:
             continue
         first_word = low.split(maxsplit=1)[0].rstrip(",.:")
         if first_word in INSTITUTION_WORDS:
+            continue
+        # If the line contains strong institution keywords anywhere AND
+        # doesn't look like it starts with a personal name (short prefix
+        # before the first comma), treat it as an affiliation line.
+        # Prefix rule: name portion should be at most 6 words before
+        # the first separator. Longer prefixes suggest 'Vanderbilt
+        # Institute for Infection Immunity and Inflammation, …'.
+        low_head = low.split(",", 1)[0]
+        strong_kw = ("university", "institute", "hospital", "school",
+                     "department", "laboratory", "center", "centre",
+                     "college", "division", "faculty")
+        if any(kw in low for kw in strong_kw) and len(low_head.split()) > 5:
             continue
         lines.append(chunk)
 

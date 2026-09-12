@@ -75,7 +75,7 @@ days:
           - abstract_id: "A088"
             title: "Kidzoi Enables Cell-Type-Specific Regulatory Variant Effect Prediction in the Kidney"
             presenter: "Arif Ahmad Rather"
-            affiliation: "Boston Children's Hospital"
+            affiliation: "BCH · HMS"
           - abstract_id: "A035"
             title: "Cherimoya: Lightweight modeling of genomic modalities enables organism-wide analyses"
             presenter: "Jacob Schreiber"

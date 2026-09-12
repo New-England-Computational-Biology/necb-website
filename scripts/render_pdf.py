@@ -65,8 +65,20 @@ def retune_align(match: re.Match[str]) -> str:
     return "align: (" + ", ".join(cols) + ")"
 
 
+def _set_page_layout(pdf_path: Path, layout: str) -> None:
+    """Patch the PDF catalog's /PageLayout so viewers open in the
+    requested layout (e.g. TwoPageRight for booklets)."""
+    from pypdf import PdfReader, PdfWriter
+    reader = PdfReader(str(pdf_path))
+    writer = PdfWriter(clone_from=reader)
+    writer.page_layout = f"/{layout}"
+    with open(pdf_path, "wb") as f:
+        writer.write(f)
+
+
 def render(source: Path, keep_typst: bool, publish: bool,
-           template: Path | None = None) -> Path:
+           template: Path | None = None,
+           page_layout: str | None = None) -> Path:
     require("pandoc")
     require("typst")
     if not source.is_file():
@@ -104,6 +116,9 @@ def render(source: Path, keep_typst: bool, publish: bool,
         check=True,
     )
 
+    if page_layout:
+        _set_page_layout(pdf_path, page_layout)
+
     if not keep_typst:
         typ_path.unlink()
     return pdf_path
@@ -127,9 +142,19 @@ def main() -> None:
         "--template", type=Path, default=None,
         help="typst template path (default: scripts/templates/packet.typ)",
     )
+    parser.add_argument(
+        "--page-layout", default=None,
+        choices=[
+            "SinglePage", "OneColumn",
+            "TwoPageLeft", "TwoPageRight",
+            "TwoColumnLeft", "TwoColumnRight",
+        ],
+        help="patch the PDF catalog so viewers open in this layout "
+             "(e.g. TwoPageRight for a booklet with cover)",
+    )
     args = parser.parse_args()
     pdf = render(args.source.resolve(), args.keep_typst, args.publish,
-                 template=args.template)
+                 template=args.template, page_layout=args.page_layout)
     print(f"wrote {pdf.relative_to(ROOT)}")
     if args.publish:
         print(f"       https://newenglandcompbio.org/files/{pdf.name} (after deploy)")

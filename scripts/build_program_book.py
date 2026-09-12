@@ -526,10 +526,17 @@ def render_schedule(program) -> list[str]:
             speakers = sess.get("speakers") or []
             talks = sess.get("talks") or []
             if speakers:
+                # Same grid geometry as the talks stanza below so keynote
+                # and invited speaker names line up with talk titles
+                # (empty ID column on the left, name on the right).
                 md.append("```{=typst}")
                 for name in speakers:
                     md.append(
-                        f"#block(above: 3pt, below: 3pt)[#text(weight: 600)[{_typ(name)}]]"
+                        "#block(above: 5pt, below: 5pt, breakable: false)["
+                        "#grid(columns: (0.4in, 1fr), column-gutter: 6pt, "
+                        "align: (right + top, left + top), "
+                        "[], "
+                        f"[#text(weight: 600)[{_typ(name)}]])]"
                     )
                 md.append("```")
                 md.append("")

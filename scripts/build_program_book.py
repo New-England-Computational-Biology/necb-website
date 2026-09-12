@@ -252,9 +252,13 @@ def _split_authors(raw: str) -> list[str]:
     # Bullet glyphs the ISCB form users sometimes prefix each author with
     # (unicode bullet, hyphen-bullet, en/em dash, asterisk, ASCII dash…).
     BULLETS = "•·⁃∙◦▪▫●○*-–—+"
-    # Superscript digits used as author→affiliation markers. Covers the
-    # Latin-1 legacy trio (¹²³) and the Unicode superscript block (⁰⁴-⁹).
-    SUPS = "¹²³⁰⁴⁵⁶⁷⁸⁹"
+    # Superscript characters used as author→affiliation markers. Covers
+    # the Latin-1 legacy digit trio (¹²³), the Unicode superscript
+    # digits (⁰⁴-⁹), and the connectors that authors use to join them
+    # ('¹⁻³', '¹˒²˒⁴'): superscript minus (⁻ U+207B), plus (⁺ U+207A),
+    # comma-mimic modifier letter middle dot (˒ U+02D2), and the
+    # parens (⁽ U+207D, ⁾ U+207E).
+    SUPS = "¹²³⁰⁴⁵⁶⁷⁸⁹⁻⁺˒⁽⁾"
     # Lines that are section headers or metadata inside the authors
     # blob, not names to keep. Matched with and without trailing ':'.
     SKIP_HEADINGS = {

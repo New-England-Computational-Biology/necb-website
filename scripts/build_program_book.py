@@ -603,14 +603,14 @@ def _typ(s: str) -> str:
 
 
 def _speaker_affil_map(speakers_yaml: dict) -> dict[str, str]:
-    """Build a name → short_affiliation lookup so schedule entries for
-    keynote / invited speakers can carry the same compact affiliation
-    the website's Program section shows."""
+    """Build a name → full affiliation lookup for schedule entries.
+    The program book has room to spell affiliations out (unlike the
+    compact 'DFCI · HMS' short_affiliation used on the website)."""
     m: dict[str, str] = {}
     for group in ("keynotes", "invited"):
         for entry in speakers_yaml.get(group, {}).get("members", []):
             name = (entry.get("name") or "").strip()
-            aff = (entry.get("short_affiliation") or entry.get("affiliation") or "").strip()
+            aff = (entry.get("affiliation") or entry.get("short_affiliation") or "").strip()
             if name:
                 m[name] = aff
     return m

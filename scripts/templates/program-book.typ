@@ -17,7 +17,30 @@
 #set page(
   width: 5.5in,
   height: 8.5in,
-  margin: (x: 0.55in, top: 0.65in, bottom: 0.6in),
+  margin: (x: 0.55in, top: 0.7in, bottom: 0.65in),
+  header: context {
+    // Emit a running header everywhere except the cover + TOC.
+    let n = here().page()
+    if n <= 2 { return [] }
+    // Nearest ancestor H1 = the part we're inside.
+    let h1 = query(selector(heading.where(level: 1)).before(here())).at(-1, default: none)
+    // Nearest ancestor H2 = the day/section within that part.
+    let h2 = query(selector(heading.where(level: 2)).before(here())).at(-1, default: none)
+    let part_txt = if h1 != none { h1.body } else { [] }
+    let section_txt = if h2 != none [
+      #text(fill: c-muted)[  ·  ]
+      #h2.body
+    ] else { [] }
+    set text(font: "Avenir Next", size: 8pt, fill: c-muted)
+    grid(
+      columns: (1fr, auto),
+      align: (left + horizon, right + horizon),
+      [#part_txt #section_txt],
+      [NECB 2026],
+    )
+    v(2pt, weak: true)
+    line(length: 100%, stroke: 0.4pt + c-rule)
+  },
   footer: context {
     let n = here().page()
     if n > 1 {
@@ -25,7 +48,7 @@
       grid(
         columns: (1fr, auto),
         align: (left, right),
-        [NECB 2026 · Program Book],
+        [October 1–2, 2026 · Cambridge, MA],
         [#n of #counter(page).final().first()],
       )
     }

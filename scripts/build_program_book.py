@@ -400,7 +400,7 @@ def _split_authors(raw: str) -> list[str]:
         # Otherwise take the leading name portion before the first
         # affiliation separator.
         seg = ln
-        for sep in (" (", " — ", " – ", " - ", " : ", "- ", "; ", ","):
+        for sep in (" (", " — ", " – ", " -- ", " - ", " : ", "- ", "; ", ","):
             if sep in seg:
                 seg = seg.split(sep, 1)[0]
                 break
@@ -549,47 +549,67 @@ def _typst_escape(s: str) -> str:
     return s.replace("\\", "\\\\").replace("\"", "\\\"")
 
 
-def _speaker_bio_page(m: dict) -> list[str]:
-    """Emit one speaker card as a raw typst block using the template's
-    #speaker-card helper (photo-left, name/affiliation/bio-right)."""
+def _condense_bio(bio: str, max_chars: int = 320) -> str:
+    """Trim a bio to roughly max_chars, breaking at the end of the
+    sentence closest to the target length. Used for the compact
+    speaker-grid layout so all keynotes/invited speakers share a page."""
+    bio = " ".join((bio or "").split())
+    if len(bio) <= max_chars:
+        return bio
+    cut = bio[:max_chars]
+    dot = max(cut.rfind(". "), cut.rfind("? "), cut.rfind("! "))
+    if dot > max_chars * 0.5:
+        return cut[: dot + 1]
+    space = cut.rfind(" ")
+    return cut[:space] + "…" if space > 0 else cut + "…"
+
+
+def _speaker_mini_call(m: dict, max_chars: int = 320) -> str:
+    """Return one typst `speaker-mini(...)` call string. Used as a cell
+    in the two-column keynote / invited page grid."""
     photo = m.get("photo")
     photo_arg = f"\"/static/{photo}\"" if photo else "none"
     name = _typst_escape(m.get("name", ""))
     aff = _typst_escape(m.get("affiliation", ""))
-    bio = (m.get("bio", "") or "").strip()
-    # Bio text inside a typst content block [...] — escape any '#' or
-    # bracket characters that would otherwise be parsed as markup.
+    bio = _condense_bio(m.get("bio", ""), max_chars)
     bio_body = (
         bio.replace("\\", "\\\\")
            .replace("[", "\\[")
            .replace("]", "\\]")
            .replace("#", "\\#")
     )
-    return [
+    return (
+        f"speaker-mini(photo: {photo_arg}, name: \"{name}\", "
+        f"affiliation: \"{aff}\", bio: [{bio_body}])"
+    )
+
+
+def _speaker_page(part_title: str, members: list[dict], max_chars: int) -> list[str]:
+    """One-page compact grid of speaker mini-cards under a part heading."""
+    md = [f"# {part_title}", ""]
+    cards = ", ".join(_speaker_mini_call(m, max_chars) for m in members)
+    md += [
         "```{=typst}",
-        (
-            f"#speaker-card(photo: {photo_arg}, name: \"{name}\", "
-            f"affiliation: \"{aff}\", bio: ["
-        ),
-        bio_body,
-        "])",
+        f"#speaker-grid(({cards},))",
         "```",
         "",
     ]
+    return md
 
 
 def render_keynote_bios(speakers) -> list[str]:
-    md = ["# Keynote Speakers", ""]
-    for m in speakers["keynotes"]["members"]:
-        md += _speaker_bio_page(m)
-    return md
+    # 5 keynote speakers land in a 2-column x 3-row grid (the last row
+    # centers a single card). ~320-char bios keep them all on one page.
+    return _speaker_page(
+        "Keynote Speakers", speakers["keynotes"]["members"], max_chars=320,
+    )
 
 
 def render_invited_bios(speakers) -> list[str]:
-    md = ["# Invited Speakers", ""]
-    for m in speakers["invited"]["members"]:
-        md += _speaker_bio_page(m)
-    return md
+    # 6 invited speakers → 2 x 3 grid; a hair less bio room per card.
+    return _speaker_page(
+        "Invited Speakers", speakers["invited"]["members"], max_chars=260,
+    )
 
 
 def render_abstract(aid: str, sub: dict, session_label: str | None = None,
@@ -706,7 +726,10 @@ def render_posters(poster_ids, subs, day_map,
             reg = [aid for aid in ids if subs[aid].get("round") == "regular"]
             late = [aid for aid in ids if subs[aid].get("round") == "late-breaking"]
             if reg:
-                md += _round_banner("Regular round")
+                # First round in the day flows right under the day
+                # banner (no pagebreak); the first abstract of the
+                # round then also sticks under the round banner.
+                md += _round_banner("Regular round", force_break=False)
                 for i, aid in enumerate(sorted(reg)):
                     time = day_map.get(aid, ("", ""))[1]
                     session_label = f"{label} · {time}" if time else label
@@ -715,7 +738,9 @@ def render_posters(poster_ids, subs, day_map,
                         stick_to_prev=(i == 0),
                     )
             if late:
-                md += _round_banner("Late-breaking")
+                # Late-breaking always starts on a fresh page after the
+                # last Regular-round abstract.
+                md += _round_banner("Late-breaking", force_break=True)
                 for i, aid in enumerate(sorted(late)):
                     time = day_map.get(aid, ("", ""))[1]
                     session_label = f"{label} · {time}" if time else label
@@ -737,18 +762,19 @@ def render_posters(poster_ids, subs, day_map,
     return md, missing
 
 
-def _round_banner(label: str) -> list[str]:
+def _round_banner(label: str, force_break: bool = False) -> list[str]:
     """Compact section separator between round groups inside a day —
     renders as a small navy uppercase banner in the typst template, not
     as another heading level, so it doesn't compete visually with the
-    day (H2) or the abstract entries (H3).
-
-    Also starts a fresh page so the banner never lands orphan-style at
-    the bottom of a page.
+    day (H2) or the abstract entries (H3). By default lets the banner
+    flow inline (so the first-in-day round can share the day banner's
+    page); set force_break=True for subsequent rounds within a day
+    (e.g. Late-breaking after Regular round).
     """
-    return [
-        "```{=typst}",
-        "#pagebreak(weak: true)",
+    lines = ["```{=typst}"]
+    if force_break:
+        lines.append("#pagebreak(weak: true)")
+    lines += [
         "#block(above: 12pt, below: 10pt)[",
         "  #set text(font: \"Avenir Next\", size: 10pt, weight: 700,",
         "    fill: c-navy, tracking: 1.5pt)",
@@ -759,6 +785,7 @@ def _round_banner(label: str) -> list[str]:
         "```",
         "",
     ]
+    return lines
 
 
 def render_organizers(orgs) -> list[str]:

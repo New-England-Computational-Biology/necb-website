@@ -101,17 +101,16 @@
 ]
 
 // Day banner — emitted directly by the builder for the Poster
-// Presentations part so Day 1 and Day 2 open on fresh, unmistakable
-// section pages.
+// Presentations part. Compact top-of-page anchor so the round banner
+// + first abstract fit on the same page beneath it.
 #let day-banner(label) = {
   pagebreak(weak: true)
-  v(1in)
   align(center)[
-    #text(font: "Avenir Next", size: 26pt, weight: 700, fill: c-fuchsia)[#label]
-    #v(10pt, weak: true)
-    #line(length: 40%, stroke: 1.5pt + c-fuchsia)
+    #text(font: "Avenir Next", size: 18pt, weight: 700, fill: c-fuchsia)[#label]
+    #v(4pt, weak: true)
+    #line(length: 40%, stroke: 1pt + c-fuchsia)
   ]
-  v(0.3in)
+  v(8pt)
 }
 
 #show heading.where(level: 4): it => block(above: 8pt, below: 3pt, sticky: true)[
@@ -147,26 +146,41 @@
   align(center, line(length: 40%, stroke: 0.6pt + c-rule)),
 )
 
-// Speaker card: photo-left, name + affiliation + bio right. Used from
-// the markdown as a raw {=typst} block per speaker.
-#let speaker-card(photo: none, name: "", affiliation: "", bio: []) = block(
-  breakable: false, above: 14pt, below: 10pt,
+// Circular headshot — clips a square photo into a circle by putting the
+// image inside a fixed-size box with a border-radius equal to half the
+// box side. Matches the website's speaker cards.
+#let headshot(path, size: 0.9in) = box(
+  width: size, height: size,
+  clip: true, radius: size,
+  stroke: 0.6pt + c-rule,
+  image(path, width: size, height: size, fit: "cover"),
+)
+
+// Compact speaker mini-card for the keynote/invited pages: circular
+// headshot on top, name + affiliation + condensed bio below. Sized so
+// a 2-column x 3-row grid fits five keynote or six invited speakers on
+// a single page.
+#let speaker-mini(photo: none, name: "", affiliation: "", bio: []) = block(
+  breakable: false,
 )[
-  #grid(
-    columns: (1.4in, 1fr),
-    column-gutter: 0.35in,
-    align: (top, top),
-    if photo != none { image(photo, width: 1.35in) } else { [] },
-    [
-      #text(font: "Avenir Next", size: 12pt, weight: 700, fill: c-navy)[#name]
-      #v(2pt, weak: true)
-      #text(font: "Avenir Next", size: 8.5pt, fill: c-teal)[#affiliation]
-      #v(6pt, weak: true)
-      #set text(size: 9.5pt, fill: c-ink)
-      #set par(leading: 0.55em, spacing: 0.7em)
-      #bio
-    ],
-  )
+  #align(center)[
+    #if photo != none { headshot(photo, size: 0.9in) }
+    #v(4pt, weak: true)
+    #text(font: "Avenir Next", size: 10pt, weight: 700, fill: c-navy)[#name]\
+    #text(font: "Avenir Next", size: 7.5pt, fill: c-teal)[#affiliation]
+  ]
+  #v(3pt, weak: true)
+  #set text(size: 8pt, fill: c-ink)
+  #set par(leading: 0.5em, spacing: 0.55em, justify: true)
+  #bio
 ]
+
+// Renders a page-wide grid of speaker-mini blocks (2 columns).
+#let speaker-grid(cards) = grid(
+  columns: (1fr, 1fr),
+  column-gutter: 0.3in,
+  row-gutter: 0.25in,
+  ..cards,
+)
 
 $body$

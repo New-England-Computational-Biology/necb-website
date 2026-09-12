@@ -217,25 +217,84 @@ def _split_authors(raw: str) -> list[str]:
     # Bullet glyphs the ISCB form users sometimes prefix each author with
     # (unicode bullet, hyphen-bullet, en/em dash, asterisk, ASCII dash…).
     BULLETS = "•·⁃∙◦▪▫●○*-–—+"
+    # Superscript digits used as author→affiliation markers. Covers the
+    # Latin-1 legacy trio (¹²³) and the Unicode superscript block (⁰⁴-⁹).
+    SUPS = "¹²³⁰⁴⁵⁶⁷⁸⁹"
+    # Lines that are section headers or metadata inside the authors
+    # blob, not names to keep.
+    SKIP_PREFIXES = (
+        "authors:", "author:", "corresponding", "affiliations:",
+        "affiliation:", "presenting", "note:", "notes:",
+    )
+    # Institution keywords — if a line's leading word is one of these,
+    # treat the whole line as an affiliation continuation, not a name.
+    INSTITUTION_WORDS = (
+        "university", "institute", "hospital", "college", "school",
+        "department", "laboratory", "center", "centre", "program",
+        "graduate",
+    )
+
     lines: list[str] = []
     for chunk in raw.replace("\t", "\n").split("\n"):
         chunk = chunk.strip().strip(";").strip(",").strip()
         # Strip any leading bullet glyph + whitespace before the name.
         while chunk and chunk[0] in BULLETS:
             chunk = chunk[1:].lstrip()
-        if chunk:
-            lines.append(chunk)
+        if not chunk:
+            continue
+        # Skip section headers / affiliation blocks.
+        low = chunk.lower()
+        if low.startswith(SKIP_PREFIXES):
+            continue
+        if chunk[0] in SUPS:
+            continue
+        if "@" in chunk:  # email / contact line
+            continue
+        first_word = low.split(maxsplit=1)[0].rstrip(",.:")
+        if first_word in INSTITUTION_WORDS:
+            continue
+        lines.append(chunk)
+
+    def _clean(nm: str) -> str:
+        nm = nm.rstrip("*").rstrip(SUPS).strip()
+        # Title-case names submitted entirely in lowercase (e.g. A017).
+        # Skip if the string already mixes cases — we don't want to
+        # clobber "de Silva" or "van der Berg" style names.
+        if nm and nm == nm.lower() and any(c.isalpha() for c in nm):
+            nm = " ".join(w.capitalize() for w in nm.split())
+        return nm
+
     names: list[str] = []
+    presenter_idx: int | None = None
     for ln in lines:
-        # Take the leading name portion before any known separator that
-        # introduces an affiliation.
+        # If the line carries superscript markers (¹²³ etc.), commas are
+        # author separators, not name/affiliation separators. Split each
+        # marker-bearing name off, strip the marker, keep going.
+        if any(c in SUPS for c in ln) and "," in ln:
+            parts = [p.strip() for p in ln.split(",") if p.strip()]
+            for p in parts:
+                if "*" in p and presenter_idx is None:
+                    presenter_idx = len(names)
+                nm = _clean(p)
+                if nm and nm not in names:
+                    names.append(nm)
+            continue
+        # Otherwise take the leading name portion before the first
+        # affiliation separator.
+        seg = ln
         for sep in (" — ", " – ", " - ", " (", ","):
-            if sep in ln:
-                ln = ln.split(sep, 1)[0]
+            if sep in seg:
+                seg = seg.split(sep, 1)[0]
                 break
-        ln = ln.rstrip("*").strip()
-        if ln and ln not in names:
-            names.append(ln)
+        if "*" in seg and presenter_idx is None:
+            presenter_idx = len(names)
+        nm = _clean(seg)
+        if nm and nm not in names:
+            names.append(nm)
+    # Move the presenting author to the head of the list so
+    # presenter_name() picks them.
+    if presenter_idx is not None and 0 <= presenter_idx < len(names):
+        names.insert(0, names.pop(presenter_idx))
     return names
 
 

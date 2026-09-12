@@ -90,7 +90,10 @@ def render(source: Path, keep_typst: bool, publish: bool,
     if publish:
         PUBLISH_DIR.mkdir(parents=True, exist_ok=True)
     typ_path = BUILD_DIR / (source.stem + ".typ")
-    pdf_path = (PUBLISH_DIR if publish else BUILD_DIR) / (source.stem + ".pdf")
+    # Always render to the build dir; --publish mirrors a copy to
+    # static/files/ so the local scratch and the site never drift.
+    build_pdf = BUILD_DIR / (source.stem + ".pdf")
+    pdf_path = PUBLISH_DIR / (source.stem + ".pdf") if publish else build_pdf
 
     typst_src = subprocess.run(
         [
@@ -118,6 +121,11 @@ def render(source: Path, keep_typst: bool, publish: bool,
 
     if page_layout:
         _set_page_layout(pdf_path, page_layout)
+
+    # When publishing, also mirror the freshly-written PDF into the
+    # build dir so a local scratch copy never lags the published one.
+    if publish and pdf_path != build_pdf:
+        shutil.copyfile(pdf_path, build_pdf)
 
     if not keep_typst:
         typ_path.unlink()

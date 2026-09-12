@@ -413,7 +413,7 @@ def _split_authors(raw: str) -> list[str]:
         # Otherwise take the leading name portion before the first
         # affiliation separator.
         seg = ln
-        for sep in (" (", " — ", " – ", " -- ", " - ", " : ", "- ", "; ", ","):
+        for sep in (" (", " — ", " – ", " -- ", " - ", " : ", "- ", "; ", ";", ","):
             if sep in seg:
                 seg = seg.split(sep, 1)[0]
                 break

@@ -618,17 +618,18 @@ def _speaker_page(part_title: str, members: list[dict], max_chars: int) -> list[
 
 
 def render_keynote_bios(speakers) -> list[str]:
-    # 5 keynote speakers land in a 2-column x 3-row grid (the last row
-    # centers a single card). ~320-char bios keep them all on one page.
+    # 5 keynote speakers in a 2-column x 3-row grid (the last row
+    # carries a single card). Bios trimmed short enough that Zhiping
+    # (the 5th) still lands on the same page as the other four.
     return _speaker_page(
-        "Keynote Speakers", speakers["keynotes"]["members"], max_chars=320,
+        "Keynote Speakers", speakers["keynotes"]["members"], max_chars=220,
     )
 
 
 def render_invited_bios(speakers) -> list[str]:
-    # 6 invited speakers → 2 x 3 grid; a hair less bio room per card.
+    # 6 invited speakers → exact 2 x 3 grid.
     return _speaker_page(
-        "Invited Speakers", speakers["invited"]["members"], max_chars=260,
+        "Invited Speakers", speakers["invited"]["members"], max_chars=220,
     )
 
 

@@ -173,22 +173,22 @@
   breakable: false,
 )[
   #align(center)[
-    #if photo != none { headshot(photo, size: 0.9in) }
-    #v(4pt, weak: true)
-    #text(font: "Avenir Next", size: 10pt, weight: 700, fill: c-navy)[#name]\
-    #text(font: "Avenir Next", size: 7.5pt, fill: c-teal)[#affiliation]
+    #if photo != none { headshot(photo, size: 0.8in) }
+    #v(3pt, weak: true)
+    #text(font: "Avenir Next", size: 9.5pt, weight: 700, fill: c-navy)[#name]\
+    #text(font: "Avenir Next", size: 7pt, fill: c-teal)[#affiliation]
   ]
-  #v(3pt, weak: true)
-  #set text(size: 8pt, fill: c-ink)
-  #set par(leading: 0.5em, spacing: 0.55em, justify: true)
+  #v(2pt, weak: true)
+  #set text(size: 7.5pt, fill: c-ink)
+  #set par(leading: 0.45em, spacing: 0.5em, justify: true)
   #bio
 ]
 
 // Renders a page-wide grid of speaker-mini blocks (2 columns).
 #let speaker-grid(cards) = grid(
   columns: (1fr, 1fr),
-  column-gutter: 0.3in,
-  row-gutter: 0.25in,
+  column-gutter: 0.25in,
+  row-gutter: 0.18in,
   ..cards,
 )
 

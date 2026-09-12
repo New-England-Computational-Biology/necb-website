@@ -722,20 +722,21 @@ def render_posters(poster_ids, subs, day_map,
                 continue
             label = day_map.get(aid, ("Unassigned", ""))[0]
             day_buckets.setdefault(label, []).append(aid)
+        first_day = True
         for label, ids in day_buckets.items():
-            # Emit an unmistakable full-width day banner *and* register
-            # the label as a level-2 outline entry so the TOC lists both
-            # poster days without also stamping a duplicate visible
-            # heading on the banner page. The typst template's day-heading
-            # show rule handles the special outlined + bookmarked flag.
+            # First day flows right under the H1 'Poster Presentations
+            # · Abstracts' heading (no pagebreak); subsequent days start
+            # a fresh page.
+            pb = "false" if first_day else "true"
             md += [
                 "```{=typst}",
-                f"#day-banner[{label}]",
+                f"#day-banner([{label}], page_break: {pb})",
                 f"#heading(level: 2, outlined: true, "
                 f"bookmarked: true)[{label}] <day>",
                 "```",
                 "",
             ]
+            first_day = False
             reg = [aid for aid in ids if subs[aid].get("round") == "regular"]
             late = [aid for aid in ids if subs[aid].get("round") == "late-breaking"]
             if reg:

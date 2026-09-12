@@ -56,7 +56,9 @@
 )
 
 #set text(font: "Charter", size: 9.8pt, fill: c-ink, lang: "en")
-#set par(leading: 0.6em, spacing: 0.9em, justify: false)
+// Full-justify body prose (abstracts, welcome, bios). Grids/headings
+// have their own alignment so this only affects free-flow paragraphs.
+#set par(leading: 0.6em, spacing: 0.9em, justify: true, linebreaks: "optimized")
 #set list(indent: 0.5em, spacing: 0.55em, marker: text(fill: c-fuchsia, [•]))
 #set enum(indent: 0.5em, spacing: 0.55em)
 #set terms(hanging-indent: 1.3em)
@@ -102,15 +104,18 @@
 
 // Day banner — emitted directly by the builder for the Poster
 // Presentations part. Compact top-of-page anchor so the round banner
-// + first abstract fit on the same page beneath it.
-#let day-banner(label) = {
-  pagebreak(weak: true)
+// + first abstract fit on the same page beneath it. Pass
+// `page_break: false` to keep the banner flowing under whatever
+// precedes it (used for the first day, which sits right under the
+// H1 'Poster Presentations · Abstracts' heading).
+#let day-banner(label, page_break: true) = {
+  if page_break { pagebreak(weak: true) }
   align(center)[
     #text(font: "Avenir Next", size: 18pt, weight: 700, fill: c-fuchsia)[#label]
     #v(4pt, weak: true)
     #line(length: 40%, stroke: 1pt + c-fuchsia)
   ]
-  v(8pt)
+  v(14pt)
 }
 
 #show heading.where(level: 4): it => block(above: 8pt, below: 3pt, sticky: true)[

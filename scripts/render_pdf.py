@@ -65,11 +65,14 @@ def retune_align(match: re.Match[str]) -> str:
     return "align: (" + ", ".join(cols) + ")"
 
 
-def render(source: Path, keep_typst: bool, publish: bool) -> Path:
+def render(source: Path, keep_typst: bool, publish: bool,
+           template: Path | None = None) -> Path:
     require("pandoc")
     require("typst")
     if not source.is_file():
         sys.exit(f"error: no such file: {source}")
+
+    tmpl = template if template is not None else TEMPLATE
 
     BUILD_DIR.mkdir(parents=True, exist_ok=True)
     if publish:
@@ -83,7 +86,7 @@ def render(source: Path, keep_typst: bool, publish: bool) -> Path:
             "--from=markdown+autolink_bare_uris+hard_line_breaks",
             "--to=typst",
             "--standalone",
-            f"--template={TEMPLATE}",
+            f"--template={tmpl}",
             str(source),
         ],
         capture_output=True,
@@ -120,8 +123,13 @@ def main() -> None:
         "--keep-typst", action="store_true",
         help="keep the intermediate .typ file in docs/review/build/",
     )
+    parser.add_argument(
+        "--template", type=Path, default=None,
+        help="typst template path (default: scripts/templates/packet.typ)",
+    )
     args = parser.parse_args()
-    pdf = render(args.source.resolve(), args.keep_typst, args.publish)
+    pdf = render(args.source.resolve(), args.keep_typst, args.publish,
+                 template=args.template)
     print(f"wrote {pdf.relative_to(ROOT)}")
     if args.publish:
         print(f"       https://newenglandcompbio.org/files/{pdf.name} (after deploy)")

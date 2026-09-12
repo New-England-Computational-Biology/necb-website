@@ -63,6 +63,8 @@ def clean_affiliation(s: str) -> str:
         s = strip_city_st(s)
         s = strip_trailing_st(s)
         if s == prev: break
+    # Institution-level short forms
+    s = re.sub(r"\bBroad Institute of MIT and Harvard\b", "Broad Institute", s)
     return s.strip().rstrip(",").rstrip(".").strip()
 
 ROOT = Path(__file__).resolve().parent.parent

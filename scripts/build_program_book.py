@@ -360,7 +360,7 @@ def _split_authors(raw: str) -> list[str]:
         # Otherwise take the leading name portion before the first
         # affiliation separator.
         seg = ln
-        for sep in (" — ", " – ", " - ", " : ", "- ", "; ", " (", ","):
+        for sep in (" (", " — ", " – ", " - ", " : ", "- ", "; ", ","):
             if sep in seg:
                 seg = seg.split(sep, 1)[0]
                 break
@@ -511,16 +511,21 @@ def render_invited_bios(speakers) -> list[str]:
 
 
 def render_abstract(aid: str, sub: dict, session_label: str | None = None,
-                    presenter_hint: tuple[str, str] | None = None) -> list[str]:
-    # Every abstract starts on its own page. The template's H3 rule is
-    # shared with the schedule H3s (which should not pagebreak), so we
-    # emit an explicit typst pagebreak here rather than folding it into
-    # the H3 show rule.
-    md: list[str] = [
-        "```{=typst}",
-        "#pagebreak(weak: true)",
-        "```",
-        "",
+                    presenter_hint: tuple[str, str] | None = None,
+                    stick_to_prev: bool = False) -> list[str]:
+    # Every subsequent abstract starts on its own page. `stick_to_prev`
+    # is set True by callers immediately after a part heading or round
+    # banner, so the first abstract there fits right underneath the
+    # heading/banner rather than getting pushed onto a fresh page.
+    md: list[str] = []
+    if not stick_to_prev:
+        md += [
+            "```{=typst}",
+            "#pagebreak(weak: true)",
+            "```",
+            "",
+        ]
+    md += [
         f"### {aid} · {sub['title']}",
         "",
     ]
@@ -554,6 +559,7 @@ def render_talks(program, subs) -> tuple[list[str], list[str]]:
     """Return (markdown_lines, missing_ids)."""
     md: list[str] = ["# Selected Talks · Abstracts", ""]
     missing: list[str] = []
+    first = True
     for day in program["days"]:
         for sess in day["sessions"]:
             for t in sess.get("talks") or []:
@@ -567,7 +573,11 @@ def render_talks(program, subs) -> tuple[list[str], list[str]]:
                     (t.get("presenter") or "").strip(),
                     (t.get("affiliation") or "").strip(),
                 )
-                md += render_abstract(aid, sub, session_label, presenter_hint)
+                md += render_abstract(
+                    aid, sub, session_label, presenter_hint,
+                    stick_to_prev=first,
+                )
+                first = False
     return md, missing
 
 
@@ -612,16 +622,22 @@ def render_posters(poster_ids, subs, day_map,
             late = [aid for aid in ids if subs[aid].get("round") == "late-breaking"]
             if reg:
                 md += _round_banner("Regular round")
-                for aid in sorted(reg):
+                for i, aid in enumerate(sorted(reg)):
                     time = day_map.get(aid, ("", ""))[1]
                     session_label = f"{label} · {time}" if time else label
-                    md += render_abstract(aid, subs[aid], session_label, hint(aid))
+                    md += render_abstract(
+                        aid, subs[aid], session_label, hint(aid),
+                        stick_to_prev=(i == 0),
+                    )
             if late:
                 md += _round_banner("Late-breaking")
-                for aid in sorted(late):
+                for i, aid in enumerate(sorted(late)):
                     time = day_map.get(aid, ("", ""))[1]
                     session_label = f"{label} · {time}" if time else label
-                    md += render_abstract(aid, subs[aid], session_label, hint(aid))
+                    md += render_abstract(
+                        aid, subs[aid], session_label, hint(aid),
+                        stick_to_prev=(i == 0),
+                    )
     else:
         regular = sorted(aid for aid in poster_ids if subs.get(aid, {}).get("round") == "regular")
         late = sorted(aid for aid in poster_ids if subs.get(aid, {}).get("round") == "late-breaking")

@@ -1,16 +1,15 @@
 # Presenter-info emails — Sep 12, 2026 (committee review draft)
 
-Two emails to be sent before the conference:
+Three emails to be sent before the conference:
 
 1. **Selected talk presenters** — 23 recipients, single BCC list from `data/program.yaml`
-2. **Poster presenters** — ~180 recipients, single BCC list from `data/posterSessions.yaml`
+2. **Day 1 poster presenters** — ~90 recipients, BCC list from `data/posterSessions.yaml` day 1
+3. **Day 2 poster presenters** — ~90 recipients, BCC list from `data/posterSessions.yaml` day 2
 
-Both emails go out as **single BCC blasts** (no per-recipient
-personalization). Presenters look up their own day/session on the
-website.
+All go out as **single BCC blasts** (no per-recipient personalization).
 
 **From:** `newenglandcompbio@gmail.com`
-**Cc (both emails):** `LPINELLO@mgh.harvard.edu`, `predrag@northeastern.edu`, `Yang.Kevin@microsoft.com`
+**Cc (all three emails):** `LPINELLO@mgh.harvard.edu`, `predrag@northeastern.edu`, `Yang.Kevin@microsoft.com`
 
 ---
 
@@ -65,21 +64,18 @@ NECB 2026 Organizing Committee
 
 ---
 
-## 2. Poster presenters
+## 2. Day 1 poster presenters (Thu Oct 1)
 
-**Subject:** NECB 2026 · Logistics for your poster
+**Subject:** NECB 2026 · Logistics for your Day 1 poster (Thu Oct 1)
 
 Dear NECB 2026 presenter,
 
-Thanks again for confirming your NECB 2026 poster. Here is everything
-you need for the day.
+Thanks again for confirming your NECB 2026 poster. Your poster is
+scheduled for the **Day 1 poster session on Thursday, October 1,
+2:15–4:15 PM**. Here is everything you need for the day.
 
-### Your session
-
-The day-by-day poster listing is live at
+The full day-by-day poster listing is live at
 [newenglandcompbio.org/#poster-sessions](https://newenglandcompbio.org/#poster-sessions).
-Please check which day (Day 1 · Thu Oct 1 or Day 2 · Fri Oct 2) your
-poster is assigned to. Both poster sessions run from **2:15–4:15 PM**.
 Physical board numbers will be assigned onsite and shared at check-in.
 
 ### Poster format
@@ -92,18 +88,65 @@ Physical board numbers will be assigned onsite and shared at check-in.
 
 ### Setup and takedown
 
-- **Set up:** please hang your poster on your assigned board the
-  **morning of your session day**, before the first talk (9:00 AM).
-  A member of the organizing team will be onsite from **8:30 AM** to
-  direct you to your board.
+- **Set up:** please hang your poster on your assigned board on
+  **Thursday morning**, before the first talk (9:00 AM). A member of
+  the organizing team will be onsite from **8:30 AM** to direct you to
+  your board.
 - **Presence:** please be at your poster for the full 2-hour session
-  (2:15–4:15 PM on your assigned day). Attendees, judges, and other
-  presenters use this window to discuss your work.
+  (Thu 2:15–4:15 PM). Attendees, judges, and other presenters use this
+  window to discuss your work.
 - **Poster awards:** judges will circulate during both poster sessions.
   **Winners will be announced at the closing keynote on Day 2
   (Fri Oct 2, 5:15–6:00 PM).** All presenters are encouraged to attend.
-- **Takedown:** please remove your poster at the end of your session
-  day. Any posters left overnight cannot be preserved.
+- **Takedown:** please remove your poster at the end of the Thursday
+  session. Any posters left overnight cannot be preserved.
+
+### Questions
+
+Reply to this email or contact `newenglandcompbio@gmail.com`. See you
+in Cambridge!
+
+Best,
+NECB 2026 Organizing Committee
+
+---
+
+## 3. Day 2 poster presenters (Fri Oct 2)
+
+**Subject:** NECB 2026 · Logistics for your Day 2 poster (Fri Oct 2)
+
+Dear NECB 2026 presenter,
+
+Thanks again for confirming your NECB 2026 poster. Your poster is
+scheduled for the **Day 2 poster session on Friday, October 2,
+2:15–4:15 PM**. Here is everything you need for the day.
+
+The full day-by-day poster listing is live at
+[newenglandcompbio.org/#poster-sessions](https://newenglandcompbio.org/#poster-sessions).
+Physical board numbers will be assigned onsite and shared at check-in.
+
+### Poster format
+
+- **Portrait orientation.**
+- **Up to 36 in wide × 42 in tall (91 × 107 cm).** Please do not exceed
+  these dimensions — boards will not accommodate larger posters.
+- **Push-pins provided on site.** Please bring your printed poster with
+  you — there is no on-site printing.
+
+### Setup and takedown
+
+- **Set up:** please hang your poster on your assigned board on
+  **Friday morning**, before the first talk (9:00 AM). A member of
+  the organizing team will be onsite from **8:30 AM** to direct you to
+  your board.
+- **Presence:** please be at your poster for the full 2-hour session
+  (Fri 2:15–4:15 PM). Attendees, judges, and other presenters use this
+  window to discuss your work.
+- **Poster awards:** judges will circulate during both poster sessions.
+  **Winners will be announced at the closing keynote later the same day
+  (Fri Oct 2, 5:15–6:00 PM).** All presenters are encouraged to attend.
+- **Takedown:** please remove your poster at the end of the Friday
+  session.
 
 ### Questions
 

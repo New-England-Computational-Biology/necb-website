@@ -433,29 +433,20 @@ a:focus-visible { outline: 2px solid var(--c-accent); outline-offset: 2px; borde
   display: grid;
   grid-template-columns: 3rem 1fr;
   gap: 0.15rem 0.6rem;
-  padding: 0.55rem 0.25rem;
+  padding: 0.4rem 0.25rem;
   border-bottom: 1px solid var(--c-border);
   font-size: 0.85rem;
+  line-height: 1.35;
 }
 .program-talk-titles li:last-child { border-bottom: 0; }
 .talk-id {
-  grid-column: 1; grid-row: 1 / 3;
   font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
   font-size: 0.75rem;
   color: var(--c-primary);
   font-weight: 600;
   padding-top: 0.1rem;
 }
-.talk-title {
-  grid-column: 2;
-  color: var(--c-text);
-  line-height: 1.35;
-}
-.talk-presenter {
-  grid-column: 2;
-  font-size: 0.78rem;
-  color: var(--c-text-muted);
-}
+.talk-title { color: var(--c-text); }
 
 /* ---------- Poster Sessions ---------- */
 .poster-sessions { margin-top: 1rem; }

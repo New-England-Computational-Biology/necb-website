@@ -55,19 +55,6 @@ meeting.
 - Please **bring your slides on a USB stick** as a fallback in case
   cloud upload has issues.
 
-### Registration & visa
-
-- **Register:** [iscb.swoogo.com/necb2026/begin](https://iscb.swoogo.com/necb2026/begin).
-  All presenters must be registered by Mon Sep 21.
-- **Visa letter:** If you need an invitation letter for travel from
-  outside the US, ISCB will send you one automatically once you are
-  registered. If you have not received one within a few days of
-  registering, reach out to Diane Kovats at `dkovats@iscb.org`.
-
-### Venue
-
-- **Microsoft Research New England** · One Memorial Drive, Cambridge, MA 02142
-
 ### Questions
 
 Reply to this email or contact `newenglandcompbio@gmail.com`. See you
@@ -118,19 +105,6 @@ Physical board numbers will be assigned onsite and shared at check-in.
 - **Takedown:** please remove your poster at the end of your session
   day. Any posters left overnight cannot be preserved.
 
-### Registration & visa
-
-- **Register:** [iscb.swoogo.com/necb2026/begin](https://iscb.swoogo.com/necb2026/begin).
-  All presenters must be registered by Mon Sep 21.
-- **Visa letter:** If you need an invitation letter for travel from
-  outside the US, ISCB will send you one automatically once you are
-  registered. If you have not received one within a few days of
-  registering, reach out to Diane Kovats at `dkovats@iscb.org`.
-
-### Venue
-
-- **Microsoft Research New England** · One Memorial Drive, Cambridge, MA 02142
-
 ### Questions
 
 Reply to this email or contact `newenglandcompbio@gmail.com`. See you
@@ -146,8 +120,6 @@ NECB 2026 Organizing Committee
 - **Talk order within each session** — will we assign specific slot
   numbers (e.g. speaker 1 / 2 / 3 / 4) and share them alongside these
   emails, or leave them "TBD closer to the meeting"?
-- **Registration deadline** — Mon Sep 21 is the regular-registration
-  cutoff per the decision emails; please confirm this still holds.
 - **Program book PDF** — should we include a link to the full
   program-book PDF in these emails, or wait until closer to the meeting?
 - **Cc list** — is Luca / Pedja / Kevin the right cc, or should Diane

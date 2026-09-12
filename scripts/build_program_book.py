@@ -602,7 +602,22 @@ def _typ(s: str) -> str:
              .replace("<", "\\<").replace(">", "\\>"))
 
 
-def render_schedule(program) -> list[str]:
+def _speaker_affil_map(speakers_yaml: dict) -> dict[str, str]:
+    """Build a name → short_affiliation lookup so schedule entries for
+    keynote / invited speakers can carry the same compact affiliation
+    the website's Program section shows."""
+    m: dict[str, str] = {}
+    for group in ("keynotes", "invited"):
+        for entry in speakers_yaml.get(group, {}).get("members", []):
+            name = (entry.get("name") or "").strip()
+            aff = (entry.get("short_affiliation") or entry.get("affiliation") or "").strip()
+            if name:
+                m[name] = aff
+    return m
+
+
+def render_schedule(program, speakers_yaml) -> list[str]:
+    speaker_affils = _speaker_affil_map(speakers_yaml)
     md: list[str] = ["# Program at a Glance", ""]
     for day in program["days"]:
         md += [f"## {day['label']}", ""]
@@ -613,15 +628,22 @@ def render_schedule(program) -> list[str]:
             if speakers:
                 # Same grid geometry as the talks stanza below so keynote
                 # and invited speaker names line up with talk titles
-                # (empty ID column on the left, name on the right).
+                # (empty ID column on the left, name + affiliation right).
                 md.append("```{=typst}")
                 for name in speakers:
+                    aff = speaker_affils.get(name, "")
+                    if aff:
+                        body = (
+                            f"[#text(weight: 600)[{_typ(name)}] "
+                            f"#text(size: 0.85em, fill: c-muted)[· {_typ(aff)}]]"
+                        )
+                    else:
+                        body = f"[#text(weight: 600)[{_typ(name)}]]"
                     md.append(
                         "#block(above: 5pt, below: 5pt, breakable: false)["
                         "#grid(columns: (0.4in, 1fr), column-gutter: 6pt, "
                         "align: (right + top, left + top), "
-                        "[], "
-                        f"[#text(weight: 600)[{_typ(name)}]])]"
+                        f"[], {body})]"
                     )
                 md.append("```")
                 md.append("")
@@ -986,7 +1008,7 @@ def main():
     lines: list[str] = []
     lines += render_cover()
     lines += render_toc()
-    lines += render_schedule(program)
+    lines += render_schedule(program, speakers)
     lines += render_keynote_bios(speakers)
     lines += render_invited_bios(speakers)
     talks_md, talks_missing = render_talks(program, subs)

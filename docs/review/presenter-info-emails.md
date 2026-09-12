@@ -113,8 +113,11 @@ Physical board numbers will be assigned onsite and shared at check-in.
   the organizing team will be onsite from 8:30 AM to direct you to
   your board.
 - **Presence:** please be at your poster for the full 2-hour session
-  ({DAY_LABEL} · 2:15–4:15 PM). Attendees, judges (for the poster
-  awards), and other presenters use this window to discuss your work.
+  ({DAY_LABEL} · 2:15–4:15 PM). Attendees, judges, and other presenters
+  use this window to discuss your work.
+- **Poster awards:** judges will circulate during both poster sessions.
+  **Winners will be announced at the closing keynote on Day 2
+  (Fri Oct 2, 5:15–6:00 PM).** All presenters are encouraged to attend.
 - **Takedown:** please remove your poster at the end of your session
   day. Any posters left overnight cannot be preserved.
 
@@ -148,9 +151,6 @@ NECB 2026 Organizing Committee
   emails, or leave them "TBD closer to the meeting"?
 - **AV table timing** — confirm the AV table opens at 8:30 AM on both
   days (for slide upload and poster board assignment).
-- **Poster judging / awards** — should the poster email mention that
-  judges will visit posters during the session, and that awards are
-  announced at the Day 2 closing keynote?
 - **Registration deadline** — Mon Sep 21 is the regular-registration
   cutoff per the decision emails; please confirm this still holds.
 - **Program book PDF** — should we include a link to the full

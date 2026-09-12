@@ -175,15 +175,6 @@ def render_covers(entries: list[dict]) -> None:
         "  #text(font: \"Avenir Next\", size: 11pt, fill: c-muted)[",
         "    #h(0.3em) · #h(0.3em) Microsoft Research New England",
         "  ]",
-        "  #v(20pt)",
-        "  // pitch — one line specific to this volume",
-        "  #block(width: 4in)[",
-        "    #set text(font: \"Charter\", size: 10.5pt, fill: c-ink)",
-        "    #set par(leading: 0.6em, justify: false)",
-        "    Companion to the program book. One page per accepted talk "
-        "and poster, exactly as the presenter submitted it, with a short "
-        "cover sheet in front of each.",
-        "  ]",
         "]",
         "```",
         "",

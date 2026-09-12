@@ -272,8 +272,10 @@ def _split_authors(raw: str) -> list[str]:
         "university", "institute", "hospital", "college", "school",
         "department", "laboratory", "center", "centre", "program",
         "graduate", "faculty", "division", "clinic", "section",
+        "observatory", "unit", "foundation", "initiative", "consortium",
+        "network", "core", "office", "biobank",
         "national", "harvard", "hms", "mit", "stanford", "yale",
-        "columbia", "cornell", "duke", "bioinformatics",
+        "columbia", "cornell", "duke", "vanderbilt", "bioinformatics",
         "licenciatura",  # A024 specifically has this in a Spanish institution
     )
     # 'Name (1,2)' or 'Name[1,2]' style numeric affiliation markers.
@@ -343,15 +345,16 @@ def _split_authors(raw: str) -> list[str]:
         if first_word in INSTITUTION_WORDS:
             continue
         # Catch affiliation lines like 'Vanderbilt Institute for Infection,
-        # …' by checking the first *two* words for institution keywords.
-        # Personal names rarely have 'Institute' / 'University' /
-        # 'Department' as their second word, but real affiliation lines
-        # commonly do ('Vanderbilt Institute', 'Northeastern University',
-        # 'Harvard Department'). Anything with a keyword only in a later
-        # position ('Yuncheng Duan Department of Genomics …') still
-        # reads as a legitimate name-then-affiliation line.
-        first_two = " ".join(low.split()[:2])
-        if any(kw in first_two for kw in INSTITUTION_WORDS):
+        # …' or 'Gene Regulation Observatory, …' by checking the first
+        # *three* words for institution keywords. Names of three tokens
+        # or fewer rarely include 'Observatory', 'Institute',
+        # 'University', 'Department' etc.; affiliation openers commonly
+        # do at position 2 or 3.
+        first_three_tokens = low.split()[:3]
+        if any(
+            any(kw in tok.rstrip(",.:;") for kw in INSTITUTION_WORDS)
+            for tok in first_three_tokens
+        ):
             continue
         lines.append(chunk)
 
@@ -389,12 +392,16 @@ def _split_authors(raw: str) -> list[str]:
             nm = nm[:m.start()].rstrip()
         # If the residual name has more than 2 words and one of the
         # later words is an institution keyword ('Yuncheng Duan
-        # Department of Genomics …'), truncate at that word so only
-        # the leading name portion survives.
+        # Department of Genomics …', 'Wonyl Choi Boston University'),
+        # truncate at max(2, i-1). The i-1 lets city-plus-university
+        # forms like 'Boston University' drop cleanly ('Wonyl Choi
+        # Boston University' -> 'Wonyl Choi'), while a plain
+        # 'Yuncheng Duan Department …' still keeps the first 2 tokens.
         words = nm.split()
         for i in range(2, len(words)):
             if words[i].lower().rstrip(",.:;") in INSTITUTION_WORDS:
-                nm = " ".join(words[:i]).rstrip(",")
+                cut = max(2, i - 1) if i >= 3 else i
+                nm = " ".join(words[:cut]).rstrip(",")
                 break
         # Strip honorific title prefixes (A182: "Dr. Amanda Storm").
         parts = nm.split()

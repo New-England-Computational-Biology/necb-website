@@ -268,14 +268,15 @@ def _split_authors(raw: str) -> list[str]:
     }
     # Institution keywords — if a line's leading word is one of these,
     # treat the whole line as an affiliation continuation, not a name.
+    # Strong institution keywords — words that virtually never appear in
+    # a person's name. Used for both the leading-tokens skip and the
+    # residual-name truncation.
     INSTITUTION_WORDS = (
         "university", "institute", "hospital", "college", "school",
         "department", "laboratory", "center", "centre", "program",
-        "graduate", "faculty", "division", "clinic", "section",
-        "observatory", "unit", "foundation", "initiative", "consortium",
-        "network", "core", "office", "biobank",
-        "national", "harvard", "hms", "mit", "stanford", "yale",
-        "columbia", "cornell", "duke", "vanderbilt", "bioinformatics",
+        "faculty", "division", "clinic", "section", "observatory",
+        "unit", "foundation", "initiative", "consortium", "network",
+        "biobank", "medical", "interdisciplinary",
         "licenciatura",  # A024 specifically has this in a Spanish institution
     )
     # 'Name (1,2)' or 'Name[1,2]' style numeric affiliation markers.

@@ -237,12 +237,46 @@ def compile_covers() -> Path:
     return COVERS_PDF
 
 
+def _scale_page_to_half_letter(page):
+    """Uniformly scale + center an imported PDF page onto a 5.5 × 8.5 in
+    half-letter canvas, matching the cover sheet page size. Preserves
+    aspect ratio; text stays native, no rasterization."""
+    from pypdf import Transformation, PageObject
+    from pypdf.generic import RectangleObject
+    target_w, target_h = 396.0, 612.0  # 5.5 × 8.5 in @ 72 dpi
+
+    box = page.mediabox
+    src_w = float(box.width)
+    src_h = float(box.height)
+    if src_w == 0 or src_h == 0:
+        return page
+
+    # Rotate 90° first if the source page is landscape but our target
+    # is portrait — otherwise long rows of text end up sideways.
+    landscape_src = src_w > src_h
+    if landscape_src:
+        page.rotate(90)
+        src_w, src_h = src_h, src_w  # after rotation
+
+    scale = min(target_w / src_w, target_h / src_h)
+    # Translate so the scaled content is centered on the target page.
+    tx = (target_w - src_w * scale) / 2.0
+    ty = (target_h - src_h * scale) / 2.0
+
+    # Start from a blank half-letter canvas so the mediabox is exactly
+    # our target size, then merge the scaled/translated source onto it.
+    blank = PageObject.create_blank_page(width=target_w, height=target_h)
+    op = Transformation().scale(scale, scale).translate(tx, ty)
+    blank.merge_transformed_page(page, op)
+    return blank
+
+
 def interleave(entries: list[dict]) -> None:
     """Read covers.pdf + each author PDF and interleave. covers.pdf has
     N+1 pages: a title page followed by N cover pages (one per abstract,
-    in the same order as `entries`).
+    in the same order as `entries`). Author pages are scaled to
+    half-letter so page size stays consistent with the cover sheets.
     """
-    from pypdf.generic import NameObject
     covers = PdfReader(str(COVERS_PDF))
     writer = PdfWriter()
     # Title page
@@ -250,10 +284,10 @@ def interleave(entries: list[dict]) -> None:
     for i, e in enumerate(entries):
         # Cover sheet for this abstract
         writer.add_page(covers.pages[i + 1])
-        # Author PDF pages
+        # Author PDF pages — scaled to half-letter
         author = PdfReader(str(e["pdf_path"]))
         for page in author.pages:
-            writer.add_page(page)
+            writer.add_page(_scale_page_to_half_letter(page))
     # Set /PageLayout /TwoPageRight to match the program book.
     writer.page_layout = "/TwoPageRight"
     writer.add_metadata({

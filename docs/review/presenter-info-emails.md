@@ -70,7 +70,7 @@ Thanks again for confirming your NECB 2026 poster. Your poster is
 scheduled for the **Day 1 poster session on Thursday, October 1,
 2:15–4:15 PM**. Here is everything you need for the day.
 
-The full list of posters is live at
+The full list of accepted posters is live at
 [newenglandcompbio.org/#poster-sessions](https://newenglandcompbio.org/#poster-sessions).
 Physical board numbers will be assigned onsite and shared at check-in.
 
@@ -116,7 +116,7 @@ Thanks again for confirming your NECB 2026 poster. Your poster is
 scheduled for the **Day 2 poster session on Friday, October 2,
 2:15–4:15 PM**. Here is everything you need for the day.
 
-The full list of posters is live at
+The full list of accepted posters is live at
 [newenglandcompbio.org/#poster-sessions](https://newenglandcompbio.org/#poster-sessions).
 Physical board numbers will be assigned onsite and shared at check-in.
 

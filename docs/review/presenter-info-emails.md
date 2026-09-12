@@ -92,7 +92,7 @@ Physical board numbers will be assigned onsite and shared at check-in.
   **Thursday morning**, before the first talk (9:00 AM). A member of
   the organizing team will be onsite from **8:30 AM** to direct you to
   your board.
-- **Presence:** please be at your poster for the full 2-hour session
+- **Presentation:** please be at your poster for the full 2-hour session
   (Thu 2:15–4:15 PM). Attendees, judges, and other presenters use this
   window to discuss your work.
 - **Poster awards:** Winners will be announced at the closing keynote
@@ -138,7 +138,7 @@ Physical board numbers will be assigned onsite and shared at check-in.
   **Friday morning**, before the first talk (9:00 AM). A member of
   the organizing team will be onsite from **8:30 AM** to direct you to
   your board.
-- **Presence:** please be at your poster for the full 2-hour session
+- **Presentation:** please be at your poster for the full 2-hour session
   (Fri 2:15–4:15 PM). Attendees, judges, and other presenters use this
   window to discuss your work.
 - **Poster awards:** Winners will be announced at the closing keynote

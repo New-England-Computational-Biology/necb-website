@@ -80,7 +80,7 @@ scheduled for the **Day 1 poster session on Thursday, October 1,
 
 The full list of accepted posters is live at
 [newenglandcompbio.org/#poster-sessions](https://newenglandcompbio.org/#poster-sessions).
-Physical board numbers will be assigned onsite and shared at check-in.
+Poster boards will be labeled by your abstract number (e.g. A001, A002, …) — please hang your poster on the board matching your abstract ID.
 
 ### Poster format
 
@@ -125,7 +125,7 @@ scheduled for the **Day 2 poster session on Friday, October 2,
 
 The full list of accepted posters is live at
 [newenglandcompbio.org/#poster-sessions](https://newenglandcompbio.org/#poster-sessions).
-Physical board numbers will be assigned onsite and shared at check-in.
+Poster boards will be labeled by your abstract number (e.g. A001, A002, …) — please hang your poster on the board matching your abstract ID.
 
 ### Poster format
 

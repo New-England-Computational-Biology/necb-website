@@ -37,9 +37,9 @@ meeting.
 
 ### Slides & AV
 
-- **Talks will run from a single venue Windows laptop.** No laptop
-  switching between speakers.
-- **Load your slides on the venue laptop the morning of your talk day.**
+- **Talks will run from a single Windows laptop.** No laptop switching
+  between speakers.
+- **Load your slides on the laptop the morning of your talk day.**
   The AV table opens at **8:00 AM** on both days (Thu Oct 1 and Fri Oct 2)
   — please plan to upload your slides then, before the first session at
   9:00 AM.

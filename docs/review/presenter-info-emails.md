@@ -40,7 +40,7 @@ meeting.
 - **Talks will run from a single venue Windows laptop.** No laptop
   switching between speakers.
 - **Load your slides on the venue laptop the morning of your talk day.**
-  The AV table opens at **8:30 AM** on both days (Thu Oct 1 and Fri Oct 2)
+  The AV table opens at **8:00 AM** on both days (Thu Oct 1 and Fri Oct 2)
   — please plan to upload your slides then, before the first session at
   9:00 AM.
 - **Format:** PowerPoint (`.pptx`) is preferred. PDF works as a backup.
@@ -86,7 +86,7 @@ Physical board numbers will be assigned onsite and shared at check-in.
 
 - **Set up:** please hang your poster on your assigned board on
   **Thursday morning**, before the first talk (9:00 AM). A member of
-  the organizing team will be onsite from **8:30 AM** to direct you to
+  the organizing team will be onsite from **8:00 AM** to direct you to
   your board.
 - **Presentation:** please be at your poster for the full 2-hour session
   (Thu 2:15–4:15 PM).
@@ -131,7 +131,7 @@ Physical board numbers will be assigned onsite and shared at check-in.
 
 - **Set up:** please hang your poster on your assigned board on
   **Friday morning**, before the first talk (9:00 AM). A member of
-  the organizing team will be onsite from **8:30 AM** to direct you to
+  the organizing team will be onsite from **8:00 AM** to direct you to
   your board.
 - **Presentation:** please be at your poster for the full 2-hour session
   (Fri 2:15–4:15 PM).

@@ -35,6 +35,12 @@ meeting.
 - **10 min talk + 5 min Q&A.** A moderator will signal at 1 min remaining.
 - Please time to 10 minutes to keep the session on schedule.
 
+### Recording
+
+- **Talks will be recorded** and made available on the NECB YouTube
+  channel after the meeting. If you have material you would prefer
+  not to record, please let us know in advance.
+
 ### Slides & AV
 
 - **Talks will run from a single Windows laptop.** No laptop switching

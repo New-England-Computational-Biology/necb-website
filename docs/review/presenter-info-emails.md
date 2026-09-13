@@ -38,8 +38,9 @@ meeting.
 ### Recording
 
 - **Talks will be recorded** and made available on the NECB YouTube
-  channel after the meeting. If you have material you would prefer
-  not to record, please let us know in advance.
+  channel after the meeting. Please let the organizers know at
+  `newenglandcompbio@gmail.com` if you would prefer your talk not to
+  be included.
 
 ### Slides & AV
 

@@ -1029,12 +1029,17 @@ def main():
         for t in (sess.get("talks") or [])
     ]
 
+    # Front-matter (welcome, TOC, schedule, speakers, committee, CoC)
+    # first; abstract sections after so the reader can flip to the
+    # program essentials without paging through 200 abstract pages.
     lines: list[str] = []
     lines += render_cover()
     lines += render_toc()
     lines += render_schedule(program, speakers)
     lines += render_keynote_bios(speakers)
     lines += render_invited_bios(speakers)
+    lines += render_organizers(orgs)
+    lines += render_code_of_conduct()
     talks_md, talks_missing = render_talks(program, subs)
     lines += talks_md
     if poster_ids:
@@ -1050,8 +1055,6 @@ def main():
             "docs/review/build/decisions_posters.csv) — skipping posters.",
             file=sys.stderr,
         )
-    lines += render_organizers(orgs)
-    lines += render_code_of_conduct()
 
     OUT.write_text("\n".join(lines) + "\n")
 

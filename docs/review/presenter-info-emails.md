@@ -46,16 +46,17 @@ meeting.
 
 - **Talks will run from a single Windows laptop.** No laptop switching
   between speakers.
-- **Load your slides on the laptop the morning of your talk day.**
-  The AV table opens at **8:00 AM** on both days (Thu Oct 1 and Fri Oct 2)
-  — please plan to upload your slides then, before the first session at
-  9:00 AM.
+- **Please email your slides to `newenglandcompbio@gmail.com` in
+  advance** so we can pre-load them onto the laptop before the
+  session. Please **bring a copy on a USB stick** as a fallback in
+  case the email doesn't come through.
+- The AV table opens at **8:00 AM** on both days (Thu Oct 1 and
+  Fri Oct 2), so you can drop off your USB or check that your slides
+  are loaded before the first session at 9:00 AM.
 - **Format:** PowerPoint (`.pptx`) is preferred. PDF works as a backup.
   Please avoid Keynote / Google Slides exports unless you have tested
   the resulting file on Windows — fonts and animations sometimes
   misrender.
-- Please **bring your slides on a USB stick** as a fallback in case
-  cloud upload has issues.
 
 ### Questions
 

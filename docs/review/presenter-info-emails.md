@@ -97,10 +97,10 @@ You are scheduled for the **Opening keynote on Thursday, October 1,
 
 ### Talk title & abstract
 
-If you have not already shared them, please send us your final **talk
-title** and a **short abstract** (~200 words) at your convenience so
-we can include them in the program book. Even a working title is
-helpful — we can refine closer to the meeting.
+Please send us your **talk title** and a **short abstract**
+(~200 words) at your convenience so we can include them in the program
+book. Even a working title is helpful — we can refine closer to the
+meeting.
 
 ### Presentation format
 
@@ -156,10 +156,10 @@ You are scheduled for the **Afternoon keynote on Thursday, October 1,
 
 ### Talk title & abstract
 
-If you have not already shared them, please send us your final **talk
-title** and a **short abstract** (~200 words) at your convenience so
-we can include them in the program book. Even a working title is
-helpful — we can refine closer to the meeting.
+Please send us your **talk title** and a **short abstract**
+(~200 words) at your convenience so we can include them in the program
+book. Even a working title is helpful — we can refine closer to the
+meeting.
 
 ### Presentation format
 
@@ -217,10 +217,10 @@ minutes early. The full program is live at
 
 ### Talk title & abstract
 
-If you have not already shared them, please send us your final **talk
-title** and a **short abstract** (~200 words) at your convenience so
-we can include them in the program book. Even a working title is
-helpful — we can refine closer to the meeting.
+Please send us your **talk title** and a **short abstract**
+(~200 words) at your convenience so we can include them in the program
+book. Even a working title is helpful — we can refine closer to the
+meeting.
 
 ### Presentation format
 
@@ -279,10 +279,10 @@ You are scheduled for the **Day 2 morning keynote on Friday, October 2,
 
 ### Talk title & abstract
 
-If you have not already shared them, please send us your final **talk
-title(s)** — whether you are speaking under one shared title or under
-two related titles — and a **short abstract** (~200 words) at your
-convenience so we can include them in the program book.
+Please send us your **talk title(s)** — whether you are speaking
+under one shared title or under two related titles — and a **short
+abstract** (~200 words) at your convenience so we can include them in
+the program book.
 
 ### Presentation format
 
@@ -341,10 +341,10 @@ October 1, 11:15 AM – 12:15 PM**. The full program is live at
 
 ### Talk title & abstract
 
-If you have not already shared them, please send us your final **talk
-title** and a **short abstract** (~200 words) at your convenience so
-we can include them in the program book. Even a working title is
-helpful — we can refine closer to the meeting.
+Please send us your **talk title** and a **short abstract**
+(~200 words) at your convenience so we can include them in the program
+book. Even a working title is helpful — we can refine closer to the
+meeting.
 
 ### Presentation format
 
@@ -402,10 +402,10 @@ October 1, 11:15 AM – 12:15 PM**. The full program is live at
 
 ### Talk title & abstract
 
-If you have not already shared them, please send us your final **talk
-title** and a **short abstract** (~200 words) at your convenience so
-we can include them in the program book. Even a working title is
-helpful — we can refine closer to the meeting.
+Please send us your **talk title** and a **short abstract**
+(~200 words) at your convenience so we can include them in the program
+book. Even a working title is helpful — we can refine closer to the
+meeting.
 
 ### Presentation format
 
@@ -463,10 +463,10 @@ October 1, 11:15 AM – 12:15 PM**. The full program is live at
 
 ### Talk title & abstract
 
-If you have not already shared them, please send us your final **talk
-title** and a **short abstract** (~200 words) at your convenience so
-we can include them in the program book. Even a working title is
-helpful — we can refine closer to the meeting.
+Please send us your **talk title** and a **short abstract**
+(~200 words) at your convenience so we can include them in the program
+book. Even a working title is helpful — we can refine closer to the
+meeting.
 
 ### Presentation format
 
@@ -524,10 +524,10 @@ October 2, 11:15 AM – 12:15 PM**. The full program is live at
 
 ### Talk title & abstract
 
-If you have not already shared them, please send us your final **talk
-title** and a **short abstract** (~200 words) at your convenience so
-we can include them in the program book. Even a working title is
-helpful — we can refine closer to the meeting.
+Please send us your **talk title** and a **short abstract**
+(~200 words) at your convenience so we can include them in the program
+book. Even a working title is helpful — we can refine closer to the
+meeting.
 
 ### Presentation format
 
@@ -585,10 +585,10 @@ October 2, 11:15 AM – 12:15 PM**. The full program is live at
 
 ### Talk title & abstract
 
-If you have not already shared them, please send us your final **talk
-title** and a **short abstract** (~200 words) at your convenience so
-we can include them in the program book. Even a working title is
-helpful — we can refine closer to the meeting.
+Please send us your **talk title** and a **short abstract**
+(~200 words) at your convenience so we can include them in the program
+book. Even a working title is helpful — we can refine closer to the
+meeting.
 
 ### Presentation format
 
@@ -646,10 +646,10 @@ October 2, 11:15 AM – 12:15 PM**. The full program is live at
 
 ### Talk title & abstract
 
-If you have not already shared them, please send us your final **talk
-title** and a **short abstract** (~200 words) at your convenience so
-we can include them in the program book. Even a working title is
-helpful — we can refine closer to the meeting.
+Please send us your **talk title** and a **short abstract**
+(~200 words) at your convenience so we can include them in the program
+book. Even a working title is helpful — we can refine closer to the
+meeting.
 
 ### Presentation format
 

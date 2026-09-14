@@ -1,15 +1,18 @@
 # Presenter-info emails — Sep 12, 2026 (committee review draft)
 
-Six emails to be sent before the conference:
+Eight emails to be sent before the conference:
 
 1. **Selected talk presenters** — 23 recipients, single BCC list from `data/program.yaml`
-2. **Single-speaker keynotes** — 3 recipients (Marc Vidal, Sergey Ovchinnikov, Zhiping Weng)
-3. **Joint keynote** — 2 recipients (Caroline Uhler, G.V. Shivashankar)
-4. **Invited speakers** — 6 recipients, addresses in `data/speakers.yaml`
-5. **Day 1 poster presenters** — ~90 recipients, BCC list from `data/posterSessions.yaml` day 1
-6. **Day 2 poster presenters** — ~90 recipients, BCC list from `data/posterSessions.yaml` day 2
+2. **Marc Vidal** — Opening keynote, Day 1
+3. **Sergey Ovchinnikov** — Afternoon keynote, Day 1
+4. **Zhiping Weng** — Closing keynote, Day 2
+5. **Joint keynote** — 2 recipients (Caroline Uhler, G.V. Shivashankar)
+6. **Invited speakers** — 6 recipients, addresses in `data/speakers.yaml`
+7. **Day 1 poster presenters** — ~90 recipients, BCC list from `data/posterSessions.yaml` day 1
+8. **Day 2 poster presenters** — ~90 recipients, BCC list from `data/posterSessions.yaml` day 2
 
-All go out as **single BCC blasts** (no per-recipient personalization).
+Selected talks, invited, and poster templates go out as **single BCC
+blasts**. Keynote emails are personalized 1-to-1.
 
 **From:** `newenglandcompbio@gmail.com`
 **Cc (all emails):** `LPINELLO@mgh.harvard.edu`, `predrag@northeastern.edu`, `Yang.Kevin@microsoft.com`
@@ -71,21 +74,20 @@ NECB 2026 Organizing Committee
 
 ---
 
-## 2. Single-speaker keynotes
+## 2. Marc Vidal — Opening keynote
 
-Recipients: Marc Vidal (Opening keynote · Day 1), Sergey Ovchinnikov
-(Afternoon keynote · Day 1), Zhiping Weng (Closing keynote · Day 2).
+**To:** `Marc_Vidal@dfci.harvard.edu`
+**Subject:** NECB 2026 · Logistics for your opening keynote
 
-**Subject:** NECB 2026 · Logistics for your keynote
+Dear Marc,
 
-Dear NECB 2026 keynote speaker,
-
-Thank you again for joining us as a keynote speaker at NECB 2026.
-Here is everything you need for the day.
+Thank you again for joining us as the **opening keynote speaker** at
+NECB 2026. Here is everything you need for the day.
 
 ### Your slot
 
-The full program with your keynote's day, session, and time is live at
+You are scheduled for the **Opening keynote on Thursday, October 1,
+9:00–9:45 AM**. The full program is live at
 [newenglandcompbio.org/#program](https://newenglandcompbio.org/#program).
 
 ### Talk title
@@ -114,9 +116,9 @@ Even a working title is helpful — we can refine closer to the meeting.
   advance** so we can pre-load them onto the laptop before your
   session. Please **bring a copy on a USB stick** as a fallback in
   case the email doesn't come through.
-- The AV table opens at **8:00 AM** on both days (Thu Oct 1 and
-  Fri Oct 2), so you can drop off your USB or check that your slides
-  are loaded before the first session at 9:00 AM.
+- The AV table opens at **8:00 AM on Thursday, October 1**, so you can
+  drop off your USB or check that your slides are loaded before your
+  9:00 AM opening.
 - **Format:** PowerPoint (`.pptx`) is preferred. PDF works as a backup.
   Please avoid Keynote / Google Slides exports unless you have tested
   the resulting file on Windows — fonts and animations sometimes
@@ -130,7 +132,126 @@ NECB 2026 Organizing Committee
 
 ---
 
-## 3. Joint keynote — Uhler & Shivashankar
+## 3. Sergey Ovchinnikov — Afternoon keynote
+
+**To:** `so3@mit.edu`
+**Subject:** NECB 2026 · Logistics for your afternoon keynote
+
+Dear Sergey,
+
+Thank you again for joining us as an **afternoon keynote speaker** at
+NECB 2026. Here is everything you need for the day.
+
+### Your slot
+
+You are scheduled for the **Afternoon keynote on Thursday, October 1,
+5:15–6:00 PM**. The full program is live at
+[newenglandcompbio.org/#program](https://newenglandcompbio.org/#program).
+
+### Talk title
+
+If you have not already shared it, please send us your final **talk
+title** at your convenience so we can include it in the program book.
+Even a working title is helpful — we can refine closer to the meeting.
+
+### Presentation format
+
+- **45 minutes** total — typically **~40 min talk + 5 min Q&A**, but
+  feel free to divide it as you prefer.
+
+### Recording
+
+- **Talks will be recorded** and made available on YouTube after the
+  meeting. Please let the organizers know at
+  `newenglandcompbio@gmail.com` if you would prefer your talk not to
+  be included.
+
+### Slides & AV
+
+- **Talks will run from a single Windows laptop.** No laptop switching
+  between speakers.
+- **Please email your slides to `newenglandcompbio@gmail.com` in
+  advance** so we can pre-load them onto the laptop before your
+  session. Please **bring a copy on a USB stick** as a fallback in
+  case the email doesn't come through.
+- The AV table opens at **8:00 AM on Thursday, October 1**, so you can
+  drop off your USB or check that your slides are loaded any time
+  before your 5:15 PM slot.
+- **Format:** PowerPoint (`.pptx`) is preferred. PDF works as a backup.
+  Please avoid Keynote / Google Slides exports unless you have tested
+  the resulting file on Windows — fonts and animations sometimes
+  misrender.
+
+Please do not hesitate to contact us with any questions. See you in
+Cambridge!
+
+Best,
+NECB 2026 Organizing Committee
+
+---
+
+## 4. Zhiping Weng — Closing keynote
+
+**To:** `Zhiping.Weng@umassmed.edu`
+**Subject:** NECB 2026 · Logistics for your closing keynote
+
+Dear Zhiping,
+
+Thank you again for joining us as the **closing keynote speaker** at
+NECB 2026. Here is everything you need for the day.
+
+### Your slot
+
+You are scheduled for the **Closing keynote on Friday, October 2,
+5:15–6:00 PM**. The poster awards will be announced at the start of
+your session, so we would appreciate you being at the venue a few
+minutes early. The full program is live at
+[newenglandcompbio.org/#program](https://newenglandcompbio.org/#program).
+
+### Talk title
+
+If you have not already shared it, please send us your final **talk
+title** at your convenience so we can include it in the program book.
+Even a working title is helpful — we can refine closer to the meeting.
+
+### Presentation format
+
+- **45 minutes** total (a brief poster-awards ceremony precedes your
+  talk) — typically **~40 min talk + 5 min Q&A**, but feel free to
+  divide it as you prefer.
+
+### Recording
+
+- **Talks will be recorded** and made available on YouTube after the
+  meeting. Please let the organizers know at
+  `newenglandcompbio@gmail.com` if you would prefer your talk not to
+  be included.
+
+### Slides & AV
+
+- **Talks will run from a single Windows laptop.** No laptop switching
+  between speakers.
+- **Please email your slides to `newenglandcompbio@gmail.com` in
+  advance** so we can pre-load them onto the laptop before your
+  session. Please **bring a copy on a USB stick** as a fallback in
+  case the email doesn't come through.
+- The AV table opens at **8:00 AM on Friday, October 2**, so you can
+  drop off your USB or check that your slides are loaded any time
+  before your 5:15 PM slot.
+- **Format:** PowerPoint (`.pptx`) is preferred. PDF works as a backup.
+  Please avoid Keynote / Google Slides exports unless you have tested
+  the resulting file on Windows — fonts and animations sometimes
+  misrender.
+
+Please do not hesitate to contact us with any questions. See you in
+Cambridge!
+
+Best,
+NECB 2026 Organizing Committee
+
+---
+
+## 5. Joint keynote — Uhler & Shivashankar
 
 Recipients: Caroline Uhler and G.V. Shivashankar (Day 2 morning
 keynote, 9:00–10:00 AM).
@@ -194,7 +315,7 @@ NECB 2026 Organizing Committee
 
 ---
 
-## 4. Invited speakers
+## 6. Invited speakers
 
 **Subject:** NECB 2026 · Logistics for your invited talk
 
@@ -255,7 +376,7 @@ NECB 2026 Organizing Committee
 
 ---
 
-## 5. Day 1 poster presenters (Thu Oct 1)
+## 7. Day 1 poster presenters (Thu Oct 1)
 
 **Subject:** NECB 2026 · Logistics for your Day 1 poster (Thu Oct 1)
 
@@ -298,7 +419,7 @@ NECB 2026 Organizing Committee
 
 ---
 
-## 6. Day 2 poster presenters (Fri Oct 2)
+## 8. Day 2 poster presenters (Fri Oct 2)
 
 **Subject:** NECB 2026 · Logistics for your Day 2 poster (Fri Oct 2)
 

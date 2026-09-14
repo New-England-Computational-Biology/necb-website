@@ -333,9 +333,7 @@ Here is everything you need for the day.
 ### Your slot
 
 You are scheduled for the **Day 1 invited talks session on Thursday,
-October 1, 11:15 AM – 12:15 PM** (three invited talks; specific order
-within the block will be confirmed closer to the meeting). The full
-program is live at
+October 1, 11:15 AM – 12:15 PM**. The full program is live at
 [newenglandcompbio.org/#program](https://newenglandcompbio.org/#program).
 
 ### Talk title
@@ -395,9 +393,7 @@ Here is everything you need for the day.
 ### Your slot
 
 You are scheduled for the **Day 1 invited talks session on Thursday,
-October 1, 11:15 AM – 12:15 PM** (three invited talks; specific order
-within the block will be confirmed closer to the meeting). The full
-program is live at
+October 1, 11:15 AM – 12:15 PM**. The full program is live at
 [newenglandcompbio.org/#program](https://newenglandcompbio.org/#program).
 
 ### Talk title
@@ -457,9 +453,7 @@ Here is everything you need for the day.
 ### Your slot
 
 You are scheduled for the **Day 1 invited talks session on Thursday,
-October 1, 11:15 AM – 12:15 PM** (three invited talks; specific order
-within the block will be confirmed closer to the meeting). The full
-program is live at
+October 1, 11:15 AM – 12:15 PM**. The full program is live at
 [newenglandcompbio.org/#program](https://newenglandcompbio.org/#program).
 
 ### Talk title
@@ -519,9 +513,7 @@ Here is everything you need for the day.
 ### Your slot
 
 You are scheduled for the **Day 2 invited talks session on Friday,
-October 2, 11:15 AM – 12:15 PM** (three invited talks; specific order
-within the block will be confirmed closer to the meeting). The full
-program is live at
+October 2, 11:15 AM – 12:15 PM**. The full program is live at
 [newenglandcompbio.org/#program](https://newenglandcompbio.org/#program).
 
 ### Talk title
@@ -581,9 +573,7 @@ Here is everything you need for the day.
 ### Your slot
 
 You are scheduled for the **Day 2 invited talks session on Friday,
-October 2, 11:15 AM – 12:15 PM** (three invited talks; specific order
-within the block will be confirmed closer to the meeting). The full
-program is live at
+October 2, 11:15 AM – 12:15 PM**. The full program is live at
 [newenglandcompbio.org/#program](https://newenglandcompbio.org/#program).
 
 ### Talk title
@@ -643,9 +633,7 @@ Here is everything you need for the day.
 ### Your slot
 
 You are scheduled for the **Day 2 invited talks session on Friday,
-October 2, 11:15 AM – 12:15 PM** (three invited talks; specific order
-within the block will be confirmed closer to the meeting). The full
-program is live at
+October 2, 11:15 AM – 12:15 PM**. The full program is live at
 [newenglandcompbio.org/#program](https://newenglandcompbio.org/#program).
 
 ### Talk title

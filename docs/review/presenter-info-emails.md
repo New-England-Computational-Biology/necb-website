@@ -87,7 +87,7 @@ Poster boards will be labeled by your abstract number (e.g. A001, A002, …) —
 - **Portrait orientation.**
 - **Up to 36 in wide × 42 in tall (91 × 107 cm).** Please do not exceed
   these dimensions — boards will not accommodate larger posters.
-- **Push-pins provided on site.** Please bring your printed poster with
+- **Mounting putty provided on site.** Please bring your printed poster with
   you — there is no on-site printing.
 
 ### Setup and takedown
@@ -132,7 +132,7 @@ Poster boards will be labeled by your abstract number (e.g. A001, A002, …) —
 - **Portrait orientation.**
 - **Up to 36 in wide × 42 in tall (91 × 107 cm).** Please do not exceed
   these dimensions — boards will not accommodate larger posters.
-- **Push-pins provided on site.** Please bring your printed poster with
+- **Mounting putty provided on site.** Please bring your printed poster with
   you — there is no on-site printing.
 
 ### Setup and takedown

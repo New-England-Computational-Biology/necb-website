@@ -49,6 +49,7 @@ Assistant Investigator, Massachusetts General Hospital
 Assistant Professor, Harvard Medical School
 Associate Member, Broad Institute of MIT and Harvard
 newenglandcompbio@gmail.com · https://newenglandcompbio.org
+Tel: {{signatory_phone}}   ← required by some universities (e.g. HKU) for travel approval
 
 ---
 

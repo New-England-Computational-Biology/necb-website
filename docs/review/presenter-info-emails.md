@@ -1,12 +1,13 @@
 # Presenter-info emails — Sep 12, 2026 (committee review draft)
 
-Five emails to be sent before the conference:
+Six emails to be sent before the conference:
 
 1. **Selected talk presenters** — 23 recipients, single BCC list from `data/program.yaml`
-2. **Keynote speakers** — 5 recipients, addresses in `data/speakers.yaml`
-3. **Invited speakers** — 6 recipients, addresses in `data/speakers.yaml`
-4. **Day 1 poster presenters** — ~90 recipients, BCC list from `data/posterSessions.yaml` day 1
-5. **Day 2 poster presenters** — ~90 recipients, BCC list from `data/posterSessions.yaml` day 2
+2. **Single-speaker keynotes** — 3 recipients (Marc Vidal, Sergey Ovchinnikov, Zhiping Weng)
+3. **Joint keynote** — 2 recipients (Caroline Uhler, G.V. Shivashankar)
+4. **Invited speakers** — 6 recipients, addresses in `data/speakers.yaml`
+5. **Day 1 poster presenters** — ~90 recipients, BCC list from `data/posterSessions.yaml` day 1
+6. **Day 2 poster presenters** — ~90 recipients, BCC list from `data/posterSessions.yaml` day 2
 
 All go out as **single BCC blasts** (no per-recipient personalization).
 
@@ -70,7 +71,10 @@ NECB 2026 Organizing Committee
 
 ---
 
-## 2. Keynote speakers
+## 2. Single-speaker keynotes
+
+Recipients: Marc Vidal (Opening keynote · Day 1), Sergey Ovchinnikov
+(Afternoon keynote · Day 1), Zhiping Weng (Closing keynote · Day 2).
 
 **Subject:** NECB 2026 · Logistics for your keynote
 
@@ -92,11 +96,8 @@ Even a working title is helpful — we can refine closer to the meeting.
 
 ### Presentation format
 
-- **45 minutes** for single-speaker keynotes (Opening, Afternoon,
-  Closing) — typically **~40 min talk + 5 min Q&A**, but feel free to
-  divide it as you prefer.
-- **60 minutes** for the Day 2 joint keynote (Uhler & Shivashankar) —
-  we will coordinate the split with you both directly.
+- **45 minutes** total — typically **~40 min talk + 5 min Q&A**, but
+  feel free to divide it as you prefer.
 
 ### Recording
 
@@ -129,7 +130,71 @@ NECB 2026 Organizing Committee
 
 ---
 
-## 3. Invited speakers
+## 3. Joint keynote — Uhler & Shivashankar
+
+Recipients: Caroline Uhler and G.V. Shivashankar (Day 2 morning
+keynote, 9:00–10:00 AM).
+
+**Subject:** NECB 2026 · Logistics for your joint keynote
+
+Dear Caroline and G.V.,
+
+Thank you again for joining us at NECB 2026 for the Day 2 joint
+morning keynote. Here is everything you need for the day.
+
+### Your slot
+
+You are scheduled for the **Day 2 morning keynote on Friday, October 2,
+9:00–10:00 AM**. The full program is live at
+[newenglandcompbio.org/#program](https://newenglandcompbio.org/#program).
+
+### Talk title
+
+If you have not already shared them, please send us your final **talk
+title(s)** — whether you are speaking under one shared title or under
+two related titles — at your convenience so we can include them in
+the program book.
+
+### Presentation format
+
+- **60 minutes total** for the joint keynote — please coordinate the
+  split between you as you prefer (e.g. two 25-min talks + 10 min
+  joint Q&A, one shared 50-min talk + 10 min Q&A, or a back-and-forth
+  format). Let us know how you would like the moderator to introduce
+  the session and whether you'd like a signal at a specific point.
+
+### Recording
+
+- **Talks will be recorded** and made available on YouTube after the
+  meeting. Please let the organizers know at
+  `newenglandcompbio@gmail.com` if either of you would prefer your
+  portion not to be included.
+
+### Slides & AV
+
+- **Talks will run from a single Windows laptop.** No laptop switching
+  between speakers.
+- **Please email your slides to `newenglandcompbio@gmail.com` in
+  advance** so we can pre-load them onto the laptop before your
+  session. Please **bring a copy on a USB stick** as a fallback in
+  case the email doesn't come through.
+- The AV table opens at **8:00 AM on Friday, October 2**, so you can
+  drop off your USB or check that your slides are loaded before the
+  session at 9:00 AM.
+- **Format:** PowerPoint (`.pptx`) is preferred. PDF works as a backup.
+  Please avoid Keynote / Google Slides exports unless you have tested
+  the resulting file on Windows — fonts and animations sometimes
+  misrender.
+
+Please do not hesitate to contact us with any questions. Looking
+forward to seeing you both in Cambridge!
+
+Best,
+NECB 2026 Organizing Committee
+
+---
+
+## 4. Invited speakers
 
 **Subject:** NECB 2026 · Logistics for your invited talk
 
@@ -190,7 +255,7 @@ NECB 2026 Organizing Committee
 
 ---
 
-## 4. Day 1 poster presenters (Thu Oct 1)
+## 5. Day 1 poster presenters (Thu Oct 1)
 
 **Subject:** NECB 2026 · Logistics for your Day 1 poster (Thu Oct 1)
 
@@ -233,7 +298,7 @@ NECB 2026 Organizing Committee
 
 ---
 
-## 5. Day 2 poster presenters (Fri Oct 2)
+## 6. Day 2 poster presenters (Fri Oct 2)
 
 **Subject:** NECB 2026 · Logistics for your Day 2 poster (Fri Oct 2)
 

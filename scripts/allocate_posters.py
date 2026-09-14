@@ -121,7 +121,7 @@ peterren@g.harvard.edu pilu1@mgh.harvard.edu ppooyan@meei.harvard.edu
 prustysp@bu.edu rawat.sam@northeastern.edu rbationo90@gmail.com
 renjiewu02@gmail.com ritikarvl2627@gmail.com ruohan_wang@brown.edu
 ruohongw@bu.edu ryan_seaman@hms.harvard.edu scarver@g.harvard.edu
-schowdhu@bu.edu seanrjohnson@neb.com shastrya@bu.edu
+schowdhu@bu.edu sjohnson@neb.com shastrya@bu.edu
 shogan.sugumarswamy@childrens.harvard.edu shreyasgr@gmail.com
 siddharth.viswanath@yale.edu skcheng@umich.edu slu3@wpi.edu smlewis@wpi.edu
 sn503421@ohio.edu sng2027@bu.edu sogden@udallas.edu stelliou@mgh.harvard.edu

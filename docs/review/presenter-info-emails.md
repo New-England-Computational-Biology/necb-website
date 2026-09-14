@@ -1,18 +1,23 @@
 # Presenter-info emails — Sep 12, 2026 (committee review draft)
 
-Eight emails to be sent before the conference:
+Thirteen emails to be sent before the conference:
 
 1. **Selected talk presenters** — 23 recipients, single BCC list from `data/program.yaml`
 2. **Marc Vidal** — Opening keynote, Day 1
 3. **Sergey Ovchinnikov** — Afternoon keynote, Day 1
 4. **Zhiping Weng** — Closing keynote, Day 2
 5. **Joint keynote** — 2 recipients (Caroline Uhler, G.V. Shivashankar)
-6. **Invited speakers** — 6 recipients, addresses in `data/speakers.yaml`
-7. **Day 1 poster presenters** — ~90 recipients, BCC list from `data/posterSessions.yaml` day 1
-8. **Day 2 poster presenters** — ~90 recipients, BCC list from `data/posterSessions.yaml` day 2
+6. **Alex Lu** — Invited talks, Day 1
+7. **Rong Ma** — Invited talks, Day 1
+8. **Samantha Petti** — Invited talks, Day 1
+9. **Sahin Naqvi** — Invited talks, Day 2
+10. **Armita Nourmohammad** — Invited talks, Day 2
+11. **Yuri Pritykin** — Invited talks, Day 2
+12. **Day 1 poster presenters** — ~90 recipients, BCC list from `data/posterSessions.yaml` day 1
+13. **Day 2 poster presenters** — ~90 recipients, BCC list from `data/posterSessions.yaml` day 2
 
-Selected talks, invited, and poster templates go out as **single BCC
-blasts**. Keynote emails are personalized 1-to-1.
+Selected talks and poster templates go out as **single BCC blasts**;
+keynote and invited-speaker emails are personalized 1-to-1.
 
 **From:** `newenglandcompbio@gmail.com`
 **Cc (all emails):** `LPINELLO@mgh.harvard.edu`, `predrag@northeastern.edu`, `Yang.Kevin@microsoft.com`
@@ -315,22 +320,23 @@ NECB 2026 Organizing Committee
 
 ---
 
-## 6. Invited speakers
+## 6. Alex Lu — Invited talk, Day 1
 
+**To:** `lualex@microsoft.com`
 **Subject:** NECB 2026 · Logistics for your invited talk
 
-Dear NECB 2026 invited speaker,
+Dear Alex,
 
 Thank you again for joining us as an invited speaker at NECB 2026.
 Here is everything you need for the day.
 
 ### Your slot
 
-The full program with your invited talk's day, session, and time is
-live at
+You are scheduled for the **Day 1 invited talks session on Thursday,
+October 1, 11:15 AM – 12:15 PM** (three invited talks; specific order
+within the block will be confirmed closer to the meeting). The full
+program is live at
 [newenglandcompbio.org/#program](https://newenglandcompbio.org/#program).
-Order of speakers within each invited-talks block will be confirmed
-closer to the meeting.
 
 ### Talk title
 
@@ -340,9 +346,9 @@ Even a working title is helpful — we can refine closer to the meeting.
 
 ### Presentation format
 
-- **20 minutes total** per invited talk — typically **~17 min talk +
-  3 min Q&A**, but feel free to divide it as you prefer. A moderator
-  will signal at 2 min remaining.
+- **20 minutes total** — typically **~17 min talk + 3 min Q&A**, but
+  feel free to divide it as you prefer. A moderator will signal at
+  2 min remaining.
 - Please time to 17 minutes to keep the session on schedule.
 
 ### Recording
@@ -357,12 +363,12 @@ Even a working title is helpful — we can refine closer to the meeting.
 - **Talks will run from a single Windows laptop.** No laptop switching
   between speakers.
 - **Please email your slides to `newenglandcompbio@gmail.com` in
-  advance** so we can pre-load them onto the laptop before the
+  advance** so we can pre-load them onto the laptop before your
   session. Please **bring a copy on a USB stick** as a fallback in
   case the email doesn't come through.
-- The AV table opens at **8:00 AM** on both days (Thu Oct 1 and
-  Fri Oct 2), so you can drop off your USB or check that your slides
-  are loaded before the first session at 9:00 AM.
+- The AV table opens at **8:00 AM on Thursday, October 1**, so you can
+  drop off your USB or check that your slides are loaded before your
+  11:15 AM slot.
 - **Format:** PowerPoint (`.pptx`) is preferred. PDF works as a backup.
   Please avoid Keynote / Google Slides exports unless you have tested
   the resulting file on Windows — fonts and animations sometimes
@@ -376,7 +382,317 @@ NECB 2026 Organizing Committee
 
 ---
 
-## 7. Day 1 poster presenters (Thu Oct 1)
+## 7. Rong Ma — Invited talk, Day 1
+
+**To:** `rongma@hsph.harvard.edu`
+**Subject:** NECB 2026 · Logistics for your invited talk
+
+Dear Rong,
+
+Thank you again for joining us as an invited speaker at NECB 2026.
+Here is everything you need for the day.
+
+### Your slot
+
+You are scheduled for the **Day 1 invited talks session on Thursday,
+October 1, 11:15 AM – 12:15 PM** (three invited talks; specific order
+within the block will be confirmed closer to the meeting). The full
+program is live at
+[newenglandcompbio.org/#program](https://newenglandcompbio.org/#program).
+
+### Talk title
+
+If you have not already shared it, please send us your final **talk
+title** at your convenience so we can include it in the program book.
+Even a working title is helpful — we can refine closer to the meeting.
+
+### Presentation format
+
+- **20 minutes total** — typically **~17 min talk + 3 min Q&A**, but
+  feel free to divide it as you prefer. A moderator will signal at
+  2 min remaining.
+- Please time to 17 minutes to keep the session on schedule.
+
+### Recording
+
+- **Talks will be recorded** and made available on YouTube after the
+  meeting. Please let the organizers know at
+  `newenglandcompbio@gmail.com` if you would prefer your talk not to
+  be included.
+
+### Slides & AV
+
+- **Talks will run from a single Windows laptop.** No laptop switching
+  between speakers.
+- **Please email your slides to `newenglandcompbio@gmail.com` in
+  advance** so we can pre-load them onto the laptop before your
+  session. Please **bring a copy on a USB stick** as a fallback in
+  case the email doesn't come through.
+- The AV table opens at **8:00 AM on Thursday, October 1**, so you can
+  drop off your USB or check that your slides are loaded before your
+  11:15 AM slot.
+- **Format:** PowerPoint (`.pptx`) is preferred. PDF works as a backup.
+  Please avoid Keynote / Google Slides exports unless you have tested
+  the resulting file on Windows — fonts and animations sometimes
+  misrender.
+
+Please do not hesitate to contact us with any questions. See you in
+Cambridge!
+
+Best,
+NECB 2026 Organizing Committee
+
+---
+
+## 8. Samantha Petti — Invited talk, Day 1
+
+**To:** `Samantha.Petti@tufts.edu`
+**Subject:** NECB 2026 · Logistics for your invited talk
+
+Dear Samantha,
+
+Thank you again for joining us as an invited speaker at NECB 2026.
+Here is everything you need for the day.
+
+### Your slot
+
+You are scheduled for the **Day 1 invited talks session on Thursday,
+October 1, 11:15 AM – 12:15 PM** (three invited talks; specific order
+within the block will be confirmed closer to the meeting). The full
+program is live at
+[newenglandcompbio.org/#program](https://newenglandcompbio.org/#program).
+
+### Talk title
+
+If you have not already shared it, please send us your final **talk
+title** at your convenience so we can include it in the program book.
+Even a working title is helpful — we can refine closer to the meeting.
+
+### Presentation format
+
+- **20 minutes total** — typically **~17 min talk + 3 min Q&A**, but
+  feel free to divide it as you prefer. A moderator will signal at
+  2 min remaining.
+- Please time to 17 minutes to keep the session on schedule.
+
+### Recording
+
+- **Talks will be recorded** and made available on YouTube after the
+  meeting. Please let the organizers know at
+  `newenglandcompbio@gmail.com` if you would prefer your talk not to
+  be included.
+
+### Slides & AV
+
+- **Talks will run from a single Windows laptop.** No laptop switching
+  between speakers.
+- **Please email your slides to `newenglandcompbio@gmail.com` in
+  advance** so we can pre-load them onto the laptop before your
+  session. Please **bring a copy on a USB stick** as a fallback in
+  case the email doesn't come through.
+- The AV table opens at **8:00 AM on Thursday, October 1**, so you can
+  drop off your USB or check that your slides are loaded before your
+  11:15 AM slot.
+- **Format:** PowerPoint (`.pptx`) is preferred. PDF works as a backup.
+  Please avoid Keynote / Google Slides exports unless you have tested
+  the resulting file on Windows — fonts and animations sometimes
+  misrender.
+
+Please do not hesitate to contact us with any questions. See you in
+Cambridge!
+
+Best,
+NECB 2026 Organizing Committee
+
+---
+
+## 9. Sahin Naqvi — Invited talk, Day 2
+
+**To:** `Sahin.Naqvi@childrens.harvard.edu`
+**Subject:** NECB 2026 · Logistics for your invited talk
+
+Dear Sahin,
+
+Thank you again for joining us as an invited speaker at NECB 2026.
+Here is everything you need for the day.
+
+### Your slot
+
+You are scheduled for the **Day 2 invited talks session on Friday,
+October 2, 11:15 AM – 12:15 PM** (three invited talks; specific order
+within the block will be confirmed closer to the meeting). The full
+program is live at
+[newenglandcompbio.org/#program](https://newenglandcompbio.org/#program).
+
+### Talk title
+
+If you have not already shared it, please send us your final **talk
+title** at your convenience so we can include it in the program book.
+Even a working title is helpful — we can refine closer to the meeting.
+
+### Presentation format
+
+- **20 minutes total** — typically **~17 min talk + 3 min Q&A**, but
+  feel free to divide it as you prefer. A moderator will signal at
+  2 min remaining.
+- Please time to 17 minutes to keep the session on schedule.
+
+### Recording
+
+- **Talks will be recorded** and made available on YouTube after the
+  meeting. Please let the organizers know at
+  `newenglandcompbio@gmail.com` if you would prefer your talk not to
+  be included.
+
+### Slides & AV
+
+- **Talks will run from a single Windows laptop.** No laptop switching
+  between speakers.
+- **Please email your slides to `newenglandcompbio@gmail.com` in
+  advance** so we can pre-load them onto the laptop before your
+  session. Please **bring a copy on a USB stick** as a fallback in
+  case the email doesn't come through.
+- The AV table opens at **8:00 AM on Friday, October 2**, so you can
+  drop off your USB or check that your slides are loaded before your
+  11:15 AM slot.
+- **Format:** PowerPoint (`.pptx`) is preferred. PDF works as a backup.
+  Please avoid Keynote / Google Slides exports unless you have tested
+  the resulting file on Windows — fonts and animations sometimes
+  misrender.
+
+Please do not hesitate to contact us with any questions. See you in
+Cambridge!
+
+Best,
+NECB 2026 Organizing Committee
+
+---
+
+## 10. Armita Nourmohammad — Invited talk, Day 2
+
+**To:** `armita.nourmohammad@yale.edu`
+**Subject:** NECB 2026 · Logistics for your invited talk
+
+Dear Armita,
+
+Thank you again for joining us as an invited speaker at NECB 2026.
+Here is everything you need for the day.
+
+### Your slot
+
+You are scheduled for the **Day 2 invited talks session on Friday,
+October 2, 11:15 AM – 12:15 PM** (three invited talks; specific order
+within the block will be confirmed closer to the meeting). The full
+program is live at
+[newenglandcompbio.org/#program](https://newenglandcompbio.org/#program).
+
+### Talk title
+
+If you have not already shared it, please send us your final **talk
+title** at your convenience so we can include it in the program book.
+Even a working title is helpful — we can refine closer to the meeting.
+
+### Presentation format
+
+- **20 minutes total** — typically **~17 min talk + 3 min Q&A**, but
+  feel free to divide it as you prefer. A moderator will signal at
+  2 min remaining.
+- Please time to 17 minutes to keep the session on schedule.
+
+### Recording
+
+- **Talks will be recorded** and made available on YouTube after the
+  meeting. Please let the organizers know at
+  `newenglandcompbio@gmail.com` if you would prefer your talk not to
+  be included.
+
+### Slides & AV
+
+- **Talks will run from a single Windows laptop.** No laptop switching
+  between speakers.
+- **Please email your slides to `newenglandcompbio@gmail.com` in
+  advance** so we can pre-load them onto the laptop before your
+  session. Please **bring a copy on a USB stick** as a fallback in
+  case the email doesn't come through.
+- The AV table opens at **8:00 AM on Friday, October 2**, so you can
+  drop off your USB or check that your slides are loaded before your
+  11:15 AM slot.
+- **Format:** PowerPoint (`.pptx`) is preferred. PDF works as a backup.
+  Please avoid Keynote / Google Slides exports unless you have tested
+  the resulting file on Windows — fonts and animations sometimes
+  misrender.
+
+Please do not hesitate to contact us with any questions. See you in
+Cambridge!
+
+Best,
+NECB 2026 Organizing Committee
+
+---
+
+## 11. Yuri Pritykin — Invited talk, Day 2
+
+**To:** `pritykin@princeton.edu`
+**Subject:** NECB 2026 · Logistics for your invited talk
+
+Dear Yuri,
+
+Thank you again for joining us as an invited speaker at NECB 2026.
+Here is everything you need for the day.
+
+### Your slot
+
+You are scheduled for the **Day 2 invited talks session on Friday,
+October 2, 11:15 AM – 12:15 PM** (three invited talks; specific order
+within the block will be confirmed closer to the meeting). The full
+program is live at
+[newenglandcompbio.org/#program](https://newenglandcompbio.org/#program).
+
+### Talk title
+
+If you have not already shared it, please send us your final **talk
+title** at your convenience so we can include it in the program book.
+Even a working title is helpful — we can refine closer to the meeting.
+
+### Presentation format
+
+- **20 minutes total** — typically **~17 min talk + 3 min Q&A**, but
+  feel free to divide it as you prefer. A moderator will signal at
+  2 min remaining.
+- Please time to 17 minutes to keep the session on schedule.
+
+### Recording
+
+- **Talks will be recorded** and made available on YouTube after the
+  meeting. Please let the organizers know at
+  `newenglandcompbio@gmail.com` if you would prefer your talk not to
+  be included.
+
+### Slides & AV
+
+- **Talks will run from a single Windows laptop.** No laptop switching
+  between speakers.
+- **Please email your slides to `newenglandcompbio@gmail.com` in
+  advance** so we can pre-load them onto the laptop before your
+  session. Please **bring a copy on a USB stick** as a fallback in
+  case the email doesn't come through.
+- The AV table opens at **8:00 AM on Friday, October 2**, so you can
+  drop off your USB or check that your slides are loaded before your
+  11:15 AM slot.
+- **Format:** PowerPoint (`.pptx`) is preferred. PDF works as a backup.
+  Please avoid Keynote / Google Slides exports unless you have tested
+  the resulting file on Windows — fonts and animations sometimes
+  misrender.
+
+Please do not hesitate to contact us with any questions. See you in
+Cambridge!
+
+Best,
+NECB 2026 Organizing Committee
+
+---
+
+## 12. Day 1 poster presenters (Thu Oct 1)
 
 **Subject:** NECB 2026 · Logistics for your Day 1 poster (Thu Oct 1)
 
@@ -419,7 +735,7 @@ NECB 2026 Organizing Committee
 
 ---
 
-## 8. Day 2 poster presenters (Fri Oct 2)
+## 13. Day 2 poster presenters (Fri Oct 2)
 
 **Subject:** NECB 2026 · Logistics for your Day 2 poster (Fri Oct 2)
 

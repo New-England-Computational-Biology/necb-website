@@ -84,12 +84,11 @@ Here is everything you need for the day.
 The full program with your keynote's day, session, and time is live at
 [newenglandcompbio.org/#program](https://newenglandcompbio.org/#program).
 
-### Talk title & abstract
+### Talk title
 
-If you have not already shared them, please send us your final **talk
-title** and a **short abstract** (~200 words) at your convenience so
-we can include them in the program book. Even a working title is
-helpful — we can refine closer to the meeting.
+If you have not already shared it, please send us your final **talk
+title** at your convenience so we can include it in the program book.
+Even a working title is helpful — we can refine closer to the meeting.
 
 ### Presentation format
 
@@ -147,12 +146,11 @@ live at
 Order of speakers within each invited-talks block will be confirmed
 closer to the meeting.
 
-### Talk title & abstract
+### Talk title
 
-If you have not already shared them, please send us your final **talk
-title** and a **short abstract** (~200 words) at your convenience so
-we can include them in the program book. Even a working title is
-helpful — we can refine closer to the meeting.
+If you have not already shared it, please send us your final **talk
+title** at your convenience so we can include it in the program book.
+Even a working title is helpful — we can refine closer to the meeting.
 
 ### Presentation format
 

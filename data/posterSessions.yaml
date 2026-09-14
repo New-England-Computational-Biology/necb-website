@@ -610,7 +610,7 @@ days:
         round: "regular"
       - abstract_id: "A075"
         title: "scBrieflow: a single-cell analysis platform for understanding morphological readout of optical pooled screens"
-        presenter: "Matteo Di Bernardo"
+        presenter: "Ege Topkoc"
         affiliation: "Whitehead Institute"
         round: "regular"
       - abstract_id: "A077"

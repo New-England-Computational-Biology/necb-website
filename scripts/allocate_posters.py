@@ -197,6 +197,15 @@ def load_submissions():
             subs[aid]["email"] = email
             if not subs[aid].get("name"):
                 subs[aid]["name"] = fallback_name
+
+    # Presenter-name corrections where ISCB's registration entry was
+    # miscapitalized. Applied unconditionally after email fixes above.
+    MANUAL_NAME_FIX = {
+        "A094": "Edwin Moses Appiah",
+    }
+    for aid, name in MANUAL_NAME_FIX.items():
+        if aid in subs:
+            subs[aid]["name"] = name
     return subs
 
 

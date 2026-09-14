@@ -95,11 +95,12 @@ You are scheduled for the **Opening keynote on Thursday, October 1,
 9:00–9:45 AM**. The full program is live at
 [newenglandcompbio.org/#program](https://newenglandcompbio.org/#program).
 
-### Talk title
+### Talk title & abstract
 
-If you have not already shared it, please send us your final **talk
-title** at your convenience so we can include it in the program book.
-Even a working title is helpful — we can refine closer to the meeting.
+If you have not already shared them, please send us your final **talk
+title** and a **short abstract** (~200 words) at your convenience so
+we can include them in the program book. Even a working title is
+helpful — we can refine closer to the meeting.
 
 ### Presentation format
 
@@ -153,11 +154,12 @@ You are scheduled for the **Afternoon keynote on Thursday, October 1,
 5:15–6:00 PM**. The full program is live at
 [newenglandcompbio.org/#program](https://newenglandcompbio.org/#program).
 
-### Talk title
+### Talk title & abstract
 
-If you have not already shared it, please send us your final **talk
-title** at your convenience so we can include it in the program book.
-Even a working title is helpful — we can refine closer to the meeting.
+If you have not already shared them, please send us your final **talk
+title** and a **short abstract** (~200 words) at your convenience so
+we can include them in the program book. Even a working title is
+helpful — we can refine closer to the meeting.
 
 ### Presentation format
 
@@ -213,11 +215,12 @@ your session, so we would appreciate you being at the venue a few
 minutes early. The full program is live at
 [newenglandcompbio.org/#program](https://newenglandcompbio.org/#program).
 
-### Talk title
+### Talk title & abstract
 
-If you have not already shared it, please send us your final **talk
-title** at your convenience so we can include it in the program book.
-Even a working title is helpful — we can refine closer to the meeting.
+If you have not already shared them, please send us your final **talk
+title** and a **short abstract** (~200 words) at your convenience so
+we can include them in the program book. Even a working title is
+helpful — we can refine closer to the meeting.
 
 ### Presentation format
 
@@ -274,12 +277,12 @@ You are scheduled for the **Day 2 morning keynote on Friday, October 2,
 9:00–10:00 AM**. The full program is live at
 [newenglandcompbio.org/#program](https://newenglandcompbio.org/#program).
 
-### Talk title
+### Talk title & abstract
 
 If you have not already shared them, please send us your final **talk
 title(s)** — whether you are speaking under one shared title or under
-two related titles — at your convenience so we can include them in
-the program book.
+two related titles — and a **short abstract** (~200 words) at your
+convenience so we can include them in the program book.
 
 ### Presentation format
 
@@ -336,11 +339,12 @@ You are scheduled for the **Day 1 invited talks session on Thursday,
 October 1, 11:15 AM – 12:15 PM**. The full program is live at
 [newenglandcompbio.org/#program](https://newenglandcompbio.org/#program).
 
-### Talk title
+### Talk title & abstract
 
-If you have not already shared it, please send us your final **talk
-title** at your convenience so we can include it in the program book.
-Even a working title is helpful — we can refine closer to the meeting.
+If you have not already shared them, please send us your final **talk
+title** and a **short abstract** (~200 words) at your convenience so
+we can include them in the program book. Even a working title is
+helpful — we can refine closer to the meeting.
 
 ### Presentation format
 
@@ -396,11 +400,12 @@ You are scheduled for the **Day 1 invited talks session on Thursday,
 October 1, 11:15 AM – 12:15 PM**. The full program is live at
 [newenglandcompbio.org/#program](https://newenglandcompbio.org/#program).
 
-### Talk title
+### Talk title & abstract
 
-If you have not already shared it, please send us your final **talk
-title** at your convenience so we can include it in the program book.
-Even a working title is helpful — we can refine closer to the meeting.
+If you have not already shared them, please send us your final **talk
+title** and a **short abstract** (~200 words) at your convenience so
+we can include them in the program book. Even a working title is
+helpful — we can refine closer to the meeting.
 
 ### Presentation format
 
@@ -456,11 +461,12 @@ You are scheduled for the **Day 1 invited talks session on Thursday,
 October 1, 11:15 AM – 12:15 PM**. The full program is live at
 [newenglandcompbio.org/#program](https://newenglandcompbio.org/#program).
 
-### Talk title
+### Talk title & abstract
 
-If you have not already shared it, please send us your final **talk
-title** at your convenience so we can include it in the program book.
-Even a working title is helpful — we can refine closer to the meeting.
+If you have not already shared them, please send us your final **talk
+title** and a **short abstract** (~200 words) at your convenience so
+we can include them in the program book. Even a working title is
+helpful — we can refine closer to the meeting.
 
 ### Presentation format
 
@@ -516,11 +522,12 @@ You are scheduled for the **Day 2 invited talks session on Friday,
 October 2, 11:15 AM – 12:15 PM**. The full program is live at
 [newenglandcompbio.org/#program](https://newenglandcompbio.org/#program).
 
-### Talk title
+### Talk title & abstract
 
-If you have not already shared it, please send us your final **talk
-title** at your convenience so we can include it in the program book.
-Even a working title is helpful — we can refine closer to the meeting.
+If you have not already shared them, please send us your final **talk
+title** and a **short abstract** (~200 words) at your convenience so
+we can include them in the program book. Even a working title is
+helpful — we can refine closer to the meeting.
 
 ### Presentation format
 
@@ -576,11 +583,12 @@ You are scheduled for the **Day 2 invited talks session on Friday,
 October 2, 11:15 AM – 12:15 PM**. The full program is live at
 [newenglandcompbio.org/#program](https://newenglandcompbio.org/#program).
 
-### Talk title
+### Talk title & abstract
 
-If you have not already shared it, please send us your final **talk
-title** at your convenience so we can include it in the program book.
-Even a working title is helpful — we can refine closer to the meeting.
+If you have not already shared them, please send us your final **talk
+title** and a **short abstract** (~200 words) at your convenience so
+we can include them in the program book. Even a working title is
+helpful — we can refine closer to the meeting.
 
 ### Presentation format
 
@@ -636,11 +644,12 @@ You are scheduled for the **Day 2 invited talks session on Friday,
 October 2, 11:15 AM – 12:15 PM**. The full program is live at
 [newenglandcompbio.org/#program](https://newenglandcompbio.org/#program).
 
-### Talk title
+### Talk title & abstract
 
-If you have not already shared it, please send us your final **talk
-title** at your convenience so we can include it in the program book.
-Even a working title is helpful — we can refine closer to the meeting.
+If you have not already shared them, please send us your final **talk
+title** and a **short abstract** (~200 words) at your convenience so
+we can include them in the program book. Even a working title is
+helpful — we can refine closer to the meeting.
 
 ### Presentation format
 

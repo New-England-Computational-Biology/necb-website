@@ -76,37 +76,35 @@ Dear NECB 2026 presenter,
 
 Thanks again for confirming your NECB 2026 poster. Your poster is
 scheduled for the **Day 1 poster session on Thursday, October 1,
-2:15–4:15 PM**. Here is everything you need for the day.
-
-The full list of accepted posters is live at
+2:15–4:15 PM**. The full list of accepted posters is live at
 [newenglandcompbio.org/#poster-sessions](https://newenglandcompbio.org/#poster-sessions).
-Poster boards will be labeled by your abstract number (e.g. A001, A002, …) — please hang your poster on the board matching your abstract ID.
+
+Here is everything you need for the day.
 
 ### Poster format
 
 - **Portrait orientation.**
 - **Up to 36 in wide × 42 in tall (91 × 107 cm).** Please do not exceed
   these dimensions — boards will not accommodate larger posters.
-- **Mounting putty provided on site.** Please bring your printed poster with
-  you — there is no on-site printing.
+- **Mounting putty provided on site.** Please bring your printed poster
+  with you. There is no on-site printing.
 
 ### Setup and takedown
 
 - **Set up:** please hang your poster on your assigned board on
   **Thursday morning**, before the first talk (9:00 AM). A member of
   the organizing team will be onsite from **8:00 AM** to direct you to
-  your board.
+  your board. Poster boards will be labeled by your abstract number
+  (e.g. A001, A002, …).
 - **Presentation:** please be at your poster for the full 2-hour session
   (Thu 2:15–4:15 PM).
 - **Poster awards:** winners will be announced at the closing keynote
   on Day 2 (Fri Oct 2, 5:15–6:00 PM).
 - **Takedown:** please remove your poster at the end of the Thursday
-  session. Any posters left overnight cannot be preserved.
+  session. Any posters left overnight cannot be kept.
 
-### Questions
-
-Reply to this email or contact `newenglandcompbio@gmail.com`. See you
-in Cambridge!
+Please do not hesitate to contact us with any questions. See you in
+Cambridge!
 
 Best,
 NECB 2026 Organizing Committee
@@ -121,26 +119,26 @@ Dear NECB 2026 presenter,
 
 Thanks again for confirming your NECB 2026 poster. Your poster is
 scheduled for the **Day 2 poster session on Friday, October 2,
-2:15–4:15 PM**. Here is everything you need for the day.
-
-The full list of accepted posters is live at
+2:15–4:15 PM**. The full list of accepted posters is live at
 [newenglandcompbio.org/#poster-sessions](https://newenglandcompbio.org/#poster-sessions).
-Poster boards will be labeled by your abstract number (e.g. A001, A002, …) — please hang your poster on the board matching your abstract ID.
+
+Here is everything you need for the day.
 
 ### Poster format
 
 - **Portrait orientation.**
 - **Up to 36 in wide × 42 in tall (91 × 107 cm).** Please do not exceed
   these dimensions — boards will not accommodate larger posters.
-- **Mounting putty provided on site.** Please bring your printed poster with
-  you — there is no on-site printing.
+- **Mounting putty provided on site.** Please bring your printed poster
+  with you. There is no on-site printing.
 
 ### Setup and takedown
 
 - **Set up:** please hang your poster on your assigned board on
   **Friday morning**, before the first talk (9:00 AM). A member of
   the organizing team will be onsite from **8:00 AM** to direct you to
-  your board.
+  your board. Poster boards will be labeled by your abstract number
+  (e.g. A001, A002, …).
 - **Presentation:** please be at your poster for the full 2-hour session
   (Fri 2:15–4:15 PM).
 - **Poster awards:** winners will be announced at the closing keynote
@@ -148,10 +146,8 @@ Poster boards will be labeled by your abstract number (e.g. A001, A002, …) —
 - **Takedown:** please remove your poster at the end of the Friday
   session.
 
-### Questions
-
-Reply to this email or contact `newenglandcompbio@gmail.com`. See you
-in Cambridge!
+Please do not hesitate to contact us with any questions. See you in
+Cambridge!
 
 Best,
 NECB 2026 Organizing Committee

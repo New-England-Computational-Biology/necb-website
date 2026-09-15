@@ -50,6 +50,8 @@ invited:
       short_affiliation: "Tufts"
       photo: "img/people/samantha-petti.jpg"
       bio: "Assistant Professor of Mathematics and Computer Science at Tufts University. Her group designs mathematical and computational methods to infer fitness landscapes and describe evolutionary processes, with applications to protein sequence and structure analysis."
+      talk_title: "Modeling, interpreting, and optimizing high-dimensional genotype-phenotype maps"
+      talk_abstract: "A fundamental goal of genetics is to understand how variation in biological sequences gives rise to differences in measurable characteristics called phenotypes. The mapping from genotype (DNA, RNA or protein sequence) to phenotype can be difficult to model and interpret because the space of possible sequences is enormous and combinations of mutations interact in complex ways. We describe how to use a Bayesian method called Gaussian process regression to learn genotype-phenotype maps. We demonstrate that Gaussian process regression with our priors yields better predictive performance on several datasets and show how the learned prior can be interpreted to provide clues into how phenotype arises from genotype biologically. We derive tractable analytical expressions for computing a broad class of statistics under these models that would ordinarily require predictions across the entire sequence space, and discuss how this new \"kernel trick\" can be used both to interpret the structure of the genotype-phenotype map and to navigate toward regions of sequence space with desirable properties."
     - name: "Yuri Pritykin"
       affiliation: "Princeton University"
       short_affiliation: "Princeton"

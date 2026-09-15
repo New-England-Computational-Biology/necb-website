@@ -33,3 +33,8 @@ ATT*.html
 /*.pptx
 # Extracted PDF folders, in case someone lands them outside /docs/review/build/
 /pdfs/
+# Sensitive attendee/submission exports at repo root — never commit
+/Registration Report*.xlsx
+/NECB2026_Submissions_*.zip
+/*_NECB_*_Abstract.docx
+/NECB-2026-Submission_*.csv

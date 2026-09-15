@@ -207,6 +207,16 @@ def load_submissions():
     for aid, name in MANUAL_NAME_FIX.items():
         if aid in subs:
             subs[aid]["name"] = name
+
+    # Affiliation updates the presenter has asked us to reflect (job moves,
+    # renamed labs, corrections). Overrides the presenting_affiliation from
+    # the submissions CSV.
+    MANUAL_AFFILIATION_FIX = {
+        "A050": "Aureka Biotechnologies",  # Calvin McCarter — moved from BigHat Biosciences (2026-09-15)
+    }
+    for aid, aff in MANUAL_AFFILIATION_FIX.items():
+        if aid in subs:
+            subs[aid]["affiliation"] = aff
     return subs
 
 

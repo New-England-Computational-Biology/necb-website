@@ -102,7 +102,7 @@ days:
       - abstract_id: "A050"
         title: "Confounder-Aware Feature Correction for Single-Cell Batch Integration"
         presenter: "Calvin McCarter"
-        affiliation: "BigHat Biosciences"
+        affiliation: "Aureka Biotechnologies"
         round: "regular"
       - abstract_id: "A052"
         title: "Structure and Sequence Guided Drug Repurposing Framework for Antimalarial Target Discovery"

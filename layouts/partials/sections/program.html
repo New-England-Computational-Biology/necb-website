@@ -6,11 +6,17 @@
          append e.g. "Marc Vidal · DFCI · HMS" without embedding the
          mapping in the schedule data. */}}
     {{ $speakerAffils := dict }}
+    {{ $speakerTitles := dict }}
+    {{ $speakerAbstracts := dict }}
     {{ range site.Data.speakers.keynotes.members }}
       {{ if .short_affiliation }}{{ $speakerAffils = merge $speakerAffils (dict .name .short_affiliation) }}{{ end }}
+      {{ if .talk_title }}{{ $speakerTitles = merge $speakerTitles (dict .name .talk_title) }}{{ end }}
+      {{ if .talk_abstract }}{{ $speakerAbstracts = merge $speakerAbstracts (dict .name .talk_abstract) }}{{ end }}
     {{ end }}
     {{ range site.Data.speakers.invited.members }}
       {{ if .short_affiliation }}{{ $speakerAffils = merge $speakerAffils (dict .name .short_affiliation) }}{{ end }}
+      {{ if .talk_title }}{{ $speakerTitles = merge $speakerTitles (dict .name .talk_title) }}{{ end }}
+      {{ if .talk_abstract }}{{ $speakerAbstracts = merge $speakerAbstracts (dict .name .talk_abstract) }}{{ end }}
     {{ end }}
     <div class="program-grid">
       {{ range site.Data.program.days }}
@@ -27,7 +33,24 @@
               {{ if $hasBoth }}<span class="program-subhead">Invited talks</span>{{ end }}
               <ul class="program-speakers">
                 {{ range . }}
-                <li>{{ . }}{{ with index $speakerAffils . }} · <span class="program-speaker-affil">{{ . }}</span>{{ end }}</li>
+                {{ $name := . }}
+                {{ $affil := index $speakerAffils $name }}
+                {{ $title := index $speakerTitles $name }}
+                <li>
+                  {{ if $title }}
+                  <details class="program-talk-row">
+                    <summary>
+                      <span class="talk-presenter-line">{{ $name }}{{ with $affil }} · <span class="program-speaker-affil">{{ . }}</span>{{ end }}</span>
+                      <span class="talk-toggle-icon" aria-hidden="true">+</span>
+                    </summary>
+                    <div class="program-talk-detail">
+                      <span class="talk-title">{{ $title }}</span>
+                    </div>
+                  </details>
+                  {{ else }}
+                  {{ $name }}{{ with $affil }} · <span class="program-speaker-affil">{{ . }}</span>{{ end }}
+                  {{ end }}
+                </li>
                 {{ end }}
               </ul>
               {{ end }}

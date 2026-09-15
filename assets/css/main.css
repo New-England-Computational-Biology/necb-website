@@ -446,6 +446,11 @@ a:focus-visible { outline: 2px solid var(--c-accent); outline-offset: 2px; borde
   font-size: 0.82rem;
   line-height: 1.35;
 }
+/* Keynote/invited detail has no abstract ID — collapse to one column
+   so the title takes the full row and doesn't get squeezed. */
+.program-talk-detail--speaker {
+  grid-template-columns: 1fr;
+}
 .talk-id {
   font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
   font-size: 0.72rem;

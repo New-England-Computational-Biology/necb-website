@@ -137,7 +137,7 @@ yxu5009@psu.edu zeyuan.song@tuftsmedicine.org zhi.qu0509@gmail.com
 ziang@gatech.edu zinjuwadia.r@northeastern.edu ziqi_fu@g.harvard.edu
 zpatel@mgh.harvard.edu chenbi12@msu.edu cnptp@missouri.edu dkorkin1@wpi.edu
 dubingxue73@gmail.com elliot@elliottower.ai gani@umass.edu hppeng@tmu.edu.tw
-kumarp79584@gmail.com makenna.rodriguez1@howard.com matthew.funk1@umassmed.edu
+kumarp79584@gmail.com makenna.rodriguez1@howard.edu matthew.funk1@umassmed.edu
 matthew_leventhal@dfci.harvard.edu mb13@uw.edu michail_andreopoulos@g.harvard.edu
 mroddur2@illinois.edu naveen.v@northeastern.edu nesma.hassan3991@gmail.com
 p.enrique.soares@gmail.com pandey.vikas.prime@osaka-u.ac.jp
@@ -190,6 +190,7 @@ def load_submissions():
         "you.yu@northeastern.edu":                 ("A208", "Yukai You"),
         "gani@umass.edu":                          ("A219", "Godwin Ani"),
         "giacomo.ceoldo@childrens.harvard.edu":    ("A077", "Giacomo Ceoldo"),   # ISCB Title was 'PhD'; corrected working title in-place
+        "makenna.rodriguez1@howard.edu":           ("A204", "Makenna Rodriguez"),  # ISCB record had .com typo
     }
     # Force these — the ISCB row's email may already be set but wrong (typo)
     for email, (aid, fallback_name) in MANUAL_EMAIL_TO_AID.items():

@@ -91,7 +91,7 @@ We are grateful to our sponsors, our host at Microsoft Research New England, ISC
 ```{=typst}
 #block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [], [#text(weight: 600)[Alex Lu] #text(size: 0.85em, fill: c-muted)[· Microsoft Research New England]])]
 #block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [], [#text(weight: 600)[Rong Ma] #text(size: 0.85em, fill: c-muted)[· Harvard T.H. Chan School of Public Health]])]
-#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [], [#text(weight: 600)[Modeling, interpreting, and optimizing high-dimensional genotype-phenotype maps]\ #text(size: 0.85em, fill: c-muted)[Samantha Petti · Tufts University]])]
+#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [], [#text(weight: 700, fill: c-navy)[Samantha Petti] #text(size: 0.85em, fill: c-muted)[· Tufts University]\ #text(size: 0.9em, style: "italic")[Modeling, interpreting, and optimizing high-dimensional genotype-phenotype maps]])]
 ```
 
 
@@ -2414,20 +2414,6 @@ CRISPR-based epigenome editing technologies, including CRISPR interference (CRIS
 **Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
 
 Understanding trajectories among diseases poses real clinical value. For example, a disease associated with increased risk for developing another disease can help to justify early screening, provide insight into disease etiology, or point to drugs repurposing. We hypothesize that genetic similarity could be used to identify hidden relationships between diseases. For example, genetic similarity between irritable bowel syndrome (IBS) and lymphoma could point to subpopulation of lymphoma patients misdiagnosed with IBS, due to early abdominal pain symptoms. After building a database of genetic similarity scores among 177 common diseases, we develop a pipeline to assess matched comorbidity risk between prioritized disease pairs. This approach tests the association using 1:1 and coarsened exact matching approaches, matched on sex, age, and date. We include negative and positive controls to detect potential confounders in our relative risk (RR) estimation. In our pilot study of IBS and lymphoma, we obtained an estimated RR around 1.3-1.75 depending on the lymphoma occurrence window after the index date. We obtained ulcerative colitis (positive control) has ~5-6 RR, unfortunately, we also detected inflated RR among negative controls, i.e. cataract and fracture (~1.4). This inflation suggests the existence of unaccounted confounders. Our next step is to scale our pipeline across diseases that share genetic similarity. We implement high-dimensional score (hdPS) to address the hidden confounders. This work will allow us to put forward genetic similarity among diseases as a source of insight into disease trajectory, putting forward hidden early symptoms of diseases, causal factors, complications, or subtypes of diseases.
-
-```{=typst}
-#pagebreak(weak: true)
-```
-
-### A117 · Reverse Vaccinology-Based Design of a Multi-epitopes Sub-unit Vaccine Candidate Against Leishmanisis.
-
-**Presenter:** Genevieve Kingsford Nneka — Helix Biogen Institute · Adeleke University, Nigeria
-
-**Authors:** Elijah Kolawole Oladipo, Akinpelu Samuel Oluwaseyi, James Akinwumi Oladipo, Kingsford Genevieve Nneka, Ajibade Oluwatosin Akinola, Simon Nnanyere Odoemene
-
-**Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
-
-Leishmaniasis is a neglected parasitic disease caused by intracellular protozoan parasites of the genus Leishmania (family Trypanosomatidae) and transmitted by infected female phlebotomine sandflies. The disease affects millions of people, particularly in tropical, subtropical, regions, where it remains a major public health concern due to its associated morbidity, mortality, and socioeconomic burden. This study employed bioinformatics and immunoinformatics approaches to design a Multi-Epitope sub-unit vaccine candidate with the potential to provide broad protection against different Leishmania species. Protein sequences were retrieved from the UniProt and NCBI databases and screened for antigenicity, allergenicity, toxicity, linear B-cell epitopes, helper T-lymphocyte (HTL) epitopes, and cytotoxic T-lymphocyte (CTL) epitopes using ABCPred, IEDB, and NetMHCpan. Selected epitopes were assembled into a vaccine construct with suitable adjuvants, linkers, and an additional co-translational residue to enhance immunogenicity and structural stability. The final construct comprised 491 amino acids, with molecular weight of 54,080.71 kDa, and estimated pI of 9.27, an instability index of 38.11, and a GRAVY score of −0.586, indicating a stable, and hydrophilic protein. Molecular docking analysis revealed stable interactions with Toll-like receptor 4 (TLR4) and Toll-like receptor 9 (TLR9), exhibiting binding energies of −281.30 kcal/mol and −320.52 kcal/mol, respectively. The stronger binding affinity observed for the TLR9 complex enhanced immune recognition and activation.Overall, the vaccine candidate was predicted to be non-toxic, non-allergic and highly antigenic, demonstrating its potential to elicit protective immune responses and as a promising candidate for further experimental validation against leishmaniasis.
 
 ```{=typst}
 #pagebreak(weak: true)

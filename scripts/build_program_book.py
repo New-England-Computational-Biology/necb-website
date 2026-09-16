@@ -685,14 +685,21 @@ def render_schedule(program, speakers_yaml) -> list[str]:
                     aff = speaker_affils.get(name, "")
                     title = speaker_titles.get(name, "")
                     if title:
-                        # Talk title first (bold), then presenter and
-                        # affiliation as the muted second line — matches
-                        # the selected-talks stanza below.
-                        aff_suffix = f" · {_typ(aff)}" if aff else ""
+                        # For keynote/invited: presenter is the draw, so
+                        # lead with the name in navy display weight, then
+                        # the talk title as a lighter italic second line,
+                        # then affiliation as a muted third element on
+                        # the name row. Selected-talks stanza below stays
+                        # title-first because their abstract IDs anchor.
+                        aff_suffix = (
+                            f" #text(size: 0.85em, fill: c-muted)"
+                            f"[· {_typ(aff)}]"
+                        ) if aff else ""
                         body = (
-                            f"[#text(weight: 600)[{_typ(title)}]\\ "
-                            "#text(size: 0.85em, fill: c-muted)["
-                            f"{_typ(name)}{aff_suffix}]]"
+                            f"[#text(weight: 700, fill: c-navy)"
+                            f"[{_typ(name)}]{aff_suffix}\\ "
+                            "#text(size: 0.9em, style: \"italic\")["
+                            f"{_typ(title)}]]"
                         )
                     elif aff:
                         body = (

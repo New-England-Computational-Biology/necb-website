@@ -857,6 +857,61 @@ def render_abstract(aid: str, sub: dict, session_label: str | None = None,
     return md
 
 
+def render_keynote_invited_abstracts(speakers_yaml, program) -> list[str]:
+    """Render a 'Keynote & Invited Talks · Abstracts' section.
+
+    Only speakers with a confirmed `talk_title` are rendered; speakers
+    without a title yet are skipped silently (they still appear in the
+    schedule and speaker-bio pages, they just don't get an abstract page
+    until they send us one). Layout mirrors `render_abstract` for
+    selected/poster abstracts: H3 heading, presenter line, session line,
+    abstract body — but the heading is 'Keynote' or 'Invited talk'
+    instead of an A### abstract id.
+
+    Ordered by day → session → declared speaker order in program.yaml
+    so keynote abstracts appear in the same order the audience hears
+    them."""
+    # Build lookups by speaker name.
+    entries: dict[str, dict] = {}
+    for tier in ("keynotes", "invited"):
+        for m in speakers_yaml.get(tier, {}).get("members", []):
+            name = (m.get("name") or "").strip()
+            if name:
+                entries[name] = {"tier": tier, "member": m}
+
+    # Walk program to preserve session order.
+    md: list[str] = ["# Keynote & Invited Talks · Abstracts", ""]
+    any_rendered = False
+    first = True
+    for day in program["days"]:
+        for sess in day["sessions"]:
+            for name in sess.get("speakers") or []:
+                e = entries.get(name)
+                if not e:
+                    continue
+                m = e["member"]
+                title = (m.get("talk_title") or "").strip()
+                if not title:
+                    continue
+                abstract = (m.get("talk_abstract") or "").strip()
+                if not first:
+                    md += ["```{=typst}", "#pagebreak(weak: true)", "```", ""]
+                first = False
+                tier_label = "Keynote" if e["tier"] == "keynotes" else "Invited talk"
+                md += [f"### {tier_label} · {title}", ""]
+                aff = (m.get("affiliation") or "").strip()
+                md.append(f"**Presenter:** {name}{(' — ' + aff) if aff else ''}")
+                md.append("")
+                md.append(f"**Session:** {day['label']} · {sess['time']} · {sess['title']}")
+                md.append("")
+                if abstract:
+                    md.append(abstract)
+                    md.append("")
+                any_rendered = True
+
+    return md if any_rendered else []
+
+
 def render_talks(program, subs) -> tuple[list[str], list[str]]:
     """Return (markdown_lines, missing_ids)."""
     md: list[str] = ["# Selected Talks · Abstracts", ""]
@@ -1104,6 +1159,7 @@ def main():
     lines += render_invited_bios(speakers)
     lines += render_organizers(orgs)
     lines += render_code_of_conduct()
+    lines += render_keynote_invited_abstracts(speakers, program)
     talks_md, talks_missing = render_talks(program, subs)
     lines += talks_md
     if poster_ids:

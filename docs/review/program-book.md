@@ -270,6 +270,16 @@ NECB 2026 follows the [ISCB Code of Conduct](https://www.iscb.org/iscb-policy-st
 
 Harassment, discrimination, and disrespectful behaviour of any kind are not welcome, in-person or online. Please report any concerns to the organizing committee at `newenglandcompbio@gmail.com`, or to any of the co-chairs in person.
 
+# Keynote & Invited Talks · Abstracts
+
+### Invited talk · Modeling, interpreting, and optimizing high-dimensional genotype-phenotype maps
+
+**Presenter:** Samantha Petti — Tufts University
+
+**Session:** Day 1 · Thu Oct 1, 2026 · 11:15 AM – 12:15 PM · Invited talks
+
+A fundamental goal of genetics is to understand how variation in biological sequences gives rise to differences in measurable characteristics called phenotypes. The mapping from genotype (DNA, RNA or protein sequence) to phenotype can be difficult to model and interpret because the space of possible sequences is enormous and combinations of mutations interact in complex ways. We describe how to use a Bayesian method called Gaussian process regression to learn genotype-phenotype maps. We demonstrate that Gaussian process regression with our priors yields better predictive performance on several datasets and show how the learned prior can be interpreted to provide clues into how phenotype arises from genotype biologically. We derive tractable analytical expressions for computing a broad class of statistics under these models that would ordinarily require predictions across the entire sequence space, and discuss how this new "kernel trick" can be used both to interpret the structure of the genotype-phenotype map and to navigate toward regions of sequence space with desirable properties.
+
 # Selected Talks · Abstracts
 
 ### A111 · Spatial transcriptome and whole genome characterization of single nuclei in human tissues

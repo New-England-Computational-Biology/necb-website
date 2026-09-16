@@ -33,9 +33,14 @@ from pypdf import PdfReader, PdfWriter, PageObject, Transformation
 ROOT = Path(__file__).resolve().parent.parent
 BUILD = ROOT / "docs" / "review" / "build"
 PDF_DIR = BUILD / "pdfs"
+# SOURCE is the just-rendered short book (from render_pdf.py --publish)
+# that this script reads to stitch author PDFs into. PUBLISH overwrites
+# that same canonical path so a single `program-book.pdf` URL always
+# points to the current full book — no separate `-full.pdf` artifact to
+# keep in sync.
 SOURCE = ROOT / "static" / "files" / "program-book.pdf"
 OUT = BUILD / "program-book-full.pdf"
-PUBLISH = ROOT / "static" / "files" / "program-book-full.pdf"
+PUBLISH = ROOT / "static" / "files" / "program-book.pdf"
 
 ABSTRACT_ID_RE = re.compile(r"^(A\d{3})\b")
 
@@ -161,7 +166,7 @@ def main():
         PUBLISH.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(OUT, PUBLISH)
         print(f"       {PUBLISH.relative_to(ROOT)}  (published)")
-        print(f"       https://newenglandcompbio.org/files/program-book-full.pdf")
+        print(f"       https://newenglandcompbio.org/files/{PUBLISH.name}")
 
 
 if __name__ == "__main__":

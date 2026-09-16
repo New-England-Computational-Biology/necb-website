@@ -441,7 +441,7 @@ days:
         round: "late-breaking"
   - label: "Day 2 · Fri Oct 2, 2026"
     time: "2:15–4:15 PM"
-    count: 87
+    count: 86
     posters:
       - abstract_id: "A002"
         title: "BBB-Nuke: Transport-Aware Prediction of Blood-Brain Barrier Penetration in Small Molecules"
@@ -652,11 +652,6 @@ days:
         title: "Discovering disease trajectories using genetic similarity"
         presenter: "Sujiyanto"
         affiliation: "University of Massachusetts Lowell"
-        round: "regular"
-      - abstract_id: "A117"
-        title: "Reverse Vaccinology-Based Design of a Multi-epitopes Sub-unit Vaccine Candidate Against Leishmanisis"
-        presenter: "Genevieve Kingsford Nneka"
-        affiliation: "Helix Biogen Institute · Adeleke University, Nigeria"
         round: "regular"
       - abstract_id: "A120"
         title: "Mining protein–RNA complexes for recurring RNA-binding motifs"

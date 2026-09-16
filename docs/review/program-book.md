@@ -254,7 +254,7 @@ Jason Buenrostro.
 - **Luca Pinello**, *Massachusetts General Hospital · Harvard Medical School · Broad Institute*
 - **Predrag (Pedja) Radivojac**, *Northeastern University*
 
-### Abstract Reviewers
+# Abstract Reviewers
 
 With thanks to the trainees volunteering their time to review submissions.
 
@@ -676,34 +676,6 @@ Vaccine and binder design relies heavily on the structural stability of target p
 #pagebreak(weak: true)
 ```
 
-### A020 · Luxemia: Pan-Leukemic Algorithmic Relapse Prediction via Federated Gradient Boosting Ensembles with SHAP-Based Clinical Interpretability
-
-**Presenter:** Jacopo Martelli — Broad Institute
-
-**Authors:** Jacopo Martelli
-
-**Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
-
-Relapse is a major determinant of mortality in haematological malignancies. Luxemia is a federated heterogeneous pan- leukemic ensemble integrating XGBoost, LightGBM, CatBoost, Random Forest, HistGradientBoosting etc, with an L2-regularised logistic meta-learner and isotonic PAV calibration. Trained on >10,000 NCI TARGET ALL/AML records using stratified group-aware 5-fold cross-validation, it achieved ALL AUC 0.787 (95% CI 0.702–0.870; Brier 0.126) and AML AUC 0.699±0.016. Harmonised features include cytogenetics, molecularmarkers, MRD kinetics, and ELN 2022 risk stratification, enabling institution-specific deployment without data restructuring. Federated inference preserves data locality with no patient-level data transfer. External validation (n≈2,500) achieved AUCs of 0.784 and 0.771.
-
-```{=typst}
-#pagebreak(weak: true)
-```
-
-### A025 · Deciphering Fetal Endothelial Cell Programs to Enhance Vascular Maturation in Human Organoid Models
-
-**Presenter:** Paria Pooyan — Royan Institute for stem cell biology and technology
-
-**Authors:** Paria Pooyan, Farideh Moeinvaziri, Zahra Ghezelayagh, Massoud Vosough
-
-**Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
-
-The development of the vascular system occurs through a coordinated sequence of events, including the generation of endothelial progenitor cells, their differentiation into endothelial cells (ECs), the formation of endothelial-lined blood islands in the yolk sac, the establishment of a primitive vascular plexus, and subsequent migration of vascular cells into the embryo, where extensive vascular networks are formed and remodeled. Despite advances in organoid technology, a fully functional vascular system that faithfully recapitulates human vascular development has not yet been achieved in vitro. Here, we compared the transcriptomic profiles of fetal endothelial cells (fECs) with those of umbilical vein endothelial cells (UVECs) and adult endothelial cells, two endothelial sources commonly used for vascularized organoid generation, to identify unique molecular features of fECs that are absent or reduced in these alternative EC populations. Transcriptomic analysis revealed that mitochondrial oxidative phosphorylation pathways, including genes such as ATP5A1 and ATP5B, and tRNA aminoacylation pathways, including TARS1 and SARS1, were among the most prominent features distinguishing fECs. Furthermore, fECs exhibited increased expression of cell adhesion-related genes, including CCN2 and CEMIP2, suggesting enhanced capacities for vascular organization and tissue integration. These findings provide insights into the molecular characteristics of developmentally relevant endothelial cells and may guide the generation of more physiologically functional vascularized human organoids. Improved vascular organoid models could facilitate advances in developmental biology, drug discovery, disease modeling, and precision medicine.
-
-```{=typst}
-#pagebreak(weak: true)
-```
-
 ### A027 · Modeling the Competition Between Transcription Factors and DNA Repair Enzymes for Recognition of DNA Mismatches
 
 **Presenter:** Anthony Lau — UMass Chan Medical School
@@ -764,26 +736,6 @@ Amyloid fibrils are stable protein assemblies whose structures depend on sequenc
 #pagebreak(weak: true)
 ```
 
-### A032 · Single-Cell Transcriptomics Reveals a Transient Lipid-Associated Macrophage Response to Beta-Catenin/CBP Inhibition in Oral Squamous Cell Carcinoma
-
-**Presenter:** Sanjana Bhagavatula — Boston University Chobanian & Avedisian School of Medicine
-
-**Authors:** Sanjana Bhagavatula, Emily R. Fisher, Andrew Tilston-Lunel, Kenichi Nomoto, Takashi Owa, Manish V. Bais, Xaralabos Varelas, Stefano Monti, Maria A. Kukuruzinska
-
-**Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
-
-Background: Aberrant Wnt/beta-catenin signaling promotes tumor progression in HPV-negative oral squamous cell carcinoma (OSCC), in part through interaction with the transcriptional coactivator CBP. We investigated how E7386, a small-molecule inhibitor of beta-catenin/CBP activity, affects the OSCC tumor microenvironment (TME).
-
-Methods: We profiled ~71,000 cells from E7386- and vehicle-treated tumors in a syngeneic 4MOSC1 mouse model of tobacco-associated OSCC by single-cell RNA sequencing (n=4/arm). Treatment-associated compositional changes were assessed (sccomp), cell states characterized by annotation and gene set enrichment, and cell-cell communication inferred (CellChat). Findings were complemented by immunofluorescence (IF) and bulk RNA sequencing of E7386-treated 4MOSC1 cells in vitro.
-
-Results: E7386 reduced tumor growth and increased epithelial cell death. Compositional analysis identified epithelial depletion (FDR=0.037) and selective expansion of two lipid-associated macrophage (LAM) populations (FDR=0.0015, 0.0044). LAM transcriptional signatures were enriched for lipid transport, endocytosis, and tissue remodeling. CellChat identified altered epithelial-LAM communication involving adhesion, lipid handling, and dying-cell recognition. IF revealed that LAMs accumulated near epithelial cell death early after treatment but diminished with continued treatment. Mouse bulk RNA sequencing identified suppression of proliferative and keratinization programs and induction of cellular stress and programmed cell death, showing significant transcriptional overlap with human OSCC cells treated with beta-catenin/CBP inhibitors.
-
-Conclusion: E7386 induces coordinated tumor-intrinsic and TME responses, including a transient macrophage response consistent with the recognition and clearance of dying cells. These findings identify potential cellular and transcriptional features for evaluating the response to beta-catenin/CBP-targeted therapy in OSCC.
-
-```{=typst}
-#pagebreak(weak: true)
-```
-
 ### A036 · Systematic Identification and Characterization of Transcriptional Silencers Across Viral Genomes
 
 **Presenter:** Mohamed Yousry ElSadec — Bioinformatics Program, Boston University
@@ -807,34 +759,6 @@ Precise and tunable control of gene expression depends on both activating and re
 **Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
 
 Despite extensive efforts to map the genetic loci underlying AD risk, complete mechanistic mapping of variants to epigenomic and transcriptomic function remains elusive. We analyzed a 10x multiome (snRNA-seq + snATAC-seq) dataset of postmortem dorsolateral prefrontal cortex samples from ROSMAP (N = 232 individuals, 458K cells post QC) and annotated them into seven major cell types and 71 subtypes. For each major cell type, we mapped and fine-mapped cis eQTLs and cis caQTLs across 8,861 - 21,734 genes and 19,282 - 147,769 peaks, plus trans motifQTLs for 785 TF chromVAR activity phenotypes. These constitute the most comprehensive QTL map of aging human brain to date. We recovered 8,846 independent eQTL, 8,616 independent caQTL and 789 independent motif-QTL signals. In stratified LD-score regression across 57 GWAS traits, all three annotations were jointly significant for complex-trait heritability, with caQTL variants carrying the largest per-SNP effect (joint τ* = 0.69, rising to 0.90 across 18 brain traits). 257 fine-mapped variants colocalize between a caQTL and an eQTL credible set in at least one cell type (269 variant-by-cell-type colocalizations), and 90% of these show a concordant direction of effect - the allele that opens chromatin also raises expression. We next performed enhancer-to-gene linking analysis using SCARlink, ranking gene-peak pairs by their link strength enriched colocalized pairs 3.8-6.5-fold over baseline prevalence across cell types. In Microglia, rs17783630 was picked up as a fine-mapped caQTL (PIP 1.00, P = 6.7e-37) and a fine-mapped eQTL for RIN3 (PIP 0.57, P = 1.3e-11), and SCARlink independently links the caQTL peak to AD risk gene RIN3 (z = 14.6, FDR = 1.9e-24). Additionally, rs7648145 was picked up in inhibitory neurons as a fine-mapped trans-QTL for MEF2C motif activity (PIP 0.95, P = 2.2e-8), naming an AD risk gene as the effector transcription factor. Overall, this atlas provides insights of cell-type-specific regulatory mechanisms underlying Alzheimer’s disease risk.
-
-```{=typst}
-#pagebreak(weak: true)
-```
-
-### A041 · Signature Recontextualization: Mapping perturbational signatures across biological context
-
-**Presenter:** Andrew Chen — Boston University
-
-**Authors:** Andrew Chen, Stefano Monti
-
-**Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
-
-Perturbational transcriptomics is a powerful tool for understanding gene function and drug effects, yet predicting how perturbations manifest across different biological contexts remains a central challenge, limiting translation from model systems to clinically relevant tissues. Despite growing interest in this problem, benchmarking efforts have been hindered by inconsistent evaluation tasks, heterogeneous metrics, and limited assessment across perturbation types and biological systems. Here, we introduce a benchmarking framework for cross-context perturbation-signature prediction (a task we define as signature recontextualization), grounded in explicit definitions of the prediction task, target-data availability, and evaluation metrics centered on signature recovery. The framework evaluates prediction performance across three target-context data regimes: (1) control only, where only control profiles from the target context are measured; (2) low coverage, where a limited subset of perturbations in the target context are measured; and (3) high coverage, where most perturbations in the target context are measured. This design enables systematic assessment of how prediction performance depends on target-context sample size while providing a standardized basis for comparing methods. We evaluate newly developed projection-based (projectCor) and network-based (netProp) methods alongside deep learning-based foundation models (scGPT, STACK) and statistical baselines. The benchmark spans four diverse perturbational datasets: CRISPR knockdowns and drug perturbations in cell lines, plus in vivo chemical perturbations in rat tissues from DrugMatrix, extending evaluation beyond isolated cell-line models to tissue-level responses. Across tasks, projection and network propagation approaches show strong flexibility across perturbation types and biological contexts, and in several cases match or exceed the performance of deep learning and foundation models, suggesting that model complexity does not inherently improve cross-context generalization. We further show that perturbation predictability varies substantially with pathway conservation, transcriptional response strength, and baseline similarity between source and target contexts. All datasets, methods, and evaluation utilities are released as an open-source R package (sigRecon), providing a foundation for reproducible benchmarking and future method development.
-
-```{=typst}
-#pagebreak(weak: true)
-```
-
-### A042 · Understanding the effect of genetic variants on
-
-**Presenter:** Nguyen Tran — The University of Massachusetts Lowell
-
-**Authors:** Nguyen Tran, Sroeunchamroeunphal Huon, Rachel Melamed
-
-**Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
-
-Alzheimer's disease (AD) is a neurodegenerative disease with a strong genetic component. Genome-wide association studies (GWAS) have identified thousands of genetic variants associated with clinical traits, including AD status and AD-related clinical traits. The mechanisms through which genetic variants exert their effects are not always clear, but the Genotype-Tissue Expression (GTEx) project has demonstrated that genetic variation can affect gene expression across human tissues, including the brain. However, GTEx contains a limited set of brain tissues, missing some brain regions that may be important for disease development. Our recent model, BRONTE, aims to overcome this deficit by projecting the effects of genetic variants across 103 brain tissues. We hypothesize that these results will help explain the biological mechanisms connecting genetic variation, gene expression, and Alzheimer's disease clinical traits. Using data from the Alzheimer’s Disease Neuroimaging Initiative (ADNI), we performed association tests between ~100 clinical traits, including PET imaging measures and biomarkers, and AD status, and identified p-tau levels and left hippocampal volume as traits associated with disease status. We then performed GWAS on p-tau levels and left hippocampal volume to identify genetic variants associated with those traits. For the associated variants, we investigate their associations with gene expression in specific brain regions using results from BRONTE. By integrating ADNI clinical and genetic data with GTEx-based gene expression imputation, this project provides a framework for understanding how genetic variation may influence Alzheimer’s disease through changes in gene expression.
 
 ```{=typst}
 #pagebreak(weak: true)
@@ -868,20 +792,6 @@ RNA sequencing has improved the diagnostic yield in rare disease, yet current ap
 #pagebreak(weak: true)
 ```
 
-### A046 · Integrative transcriptomic analysis identifies long noncoding RNA dysregulation and circadian disruption in reward and executive circuits of opioid use disorder
-
-**Presenter:** Lina Yan — UMass Chan Medical School
-
-**Authors:** Ryan W. Logan
-
-**Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
-
-Opioid use disorder (OUD) is characterized by compulsive drug seeking and impaired executive control resulting from maladaptive plasticity within cortico-striatal circuits. Although transcriptomic studies have identified dysregulated protein-coding genes in the nucleus accumbens (NAc) and dorsolateral prefrontal cortex (DLPFC), the contribution of long noncoding RNAs (lncRNAs) remains largely unexplored. Here, we performed integrative transcriptomic analysis of postmortem human NAc and DLPFC to systematically identify and characterize long noncoding RNAs (lncRNAs) in OUD. We identified 36,225 expressed lncRNA loci expressed across reward and executive regions, approximately half of which were previously unannotated. OUD was associated with dysregulation of 375 lncRNAs in the NAc and 102 in the DLPFC. Co-expression analysis linked these lncRNAs to addiction-related genes and pathways involved in membrane excitability, synaptic transmission, neuronal development, and neurotrophic and MAPK signaling. Differential rhythmicity analysis further identified 105 lncRNAs in the NAc and 148 in the DLPFC with altered circadian rhythmicity. These rhythmic changes represent largely region-specific gains or losses of rhythmic expression that were mostly distinct from differential expression. Integration with single-nucleus transcriptomic data revealed pronounced neuronal and glial cell-type specificity among OUD-associated lncRNAs. Together, these findings define a broad landscape of OUD-associated lncRNAs in human brain reward and executive-control circuits. Spatial, temporal, and cell-type-specific remodeling of the noncoding transcriptome may represent an important regulatory layer contributing to brain circuit dysfunction in OUD.
-
-```{=typst}
-#pagebreak(weak: true)
-```
-
 ### A047 · LINGO: A Knowledge Graph-Grounded Foundation Model for Single-Cell Lineage Inference
 
 **Presenter:** Kaifu Chen — Boston Children's Hospital
@@ -891,48 +801,6 @@ Opioid use disorder (OUD) is characterized by compulsive drug seeking and impair
 **Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
 
 Single-cell lineage tracing (scLT) enables reconstruction of developmental his- tories by coupling lineage barcodes with transcriptomic profiling. The rapid accumulation of scLT datasets across diverse species, tissues, and experimental systems has created unprecedented opportunities to uncover general princi- ples of cell fate determination. However, lineage inference remains challenging because lineage information is often incomplete owing to barcode dropout, bar- code silencing, and destructive sampling, while existing computational methods are typically tailored to individual datasets and transfer poorly across bio- logical contexts. Meanwhile, current single-cell foundation models are largely transcriptome-driven and do not explicitly incorporate lineage-relevant biological knowledge. Here we present LINGO, a lineage foundation model that inte- grates a lineage-informed knowledge graph with large-scale scLT pretraining for single-cell lineage inference. LINGO combines developmental hierarchies, gene regulatory interactions, pathway information, and lineage-relevant cellular rela- tionships within a unified graph framework and uses graph-based contrastive pretraining to learn lineage-aware representations. We pretrained LINGO on more than 2 million cells from lineage-tracing datasets spanning 18 tissue types across mouse, human, and zebrafish, and evaluated it on held-out benchmarks encompassing cell linkage prediction, lineage origin prediction, and clonal plas- ticity prediction across diverse lineage-tracing technologies, tissues, and species. LINGO consistently outperformed state-of-the-art lineage-analysis methods and transcriptome-based foundation models, achieving gains of up to 26 percent- age points on held-out benchmarks. Furthermore, pretrained representations remained highly informative even when model weights were frozen during down- stream fine-tuning, demonstrating the robustness and transferability of the learned representations. Together, these results demonstrate the value of inte- grating structured biological knowledge into large-scale representation learning and establish a foundation-model framework for single-cell lineage inference.
-
-```{=typst}
-#pagebreak(weak: true)
-```
-
-### A048 · Single-cell transcriptomic profiling of IL-4/IL-13 receptor expression across pancreatic tumorigenesis
-
-**Presenter:** Stergiani Telliou — Massachusetts General Hospital/ Harvard Medical School
-
-**Authors:** Stergiani Telliou, Cutaneous Biology Research
-
-**Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
-
-Interleukin-4 (IL-4) and IL-13 are the central type 2 cytokines that drive T helper 2 (Th2) immune responses and allergic inflammation. Although their roles in immune regulation are well established, their contribution to pancreatic ductal adenocarcinoma (PDAC) development remains poorly understood. As responsiveness to IL-4 and IL-13 depends on the expression of their receptor components, defining their distribution during pancreatic tumorigenesis may provide insight into the potential involvement of type 2 cytokine signaling in disease initiation and progression. Here, we utilized publicly available single-cell RNA sequencing datasets from human and mouse pancreas to profile the expression of IL4R, IL13RA1, and IL2RG across healthy and disease-associated epithelial cell populations. Receptor expression was evaluated in human acinar and ductal epithelial cells across normal pancreas, tumor-adjacent tissue, and PDAC, as well as in a mouse model of acinar-derived pancreatic cancer. Our analyses indicate that IL4R and IL13RA1 are detectable in human pancreatic ductal and acinar epithelial cells under baseline conditions and appear to be expressed in ductal and duct-like epithelial cells from both adjacent and PDAC tissues. In the mouse model, Il4r and Il13ra1 expression appears to emerge following oncogenic Kras activation. Together, these findings suggest dynamic regulation of IL-4/IL-13 receptor expression during pancreatic tumorigenesis and provide a transcriptomic framework for future studies investigating the functional role of type 2 cytokine signaling in PDAC.
-
-```{=typst}
-#pagebreak(weak: true)
-```
-
-### A049 · Externally Validating Steered Disease Features in Single-Cell Foundation Models
-
-**Presenter:** Mingxin Liu — Department of Biotechnology, Brown University
-
-**Authors:** 
-
-**Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
-
-Single-cell foundation models learn rich representations of cellular states, but whether the disease-associated structure they capture relates to drug response in cancer cell lines remains unclear. We train a sparse autoencoder on scGPT activations and identify directions that separate tumors from normal cells in lung adenocarcinoma and invasive ductal breast carcinoma. We steer healthy cells along these axes, leading to monotonic shifts in their representations toward the tumor pole. We then test the induced shifts against expression changes measured in the Tahoe-100M cancer cell lines, and find no significant matches in either cohort after multiple hypothesis testing correction. scGPT thus carries steerable tumor directions that do not reproduce measured drug responses, though it is uncertain if the model or the cross-context comparison is responsible for this result.
-
-```{=typst}
-#pagebreak(weak: true)
-```
-
-### A050 · Confounder-Aware Feature Correction for Single-Cell Batch Integration
-
-**Presenter:** Calvin McCarter — BigHat Biosciences
-
-**Authors:** Calvin McCarter
-
-**Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
-
-Batch integration is a central preprocessing step in single-cell genomics, where datasets collected across experiments, donors, and protocols must be combined despite pervasive technical batch effects. The leading integration methods produce a shared low-dimensional embedding, which discards the corrected gene-expression values that downstream differential-expression, marker, and reuse analyses depend on. The feature-space (expression-correcting) methods that do preserve genes typically align the marginal expression distributions of batches and thereby risk erasing genuine biological variation whenever cell-type composition differs across batches, i.e. whenever batch effect and biological signal are confounded. We recast single-cell batch integration as confounded domain adaptation and apply ConDo, a method that matches conditional expression distributions given the cell-type annotation rather than marginal distributions. To extend ConDo's pairwise source-to-target adapter to the many-batch setting, we introduce an agglomerative compatibility-graph integrator: batches are nodes connected when they share a cell type, and we greedily merge each best-scoring neighbor into a growing reference by fitting one maximum-mean-discrepancy ConDo adapter conditioned on cell type. On the Open Problems Single-Cell Integration Benchmark, ConDo is the strongest feature-space integrator, ranking first among feature methods on five of six datasets. It even outperforms deep embedding methods on the overall score, ranking first across all methods on four of six datasets while returning corrected expression rather than an opaque embedding.
 
 ```{=typst}
 #pagebreak(weak: true)
@@ -961,38 +829,6 @@ Pancreatic ductal adenocarcinoma (PDAC) exhibits substantial molecular heterogen
 **Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
 
 Autonomous agents are rapidly becoming credible collaborators in computational biology, but their competence is bounded by the tools and interfaces given to them. For genomics, that tooling is fragmented, brittle, and tightly coupled to specific file formats and line-oriented processing. Consequently, most bioinformatics code is dedicated to I/O, and most time is wasted routing data through tools that create intermediate copies at every step, and handling edge cases/deviations with ad hoc scripts. These influences not only bottleneck traditional analyses but also increasingly limit the scalability of training genomic machine learning (ML) models and usability by agents, who, like humans, must battle with the idiosyncrasies of each tool. We argue that simply teaching agents to run classical workflows, or reimplementing the same tools in faster languages, misses the root of the problem. Instead, we propose a paradigm flip: make genomic data operate natively within modern analytics and ML systems, circumventing many traditional tools. Here, we introduce CompoSeq (https://composeq.dev), an initiative to openly develop specifications and reference implementations of composable primitives for genomic analysis. CompoSeq is led by a team of maintainers of established open-source genomic analysis and ML libraries and is currently focused on four workstreams: transport (bridging genomic formats to in-memory representations native to modern engines and tensor libraries); execution (optimized kernels for spatial joins and rasterization); portability (a SQL dialect for genomic interval operations that transpiles across engines); and modeling (loaders converting record batches into rasterized tensors on GPU for sequence-to-function model training).
-
-```{=typst}
-#pagebreak(weak: true)
-```
-
-### A062 · The Genomic Interval Query Language (GIQL): A declarative, engine-agnostic grammar for genomic analysis
-
-**Presenter:** Conrad Bzura — Department of Genomics and Computational Biology, UMass Chan Medical School, Worcester, MA, USA
-
-**Authors:** 
-
-**Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
-
-Genomic interval operations, e.g., intersection, overlap, proximity, and related computations, are foundational to functional genomics, yet the dominant tooling (bedtools, samtools, and similar utilities) expresses these operations as chains of command-line invocations that exchange data through intermediate files. This pattern is brittle, difficult to compose with general-purpose data infrastructure, and resistant to agentic automation. To address these limitations, we introduce the Genomic Interval Query Language (GIQL), an extended SQL dialect and transpiler that allows genomic interval operations to be expressed declaratively. Inspired by the adoption of SQL in geospatial analysis, GIQL transpiles a small, focused genomic grammar into standard SQL, enabling genomic operations to compose with larger analytical queries and execute wherever the user's data already lives. Consequently, GIQL can target modern analytical engines like DuckDB and DataFusion, which are increasingly adopted for streaming, distributed, and cloud-native genomics workloads; however, it does not prescribe any particular query engine. The grammar integrates with any tabular encoding of genomic ranges by mapping the user’s existing representation to a pseudo-column at transpile time. SQL's precise, well-documented semantics and exceptional representation in LLM training data make GIQL a reliable target for AI-assisted analysis, and a bundled Model Context Protocol (MCP) server exposes the language's operator reference, documentation, and transpiler directly to LLM-powered coding agents, enabling verified query authoring without out-of-band reference material. GIQL is freely available and open-source (https://github.com/abdenlab/giql), with ongoing work focusing on a versioned grammar specification, community engagement, and expanded support for multi-step AI-assisted workflows.
-
-```{=typst}
-#pagebreak(weak: true)
-```
-
-### A067 · Divide and Conquer: Scalable Partial Correlation Network Inference for High-Dimensional Omics Data
-
-**Presenter:** Luke Berger — Boston University
-
-**Authors:** Luke Berger, Stephano Monti
-
-**Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
-
-Graphical models are widely used in systems biology to study the complex regulatory relationships underlying biological processes. The development of methods such as SILGGM has allowed for the inference of partial correlation networks, which improve interpretability by controlling for indirect interactions. Unfortunately, the application of these tools to high-throughput omics datasets is constrained by: 1) decreased stability and accuracy as the feature-to-sample (p/n) ratio increases, and 2) computational costs that scale rapidly with p.
-
-These challenges can be mitigated by exploiting the fact that biological networks are typically sparse and modular in structure. SHINE exploits modular network structure to reduce graphical search complexity, but implements only Bayesian inference and is specifically tailored to hierarchical constraint learning. We developed a more generalized “Divide And Conquer” (DAC) approach that separates features into overlapping modules based on marginal correlations, performs partial correlation inference within modules, and constructs a network from the modular subgraphs. This allows for parallelization of subgraph inference and limits the dimensionality of each inference subproblem. We benchmarked DAC against a range of alternative algorithms and found that it substantially reduced runtime with a minimal loss in F1 score.
-
-We created modularDAC: an R package implementing the DAC algorithm with customizable options for module detection and subgraph inference. By allowing for the rapid and accurate inference of partial correlation networks with thousands of features, modularDAC removes a bottleneck in systems biology workflows and enables network-based analysis of omics data at previously intractable scales.
 
 ```{=typst}
 #pagebreak(weak: true)
@@ -1037,20 +873,6 @@ Alternative splicing of mRNA precursors is a fundamental mechanism to expand the
 **Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
 
 Pharmacogenomics identifies genetic variants that predict drug response, yet most studies rely on randomized trials with homogeneous populations. The All of Us Research Program, with whole genome sequencing (WGS) and longitudinal Electronic Health Record (EHR) data for over 414,000 participants, offers an opportunity to evaluate whether established pharmacogenomics associations replicate in a diverse real-world cohort. We developed an EHR-based pipeline and applied it to two FDA labelled drug-gene pairs: CYP2C19 loss-of-function variants with clopidogrel-associated major adverse cardiovascular events (MACE), and SLCO1B1 rs4149056 with statin-associated myopathy. For each pair, we defined first-prescription cohorts with WGS availability and matched one year of prior EHR data, extracted genotypes, defined outcomes using ICD-coded diagnoses, and ran logistic regression adjusting for age, sex, and ancestry. For the statin analysis, we incorporated sex-specific creatine kinase elevation as a secondary outcome. We also ran a chromosome 12 candidate region GWAS on the SLCO1B1 locus. The clopidogrel cohort (n=7,656, 10.5% carriers) showed no significant MACE association (OR 0.85, p=0.21) but a significant opposite-direction stroke signal (OR 0.68, p=0.04). The atorvastatin cohort (n=55,906, 23.7% carriers) yielded 202 composite myopathy cases; logistic regression showed OR 0.78, opposite to expectation. Rs4149056 was not significant in the GWAS (OR=1.38, p=0.13). Neither association replicated as expected, illustrating key challenges in translating pharmacogenomics findings to biobank-scale cohorts. We are currently running a GWAS to identify novel pharmacogenetic variants associated with statin-induced myopathy beyond the SLCO1B1 locus.
-
-```{=typst}
-#pagebreak(weak: true)
-```
-
-### A071 · Interpretable and scalable spatial gene set activity analysis with GESSO uncovers functional tissue architecture
-
-**Presenter:** Chichun Tan — Department of Biostatistics, Brown University
-
-**Authors:** Andrew Yang, Chichun Tan, Ying Ma
-
-**Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
-
-Recent advances in spatially resolved transcriptomics (SRT) enabled measurement of sets of pathway genes activity within tissues. However, existing gene set activity scoring methods overlook spatial dependencies among tissue locations, restricting their ability to capture region-specific pathway activities associated with disease pathology or cellular communication. Moreover, these methods lack inference on statistical significance for activity scores, provide limited interpretability of gene-level contribution to a pathway, and scale poorly to advanced large-scale SRT datasets. To address these limitations, we present GESSO (Gene sEt activity Score analysis with Spatial lOcation), a spatially informed gene set scoring method adaptable to diverse SRT platforms. GESSO models gene set activity levels through a graph-regularized matrix decomposition algorithm, jointly inferring spatially coherent gene set activity scores (GASs) and interpretable gene contributions that quantify how strongly individual genes drive the GASs. It further implements a permutation-based local significance test and a stratified low-resolution approximation that scales to high-resolution SRT datasets such as Visium HD, Stereo-seq, and Xenium Prime. Across 13 datasets from five SRT platforms, GESSO outperformed all existing methods in accuracy, calibration, interpretability, and scalability. Applications revealed novel biological programs, including spatially confined EMT activation within tumor-stroma interfaces, developmental signaling gradients across embryonic tissues, and coordinated B-cell, T-cell, and signaling pathways within germinal centers of human lymph node tissue, revealing the spatial organization of immune function at subregional resolution.
 
 ```{=typst}
 #pagebreak(weak: true)
@@ -1104,20 +926,6 @@ Optical pooled screens (OPS) link CRISPR perturbations to imaging phenotypes at 
 #pagebreak(weak: true)
 ```
 
-### A078 · Sn-seq analysis reveals distinct pathway programs in Gpr149+ vs GPR149- Medium Spiny Neurons in Parkinsons Disease
-
-**Presenter:** Saatvik Viniak — University of Illinois Chicago
-
-**Authors:** Rithwik Narendra, James E. Boyett, Brian T. Layden
-
-**Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
-
-G protein-coupled receptor-149 (GPR149) is a class A orphan receptor highly expressed in the basal ganglia (BG). Our previous analyses linked GPR149 expression to dopamine signaling networks, suggesting a potential role in BG function. Given the role of BG dysregulation in disorders like Parkinson's disease (PD), we investigated whether GPR149 contributes to PD pathogenesis by generating a single-nucleus RNA-seq atlas from healthy donor BG to understand baseline expression patterns. We observed that GPR149 is primarily enriched in striatal medium spiny neurons (MSNs) and is associated with decreased cyclic-AMP signaling, as indicated by gene set enrichment analysis (GSEA). Next, we compared these findings with a two-cohort PD dataset (n=106). Our findings were significantly replicated in the MSNs from healthy controls in the PD cohort, at both the gene and pathway levels (assessed using hypergeometric and Jaccard overlap statistics across the DE and KEGG enrichment lists). Next, PD-associated transcriptional responses were modeled separately within GPR149+ and GPR149- MSNs using donor-level pseudobulk analyses adjusted for cohort. GSEA and DE comparing PD versus control within GPR149+ and GPR149- MSNs revealed largely distinct molecular signatures. The GO biological process enrichment showed minimal overlap and statistically indistinguishable results (Jaccard’s similarity and hypergeometric tests) between the two populations. KEGG enrichment analyses yielded similarly minimal overlap across multiple FDR thresholds. Together, these findings suggest that GPR149+ and GPR149- MSNs engage distinct pathway programs in PD. Future studies using MSN-specific gene knockout mice and striatal PD organoids can determine if GPR149 confers neuronal vulnerability or protection during disease progression.
-
-```{=typst}
-#pagebreak(weak: true)
-```
-
 ### A081 · Benchmarking LLM-based cell type annotation for standardized reanalysis of public single-cell RNA-seq data
 
 **Presenter:** Eva Fast — Pfizer
@@ -1132,38 +940,6 @@ Reanalyzing public single-cell RNA-seq (scRNA-seq) datasets is a common but time
 #pagebreak(weak: true)
 ```
 
-### A082 · TissueCircuit disentangles active signaling circuits from cell-type structure
-
-**Presenter:** Taiqi Li — Harvard Medical School
-
-**Authors:** Anurendra Kumar, Taiqi Li, Luca Pinello
-
-**Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
-
-Inferring cell-cell communication from spatial transcriptomics is confounded by cell-type organization: cells of interacting types cluster together, creating apparent signaling where none occurs. Methods that trace ligand-receptor interactions to downstream targets, such as NicheNet and SpaTalk, do not correct for this, so the co-localization and co-expression of cells that share a type are readily mistaken for genuine communication. We present TissueCircuit, which prunes a prior network of candidate ligand→receptor→downstream circuits to the subset genuinely active in a tissue, explicitly separating true spatial signaling from cell-type structure.
-
-We apply TissueCircuit across three Xenium lung adenocarcinoma sections spanning tumor and matched healthy tissue and two panel designs, benchmark its calibration against permutation and cell-type-shuffled nulls, and validate recovered circuits against prior signaling databases and cross-section reproducibility. TissueCircuit recovers a tumor-specific EGFR circuit, AREG→EGFR→{MYC, KLF5, mTORC1}, absent in matched healthy lung. Cell-type-resolved analysis localizes the circuit to malignant cells, with paracrine input from plasma cells and macrophages, and a ligand-rich but spatially excluded alveolar population serving as an internal negative. A second immune-checkpoint axis, CD80/CD86→CTLA4, is likewise tumor-specific.
-
-By combining prior knowledge with spatial statistics, TissueCircuit turns spatial transcriptomes into testable, tissue-specific signaling circuits, applicable to any receptor or tissue with a prior network. When a matched control is available, it further isolates disease-specific circuits.
-
-```{=typst}
-#pagebreak(weak: true)
-```
-
-### A083 · IGVF Single-cell Perturb-Seq Pipeline, a unified framework for complex data analysis and perturbation inference
-
-**Presenter:** Lucas Ferreira da Silva — Massachusetts General Hospital · Harvard Medical School
-
-**Authors:** Lucas Ferreira da Silva, Logan Blaine, Sizhu Jiang, Alejandro Barrera, Olga Pushkareva, Sara Geraghty, Mphathi Nzima, Adam Klie, Alexandra Mo, Ruhi Rai, Gary Yang, Timothy Barry, Thomas Cowart, Eric Che, Ian Whaling, Andreas Gschwind, Benjamin C. Hitz, Siddharth Raghavan, Eugene Katsevich, Charles A. Gersbach, Gary C. Hon, Jesse M. Engreitz, Luca Pinello
-
-**Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
-
-Introduction: Perturb-seq links programmed genetic perturbations to single-cell molecular phenotypes, enabling direct tests of gene and regulatory-element function across heterogeneous cell states. The field now encompasses targeted and whole-transcriptome measurements, single and combinatorial perturbations, alternative guide-capture strategies, sample multiplexing, and editing modalities. This flexibility expands the biological questions that can be addressed, but it also changes how reads structure, guide metadata, cells, and transcriptional outcomes are encoded and analyzed. Consequently, cross-study comparisons are hindered and reproducibility is restricted by the use of technology-specific scripts. Methods: We developed the IGVF Single-cell CRISPR Pipeline, a Nextflow framework that runs locally, on SLURM clusters, or in the cloud and adapts processing, guide assignment, inference, and reporting to each assay while producing standardized Perturb-MuData outputs. We evaluated the pipeline in two complementary settings. First, a controlled IGVF benchmark used the same WTC11 CRISPRi system and guide library across five sequencing and guide-capture technologies, isolating the pipeline's ability to accommodate technical variation. Second, we reprocessed independent public TAP-seq, base-editing, dual-guide, and enhancer-perturbation studies to test portability across distinct biological questions and experimental designs. Results: Across the controlled IGVF benchmark, the pipeline produced comparable RNA and guide counts, also cell-retention, guide assignment, and perturbation inference while preserving assay-specific differences required for interpretation. Intended target genes were consistently repressed, with 83.2% to 94.1% recovered as negative nominally significant cis effects across tested analyses; mean intended-target effects were negative in every assay, whereas control-guide effects remained centered near zero. Reprocessing the public studies generated the same analysis-ready data structure across technologies and recovered technical summaries and principal biological patterns consistent with the original publications. These complementary evaluations show that the IGVF Single-cell CRISPR Pipeline can standardize heterogeneous experiments without erasing their design-specific context, supporting reproducible analysis and meaningful comparison across consortia or when re-analyzing public datasets.
-
-```{=typst}
-#pagebreak(weak: true)
-```
-
 ### A085 · Stacked SVD or SVD stacked? A Random Matrix Theory perspective on data integration
 
 **Presenter:** Tavor Baharav — Broad Institute
@@ -1173,22 +949,6 @@ Introduction: Perturb-seq links programmed genetic perturbations to single-cell 
 **Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
 
 Modern data analysis increasingly requires identifying shared latent structure across multiple high-dimensional datasets. A commonly used model assumes that the data matrices are noisy observations of low-rank matrices with a shared singular subspace. In this case, two primary methods have emerged for estimating this shared structure, which vary in how they integrate information across datasets. The first approach, termed \stacksvd, concatenates all the datasets, and then performs a singular value decomposition (SVD). The second approach, termed \svdstack, first performs an SVD separately for each dataset, then aggregates the top singular vectors across these datasets, and finally computes a consensus amongst them. While these methods are widely used, they have not been rigorously studied in the proportional asymptotic regime, which is of great practical relevance in today's world of increasing data size and dimensionality. Consequently, it remains unclear when one method should be preferred over another. In this work, we derive exact expressions for the asymptotic performance and phase transitions of these two methods and develop optimal weighting schemes to further improve both methods. Our analysis reveals that while neither method uniformly dominates the other in the unweighted case, optimally weighted \stacksvd dominates optimally weighted \svdstack when the low rank signal is fully shared across the datasets. We then extend our analysis to handle multiple, partially shared components per dataset and demonstrate that \svdstack can yield improved performance without requiring estimation of subspace alignment. Finally, we provide practical algorithms for estimating optimal weights from data, offering theoretical guidance for method selection in practical data integration problems. Extensive numerical simulations and semi-synthetic experiments on genomic data corroborate our theoretical findings.
-
-```{=typst}
-#pagebreak(weak: true)
-```
-
-### A089 · Tracing oncogene amplification and genome architecture across single-cell tumor phylogenies
-
-**Presenter:** Kit Gallagher — Massachusetts General Hospital, Harvard Medical School, Broad Institute of MIT and Harvard
-
-**Authors:** Kit Gallagher
-
-**Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
-
-About one-third of adult solid tumors are defined by focal amplification of an essential oncogenic driver — ERBB2, MYCN, EGFR, FGFR2, CCNE1, or MYC across diverse lineages. These amplification-driven cancers are among the most therapeutically challenging adult malignancies, despite advances in targeted therapy and immunotherapy. Focal amplifications take structurally distinct forms: integrated amplicons (tandem duplications, complex rearrangements, chromothripsis) are inherited according to Mendelian inheritance while extra chromosomal DNA (ecDNA) are circular, centromere-free elements that segregate randomly, driving copy-number heterogeneity and rapid remodeling under selection. Furthermore, the structural architecture of an amplification strongly influences how amplifications evolve and respond to selection. However, whether subclonal trends in amplicon architecture impact cellular fitness or steer a tumor’s evolutionary trajectory has not been systematically addressed.
-
-Using published scWGS from ovarian cancer samples, we look to quantify amplification clonality, structural heterogeneity, and antigen persistence across tumor phylogenies. This work will focus on ovarian cancer patients with CCNE1 amplifications; these patients are part of a homologous-recombination proficient subtype that has no second-line treatment options after chemotherapy. Our analysis quantifies whether nominated surface antigens remain co-amplified and co-expressed with essential drivers throughout tumor evolution or instead diverge through loss of ecDNA, segmental deletion, or transcriptional silencing. Ultimately, this resolves amplicon topology to determine whether cancer genome architecture is an evolutionary mechanism for therapeutic escape.
 
 ```{=typst}
 #pagebreak(weak: true)
@@ -1237,24 +997,6 @@ Here, we ask whether this failure mode can be mitigated by explicitly providing 
 On a held-out genomic test set, structure improved overall accuracy, reducing errors by ~9%, while retaining an essentially identical parameter count. On previously established tests of structural blindness, our structure-aware model substantially outperforms comparable sequence-only models: (1) On a held-out synthetic dataset, prediction error grows steeply with exon folding stability across all sequence-only models; our structure-aware model improves this by nearly two-fold. (2) On compensatory mutation series that disrupt and then restore a stem loop, only our structure-aware model demonstrates sensitivity to the effects of structure on exon inclusion: no sequence-only model reproduces the full trajectory, even directionally.
 
 Overall, we show that explicit RNA secondary structure captures regulatory features that are not reliably learned from sequence alone, supporting biologically motivated inductive biases as a practical route to more robust genomic deep learning models. To the best of our knowledge, our results also provide the first evidence for a broad role of RNA structure in genomic splicing.
-
-```{=typst}
-#pagebreak(weak: true)
-```
-
-### A101 · Transferring Disease Knowledge from Biomedical Literature to Longitudinal Clinical Records for Inborn Error of Immunity Phenotyping
-
-**Presenter:** Mansooreh Ahmadian — University of Colorado Anschutz Medical Campus
-
-**Authors:** Pia J. Hauk, Sara J. Deakyne Davies, Todd Miller, Elena W Y Hsieh
-
-**Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
-
-Electronic health record (EHR)-linked biobanks require accurate phenotyping for cohort selection from longitudinal records. We developed a biobank of 123 patients with inborn errors of immunity (IEIs) and non-IEI controls, comprising more than 23,000 clinical notes. IEIs have heterogeneous, overlapping phenotypes, and diagnosis often requires integrating years of clinical evidence. General-purpose large language models (LLMs) identified IEI cases but struggled with complex patients, particularly those with similar autoimmune disorders.
-
-We propose a hybrid framework combining longitudinal LLM reasoning with specialized IEI models trained using ontology-based distant supervision. We use the International Union of Immunological Societies (IUIS) classification to define the IEI disease set and its Online Mendelian Inheritance in Man (OMIM) identifiers to connect diseases to ontology concepts. Ontology names, synonyms, and lexical variants provide distant supervision for IEITagger, an IEI-specific tagger combining lexical matching with PubMedBERT fine-tuned for concept recognition and normalization. IEITagger identifies IEI mentions in literature and extracts disease-labeled snippets, which train disease-specific classifiers. Disease mentions are masked and phenotypically related non-IEI diseases are used as hard negatives to promote learning of phenotypic context rather than terminology alone.
-
-The specialized models are integrated with LLM-derived longitudinal patient representations to predict IEI status and rank candidate diagnoses. The hybrid framework improves IEI classification over general-purpose LLM prompting, particularly in ambiguous cases with overlapping autoimmune and inflammatory phenotypes. These preliminary results demonstrate that disease-specific knowledge learned from biomedical literature is transferable to longitudinal clinical records, supporting rare-disease phenotyping without manually annotated training data and more precise cohort discovery.
 
 ```{=typst}
 #pagebreak(weak: true)
@@ -1330,20 +1072,6 @@ A challenge in T cell biology research is unraveling the connection between T ce
 #pagebreak(weak: true)
 ```
 
-### A127 · Community Visualization Hub: Integrative Visualization of Multimodal Biomedical Data Across Consortia
-
-**Presenter:** Vedat Yilmaz — UMass Chan Medical School
-
-**Authors:** John Conroy, Conrad Bzura, Priya Misner, Morgan Turner, Lisa Choy, Tiffany Liaw, Vedat Yilmaz, Zhiping Weng, Nezar Abdennur, Nils Gehlenborg
-
-**Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
-
-Publicly funded research consortia have generated extensive multimodal biomedical datasets, including genome-scale, single-cell, spatial, and bioimaging assays, yet these resources remain siloed across disparate portals, formats, and schemas, restricting integrative exploration. Community Visualization Hub (CVH), (https://visualizationhub.org/) is an open-source web platform that federates these resources, more than 3.75 million files and 165 harmonized metadata tags, into a unified environment for computational biologists, bioinformaticians, and biomedical researchers. Building on Gosling for genome-scale genomics and Vitessce for single-cell, spatial, and imaging data, CVH enables linked exploratory views connecting whole-genome patterns to individual loci, cells, and tissue regions. Users can combine self-generated data with public resources without downloading source files, author Gosling visualizations through a graphical interface, and import and share Vitessce configurations. Authenticated project workspaces allow users to persist, annotate, and share analyses and views internally or with external collaborators. Together, these components enable researchers to compare results across modalities, formulate biologically grounded hypotheses, and share reproducible visualizations with the broader scientific community.
-
-```{=typst}
-#pagebreak(weak: true)
-```
-
 ### A128 · A novel RNA motif discovery pipeline to elucidate GLDR-2 target recognition
 
 **Presenter:** Melissa Badendieck — Department of Biology & Biotechnology and Department of Chemistry & Biochemistry, Worcester Polytech
@@ -1386,36 +1114,6 @@ While mass spectrometry proteomics can assign post-translational modifications (
 #pagebreak(weak: true)
 ```
 
-### A137 · Evolutionarily constrained immunotherapy targets encoded by oncogene amplicons in cancer
-
-**Presenter:** Curie Cha — Massachusetts General Hospital, Harvard Medical School, Broad Institute of MIT and Harvard
-
-**Authors:** 
-
-**Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
-
-Oncogenic amplifications drive tumor growth and evolution, frequently co-amplifying genes physically adjacent to the driver. These passenger genes are candidates for immunotherapy, but their durability depends on whether they remain physically linked to the driver through evolution. Persistence of linkage is shaped by the architecture of the amplicon, which can take different forms (integrated, breakage-fusion-bridge, or ecDNA) and mitotic segregation patterns. Integrated amplicons are inherited with chromosomal fidelity, whereas extrachromosomal DNA lacks a centromere, segregates randomly, and can be gained or shed within a few divisions.
-
-We hypothesize that this difference in ongoing mutational and segregation processes makes integrated amplicons give rise to more clonally stable therapeutic targets than ecDNA. To address this, we reconstructed and classified focal amplifications using bulk whole genome sequencing across tumors and tumor-derived cell lines from four pan-cancer cohorts (TCGA, PCAWG, Hartwig, CCLE). We build breakpoint graphs to resolve amplicon topology and classify recurrent driver-passenger pairs. We extend this classification by examining structural features, including genomic distance, copy number, and breakpoint position. While increased gene dosage creates more opportunity for transcription, mechanisms including transcriptional silencing, availability of transcriptional machinery, and disruption of regulatory elements at breakpoints undermine the durability of clonally stable candidates. We relate amplicon structural context to matched bulk RNA co-expression to test preservation of regulatory coupling across driver-passenger pairs. Finally, we assess if amplicon architecture predicts viability as a therapeutic target, using structural atlas candidates from tumor-derived cell lines and cross-referencing them with genome-wide CRISPR-Cas9 loss-of-function screens across the DepMap cell-line panel.
-
-```{=typst}
-#pagebreak(weak: true)
-```
-
-### A141 · Influence Causal Ordering: Scalable Causal Structure from Genome-Scale Perturbation Screens
-
-**Presenter:** Ritwik Anand — Northeastern University
-
-**Authors:** Ritwik Anand, Olga Vitek, Karen Sachs
-
-**Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
-
-Genome-scale perturbation screens, such as single-cell CRISPR-knockdown atlases and drug panels, now measure the effects of thousands of interventions, yet resolving their causal structure at this scale remains hard: combinatorial DAG search does not scale, pervasive biological feedback breaks acyclicity assumptions, and a dominant shared stress response swamps intervention-specific signal. We present Influence Causal Ordering (ICO), which converts a perturbation influence matrix into a hierarchical causal cluster graph, scaling to atlases spanning thousands of perturbations. In this graph, feedback loops and shared response programs are represented as clusters, and the clusters are arranged in causal order. ICO thus captures in one structure both the program-level responses shared across perturbations and each perturbation's specific effects, where typical causal methods don't scale nor accurately represent feedback cycles. Empirically, on single-cell knockdown atlases ICO recovers edge orientation up to the identifiability ceiling of the data and predicts the effects of held-out, never-perturbed knockdowns beyond a strong mean-response baseline; on dose-resolved drug phospho-proteomics, its causal cones predict held-out drug effects better than curated pathway priors. By representing cycles and programs as clusters and ordering them causally, ICO turns a large perturbation screen into a single interpretable causal map that accurately models both shared downstream responses and specific effects, and is capable of modeling cyclic feedback.
-
-```{=typst}
-#pagebreak(weak: true)
-```
-
 ### A143 · Quantitative Modeling of Transcription Factor Binding to UV-Damaged DNA, and Competition with UV-DDB
 
 **Presenter:** Yuncheng Duan — UMass Chan Medical School
@@ -1439,20 +1137,6 @@ UV-induced mutagenesis is shaped by the formation of DNA photoproducts and their
 **Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
 
 Cotranslational chaperones help ensure proper folding of nascent polypeptides as they emerge from the ribosome, preventing protein aggregation associated with many diseases. However, how changes in elongation dynamics influence these interactions remains unclear. We investigated whether depletion of eIF5A, a translation factor that facilitates elongation through stall-prone sequences, alters ribosome occupancy around binding sites of the yeast Hsp70 chaperone Ssb. Publicly available ribosome profiling data from Saccharomyces cerevisiae consisting of two wild-type and two eIF5A-depleted replicates, were processed through a computational pipeline including adapter trimming, noncoding RNA removal, coding sequence alignment, and generation of codon level ribosome density profiles. Ssb-binding positions were mapped to their corresponding open reading frames, and ±40-codon windows were extracted around each binding site. Ribosome density was normalized to each site’s mean density, with replicates normalized independently before averaging within conditions. RNA-depleted reads showed > 90% alignment rate to the coding sequence reference for all samples. Metagene analysis revealed localized enrichment of ribosome occupancy around Ssb-binding sites in both conditions. eIF5A depletion produced a substantially greater peak near the Ssb-binding position than wild type, reaching approximately 1.65 compared to 1.35 mean site-normalized density. This pattern suggests enhanced translational pausing near sites of cotranslational Ssb interaction following eIF5A depletion. Our findings demonstrate that the perturbation of eIF5A-dependent elongation alters local translation dynamics around Ssb-binding sites. These results allow us to further investigate how translation speed may regulate interactions between ribosomes, nascent polypeptides, and cotranslational chaperones to prevent protein misfolding and aggregation.
-
-```{=typst}
-#pagebreak(weak: true)
-```
-
-### A150 · Resolving Mentions to Ontology Gaps in Biomedical Entity Linking
-
-**Presenter:** Hyun Seung Lim — Northeastern University
-
-**Authors:** Hyun Seung Lim, Benjamin M. Gyori
-
-**Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
-
-Recognizing names or synonyms of entities such as genes, small molecules and diseases in text and normalizing them to ontology terms is called entity linking (EL) and is a central task for biomedical data integration. As published biomedical knowledge rapidly evolves, a key challenge in EL is the incompleteness of ontologies where a given entity mention is novel or sits at a granularity no existing term occupies. While encoder-based methods such as SapBERT excel on biomedical entity linking benchmarks, they are limited to predicting exact equivalence and don’t handle incompleteness in a principled way. To address this challenge, we reformulate entity linking so that a mention resolves either to an existing term or, when it is unlinkable, to the region between terms that bracket it in a semantic sense. Creating the training data requires no manual annotation as the ontology's own subsumption edges supply the ordering between terms, and synonyms are obtained from the UMLS Metathesaurus. We use this training data to fine tune a SapBERT-initialized encoder which learns both semantic equivalence and subsumption relationships between two terms, allowing it to predict subsumption when two terms aren’t equivalent. In an evaluation against a similarity-based linker as a control, our approach matched it on mentions carrying gold ontology terms while also abstaining on a portion of mentions the ontology cannot represent. We also present evaluation results against a public benchmark of literature mentions that includes terms absent from the ontology, making incompleteness explicit.
 
 ```{=typst}
 #pagebreak(weak: true)
@@ -1554,20 +1238,6 @@ Together, these findings suggest that promoter-promoter contacts represent a str
 #pagebreak(weak: true)
 ```
 
-### A163 · A Neurobiological Model of Altered Reinforcement Learning and EEG Oscillations in Parkinson’s Disease
-
-**Presenter:** Shreyas Geereddy — Basis Independent Silicon Valley
-
-**Authors:** Shreyas Geereddy
-
-**Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
-
-Parkinson’s disease is a neurological disorder caused by the death of dopaminergic neurons in the substantia nigra. This affects movement and the ability to learn from rewards, and is also associated with abnormal EEG oscillations. Here I develop a neurobiological model linking these effects. An actor–critic framework is used to model reward prediction, value learning, and action selection. It is combined with a firing-rate model containing the cortex, D1 and D2 pathways, subthalamic nucleus, globus pallidus, and thalamus. Healthy and Parkinsonian conditions are simulated by changing dopamine levels and connections within the network. The models are compared using learning accuracy, adaptation to changing rewards, and neuronal oscillations. Resting-state EEG recordings from individuals with Parkinson’s disease and healthy controls are also analyzed for differences in spectral power, beta bursts, and functional connectivity. The computational model is then fitted to these EEG features. My paper aims to provide a unified explanation of how dopamine loss may produce altered reinforcement learning, impaired action selection, and abnormal neural oscillations in Parkinson’s disease.
-
-```{=typst}
-#pagebreak(weak: true)
-```
-
 ### A164 · Integrated analysis of Chromatin Accessibility and Regulon Activity suggests candidate Regulatory Programs in Polarized Porcine Monocyte-derived Macrophages (MDM)
 
 **Presenter:** Mehak Kapoor — Iowa State University
@@ -1616,20 +1286,6 @@ By making annotation and storytelling native to a general-purpose visualization 
 #pagebreak(weak: true)
 ```
 
-### A168 · HyperFlow: Hypergraph-Based Flow-Matching for Protein Conformation Generation
-
-**Presenter:** Janmejay Vyas — Northeastern University
-
-**Authors:** Janmejay vyas, Shantanu Jain, Ayan Paul, Predrag Radivojac
-
-**Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
-
-Protein function emerges from its sequence and structural dynamics, where collective motions of multiple residues constitute and connect distinct structural states. These conformational ensembles and their functional properties cannot be fully captured by a single static structure. Current generative models attempt to predict such distributions from one structure and reproduce per-residue flexibility well. However, conditioning on a single structure while reconstructing individual conformers favors the conditional mean, causing distinct states to collapse into a smoothed mode. We introduce HyperFlow, a flow-matching generative model that combines higher-order geometric representations with distribution-level supervision. HyperFlow represents proteins as hypergraphs, enabling the model to capture collective multibody interactions that drive conformational transitions. A distribution-level objective then encourages these motions to generate distinct modes of the conformational ensemble rather than average structures. On the ATLAS dataset, HyperFlow matches state-of-the-art performance in per-residue flexibility (RMSF r = 0.88) while increasing collective-mode similarity to 56%, compared with 40–48% for AlphaFlow, ESMFlow-T, and BBFlow. HyperFlow also recovers multiple conformational states from a single input structure. At matched parameter count, its hypergraph representation reaches pairwise-baseline accuracy for long-range collective motions using three- to four-fold less training data. Modeling protein dynamics as multibody processes therefore preserves conformational diversity that pairwise representations tend to smooth away, enabling scalable exploration of function across accessible protein states.
-
-```{=typst}
-#pagebreak(weak: true)
-```
-
 ### A169 · Evaluating Computational Deconvolution Methods and Optimizing Gene Signature Matrices for Rare Cell Detection in Pediatric Cancer Liquid Biopsies
 
 **Presenter:** Kenia Viri — Salve Regina University
@@ -1639,48 +1295,6 @@ Protein function emerges from its sequence and structural dynamics, where collec
 **Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
 
 Liquid biopsy is a minimally invasive approach for monitoring disease through rare circulating cells in blood. In pediatric brain cancer, detecting low frequency populations, including circulating tumor cells (CTCs), is challenging due to their scarcity and the complex cellular composition of blood. While single-cell RNA sequencing (scRNA-seq) provides high resolution characterization, its cost and time requirements make computational deconvolution an important approach for estimating cell type proportions. Our lab is developing a pipeline for pediatric liquid biopsy analysis by integrating optimized deconvolution with rare cell detection. To evaluate existing approaches, we generated pseudobulk datasets from scRNA-seq data from ten healthy pediatric blood samples. Each dataset contained varying proportions of twenty annotated cell types and sequential spike-ins of 0-100 vascular endothelial cells to simulate rare populations. We evaluated CIBERSORT, CIBERSORTx, Decon, ReDeconv, and DWLS using Pearson’s correlation, root mean square error (RSME), and mean absolute deviation (mAD). CIBERSORTx Fractions demonstrated the strongest performance for predicting cells present at or below 0.03%, achieving a correlation of 0.52, while ReDeconv showed decreased correlation as rare cell proportions increased. All methods struggled to predict cell populations at 0%. To further optimize deconvolution, gene signature matrices were generated from healthy pediatric blood scRNA-seq datasets. Gene selection and normalization were evaluated using heatmaps and linear discriminant analysis (LDA), with log-normalized data achieving the highest accuracy compared with raw counts and variance stabilizing transformation (VST). These findings establish performance evaluations and optimize reference profiles for developing SparCell to improve rare CTC detection in pediatric biopsies.
-
-```{=typst}
-#pagebreak(weak: true)
-```
-
-### A170 · EMMA: A Generative Energy-based Model for Multiscale Architecture of Spatial Transcriptomics
-
-**Presenter:** Wonyl Choi — Boston University
-
-**Authors:** Wonyl Choi, Ruben Dries
-
-**Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
-
-Objective: Standard spatial transcriptomics (ST) pipelines use fragmented analytical steps, each requiring distinct assumptions and manual tuning. We introduce the Energy Model for Multiscale Architecture (EMMA), a unified theoretical framework for ST that naturally derives multiscale tissue architecture directly from molecular interactions. This approach overcomes biases in modularly organized pipelines and can function independently of images. Methods: In EMMA, spatial correlations between transcripts define an energy landscape governing gene expression probability. Biological entities across scales (genes, transcripts, cells) are embedded in a single space. Using this model, consecutive ST analysis tasks are unified into internally consistent components. EMMA was applied across 4 platforms (Xenium, CosMx, MERSCOPE, and Visium HD). Results: Across 4 platforms, EMMA assigned >97% of transcripts to cells without morphological images, achieving high structural agreement with reference segmentations (NMI > 0.9). Leveraging its unified embedding space, EMMA identifies cell types and marker genes, revealing organizational motifs consistent with immune exclusion and coordinated niche formation near tumors, and quantifying spatial variability of genes in terms of local and global interactions. Dataset integration via gene-vector alignment using a simple orthogonal transformation validates the embedding space. Conclusions: Our results show ST analysis can be performed within a coherent theoretical framework. By linking molecular correlations to tissue architecture within a unified framework, EMMA offers a principled approach with intrinsic interpretation for understanding the physical and biological rules governing tissue organization.
-
-```{=typst}
-#pagebreak(weak: true)
-```
-
-### A173 · Convergent B-cell receptor sequence features point toward shared antigen targets in colorectal cancer
-
-**Presenter:** Ping Lu — Massachusetts General Hospital · Harvard Medical School · Broad Institute
-
-**Authors:** Ping Lu, Eujin Hong, Nir Hacohen, Lloyd Bod, Doga C. Gulhan
-
-**Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
-
-Colorectal cancer (CRC) is the second leading cause of cancer-related mortality worldwide. Despite recent advances in immune checkpoint blockade (ICB) therapy, its efficacy in CRC remains largely limited to mismatch repair-deficient (MMRd) tumors, highlighting the need for alternative immunotherapies. B-cell receptor (BCR) repertoires and tumor antigens (autoantigens and neoantigens) are key components of anti-tumor humoral immunity, yet their landscape in CRC remains incompletely characterized. We systematically identified BCR clonotypes, autoantibody-reactive self-antigens and somatic mutation-derived neoantigen candidates across CRC to investigate their immunological interplay. Using single-cell RNA-seq data from CRC patients, we reconstructed tumor-infiltrating BCR sequences and quantified BCR diversity and its association with clinical variables. Although exact clonotype sharing across patients was minimal, k-mer-based CDR3 analysis revealed convergent sequence features, suggesting shared antigen-driven B-cell responses across individuals. To investigate potential antigenic drivers, we are integrating MIPSA-based autoantibody profiling, a high-throughput serological assay that measures antibody reactivity against thousands of human proteins, to nominate cancer cell-specific self-antigens, complemented by the identification of recurrent somatic mutations across tumors from different patients as candidate neoantigen sources. CRC patients exhibit convergent BCR sequence features despite largely private clonotypes, potentially reflecting antigen-driven selection by shared tumor-derived neoantigens and autoantigens alike. This integrative framework, combining neoantigen and autoantigen discovery with BCR repertoire analysis, provides a foundation for the rational design of broadly applicable, antibody-informed B-cell-directed therapies in CRC.
-
-```{=typst}
-#pagebreak(weak: true)
-```
-
-### A175 · SIMBA+: Interpreting GWAS through single-cell multiomic graphs identifies disease-relevant genes and cell states
-
-**Presenter:** Junxi Feng — University of California, San Diego
-
-**Authors:** Jayoung Ryu, Junxi Feng, Elizabeth Dorons, Karthik Guruvayurappan, Anatori Prieto, Zixuan Eleanor Zhang, Kushal Dey, Steven Gazal, Martin Jinye Zhang, Luca Pinello
-
-**Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
-
-Translating genome-wide association study (GWAS) signals into causal variant mechanisms remains a major challenge. We present SIMBA+, a probabilistic graph framework that integrates single-cell multiomic data with GWAS to identify variant target genes and the cellular contexts in which regulatory effects occur. SIMBA+ constructs a unified knowledge graph linking cells, genes, and regulatory elements, learns low-dimensional node representations, and uses metapath-based relationships to score variant–gene–cell associations. This representation jointly captures regulatory connectivity and cellular heterogeneity, enabling genetic associations to be interpreted within specific cell states rather than only at bulk or cell-type-averaged resolution. Applied to atopic dermatitis, SIMBA+ revealed cell-specific regulatory mechanisms, including disease-associated variants linked to CSF2RB in monocytes and NLRP3 in CD14+ populations. Systematic benchmarking showed that SIMBA+ outperformed existing approaches for identifying target genes of variants and regulatory elements in both cell-type-specific and cell-type-agnostic settings, with stronger enrichment for eQTL-supported and CRISPR-validated regulatory links, particularly for distal interactions. Beyond variant-to-gene mapping, SIMBA+ leverages its learned latent factors to decompose trait heritability at single-cell resolution. Applying SIMBA+ to 75 complex traits across three single-cell multiome atlases spanning 19 tissues, including blood and bone marrow, identified disease-relevant cell states among hundreds of cell populations, uncovered trait-associated regulatory programs missed by pseudobulk analyses, and generated single-cell-resolution estimates of heritability. These capabilities enable mechanistic interpretation across scales, from individual variants to complex trait architecture. Together, SIMBA+ provides a unified framework for connecting genetic variation to regulatory mechanisms, target genes, and disease-relevant cellular states, advancing interpretation of GWAS findings at single-cell resolution.
 
 ```{=typst}
 #pagebreak(weak: true)
@@ -1732,24 +1346,6 @@ Our framework automatically identified and retrieved seven public single-cell co
 #pagebreak(weak: true)
 ```
 
-### A181 · Causal Path Inference on a Literature-Derived Knowledge Graph for Variant Effect Interpretation
-
-**Presenter:** Jici Jiang — Northeastern University
-
-**Authors:** Jici Jiang
-
-**Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
-
-Current variant effect predictors integrate genomic annotation and protein-level features, however, are limited to modeling direct variant-to-gene or gene-to-phenotype mappings without explicitly reasoning over the mechanistic chain. We present a framework to generate interpretable, multi-hop causal paths that link variants to phenotypes through intermediate signaling, protein-interaction and regulatory events, corresponding to curated variant-phenotype evidence. Our INDRA system builds the knowledge graph, integrating causal mechanism extraction from literature with pathway databases. Variants are encoded as reference and alternate embedding pairs from sequence models. Training and evaluation use 120,329 variants across 11,786 genes.
-
-We formulate variant-effect prediction as stepwise path generation over a variant-relevant subgraph from constrained pathfinding. A variant-conditioned message-passing network initializes traversal from the associated gene, and a sequential decoder scores candidate next nodes and edge polarities at each hop. On held-out variants, paths reach the correct phenotype in 79% of cases with Hit@10 of 0.68, producing paths for mechanistic interpretation and downstream functional investigation.
-
-Evaluation of paths is itself a challenge since no existing metric captures partial correctness of biomedical causal paths. General path comparison methods disregard biological semantics and regulatory direction which undervalues predictions that are mechanistically correct but structurally divergent. To address this problem, we introduce a dynamic-programming algorithm to score ontology-grounded semantic similarity and regulatory-direction consistency for biomedical causal paths. To evaluate this metric, we generated a corpus of ground truth causal paths paired with partially correct paths of graded divergence and compared our new approach with those currently used in the field, including LLM-as-a-judge scenarios.
-
-```{=typst}
-#pagebreak(weak: true)
-```
-
 ### A182 · In-Silico Characterization of Plumbagin Binding to Multiple Protein Targets Using Molecular Docking
 
 **Presenter:** Rachel Mathew — South Windsor High School
@@ -1773,24 +1369,6 @@ Plumbagin is a naphthoquinone compound with diverse biological activities, inclu
 **Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
 
 Genome-scale CRISPR screens have mapped genetic dependencies across hundreds of cancer models, but their bulk readouts obscure the cellular states associated with target sensitivity. Cell foundation models offer a way to represent those states from single-cell transcriptomes, although it is not yet clear whether their embeddings retain the cancer-specific variation needed to predict vulnerability. We developed CellVELA (Cellular Vulnerability Estimation through Latent Alignment) to align single-cell representations with independently measured CRISPR fitness profiles from matched cancer models. We evaluated the framework in cell lines shared between the Kinker pan-cancer single-cell atlas and DepMap. Its sparse component, FaST (Functional Alignment through Sparse Transcoding), maps pretrained cell embeddings through a compact bottleneck trained against CRISPR dependencies. In held-out cell lines, functional alignment improved dependency prediction in every evaluation fold. The sparse bottleneck retained nearly all of the performance of a dense model, produced more reproducible features, and recovered a program with target-specific attribution on held-out data. Applying the same alignment to expression-derived representations yielded comparable gains, indicating that functional supervision is informative while current pretrained embeddings have not yet surpassed strong expression baselines. We are now applying the framework to osteosarcoma models, where ranked vulnerabilities will be integrated with independent functional evidence and tested experimentally. In the longer term, coupling prediction with experimental validation could enable a lab-in-the-loop AI scientist that learns from experimental outcomes and helps guide cancer vulnerability discovery.
-
-```{=typst}
-#pagebreak(weak: true)
-```
-
-### A191 · Robust dynamics of somatic short tandem repeat expansions using donor-specific assembly
-
-**Presenter:** Suhas Rao — Harvard Medical School, Department of Biomedical Informatics
-
-**Authors:** Suhas Rao, Peter J. Park
-
-**Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
-
-Short tandem repeat (STR) expansions are associated with many neurodegenerative disorders such as Huntington’s disease. However, difficulties in assembling and aligning to repetitive regions in the genome, have severely limited the study of somatic STR expansions. Using long-reads and recent techniques for building personalized/donor-specific assembly (DSA), we can study the true dynamics of these expansions in normal tissue.
-
-We refined multiple previously curated pathogenic and nonpathogenic STR catalogs (based on hg38 + short-reads), filtering each by >20% into a final set of ~200,000 loci with DSA-resolved coordinates. We then benchmarked how using DSA alignments resolves notable error modes generated by existing long-read STR genotyping tools (TRGT, Medaka, etc.) - 1) phasing repeat expansions to the appropriate allele, 2) missing true somatic STR expansions due to upstream misalignment and poor reference genome resolution, and 3) including false positive STR expansions by mistakenly incorporating nearby low-complexity regions.
-
-We’ve identified multiple cases of extreme somatic STR expansions in brain tissues within normal tissues, up to >5000bp (100x) larger than the corresponding reference allele. We’ve documented dozens of cases where standard SNP/indel-based phasing are unable to separate biologically distinct repeat alleles (where one allele is stable / reference size, and the other is >50bp and >100% relatively larger) and demonstrated how DSA/local realignments can accurately phase these. We’ve also demonstrated that using DSA methods allows existing STR genotyping algorithms like TRGT to rescue up to 10% additional reads near certain pathogenic STR loci such as NOTCH2NLC (which falls within collapsed paralogs in hg38).
 
 ```{=typst}
 #pagebreak(weak: true)
@@ -1828,6 +1406,414 @@ Single-cell condition comparisons are often organized around cell-centric repres
 
 ```{=typst}
 #pagebreak(weak: true)
+```
+
+### A020 · Luxemia: Pan-Leukemic Algorithmic Relapse Prediction via Federated Gradient Boosting Ensembles with SHAP-Based Clinical Interpretability
+
+**Presenter:** Jacopo Martelli — Broad Institute
+
+**Authors:** Jacopo Martelli
+
+**Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
+
+Relapse is a major determinant of mortality in haematological malignancies. Luxemia is a federated heterogeneous pan- leukemic ensemble integrating XGBoost, LightGBM, CatBoost, Random Forest, HistGradientBoosting etc, with an L2-regularised logistic meta-learner and isotonic PAV calibration. Trained on >10,000 NCI TARGET ALL/AML records using stratified group-aware 5-fold cross-validation, it achieved ALL AUC 0.787 (95% CI 0.702–0.870; Brier 0.126) and AML AUC 0.699±0.016. Harmonised features include cytogenetics, molecularmarkers, MRD kinetics, and ELN 2022 risk stratification, enabling institution-specific deployment without data restructuring. Federated inference preserves data locality with no patient-level data transfer. External validation (n≈2,500) achieved AUCs of 0.784 and 0.771.
+
+```{=typst}
+#pagebreak(weak: true)
+```
+
+### A025 · Deciphering Fetal Endothelial Cell Programs to Enhance Vascular Maturation in Human Organoid Models
+
+**Presenter:** Paria Pooyan — Royan Institute for stem cell biology and technology
+
+**Authors:** Paria Pooyan, Farideh Moeinvaziri, Zahra Ghezelayagh, Massoud Vosough
+
+**Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
+
+The development of the vascular system occurs through a coordinated sequence of events, including the generation of endothelial progenitor cells, their differentiation into endothelial cells (ECs), the formation of endothelial-lined blood islands in the yolk sac, the establishment of a primitive vascular plexus, and subsequent migration of vascular cells into the embryo, where extensive vascular networks are formed and remodeled. Despite advances in organoid technology, a fully functional vascular system that faithfully recapitulates human vascular development has not yet been achieved in vitro. Here, we compared the transcriptomic profiles of fetal endothelial cells (fECs) with those of umbilical vein endothelial cells (UVECs) and adult endothelial cells, two endothelial sources commonly used for vascularized organoid generation, to identify unique molecular features of fECs that are absent or reduced in these alternative EC populations. Transcriptomic analysis revealed that mitochondrial oxidative phosphorylation pathways, including genes such as ATP5A1 and ATP5B, and tRNA aminoacylation pathways, including TARS1 and SARS1, were among the most prominent features distinguishing fECs. Furthermore, fECs exhibited increased expression of cell adhesion-related genes, including CCN2 and CEMIP2, suggesting enhanced capacities for vascular organization and tissue integration. These findings provide insights into the molecular characteristics of developmentally relevant endothelial cells and may guide the generation of more physiologically functional vascularized human organoids. Improved vascular organoid models could facilitate advances in developmental biology, drug discovery, disease modeling, and precision medicine.
+
+```{=typst}
+#pagebreak(weak: true)
+```
+
+### A032 · Single-Cell Transcriptomics Reveals a Transient Lipid-Associated Macrophage Response to Beta-Catenin/CBP Inhibition in Oral Squamous Cell Carcinoma
+
+**Presenter:** Sanjana Bhagavatula — Boston University Chobanian & Avedisian School of Medicine
+
+**Authors:** Sanjana Bhagavatula, Emily R. Fisher, Andrew Tilston-Lunel, Kenichi Nomoto, Takashi Owa, Manish V. Bais, Xaralabos Varelas, Stefano Monti, Maria A. Kukuruzinska
+
+**Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
+
+Background: Aberrant Wnt/beta-catenin signaling promotes tumor progression in HPV-negative oral squamous cell carcinoma (OSCC), in part through interaction with the transcriptional coactivator CBP. We investigated how E7386, a small-molecule inhibitor of beta-catenin/CBP activity, affects the OSCC tumor microenvironment (TME).
+
+Methods: We profiled ~71,000 cells from E7386- and vehicle-treated tumors in a syngeneic 4MOSC1 mouse model of tobacco-associated OSCC by single-cell RNA sequencing (n=4/arm). Treatment-associated compositional changes were assessed (sccomp), cell states characterized by annotation and gene set enrichment, and cell-cell communication inferred (CellChat). Findings were complemented by immunofluorescence (IF) and bulk RNA sequencing of E7386-treated 4MOSC1 cells in vitro.
+
+Results: E7386 reduced tumor growth and increased epithelial cell death. Compositional analysis identified epithelial depletion (FDR=0.037) and selective expansion of two lipid-associated macrophage (LAM) populations (FDR=0.0015, 0.0044). LAM transcriptional signatures were enriched for lipid transport, endocytosis, and tissue remodeling. CellChat identified altered epithelial-LAM communication involving adhesion, lipid handling, and dying-cell recognition. IF revealed that LAMs accumulated near epithelial cell death early after treatment but diminished with continued treatment. Mouse bulk RNA sequencing identified suppression of proliferative and keratinization programs and induction of cellular stress and programmed cell death, showing significant transcriptional overlap with human OSCC cells treated with beta-catenin/CBP inhibitors.
+
+Conclusion: E7386 induces coordinated tumor-intrinsic and TME responses, including a transient macrophage response consistent with the recognition and clearance of dying cells. These findings identify potential cellular and transcriptional features for evaluating the response to beta-catenin/CBP-targeted therapy in OSCC.
+
+```{=typst}
+#pagebreak(weak: true)
+```
+
+### A041 · Signature Recontextualization: Mapping perturbational signatures across biological context
+
+**Presenter:** Andrew Chen — Boston University
+
+**Authors:** Andrew Chen, Stefano Monti
+
+**Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
+
+Perturbational transcriptomics is a powerful tool for understanding gene function and drug effects, yet predicting how perturbations manifest across different biological contexts remains a central challenge, limiting translation from model systems to clinically relevant tissues. Despite growing interest in this problem, benchmarking efforts have been hindered by inconsistent evaluation tasks, heterogeneous metrics, and limited assessment across perturbation types and biological systems. Here, we introduce a benchmarking framework for cross-context perturbation-signature prediction (a task we define as signature recontextualization), grounded in explicit definitions of the prediction task, target-data availability, and evaluation metrics centered on signature recovery. The framework evaluates prediction performance across three target-context data regimes: (1) control only, where only control profiles from the target context are measured; (2) low coverage, where a limited subset of perturbations in the target context are measured; and (3) high coverage, where most perturbations in the target context are measured. This design enables systematic assessment of how prediction performance depends on target-context sample size while providing a standardized basis for comparing methods. We evaluate newly developed projection-based (projectCor) and network-based (netProp) methods alongside deep learning-based foundation models (scGPT, STACK) and statistical baselines. The benchmark spans four diverse perturbational datasets: CRISPR knockdowns and drug perturbations in cell lines, plus in vivo chemical perturbations in rat tissues from DrugMatrix, extending evaluation beyond isolated cell-line models to tissue-level responses. Across tasks, projection and network propagation approaches show strong flexibility across perturbation types and biological contexts, and in several cases match or exceed the performance of deep learning and foundation models, suggesting that model complexity does not inherently improve cross-context generalization. We further show that perturbation predictability varies substantially with pathway conservation, transcriptional response strength, and baseline similarity between source and target contexts. All datasets, methods, and evaluation utilities are released as an open-source R package (sigRecon), providing a foundation for reproducible benchmarking and future method development.
+
+```{=typst}
+#pagebreak(weak: true)
+```
+
+### A042 · Understanding the effect of genetic variants on
+
+**Presenter:** Nguyen Tran — The University of Massachusetts Lowell
+
+**Authors:** Nguyen Tran, Sroeunchamroeunphal Huon, Rachel Melamed
+
+**Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
+
+Alzheimer's disease (AD) is a neurodegenerative disease with a strong genetic component. Genome-wide association studies (GWAS) have identified thousands of genetic variants associated with clinical traits, including AD status and AD-related clinical traits. The mechanisms through which genetic variants exert their effects are not always clear, but the Genotype-Tissue Expression (GTEx) project has demonstrated that genetic variation can affect gene expression across human tissues, including the brain. However, GTEx contains a limited set of brain tissues, missing some brain regions that may be important for disease development. Our recent model, BRONTE, aims to overcome this deficit by projecting the effects of genetic variants across 103 brain tissues. We hypothesize that these results will help explain the biological mechanisms connecting genetic variation, gene expression, and Alzheimer's disease clinical traits. Using data from the Alzheimer’s Disease Neuroimaging Initiative (ADNI), we performed association tests between ~100 clinical traits, including PET imaging measures and biomarkers, and AD status, and identified p-tau levels and left hippocampal volume as traits associated with disease status. We then performed GWAS on p-tau levels and left hippocampal volume to identify genetic variants associated with those traits. For the associated variants, we investigate their associations with gene expression in specific brain regions using results from BRONTE. By integrating ADNI clinical and genetic data with GTEx-based gene expression imputation, this project provides a framework for understanding how genetic variation may influence Alzheimer’s disease through changes in gene expression.
+
+```{=typst}
+#pagebreak(weak: true)
+```
+
+### A046 · Integrative transcriptomic analysis identifies long noncoding RNA dysregulation and circadian disruption in reward and executive circuits of opioid use disorder
+
+**Presenter:** Lina Yan — UMass Chan Medical School
+
+**Authors:** Ryan W. Logan
+
+**Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
+
+Opioid use disorder (OUD) is characterized by compulsive drug seeking and impaired executive control resulting from maladaptive plasticity within cortico-striatal circuits. Although transcriptomic studies have identified dysregulated protein-coding genes in the nucleus accumbens (NAc) and dorsolateral prefrontal cortex (DLPFC), the contribution of long noncoding RNAs (lncRNAs) remains largely unexplored. Here, we performed integrative transcriptomic analysis of postmortem human NAc and DLPFC to systematically identify and characterize long noncoding RNAs (lncRNAs) in OUD. We identified 36,225 expressed lncRNA loci expressed across reward and executive regions, approximately half of which were previously unannotated. OUD was associated with dysregulation of 375 lncRNAs in the NAc and 102 in the DLPFC. Co-expression analysis linked these lncRNAs to addiction-related genes and pathways involved in membrane excitability, synaptic transmission, neuronal development, and neurotrophic and MAPK signaling. Differential rhythmicity analysis further identified 105 lncRNAs in the NAc and 148 in the DLPFC with altered circadian rhythmicity. These rhythmic changes represent largely region-specific gains or losses of rhythmic expression that were mostly distinct from differential expression. Integration with single-nucleus transcriptomic data revealed pronounced neuronal and glial cell-type specificity among OUD-associated lncRNAs. Together, these findings define a broad landscape of OUD-associated lncRNAs in human brain reward and executive-control circuits. Spatial, temporal, and cell-type-specific remodeling of the noncoding transcriptome may represent an important regulatory layer contributing to brain circuit dysfunction in OUD.
+
+```{=typst}
+#pagebreak(weak: true)
+```
+
+### A048 · Single-cell transcriptomic profiling of IL-4/IL-13 receptor expression across pancreatic tumorigenesis
+
+**Presenter:** Stergiani Telliou — Massachusetts General Hospital/ Harvard Medical School
+
+**Authors:** Stergiani Telliou, Cutaneous Biology Research
+
+**Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
+
+Interleukin-4 (IL-4) and IL-13 are the central type 2 cytokines that drive T helper 2 (Th2) immune responses and allergic inflammation. Although their roles in immune regulation are well established, their contribution to pancreatic ductal adenocarcinoma (PDAC) development remains poorly understood. As responsiveness to IL-4 and IL-13 depends on the expression of their receptor components, defining their distribution during pancreatic tumorigenesis may provide insight into the potential involvement of type 2 cytokine signaling in disease initiation and progression. Here, we utilized publicly available single-cell RNA sequencing datasets from human and mouse pancreas to profile the expression of IL4R, IL13RA1, and IL2RG across healthy and disease-associated epithelial cell populations. Receptor expression was evaluated in human acinar and ductal epithelial cells across normal pancreas, tumor-adjacent tissue, and PDAC, as well as in a mouse model of acinar-derived pancreatic cancer. Our analyses indicate that IL4R and IL13RA1 are detectable in human pancreatic ductal and acinar epithelial cells under baseline conditions and appear to be expressed in ductal and duct-like epithelial cells from both adjacent and PDAC tissues. In the mouse model, Il4r and Il13ra1 expression appears to emerge following oncogenic Kras activation. Together, these findings suggest dynamic regulation of IL-4/IL-13 receptor expression during pancreatic tumorigenesis and provide a transcriptomic framework for future studies investigating the functional role of type 2 cytokine signaling in PDAC.
+
+```{=typst}
+#pagebreak(weak: true)
+```
+
+### A049 · Externally Validating Steered Disease Features in Single-Cell Foundation Models
+
+**Presenter:** Mingxin Liu — Department of Biotechnology, Brown University
+
+**Authors:** 
+
+**Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
+
+Single-cell foundation models learn rich representations of cellular states, but whether the disease-associated structure they capture relates to drug response in cancer cell lines remains unclear. We train a sparse autoencoder on scGPT activations and identify directions that separate tumors from normal cells in lung adenocarcinoma and invasive ductal breast carcinoma. We steer healthy cells along these axes, leading to monotonic shifts in their representations toward the tumor pole. We then test the induced shifts against expression changes measured in the Tahoe-100M cancer cell lines, and find no significant matches in either cohort after multiple hypothesis testing correction. scGPT thus carries steerable tumor directions that do not reproduce measured drug responses, though it is uncertain if the model or the cross-context comparison is responsible for this result.
+
+```{=typst}
+#pagebreak(weak: true)
+```
+
+### A050 · Confounder-Aware Feature Correction for Single-Cell Batch Integration
+
+**Presenter:** Calvin McCarter — BigHat Biosciences
+
+**Authors:** Calvin McCarter
+
+**Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
+
+Batch integration is a central preprocessing step in single-cell genomics, where datasets collected across experiments, donors, and protocols must be combined despite pervasive technical batch effects. The leading integration methods produce a shared low-dimensional embedding, which discards the corrected gene-expression values that downstream differential-expression, marker, and reuse analyses depend on. The feature-space (expression-correcting) methods that do preserve genes typically align the marginal expression distributions of batches and thereby risk erasing genuine biological variation whenever cell-type composition differs across batches, i.e. whenever batch effect and biological signal are confounded. We recast single-cell batch integration as confounded domain adaptation and apply ConDo, a method that matches conditional expression distributions given the cell-type annotation rather than marginal distributions. To extend ConDo's pairwise source-to-target adapter to the many-batch setting, we introduce an agglomerative compatibility-graph integrator: batches are nodes connected when they share a cell type, and we greedily merge each best-scoring neighbor into a growing reference by fitting one maximum-mean-discrepancy ConDo adapter conditioned on cell type. On the Open Problems Single-Cell Integration Benchmark, ConDo is the strongest feature-space integrator, ranking first among feature methods on five of six datasets. It even outperforms deep embedding methods on the overall score, ranking first across all methods on four of six datasets while returning corrected expression rather than an opaque embedding.
+
+```{=typst}
+#pagebreak(weak: true)
+```
+
+### A062 · The Genomic Interval Query Language (GIQL): A declarative, engine-agnostic grammar for genomic analysis
+
+**Presenter:** Conrad Bzura — Department of Genomics and Computational Biology, UMass Chan Medical School, Worcester, MA, USA
+
+**Authors:** 
+
+**Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
+
+Genomic interval operations, e.g., intersection, overlap, proximity, and related computations, are foundational to functional genomics, yet the dominant tooling (bedtools, samtools, and similar utilities) expresses these operations as chains of command-line invocations that exchange data through intermediate files. This pattern is brittle, difficult to compose with general-purpose data infrastructure, and resistant to agentic automation. To address these limitations, we introduce the Genomic Interval Query Language (GIQL), an extended SQL dialect and transpiler that allows genomic interval operations to be expressed declaratively. Inspired by the adoption of SQL in geospatial analysis, GIQL transpiles a small, focused genomic grammar into standard SQL, enabling genomic operations to compose with larger analytical queries and execute wherever the user's data already lives. Consequently, GIQL can target modern analytical engines like DuckDB and DataFusion, which are increasingly adopted for streaming, distributed, and cloud-native genomics workloads; however, it does not prescribe any particular query engine. The grammar integrates with any tabular encoding of genomic ranges by mapping the user’s existing representation to a pseudo-column at transpile time. SQL's precise, well-documented semantics and exceptional representation in LLM training data make GIQL a reliable target for AI-assisted analysis, and a bundled Model Context Protocol (MCP) server exposes the language's operator reference, documentation, and transpiler directly to LLM-powered coding agents, enabling verified query authoring without out-of-band reference material. GIQL is freely available and open-source (https://github.com/abdenlab/giql), with ongoing work focusing on a versioned grammar specification, community engagement, and expanded support for multi-step AI-assisted workflows.
+
+```{=typst}
+#pagebreak(weak: true)
+```
+
+### A067 · Divide and Conquer: Scalable Partial Correlation Network Inference for High-Dimensional Omics Data
+
+**Presenter:** Luke Berger — Boston University
+
+**Authors:** Luke Berger, Stephano Monti
+
+**Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
+
+Graphical models are widely used in systems biology to study the complex regulatory relationships underlying biological processes. The development of methods such as SILGGM has allowed for the inference of partial correlation networks, which improve interpretability by controlling for indirect interactions. Unfortunately, the application of these tools to high-throughput omics datasets is constrained by: 1) decreased stability and accuracy as the feature-to-sample (p/n) ratio increases, and 2) computational costs that scale rapidly with p.
+
+These challenges can be mitigated by exploiting the fact that biological networks are typically sparse and modular in structure. SHINE exploits modular network structure to reduce graphical search complexity, but implements only Bayesian inference and is specifically tailored to hierarchical constraint learning. We developed a more generalized “Divide And Conquer” (DAC) approach that separates features into overlapping modules based on marginal correlations, performs partial correlation inference within modules, and constructs a network from the modular subgraphs. This allows for parallelization of subgraph inference and limits the dimensionality of each inference subproblem. We benchmarked DAC against a range of alternative algorithms and found that it substantially reduced runtime with a minimal loss in F1 score.
+
+We created modularDAC: an R package implementing the DAC algorithm with customizable options for module detection and subgraph inference. By allowing for the rapid and accurate inference of partial correlation networks with thousands of features, modularDAC removes a bottleneck in systems biology workflows and enables network-based analysis of omics data at previously intractable scales.
+
+```{=typst}
+#pagebreak(weak: true)
+```
+
+### A071 · Interpretable and scalable spatial gene set activity analysis with GESSO uncovers functional tissue architecture
+
+**Presenter:** Chichun Tan — Department of Biostatistics, Brown University
+
+**Authors:** Andrew Yang, Chichun Tan, Ying Ma
+
+**Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
+
+Recent advances in spatially resolved transcriptomics (SRT) enabled measurement of sets of pathway genes activity within tissues. However, existing gene set activity scoring methods overlook spatial dependencies among tissue locations, restricting their ability to capture region-specific pathway activities associated with disease pathology or cellular communication. Moreover, these methods lack inference on statistical significance for activity scores, provide limited interpretability of gene-level contribution to a pathway, and scale poorly to advanced large-scale SRT datasets. To address these limitations, we present GESSO (Gene sEt activity Score analysis with Spatial lOcation), a spatially informed gene set scoring method adaptable to diverse SRT platforms. GESSO models gene set activity levels through a graph-regularized matrix decomposition algorithm, jointly inferring spatially coherent gene set activity scores (GASs) and interpretable gene contributions that quantify how strongly individual genes drive the GASs. It further implements a permutation-based local significance test and a stratified low-resolution approximation that scales to high-resolution SRT datasets such as Visium HD, Stereo-seq, and Xenium Prime. Across 13 datasets from five SRT platforms, GESSO outperformed all existing methods in accuracy, calibration, interpretability, and scalability. Applications revealed novel biological programs, including spatially confined EMT activation within tumor-stroma interfaces, developmental signaling gradients across embryonic tissues, and coordinated B-cell, T-cell, and signaling pathways within germinal centers of human lymph node tissue, revealing the spatial organization of immune function at subregional resolution.
+
+```{=typst}
+#pagebreak(weak: true)
+```
+
+### A078 · Sn-seq analysis reveals distinct pathway programs in Gpr149+ vs GPR149- Medium Spiny Neurons in Parkinsons Disease
+
+**Presenter:** Saatvik Viniak — University of Illinois Chicago
+
+**Authors:** Rithwik Narendra, James E. Boyett, Brian T. Layden
+
+**Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
+
+G protein-coupled receptor-149 (GPR149) is a class A orphan receptor highly expressed in the basal ganglia (BG). Our previous analyses linked GPR149 expression to dopamine signaling networks, suggesting a potential role in BG function. Given the role of BG dysregulation in disorders like Parkinson's disease (PD), we investigated whether GPR149 contributes to PD pathogenesis by generating a single-nucleus RNA-seq atlas from healthy donor BG to understand baseline expression patterns. We observed that GPR149 is primarily enriched in striatal medium spiny neurons (MSNs) and is associated with decreased cyclic-AMP signaling, as indicated by gene set enrichment analysis (GSEA). Next, we compared these findings with a two-cohort PD dataset (n=106). Our findings were significantly replicated in the MSNs from healthy controls in the PD cohort, at both the gene and pathway levels (assessed using hypergeometric and Jaccard overlap statistics across the DE and KEGG enrichment lists). Next, PD-associated transcriptional responses were modeled separately within GPR149+ and GPR149- MSNs using donor-level pseudobulk analyses adjusted for cohort. GSEA and DE comparing PD versus control within GPR149+ and GPR149- MSNs revealed largely distinct molecular signatures. The GO biological process enrichment showed minimal overlap and statistically indistinguishable results (Jaccard’s similarity and hypergeometric tests) between the two populations. KEGG enrichment analyses yielded similarly minimal overlap across multiple FDR thresholds. Together, these findings suggest that GPR149+ and GPR149- MSNs engage distinct pathway programs in PD. Future studies using MSN-specific gene knockout mice and striatal PD organoids can determine if GPR149 confers neuronal vulnerability or protection during disease progression.
+
+```{=typst}
+#pagebreak(weak: true)
+```
+
+### A082 · TissueCircuit disentangles active signaling circuits from cell-type structure
+
+**Presenter:** Taiqi Li — Harvard Medical School
+
+**Authors:** Anurendra Kumar, Taiqi Li, Luca Pinello
+
+**Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
+
+Inferring cell-cell communication from spatial transcriptomics is confounded by cell-type organization: cells of interacting types cluster together, creating apparent signaling where none occurs. Methods that trace ligand-receptor interactions to downstream targets, such as NicheNet and SpaTalk, do not correct for this, so the co-localization and co-expression of cells that share a type are readily mistaken for genuine communication. We present TissueCircuit, which prunes a prior network of candidate ligand→receptor→downstream circuits to the subset genuinely active in a tissue, explicitly separating true spatial signaling from cell-type structure.
+
+We apply TissueCircuit across three Xenium lung adenocarcinoma sections spanning tumor and matched healthy tissue and two panel designs, benchmark its calibration against permutation and cell-type-shuffled nulls, and validate recovered circuits against prior signaling databases and cross-section reproducibility. TissueCircuit recovers a tumor-specific EGFR circuit, AREG→EGFR→{MYC, KLF5, mTORC1}, absent in matched healthy lung. Cell-type-resolved analysis localizes the circuit to malignant cells, with paracrine input from plasma cells and macrophages, and a ligand-rich but spatially excluded alveolar population serving as an internal negative. A second immune-checkpoint axis, CD80/CD86→CTLA4, is likewise tumor-specific.
+
+By combining prior knowledge with spatial statistics, TissueCircuit turns spatial transcriptomes into testable, tissue-specific signaling circuits, applicable to any receptor or tissue with a prior network. When a matched control is available, it further isolates disease-specific circuits.
+
+```{=typst}
+#pagebreak(weak: true)
+```
+
+### A083 · IGVF Single-cell Perturb-Seq Pipeline, a unified framework for complex data analysis and perturbation inference
+
+**Presenter:** Lucas Ferreira da Silva — Massachusetts General Hospital · Harvard Medical School
+
+**Authors:** Lucas Ferreira da Silva, Logan Blaine, Sizhu Jiang, Alejandro Barrera, Olga Pushkareva, Sara Geraghty, Mphathi Nzima, Adam Klie, Alexandra Mo, Ruhi Rai, Gary Yang, Timothy Barry, Thomas Cowart, Eric Che, Ian Whaling, Andreas Gschwind, Benjamin C. Hitz, Siddharth Raghavan, Eugene Katsevich, Charles A. Gersbach, Gary C. Hon, Jesse M. Engreitz, Luca Pinello
+
+**Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
+
+Introduction: Perturb-seq links programmed genetic perturbations to single-cell molecular phenotypes, enabling direct tests of gene and regulatory-element function across heterogeneous cell states. The field now encompasses targeted and whole-transcriptome measurements, single and combinatorial perturbations, alternative guide-capture strategies, sample multiplexing, and editing modalities. This flexibility expands the biological questions that can be addressed, but it also changes how reads structure, guide metadata, cells, and transcriptional outcomes are encoded and analyzed. Consequently, cross-study comparisons are hindered and reproducibility is restricted by the use of technology-specific scripts. Methods: We developed the IGVF Single-cell CRISPR Pipeline, a Nextflow framework that runs locally, on SLURM clusters, or in the cloud and adapts processing, guide assignment, inference, and reporting to each assay while producing standardized Perturb-MuData outputs. We evaluated the pipeline in two complementary settings. First, a controlled IGVF benchmark used the same WTC11 CRISPRi system and guide library across five sequencing and guide-capture technologies, isolating the pipeline's ability to accommodate technical variation. Second, we reprocessed independent public TAP-seq, base-editing, dual-guide, and enhancer-perturbation studies to test portability across distinct biological questions and experimental designs. Results: Across the controlled IGVF benchmark, the pipeline produced comparable RNA and guide counts, also cell-retention, guide assignment, and perturbation inference while preserving assay-specific differences required for interpretation. Intended target genes were consistently repressed, with 83.2% to 94.1% recovered as negative nominally significant cis effects across tested analyses; mean intended-target effects were negative in every assay, whereas control-guide effects remained centered near zero. Reprocessing the public studies generated the same analysis-ready data structure across technologies and recovered technical summaries and principal biological patterns consistent with the original publications. These complementary evaluations show that the IGVF Single-cell CRISPR Pipeline can standardize heterogeneous experiments without erasing their design-specific context, supporting reproducible analysis and meaningful comparison across consortia or when re-analyzing public datasets.
+
+```{=typst}
+#pagebreak(weak: true)
+```
+
+### A089 · Tracing oncogene amplification and genome architecture across single-cell tumor phylogenies
+
+**Presenter:** Kit Gallagher — Massachusetts General Hospital, Harvard Medical School, Broad Institute of MIT and Harvard
+
+**Authors:** Kit Gallagher
+
+**Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
+
+About one-third of adult solid tumors are defined by focal amplification of an essential oncogenic driver — ERBB2, MYCN, EGFR, FGFR2, CCNE1, or MYC across diverse lineages. These amplification-driven cancers are among the most therapeutically challenging adult malignancies, despite advances in targeted therapy and immunotherapy. Focal amplifications take structurally distinct forms: integrated amplicons (tandem duplications, complex rearrangements, chromothripsis) are inherited according to Mendelian inheritance while extra chromosomal DNA (ecDNA) are circular, centromere-free elements that segregate randomly, driving copy-number heterogeneity and rapid remodeling under selection. Furthermore, the structural architecture of an amplification strongly influences how amplifications evolve and respond to selection. However, whether subclonal trends in amplicon architecture impact cellular fitness or steer a tumor’s evolutionary trajectory has not been systematically addressed.
+
+Using published scWGS from ovarian cancer samples, we look to quantify amplification clonality, structural heterogeneity, and antigen persistence across tumor phylogenies. This work will focus on ovarian cancer patients with CCNE1 amplifications; these patients are part of a homologous-recombination proficient subtype that has no second-line treatment options after chemotherapy. Our analysis quantifies whether nominated surface antigens remain co-amplified and co-expressed with essential drivers throughout tumor evolution or instead diverge through loss of ecDNA, segmental deletion, or transcriptional silencing. Ultimately, this resolves amplicon topology to determine whether cancer genome architecture is an evolutionary mechanism for therapeutic escape.
+
+```{=typst}
+#pagebreak(weak: true)
+```
+
+### A101 · Transferring Disease Knowledge from Biomedical Literature to Longitudinal Clinical Records for Inborn Error of Immunity Phenotyping
+
+**Presenter:** Mansooreh Ahmadian — University of Colorado Anschutz Medical Campus
+
+**Authors:** Pia J. Hauk, Sara J. Deakyne Davies, Todd Miller, Elena W Y Hsieh
+
+**Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
+
+Electronic health record (EHR)-linked biobanks require accurate phenotyping for cohort selection from longitudinal records. We developed a biobank of 123 patients with inborn errors of immunity (IEIs) and non-IEI controls, comprising more than 23,000 clinical notes. IEIs have heterogeneous, overlapping phenotypes, and diagnosis often requires integrating years of clinical evidence. General-purpose large language models (LLMs) identified IEI cases but struggled with complex patients, particularly those with similar autoimmune disorders.
+
+We propose a hybrid framework combining longitudinal LLM reasoning with specialized IEI models trained using ontology-based distant supervision. We use the International Union of Immunological Societies (IUIS) classification to define the IEI disease set and its Online Mendelian Inheritance in Man (OMIM) identifiers to connect diseases to ontology concepts. Ontology names, synonyms, and lexical variants provide distant supervision for IEITagger, an IEI-specific tagger combining lexical matching with PubMedBERT fine-tuned for concept recognition and normalization. IEITagger identifies IEI mentions in literature and extracts disease-labeled snippets, which train disease-specific classifiers. Disease mentions are masked and phenotypically related non-IEI diseases are used as hard negatives to promote learning of phenotypic context rather than terminology alone.
+
+The specialized models are integrated with LLM-derived longitudinal patient representations to predict IEI status and rank candidate diagnoses. The hybrid framework improves IEI classification over general-purpose LLM prompting, particularly in ambiguous cases with overlapping autoimmune and inflammatory phenotypes. These preliminary results demonstrate that disease-specific knowledge learned from biomedical literature is transferable to longitudinal clinical records, supporting rare-disease phenotyping without manually annotated training data and more precise cohort discovery.
+
+```{=typst}
+#pagebreak(weak: true)
+```
+
+### A127 · Community Visualization Hub: Integrative Visualization of Multimodal Biomedical Data Across Consortia
+
+**Presenter:** Vedat Yilmaz — UMass Chan Medical School
+
+**Authors:** John Conroy, Conrad Bzura, Priya Misner, Morgan Turner, Lisa Choy, Tiffany Liaw, Vedat Yilmaz, Zhiping Weng, Nezar Abdennur, Nils Gehlenborg
+
+**Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
+
+Publicly funded research consortia have generated extensive multimodal biomedical datasets, including genome-scale, single-cell, spatial, and bioimaging assays, yet these resources remain siloed across disparate portals, formats, and schemas, restricting integrative exploration. Community Visualization Hub (CVH), (https://visualizationhub.org/) is an open-source web platform that federates these resources, more than 3.75 million files and 165 harmonized metadata tags, into a unified environment for computational biologists, bioinformaticians, and biomedical researchers. Building on Gosling for genome-scale genomics and Vitessce for single-cell, spatial, and imaging data, CVH enables linked exploratory views connecting whole-genome patterns to individual loci, cells, and tissue regions. Users can combine self-generated data with public resources without downloading source files, author Gosling visualizations through a graphical interface, and import and share Vitessce configurations. Authenticated project workspaces allow users to persist, annotate, and share analyses and views internally or with external collaborators. Together, these components enable researchers to compare results across modalities, formulate biologically grounded hypotheses, and share reproducible visualizations with the broader scientific community.
+
+```{=typst}
+#pagebreak(weak: true)
+```
+
+### A137 · Evolutionarily constrained immunotherapy targets encoded by oncogene amplicons in cancer
+
+**Presenter:** Curie Cha — Massachusetts General Hospital, Harvard Medical School, Broad Institute of MIT and Harvard
+
+**Authors:** 
+
+**Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
+
+Oncogenic amplifications drive tumor growth and evolution, frequently co-amplifying genes physically adjacent to the driver. These passenger genes are candidates for immunotherapy, but their durability depends on whether they remain physically linked to the driver through evolution. Persistence of linkage is shaped by the architecture of the amplicon, which can take different forms (integrated, breakage-fusion-bridge, or ecDNA) and mitotic segregation patterns. Integrated amplicons are inherited with chromosomal fidelity, whereas extrachromosomal DNA lacks a centromere, segregates randomly, and can be gained or shed within a few divisions.
+
+We hypothesize that this difference in ongoing mutational and segregation processes makes integrated amplicons give rise to more clonally stable therapeutic targets than ecDNA. To address this, we reconstructed and classified focal amplifications using bulk whole genome sequencing across tumors and tumor-derived cell lines from four pan-cancer cohorts (TCGA, PCAWG, Hartwig, CCLE). We build breakpoint graphs to resolve amplicon topology and classify recurrent driver-passenger pairs. We extend this classification by examining structural features, including genomic distance, copy number, and breakpoint position. While increased gene dosage creates more opportunity for transcription, mechanisms including transcriptional silencing, availability of transcriptional machinery, and disruption of regulatory elements at breakpoints undermine the durability of clonally stable candidates. We relate amplicon structural context to matched bulk RNA co-expression to test preservation of regulatory coupling across driver-passenger pairs. Finally, we assess if amplicon architecture predicts viability as a therapeutic target, using structural atlas candidates from tumor-derived cell lines and cross-referencing them with genome-wide CRISPR-Cas9 loss-of-function screens across the DepMap cell-line panel.
+
+```{=typst}
+#pagebreak(weak: true)
+```
+
+### A141 · Influence Causal Ordering: Scalable Causal Structure from Genome-Scale Perturbation Screens
+
+**Presenter:** Ritwik Anand — Northeastern University
+
+**Authors:** Ritwik Anand, Olga Vitek, Karen Sachs
+
+**Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
+
+Genome-scale perturbation screens, such as single-cell CRISPR-knockdown atlases and drug panels, now measure the effects of thousands of interventions, yet resolving their causal structure at this scale remains hard: combinatorial DAG search does not scale, pervasive biological feedback breaks acyclicity assumptions, and a dominant shared stress response swamps intervention-specific signal. We present Influence Causal Ordering (ICO), which converts a perturbation influence matrix into a hierarchical causal cluster graph, scaling to atlases spanning thousands of perturbations. In this graph, feedback loops and shared response programs are represented as clusters, and the clusters are arranged in causal order. ICO thus captures in one structure both the program-level responses shared across perturbations and each perturbation's specific effects, where typical causal methods don't scale nor accurately represent feedback cycles. Empirically, on single-cell knockdown atlases ICO recovers edge orientation up to the identifiability ceiling of the data and predicts the effects of held-out, never-perturbed knockdowns beyond a strong mean-response baseline; on dose-resolved drug phospho-proteomics, its causal cones predict held-out drug effects better than curated pathway priors. By representing cycles and programs as clusters and ordering them causally, ICO turns a large perturbation screen into a single interpretable causal map that accurately models both shared downstream responses and specific effects, and is capable of modeling cyclic feedback.
+
+```{=typst}
+#pagebreak(weak: true)
+```
+
+### A150 · Resolving Mentions to Ontology Gaps in Biomedical Entity Linking
+
+**Presenter:** Hyun Seung Lim — Northeastern University
+
+**Authors:** Hyun Seung Lim, Benjamin M. Gyori
+
+**Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
+
+Recognizing names or synonyms of entities such as genes, small molecules and diseases in text and normalizing them to ontology terms is called entity linking (EL) and is a central task for biomedical data integration. As published biomedical knowledge rapidly evolves, a key challenge in EL is the incompleteness of ontologies where a given entity mention is novel or sits at a granularity no existing term occupies. While encoder-based methods such as SapBERT excel on biomedical entity linking benchmarks, they are limited to predicting exact equivalence and don’t handle incompleteness in a principled way. To address this challenge, we reformulate entity linking so that a mention resolves either to an existing term or, when it is unlinkable, to the region between terms that bracket it in a semantic sense. Creating the training data requires no manual annotation as the ontology's own subsumption edges supply the ordering between terms, and synonyms are obtained from the UMLS Metathesaurus. We use this training data to fine tune a SapBERT-initialized encoder which learns both semantic equivalence and subsumption relationships between two terms, allowing it to predict subsumption when two terms aren’t equivalent. In an evaluation against a similarity-based linker as a control, our approach matched it on mentions carrying gold ontology terms while also abstaining on a portion of mentions the ontology cannot represent. We also present evaluation results against a public benchmark of literature mentions that includes terms absent from the ontology, making incompleteness explicit.
+
+```{=typst}
+#pagebreak(weak: true)
+```
+
+### A168 · HyperFlow: Hypergraph-Based Flow-Matching for Protein Conformation Generation
+
+**Presenter:** Janmejay Vyas — Northeastern University
+
+**Authors:** Janmejay vyas, Shantanu Jain, Ayan Paul, Predrag Radivojac
+
+**Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
+
+Protein function emerges from its sequence and structural dynamics, where collective motions of multiple residues constitute and connect distinct structural states. These conformational ensembles and their functional properties cannot be fully captured by a single static structure. Current generative models attempt to predict such distributions from one structure and reproduce per-residue flexibility well. However, conditioning on a single structure while reconstructing individual conformers favors the conditional mean, causing distinct states to collapse into a smoothed mode. We introduce HyperFlow, a flow-matching generative model that combines higher-order geometric representations with distribution-level supervision. HyperFlow represents proteins as hypergraphs, enabling the model to capture collective multibody interactions that drive conformational transitions. A distribution-level objective then encourages these motions to generate distinct modes of the conformational ensemble rather than average structures. On the ATLAS dataset, HyperFlow matches state-of-the-art performance in per-residue flexibility (RMSF r = 0.88) while increasing collective-mode similarity to 56%, compared with 40–48% for AlphaFlow, ESMFlow-T, and BBFlow. HyperFlow also recovers multiple conformational states from a single input structure. At matched parameter count, its hypergraph representation reaches pairwise-baseline accuracy for long-range collective motions using three- to four-fold less training data. Modeling protein dynamics as multibody processes therefore preserves conformational diversity that pairwise representations tend to smooth away, enabling scalable exploration of function across accessible protein states.
+
+```{=typst}
+#pagebreak(weak: true)
+```
+
+### A170 · EMMA: A Generative Energy-based Model for Multiscale Architecture of Spatial Transcriptomics
+
+**Presenter:** Wonyl Choi — Boston University
+
+**Authors:** Wonyl Choi, Ruben Dries
+
+**Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
+
+Objective: Standard spatial transcriptomics (ST) pipelines use fragmented analytical steps, each requiring distinct assumptions and manual tuning. We introduce the Energy Model for Multiscale Architecture (EMMA), a unified theoretical framework for ST that naturally derives multiscale tissue architecture directly from molecular interactions. This approach overcomes biases in modularly organized pipelines and can function independently of images. Methods: In EMMA, spatial correlations between transcripts define an energy landscape governing gene expression probability. Biological entities across scales (genes, transcripts, cells) are embedded in a single space. Using this model, consecutive ST analysis tasks are unified into internally consistent components. EMMA was applied across 4 platforms (Xenium, CosMx, MERSCOPE, and Visium HD). Results: Across 4 platforms, EMMA assigned >97% of transcripts to cells without morphological images, achieving high structural agreement with reference segmentations (NMI > 0.9). Leveraging its unified embedding space, EMMA identifies cell types and marker genes, revealing organizational motifs consistent with immune exclusion and coordinated niche formation near tumors, and quantifying spatial variability of genes in terms of local and global interactions. Dataset integration via gene-vector alignment using a simple orthogonal transformation validates the embedding space. Conclusions: Our results show ST analysis can be performed within a coherent theoretical framework. By linking molecular correlations to tissue architecture within a unified framework, EMMA offers a principled approach with intrinsic interpretation for understanding the physical and biological rules governing tissue organization.
+
+```{=typst}
+#pagebreak(weak: true)
+```
+
+### A173 · Convergent B-cell receptor sequence features point toward shared antigen targets in colorectal cancer
+
+**Presenter:** Ping Lu — Massachusetts General Hospital · Harvard Medical School · Broad Institute
+
+**Authors:** Ping Lu, Eujin Hong, Nir Hacohen, Lloyd Bod, Doga C. Gulhan
+
+**Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
+
+Colorectal cancer (CRC) is the second leading cause of cancer-related mortality worldwide. Despite recent advances in immune checkpoint blockade (ICB) therapy, its efficacy in CRC remains largely limited to mismatch repair-deficient (MMRd) tumors, highlighting the need for alternative immunotherapies. B-cell receptor (BCR) repertoires and tumor antigens (autoantigens and neoantigens) are key components of anti-tumor humoral immunity, yet their landscape in CRC remains incompletely characterized. We systematically identified BCR clonotypes, autoantibody-reactive self-antigens and somatic mutation-derived neoantigen candidates across CRC to investigate their immunological interplay. Using single-cell RNA-seq data from CRC patients, we reconstructed tumor-infiltrating BCR sequences and quantified BCR diversity and its association with clinical variables. Although exact clonotype sharing across patients was minimal, k-mer-based CDR3 analysis revealed convergent sequence features, suggesting shared antigen-driven B-cell responses across individuals. To investigate potential antigenic drivers, we are integrating MIPSA-based autoantibody profiling, a high-throughput serological assay that measures antibody reactivity against thousands of human proteins, to nominate cancer cell-specific self-antigens, complemented by the identification of recurrent somatic mutations across tumors from different patients as candidate neoantigen sources. CRC patients exhibit convergent BCR sequence features despite largely private clonotypes, potentially reflecting antigen-driven selection by shared tumor-derived neoantigens and autoantigens alike. This integrative framework, combining neoantigen and autoantigen discovery with BCR repertoire analysis, provides a foundation for the rational design of broadly applicable, antibody-informed B-cell-directed therapies in CRC.
+
+```{=typst}
+#pagebreak(weak: true)
+```
+
+### A175 · SIMBA+: Interpreting GWAS through single-cell multiomic graphs identifies disease-relevant genes and cell states
+
+**Presenter:** Junxi Feng — University of California, San Diego
+
+**Authors:** Jayoung Ryu, Junxi Feng, Elizabeth Dorons, Karthik Guruvayurappan, Anatori Prieto, Zixuan Eleanor Zhang, Kushal Dey, Steven Gazal, Martin Jinye Zhang, Luca Pinello
+
+**Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
+
+Translating genome-wide association study (GWAS) signals into causal variant mechanisms remains a major challenge. We present SIMBA+, a probabilistic graph framework that integrates single-cell multiomic data with GWAS to identify variant target genes and the cellular contexts in which regulatory effects occur. SIMBA+ constructs a unified knowledge graph linking cells, genes, and regulatory elements, learns low-dimensional node representations, and uses metapath-based relationships to score variant–gene–cell associations. This representation jointly captures regulatory connectivity and cellular heterogeneity, enabling genetic associations to be interpreted within specific cell states rather than only at bulk or cell-type-averaged resolution. Applied to atopic dermatitis, SIMBA+ revealed cell-specific regulatory mechanisms, including disease-associated variants linked to CSF2RB in monocytes and NLRP3 in CD14+ populations. Systematic benchmarking showed that SIMBA+ outperformed existing approaches for identifying target genes of variants and regulatory elements in both cell-type-specific and cell-type-agnostic settings, with stronger enrichment for eQTL-supported and CRISPR-validated regulatory links, particularly for distal interactions. Beyond variant-to-gene mapping, SIMBA+ leverages its learned latent factors to decompose trait heritability at single-cell resolution. Applying SIMBA+ to 75 complex traits across three single-cell multiome atlases spanning 19 tissues, including blood and bone marrow, identified disease-relevant cell states among hundreds of cell populations, uncovered trait-associated regulatory programs missed by pseudobulk analyses, and generated single-cell-resolution estimates of heritability. These capabilities enable mechanistic interpretation across scales, from individual variants to complex trait architecture. Together, SIMBA+ provides a unified framework for connecting genetic variation to regulatory mechanisms, target genes, and disease-relevant cellular states, advancing interpretation of GWAS findings at single-cell resolution.
+
+```{=typst}
+#pagebreak(weak: true)
+```
+
+### A181 · Causal Path Inference on a Literature-Derived Knowledge Graph for Variant Effect Interpretation
+
+**Presenter:** Jici Jiang — Northeastern University
+
+**Authors:** Jici Jiang
+
+**Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
+
+Current variant effect predictors integrate genomic annotation and protein-level features, however, are limited to modeling direct variant-to-gene or gene-to-phenotype mappings without explicitly reasoning over the mechanistic chain. We present a framework to generate interpretable, multi-hop causal paths that link variants to phenotypes through intermediate signaling, protein-interaction and regulatory events, corresponding to curated variant-phenotype evidence. Our INDRA system builds the knowledge graph, integrating causal mechanism extraction from literature with pathway databases. Variants are encoded as reference and alternate embedding pairs from sequence models. Training and evaluation use 120,329 variants across 11,786 genes.
+
+We formulate variant-effect prediction as stepwise path generation over a variant-relevant subgraph from constrained pathfinding. A variant-conditioned message-passing network initializes traversal from the associated gene, and a sequential decoder scores candidate next nodes and edge polarities at each hop. On held-out variants, paths reach the correct phenotype in 79% of cases with Hit@10 of 0.68, producing paths for mechanistic interpretation and downstream functional investigation.
+
+Evaluation of paths is itself a challenge since no existing metric captures partial correctness of biomedical causal paths. General path comparison methods disregard biological semantics and regulatory direction which undervalues predictions that are mechanistically correct but structurally divergent. To address this problem, we introduce a dynamic-programming algorithm to score ontology-grounded semantic similarity and regulatory-direction consistency for biomedical causal paths. To evaluate this metric, we generated a corpus of ground truth causal paths paired with partially correct paths of graded divergence and compared our new approach with those currently used in the field, including LLM-as-a-judge scenarios.
+
+```{=typst}
+#pagebreak(weak: true)
+```
+
+### A191 · Robust dynamics of somatic short tandem repeat expansions using donor-specific assembly
+
+**Presenter:** Suhas Rao — Harvard Medical School, Department of Biomedical Informatics
+
+**Authors:** Suhas Rao, Peter J. Park
+
+**Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
+
+Short tandem repeat (STR) expansions are associated with many neurodegenerative disorders such as Huntington’s disease. However, difficulties in assembling and aligning to repetitive regions in the genome, have severely limited the study of somatic STR expansions. Using long-reads and recent techniques for building personalized/donor-specific assembly (DSA), we can study the true dynamics of these expansions in normal tissue.
+
+We refined multiple previously curated pathogenic and nonpathogenic STR catalogs (based on hg38 + short-reads), filtering each by >20% into a final set of ~200,000 loci with DSA-resolved coordinates. We then benchmarked how using DSA alignments resolves notable error modes generated by existing long-read STR genotyping tools (TRGT, Medaka, etc.) - 1) phasing repeat expansions to the appropriate allele, 2) missing true somatic STR expansions due to upstream misalignment and poor reference genome resolution, and 3) including false positive STR expansions by mistakenly incorporating nearby low-complexity regions.
+
+We’ve identified multiple cases of extreme somatic STR expansions in brain tissues within normal tissues, up to >5000bp (100x) larger than the corresponding reference allele. We’ve documented dozens of cases where standard SNP/indel-based phasing are unable to separate biologically distinct repeat alleles (where one allele is stable / reference size, and the other is >50bp and >100% relatively larger) and demonstrated how DSA/local realignments can accurately phase these. We’ve also demonstrated that using DSA methods allows existing STR genotyping algorithms like TRGT to rescue up to 10% additional reads near certain pathogenic STR loci such as NOTCH2NLC (which falls within collapsed paralogs in hg38).
+
+```{=typst}
+#pagebreak(weak: true)
 #block(above: 12pt, below: 10pt)[
   #set text(font: "Avenir Next", size: 10pt, weight: 700,
     fill: c-navy, tracking: 1.5pt)
@@ -1835,6 +1821,52 @@ Single-cell condition comparisons are often organized around cell-centric repres
   #v(3pt, weak: true)
   #line(length: 100%, stroke: 0.5pt + c-navy)
 ]
+```
+
+### A214 · Mathematical Modeling of Macrophage Polarization Dynamics and Molecular Feedback to Predict Immune Modulation Strategies
+
+**Presenter:** Veena Naveen — Northeastern University
+
+**Authors:** Veena Naveen, Mingyang Lu, Herbert Levine
+
+**Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
+
+Macrophages are highly plastic immune cells that dynamically polarize along a spectrum of phenotypes in response to different environmental cues. Dysregulated polarization is known to cause pathological immune responses and disease progression, and targeting macrophage polarization has been shown to be a promising therapeutic avenue in multiple disease contexts. However, the exact mechanisms governing polarization trajectories, and their interaction with the expression of effector molecules, in different inflammatory contexts are not fully understood.
+
+In this work, we aim to elucidate the regulatory principles governing the transition from resting (M0-like) to pro-inflammatory (M1-like) macrophages in response to lipopolysaccharide (LPS) and interferon-gamma (IFN-γ), through mathematical modeling. We develop a library of model variants that integrate macrophage polarization with key signaling molecules including TNF-α, NOS-2, and IL-10, each capturing a different set of mechanisms. We use Bayesian optimization to fit these models to published time-resolved bulk RNA-sequencing and single-cell trajectories. Three murine studies supply co-stimulation, washout, repolarization, LPS-only, and IFN-γ-only time courses; a sequential stimulation study is held out for validation, and four human macrophage datasets serve as further external targets.
+
+The optimized models can then be perturbed to simulate the effects of targeting different mechanisms. Future work will incorporate a tumor module, which can be used to explore immunomodulation strategies for cancer. This approach offers a principled path toward macrophage-reprogramming strategies in cancer and other inflammatory diseases by bridging omic data, mechanistic modeling, and predictive immunomodulation.
+
+```{=typst}
+#pagebreak(weak: true)
+```
+
+### A217 · Hyaline: Structure and Leakage-Aware Prediction of Kinase Conformational Selectivity
+
+**Presenter:** Manju Selvakumaran — Northeastern University
+
+**Authors:** Ayman Khaleq, Harry Kabodha, Manju Selvakumaran, Sasha Kakkassery
+
+**Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
+
+Protein kinases are premier drug targets whose druggability is governed less by sequence than by conformation: the same catalytic domain adopts distinct activation loop states, canonically DFG-in and DFG-out, that expose different pockets and admit either Type I or Type II inhibitors. Because these states share one sequence, sequence-based models are blind to what governs selectivity, and we show they also leak. A pocket sequence classifier scores 0.95 AUROC under a random split but collapses to 0.62 under grouped leave-one-kinase-out, revealing that it memorizes kinase identity rather than conformation. We present Hyaline, a structure-based framework that computes two interpretable geometric descriptors from the real KLIFS pocket: the DFG to αC distance and a hinge activation loop angle. Under grouped leave-one-kinase-out these training free descriptors classify DFG state at 0.834 AUROC, generalizing to unseen kinases without leakage, and a known drug analysis recovers five of six canonical Type I and Type II assignments. Hyaline exposes this as an analyze command that annotates any experimental or predicted structure, including AlphaFold models, returning the DFG and αC state, the geometric fingerprint, and a Type I, Type II, or allosteric accessible call with provenance. We also release an offline atlas of 318 human kinases with accessible states, known inhibitors, and a Type II opportunity score. A synthetic ablation confirms the mechanism, that structure rather than sequence carries the signal and that inhibitor size interacts with DFG displacement. Hyaline offers an interpretable, leakage aware route to conformation selective inhibitor design.
+
+```{=typst}
+#pagebreak(weak: true)
+```
+
+### A221 · Integrative in silico analysis of tumor-associated extracellular vesicles reveal markers related to THY-1 in basal-like breast cancer.
+
+**Presenter:** Pedro Enrique Soares de Lima — University of Sao Paulo
+
+**Authors:** Pedro Enrique S de Lima, Letícia Alves Fernandes, Milton Yutaka Nishiyama Junior, Ana Claudia O. Carreira
+
+**Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
+
+Breast cancer is a major cause of cancer-related mortality worldwide, and its molecular heterogeneity highlights the need for improved characterization of aggressive subtypes. CD90, encoded by THY-1, has been associated with aggressive disease, metastasis, and poor survival, while extracellular vesicles (EVs) represent a promising source of tumor-associated molecular biomarkers. This study aimed to characterize THY-1 expression and identify differentially expressed mRNAs and miRNAs in plasma-derived EVs, focusing on basal-like breast cancer. Publicly available datasets were obtained from ExoRBase and NCBI. ExoRBase included 242 breast cancer and 243 healthy individuals with mRNA quantified as TPM. Breast cancer samples were classified into Luminal A, Luminal B, HER2-enriched, and basal-like subtypes using PAM50. THY-1 expression and differential expression were assessed using limma package, with log2FC > 1 and adjusted p.value < 0.01. An independent dataset, GSE270497, comprising 120 healthy and 60 breast cancer individuals, was analyzed for miRNA expression using DESeq2, applying log2FC > 1.5 and adjusted p.value < 0.01. THY-1 showed the highest median expression in basal-like EVs. Among 122 differentially expressed genes, GJA4 was overexpressed and associated with epithelial-mesenchymal transition, closely related with THY-1 molecular function in triple negative breast cancer, as previously demonstrated by our group. OncoDB revealed a positive correlation between GJA4 and THY-1 (R = 0.5281, p = 1.65 × 10-82 ). Among 66 differentially expressed miRNAs, miR-29a, miR-34a, and miR-210 were downregulated and identified as validated THY-1 regulators. These findings support plasma-derived EVs as a promising source for investigating THY-1-associated mechanisms and biomarkers in basal-like breast cancer.
+
+```{=typst}
+#pagebreak(weak: true)
 ```
 
 ### A201 · Somatic copy number changes of the active and inactive X chromosome are new genomic hallmarks of cancer
@@ -1901,38 +1933,6 @@ Multi-step cell state transitions often occur in biological processes, such as c
 #pagebreak(weak: true)
 ```
 
-### A214 · Mathematical Modeling of Macrophage Polarization Dynamics and Molecular Feedback to Predict Immune Modulation Strategies
-
-**Presenter:** Veena Naveen — Northeastern University
-
-**Authors:** Veena Naveen, Mingyang Lu, Herbert Levine
-
-**Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
-
-Macrophages are highly plastic immune cells that dynamically polarize along a spectrum of phenotypes in response to different environmental cues. Dysregulated polarization is known to cause pathological immune responses and disease progression, and targeting macrophage polarization has been shown to be a promising therapeutic avenue in multiple disease contexts. However, the exact mechanisms governing polarization trajectories, and their interaction with the expression of effector molecules, in different inflammatory contexts are not fully understood.
-
-In this work, we aim to elucidate the regulatory principles governing the transition from resting (M0-like) to pro-inflammatory (M1-like) macrophages in response to lipopolysaccharide (LPS) and interferon-gamma (IFN-γ), through mathematical modeling. We develop a library of model variants that integrate macrophage polarization with key signaling molecules including TNF-α, NOS-2, and IL-10, each capturing a different set of mechanisms. We use Bayesian optimization to fit these models to published time-resolved bulk RNA-sequencing and single-cell trajectories. Three murine studies supply co-stimulation, washout, repolarization, LPS-only, and IFN-γ-only time courses; a sequential stimulation study is held out for validation, and four human macrophage datasets serve as further external targets.
-
-The optimized models can then be perturbed to simulate the effects of targeting different mechanisms. Future work will incorporate a tumor module, which can be used to explore immunomodulation strategies for cancer. This approach offers a principled path toward macrophage-reprogramming strategies in cancer and other inflammatory diseases by bridging omic data, mechanistic modeling, and predictive immunomodulation.
-
-```{=typst}
-#pagebreak(weak: true)
-```
-
-### A217 · Hyaline: Structure and Leakage-Aware Prediction of Kinase Conformational Selectivity
-
-**Presenter:** Manju Selvakumaran — Northeastern University
-
-**Authors:** Ayman Khaleq, Harry Kabodha, Manju Selvakumaran, Sasha Kakkassery
-
-**Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
-
-Protein kinases are premier drug targets whose druggability is governed less by sequence than by conformation: the same catalytic domain adopts distinct activation loop states, canonically DFG-in and DFG-out, that expose different pockets and admit either Type I or Type II inhibitors. Because these states share one sequence, sequence-based models are blind to what governs selectivity, and we show they also leak. A pocket sequence classifier scores 0.95 AUROC under a random split but collapses to 0.62 under grouped leave-one-kinase-out, revealing that it memorizes kinase identity rather than conformation. We present Hyaline, a structure-based framework that computes two interpretable geometric descriptors from the real KLIFS pocket: the DFG to αC distance and a hinge activation loop angle. Under grouped leave-one-kinase-out these training free descriptors classify DFG state at 0.834 AUROC, generalizing to unseen kinases without leakage, and a known drug analysis recovers five of six canonical Type I and Type II assignments. Hyaline exposes this as an analyze command that annotates any experimental or predicted structure, including AlphaFold models, returning the DFG and αC state, the geometric fingerprint, and a Type I, Type II, or allosteric accessible call with provenance. We also release an offline atlas of 318 human kinases with accessible states, known inhibitors, and a Type II opportunity score. A synthetic ablation confirms the mechanism, that structure rather than sequence carries the signal and that inhibitor size interacts with DFG displacement. Hyaline offers an interpretable, leakage aware route to conformation selective inhibitor design.
-
-```{=typst}
-#pagebreak(weak: true)
-```
-
 ### A220 · Structural Modeling Identifies a Putative, MIF-Independent CD74–IFNGR1 Interface in IFN-γ Signaling
 
 **Presenter:** Nesma E Abdelaal — Brigham and Women’s Hospital, Harvard Medical School, Boston, MA, USA
@@ -1942,20 +1942,6 @@ Protein kinases are premier drug targets whose druggability is governed less by 
 **Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
 
 CD74 deletion abolishes IFN-γ–driven allograft rejection (median survival >100 days vs. 7 days) and reduces T-cell pSTAT1 signaling by ~50% despite unchanged surface IFNGR1, indicating a receptor-proximal defect that persists in MIF-deficient mice, demonstrating that the canonical CD74 ligand is dispensable. To identify a structural mechanism, we integrated sequence analysis, experimentally resolved receptor structures, multimeric modeling, multi-platform protein–protein docking, interface energetics, and molecular dynamics. IFNGR1–CD74 sequence comparison revealed 24.0% global and 29.5% local identity over a 78-residue window. Mapping this region onto IFN-γ receptor complexes 6E3K and 6E3L identified an extracellular IFNGR1 segment (~129–221; predominantly 162–221) overlapping the experimentally defined IFN-γ/IFNGR1 interface at 25/75 and 24/72 resolved residues, respectively, with approximately half of these residues solvent-exposed. Independent HDOCK, ClusPro, and HADDOCK docking converged on this region, supporting a reproducible topology involving multiple CD74 protomers. HDOCK favored CD74 alone over CD74–MIF (−348.32 vs. −275.48), arguing against an MIF requirement for the predicted association. Interface energetics identified 16 dominant CD74–MIF hotspots (ΔG ≤ −10 kcal/mol), with stabilization correlated with solvent burial (R²=0.79, p<0.01). Complementary 200-ns MD supported interface persistence: backbone RMSD remained below 3 Å, while 68% of candidate interface residues maintained contacts for >50% of the trajectory. Together, these orthogonal analyses identify a structurally plausible, multivalent CD74–IFNGR1 association overlapping the physiological IFN-γ-binding interface, providing a structural correlate for the MIF-independent receptor-proximal defect and nominating residues for experimental validation.
-
-```{=typst}
-#pagebreak(weak: true)
-```
-
-### A221 · Integrative in silico analysis of tumor-associated extracellular vesicles reveal markers related to THY-1 in basal-like breast cancer.
-
-**Presenter:** Pedro Enrique Soares de Lima — University of Sao Paulo
-
-**Authors:** Pedro Enrique S de Lima, Letícia Alves Fernandes, Milton Yutaka Nishiyama Junior, Ana Claudia O. Carreira
-
-**Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
-
-Breast cancer is a major cause of cancer-related mortality worldwide, and its molecular heterogeneity highlights the need for improved characterization of aggressive subtypes. CD90, encoded by THY-1, has been associated with aggressive disease, metastasis, and poor survival, while extracellular vesicles (EVs) represent a promising source of tumor-associated molecular biomarkers. This study aimed to characterize THY-1 expression and identify differentially expressed mRNAs and miRNAs in plasma-derived EVs, focusing on basal-like breast cancer. Publicly available datasets were obtained from ExoRBase and NCBI. ExoRBase included 242 breast cancer and 243 healthy individuals with mRNA quantified as TPM. Breast cancer samples were classified into Luminal A, Luminal B, HER2-enriched, and basal-like subtypes using PAM50. THY-1 expression and differential expression were assessed using limma package, with log2FC > 1 and adjusted p.value < 0.01. An independent dataset, GSE270497, comprising 120 healthy and 60 breast cancer individuals, was analyzed for miRNA expression using DESeq2, applying log2FC > 1.5 and adjusted p.value < 0.01. THY-1 showed the highest median expression in basal-like EVs. Among 122 differentially expressed genes, GJA4 was overexpressed and associated with epithelial-mesenchymal transition, closely related with THY-1 molecular function in triple negative breast cancer, as previously demonstrated by our group. OncoDB revealed a positive correlation between GJA4 and THY-1 (R = 0.5281, p = 1.65 × 10-82 ). Among 66 differentially expressed miRNAs, miR-29a, miR-34a, and miR-210 were downregulated and identified as validated THY-1 regulators. These findings support plasma-derived EVs as a promising source for investigating THY-1-associated mechanisms and biomarkers in basal-like breast cancer.
 
 ```{=typst}
 #day-banner([Day 2 · Fri Oct 2, 2026], page_break: true)
@@ -2008,20 +1994,6 @@ Enzymatic catalysis relies on precise structural and chemical complementarity, y
 **Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
 
 Early-onset Alzheimer's disease (EOAD) is frequently caused by autosomal-dominant mutations in APP, PSEN1, and PSEN2, yet accessible, low-cost molecular screening tools for at-risk families remain limited. We present a fully in-silico, wet-lab-free proof-of-concept pipeline integrating tetra-primer amplification-refractory mutation system (ARMS) design, in-silico PCR validation, coarse-grained molecular dynamics modeling, and population-level coverage analysis for five well-characterized EOAD mutations (APP V717I, APP Swedish, PSEN1 E280A, PSEN1 M146L, PSEN2 N141I). Allele-specific primer pairs were designed using each mutation's reference genomic sequence and validated computationally via in-silico PCR, which confirmed correct allele-specific amplicon switching for three of five mutations (V717I, Swedish, E280A); redesign of the remaining two is in progress following an initial targeting discrepancy identified during verification. Duplex-level thermodynamic discrimination between matched and mismatched primer-template pairs is being characterized using oxDNA coarse-grained simulation, quantifying hydrogen-bond stability and structural fluctuation at the discriminating base. Population coverage was assessed against gnomAD (v4.1.1), identifying no common variants overlapping primer-binding sites for three mutations and minor, synonymous-variant caveats (population frequency up to 4.6%) for two. Together, these results outline a reproducible, open-access computational framework for evaluating allele-specific assay candidates prior to any wet-lab investment, with an integrated translation-confidence metric combining specificity, thermodynamic stability, and population robustness. This pipeline is presented explicitly as a computational proof-of-concept rather than a validated diagnostic tool.
-
-```{=typst}
-#pagebreak(weak: true)
-```
-
-### A008 · A fast and memory-efficient framework for similarity networks in biology
-
-**Presenter:** Sean R. Johnson — New England Biolabs
-
-**Authors:** Sean R. Johnson, Zhiyi Sun
-
-**Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
-
-Similarity networks have seen widespread application in biology. A similarity network is a graph where nodes represent biological entities and edges are drawn between nodes with similarity scores above a given threshold. Examples include Blast scores between protein sequences, TM-scores between protein structures, and neighborhood similarity scores between gene loci. Similarity networks are useful for grouping the vastness of biological diversity into clusters (connected components in the graph) that can be individually investigated and compared to each other. Similarity networks can comprise tens or hundreds of thousands of nodes, presenting computational challenges for efficient generation, storage, and visualization. In this work, we suggest storing networks as maximum spanning trees (MSTs) in sparse matrices, with the optional addition of k-nearest neighbor edges (KNN). We develop software for generating similarity matrices for a variety of input file types and distance metrics, and for visualizing and exploring the resulting networks.
 
 ```{=typst}
 #pagebreak(weak: true)
@@ -2111,20 +2083,6 @@ Genome-wide association studies (GWAS) have identified numerous loci associated 
 #pagebreak(weak: true)
 ```
 
-### A024 · Genetic Regulation of Circular RNAs Reveals a Distinct Molecular Layer Underlying Psychiatric Risk
-
-**Presenter:** Aarti Jajoo — McLean Hospital
-
-**Authors:** Aarti Jajoo, Mateo Maya-Martinez, Nikolaos P. Daskalakis
-
-**Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
-
-Circular RNAs (circRNAs) remain an underexplored layer of transcriptomic regulation in psychiatric disorders. We quantified circRNA expression from 1,022 [518 neurotypical, 365 schizophrenia (SCZ) and 139 bipolar disorder (BIP)] postmortem cortex samples from PsychENCODE consortium cohorts and integrated these profiles with matched linear RNA and genotype profiles. We identified 23 SCZ-associated and 3 BIP-associated differentially expressed circRNAs (FDR<0.05; FDR-circDEG). We trained genetically regulated circRNA expression (circGReX) models using neurotypicals and applied them to SCZ and BIP GWAS to perform Transcriptomic Wide association analysis (TWAS) which identified 22 and 4 circGReX trait associations (circGTAs), respectively. Pathway enrichment of circDEGs and circGTAs implicated neuronal and synaptic processes for both disorders. In UK Biobank, circGReX-imaging associations were predominantly negatively correlated with SCZ and BIP circGTAs, but positively correlated with Alzheimer's disease circGTAs. circKLHL24 isoforms showed the most prominent imaging associations. Many co-expression modules containing our FDR-circDEGs were enriched for psychiatric and neurodegenerative risk genes, including our identified circGTAs, and these modules were enriched for cognitive and neurodevelopmental traits. To conclude, circRNAs represent a distinct regulatory layer in psychiatric disorders, linking genetic risk to synaptic biology, brain structure and cognition through disease-specific expression, TWAS prioritization, and imaging associations.
-
-```{=typst}
-#pagebreak(weak: true)
-```
-
 ### A026 · Embedding kernels for sequence-function relationships
 
 **Presenter:** Waverly Carabba — Tufts University
@@ -2134,20 +2092,6 @@ Circular RNAs (circRNAs) remain an underexplored layer of transcriptomic regulat
 **Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
 
 A central challenge in biology is understanding how variation in biological sequences (DNA, RNA, and protein) impacts function. Although high-throughput experiments are now capable of measuring these sequence-function relationships at a massive scale, novel computational techniques for inference and interpretation are still needed. We address these problems using Gaussian process regression, a Bayesian method that imposes a Gaussian prior on sequence-function relationships via a kernel encoding how sequence similarity relates to covariance in measured functionality. Here, we explore kernels in which the covariance depends on the distance between sequences in an embedding space, making these kernels expressive yet interpretable. Embedding features can either be (i) precomputed, for example, from evolutionary sequences or large language models, or (ii) learned from experimental data via a factor analysis kernel. We describe the mathematical relationship between our embedding kernels and existing kernels for discrete sequence space as well as classical kernels for continuous spaces. Our embedding kernels improve predictive performance across various high-throughput sequence-function datasets, including protein datasets ranging from short motifs to full-length proteins. The inferred embeddings also capture known and novel features of the sequences’ underlying functionality. Overall, these models provide new tools to understand and predict sequence-function relationships.
-
-```{=typst}
-#pagebreak(weak: true)
-```
-
-### A031 · PATCH: Panel Aware Hierarchical Conformal Cell Typing for Spatial Proteomics under Marker-Panel Shift
-
-**Presenter:** Tianhao Luo — Harvard Medical School
-
-**Authors:** 
-
-**Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
-
-Spatial-proteomics cell phenotyping returns a point label and no statement of how far to trust it. Panels differ by laboratory and platform, so a classifier calibrated on one cohort meets cells whose defining markers were never imaged, and labels them anyway. Batch correction and reweighting cannot repair this: those features are absent, not shifted. We instead make the admissible label space depend on the panel: a type is admissible only when the panel contains the markers that define it. The rule reads the panel alone, needing no labels or calibration data. PATCH is a hierarchical conformal predictor over that space. It drops nodes whose markers are missing, backs each cell off to the finest identifiable ancestor, and abstains when none exists. Every label returned is one the panel supports, for every cell and panel, in domain and out. Before any target label exists, a label-free per-marker Kolmogorov-Smirnov screen ranks how far a new cohort will under-cover; a 500-cell labeled slice then restores that coverage where reweighting cannot. Removing the panel filter alone, a third of returned labels name types the panel cannot distinguish and half of all cells receive one; tuned for coverage, it reaches 0.896 against PATCH's 0.540 with a quarter still unidentifiable. PATCH emits no inadmissible label anywhere we measured: that comparison, sixty synthetic panels, forty gene-panel drops on single-cell RNA. Coverage we report as a measurement on one protocol: 0.930 in domain (mean set size 2.72, 2x10^5 cells) and 0.257-0.825 across eleven shifted cohorts, empty rate zero.
 
 ```{=typst}
 #pagebreak(weak: true)
@@ -2239,20 +2183,6 @@ Optical pooled screening (OPS) combines the scalability of pooled genetic pertur
 #pagebreak(weak: true)
 ```
 
-### A060 · Sequence-Conditioned Generation of Genome-Targeting Integrases with a Genomic Foundation Model
-
-**Presenter:** Tanggis Bohnuud — Basecamp Research
-
-**Authors:** Geraldene Munsamy, Gavin Ayres, Carla Greco, Keith Kam, Gus Minto-Cowcher, John St. John, Tanggis Bohnuud, Matthew Bakalar, William Chow, Robert Pecoraro, Marcelo D.T. Torres, Aaron Kollasch, Marcus Leung, Hassan Sirelkhatim, Francesco Farina, Connor McGinnis, Srijani Sridhar, Daniel Anderson, Francesco Oteri, Ali Taghibakhshi, Jeremie Dona, Tyler Shimko, Cedric Steenbeke, Alexandros Papadopoulos, Malcolm Krolick, Fabian Spoendlin, Purba Gupta, Sandeep Kumar, Anne Bara, Jared Wilbur, Noelia Ferruz, Timur Rvachov, Fangping Wan, Hanqun Cao, Hyun-Su Lee, Japan Mehta, Raphael Chaleil, Valerio Pereno, Sid Potti, Chris Emerson, Roy Tal Dew, Kevin K Yang, Eric Nguyen, Neha Tadimeti, Jillian F. Banfield, Alicia Frame, Emma Bolton, David Ruau, Rory Kelleher, Anthony Costa, Kimberley Powell, Cesar de la Fuente-Nunez, Glen-Oliver Gowers, Oliver Vince, Jonathan Finn, Philipp Lorenz
-
-**Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
-
-Designing proteins to recognize user-specified genomic sequences requires learning the complex relationship between protein sequence, DNA recognition, and catalytic function. Here, we formulate genome-targeted integrase design as a conditional sequence-generation problem and use EDEN, a 28-billion-parameter genomic foundation model trained on 9.7 trillion nucleotide tokens from diverse metagenomes (BaseData), to generate de novo large serine recombinases (LSRs). LSRs and their cognate attachment sites mined from BaseData provide naturally occurring paired protein–DNA sequences from which to learn the evolutionary constraints linking recombinase sequence to target specificity. We condition EDEN on only 30 nucleotides representing a desired attB target site and generate corresponding LSR protein sequences. To test generalization to unseen sequence specifications, we prompted EDEN with human genomic sequences absent from the training data, spanning ten disease-associated loci and four potential safe-harbor sites. EDEN generated multiple experimentally active recombinases for every tested genomic locus, achieving a 63.2% functional hit rate across diverse DNA prompts. High-performing generated proteins diverged substantially from their parental sequences, reaching as low as 52% sequence identity while retaining biochemical activity. Generated LSRs also translated to cellular function: 50% of tested designs were active in human cells, including targeted integration of CAR constructs in primary human T cells. These results demonstrate that genomic foundation models can learn conditional relationships between short DNA sequences and the proteins that recognize them, enabling functional protein generation directly from user-specified genomic targets.
-
-```{=typst}
-#pagebreak(weak: true)
-```
-
 ### A061 · An XOR-based framework for detecting mutually exclusive gene modules in single-cell data
 
 **Presenter:** Irzam Sarfraz — Boston University Chobanian & Avedisian School of Medicine (CAMED), Boston, MA, United States
@@ -2327,24 +2257,6 @@ Patient-level cancer treatment-response prediction remains challenging because c
 #pagebreak(weak: true)
 ```
 
-### A077 · Statistical detection of drivers of hematopoietic differentiation from lentiviral integration site datasets
-
-**Presenter:** Giacomo Ceoldo — Boston Children's Hospital - Harvard Medical School
-
-**Authors:** Giacomo Ceoldo, Danilo Pellin
-
-**Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
-
-Integration site datasets, obtained from blood samples for clone tracking of individuals treated with lentiviral gene therapy, offer important insights into human hematopoiesis. In particular, the long follow-up period of gene therapy patients allows the study of long-term effects on hematopoietic reconstitution for various genetic diseases. Clinical applications include the discovery of novel drivers of hematopoietic differentiation, whose effects may be enhanced by interactions with an integrated transgene. Identifying such drivers may contribute to the development of more specific therapies targeting disease-relevant hematopoietic subtypes.
-
-We are developing algorithms to detect and test genomic windows with a rate of lentiviral integration, clone survival, or clone fitness higher than the baseline, or with large differences in rates across two or more groups (cell types, clinical trials). The first phase (window detection) is based on fused lasso estimation, which is extended to generalized linear models (with the response function depending on the rate type) and includes covariates to account for dataset heterogeneity (patient- or cell-type-specific effects). For multi-group analyses, the fused lasso graph penalty is extended to sparse graphs of integration sites.
-
-The second phase consists of formally testing the set of windows selected in the first phase, in order to identify those with a statistically significant effect and provide a biological interpretation of the results. The test statistics we are developing are permutation-based, to account for misspecification of the generative model (regression-based approximations of hematopoiesis). We are currently analyzing all published integration site datasets from gene therapy clinical trials.
-
-```{=typst}
-#pagebreak(weak: true)
-```
-
 ### A084 · SigRepo: A Platform For Storing, Sharing, and Comparing Signatures
 
 **Presenter:** Cameron Vicnaire — Monti Lab, Boston University
@@ -2360,20 +2272,6 @@ SigRepo standardizes signatures using OmicSignature, an R6 object specification 
 Beyond storage, SigRepo treats stored signatures as analyzable objects. Any set of signatures can be compared by feature overlap (Jaccard index with Fisher exact tests), by rank-based Kolmogorov-Smirnov statistics, or by gene set enrichment analysis, with results rendered as interactive similarity heatmaps and, for GSEA, per-pair leading-edge plots. Enrichment is provided through hypeR for gene-based signatures and through hypeR-GEM for metabolomics signatures, so every assay type represented in the repository is supported. Because analyses are exposed as discrete endpoints over a common signature representation, external resources and analysis engines can be added without schema changes, letting the platform grow as community resources appear.
 
 Signatures are most valuable when they can move between tools. Because SigRepo exposes its holdings through a documented REST API over a common object specification, it can serve as a bridge to established signature-based software; a Model Context Protocol (MCP) server extends the same access to language-model agents, which can search the repository and run comparisons and enrichment against stored data. We are working toward interoperation with tools such as signatureSearch, so that signatures held in SigRepo can be carried into connectivity-mapping and drug-repurposing analyses and their results returned to the repository. The same interfaces allow new external gene-set and signature resources to be attached as they emerge, positioning SigRepo as a hub through which signatures move between analyses rather than a static archive.
-
-```{=typst}
-#pagebreak(weak: true)
-```
-
-### A086 · MUTARA: MUTagenesis Analysis of Relative binding Affinity
-
-**Presenter:** Shogan Sugumar Swamy — Boston Children's Hospital
-
-**Authors:** Shogan Sugumar Swamy, Danilo Pellin
-
-**Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
-
-A systemic exploration of the protein-protein and protein-ligand interactions involves a series of tedious and customized code until any actionable insights are generated, some of which are quality control, normalization, statistical inference and visualization, often requiring extreme caution at each of those steps from naming conventions to formatting them. Especially in studies involving Deep Mutational Screening (DMS), which involves studying large numbers of Next Gen Sequencing (NGS) samples simultaneously, it becomes even more complex. We introduce an end-to-end computational platform MUTARA that integrates the complete DMS analysis and streamlines the design-test-iterate cycles. The platform provides: (1) interactive data exploration and replicate-level QC; (2) preprocessing and batch normalization; (3) per-substitution statistical analysis (GLM-based enrichment estimation with handling of sparse counts); (4) comparative testing across experimental conditions; and (5) interactive visualization of mutation landscapes and functional consequences. The platform synergizes JavaScript's interactivity, Python's large-scale data handling, and R's statistical inference. The platform has a Dual-mode architecture, an interactive web interface for exploratory analysis and filtering, and a command-line interface for high-throughput batch processing and pipeline integration, supporting seamless downstream structural or functional validation. Its applications range from directed protein evolution, particularly for antibody epitope mapping, non-genotoxic conditioning strategies, and base editor engineering. The modular architecture supports custom statistical models and integration with structural prediction tools (Boltz-2, AlphaFold). MUTARA addresses a critical computational bottleneck in functional genomics and protein engineering by providing an accessible, reproducible pipeline for DMS data analysis. Open deployment and validation across multiple protein systems will facilitate broader adoption.
 
 ```{=typst}
 #pagebreak(weak: true)
@@ -2402,20 +2300,6 @@ Metastasis drives mortality and morbidity in cancer. While some patients develop
 **Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
 
 Zinc finger proteins (ZFPs) comprise a large, diverse class of proteins containing conserved zinc-binding domains that mediate recognition of DNA, RNA, and proteins. ZFPs play essential roles in regulation of gene expression and cellular homeostasis, and zinc finger domains have been widely exploited for genome editing, making them relevant for therapeutic development and protein engineering. However, despite their biological importance, we lack a fundamental understanding of the sequence features underlying zinc finger specificity and functional diversification, limiting our ability to predict zinc finger function and utilize these domains effectively. To investigate how zinc fingers are reused across proteins, we analyzed a nonredundant dataset of 1,400 ZFPs from the Protein Data Bank (PDB). We developed a computational pipeline to identify themes, or highly recurring sequence fragments, and focused on themes overlapping at least one zinc finger. We then examined how these themes are reused across proteins and how their reuse relates to function. Our results reveal patterns of zinc finger theme reuse across diverse proteins, providing insight into zinc finger evolution and the conservation of noncanonical features. For example, zinc-finger antiviral proteins and pre-mRNA splicing proteins show no obvious overall homology yet use the same theme to form a CCCH zinc finger. This observation is consistent with a modular, “mix-and-match” mode of zinc finger evolution. Overall, our results show that tracing theme reuse across protein families can uncover relationships between zinc finger sequence, structure, and function, potentially advancing our understanding of their evolution and guiding protein design efforts and therapeutic development.
-
-```{=typst}
-#pagebreak(weak: true)
-```
-
-### A094 · Bridging Genome-Scale Metabolism and Adaptive Ecology: A Hybrid Consumer-Resource Framework for Dynamic Microbial Growth
-
-**Presenter:** Edwin Moses Appiah — University of Connecticut Health Center
-
-**Authors:** Edwin M. Appiah
-
-**Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
-
-Microorganisms are shaped by both metabolic capabilities and ecological dynamics that emerge as organisms compete for, transform, and exchange resources. Most computational models capture only one scale, which is often inadequate to capture the full mechanisms of community dynamics. For instance, Consumer-Resource Models (CRMs) [1,2] describe ecological dynamics but lack biochemical resolution, whereas Genome-Scale Metabolic Models (GSMMs) [3-5] provide metabolic detail but often rely on static Flux Balance Analysis (FBA), limiting their use in fluctuating environments. Here, we introduce a hybrid genome-scale consumer-resource framework, CRM-FBA, that combines genome-scale metabolism with dynamic adaptive ecology. We first augment the microbial Consumer-Resource Model (MiCRM) from Marsland et al. [2] with adaptive uptake strategies from Pacciani-Mori et al. [1], to form an adaptive MiCRM. Because adaptive MiCRM lacks stoichiometric and genome-scale metabolic detail, we next coupled it to GSMMs through real-time FBA feedback. CRM-FBA reproduced diauxic shifts and predicted secretion and reconsumption of metabolic byproducts. We further scaled the CRM-FBA framework to microbial communities. In a 12-species synthetic gut consortium, we implemented a CRM-FBA community model in which genome-scale metabolism determined yields and cross-feeding stoichiometry while species-specific uptake kinetics were fit from data. We successfully predicted held-out leave-one-out community composition better than phenomenological CRM and a global-kinetics community GSMM model alone. We then validated this with a 10-species Db-MM consortium with measured community metabolites. We show that our framework successfully enabled us to predict microbial composition and function from this community. Together, CRM-FBA occupies the intersection that neither baseline CRM nor FBA reaches.
 
 ```{=typst}
 #pagebreak(weak: true)
@@ -2479,20 +2363,6 @@ To address these gaps, we developed a customized AlphaGenome model trained on si
 #pagebreak(weak: true)
 ```
 
-### A106 · Enhancing causal network-based perturbation inference through literature-derived knowledge
-
-**Presenter:** Zheng Liu — Northeastern University
-
-**Authors:** Zheng Liu, Benjamin M. Gyori
-
-**Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
-
-Inferring active regulators from perturbation readouts is a central problem in systems biology. Network propagation methods such as MOON (Meta-fOOtprint aNalysis) propagate activity signals through a directed prior knowledge network (PKN) to score candidate upstream regulators, but performance is constrained by network coverage and quality. Most PKNs aggregate manually curated databases, which are high confidence but incomplete. We benchmarked PKN expansion using INDRA (Integrated Network and Dynamical Reasoning Assembler), an automated system that extracts mechanistically resolved molecular interaction statements from biomedical literature with associated confidence scores. Candidate edges were ranked by confidence and evaluated at thresholds spanning the top 0.1% to 10% of INDRA's 11 million edges. We evaluated perturbation inference across four independent benchmarks: CytoSig and CellSig (cytokine and growth factor stimulation), the NicheNet ligand treatment validation compendium (51 ligands, 101 experiments), and CREED (single drug perturbation profiles with drug target ground truth). Integrating the top 0.3–0.4% highest confidence INDRA edges consistently improved performance across all datasets. AUCs increased from 0.554 to 0.707 (+27.7%) on CytoSig, 0.609 to 0.715 (+17.4%) on CellSig, 0.573 to 0.737 (+28.6%) on NicheNet, and 0.502 to 0.55 (+9.5%) on CREED. Performance declined monotonically beyond 0.5%, as lower confidence edges introduced contradictory signals. A belief score ablation confirmed that randomly selected edges of equivalent size yielded no consistent gain, demonstrating that confidence ranked selection drives the improvement. These results show that selective integration of high confidence literature derived knowledge enhances network based perturbation inference across diverse contexts, and that edge confidence matters more than coverage.
-
-```{=typst}
-#pagebreak(weak: true)
-```
-
 ### A107 · REPEL - Random Embedding Perturbation for Enhanced Learning of Protein Function
 
 **Presenter:** Di Zhou — Tufts University
@@ -2507,22 +2377,6 @@ Protein function prediction from multiplex protein-protein association networks 
 #pagebreak(weak: true)
 ```
 
-### A108 · Fine-tuning Boltz-1 for protein-protein interaction prediction with positive and negative data
-
-**Presenter:** Ruqi Liao — Broad Institute · MIT
-
-**Authors:** Ruqi Liao, Hilary Finucane
-
-**Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
-
-Predicting interactions between proteins is crucial to understanding the causes of disease and developing targeted therapeutic interventions. While highly accurate models such as AlphaFold exist for protein structure prediction, current structure-based approaches to protein interaction prediction rely on post-hoc analyses of these structural models or on small-scale models designed for proteome-wide predictions that lack pre-training advantages. To fill this gap, we fine-tuned the trunk of Boltz-1, an open-source reproduction of AF3, with a training data set of interacting and non-interacting domain pairs constructed to prevent the model from exploiting class-specific domain identities or paired MSA depth as shortcuts for interaction prediction.
-
-We benchmarked our method B1-PPI with Boltz-1, Boltz-2, RF2-PPI, and three protein language model-based predictors. On a standard data set of human PPIs, all methods performed similarly, but restricting to subsets of proteins revealed heterogeneity: for example, RF2-PPI underperformed on longer proteins and PLM-interact underperformed on cell surface proteins. To compare methods on the more challenging task of distinguishing positive and negative pairs with high sequence similarity, we constructed a new benchmark and found that B1-PPI and RF2-PPI outperformed other methods. Consistent with this result, B1-PPI was a top-performing method for distinguishing among interacting and non-interacting paralogs in datasets of histidine kinase-response regulator interactions and MALG/MALK interactions. In addition, we found B1-PPI to be the top predictor of success in binder design, although differences among methods were non-significant. Our results demonstrate the power of modern structure-based modeling for protein interaction prediction.
-
-```{=typst}
-#pagebreak(weak: true)
-```
-
 ### A109 · Investigating the Transcriptional Program of ACKR1+ Venous Endothelial Cells in Pulmonary Fibrosis Using Single-Cell RNA-sequencing
 
 **Presenter:** Uyen Chu — Boston University Chobanian and Avedisian School of Medicine
@@ -2532,22 +2386,6 @@ We benchmarked our method B1-PPI with Boltz-1, Boltz-2, RF2-PPI, and three prote
 **Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
 
 Idiopathic pulmonary fibrosis (IPF) is a progressive, age-associated lung disease characterized by irreversible scarring and loss of lung function. Vascular remodeling is a hallmark of IPF, driven in part by endothelial dysfunction and altered immune-vascular interactions. Venous endothelial cells (VECs), marked by the expression of Atypical Chemokine Receptor 1 (ACKR1), have emerged as an important endothelial population associated with disease progression. Analysis of a publicly available single-cell RNA-sequencing (scRNA-seq) data demonstrates that ACKR1+ VECs expansion in IPF lungs is associated with increasing fibrosis. Gene ontology analysis exhibits enrichment of genes encoding factors involved in leukocyte recruitment, hypoxia (e.g. HIF1a), inflammation (e.g. CXCL1), and cytoskeletal reorganization (e.g., TAGLN2). These findings suggest that ACKR1+ VECs acquire an activated phenotype that promotes processes contributing to lung fibrosis. Receptor-ligand analysis via CellChat identified numerous signaling interactions among VECs, myeloid immune cells and mesenchymal cells, driven via inflammatory chemokines, including those mediated by CCL18, CXCL8, and CCL2. Similar findings were made from the analysis of scRNA-seq data of fibrotic mouse lungs, which identified an ACKR1+ VEC population with a comparable inflammatory and immune-recruiting transcriptional signature. This conserved transcriptional program identifies ACKR1+VECs as a disease-associated endothelial state and supports the relevance of endothelial signals to fibrotic progression. Thus, ACKR1+ VECs represent an important population for investigating the development of the profibrotic niche in IPF and may offer a promising target for therapeutic intervention.
-
-```{=typst}
-#pagebreak(weak: true)
-```
-
-### A113 · A Novel ILP Framework to Identify Compensatory Pathways in Genetic Interaction Networks with GIDEON
-
-**Presenter:** Jocelyn Garcia — Tufts University
-
-**Authors:** Jocelyn Garcia, Kevin Yu, Lenore Cowen, Catherine Freudenreich
-
-**Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
-
-In Baker's yeast, there exists a comprehensive collection of pairwise epistasis experiments that, for nearly every pair of non-essential genes, measure the growth of the double-knockout strain as compared to its component single knockouts. This data can be represented as a weighted signed graph termed the genetic interaction network, and we introduce a new ILP-based method named GIDEON to search for a diverse collection of Between-Pathway Models (BPMs) in this network, where BPMs are a graph motif signature that indicates potential compensatory pathways in the genetic interaction network.
-
-With both an improved distribution-informed edge weighting scheme and an improved ILP method, GIDEON produces BPM collections that are substantially larger and with better functional enrichment compared to previous methods. We find some interesting new BPM gene sets including one with potential insights into antifungal drug targets through ties between ergosterol and aromatic amino acid biosynthesis.
 
 ```{=typst}
 #pagebreak(weak: true)
@@ -2609,26 +2447,6 @@ RNA-binding proteins (RBPs) are a large class of proteins that bind RNA and play
 #pagebreak(weak: true)
 ```
 
-### A121 · An Agentic Workflow for Adaptive and Auditable Single-Cell RNA-seq Analysis
-
-**Presenter:** Luc Francis — Independent Researcher
-
-**Authors:** Luc Francis
-
-**Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
-
-Single-cell RNA sequencing (scRNA-seq) pipelines typically rely on fixed scripts and predefined parameters, while real datasets often require analyst judgment. This work presents an open-source agentic workflow in which a large language model (Claude, via the Anthropic API) drives scRNA-seq analysis through predefined tool functions. Tools return structured summaries to the model, which selects subsequent analysis steps and parameters, while code-level guardrails enforce workflow constraints and all decisions are recorded in a JSONL audit trail.
-
-On PBMC datasets, the model made data-dependent analysis choices rather than following a fixed script. For a single-batch PBMC3k dataset, it selected PCA for dimensionality reduction. For a two-batch dataset, it detected batch structure and selected scVI for batch correction, and relaxed the mitochondrial QC threshold after determining that the standard cutoff would remove most cells. Doublet thresholds were selected from the observed score distribution. The model also identified a small cluster dominated by mitochondrial rather than canonical lineage markers, flagging it as likely stressed or degraded despite CellTypist annotating it as T cells.
-
-The workflow produced biologically plausible cell-type annotations supported by canonical markers. This demonstrates a lightweight framework for adaptive first-pass scRNA-seq analysis in which analyst-like decisions are constrained, reproducible, and auditable.
-
-Code and decision logs are available under the MIT license at github.com/lucrafrancis/agentic-scrna-workflow.
-
-```{=typst}
-#pagebreak(weak: true)
-```
-
 ### A122 · Use of Computed Electrostatic and Geometric Information to Investigate Protein Functions and Functional Sites
 
 **Presenter:** Constance Jeffery — Northeastern University and The University of Illinois Chicago
@@ -2671,24 +2489,6 @@ Pericentromeric satellite HSATII, a repetitive element (RE), is silenced in norm
 #pagebreak(weak: true)
 ```
 
-### A131 · Understanding and Correcting Representation-Specific Failure Modes in SE(3) Flow-Matching Protein Backbone Generation
-
-**Presenter:** Michael Widener — Northeastern University / Boston College
-
-**Authors:** Michael 'Xander' Widener, Shantanu Jain, Predrag Radivojac
-
-**Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
-
-Generative models for protein backbones typically commit to one geometric representation: rigid SE(3) frames per residue via globally consistent poses or internal torsion angles reconstructed via NeRF. The former provides globally well-posed structure but lacks explicit chemical bond constraints, while the latter yields chemically valid bonds by construction but suffers from recursive error propagation.
-
-We quantify this tradeoff directly on a sub-quadratic, O(L·K)-attention SE(3) Riemannian flow-matching backbone generator. FATCAT’s hinge-tolerant structural alignment shows that torsion-generated chains need on average 1.91 rigid-body 'twists' to align well against 0.61 for frame-generated chains. A controlled noise-injection sweep shows dihedral error compounds superlinearly along the chain (growth exponent ≈1.0 – 1.3) while bond-length error does not (≈0.65 – 0.7) – a mechanistic account of why each representation fails the way it does.
-
-We then tested five mechanisms for combining strengths of the two representations. Two of five toy-scale positives (a model-capacity increase; an anchor-constrained hinge-inpainting scheme) vanished completely at larger scales. This underscores that the inherent ease with which torsion-based models encode secondary structure at small scales often fails to translate to larger, data-rich architectures. The strongest surviving mechanism, a differentiable Lie-Trotter operator-splitting scheme that alternates one frame-space and one torsion-space integration step and is fine-tuned end-to-end via short bridge-supervised windows, is the first to outperform both single-representation baselines outright (TM-score 0.41 vs. 0.34/0.34) with no exposed tradeoff. Production-scale verification of this result is in progress.
-
-```{=typst}
-#pagebreak(weak: true)
-```
-
 ### A132 · A Spatial Multi-Omics Framework Linking Tumor Cell Composition, Niche Architecture, and Regulatory Drivers in the Tumor Microenvironment
 
 **Presenter:** Rima Zinjuwadia — White Collar Technologies Inc.
@@ -2703,26 +2503,6 @@ The tumor microenvironment (TME) is organized into spatially distinct niches who
 #pagebreak(weak: true)
 ```
 
-### A133 · Identifying pathogenic tandem repeat expansions at novel loci in short-read and long-read rare disease datasets
-
-**Presenter:** Ben Weisburd — Broad Institute
-
-**Authors:** Ben Weisburd, Matt Danzi, Isaac R. L. Xu, Stephan Züchner, Anne O'Donnell Luria, Heidi L. Rehm
-
-**Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
-
-Background: Short-read and long-read tandem repeat (TR) genotyping tools are now routinely used to detect pathogenic expansions at many of the ~70 known disease-associated TR loci. However, there is not yet consensus on how to effectively use these tools to detect pathogenic expansions at novel TR loci genome-wide.
-
-Material and Methods: We present a TR analysis pipeline that we have developed and applied to discover two novel candidate TR loci. This pipeline starts with the latest version of the genome-wide TR catalog described in [Weisburd, Dolzhenko et al. 2025, PMID:41279208] and runs TRGT as well as TRGT-LPS on this catalog for long-read datasets, while using a modified version of ExpansionHunter along with ExpansionHunter Denovo for short-read datasets. It then annotates the TR genotypes using population data and other publicly-available information provided by our trexplorer.broadinstitute.org portal. Finally, it loads the data into a novel analysis tool with a graphical user interface that enables users to filter and prioritize the annotated TR calls.
-
-Results: The two candidates identified to date include a CAG repeat in the coding region of the EP400 gene identified in two unrelated families with cerebellar ataxia. The second candidate is a TGC repeat in the intron of the CNTN4 gene where expansions may explain a development delay and autism phenotype in a single family.
-
-Conclusion: We anticipate that these publicly available tools and pipeline will enable discovery of additional novel TR candidate loci in cohorts ranging in size from a single genome to over 100,000 samples.
-
-```{=typst}
-#pagebreak(weak: true)
-```
-
 ### A135 · Beyond Sex Chromosomes: Sex Differences in Transcriptional Signatures of Aged Brain and Alzheimer’s Disease
 
 **Presenter:** Danielle Firer — MIT
@@ -2732,38 +2512,6 @@ Conclusion: We anticipate that these publicly available tools and pipeline will 
 **Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
 
 Most documented sex-biased genes reside on sex chromosomes, yet whether sex differences in transcriptional signatures emerge in autosomal gene expression remains a critical gap. Understanding these autosomal sex differences is particularly important in the context of Alzheimer’s Disease (AD), which affects about twice as many females as males. However, it remains unclear whether this sex disparity reflects biological differences in disease pathogenesis. To further our understanding, it is important to identify underlying biological differences between male and female brains during aging. We leveraged ROSMAP single-nucleus RNA-sequencing (snRNA-seq) data from the prefrontal cortex of 427 donors (age >65) to characterize sex differences in transcriptional signatures of the aged brain. We trained binary classification models on 2.3 million cells to test whether donor sex can be predicted from autosomal gene expression in donors diagnosed with no cognitive impairment (NCI) and Alzheimer’s Disease (AD). Models for each major cell type were trained on the cohort stratified by diagnosis. This design allows us to (1) establish baseline sex differences in healthy aging, and (2) distinguish aging-related from disease-related transcriptional changes. To benchmark the statistical power of autosomal versus sex-chromosomal features, we performed a sample complexity analysis characterizing classifier performance as a function of cell count. By establishing these benchmarks, we understand how technical limitations like zero-inflation and sparse sampling affect biological interpretation in single-cell studies. Using statistical methods, we determined which features are the most robust predictors of sex differences. We hypothesize that these sex-predictive genes will reveal mechanisms driving differential vulnerability to AD.
-
-```{=typst}
-#pagebreak(weak: true)
-```
-
-### A139 · Mapping Cis-Regulatory Programs of Pancreatic β Cells in Health and Diabetes
-
-**Presenter:** Maxwell Cmpbell — UMass Chan
-
-**Authors:** Maxwell Campbell, Zhiping Weng
-
-**Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
-
-Pancreatic β-cell dysfunction is central to both type 1 (T1D) and type 2 diabetes (T2D), yet the regulatory programs underlying β-cell identity and failure remain incompletely characterized. The scarcity of primary human pancreatic tissue has further limited our ability to define β-cell and other endocrine cell states. Despite numerous efforts to profile chromatin accessibility in human islets, these datasets remain fragmented across studies and biological contexts, limiting a systematic view of the pancreatic regulatory landscape.
-
-To address this gap, we systematically collected and uniformly processed over 20 publicly available bulk and single-cell chromatin accessibility datasets comprising more than 250 human donors. Using a standardized framework based on ENCODE protocols, we constructed a unified map of candidate cis-regulatory elements (cCREs) across pancreatic endocrine (β, α, and δ) and exocrine cell types. This resource spans healthy, prediabetic, T1D, and T2D states, as well as ex vivo perturbation models that mimic disease-relevant conditions, including inflammation and endoplasmic reticulum stress.
-
-We expanded the pancreatic regulatory landscape at cell-type resolution, identifying thousands of cCREs selectively accessible in β cells across diabetic and stress conditions. Importantly, we recovered additional cCREs absent from the existing ENCODE registry, many selectively active in endocrine and disease-associated states, suggesting that these rare contexts remain underrepresented in existing references. Applying sequence-based deep learning models of chromatin accessibility, we further nominated regulatory sequence features and candidate transcription factors that distinguish β cells in disease-relevant states. Together, this resource provides a more complete picture of β-cell regulation in the context of diabetes.
-
-```{=typst}
-#pagebreak(weak: true)
-```
-
-### A140 · POLARIS: concordance-aware joint analysis of cells and features in single-cell multiomic data
-
-**Presenter:** Ziqi Fu — Harvard University, Department of Biostatistics
-
-**Authors:** Ziqi Fu, Xihong Lin, Rong Ma
-
-**Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
-
-Single-cell multiomic assays jointly profile gene expression and chromatin accessibility in the same cell, enabling direct study of cross-layer coordination. Yet how strongly these layers agree varies across cells, and most integration methods prioritize shared structure, integrating this partial decoupling away even though it may carry biological signal. Here we present POLARIS, a concordance-aware spectral framework that quantifies cross-modality agreement and carries it into downstream analysis. From one paired low-rank cell representation, POLARIS computes per-cell concordance, a joint cell embedding, and an induced cross-modal feature embedding. In the cell embedding, separations strong in either modality are retained rather than averaged away, sharpening cell-type and state resolution. The feature embedding scores regulatory element-gene (RE-G) candidates without repeated pairwise model fitting, each with a closed-form jackknife standard error. Across immune, neural and developmental datasets, concordance is reproducible and cell-resolved, and cells with low concordance are enriched for modality-specific structure. The RE-G map includes distal links supported by Hi-C contacts and fine-mapped eQTL. Because it is linear and low-rank, POLARIS is computationally efficient, and extends directly to other paired assays such as CITE-seq, linking surface proteins to genes. POLARIS is available as open-source software for unified cell- and feature-level analysis of paired data.
 
 ```{=typst}
 #pagebreak(weak: true)
@@ -2785,34 +2533,6 @@ We prove a deterministic consistency theorem. If increasingly dense samples appr
 #pagebreak(weak: true)
 ```
 
-### A146 · Comparative Analysis of ZRS–SHH Genomic Architecture Across Vertebrates
-
-**Presenter:** Ziyan Rao — Department of Genomics and Computational Biology, UMass Chan Medical School
-
-**Authors:** 
-
-**Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
-
-Distal enhancers can regulate developmental genes over large genomic distances, but the extent to which enhancer–gene genomic architecture is conserved during vertebrate evolution remains unclear. The Zone of Polarizing Activity Regulatory Sequence (ZRS) is a well-characterized limb enhancer that regulates Sonic Hedgehog (SHH) expression, providing a model for investigating the evolution of long-range gene regulation. Here, we developed a comparative-genomics framework to map the human ZRS enhancer and the SHH promoter across Vertebrate Genomes Project (VGP) assemblies and quantify their genomic distance across species. We evaluated 577 VGP species and classified cross-species mappings according to whether homologous regions mapped to a single chromosome, multiple alignment blocks, or multiple chromosomes/scaffolds. We retained species in which both ZRS and the SHH promoter mapped to the same chromosome for downstream distance analysis. Among these species, we observed substantial variation in ZRS–SHH genomic distance across vertebrate lineages, with distinct distance distributions among mammals, birds, reptiles, and amphibians. We further examine the relationship of the ZRS–SHH distance and evolutionary divergence from humans and assess the distance relative to chromosome-scale genomic organization. This analysis provides a comparative framework for distinguishing conserved from divergent aspects of long-range enhancer–gene genomic architecture. By integrating cross-species sequence mapping with evolutionary and genomic-context information, we aim to determine whether the long-range genomic relationship between ZRS and SHH is evolutionarily constrained and to identify patterns of regulatory architecture associated with the conservation of long-range gene regulation.
-
-```{=typst}
-#pagebreak(weak: true)
-```
-
-### A147 · Interactional experimental design for the efficient demonstration of the Plasmodium inhibitory property of an endosymbiont Eα alone or in association in Anopheles mosquitoes within a context of endosymbiotic diversity for the success of biological control
-
-**Presenter:** Richard Bationo — Institute of Health Science Research
-
-**Authors:** 
-
-**Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
-
-The fight against malaria has led to the development of several control strategies, among which biological control currently holds great promise. However, the remarkable performances of certain endosymbionts, particularly their Plasmodium-inhibitory properties and their ability to restore mosquito susceptibility to insecticides remain subject to debate due to the lack of a suitable experimental design specifically tailored to this type of study. Such investigations, given their high level of complexity, require approaches consistent with computational biology, which is often not considered in laboratory evaluations or in natural transmission studies. Indeed, by integrating factors such as the diversity of the mosquito microbiota, its various immune expressions, and its insecticide resistance genes, it becomes necessary to adopt a scientific methodology that embraces the interactional concept proposed by this new experimental approach, modeled on the Direct Membrane Feeding Assay (DMFA) system. The scientific relevance of the proposed interactional design, in relation to the predefined set of hypotheses, would enable the elucidation of several observed mechanisms and the identification of the specific role of each endosymbiont (whether in association or not) previously characterized as candidate symbionts. Another key outcome would be the establishment of an endosymbiotic database, supporting more informed choices by different scientific teams according to their specific objectives, thereby contributing to the overall success of biological malaria control programs. Keywords: Malaria, computational biology, inhibitory property, endosymbiont, genes, resistance, interaction, biological control, causality, correlation
-
-```{=typst}
-#pagebreak(weak: true)
-```
-
 ### A149 · SwissIsoform: A Biological and Functional Annotation Database for Translation Start Site Protein Isoforms
 
 **Presenter:** Anson Ting — Whitehead Institute, UCLA
@@ -2824,44 +2544,6 @@ The fight against malaria has led to the development of several control strategi
 Ribosome profiling, a technology that sequences ribosome-bound mRNA fragments, has shown that one-third of human genes contain translation start site protein isoforms. Previous research has identified divergent localization patterns between canonical and isoform proteins and rare disease variants in isoform-specific regions previously thought to be untranslated. While follow-up experiments on specific translation isoforms can yield mechanistic insights into gene function and connections to rare genetic disease, without systematic characterization of these thousands of candidate isoforms, prioritizing ones for further study is difficult.
 
 To improve the accessibility of protein isoform research, we present SwissIsoform, an online annotation database of 39,721 protein isoforms discovered in ribosome profiling across six cell lines. We derived orthogonal evidence through precomputed in silico experiments grouped into six categories (Predicted Structure, Mutational Landscape, Evolutionary Conservation, Localization, Structural Characteristics, and Detection), each comparing an alternative isoform to its annotated protein. For ease of interpretation, we implemented a two-pass LLM framework: the initial pass evaluates metrics within each category for evidence of divergences from the canonical protein and a subsequent pass reasons over the canonical protein’s known context in tandem with each category’s results to synthesize a holistic hypothesis for how the isoform functionally deviates. To assist clinicians in understanding if variants of interest intersect differentially translated regions, we included a variant querying option to identify affected isoforms and the variant’s type and effect. SwissIsoform is the inaugural catalogue of translation start site isoforms, which will further enable research on how isoforms influence human health and disease.
-
-```{=typst}
-#pagebreak(weak: true)
-```
-
-### A153 · Tryptophan Transporters Modulated by Diet Predict Cognitive and Physical Phenotypes: Implications for Precision Nutrition
-
-**Presenter:** Hannah Lords — Bioinformatics Program, Boston University, Boston, MA 02215, USA
-
-**Authors:** Stacy Andersen, Michael Lustgarten, Andres Ardisson Korat, Thomas Perls
-
-**Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
-
-BACKGROUND: Plasma tryptophan is associated with cognitive test scores (semantic fluency, Digit Symbol Substitution Test, Digit Span Forward) and physical function (gait speed, grip strength) in the Long Life Family Study (LLFS). Cognitive and physical performance are only partly genetically inherited, suggesting that gene-dietary interactions influence these outcomes. While enzymes in tryptophan metabolism have been extensively studied, tryptophan transporters, critical regulators of substrate availability, remain understudied.
-
-METHODS: We analyzed data from 4682 LLFS participants with cognitive and physical function, genetic, transcriptomic, metabolomic, and food frequency questionnaire data. We identified tryptophan metabolism pathway components (enzymes from KEGG; transporters validated against peer-reviewed literature) and constructed hierarchical predictive models reflecting known relationships between pathway components. Due to limited samples with complete multi-omics data, we applied forward-backward stepwise selection minimizing Bayesian Information Criteria, requiring final model variables to meet Benjamini Hochberg adjusted significance. Non-significant predictor terms were retained if their interaction term was significant. Models predicted three cognitive test scores and two physical function phenotypes adjusted for age, sex, and education.
-
-RESULTS: SNP-diet and transcript-diet interaction terms were consistently selected as predictors of tryptophan metabolism components, including interactions between SLC3A2 SNP rs2507820 and several measures of amino acid distribution, and conditional amino acid distribution and both SLC3A2 and SLC7A5 transcript expression. These interactions emerged as predictive features in complex multi-omics models.
-
-CONCLUSION: These findings highlight the importance of considering amino acid transporter regulation and dietary composition when modeling the effects of metabolism on phenotypes, and support further investigation into transporter-diet interactions in precision nutrition.
-
-```{=typst}
-#pagebreak(weak: true)
-```
-
-### A154 · A Bayesian approach to dose-response modeling in sparse data regimes
-
-**Presenter:** Sameer Rawat — Northeastern University
-
-**Authors:** Sameer Rawat, Clemens Hug, Caitlin Mills, Benjamin M. Gyori
-
-**Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
-
-Dose-response curves are usually generated from assays to understand key biological mechanistic relationships. Typically, measurements and replicates are collected at a dense series of doses to derive biological parameters of interest. However, when designing large-scale experiments over multi-protein, multi-ligand assay panels, it becomes prohibitively expensive to gather data at many different doses. As a motivating example, we examine the readouts from a large-scale experiment testing all combinations of 192 chemically diverse kinase inhibitors against 468 kinases, which measures response only at a limited set of doses (between 2 and 4 for each inhibitor-kinase pair).
-
-The sparsity and spread of concentrations pose strong challenges for standard dose-response fitting algorithms which assume dense coverage of the relevant dose range. To overcome this, we propose a Bayesian framework over a 2-parameter Hill-curve model, representing broad and physically realistic parameter priors and heteroscedastic noise coupled to a chosen numerical sampler or maximum a posteriori probability estimator to reconstruct model parameters.
-
-We compared the proposed framework against 13 existing dose-response log-logistic and sigmoidal style models (from R packages dr4pl, drc, drda, and nplr) spanning 2 to 5 parameters. Results show the Bayesian model remains robust under degenerate and noisy measurements where other methods often fail to converge in these settings. Further, when validating Kd’s inferred from dose-response curves against experimental assay data from the ChEMBL database, the Bayesian model outperforms existing approaches both in number of inhibitor-kinase combinations for which it predicts a Kd and mean squared error of predicted Kd’s against the experimental reference.
 
 ```{=typst}
 #pagebreak(weak: true)
@@ -2890,40 +2572,6 @@ Rationale: Elucidating pneumonia sub-phenotypes can improve host-based therapeut
 **Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
 
 The regulatory genome records both the conservation of essential biology and the innovation required to meet new environmental challenges. Here, we integrate an atlas of human immune-active cis-regulatory elements (i-cCREs), brain-active elements, and a 447-species mammalian genome alignment to trace how regulatory evolution differs across tissues, related myeloid lineages, and immune states. Brain-active elements were more deeply conserved, whereas immune-specific elements showed greater lineage specificity and turnover. Elements shared by brain and immune cells were conserved, consistent with foundational functions spanning both systems. Microglia, the resident immune cells of the central nervous system, provided a bridge between these evolutionary trajectories. Although microglia and blood-derived macrophages share a myeloid origin, their environments have shaped separable regulatory programs. Microglial elements were typically more conserved across mammals than macrophage elements, while macrophage regulation showed stronger signatures of primate innovation. More broadly, immune-specific elements with actively evolving or clade-restricted histories were consistently more likely than brain-specific elements to show simian-associated sequence patterns across promoters, enhancers, and other regulatory classes. This widespread shift suggests that much of the immune regulatory landscape was remodeled after simians diverged from earlier primates, rather than these elements arising entirely de novo. Across most regulatory classes, elements activated by immune stimulation were modestly more conserved than elements that decreased or remained unchanged, linking dynamic immune responses to enduring regulatory sequences. These patterns connect evolutionary history to the regulatory flexibility required for immune adaptation. Together, these findings reveal immune regulation as a combination of ancient foundations and lineage-specific innovations.
-
-```{=typst}
-#pagebreak(weak: true)
-```
-
-### A165 · MiLaSol: Modeling Protein Solubility by Mixing Up Multiple Protein Language Models
-
-**Presenter:** Weiwei Lou — Tufts University
-
-**Authors:** 
-
-**Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
-
-Motivation: Protein solubility is a critical property that significantly impacts therapeutic efficacy and protein reengineering applications. Recent advances in machine learning and deep learning techniques provide unprecedented opportunities to de- velop predictive models for solubility, enabling more efficient protein design and optimization. This work is motivated by the potential of leveraging deep learning to address the solubility prediction challenge and to accelerate protein engineering workflows. Results: Leveraging and combining multiple protein language model representations, our MiLaSol model attains 81% ac- curacy, outperforming prior methods, with the highest Matthews Correlation Coefficient (MCC) score of 0.63 demonstrating balanced performance across both soluble and insoluble proteins. Through simulated annealing optimization coupled with the Raygun model, we also present a computational method to reengineer insoluble protein variants into soluble forms, with predictions confirmed by multiple independent solubility prediction methods. Our results demonstrate the effectiveness of combining machine learning-based solubility prediction with generative optimization for protein engineering.
-
-```{=typst}
-#pagebreak(weak: true)
-```
-
-### A171 · Bridging Time-to-Event and Generative Deep Learning for Longitudinal Cardiovascular Digital Twins
-
-**Presenter:** Siying (Avon) Yang — Department of Epidemiology & Biostatistics , Harvard T.H. Chan School of Public Health
-
-**Authors:** Siying (Avon) Yang
-
-**Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
-
-Longitudinal digital twins should both predict when disease occurs and simulate how health evolves, yet these objectives are usually studied separately. We develop a deep learning framework for cardiovascular digital twins using the Health Professionals Follow-up Study (HPFS), with repeated questionnaires from 1986 onward.
-
-We represent each questionnaire wave as a structured health state containing demographics, anthropometrics, smoking, physical activity, diet, and blood-pressure measures. Among 51,387 participants, we constructed 547,699 prediction origins and supported cohorts of 531,277, 506,863, and 434,822 origins for 2-, 5-, and 10-year cardiovascular disease (CVD) prediction. Participant-level splitting, training-only preprocessing, time-support restrictions, and explicit competing-risk labels prevent temporal and cross-participant leakage.
-
-On this common benchmark, we compare three Transformer-based strategies: (1) a MOTOR-style time-to-event model that learns task-conditioned survival representations across multiple endpoints; (2) a Delphi-style autoregressive model that predicts subsequent health states and event timing, enabling stochastic rollouts of future trajectories; and (3) a joint model optimized for both time-to-event and next-state prediction. The joint objective tests whether simulation-aware representation learning improves risk prediction and whether survival supervision improves the clinical validity of generated futures.
-
-Models will be evaluated at 2-, 5-, and 10-year horizons using time-dependent discrimination, calibration, and Brier scores. For the generative model, CVD risk will be estimated from Monte Carlo trajectory rollouts and compared with direct survival estimates. This framework tests whether deep generative models can produce calibrated epidemiologic risks, rather than merely plausible trajectories, and establishes a foundation for longitudinal population-health digital twins.
 
 ```{=typst}
 #pagebreak(weak: true)
@@ -3003,20 +2651,6 @@ Predicting protein stability is a central task in protein design. Recently, deep
 #pagebreak(weak: true)
 ```
 
-### A188 · Expression of Cardiac Vagal Sensory Neuron Markers in Human Dilated Cardiomyopathy: A Reanalysis of Public scRNA-seq/snRNA-seq Data
-
-**Presenter:** Tetsuo Momiy Nakama — Universidad de Ingeniería y Tecnología
-
-**Authors:** Tetsuo Gabriel Alonso Momiy Nakama, Evely Blas Rodriguez, Fiorella Falcón Paredes
-
-**Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
-
-Vagal sensory neurons (VSNs) innervating the heart play a central role in the heart-brain axis, displaying complex molecular signatures tied to where their nerve endings land. Previous mouse studies pinpointed Piezo2, Drd2, and Agtr1a as key markers for these neural connections. To test whether these candidate genes alter during pathology, a re-analysis of a public human cardiac transcriptomic atlas (scRNA-seq/snRNA-seq) from 27 healthy donors and 18 patients with dilated cardiomyopathy (DCM) was performed. While Drd2 could not be analyzed due to ID matching issues across files, Agtr1a was heavily expressed in pericytes and fibroblasts, dropping significantly in DCM hearts ($p_{adj} < 0.001$). Piezo2 showed low, scattered expression across most cell types, but revealed a focal neuronal signal exclusive to DCM, including a small cell population. These results suggest potential remodeling in the perivascular space linked to vagal-cardiac signaling during heart disease, providing preliminary, hypothesis-generating evidence on the role of cardiac VSN markers in DCM.
-
-```{=typst}
-#pagebreak(weak: true)
-```
-
 ### A189 · Beyond Proximity: Does AlphaGenome Add Signal Over Splice-Site Annotation in ALS?
 
 **Presenter:** Arghamitra Talukder — Columbia Univeristy
@@ -3026,6 +2660,372 @@ Vagal sensory neurons (VSNs) innervating the heart play a central role in the he
 **Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
 
 Genomic foundation models are increasingly positioned as general-purpose systems that could reduce reliance on wet-lab validation and accelerate mechanistic discovery. This positioning assumes such models learn principles of regulation rather than memorizing training data. We test that assumption by asking whether AlphaGenome, a state-of-the-art sequence-to-function model, supports variant interpretation in amyotrophic lateral sclerosis (ALS) without any disease-specific training or fine-tuning. We evaluate the model on two complementary tasks. First, we build a matched benchmark from NYGC ALS Consortium splicing QTLs in cervical spinal cord, pairing each lead sQTL with matched control variants and testing discrimination within junction. Second, at the UNC13A locus, we ask whether predictions recover the well-characterized ALS risk mechanism in which intronic variants exacerbate TDP-43-dependent cryptic exon inclusion. AlphaGenome achieves high precision at stringent effect thresholds but recovers only a limited fraction of experimentally supported sQTLs, and predicted effect magnitude shows weak correspondence with measured effect size. Much of the apparent discrimination tracks proximity to annotated splice sites. At UNC13A, the model captures part of the local splice-regulatory signal but does not represent the TDP-43-dependent mechanism itself, and predictions vary substantially with sequence-context window size. These results position current genomic foundation models as high-confidence rule-in tools rather than sensitive screens. For discovery the constraint is sharper: much of the model's discrimination tracks splice-site proximity, so it mostly surfaces candidates that annotation alone would already reach.
+
+```{=typst}
+#pagebreak(weak: true)
+```
+
+### A196 · Paired spatial transcriptomics reveals divergent malignant-state and ecosystem remodeling trajectories in recurrent glioblastoma
+
+**Presenter:** Ali Mohammed Pirani — MD Anderson Cancer Center
+
+**Authors:** Ali Mohammed Pirani, Gayatri Kumar kumar, Pravesh Gupta, Benjamin Whitfield, Lisa M. Norberg, Frederick Lang, Vinay Puduvalli, Krishna Bhat, Jason Huse
+
+**Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
+
+Recurrent glioblastoma (GBM) develops within a tissue ecosystem altered by surgery, radiation, temozolomide, injury, hypoxia, and inflammation, yet how malignant-state evolution relates to spatial microenvironmental remodeling remains poorly understood. We profiled a GLASS Consortium cohort using 10x Visium HD spatial transcriptomics, including 27 matched primary/recurrent GBM pairs and one additional primary tumor. At 16-µm resolution, we integrated copy number based malignancy inference, cell-type deconvolution, lineage and functional-state scoring, and non-negative matrix factorization to resolve malignant, non-malignant, and mixed tumor microenvironment compartments. Spatial neighborhood enrichment was then used to quantify patient-level changes in cellular and transcriptional program organization. Rather than converging on a uniform recurrent phenotype, matched tumors followed divergent trajectories along a mesenchymal (MES) versus astrocytic/progenitor (AC/progenitor) remodeling axis. Some recurrences showed coordinated gain of MES programs and loss of AC/progenitor programs, whereas others showed the reciprocal trajectory, with additional tumors remaining intermediate or mixed. These opposing transcriptional trajectories were accompanied by reciprocal spatial reorganization involving malignant-state neighborhoods and myeloid, vascular/stromal, and glial programs. Across patients, the magnitude and direction of malignant-state remodeling tracked the extent and topology of spatial ecosystem remodeling, revealing strong patient-level changes that were obscured by cohort-level primary-versus-recurrent comparisons. Spatial changes prominently involved interactions with activated macrophage/myeloid and extracellular-matrix-associated programs, while changes in program abundance did not simply equate to increased spatial self-clustering. Together, these findings support a model in which recurrent GBM follows multiple patient-specific evolutionary trajectories, with malignant transcriptional adaptation and spatial ecosystem remodeling occurring as coordinated features of recurrence.
+
+```{=typst}
+#pagebreak(weak: true)
+```
+
+### A008 · A fast and memory-efficient framework for similarity networks in biology
+
+**Presenter:** Sean R. Johnson — New England Biolabs
+
+**Authors:** Sean R. Johnson, Zhiyi Sun
+
+**Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
+
+Similarity networks have seen widespread application in biology. A similarity network is a graph where nodes represent biological entities and edges are drawn between nodes with similarity scores above a given threshold. Examples include Blast scores between protein sequences, TM-scores between protein structures, and neighborhood similarity scores between gene loci. Similarity networks are useful for grouping the vastness of biological diversity into clusters (connected components in the graph) that can be individually investigated and compared to each other. Similarity networks can comprise tens or hundreds of thousands of nodes, presenting computational challenges for efficient generation, storage, and visualization. In this work, we suggest storing networks as maximum spanning trees (MSTs) in sparse matrices, with the optional addition of k-nearest neighbor edges (KNN). We develop software for generating similarity matrices for a variety of input file types and distance metrics, and for visualizing and exploring the resulting networks.
+
+```{=typst}
+#pagebreak(weak: true)
+```
+
+### A024 · Genetic Regulation of Circular RNAs Reveals a Distinct Molecular Layer Underlying Psychiatric Risk
+
+**Presenter:** Aarti Jajoo — McLean Hospital
+
+**Authors:** Aarti Jajoo, Mateo Maya-Martinez, Nikolaos P. Daskalakis
+
+**Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
+
+Circular RNAs (circRNAs) remain an underexplored layer of transcriptomic regulation in psychiatric disorders. We quantified circRNA expression from 1,022 [518 neurotypical, 365 schizophrenia (SCZ) and 139 bipolar disorder (BIP)] postmortem cortex samples from PsychENCODE consortium cohorts and integrated these profiles with matched linear RNA and genotype profiles. We identified 23 SCZ-associated and 3 BIP-associated differentially expressed circRNAs (FDR<0.05; FDR-circDEG). We trained genetically regulated circRNA expression (circGReX) models using neurotypicals and applied them to SCZ and BIP GWAS to perform Transcriptomic Wide association analysis (TWAS) which identified 22 and 4 circGReX trait associations (circGTAs), respectively. Pathway enrichment of circDEGs and circGTAs implicated neuronal and synaptic processes for both disorders. In UK Biobank, circGReX-imaging associations were predominantly negatively correlated with SCZ and BIP circGTAs, but positively correlated with Alzheimer's disease circGTAs. circKLHL24 isoforms showed the most prominent imaging associations. Many co-expression modules containing our FDR-circDEGs were enriched for psychiatric and neurodegenerative risk genes, including our identified circGTAs, and these modules were enriched for cognitive and neurodevelopmental traits. To conclude, circRNAs represent a distinct regulatory layer in psychiatric disorders, linking genetic risk to synaptic biology, brain structure and cognition through disease-specific expression, TWAS prioritization, and imaging associations.
+
+```{=typst}
+#pagebreak(weak: true)
+```
+
+### A031 · PATCH: Panel Aware Hierarchical Conformal Cell Typing for Spatial Proteomics under Marker-Panel Shift
+
+**Presenter:** Tianhao Luo — Harvard Medical School
+
+**Authors:** 
+
+**Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
+
+Spatial-proteomics cell phenotyping returns a point label and no statement of how far to trust it. Panels differ by laboratory and platform, so a classifier calibrated on one cohort meets cells whose defining markers were never imaged, and labels them anyway. Batch correction and reweighting cannot repair this: those features are absent, not shifted. We instead make the admissible label space depend on the panel: a type is admissible only when the panel contains the markers that define it. The rule reads the panel alone, needing no labels or calibration data. PATCH is a hierarchical conformal predictor over that space. It drops nodes whose markers are missing, backs each cell off to the finest identifiable ancestor, and abstains when none exists. Every label returned is one the panel supports, for every cell and panel, in domain and out. Before any target label exists, a label-free per-marker Kolmogorov-Smirnov screen ranks how far a new cohort will under-cover; a 500-cell labeled slice then restores that coverage where reweighting cannot. Removing the panel filter alone, a third of returned labels name types the panel cannot distinguish and half of all cells receive one; tuned for coverage, it reaches 0.896 against PATCH's 0.540 with a quarter still unidentifiable. PATCH emits no inadmissible label anywhere we measured: that comparison, sixty synthetic panels, forty gene-panel drops on single-cell RNA. Coverage we report as a measurement on one protocol: 0.930 in domain (mean set size 2.72, 2x10^5 cells) and 0.257-0.825 across eleven shifted cohorts, empty rate zero.
+
+```{=typst}
+#pagebreak(weak: true)
+```
+
+### A060 · Sequence-Conditioned Generation of Genome-Targeting Integrases with a Genomic Foundation Model
+
+**Presenter:** Tanggis Bohnuud — Basecamp Research
+
+**Authors:** Geraldene Munsamy, Gavin Ayres, Carla Greco, Keith Kam, Gus Minto-Cowcher, John St. John, Tanggis Bohnuud, Matthew Bakalar, William Chow, Robert Pecoraro, Marcelo D.T. Torres, Aaron Kollasch, Marcus Leung, Hassan Sirelkhatim, Francesco Farina, Connor McGinnis, Srijani Sridhar, Daniel Anderson, Francesco Oteri, Ali Taghibakhshi, Jeremie Dona, Tyler Shimko, Cedric Steenbeke, Alexandros Papadopoulos, Malcolm Krolick, Fabian Spoendlin, Purba Gupta, Sandeep Kumar, Anne Bara, Jared Wilbur, Noelia Ferruz, Timur Rvachov, Fangping Wan, Hanqun Cao, Hyun-Su Lee, Japan Mehta, Raphael Chaleil, Valerio Pereno, Sid Potti, Chris Emerson, Roy Tal Dew, Kevin K Yang, Eric Nguyen, Neha Tadimeti, Jillian F. Banfield, Alicia Frame, Emma Bolton, David Ruau, Rory Kelleher, Anthony Costa, Kimberley Powell, Cesar de la Fuente-Nunez, Glen-Oliver Gowers, Oliver Vince, Jonathan Finn, Philipp Lorenz
+
+**Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
+
+Designing proteins to recognize user-specified genomic sequences requires learning the complex relationship between protein sequence, DNA recognition, and catalytic function. Here, we formulate genome-targeted integrase design as a conditional sequence-generation problem and use EDEN, a 28-billion-parameter genomic foundation model trained on 9.7 trillion nucleotide tokens from diverse metagenomes (BaseData), to generate de novo large serine recombinases (LSRs). LSRs and their cognate attachment sites mined from BaseData provide naturally occurring paired protein–DNA sequences from which to learn the evolutionary constraints linking recombinase sequence to target specificity. We condition EDEN on only 30 nucleotides representing a desired attB target site and generate corresponding LSR protein sequences. To test generalization to unseen sequence specifications, we prompted EDEN with human genomic sequences absent from the training data, spanning ten disease-associated loci and four potential safe-harbor sites. EDEN generated multiple experimentally active recombinases for every tested genomic locus, achieving a 63.2% functional hit rate across diverse DNA prompts. High-performing generated proteins diverged substantially from their parental sequences, reaching as low as 52% sequence identity while retaining biochemical activity. Generated LSRs also translated to cellular function: 50% of tested designs were active in human cells, including targeted integration of CAR constructs in primary human T cells. These results demonstrate that genomic foundation models can learn conditional relationships between short DNA sequences and the proteins that recognize them, enabling functional protein generation directly from user-specified genomic targets.
+
+```{=typst}
+#pagebreak(weak: true)
+```
+
+### A077 · Statistical detection of drivers of hematopoietic differentiation from lentiviral integration site datasets
+
+**Presenter:** Giacomo Ceoldo — Boston Children's Hospital - Harvard Medical School
+
+**Authors:** Giacomo Ceoldo, Danilo Pellin
+
+**Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
+
+Integration site datasets, obtained from blood samples for clone tracking of individuals treated with lentiviral gene therapy, offer important insights into human hematopoiesis. In particular, the long follow-up period of gene therapy patients allows the study of long-term effects on hematopoietic reconstitution for various genetic diseases. Clinical applications include the discovery of novel drivers of hematopoietic differentiation, whose effects may be enhanced by interactions with an integrated transgene. Identifying such drivers may contribute to the development of more specific therapies targeting disease-relevant hematopoietic subtypes.
+
+We are developing algorithms to detect and test genomic windows with a rate of lentiviral integration, clone survival, or clone fitness higher than the baseline, or with large differences in rates across two or more groups (cell types, clinical trials). The first phase (window detection) is based on fused lasso estimation, which is extended to generalized linear models (with the response function depending on the rate type) and includes covariates to account for dataset heterogeneity (patient- or cell-type-specific effects). For multi-group analyses, the fused lasso graph penalty is extended to sparse graphs of integration sites.
+
+The second phase consists of formally testing the set of windows selected in the first phase, in order to identify those with a statistically significant effect and provide a biological interpretation of the results. The test statistics we are developing are permutation-based, to account for misspecification of the generative model (regression-based approximations of hematopoiesis). We are currently analyzing all published integration site datasets from gene therapy clinical trials.
+
+```{=typst}
+#pagebreak(weak: true)
+```
+
+### A086 · MUTARA: MUTagenesis Analysis of Relative binding Affinity
+
+**Presenter:** Shogan Sugumar Swamy — Boston Children's Hospital
+
+**Authors:** Shogan Sugumar Swamy, Danilo Pellin
+
+**Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
+
+A systemic exploration of the protein-protein and protein-ligand interactions involves a series of tedious and customized code until any actionable insights are generated, some of which are quality control, normalization, statistical inference and visualization, often requiring extreme caution at each of those steps from naming conventions to formatting them. Especially in studies involving Deep Mutational Screening (DMS), which involves studying large numbers of Next Gen Sequencing (NGS) samples simultaneously, it becomes even more complex. We introduce an end-to-end computational platform MUTARA that integrates the complete DMS analysis and streamlines the design-test-iterate cycles. The platform provides: (1) interactive data exploration and replicate-level QC; (2) preprocessing and batch normalization; (3) per-substitution statistical analysis (GLM-based enrichment estimation with handling of sparse counts); (4) comparative testing across experimental conditions; and (5) interactive visualization of mutation landscapes and functional consequences. The platform synergizes JavaScript's interactivity, Python's large-scale data handling, and R's statistical inference. The platform has a Dual-mode architecture, an interactive web interface for exploratory analysis and filtering, and a command-line interface for high-throughput batch processing and pipeline integration, supporting seamless downstream structural or functional validation. Its applications range from directed protein evolution, particularly for antibody epitope mapping, non-genotoxic conditioning strategies, and base editor engineering. The modular architecture supports custom statistical models and integration with structural prediction tools (Boltz-2, AlphaFold). MUTARA addresses a critical computational bottleneck in functional genomics and protein engineering by providing an accessible, reproducible pipeline for DMS data analysis. Open deployment and validation across multiple protein systems will facilitate broader adoption.
+
+```{=typst}
+#pagebreak(weak: true)
+```
+
+### A094 · Bridging Genome-Scale Metabolism and Adaptive Ecology: A Hybrid Consumer-Resource Framework for Dynamic Microbial Growth
+
+**Presenter:** Edwin Moses Appiah — University of Connecticut Health Center
+
+**Authors:** Edwin M. Appiah
+
+**Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
+
+Microorganisms are shaped by both metabolic capabilities and ecological dynamics that emerge as organisms compete for, transform, and exchange resources. Most computational models capture only one scale, which is often inadequate to capture the full mechanisms of community dynamics. For instance, Consumer-Resource Models (CRMs) [1,2] describe ecological dynamics but lack biochemical resolution, whereas Genome-Scale Metabolic Models (GSMMs) [3-5] provide metabolic detail but often rely on static Flux Balance Analysis (FBA), limiting their use in fluctuating environments. Here, we introduce a hybrid genome-scale consumer-resource framework, CRM-FBA, that combines genome-scale metabolism with dynamic adaptive ecology. We first augment the microbial Consumer-Resource Model (MiCRM) from Marsland et al. [2] with adaptive uptake strategies from Pacciani-Mori et al. [1], to form an adaptive MiCRM. Because adaptive MiCRM lacks stoichiometric and genome-scale metabolic detail, we next coupled it to GSMMs through real-time FBA feedback. CRM-FBA reproduced diauxic shifts and predicted secretion and reconsumption of metabolic byproducts. We further scaled the CRM-FBA framework to microbial communities. In a 12-species synthetic gut consortium, we implemented a CRM-FBA community model in which genome-scale metabolism determined yields and cross-feeding stoichiometry while species-specific uptake kinetics were fit from data. We successfully predicted held-out leave-one-out community composition better than phenomenological CRM and a global-kinetics community GSMM model alone. We then validated this with a 10-species Db-MM consortium with measured community metabolites. We show that our framework successfully enabled us to predict microbial composition and function from this community. Together, CRM-FBA occupies the intersection that neither baseline CRM nor FBA reaches.
+
+```{=typst}
+#pagebreak(weak: true)
+```
+
+### A106 · Enhancing causal network-based perturbation inference through literature-derived knowledge
+
+**Presenter:** Zheng Liu — Northeastern University
+
+**Authors:** Zheng Liu, Benjamin M. Gyori
+
+**Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
+
+Inferring active regulators from perturbation readouts is a central problem in systems biology. Network propagation methods such as MOON (Meta-fOOtprint aNalysis) propagate activity signals through a directed prior knowledge network (PKN) to score candidate upstream regulators, but performance is constrained by network coverage and quality. Most PKNs aggregate manually curated databases, which are high confidence but incomplete. We benchmarked PKN expansion using INDRA (Integrated Network and Dynamical Reasoning Assembler), an automated system that extracts mechanistically resolved molecular interaction statements from biomedical literature with associated confidence scores. Candidate edges were ranked by confidence and evaluated at thresholds spanning the top 0.1% to 10% of INDRA's 11 million edges. We evaluated perturbation inference across four independent benchmarks: CytoSig and CellSig (cytokine and growth factor stimulation), the NicheNet ligand treatment validation compendium (51 ligands, 101 experiments), and CREED (single drug perturbation profiles with drug target ground truth). Integrating the top 0.3–0.4% highest confidence INDRA edges consistently improved performance across all datasets. AUCs increased from 0.554 to 0.707 (+27.7%) on CytoSig, 0.609 to 0.715 (+17.4%) on CellSig, 0.573 to 0.737 (+28.6%) on NicheNet, and 0.502 to 0.55 (+9.5%) on CREED. Performance declined monotonically beyond 0.5%, as lower confidence edges introduced contradictory signals. A belief score ablation confirmed that randomly selected edges of equivalent size yielded no consistent gain, demonstrating that confidence ranked selection drives the improvement. These results show that selective integration of high confidence literature derived knowledge enhances network based perturbation inference across diverse contexts, and that edge confidence matters more than coverage.
+
+```{=typst}
+#pagebreak(weak: true)
+```
+
+### A108 · Fine-tuning Boltz-1 for protein-protein interaction prediction with positive and negative data
+
+**Presenter:** Ruqi Liao — Broad Institute · MIT
+
+**Authors:** Ruqi Liao, Hilary Finucane
+
+**Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
+
+Predicting interactions between proteins is crucial to understanding the causes of disease and developing targeted therapeutic interventions. While highly accurate models such as AlphaFold exist for protein structure prediction, current structure-based approaches to protein interaction prediction rely on post-hoc analyses of these structural models or on small-scale models designed for proteome-wide predictions that lack pre-training advantages. To fill this gap, we fine-tuned the trunk of Boltz-1, an open-source reproduction of AF3, with a training data set of interacting and non-interacting domain pairs constructed to prevent the model from exploiting class-specific domain identities or paired MSA depth as shortcuts for interaction prediction.
+
+We benchmarked our method B1-PPI with Boltz-1, Boltz-2, RF2-PPI, and three protein language model-based predictors. On a standard data set of human PPIs, all methods performed similarly, but restricting to subsets of proteins revealed heterogeneity: for example, RF2-PPI underperformed on longer proteins and PLM-interact underperformed on cell surface proteins. To compare methods on the more challenging task of distinguishing positive and negative pairs with high sequence similarity, we constructed a new benchmark and found that B1-PPI and RF2-PPI outperformed other methods. Consistent with this result, B1-PPI was a top-performing method for distinguishing among interacting and non-interacting paralogs in datasets of histidine kinase-response regulator interactions and MALG/MALK interactions. In addition, we found B1-PPI to be the top predictor of success in binder design, although differences among methods were non-significant. Our results demonstrate the power of modern structure-based modeling for protein interaction prediction.
+
+```{=typst}
+#pagebreak(weak: true)
+```
+
+### A113 · A Novel ILP Framework to Identify Compensatory Pathways in Genetic Interaction Networks with GIDEON
+
+**Presenter:** Jocelyn Garcia — Tufts University
+
+**Authors:** Jocelyn Garcia, Kevin Yu, Lenore Cowen, Catherine Freudenreich
+
+**Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
+
+In Baker's yeast, there exists a comprehensive collection of pairwise epistasis experiments that, for nearly every pair of non-essential genes, measure the growth of the double-knockout strain as compared to its component single knockouts. This data can be represented as a weighted signed graph termed the genetic interaction network, and we introduce a new ILP-based method named GIDEON to search for a diverse collection of Between-Pathway Models (BPMs) in this network, where BPMs are a graph motif signature that indicates potential compensatory pathways in the genetic interaction network.
+
+With both an improved distribution-informed edge weighting scheme and an improved ILP method, GIDEON produces BPM collections that are substantially larger and with better functional enrichment compared to previous methods. We find some interesting new BPM gene sets including one with potential insights into antifungal drug targets through ties between ergosterol and aromatic amino acid biosynthesis.
+
+```{=typst}
+#pagebreak(weak: true)
+```
+
+### A121 · An Agentic Workflow for Adaptive and Auditable Single-Cell RNA-seq Analysis
+
+**Presenter:** Luc Francis — Independent Researcher
+
+**Authors:** Luc Francis
+
+**Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
+
+Single-cell RNA sequencing (scRNA-seq) pipelines typically rely on fixed scripts and predefined parameters, while real datasets often require analyst judgment. This work presents an open-source agentic workflow in which a large language model (Claude, via the Anthropic API) drives scRNA-seq analysis through predefined tool functions. Tools return structured summaries to the model, which selects subsequent analysis steps and parameters, while code-level guardrails enforce workflow constraints and all decisions are recorded in a JSONL audit trail.
+
+On PBMC datasets, the model made data-dependent analysis choices rather than following a fixed script. For a single-batch PBMC3k dataset, it selected PCA for dimensionality reduction. For a two-batch dataset, it detected batch structure and selected scVI for batch correction, and relaxed the mitochondrial QC threshold after determining that the standard cutoff would remove most cells. Doublet thresholds were selected from the observed score distribution. The model also identified a small cluster dominated by mitochondrial rather than canonical lineage markers, flagging it as likely stressed or degraded despite CellTypist annotating it as T cells.
+
+The workflow produced biologically plausible cell-type annotations supported by canonical markers. This demonstrates a lightweight framework for adaptive first-pass scRNA-seq analysis in which analyst-like decisions are constrained, reproducible, and auditable.
+
+Code and decision logs are available under the MIT license at github.com/lucrafrancis/agentic-scrna-workflow.
+
+```{=typst}
+#pagebreak(weak: true)
+```
+
+### A131 · Understanding and Correcting Representation-Specific Failure Modes in SE(3) Flow-Matching Protein Backbone Generation
+
+**Presenter:** Michael Widener — Northeastern University / Boston College
+
+**Authors:** Michael 'Xander' Widener, Shantanu Jain, Predrag Radivojac
+
+**Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
+
+Generative models for protein backbones typically commit to one geometric representation: rigid SE(3) frames per residue via globally consistent poses or internal torsion angles reconstructed via NeRF. The former provides globally well-posed structure but lacks explicit chemical bond constraints, while the latter yields chemically valid bonds by construction but suffers from recursive error propagation.
+
+We quantify this tradeoff directly on a sub-quadratic, O(L·K)-attention SE(3) Riemannian flow-matching backbone generator. FATCAT’s hinge-tolerant structural alignment shows that torsion-generated chains need on average 1.91 rigid-body 'twists' to align well against 0.61 for frame-generated chains. A controlled noise-injection sweep shows dihedral error compounds superlinearly along the chain (growth exponent ≈1.0 – 1.3) while bond-length error does not (≈0.65 – 0.7) – a mechanistic account of why each representation fails the way it does.
+
+We then tested five mechanisms for combining strengths of the two representations. Two of five toy-scale positives (a model-capacity increase; an anchor-constrained hinge-inpainting scheme) vanished completely at larger scales. This underscores that the inherent ease with which torsion-based models encode secondary structure at small scales often fails to translate to larger, data-rich architectures. The strongest surviving mechanism, a differentiable Lie-Trotter operator-splitting scheme that alternates one frame-space and one torsion-space integration step and is fine-tuned end-to-end via short bridge-supervised windows, is the first to outperform both single-representation baselines outright (TM-score 0.41 vs. 0.34/0.34) with no exposed tradeoff. Production-scale verification of this result is in progress.
+
+```{=typst}
+#pagebreak(weak: true)
+```
+
+### A133 · Identifying pathogenic tandem repeat expansions at novel loci in short-read and long-read rare disease datasets
+
+**Presenter:** Ben Weisburd — Broad Institute
+
+**Authors:** Ben Weisburd, Matt Danzi, Isaac R. L. Xu, Stephan Züchner, Anne O'Donnell Luria, Heidi L. Rehm
+
+**Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
+
+Background: Short-read and long-read tandem repeat (TR) genotyping tools are now routinely used to detect pathogenic expansions at many of the ~70 known disease-associated TR loci. However, there is not yet consensus on how to effectively use these tools to detect pathogenic expansions at novel TR loci genome-wide.
+
+Material and Methods: We present a TR analysis pipeline that we have developed and applied to discover two novel candidate TR loci. This pipeline starts with the latest version of the genome-wide TR catalog described in [Weisburd, Dolzhenko et al. 2025, PMID:41279208] and runs TRGT as well as TRGT-LPS on this catalog for long-read datasets, while using a modified version of ExpansionHunter along with ExpansionHunter Denovo for short-read datasets. It then annotates the TR genotypes using population data and other publicly-available information provided by our trexplorer.broadinstitute.org portal. Finally, it loads the data into a novel analysis tool with a graphical user interface that enables users to filter and prioritize the annotated TR calls.
+
+Results: The two candidates identified to date include a CAG repeat in the coding region of the EP400 gene identified in two unrelated families with cerebellar ataxia. The second candidate is a TGC repeat in the intron of the CNTN4 gene where expansions may explain a development delay and autism phenotype in a single family.
+
+Conclusion: We anticipate that these publicly available tools and pipeline will enable discovery of additional novel TR candidate loci in cohorts ranging in size from a single genome to over 100,000 samples.
+
+```{=typst}
+#pagebreak(weak: true)
+```
+
+### A139 · Mapping Cis-Regulatory Programs of Pancreatic β Cells in Health and Diabetes
+
+**Presenter:** Maxwell Cmpbell — UMass Chan
+
+**Authors:** Maxwell Campbell, Zhiping Weng
+
+**Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
+
+Pancreatic β-cell dysfunction is central to both type 1 (T1D) and type 2 diabetes (T2D), yet the regulatory programs underlying β-cell identity and failure remain incompletely characterized. The scarcity of primary human pancreatic tissue has further limited our ability to define β-cell and other endocrine cell states. Despite numerous efforts to profile chromatin accessibility in human islets, these datasets remain fragmented across studies and biological contexts, limiting a systematic view of the pancreatic regulatory landscape.
+
+To address this gap, we systematically collected and uniformly processed over 20 publicly available bulk and single-cell chromatin accessibility datasets comprising more than 250 human donors. Using a standardized framework based on ENCODE protocols, we constructed a unified map of candidate cis-regulatory elements (cCREs) across pancreatic endocrine (β, α, and δ) and exocrine cell types. This resource spans healthy, prediabetic, T1D, and T2D states, as well as ex vivo perturbation models that mimic disease-relevant conditions, including inflammation and endoplasmic reticulum stress.
+
+We expanded the pancreatic regulatory landscape at cell-type resolution, identifying thousands of cCREs selectively accessible in β cells across diabetic and stress conditions. Importantly, we recovered additional cCREs absent from the existing ENCODE registry, many selectively active in endocrine and disease-associated states, suggesting that these rare contexts remain underrepresented in existing references. Applying sequence-based deep learning models of chromatin accessibility, we further nominated regulatory sequence features and candidate transcription factors that distinguish β cells in disease-relevant states. Together, this resource provides a more complete picture of β-cell regulation in the context of diabetes.
+
+```{=typst}
+#pagebreak(weak: true)
+```
+
+### A140 · POLARIS: concordance-aware joint analysis of cells and features in single-cell multiomic data
+
+**Presenter:** Ziqi Fu — Harvard University, Department of Biostatistics
+
+**Authors:** Ziqi Fu, Xihong Lin, Rong Ma
+
+**Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
+
+Single-cell multiomic assays jointly profile gene expression and chromatin accessibility in the same cell, enabling direct study of cross-layer coordination. Yet how strongly these layers agree varies across cells, and most integration methods prioritize shared structure, integrating this partial decoupling away even though it may carry biological signal. Here we present POLARIS, a concordance-aware spectral framework that quantifies cross-modality agreement and carries it into downstream analysis. From one paired low-rank cell representation, POLARIS computes per-cell concordance, a joint cell embedding, and an induced cross-modal feature embedding. In the cell embedding, separations strong in either modality are retained rather than averaged away, sharpening cell-type and state resolution. The feature embedding scores regulatory element-gene (RE-G) candidates without repeated pairwise model fitting, each with a closed-form jackknife standard error. Across immune, neural and developmental datasets, concordance is reproducible and cell-resolved, and cells with low concordance are enriched for modality-specific structure. The RE-G map includes distal links supported by Hi-C contacts and fine-mapped eQTL. Because it is linear and low-rank, POLARIS is computationally efficient, and extends directly to other paired assays such as CITE-seq, linking surface proteins to genes. POLARIS is available as open-source software for unified cell- and feature-level analysis of paired data.
+
+```{=typst}
+#pagebreak(weak: true)
+```
+
+### A146 · Comparative Analysis of ZRS–SHH Genomic Architecture Across Vertebrates
+
+**Presenter:** Ziyan Rao — Department of Genomics and Computational Biology, UMass Chan Medical School
+
+**Authors:** 
+
+**Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
+
+Distal enhancers can regulate developmental genes over large genomic distances, but the extent to which enhancer–gene genomic architecture is conserved during vertebrate evolution remains unclear. The Zone of Polarizing Activity Regulatory Sequence (ZRS) is a well-characterized limb enhancer that regulates Sonic Hedgehog (SHH) expression, providing a model for investigating the evolution of long-range gene regulation. Here, we developed a comparative-genomics framework to map the human ZRS enhancer and the SHH promoter across Vertebrate Genomes Project (VGP) assemblies and quantify their genomic distance across species. We evaluated 577 VGP species and classified cross-species mappings according to whether homologous regions mapped to a single chromosome, multiple alignment blocks, or multiple chromosomes/scaffolds. We retained species in which both ZRS and the SHH promoter mapped to the same chromosome for downstream distance analysis. Among these species, we observed substantial variation in ZRS–SHH genomic distance across vertebrate lineages, with distinct distance distributions among mammals, birds, reptiles, and amphibians. We further examine the relationship of the ZRS–SHH distance and evolutionary divergence from humans and assess the distance relative to chromosome-scale genomic organization. This analysis provides a comparative framework for distinguishing conserved from divergent aspects of long-range enhancer–gene genomic architecture. By integrating cross-species sequence mapping with evolutionary and genomic-context information, we aim to determine whether the long-range genomic relationship between ZRS and SHH is evolutionarily constrained and to identify patterns of regulatory architecture associated with the conservation of long-range gene regulation.
+
+```{=typst}
+#pagebreak(weak: true)
+```
+
+### A147 · Interactional experimental design for the efficient demonstration of the Plasmodium inhibitory property of an endosymbiont Eα alone or in association in Anopheles mosquitoes within a context of endosymbiotic diversity for the success of biological control
+
+**Presenter:** Richard Bationo — Institute of Health Science Research
+
+**Authors:** 
+
+**Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
+
+The fight against malaria has led to the development of several control strategies, among which biological control currently holds great promise. However, the remarkable performances of certain endosymbionts, particularly their Plasmodium-inhibitory properties and their ability to restore mosquito susceptibility to insecticides remain subject to debate due to the lack of a suitable experimental design specifically tailored to this type of study. Such investigations, given their high level of complexity, require approaches consistent with computational biology, which is often not considered in laboratory evaluations or in natural transmission studies. Indeed, by integrating factors such as the diversity of the mosquito microbiota, its various immune expressions, and its insecticide resistance genes, it becomes necessary to adopt a scientific methodology that embraces the interactional concept proposed by this new experimental approach, modeled on the Direct Membrane Feeding Assay (DMFA) system. The scientific relevance of the proposed interactional design, in relation to the predefined set of hypotheses, would enable the elucidation of several observed mechanisms and the identification of the specific role of each endosymbiont (whether in association or not) previously characterized as candidate symbionts. Another key outcome would be the establishment of an endosymbiotic database, supporting more informed choices by different scientific teams according to their specific objectives, thereby contributing to the overall success of biological malaria control programs. Keywords: Malaria, computational biology, inhibitory property, endosymbiont, genes, resistance, interaction, biological control, causality, correlation
+
+```{=typst}
+#pagebreak(weak: true)
+```
+
+### A153 · Tryptophan Transporters Modulated by Diet Predict Cognitive and Physical Phenotypes: Implications for Precision Nutrition
+
+**Presenter:** Hannah Lords — Bioinformatics Program, Boston University, Boston, MA 02215, USA
+
+**Authors:** Stacy Andersen, Michael Lustgarten, Andres Ardisson Korat, Thomas Perls
+
+**Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
+
+BACKGROUND: Plasma tryptophan is associated with cognitive test scores (semantic fluency, Digit Symbol Substitution Test, Digit Span Forward) and physical function (gait speed, grip strength) in the Long Life Family Study (LLFS). Cognitive and physical performance are only partly genetically inherited, suggesting that gene-dietary interactions influence these outcomes. While enzymes in tryptophan metabolism have been extensively studied, tryptophan transporters, critical regulators of substrate availability, remain understudied.
+
+METHODS: We analyzed data from 4682 LLFS participants with cognitive and physical function, genetic, transcriptomic, metabolomic, and food frequency questionnaire data. We identified tryptophan metabolism pathway components (enzymes from KEGG; transporters validated against peer-reviewed literature) and constructed hierarchical predictive models reflecting known relationships between pathway components. Due to limited samples with complete multi-omics data, we applied forward-backward stepwise selection minimizing Bayesian Information Criteria, requiring final model variables to meet Benjamini Hochberg adjusted significance. Non-significant predictor terms were retained if their interaction term was significant. Models predicted three cognitive test scores and two physical function phenotypes adjusted for age, sex, and education.
+
+RESULTS: SNP-diet and transcript-diet interaction terms were consistently selected as predictors of tryptophan metabolism components, including interactions between SLC3A2 SNP rs2507820 and several measures of amino acid distribution, and conditional amino acid distribution and both SLC3A2 and SLC7A5 transcript expression. These interactions emerged as predictive features in complex multi-omics models.
+
+CONCLUSION: These findings highlight the importance of considering amino acid transporter regulation and dietary composition when modeling the effects of metabolism on phenotypes, and support further investigation into transporter-diet interactions in precision nutrition.
+
+```{=typst}
+#pagebreak(weak: true)
+```
+
+### A154 · A Bayesian approach to dose-response modeling in sparse data regimes
+
+**Presenter:** Sameer Rawat — Northeastern University
+
+**Authors:** Sameer Rawat, Clemens Hug, Caitlin Mills, Benjamin M. Gyori
+
+**Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
+
+Dose-response curves are usually generated from assays to understand key biological mechanistic relationships. Typically, measurements and replicates are collected at a dense series of doses to derive biological parameters of interest. However, when designing large-scale experiments over multi-protein, multi-ligand assay panels, it becomes prohibitively expensive to gather data at many different doses. As a motivating example, we examine the readouts from a large-scale experiment testing all combinations of 192 chemically diverse kinase inhibitors against 468 kinases, which measures response only at a limited set of doses (between 2 and 4 for each inhibitor-kinase pair).
+
+The sparsity and spread of concentrations pose strong challenges for standard dose-response fitting algorithms which assume dense coverage of the relevant dose range. To overcome this, we propose a Bayesian framework over a 2-parameter Hill-curve model, representing broad and physically realistic parameter priors and heteroscedastic noise coupled to a chosen numerical sampler or maximum a posteriori probability estimator to reconstruct model parameters.
+
+We compared the proposed framework against 13 existing dose-response log-logistic and sigmoidal style models (from R packages dr4pl, drc, drda, and nplr) spanning 2 to 5 parameters. Results show the Bayesian model remains robust under degenerate and noisy measurements where other methods often fail to converge in these settings. Further, when validating Kd’s inferred from dose-response curves against experimental assay data from the ChEMBL database, the Bayesian model outperforms existing approaches both in number of inhibitor-kinase combinations for which it predicts a Kd and mean squared error of predicted Kd’s against the experimental reference.
+
+```{=typst}
+#pagebreak(weak: true)
+```
+
+### A165 · MiLaSol: Modeling Protein Solubility by Mixing Up Multiple Protein Language Models
+
+**Presenter:** Weiwei Lou — Tufts University
+
+**Authors:** 
+
+**Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
+
+Motivation: Protein solubility is a critical property that significantly impacts therapeutic efficacy and protein reengineering applications. Recent advances in machine learning and deep learning techniques provide unprecedented opportunities to de- velop predictive models for solubility, enabling more efficient protein design and optimization. This work is motivated by the potential of leveraging deep learning to address the solubility prediction challenge and to accelerate protein engineering workflows. Results: Leveraging and combining multiple protein language model representations, our MiLaSol model attains 81% ac- curacy, outperforming prior methods, with the highest Matthews Correlation Coefficient (MCC) score of 0.63 demonstrating balanced performance across both soluble and insoluble proteins. Through simulated annealing optimization coupled with the Raygun model, we also present a computational method to reengineer insoluble protein variants into soluble forms, with predictions confirmed by multiple independent solubility prediction methods. Our results demonstrate the effectiveness of combining machine learning-based solubility prediction with generative optimization for protein engineering.
+
+```{=typst}
+#pagebreak(weak: true)
+```
+
+### A171 · Bridging Time-to-Event and Generative Deep Learning for Longitudinal Cardiovascular Digital Twins
+
+**Presenter:** Siying (Avon) Yang — Department of Epidemiology & Biostatistics , Harvard T.H. Chan School of Public Health
+
+**Authors:** Siying (Avon) Yang
+
+**Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
+
+Longitudinal digital twins should both predict when disease occurs and simulate how health evolves, yet these objectives are usually studied separately. We develop a deep learning framework for cardiovascular digital twins using the Health Professionals Follow-up Study (HPFS), with repeated questionnaires from 1986 onward.
+
+We represent each questionnaire wave as a structured health state containing demographics, anthropometrics, smoking, physical activity, diet, and blood-pressure measures. Among 51,387 participants, we constructed 547,699 prediction origins and supported cohorts of 531,277, 506,863, and 434,822 origins for 2-, 5-, and 10-year cardiovascular disease (CVD) prediction. Participant-level splitting, training-only preprocessing, time-support restrictions, and explicit competing-risk labels prevent temporal and cross-participant leakage.
+
+On this common benchmark, we compare three Transformer-based strategies: (1) a MOTOR-style time-to-event model that learns task-conditioned survival representations across multiple endpoints; (2) a Delphi-style autoregressive model that predicts subsequent health states and event timing, enabling stochastic rollouts of future trajectories; and (3) a joint model optimized for both time-to-event and next-state prediction. The joint objective tests whether simulation-aware representation learning improves risk prediction and whether survival supervision improves the clinical validity of generated futures.
+
+Models will be evaluated at 2-, 5-, and 10-year horizons using time-dependent discrimination, calibration, and Brier scores. For the generative model, CVD risk will be estimated from Monte Carlo trajectory rollouts and compared with direct survival estimates. This framework tests whether deep generative models can produce calibrated epidemiologic risks, rather than merely plausible trajectories, and establishes a foundation for longitudinal population-health digital twins.
+
+```{=typst}
+#pagebreak(weak: true)
+```
+
+### A188 · Expression of Cardiac Vagal Sensory Neuron Markers in Human Dilated Cardiomyopathy: A Reanalysis of Public scRNA-seq/snRNA-seq Data
+
+**Presenter:** Tetsuo Momiy Nakama — Universidad de Ingeniería y Tecnología
+
+**Authors:** Tetsuo Gabriel Alonso Momiy Nakama, Evely Blas Rodriguez, Fiorella Falcón Paredes
+
+**Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
+
+Vagal sensory neurons (VSNs) innervating the heart play a central role in the heart-brain axis, displaying complex molecular signatures tied to where their nerve endings land. Previous mouse studies pinpointed Piezo2, Drd2, and Agtr1a as key markers for these neural connections. To test whether these candidate genes alter during pathology, a re-analysis of a public human cardiac transcriptomic atlas (scRNA-seq/snRNA-seq) from 27 healthy donors and 18 patients with dilated cardiomyopathy (DCM) was performed. While Drd2 could not be analyzed due to ID matching issues across files, Agtr1a was heavily expressed in pericytes and fibroblasts, dropping significantly in DCM hearts ($p_{adj} < 0.001$). Piezo2 showed low, scattered expression across most cell types, but revealed a focal neuronal signal exclusive to DCM, including a small cell population. These results suggest potential remodeling in the perivascular space linked to vagal-cardiac signaling during heart disease, providing preliminary, hypothesis-generating evidence on the role of cardiac VSN markers in DCM.
 
 ```{=typst}
 #pagebreak(weak: true)
@@ -3054,20 +3054,6 @@ Tracking how antibody clonal families evolve across immunisation timepoints is c
 **Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
 
 Cardiovascular disease (CVD) and cancer constitute significant contributors to mortality globally; metals have been linked to biological pathways relevant to both diseases. However, metal profiles across cancer-CVD comorbidity groups are poorly characterized; they may provide insight into shared environmental factors relevant to cardio-oncology. This study examined blood lead (Pb), mercury (Hg), cadmium (Cd), selenium (Se), and manganese (Mn) and their associations with lipid biomarkers across cancer-CVD groups in the U.S adult population. Data from the 2021-2023 NHANES cycle were analyzed for metal content, demographic, and lipid profiles. First, comparing cancer to no cancer, and then four mutually exclusive disease groups: cancer only, CVD only, cancer + CVD, and neither. Groups were compared using Mann-Whitney U and Kruskal-Wallis tests with Benjamini-Hochberg false discovery rate (FDR) correction; within-group associations were compared using Spearman correlation. Participants with cancer had higher Pb, Cd, Hg, and HDL-cholesterol and lower LDL cholesterol compared to participants without cancer (p < 0.05). All five blood metals showed significant differences across four disease groups (p < 0.001). Pb and Cd were highest in the CVD-only group; Hg was highest in the cancer-only group, and Se and Mn were lowest in the cancer + CVD group. Generally, metal-lipid correlations were weak and specific to disease groups. Pb-Cd had the strongest metal correlation in the CVD-only group (p=0.44). Stratification by both conditions revealed heterogeneity in exposures and biomarkers not apparent in comparisons by cancer status alone; future longitudinal studies should investigate whether metal exposures are responsible for cancer-CVD development or progression
-
-```{=typst}
-#pagebreak(weak: true)
-```
-
-### A196 · Paired spatial transcriptomics reveals divergent malignant-state and ecosystem remodeling trajectories in recurrent glioblastoma
-
-**Presenter:** Ali Mohammed Pirani — MD Anderson Cancer Center
-
-**Authors:** Ali Mohammed Pirani, Gayatri Kumar kumar, Pravesh Gupta, Benjamin Whitfield, Lisa M. Norberg, Frederick Lang, Vinay Puduvalli, Krishna Bhat, Jason Huse
-
-**Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
-
-Recurrent glioblastoma (GBM) develops within a tissue ecosystem altered by surgery, radiation, temozolomide, injury, hypoxia, and inflammation, yet how malignant-state evolution relates to spatial microenvironmental remodeling remains poorly understood. We profiled a GLASS Consortium cohort using 10x Visium HD spatial transcriptomics, including 27 matched primary/recurrent GBM pairs and one additional primary tumor. At 16-µm resolution, we integrated copy number based malignancy inference, cell-type deconvolution, lineage and functional-state scoring, and non-negative matrix factorization to resolve malignant, non-malignant, and mixed tumor microenvironment compartments. Spatial neighborhood enrichment was then used to quantify patient-level changes in cellular and transcriptional program organization. Rather than converging on a uniform recurrent phenotype, matched tumors followed divergent trajectories along a mesenchymal (MES) versus astrocytic/progenitor (AC/progenitor) remodeling axis. Some recurrences showed coordinated gain of MES programs and loss of AC/progenitor programs, whereas others showed the reciprocal trajectory, with additional tumors remaining intermediate or mixed. These opposing transcriptional trajectories were accompanied by reciprocal spatial reorganization involving malignant-state neighborhoods and myeloid, vascular/stromal, and glial programs. Across patients, the magnitude and direction of malignant-state remodeling tracked the extent and topology of spatial ecosystem remodeling, revealing strong patient-level changes that were obscured by cohort-level primary-versus-recurrent comparisons. Spatial changes prominently involved interactions with activated macrophage/myeloid and extracellular-matrix-associated programs, while changes in program abundance did not simply equate to increased spatial self-clustering. Together, these findings support a model in which recurrent GBM follows multiple patient-specific evolutionary trajectories, with malignant transcriptional adaptation and spatial ecosystem remodeling occurring as coordinated features of recurrence.
 
 ```{=typst}
 #pagebreak(weak: true)

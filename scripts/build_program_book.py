@@ -40,6 +40,16 @@ CSV_LATE = BUILD / "submissions_paste_late.csv"
 POSTERS_CSV = BUILD / "decisions_posters.csv"
 POSTER_SESSIONS = DATA / "posterSessions.yaml"
 WITHDRAWALS = BUILD / "withdrawals.csv"
+EXTENDED_PDF_DIR = BUILD / "pdfs"
+
+
+def has_extended_pdf(aid: str) -> bool:
+    """True if the presenter submitted an extended one-page PDF that the
+    combined book stitches in after this abstract's short entry. Used
+    to order abstracts so those WITH an extended come first — that way
+    every extended lands on the right (odd) page of a two-page spread
+    with its short on the left (even) page."""
+    return (EXTENDED_PDF_DIR / f"{aid}.pdf").exists()
 
 CONF_TITLE = "NECB 2026"
 CONF_SUBTITLE = "New England Computational Biology Symposium"
@@ -876,12 +886,16 @@ def render_posters(poster_ids, subs, day_map,
             first_day = False
             reg = [aid for aid in ids if subs[aid].get("round") == "regular"]
             late = [aid for aid in ids if subs[aid].get("round") == "late-breaking"]
+            # Two-page-spread ordering: abstracts with a stitched-in
+            # extended one-pager come first (extended PDFs are inserted
+            # after each short in build_combined_book.py, so putting
+            # them first keeps short→long pairs on facing pages), then
+            # the tail of short-only abstracts in ascending id.
+            def sort_key(aid: str) -> tuple[int, str]:
+                return (0 if has_extended_pdf(aid) else 1, aid)
             if reg:
-                # First round in the day flows right under the day
-                # banner (no pagebreak); the first abstract of the
-                # round then also sticks under the round banner.
                 md += _round_banner("Regular round", force_break=False)
-                for i, aid in enumerate(sorted(reg)):
+                for i, aid in enumerate(sorted(reg, key=sort_key)):
                     time = day_map.get(aid, ("", ""))[1]
                     session_label = f"{label} · {time}" if time else label
                     md += render_abstract(
@@ -892,7 +906,7 @@ def render_posters(poster_ids, subs, day_map,
                 # Late-breaking always starts on a fresh page after the
                 # last Regular-round abstract.
                 md += _round_banner("Late-breaking", force_break=True)
-                for i, aid in enumerate(sorted(late)):
+                for i, aid in enumerate(sorted(late, key=sort_key)):
                     time = day_map.get(aid, ("", ""))[1]
                     session_label = f"{label} · {time}" if time else label
                     md += render_abstract(
@@ -940,26 +954,45 @@ def _round_banner(label: str, force_break: bool = False) -> list[str]:
 
 
 def render_organizers(orgs) -> list[str]:
-    """Render the committee back-matter using each group's yaml-supplied
-    `title`. Iterate in the order they appear in organizers.yaml so the
-    file stays the source of truth for ordering.
+    """Render committee back-matter. Keys named in `TOP_LEVEL_SECTIONS`
+    get their own H1 (so they land on a fresh page in the typst template);
+    the rest sit under Organizing Committee as H3 subsections.
 
-    'friends' and 'reviewers' render as a compact comma-joined line each
-    (they're long and don't need per-line formatting)."""
-    md = ["# Organizing Committee", ""]
+    Ordering follows organizers.yaml, so that file stays the source of
+    truth. 'friends' and 'reviewers' render as compact comma-joined
+    lines (long lists, don't need per-line formatting)."""
+    # Groups that deserve their own top-level page in the program book.
+    TOP_LEVEL_SECTIONS = {"reviewers"}
     COMPACT = {"friends", "reviewers"}
+
+    md = []
+    committee_opened = False
+
     for key, group in orgs.items():
         if not isinstance(group, dict) or "members" not in group:
             continue
         title = group.get("title") or key.replace("_", " ").title()
-        # H3 so committee subsections don't clutter the outline (which
-        # caps at depth 2). Visually still bold navy via the H3 rule.
-        md.append(f"### {title}")
-        md.append("")
+
+        if key in TOP_LEVEL_SECTIONS:
+            md.append(f"# {title}")
+            md.append("")
+            heading = None  # already rendered as H1
+        else:
+            if not committee_opened:
+                md.append("# Organizing Committee")
+                md.append("")
+                committee_opened = True
+            heading = f"### {title}"
+
+        if heading:
+            md.append(heading)
+            md.append("")
+
         intro = group.get("intro")
         if intro:
             md.append(intro.strip())
             md.append("")
+
         if key in COMPACT:
             names = [
                 f"{m.get('name', '')}"

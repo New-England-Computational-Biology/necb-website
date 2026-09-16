@@ -275,6 +275,15 @@ a:focus-visible { outline: 2px solid var(--c-accent); outline-offset: 2px; borde
   max-width: 60ch;
   margin: 0 auto 2.5rem;
 }
+.program-book-link {
+  margin-top: -1.75rem;   /* pull under the section note above */
+  font-size: 0.95rem;
+}
+.program-book-link a { color: var(--c-primary); font-weight: 600; }
+.program-book-link a:hover, .program-book-link a:focus-visible {
+  color: var(--c-primary-dark);
+  text-decoration: underline;
+}
 .lead { font-size: 1.15rem; color: var(--c-text-muted); }
 
 /* ---------- Cards ---------- */

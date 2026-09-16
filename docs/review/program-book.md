@@ -91,7 +91,7 @@ We are grateful to our sponsors, our host at Microsoft Research New England, ISC
 ```{=typst}
 #block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [], [#text(weight: 600)[Alex Lu] #text(size: 0.85em, fill: c-muted)[· Microsoft Research New England]])]
 #block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [], [#text(weight: 600)[Rong Ma] #text(size: 0.85em, fill: c-muted)[· Harvard T.H. Chan School of Public Health]])]
-#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [], [#text(weight: 600)[Samantha Petti] #text(size: 0.85em, fill: c-muted)[· Tufts University]])]
+#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [], [#text(weight: 600)[Modeling, interpreting, and optimizing high-dimensional genotype-phenotype maps]\ #text(size: 0.85em, fill: c-muted)[Samantha Petti · Tufts University]])]
 ```
 
 

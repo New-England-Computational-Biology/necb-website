@@ -650,8 +650,24 @@ def _speaker_affil_map(speakers_yaml: dict) -> dict[str, str]:
     return m
 
 
+def _speaker_title_map(speakers_yaml: dict) -> dict[str, str]:
+    """Name → talk_title lookup for keynote / invited speakers who have
+    already sent us a title. Empty when a speaker hasn't confirmed yet;
+    that speaker's Program-at-a-Glance line then shows name + affiliation
+    only (unchanged from the original layout)."""
+    m: dict[str, str] = {}
+    for group in ("keynotes", "invited"):
+        for entry in speakers_yaml.get(group, {}).get("members", []):
+            name = (entry.get("name") or "").strip()
+            title = (entry.get("talk_title") or "").strip()
+            if name and title:
+                m[name] = title
+    return m
+
+
 def render_schedule(program, speakers_yaml) -> list[str]:
     speaker_affils = _speaker_affil_map(speakers_yaml)
+    speaker_titles = _speaker_title_map(speakers_yaml)
     md: list[str] = ["# Program at a Glance", ""]
     for day in program["days"]:
         md += [f"## {day['label']}", ""]
@@ -662,11 +678,23 @@ def render_schedule(program, speakers_yaml) -> list[str]:
             if speakers:
                 # Same grid geometry as the talks stanza below so keynote
                 # and invited speaker names line up with talk titles
-                # (empty ID column on the left, name + affiliation right).
+                # (empty ID column on the left, title-if-known on top,
+                # name + affiliation as the second line).
                 md.append("```{=typst}")
                 for name in speakers:
                     aff = speaker_affils.get(name, "")
-                    if aff:
+                    title = speaker_titles.get(name, "")
+                    if title:
+                        # Talk title first (bold), then presenter and
+                        # affiliation as the muted second line — matches
+                        # the selected-talks stanza below.
+                        aff_suffix = f" · {_typ(aff)}" if aff else ""
+                        body = (
+                            f"[#text(weight: 600)[{_typ(title)}]\\ "
+                            "#text(size: 0.85em, fill: c-muted)["
+                            f"{_typ(name)}{aff_suffix}]]"
+                        )
+                    elif aff:
                         body = (
                             f"[#text(weight: 600)[{_typ(name)}] "
                             f"#text(size: 0.85em, fill: c-muted)[· {_typ(aff)}]]"

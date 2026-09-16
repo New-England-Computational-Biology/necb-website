@@ -69,7 +69,7 @@ We are grateful to our sponsors, our host at Microsoft Research New England, ISC
 ### 9:00–9:45 AM · Opening keynote
 
 ```{=typst}
-#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [], [#text(weight: 600)[Marc Vidal] #text(size: 0.85em, fill: c-muted)[· Dana-Farber Cancer Institute · Harvard Medical School]])]
+#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [], [#text(weight: 700, fill: c-navy)[Marc Vidal] #text(size: 0.85em, fill: c-muted)[· Dana-Farber Cancer Institute · Harvard Medical School]])]
 ```
 
 
@@ -89,8 +89,8 @@ We are grateful to our sponsors, our host at Microsoft Research New England, ISC
 ### 11:15 AM – 12:15 PM · Invited talks
 
 ```{=typst}
-#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [], [#text(weight: 600)[Alex Lu] #text(size: 0.85em, fill: c-muted)[· Microsoft Research New England]])]
-#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [], [#text(weight: 600)[Rong Ma] #text(size: 0.85em, fill: c-muted)[· Harvard T.H. Chan School of Public Health]])]
+#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [], [#text(weight: 700, fill: c-navy)[Alex Lu] #text(size: 0.85em, fill: c-muted)[· Microsoft Research New England]])]
+#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [], [#text(weight: 700, fill: c-navy)[Rong Ma] #text(size: 0.85em, fill: c-muted)[· Harvard T.H. Chan School of Public Health]])]
 #block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [], [#text(weight: 700, fill: c-navy)[Samantha Petti] #text(size: 0.85em, fill: c-muted)[· Tufts University]\ #text(size: 0.9em, style: "italic")[Modeling, interpreting, and optimizing high-dimensional genotype-phenotype maps]])]
 ```
 
@@ -124,7 +124,7 @@ We are grateful to our sponsors, our host at Microsoft Research New England, ISC
 ### 5:15–6:00 PM · Afternoon keynote
 
 ```{=typst}
-#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [], [#text(weight: 600)[Sergey Ovchinnikov] #text(size: 0.85em, fill: c-muted)[· MIT]])]
+#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [], [#text(weight: 700, fill: c-navy)[Sergey Ovchinnikov] #text(size: 0.85em, fill: c-muted)[· MIT]])]
 ```
 
 
@@ -136,8 +136,8 @@ We are grateful to our sponsors, our host at Microsoft Research New England, ISC
 ### 9:00–10:00 AM · Morning keynote
 
 ```{=typst}
-#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [], [#text(weight: 600)[Caroline Uhler] #text(size: 0.85em, fill: c-muted)[· Broad Institute · MIT]])]
-#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [], [#text(weight: 600)[G.V. Shivashankar] #text(size: 0.85em, fill: c-muted)[· ETH Zurich · Paul Scherrer Institute]])]
+#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [], [#text(weight: 700, fill: c-navy)[Caroline Uhler] #text(size: 0.85em, fill: c-muted)[· Broad Institute · MIT]])]
+#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [], [#text(weight: 700, fill: c-navy)[G.V. Shivashankar] #text(size: 0.85em, fill: c-muted)[· ETH Zurich · Paul Scherrer Institute]])]
 ```
 
 
@@ -156,9 +156,9 @@ We are grateful to our sponsors, our host at Microsoft Research New England, ISC
 ### 11:15 AM – 12:15 PM · Invited talks
 
 ```{=typst}
-#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [], [#text(weight: 600)[Sahin Naqvi] #text(size: 0.85em, fill: c-muted)[· Boston Children's Hospital · Harvard Medical School]])]
-#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [], [#text(weight: 600)[Armita Nourmohammad] #text(size: 0.85em, fill: c-muted)[· Yale University]])]
-#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [], [#text(weight: 600)[Yuri Pritykin] #text(size: 0.85em, fill: c-muted)[· Princeton University]])]
+#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [], [#text(weight: 700, fill: c-navy)[Sahin Naqvi] #text(size: 0.85em, fill: c-muted)[· Boston Children's Hospital · Harvard Medical School]])]
+#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [], [#text(weight: 700, fill: c-navy)[Armita Nourmohammad] #text(size: 0.85em, fill: c-muted)[· Yale University]])]
+#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [], [#text(weight: 700, fill: c-navy)[Yuri Pritykin] #text(size: 0.85em, fill: c-muted)[· Princeton University]])]
 ```
 
 
@@ -191,7 +191,7 @@ We are grateful to our sponsors, our host at Microsoft Research New England, ISC
 ### 5:15–6:00 PM · Closing keynote · Poster awards
 
 ```{=typst}
-#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [], [#text(weight: 600)[Zhiping Weng] #text(size: 0.85em, fill: c-muted)[· UMass Chan Medical School]])]
+#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [], [#text(weight: 700, fill: c-navy)[Zhiping Weng] #text(size: 0.85em, fill: c-muted)[· UMass Chan Medical School]])]
 ```
 
 
@@ -254,7 +254,11 @@ Jason Buenrostro.
 - **Luca Pinello**, *Massachusetts General Hospital · Harvard Medical School · Broad Institute*
 - **Predrag (Pedja) Radivojac**, *Northeastern University*
 
-# Abstract Reviewers
+```{=typst}
+#pagebreak(weak: true)
+```
+
+### Abstract Reviewers
 
 With thanks to the trainees volunteering their time to review submissions.
 

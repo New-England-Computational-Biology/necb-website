@@ -684,30 +684,30 @@ def render_schedule(program, speakers_yaml) -> list[str]:
                 for name in speakers:
                     aff = speaker_affils.get(name, "")
                     title = speaker_titles.get(name, "")
+                    # Keynote/invited house style: presenter is the draw,
+                    # so lead with the name in navy display weight, then
+                    # affiliation as a muted inline element on the same
+                    # row. When we already have the confirmed talk title,
+                    # it drops onto a lighter italic second line. This
+                    # visual pattern is distinct from the selected-talks
+                    # stanza below (which anchors on fuchsia abstract ID
+                    # + title).
+                    aff_suffix = (
+                        f" #text(size: 0.85em, fill: c-muted)"
+                        f"[· {_typ(aff)}]"
+                    ) if aff else ""
                     if title:
-                        # For keynote/invited: presenter is the draw, so
-                        # lead with the name in navy display weight, then
-                        # the talk title as a lighter italic second line,
-                        # then affiliation as a muted third element on
-                        # the name row. Selected-talks stanza below stays
-                        # title-first because their abstract IDs anchor.
-                        aff_suffix = (
-                            f" #text(size: 0.85em, fill: c-muted)"
-                            f"[· {_typ(aff)}]"
-                        ) if aff else ""
                         body = (
                             f"[#text(weight: 700, fill: c-navy)"
                             f"[{_typ(name)}]{aff_suffix}\\ "
                             "#text(size: 0.9em, style: \"italic\")["
                             f"{_typ(title)}]]"
                         )
-                    elif aff:
-                        body = (
-                            f"[#text(weight: 600)[{_typ(name)}] "
-                            f"#text(size: 0.85em, fill: c-muted)[· {_typ(aff)}]]"
-                        )
                     else:
-                        body = f"[#text(weight: 600)[{_typ(name)}]]"
+                        body = (
+                            f"[#text(weight: 700, fill: c-navy)"
+                            f"[{_typ(name)}]{aff_suffix}]"
+                        )
                     md.append(
                         "#block(above: 5pt, below: 5pt, breakable: false)["
                         "#grid(columns: (0.4in, 1fr), column-gutter: 6pt, "
@@ -989,39 +989,34 @@ def _round_banner(label: str, force_break: bool = False) -> list[str]:
 
 
 def render_organizers(orgs) -> list[str]:
-    """Render committee back-matter. Keys named in `TOP_LEVEL_SECTIONS`
-    get their own H1 (so they land on a fresh page in the typst template);
-    the rest sit under Organizing Committee as H3 subsections.
+    """Render committee back-matter under one 'Organizing Committee' H1
+    (a single TOC entry). Subsections render as H3.
 
-    Ordering follows organizers.yaml, so that file stays the source of
-    truth. 'friends' and 'reviewers' render as compact comma-joined
-    lines (long lists, don't need per-line formatting)."""
-    # Groups that deserve their own top-level page in the program book.
-    TOP_LEVEL_SECTIONS = {"reviewers"}
+    Ordering follows organizers.yaml. Groups named in `PAGEBREAK_BEFORE`
+    still get their own page — via a raw typst `pagebreak(weak: true)`
+    that doesn't produce a TOC entry — so long lists like Abstract
+    Reviewers don't stack on top of the shorter groups above.
+
+    'friends' and 'reviewers' render as compact comma-joined lines
+    (long lists, don't need per-line formatting)."""
+    # H3 subsections that should still start on a fresh page.
+    PAGEBREAK_BEFORE = {"reviewers"}
     COMPACT = {"friends", "reviewers"}
 
-    md = []
-    committee_opened = False
-
+    md = ["# Organizing Committee", ""]
+    first = True
     for key, group in orgs.items():
         if not isinstance(group, dict) or "members" not in group:
             continue
         title = group.get("title") or key.replace("_", " ").title()
 
-        if key in TOP_LEVEL_SECTIONS:
-            md.append(f"# {title}")
-            md.append("")
-            heading = None  # already rendered as H1
-        else:
-            if not committee_opened:
-                md.append("# Organizing Committee")
-                md.append("")
-                committee_opened = True
-            heading = f"### {title}"
+        if key in PAGEBREAK_BEFORE and not first:
+            # Fresh page for this subsection without minting a new TOC
+            # entry. `weak: true` collapses if we're already at the top
+            # of a page (e.g. as the first group).
+            md += ["```{=typst}", "#pagebreak(weak: true)", "```", ""]
 
-        if heading:
-            md.append(heading)
-            md.append("")
+        md += [f"### {title}", ""]
 
         intro = group.get("intro")
         if intro:
@@ -1047,6 +1042,7 @@ def render_organizers(orgs) -> list[str]:
                     line += f", *{aff}*"
                 md.append(line)
         md.append("")
+        first = False
     return md
 
 

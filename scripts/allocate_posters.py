@@ -111,7 +111,7 @@ lkroeh@bu.edu luc.r.francis@gmail.com lukeberg@bu.edu maa32@illinois.edu
 majialan@broadinstitute.org mansooreh.ahmadian@cuanschutz.edu
 mark_keller@hms.harvard.edu martelli@broadinstitute.org mary.likhite@umassmed.edu
 marykafi@uconn.edu matthew.lin.earth@outlook.com mccarter.calvin@gmail.com
-expy@bu.edu mendonca.k@northeastern.edu michael.tian@umassmed.edu
+etopkoc@bu.edu mendonca.k@northeastern.edu michael.tian@umassmed.edu
 mingxin_liu@brown.edu mjo@neu.edu mkapoor@iastate.edu mn667421@ohio.edu
 mohanty@hms.harvard.edu msrosito@ds.dfci.harvard.edu mybadendieck@wpi.edu
 myousry@bu.edu nayaksp@bu.edu nezar.abdennur@umassmed.edu
@@ -191,6 +191,7 @@ def load_submissions():
         "gani@umass.edu":                          ("A219", "Godwin Ani"),
         "giacomo.ceoldo@childrens.harvard.edu":    ("A077", "Giacomo Ceoldo"),   # ISCB Title was 'PhD'; corrected working title in-place
         "makenna.rodriguez1@howard.edu":           ("A204", "Makenna Rodriguez"),  # ISCB record had .com typo
+        "etopkoc@bu.edu":                          ("A075", "Ege Topkoc"),         # presenter transfer from mdiberna@wi.mit.edu; Ege prefers etopkoc@bu.edu over expy@bu.edu
     }
     # Force these — the ISCB row's email may already be set but wrong (typo)
     for email, (aid, fallback_name) in MANUAL_EMAIL_TO_AID.items():

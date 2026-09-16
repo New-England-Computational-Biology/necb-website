@@ -204,6 +204,7 @@ def load_submissions():
     # miscapitalized. Applied unconditionally after email fixes above.
     MANUAL_NAME_FIX = {
         "A094": "Edwin Moses Appiah",
+        "A122": "Tina Harati & Mary Jo Ondrechen",  # Connie Jeffery out of town 2026-09-16; co-authors present on her behalf. Mary Jo also independently presents her own A129 poster on Day 2.
     }
     for aid, name in MANUAL_NAME_FIX.items():
         if aid in subs:

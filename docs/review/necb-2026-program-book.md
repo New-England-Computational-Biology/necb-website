@@ -126,8 +126,8 @@ We are grateful to our sponsors, our host at Microsoft Research New England, ISC
 ### 11:15 AM – 12:15 PM · Invited talks
 
 ```{=typst}
-#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [], [#text(weight: 700, fill: c-navy)[Alex Lu] #text(size: 0.85em, fill: c-muted)[· Microsoft Research New England]])]
-#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [], [#text(weight: 700, fill: c-navy)[Rong Ma] #text(size: 0.85em, fill: c-muted)[· Harvard T.H. Chan School of Public Health]])]
+#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [], [#text(weight: 700, fill: c-navy)[Alex Lu] #text(size: 0.85em, fill: c-muted)[· Microsoft Research New England]\ #text(size: 0.9em, style: "italic")[Vermeer: Autoregressive generative modeling of microscopy predicts protein localization]])]
+#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [], [#text(weight: 700, fill: c-navy)[Rong Ma] #text(size: 0.85em, fill: c-muted)[· Harvard T.H. Chan School of Public Health]\ #text(size: 0.9em, style: "italic")[Geometry of Cell States: From Embeddings to Dynamics]])]
 #block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [], [#text(weight: 700, fill: c-navy)[Samantha Petti] #text(size: 0.85em, fill: c-muted)[· Tufts University]\ #text(size: 0.9em, style: "italic")[Modeling, interpreting, and optimizing high-dimensional genotype-phenotype maps]])]
 ```
 
@@ -308,6 +308,30 @@ NECB 2026 follows the [ISCB Code of Conduct](https://www.iscb.org/iscb-policy-st
 Harassment, discrimination, and disrespectful behaviour of any kind are not welcome, in-person or online. Please report any concerns to the organizing committee at `newenglandcompbio@gmail.com`, or to any of the co-chairs in person.
 
 # Keynote & Invited Talks · Abstracts
+
+### Invited talk · Vermeer: Autoregressive generative modeling of microscopy predicts protein localization
+
+**Presenter:** Alex Lu — Microsoft Research New England
+
+**Session:** Day 1 · Thu Oct 1, 2026 · 11:15 AM – 12:15 PM · Invited talks
+
+Understanding how proteins localize inside of cells is critical to understanding how cells regulate themselves by moving around proteins, and how these processes are disrupted in disease. Towards characterizing this, systematic microscopy datasets have emerged imaging almost every protein in an organism across cell types or perturbations. However, even high-throughput technologies struggle to fully cover the possible space of experiments in this data collection. In this talk, I will show that generative AI models can help prioritize data collection by simulating unseen experiments to predict which ones will possibly yield informative outcomes. I will introduce our work in Vermeer, which autoregressively generates microscopy images showing how proteins express in cells, predicting what proteins may be differentially regulated across different cell types and how alterations to protein sequence modify this behavior. I will show that Vermeer can accurately simulate the impacts of alterations to protein sequence on localization within cells, providing a basis for discovering novel mediators of localization within the proteome.
+
+```{=typst}
+#pagebreak(weak: true)
+```
+
+### Invited talk · Geometry of Cell States: From Embeddings to Dynamics
+
+**Presenter:** Rong Ma — Harvard T.H. Chan School of Public Health
+
+**Session:** Day 1 · Thu Oct 1, 2026 · 11:15 AM – 12:15 PM · Invited talks
+
+Single-cell data are often organized around low-dimensional geometric structures—clusters, manifolds, trajectories, and dynamic vector fields—that reflect cell-state heterogeneity and encode biological processes such as differentiation and regulation. This suggests a geometric view of single-cell analysis in which the geometry of the data is not merely a visualization device, but an object to be statistically assessed and biologically interpreted. In this talk, I will discuss our recent work along this direction. I will first describe how a stability-based perspective can be used to evaluate when nonlinear embeddings such as t-SNE and UMAP faithfully represent cellular relationships, and to identify regions of an embedding that are intrinsically less reliable. I will then present a manifold learning framework for denoising and embedding RNA velocity, in which cellular dynamics are represented as vector fields constrained by the geometry of the underlying cell-state manifold. These examples illustrate how geometric inference can connect visualization, uncertainty assessment, and dynamical modeling, providing both rigorous statistical tools and new ways to study cellular processes.
+
+```{=typst}
+#pagebreak(weak: true)
+```
 
 ### Invited talk · Modeling, interpreting, and optimizing high-dimensional genotype-phenotype maps
 

@@ -195,15 +195,23 @@ for aff, n in raw_affils.items():
     merged[normalize_affiliation(aff)] += n
 
 # Keep every institution with >= 2 abstracts; the long tail of single-
-# abstract institutions gets collapsed so it doesn't dominate the frame.
+# abstract institutions gets collapsed. The "Other" tile is rendered at
+# a compressed size (~top-3 average) so it doesn't swallow the frame —
+# the real count still shows inside the tile as text.
 KEEP_MIN = 2
 top_pairs = [(k, v) for k, v in merged.most_common() if v >= KEEP_MIN]
 tail_items = [(k, v) for k, v in merged.items() if v < KEEP_MIN]
 items = list(top_pairs)
+other_real_count = sum(v for _, v in tail_items)
 if tail_items:
+    # Compressed footprint = average of the top-3 named tiles, so Other
+    # sits alongside them rather than dwarfing them.
+    other_display = int(round(
+        sum(v for _, v in top_pairs[:3]) / max(3, 1)
+    ))
     items.append(
         (f"Other · {len(tail_items)} institutions "
-         f"(1 abstract each)", sum(v for _, v in tail_items))
+         f"({other_real_count} abstracts)", other_display)
     )
 
 
@@ -323,10 +331,9 @@ for i, ((label, count), (rx, ry, rw, rh)) in enumerate(zip(items, rects)):
     if label.startswith("Other · "):
         color = OTHER_TILE
         txt_col = C_INK
-    elif i < 3:
-        color = FUCHSIA_TILE
-        txt_col = "white"
     else:
+        # All named institutions in one color — no top-3 highlight, so
+        # the eye reads the relative size differences directly.
         color = NAVY_TILE
         txt_col = "white"
     ax.add_patch(plt.matplotlib.patches.Rectangle(
@@ -334,28 +341,35 @@ for i, ((label, count), (rx, ry, rw, rh)) in enumerate(zip(items, rects)):
         linewidth=1.6))
     area = rw * rh
     fs = min(13, max(7, 0.8 * (area ** 0.5)))
+    # For the compressed Other tile, hide the (now-misleading) sizing
+    # count and let the parenthetical inside the label carry the truth.
+    display_count = "" if label.startswith("Other · ") else str(count)
     # Very small boxes get just the count.
     if fs < 8:
-        ax.text(rx + rw / 2, ry + rh / 2, str(count),
-                ha="center", va="center", fontsize=max(6, fs),
-                weight="700", color=txt_col)
+        if display_count:
+            ax.text(rx + rw / 2, ry + rh / 2, display_count,
+                    ha="center", va="center", fontsize=max(6, fs),
+                    weight="700", color=txt_col)
         continue
     display = short_label(label, count, rw, rh, fs)
     if not display:
-        ax.text(rx + rw / 2, ry + rh / 2, str(count),
-                ha="center", va="center", fontsize=fs, weight="700",
-                color=txt_col)
+        if display_count:
+            ax.text(rx + rw / 2, ry + rh / 2, display_count,
+                    ha="center", va="center", fontsize=fs, weight="700",
+                    color=txt_col)
         continue
     n_lines = display.count("\n") + 1
-    # Nudge label up, count down.
-    ax.text(rx + rw / 2, ry + rh / 2 + fs * 0.05 * (n_lines + 1),
+    # Nudge label up, count down (if any).
+    label_y_offset = fs * 0.05 * (n_lines + 1) if display_count else 0
+    ax.text(rx + rw / 2, ry + rh / 2 + label_y_offset,
             display, ha="center", va="center", fontsize=fs, weight="700",
             color=txt_col, linespacing=1.05)
-    ax.text(rx + rw / 2,
-            ry + rh / 2 - fs * (0.35 + 0.28 * n_lines),
-            str(count), ha="center", va="center",
-            fontsize=fs * 0.88, weight="700",
-            color=txt_col, alpha=0.85)
+    if display_count:
+        ax.text(rx + rw / 2,
+                ry + rh / 2 - fs * (0.35 + 0.28 * n_lines),
+                display_count, ha="center", va="center",
+                fontsize=fs * 0.88, weight="700",
+                color=txt_col, alpha=0.85)
 
 ax.set_xlim(0, 100); ax.set_ylim(0, 62)
 ax.set_aspect("equal")
@@ -486,95 +500,170 @@ ISO = {
 }
 DISPLAY = {"Hong Kong SAR China": "Hong Kong"}
 
-fig = plt.figure(figsize=(12, 6.5))
-gs = fig.add_gridspec(2, 2, width_ratios=[2.2, 1],
-                      height_ratios=[3, 1.1], hspace=0.28, wspace=0.15)
+import json
+GEOJSON = ROOT / "docs" / "review" / "build" / "us-states.geojson"
 
-# --- LEFT (top): Northeast bubble map ---------------------------------
+
+def load_us_states():
+    if not GEOJSON.exists():
+        return None
+    with open(GEOJSON) as f:
+        return json.load(f)
+
+
+# US-state ZIP-code prefix map (rough). Same list used for the state bar.
+def zip_to_state_abbr(zc):
+    try:
+        z = int(str(zc).split("-")[0])
+    except Exception:
+        return None
+    for lo, hi, s in [
+        (1000, 2799, "MA"), (2800, 2999, "RI"), (3000, 3899, "NH"),
+        (3900, 4999, "ME"), (5000, 5999, "VT"), (6000, 6999, "CT"),
+        (7000, 8999, "NJ"), (10000, 14999, "NY"), (15000, 19699, "PA"),
+        (19700, 19999, "DE"), (20000, 20599, "DC"), (20600, 21999, "MD"),
+        (22000, 24699, "VA"), (27000, 28999, "NC"), (30000, 31999, "GA"),
+        (32000, 34999, "FL"), (43000, 45999, "OH"), (46000, 47999, "IN"),
+        (48000, 49999, "MI"), (50000, 52999, "IA"), (53000, 54999, "WI"),
+        (55000, 56999, "MN"), (60000, 62999, "IL"), (63000, 65999, "MO"),
+        (66000, 67999, "KS"), (68000, 69999, "NE"), (75000, 79999, "TX"),
+        (80000, 81999, "CO"), (85000, 86999, "AZ"), (90000, 96199, "CA"),
+        (97000, 97999, "OR"), (98000, 99499, "WA"),
+    ]:
+        if lo <= z <= hi:
+            return s
+    return None
+
+
+# State name -> abbrev (for GeoJSON "name" field)
+STATE_NAME_TO_ABBR = {
+    "Alabama": "AL", "Alaska": "AK", "Arizona": "AZ", "Arkansas": "AR",
+    "California": "CA", "Colorado": "CO", "Connecticut": "CT",
+    "Delaware": "DE", "District of Columbia": "DC", "Florida": "FL",
+    "Georgia": "GA", "Hawaii": "HI", "Idaho": "ID", "Illinois": "IL",
+    "Indiana": "IN", "Iowa": "IA", "Kansas": "KS", "Kentucky": "KY",
+    "Louisiana": "LA", "Maine": "ME", "Maryland": "MD",
+    "Massachusetts": "MA", "Michigan": "MI", "Minnesota": "MN",
+    "Mississippi": "MS", "Missouri": "MO", "Montana": "MT",
+    "Nebraska": "NE", "Nevada": "NV", "New Hampshire": "NH",
+    "New Jersey": "NJ", "New Mexico": "NM", "New York": "NY",
+    "North Carolina": "NC", "North Dakota": "ND", "Ohio": "OH",
+    "Oklahoma": "OK", "Oregon": "OR", "Pennsylvania": "PA",
+    "Rhode Island": "RI", "South Carolina": "SC", "South Dakota": "SD",
+    "Tennessee": "TN", "Texas": "TX", "Utah": "UT", "Vermont": "VT",
+    "Virginia": "VA", "Washington": "WA", "West Virginia": "WV",
+    "Wisconsin": "WI", "Wyoming": "WY", "Puerto Rico": "PR",
+}
+ROWS = rows[1:]
+state_counts = Counter()
+for r in ROWS:
+    if r[12] != "United States":
+        continue
+    s = zip_to_state_abbr(r[23])
+    if s:
+        state_counts[s] += 1
+
+
+fig = plt.figure(figsize=(13, 6.5))
+gs = fig.add_gridspec(2, 2, width_ratios=[2.4, 1],
+                      height_ratios=[3, 1], hspace=0.32, wspace=0.15)
+
+# --- LEFT (top): US choropleth of attendees ---------------------------
 axm = fig.add_subplot(gs[0, 0])
 axm.set_facecolor(C_GROUND)
 
-NE_LON = (-74.0, -69.8)
-NE_LAT = (41.0, 44.0)
-axm.set_xlim(*NE_LON); axm.set_ylim(*NE_LAT)
-axm.set_aspect("equal")
+# Draw each state polygon; fill by attendee count with a fuchsia ramp.
+gj = load_us_states()
+if gj is not None:
+    from matplotlib.colors import LinearSegmentedColormap
+    ramp = LinearSegmentedColormap.from_list(
+        "necb", [C_GROUND, "#EABAC5", C_FUCHSIA, C_FUCHSIA_DK]
+    )
+    max_cnt = max(state_counts.values()) if state_counts else 1
+
+    def polys_of(geom):
+        t = geom["type"]
+        cs = geom["coordinates"]
+        return [cs] if t == "Polygon" else cs
+
+    for feat in gj["features"]:
+        name = feat["properties"].get("name", "")
+        abbr = STATE_NAME_TO_ABBR.get(name, "")
+        cnt = state_counts.get(abbr, 0)
+        color = ramp(cnt / max_cnt) if cnt else "#F1EFEA"
+        for polygon in polys_of(feat["geometry"]):
+            for ring in polygon:
+                xs = [pt[0] for pt in ring]
+                ys = [pt[1] for pt in ring]
+                axm.fill(xs, ys, color=color,
+                         edgecolor="white", linewidth=0.6, zorder=1)
+        # Label state abbrev at centroid for states with attendees, but
+        # skip tiny Northeast states — they overlap and get called out
+        # separately via the callout box below.
+        SKIP_NE_INLINE = {"MA", "RI", "CT", "NH", "VT"}
+        if cnt > 0 and abbr and abbr not in SKIP_NE_INLINE:
+            first_ring = polys_of(feat["geometry"])[0][0]
+            cx = sum(pt[0] for pt in first_ring) / len(first_ring)
+            cy = sum(pt[1] for pt in first_ring) / len(first_ring)
+            fs = 8 if cnt < 10 else 10
+            col = "white" if cnt / max_cnt > 0.35 else C_INK
+            axm.text(cx, cy, abbr, ha="center", va="center",
+                     fontsize=fs, weight="800", color=col, zorder=3,
+                     alpha=0.95)
+
+# Cont US bounds
+axm.set_xlim(-125, -66)
+axm.set_ylim(24, 50)
+axm.set_aspect(1.3)
 axm.set_xticks([]); axm.set_yticks([])
-for s in axm.spines.values(): s.set_edgecolor(C_RULE); s.set_linewidth(0.8)
+for s in axm.spines.values(): s.set_visible(False)
 axm.grid(False)
-
-# Rough state borders (straight-line approximations)
-def _line(x1, y1, x2, y2, **kw):
-    axm.plot([x1, x2], [y1, y2], color=C_RULE, linewidth=0.9, **kw)
-_line(-73.5, 41.0, -73.5, 43.55)     # NY–VT/MA border
-_line(-73.5, 42.75, -70.9, 42.75)    # MA–NH/VT border
-_line(-73.5, 42.03, -71.35, 42.03)   # MA–CT border
-_line(-71.4, 42.03, -71.4, 41.35)    # MA–RI border rough
-_line(-71.8, 42.03, -71.8, 41.0)     # CT–RI border
-_line(-71.03, 42.55, -71.03, 43.5)   # NH–ME rough
-_line(-72.9, 42.75, -72.9, 45.0)     # VT–NH border rough
-
-state_labels = [
-    ("MA", -71.5, 42.35), ("NH", -71.7, 43.35),
-    ("VT", -73.2, 43.4),  ("CT", -72.7, 41.55),
-    ("RI", -71.55, 41.55), ("NY", -73.85, 43.0),
-    ("ME", -70.4, 43.7),
-]
-for lab, lon, lat in state_labels:
-    axm.text(lon, lat, lab, fontsize=10, color=C_MUTED, weight="700",
-             ha="center", va="center", alpha=0.75, zorder=1)
-
-# Aggregate Greater Boston cluster (Cambridge, Somerville, Medford,
-# Brookline, Belmont, Malden, Quincy, Lexington) into one anchor bubble
-GREATER_BOSTON = {"Boston", "Cambridge", "Somerville", "Medford",
-                  "Brookline", "Belmont", "Malden", "Quincy",
-                  "Lexington"}
-gb_count = sum(c for k, (_, c) in city_dots.items() if k in GREATER_BOSTON)
-gb_lat, gb_lon = 42.36, -71.06  # Boston center
-
-# Plot dots for non-Greater-Boston cities in the frame
-labeled = []
-for city, ((lat, lon), cnt) in sorted(city_dots.items(),
-                                       key=lambda kv: -kv[1][1]):
-    if city in GREATER_BOSTON: continue
-    if not (NE_LON[0] <= lon <= NE_LON[1] and
-            NE_LAT[0] <= lat <= NE_LAT[1]):
-        continue
-    r = 8 * (cnt ** 0.55)
-    axm.scatter([lon], [lat], s=r * 12, color=C_FUCHSIA,
-                alpha=0.72, edgecolor="white", linewidth=1.2,
-                zorder=5)
-    if cnt >= 4:
-        labeled.append((city, lon, lat, cnt))
-
-# Greater-Boston anchor bubble
-r = 14 * (gb_count ** 0.5)
-axm.scatter([gb_lon], [gb_lat], s=r * 20, color=C_FUCHSIA,
-            alpha=0.85, edgecolor="white", linewidth=2, zorder=6)
-labeled.append(("Greater Boston", gb_lon, gb_lat, gb_count))
-
-# Annotate labels outside the cluster to avoid overlap. Simple heuristic
-# — nudge label to the right for eastern cities, left for western ones.
-for city, lon, lat, cnt in labeled:
-    dx, dy = 0.20, 0.0
-    if city == "Greater Boston":
-        dx, dy = 0.55, -0.15
-    elif city == "Worcester":
-        dx, dy = -0.85, 0.0
-    elif city == "New Haven":
-        dx, dy = -0.75, -0.15
-    elif city == "Providence":
-        dx, dy = 0.15, -0.35
-    axm.annotate(f"{city} · {cnt}", xy=(lon, lat),
-                 xytext=(lon + dx, lat + dy),
-                 fontsize=10, color=C_INK, weight="700",
-                 ha="left" if dx > 0 else "right", va="center", zorder=7,
-                 arrowprops=dict(arrowstyle="-", color=C_MUTED,
-                                 lw=0.8, alpha=0.7))
-
-axm.set_title("Attendees across the Northeast", loc="left",
+axm.set_title("Attendees across the United States", loc="left",
               fontsize=13, weight="700", color=C_INK, pad=10)
 
-# --- BELOW map: state inset (moved out of the map axes) --------------
+from matplotlib.patches import Rectangle
+# Northeast callout box — the small states MA/CT/RI/NH/VT get numbers
+# outside the map so they don't collide with each other on the choropleth.
+NE_STATES = ["MA", "CT", "RI", "NH", "VT"]
+callout_lines = []
+for s in NE_STATES:
+    c = state_counts.get(s, 0)
+    if c > 0:
+        callout_lines.append(f"{s}  {c}")
+callout_x, callout_y = -78, 30
+box_h = 1.3 * len(callout_lines) + 1
+axm.add_patch(Rectangle((callout_x - 1, callout_y - box_h + 1),
+                        12, box_h, facecolor=C_GROUND,
+                        edgecolor=C_RULE, linewidth=1.0, zorder=4))
+axm.text(callout_x, callout_y, "Northeast", fontsize=9,
+         color=C_INK, weight="700", ha="left", va="top", zorder=5)
+for i, line in enumerate(callout_lines):
+    axm.text(callout_x, callout_y - 1.4 - i * 1.3, line,
+             fontsize=9, color=C_INK, weight="600",
+             ha="left", va="top", zorder=5)
+
+# Colorbar-lite legend (three ticks) at bottom-left of the US axes.
+legend_x, legend_y = -122, 24.8
+lw, lh = 30, 1.2
+grad = np.linspace(0, 1, 200)
+for i, g in enumerate(grad):
+    axm.add_patch(Rectangle(
+        (legend_x + i * lw / len(grad), legend_y),
+        lw / len(grad) * 1.05, lh,
+        color=ramp(g) if g > 0 else "#F1EFEA",
+        edgecolor="none", zorder=2,
+    ))
+axm.text(legend_x, legend_y - 0.9, "0",
+         fontsize=8, color=C_MUTED, weight="600")
+axm.text(legend_x + lw / 2, legend_y - 0.9, f"{max_cnt // 2}",
+         fontsize=8, color=C_MUTED, weight="600", ha="center")
+axm.text(legend_x + lw, legend_y - 0.9, f"{max_cnt}",
+         fontsize=8, color=C_MUTED, weight="600", ha="right")
+axm.text(legend_x, legend_y + lh + 0.4, "attendees per state",
+         fontsize=8, color=C_INK, weight="700")
+
+
+# --- BELOW map: New-England city dots (Boston zoom) ------------------
 axi = fig.add_subplot(gs[1, 0])
 axi.set_facecolor(C_GROUND)
 # Compute per-state counts from zip codes when present.
@@ -599,29 +688,35 @@ def zip_to_state(zc):
     return None
 
 
-state_counts = Counter(zip_to_state(r[ZIP]) for r in rows[1:]
-                       if r[12] == "United States" and r[ZIP])
-state_counts.pop(None, None)
-# Top ~10 states, MA on the far left for context
-state_order = ["MA"] + [s for s, _ in state_counts.most_common() if s != "MA"][:9]
-state_vals = [state_counts.get(s, 0) for s in state_order]
-x_pos = np.arange(len(state_order))
-axi.bar(x_pos, state_vals,
-        color=[C_FUCHSIA if s == "MA" else C_NAVY for s in state_order])
-for i, v in enumerate(state_vals):
-    axi.text(i, v + max(state_vals) * 0.03, str(v),
-             ha="center", fontsize=8, weight="700", color=C_INK)
-axi.set_xticks(x_pos)
-axi.set_xticklabels(state_order)
-axi.set_title("Attendees by state (top 10)", fontsize=11,
+# Bottom row: horizontal bar of top cities (Greater Boston aggregated).
+GREATER_BOSTON = {"Boston", "Cambridge", "Somerville", "Medford",
+                  "Brookline", "Belmont", "Malden", "Quincy",
+                  "Lexington"}
+gb_count = sum(c for k, (_, c) in city_dots.items() if k in GREATER_BOSTON)
+city_others = [(k, c) for k, (_, c) in city_dots.items()
+               if k not in GREATER_BOSTON]
+city_others.sort(key=lambda kv: -kv[1])
+top_cities = [("Greater Boston", gb_count)] + city_others[:7]
+
+# barh with cities descending, Greater Boston at the top of the plot
+labels = [name for name, _ in top_cities]
+counts = [c for _, c in top_cities]
+y_pos = np.arange(len(labels))[::-1]
+bars = axi.barh(y_pos, counts, color=C_FUCHSIA, height=0.72)
+for i, v in enumerate(counts):
+    axi.text(v + max(counts) * 0.01, y_pos[i], str(v),
+             va="center", ha="left", fontsize=10, weight="700",
+             color=C_INK)
+axi.set_yticks(y_pos)
+axi.set_yticklabels(labels, fontsize=10, color=C_INK)
+axi.set_xlim(0, max(counts) * 1.1)
+axi.set_title("Top cities represented", fontsize=11,
               weight="700", color=C_INK, pad=6, loc="left")
-axi.tick_params(axis="both", labelsize=9, colors=C_INK,
-                length=0, pad=2)
-axi.set_ylim(0, max(state_vals) * 1.18)
-axi.grid(axis="y", visible=True, color=C_RULE, linewidth=0.5)
-for s in ["top", "right", "left"]:
+axi.tick_params(axis="both", length=0, pad=4)
+for s in ["top", "right", "bottom"]:
     axi.spines[s].set_visible(False)
-axi.spines["bottom"].set_edgecolor(C_MUTED)
+axi.spines["left"].set_edgecolor(C_RULE)
+axi.grid(axis="x", visible=True, color=C_RULE, linewidth=0.4)
 
 # --- RIGHT: international tiles (spans full height) -----------------
 ax2 = fig.add_subplot(gs[:, 1])

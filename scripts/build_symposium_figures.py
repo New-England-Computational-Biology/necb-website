@@ -632,14 +632,27 @@ if gj is not None:
                 ys = [pt[1] for pt in ring]
                 axm.fill(xs, ys, color=NE_FILL, edgecolor=NE_EDGE,
                          linewidth=0.7, zorder=1)
-        # State labels (top-left of each state's bbox, muted)
+        # State labels (spelled-out name at centroid, muted)
         first_ring = polys_of(feat["geometry"])[0][0]
         cx = sum(pt[0] for pt in first_ring) / len(first_ring)
         cy = sum(pt[1] for pt in first_ring) / len(first_ring)
         if NE_LON[0] < cx < NE_LON[1] and NE_LAT[0] < cy < NE_LAT[1]:
-            axm.text(cx, cy, abbr, ha="center", va="center",
-                     fontsize=9, color=C_MUTED, weight="700",
-                     alpha=0.75, zorder=2)
+            # Tiny NE states get their label pinned outside the crowded
+            # Boston-area cluster where the big bubble sits.
+            NUDGE = {
+                "MA": (-71.5, 42.30),   # nudge left so bubble covers it less
+                "CT": (-72.5, 41.55),
+                "RI": (-71.45, 41.65),
+                "NH": (-71.55, 43.55),
+                "VT": (-72.8, 43.85),
+                "DC": (-77.5, 39.15),
+                "DE": (-75.5, 38.95),
+            }
+            lon_lab, lat_lab = NUDGE.get(abbr, (cx, cy))
+            axm.text(lon_lab, lat_lab, name,
+                     ha="center", va="center",
+                     fontsize=8.5, color=C_MUTED, weight="600",
+                     alpha=0.8, zorder=2)
 
 # City bubbles — cities aggregated to their (lat, lon), sized by count.
 # Greater Boston is one anchor since Cambridge/Somerville/etc. are all
@@ -732,6 +745,7 @@ def zip_to_state(zc):
     return None
 
 
+import textwrap as _tw
 axi.set_facecolor(C_GROUND)
 axi.set_xlim(0, 100); axi.set_ylim(0, 100)
 axi.set_xticks([]); axi.set_yticks([])
@@ -739,25 +753,25 @@ for s in axi.spines.values(): s.set_visible(False)
 axi.grid(False)
 # Card frame
 axi.add_patch(plt.matplotlib.patches.FancyBboxPatch(
-    (2, 8), 96, 84,
+    (3, 5), 94, 90,
     boxstyle="round,pad=0.02,rounding_size=1.5",
     facecolor="#FFFFFF", edgecolor=C_RULE, linewidth=1.0,
     transform=axi.transData, zorder=1,
 ))
-axi.text(8, 82, "Other US", fontsize=13, weight="700",
-         color=C_INK, ha="left", va="center", zorder=2)
-axi.text(8, 55, f"{other_us_count}", fontsize=52, weight="800",
+axi.text(8, 85, "Other US", fontsize=13, weight="700",
+         color=C_INK, ha="left", va="top", zorder=2)
+axi.text(8, 62, f"{other_us_count}", fontsize=44, weight="800",
          color=C_NAVY, ha="left", va="center", zorder=2)
-axi.text(58, 55, "attendees", fontsize=12, color=C_MUTED,
+axi.text(54, 62, "attendees", fontsize=12, color=C_MUTED,
          weight="600", ha="left", va="center", zorder=2)
 n_far = len(FARFLUNG_STATES)
-axi.text(8, 30, f"across {n_far} states outside\n"
-                f"the Northeast",
+axi.text(8, 38, f"across {n_far} states outside the Northeast",
          fontsize=10, color=C_INK, weight="600",
          ha="left", va="top", zorder=2)
-axi.text(8, 14, ", ".join(FARFLUNG_STATES),
+axi.text(8, 26,
+         "\n".join(_tw.wrap(", ".join(FARFLUNG_STATES), width=32)),
          fontsize=8, color=C_MUTED, style="italic",
-         ha="left", va="center", zorder=2)
+         ha="left", va="top", zorder=2, linespacing=1.3)
 
 # --- RIGHT (bottom): "International" summary tile -------------------
 ax2 = fig.add_subplot(gs[3])
@@ -767,24 +781,26 @@ ax2.set_xticks([]); ax2.set_yticks([])
 for s in ax2.spines.values(): s.set_visible(False)
 ax2.grid(False)
 ax2.add_patch(plt.matplotlib.patches.FancyBboxPatch(
-    (2, 8), 96, 84,
+    (3, 5), 94, 90,
     boxstyle="round,pad=0.02,rounding_size=1.5",
     facecolor="#FFFFFF", edgecolor=C_RULE, linewidth=1.0,
     transform=ax2.transData, zorder=1,
 ))
-ax2.text(8, 82, "International", fontsize=13, weight="700",
-         color=C_INK, ha="left", va="center", zorder=2)
-ax2.text(8, 55, f"{sum(intl.values())}", fontsize=52,
+ax2.text(8, 85, "International", fontsize=13, weight="700",
+         color=C_INK, ha="left", va="top", zorder=2)
+ax2.text(8, 62, f"{sum(intl.values())}", fontsize=44,
          weight="800", color=C_FUCHSIA, ha="left", va="center",
          zorder=2)
-ax2.text(58, 55, "attendees", fontsize=12, color=C_MUTED,
+ax2.text(38, 62, "attendees", fontsize=12, color=C_MUTED,
          weight="600", ha="left", va="center", zorder=2)
-ax2.text(8, 30, f"across {len(intl)} countries",
+ax2.text(8, 38, f"across {len(intl)} countries",
          fontsize=10, color=C_INK, weight="600",
          ha="left", va="top", zorder=2)
-ax2.text(8, 14, ", ".join(sorted(intl.keys())),
+_intl_display = [DISPLAY.get(c, c) for c in sorted(intl.keys())]
+ax2.text(8, 26,
+         "\n".join(_tw.wrap(", ".join(_intl_display), width=32)),
          fontsize=8, color=C_MUTED, style="italic",
-         ha="left", va="center", zorder=2, wrap=True)
+         ha="left", va="top", zorder=2, linespacing=1.3)
 
 WORLD_GEOJSON = ROOT / "docs" / "review" / "build" / "world-countries.geojson"
 WORLD_URL = ("https://raw.githubusercontent.com/nvkelso/natural-earth-vector"

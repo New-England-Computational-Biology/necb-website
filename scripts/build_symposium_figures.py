@@ -286,16 +286,13 @@ FUCHSIA_TILE = C_FUCHSIA
 OTHER_TILE = "#C8C8CC"
 
 
-def short_label(label, count, rw, rh, fs):
-    """Return a display string that fits inside the rect, or '' when
-    nothing reasonable fits. Also breaks into multiple lines when the
-    rect is squarish and the label is multi-word."""
+def short_label(label, count, rw, rh, fs, reserve_lines=1):
+    """Return a display string that fits inside the rect while leaving
+    `reserve_lines` worth of vertical room for the count text below.
+    Returns '' when nothing reasonable fits."""
     area = rw * rh
     if area < 8:
         return ""
-    # Character budget scales with rect width and inverse of font size.
-    # 100pt of horizontal coord ≈ 11 inches at figsize=(11,6.5) so ~7
-    # chars per horizontal unit at fs=10.
     max_chars_per_line = max(5, int(rw * 11 / fs))
     words = label.split()
     lines = []
@@ -310,20 +307,19 @@ def short_label(label, count, rw, rh, fs):
             line = w
     if line:
         lines.append(line)
-    # Cap number of lines to what fits vertically.
-    max_lines = max(1, int(rh * 8 / fs))
-    lines = lines[:max_lines]
+    # Reserve vertical room for the count. Approx one text line ≈ fs * 1.2
+    # in axis units (0.8 chars-per-unit / 1 = fs equiv).
+    line_height_axis = fs / 8
+    max_label_lines = max(1, int((rh - line_height_axis * reserve_lines)
+                                 / line_height_axis))
+    lines = lines[:max_label_lines]
     if not lines:
         return ""
-    # If we clipped, add an ellipsis on the last line.
-    if len(lines) < len(label.split()) or any(
-        len(l) > max_chars_per_line for l in lines
-    ):
-        last = lines[-1]
-        if len(last) > max_chars_per_line - 1:
-            last = last[: max_chars_per_line - 1]
-        # Suppress ellipsis when clipping is silly (e.g. single-word truncation)
-        lines[-1] = last
+    # Silent truncation of an over-long final line (no ellipsis — this is
+    # a treemap, not prose).
+    last = lines[-1]
+    if len(last) > max_chars_per_line:
+        lines[-1] = last[:max_chars_per_line]
     return "\n".join(lines)
 
 
@@ -351,25 +347,28 @@ for i, ((label, count), (rx, ry, rw, rh)) in enumerate(zip(items, rects)):
                     ha="center", va="center", fontsize=max(6, fs),
                     weight="700", color=txt_col)
         continue
-    display = short_label(label, count, rw, rh, fs)
+    # Reserve one line of vertical room for the count when we plan to
+    # draw it. Anchor the label to the top of the tile and the count to
+    # the bottom so wrapped multi-line labels can't push either outside.
+    reserve = 1 if display_count else 0
+    display = short_label(label, count, rw, rh, fs, reserve_lines=reserve)
     if not display:
         if display_count:
             ax.text(rx + rw / 2, ry + rh / 2, display_count,
                     ha="center", va="center", fontsize=fs, weight="700",
                     color=txt_col)
         continue
-    n_lines = display.count("\n") + 1
-    # Nudge label up, count down (if any).
-    label_y_offset = fs * 0.05 * (n_lines + 1) if display_count else 0
-    ax.text(rx + rw / 2, ry + rh / 2 + label_y_offset,
-            display, ha="center", va="center", fontsize=fs, weight="700",
+    # Small vertical padding
+    pad = 0.35
+    # Label anchored top-center
+    ax.text(rx + rw / 2, ry + rh - pad, display,
+            ha="center", va="top", fontsize=fs, weight="700",
             color=txt_col, linespacing=1.05)
     if display_count:
-        ax.text(rx + rw / 2,
-                ry + rh / 2 - fs * (0.35 + 0.28 * n_lines),
-                display_count, ha="center", va="center",
-                fontsize=fs * 0.88, weight="700",
-                color=txt_col, alpha=0.85)
+        # Count anchored bottom-center inside the box
+        ax.text(rx + rw / 2, ry + pad, display_count,
+                ha="center", va="bottom", fontsize=fs * 0.88,
+                weight="700", color=txt_col, alpha=0.85)
 
 ax.set_xlim(0, 100); ax.set_ylim(0, 62)
 ax.set_aspect("equal")
@@ -758,18 +757,18 @@ axi.add_patch(plt.matplotlib.patches.FancyBboxPatch(
     facecolor="#FFFFFF", edgecolor=C_RULE, linewidth=1.0,
     transform=axi.transData, zorder=1,
 ))
-axi.text(8, 85, "Other US", fontsize=13, weight="700",
+axi.text(7, 85, "Other US", fontsize=13, weight="700",
          color=C_INK, ha="left", va="top", zorder=2)
-axi.text(8, 62, f"{other_us_count}", fontsize=44, weight="800",
+axi.text(7, 62, f"{other_us_count}", fontsize=44, weight="800",
          color=C_NAVY, ha="left", va="center", zorder=2)
-axi.text(54, 62, "attendees", fontsize=12, color=C_MUTED,
+axi.text(52, 62, "attendees", fontsize=12, color=C_MUTED,
          weight="600", ha="left", va="center", zorder=2)
 n_far = len(FARFLUNG_STATES)
-axi.text(8, 38, f"across {n_far} states outside the Northeast",
-         fontsize=10, color=C_INK, weight="600",
-         ha="left", va="top", zorder=2)
-axi.text(8, 26,
-         "\n".join(_tw.wrap(", ".join(FARFLUNG_STATES), width=32)),
+axi.text(7, 38, f"across {n_far} states outside\nthe Northeast",
+         fontsize=9.5, color=C_INK, weight="600",
+         ha="left", va="top", zorder=2, linespacing=1.3)
+axi.text(7, 18,
+         "\n".join(_tw.wrap(", ".join(FARFLUNG_STATES), width=28)),
          fontsize=8, color=C_MUTED, style="italic",
          ha="left", va="top", zorder=2, linespacing=1.3)
 
@@ -786,19 +785,19 @@ ax2.add_patch(plt.matplotlib.patches.FancyBboxPatch(
     facecolor="#FFFFFF", edgecolor=C_RULE, linewidth=1.0,
     transform=ax2.transData, zorder=1,
 ))
-ax2.text(8, 85, "International", fontsize=13, weight="700",
+ax2.text(7, 85, "International", fontsize=13, weight="700",
          color=C_INK, ha="left", va="top", zorder=2)
-ax2.text(8, 62, f"{sum(intl.values())}", fontsize=44,
+ax2.text(7, 62, f"{sum(intl.values())}", fontsize=44,
          weight="800", color=C_FUCHSIA, ha="left", va="center",
          zorder=2)
-ax2.text(38, 62, "attendees", fontsize=12, color=C_MUTED,
+ax2.text(30, 62, "attendees", fontsize=12, color=C_MUTED,
          weight="600", ha="left", va="center", zorder=2)
-ax2.text(8, 38, f"across {len(intl)} countries",
-         fontsize=10, color=C_INK, weight="600",
-         ha="left", va="top", zorder=2)
+ax2.text(7, 38, f"across {len(intl)} countries",
+         fontsize=9.5, color=C_INK, weight="600",
+         ha="left", va="top", zorder=2, linespacing=1.3)
 _intl_display = [DISPLAY.get(c, c) for c in sorted(intl.keys())]
-ax2.text(8, 26,
-         "\n".join(_tw.wrap(", ".join(_intl_display), width=32)),
+ax2.text(7, 26,
+         "\n".join(_tw.wrap(", ".join(_intl_display), width=28)),
          fontsize=8, color=C_MUTED, style="italic",
          ha="left", va="top", zorder=2, linespacing=1.3)
 
@@ -931,16 +930,63 @@ for _, row in subs.iterrows():
 theme_items = [(t, c) for t, c in theme_counts.most_common() if t != "Other"]
 
 if theme_items:
-    fig, ax = plt.subplots(figsize=(9, 5.5))
-    labels, counts = zip(*theme_items)
-    ax.barh(labels[::-1], counts[::-1], color=C_TEAL)
-    for i, v in enumerate(counts[::-1]):
-        ax.text(v + 0.4, i, str(v), va="center", fontsize=10,
-                color=C_INK, weight="600")
-    ax.set_title("Research themes across accepted abstracts")
-    ax.set_xlabel("Abstracts (a single abstract may span themes)")
-    ax.grid(axis="y", visible=False)
-    ax.set_xlim(0, max(counts) * 1.14)
+    # Word cloud sized by theme + keyword frequency. We seed a large
+    # phrase dictionary with the theme counts (as weight-multiplied
+    # terms), and blend in shorter keyword bigrams from raw abstracts
+    # so the cloud reads as a mix of headline themes and technical
+    # sub-terms.
+    from wordcloud import WordCloud
+
+    # Base frequencies: theme label → count
+    freqs = dict(theme_items)
+
+    # Add nice-looking multi-word technical terms harvested from the
+    # abstracts themselves. Simple bigram/trigram scan on lowercase text.
+    TECH_TERMS = [
+        "single cell", "spatial transcriptomics", "protein design",
+        "language model", "foundation model", "graph neural",
+        "flow matching", "gene regulation", "drug discovery",
+        "cancer genomics", "immune repertoire", "cell painting",
+        "variant effect", "generative model", "deep learning",
+        "reinforcement learning", "prompt tuning", "benchmark",
+        "electronic health record", "clinical variant",
+        "transcription factor", "enhancer", "chromatin", "peptide",
+        "neoantigen", "microbiome", "metabolic model",
+        "structure prediction", "drug repurposing", "docking",
+        "regulatory element", "batch integration",
+    ]
+    joined = " ".join(str(t or "") + " " + str(a or "")
+                      for t, a in zip(subs["title"], subs["abstract"])
+                      ).lower()
+    for term in TECH_TERMS:
+        n = joined.count(term)
+        if n >= 2:
+            freqs[term.title()] = freqs.get(term.title(), 0) + n * 4
+
+    palette = [C_FUCHSIA, C_NAVY, C_TEAL, C_FUCHSIA_DK]
+
+    def color_fn(word, font_size, position, orientation,
+                 random_state=None, **kw):
+        return palette[hash(word) % len(palette)]
+
+    wc = WordCloud(
+        width=1600, height=900,
+        background_color=C_GROUND,
+        color_func=color_fn,
+        prefer_horizontal=1.0,   # keep everything readable — no rotations
+        max_words=60,
+        relative_scaling=0.55,
+        min_font_size=12,
+        collocations=False,
+        random_state=42,
+    ).generate_from_frequencies(freqs)
+
+    fig, ax = plt.subplots(figsize=(11, 5.5))
+    ax.imshow(wc.to_array(), interpolation="bilinear")
+    ax.set_xticks([]); ax.set_yticks([])
+    for s in ax.spines.values(): s.set_visible(False)
+    ax.set_title("Research themes across accepted abstracts",
+                 loc="left", pad=8)
     savefig(fig, "05_abstract_topics")
     plt.close(fig)
 

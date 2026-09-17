@@ -64,15 +64,40 @@ We are grateful to our sponsors, our host at Microsoft Research New England, ISC
 
 # By the Numbers
 
-![](/static/img/stats/06_at_a_glance.png){ width=90% }
+```{=typst}
+#align(center + horizon)[
+  #image("/static/img/stats/06_at_a_glance.png", width: 92%)
+]
+#v(0.35em)
+```
 
-![](/static/img/stats/02_top_institutions.png){ width=90% }
+```{=typst}
+#align(center + horizon)[
+  #image("/static/img/stats/02_top_institutions.png", width: 92%)
+]
+#v(0.35em)
+```
 
-![](/static/img/stats/03_career_stage.png){ width=90% }
+```{=typst}
+#align(center + horizon)[
+  #image("/static/img/stats/04_country_reach.png", width: 92%)
+]
+#v(0.35em)
+```
 
-![](/static/img/stats/04_country_reach.png){ width=90% }
+```{=typst}
+#align(center + horizon)[
+  #image("/static/img/stats/05_abstract_topics.png", width: 92%)
+]
+#v(0.35em)
+```
 
-![](/static/img/stats/05_abstract_topics.png){ width=90% }
+```{=typst}
+#align(center + horizon)[
+  #image("/static/img/stats/03_career_stage.png", width: 92%)
+]
+#v(0.35em)
+```
 
 # Program at a Glance
 

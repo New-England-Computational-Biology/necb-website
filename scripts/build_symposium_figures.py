@@ -35,13 +35,23 @@ C_TEAL = "#3B7368"
 C_INK = "#14141A"
 C_MUTED = "#6B6B6E"
 C_RULE = "#E1E1E4"
-C_GROUND = "#FDFBF6"
+C_GROUND = "#FFFFFF"  # white for print-friendly figures
+
+# Register Arimo (Google's Arial-metric-compatible font) if we've cached
+# the TTFs. Falls back to sans-serif when the font isn't available.
+_FONT_DIR = ROOT / "docs" / "review" / "build" / "fonts"
+try:
+    import matplotlib.font_manager as _fm
+    for _fp in sorted(_FONT_DIR.glob("*.ttf")):
+        _fm.fontManager.addfont(str(_fp))
+except Exception:
+    pass
 
 plt.rcParams.update({
-    "font.family": ["Avenir Next", "Charter", "Georgia", "DejaVu Sans"],
+    "font.family": ["Arimo", "Arial", "Helvetica", "DejaVu Sans"],
     "font.size": 11,
-    "axes.titlesize": 15,
-    "axes.titleweight": "600",
+    "axes.titlesize": 14,
+    "axes.titleweight": "700",
     "axes.labelsize": 11,
     "axes.labelcolor": C_INK,
     "axes.edgecolor": C_MUTED,
@@ -173,6 +183,36 @@ AFFIL_ALIASES = {
     "Whitehead Institute, UCLA": "Whitehead Institute",
 }
 
+# Display-name shortenings used only in the treemap so long labels don't
+# have to be truncated silently.
+SHORT_DISPLAY = {
+    "Massachusetts General Hospital":         "MGH",
+    "University of Massachusetts Lowell":     "UMass Lowell",
+    "University of Massachusetts Boston":     "UMass Boston",
+    "Georgia Institute of Technology":        "Georgia Tech",
+    "Dana-Farber Cancer Institute":           "Dana-Farber",
+    "Boston Children's Hospital":             "BCH",
+    "Whitehead Institute":                    "Whitehead",
+    "Harvard T.H. Chan":                      "Harvard Chan",
+    "Worcester Polytechnic Institute":        "WPI",
+    "Department of Genomics and Computational Biology":
+        "UMass Chan Medical School",  # normalize to parent institution
+    "Bioinformatics Program":                 "BU Bioinformatics",
+    "Boston University":                      "Boston Univ.",
+    "Northeastern University":                "Northeastern",
+    "Harvard Medical School":                 "Harvard Med",
+    "UMass Chan Medical School":              "UMass Chan",
+    "Harvard University":                     "Harvard",
+    "Tufts University":                       "Tufts",
+    "Yale University":                        "Yale",
+    "Brown University":                       "Brown",
+    "Broad Institute":                        "Broad",
+    "Princeton University":                   "Princeton",
+    "Columbia University":                    "Columbia",
+    "University of Washington":               "UW",
+}
+
+
 raw_affils = load_sub_affils()
 
 def normalize_affiliation(aff):
@@ -192,7 +232,18 @@ def normalize_affiliation(aff):
 
 merged: Counter = Counter()
 for aff, n in raw_affils.items():
-    merged[normalize_affiliation(aff)] += n
+    # Two-step normalization: first collapse punctuation variants /
+    # roots, then remap "child department" aliases (via SHORT_DISPLAY
+    # entries that point to the parent institution) so their counts fold
+    # into the parent tile.
+    canon = normalize_affiliation(aff)
+    parent_target = SHORT_DISPLAY.get(canon, canon)
+    # Only fold when the mapping is to a longer / different institution.
+    # (Simple SHORT_DISPLAY shortenings just rename; we handle that at
+    # display time — see DISPLAY_LABEL below.)
+    if canon == "Department of Genomics and Computational Biology":
+        canon = "UMass Chan Medical School"
+    merged[canon] += n
 
 # Keep every institution with >= 2 abstracts; the long tail of single-
 # abstract institutions gets collapsed. The "Other" tile is rendered at
@@ -278,7 +329,7 @@ def squarify(values, x, y, w, h):
 
 rects = squarify([v for _, v in items], 0, 0, 100, 62)
 
-fig, ax = plt.subplots(figsize=(11, 6.5))
+fig, ax = plt.subplots(figsize=(11, 5.2))
 # Uniform navy fill so the treemap reads as one cohesive block.
 # Top 3 wear fuchsia to draw the eye. Grey for the "Other" tile.
 NAVY_TILE = C_NAVY
@@ -293,7 +344,9 @@ def short_label(label, count, rw, rh, fs, reserve_lines=1):
     area = rw * rh
     if area < 8:
         return ""
-    max_chars_per_line = max(5, int(rw * 11 / fs))
+    # Arimo character width ≈ 0.55 em → conservative constant so
+    # multi-word labels wrap before they touch the tile edge.
+    max_chars_per_line = max(5, int((rw * 0.85) * 9 / fs))
     words = label.split()
     lines = []
     line = ""
@@ -312,14 +365,12 @@ def short_label(label, count, rw, rh, fs, reserve_lines=1):
     line_height_axis = fs / 8
     max_label_lines = max(1, int((rh - line_height_axis * reserve_lines)
                                  / line_height_axis))
-    lines = lines[:max_label_lines]
-    if not lines:
+    # If we couldn't wrap the label to fit vertically without truncating
+    # an actual word, drop the label — the tile keeps just its count.
+    if len(lines) > max_label_lines:
         return ""
-    # Silent truncation of an over-long final line (no ellipsis — this is
-    # a treemap, not prose).
-    last = lines[-1]
-    if len(last) > max_chars_per_line:
-        lines[-1] = last[:max_chars_per_line]
+    if any(len(l) > max_chars_per_line for l in lines):
+        return ""
     return "\n".join(lines)
 
 
@@ -351,7 +402,11 @@ for i, ((label, count), (rx, ry, rw, rh)) in enumerate(zip(items, rects)):
     # draw it. Anchor the label to the top of the tile and the count to
     # the bottom so wrapped multi-line labels can't push either outside.
     reserve = 1 if display_count else 0
-    display = short_label(label, count, rw, rh, fs, reserve_lines=reserve)
+    # Prefer the short display name when set (e.g. MGH, Dana-Farber),
+    # so long labels don't need to overflow or be silently truncated.
+    display_label = SHORT_DISPLAY.get(label, label)
+    display = short_label(display_label, count, rw, rh, fs,
+                          reserve_lines=reserve)
     if not display:
         if display_count:
             ax.text(rx + rw / 2, ry + rh / 2, display_count,
@@ -411,7 +466,7 @@ STAGE_COLORS = {
 }
 colors = [STAGE_COLORS[s] for s in stages.index]
 
-fig, ax = plt.subplots(figsize=(7.5, 5.5))
+fig, ax = plt.subplots(figsize=(10, 4.5))
 wedges, texts, autotexts = ax.pie(
     stages.values, labels=None, colors=colors, startangle=90,
     counterclock=False,
@@ -581,7 +636,7 @@ for r in ROWS:
         state_counts[s] += 1
 
 
-fig = plt.figure(figsize=(13, 6.5))
+fig = plt.figure(figsize=(13, 5.5))
 # Two-column layout: New England map on the left, two summary tiles on
 # the right (other US + international). Everything else (national US
 # choropleth, top-cities bar, world map) is dropped — a single tight NE
@@ -981,7 +1036,7 @@ if theme_items:
         random_state=42,
     ).generate_from_frequencies(freqs)
 
-    fig, ax = plt.subplots(figsize=(11, 5.5))
+    fig, ax = plt.subplots(figsize=(11, 4.6))
     ax.imshow(wc.to_array(), interpolation="bilinear")
     ax.set_xticks([]); ax.set_yticks([])
     for s in ax.spines.values(): s.set_visible(False)
@@ -1008,7 +1063,7 @@ stats = [
     (f"{n_institutions}",    "institutions"),
     ("Oct 1–2",              "2026 · Cambridge,\nMassachusetts"),
 ]
-fig, axes = plt.subplots(2, 4, figsize=(12, 5.5))
+fig, axes = plt.subplots(2, 4, figsize=(12, 4.5))
 axes = axes.flatten()
 tile_colors = [C_FUCHSIA, C_NAVY, C_TEAL, C_FUCHSIA_DK,
                C_NAVY, C_FUCHSIA, C_TEAL, C_FUCHSIA_DK]

@@ -1102,24 +1102,33 @@ def render_organizers(orgs) -> list[str]:
 
 
 def render_by_the_numbers() -> list[str]:
-    """Compact stat-figures spread. All 5 figures are emitted with no
-    captions and no forced page breaks; typst flows them onto as few
-    pages as fit, so a single-page or two-page spread is the norm.
-    Registration growth is intentionally skipped."""
+    """Compact stat-figures spread. Images are emitted with no captions
+    and no forced page breaks, centered horizontally, and sized so the
+    5 figures pack into ~2 pages. Typst chooses the actual line breaks
+    within the section. Registration growth is intentionally skipped."""
     figs = [
         "stats/06_at_a_glance.png",
         "stats/02_top_institutions.png",
-        "stats/03_career_stage.png",
         "stats/04_country_reach.png",
         "stats/05_abstract_topics.png",
+        "stats/03_career_stage.png",
     ]
     available = [p for p in figs if (ROOT / "static" / "img" / p).exists()]
     if not available:
         return []
     md = ["# By the Numbers", ""]
     for path in available:
-        # Empty alt text keeps pandoc from inserting a "Figure N:" caption.
-        md += [f"![](/static/img/{path}){{ width=90% }}", ""]
+        # Center + width — pandoc's typst writer honors both attrs.
+        # Alt text stays empty so no "Figure N:" caption is inserted.
+        md += [
+            "```{=typst}",
+            "#align(center + horizon)[",
+            f"  #image(\"/static/img/{path}\", width: 92%)",
+            "]",
+            "#v(0.35em)",
+            "```",
+            "",
+        ]
     return md
 
 

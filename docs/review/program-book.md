@@ -62,6 +62,36 @@ We are grateful to our sponsors, our host at Microsoft Research New England, ISC
 )
 ```
 
+# By the Numbers
+
+![At a glance](/static/img/stats/06_at_a_glance.png){ width=95% }
+
+```{=typst}
+#pagebreak(weak: true)
+```
+
+![Top institutions represented](/static/img/stats/02_top_institutions.png){ width=95% }
+
+```{=typst}
+#pagebreak(weak: true)
+```
+
+![Attendees by career stage](/static/img/stats/03_career_stage.png){ width=95% }
+
+```{=typst}
+#pagebreak(weak: true)
+```
+
+![Geographic reach](/static/img/stats/04_country_reach.png){ width=95% }
+
+```{=typst}
+#pagebreak(weak: true)
+```
+
+![Research themes across abstracts](/static/img/stats/05_abstract_topics.png){ width=95% }
+
+*Numbers reflect registrations, accepted abstracts, and program materials as of the program-book build.*
+
 # Program at a Glance
 
 ## Day 1 · Thu Oct 1, 2026
@@ -2449,7 +2479,7 @@ RNA-binding proteins (RBPs) are a large class of proteins that bind RNA and play
 
 ### A122 · Use of Computed Electrostatic and Geometric Information to Investigate Protein Functions and Functional Sites
 
-**Presenter:** Constance Jeffery — Northeastern University and The University of Illinois Chicago
+**Presenter:** Tina Harati & Mary Jo Ondrechen — Northeastern University and The University of Illinois Chicago
 
 **Authors:** Trang Tu, Tina Harati, Gayathri Ayyar Manjula, Geordie Emberling, Amman Hossain, Ruby Renfrow, Alquama Lokhandwala, Kyle Zhang, Ganesan Murugan, Nicole J. Curtis, Mary Jo Ondrechen, Constance
 

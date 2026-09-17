@@ -582,12 +582,14 @@ for r in ROWS:
         state_counts[s] += 1
 
 
-fig = plt.figure(figsize=(13, 6.5))
-gs = fig.add_gridspec(2, 2, width_ratios=[2.4, 1],
-                      height_ratios=[3, 1], hspace=0.32, wspace=0.15)
+fig = plt.figure(figsize=(13, 9))
+# Three stacked rows so each map gets a proper horizontal aspect ratio:
+# US on top, top-cities bar in the middle, world map at the bottom.
+gs = fig.add_gridspec(3, 1, height_ratios=[3.2, 1.1, 2.6],
+                      hspace=0.35)
 
-# --- LEFT (top): US choropleth of attendees ---------------------------
-axm = fig.add_subplot(gs[0, 0])
+# --- ROW 1: US choropleth (full width) --------------------------------
+axm = fig.add_subplot(gs[0])
 axm.set_facecolor(C_GROUND)
 
 # Draw each state polygon; fill by attendee count with a fuchsia ramp.
@@ -683,8 +685,8 @@ axm.text(legend_x, legend_y + lh + 0.4, "attendees per state",
          fontsize=8, color=C_INK, weight="700")
 
 
-# --- BELOW map: New-England city dots (Boston zoom) ------------------
-axi = fig.add_subplot(gs[1, 0])
+# --- ROW 2: top cities bar (full width) -----------------------------
+axi = fig.add_subplot(gs[1])
 axi.set_facecolor(C_GROUND)
 # Compute per-state counts from zip codes when present.
 ZIP = 23
@@ -738,11 +740,15 @@ for s in ["top", "right", "bottom"]:
 axi.spines["left"].set_edgecolor(C_RULE)
 axi.grid(axis="x", visible=True, color=C_RULE, linewidth=0.4)
 
-# --- RIGHT: international world map (spans full height) ---------------
-ax2 = fig.add_subplot(gs[:, 1])
+# --- ROW 3: World map with international countries -------------------
+ax2 = fig.add_subplot(gs[2])
 ax2.set_facecolor(C_GROUND)
-ax2.set_title("International", loc="left",
-              fontsize=13, weight="700", color=C_INK, pad=10)
+ax2.set_title(
+    f"International reach · "
+    f"{sum(intl.values())} attendees across {len(intl)} countries "
+    f"(plus {us_count} US)",
+    loc="left", fontsize=13, weight="700", color=C_INK, pad=10,
+)
 
 WORLD_GEOJSON = ROOT / "docs" / "review" / "build" / "world-countries.geojson"
 WORLD_URL = ("https://raw.githubusercontent.com/nvkelso/natural-earth-vector"
@@ -792,23 +798,11 @@ COUNTRY_LATLON = {
 
 world = load_world()
 if world:
-    # US anchor sits at the top, not overlapping the map
-    ax2.text(0.5, 0.985, f"{us_count} US",
-             ha="center", va="top", fontsize=15, weight="700",
-             color=C_NAVY, transform=ax2.transAxes)
-    ax2.text(0.5, 0.945,
-             f"({us_count/data.shape[0]*100:.0f}% of registrations)",
-             ha="center", va="top", fontsize=9, color=C_MUTED,
-             transform=ax2.transAxes, style="italic")
-
-    # Map axes as an inset so we can size it independently.
-    axw = ax2.inset_axes([0, 0.10, 1, 0.80])
-    axw.set_facecolor(C_GROUND)
-    axw.set_xlim(-180, 180); axw.set_ylim(-58, 82)
-    axw.set_aspect("auto")
-    axw.set_xticks([]); axw.set_yticks([])
-    for s in axw.spines.values(): s.set_visible(False)
-    axw.grid(False)
+    ax2.set_xlim(-170, 180); ax2.set_ylim(-58, 82)
+    ax2.set_aspect("auto")
+    ax2.set_xticks([]); ax2.set_yticks([])
+    for s in ax2.spines.values(): s.set_visible(False)
+    ax2.grid(False)
 
     ne_country_lookup = {
         NAME_TO_NE.get(k, k): k for k in COUNTRY_LATLON
@@ -819,52 +813,55 @@ if world:
         cs = geom["coordinates"]
         return [cs] if t == "Polygon" else cs
 
-    # Fill all countries in a soft grey; then highlight ours.
-    highlighted = {}
+    # Fill all countries in a soft grey; highlight ours in fuchsia and
+    # tint the US in a light navy for visual anchor.
     for feat in world["features"]:
         admin = feat["properties"].get("ADMIN", "")
         our_key = ne_country_lookup.get(admin)
         cnt = intl.get(our_key, 0) if our_key else 0
-        color = C_FUCHSIA if cnt > 0 else "#DDDDE3"
-        edge = "white" if cnt > 0 else "#C0C0C8"
+        if admin == "United States of America":
+            color, edge, z = "#BFCADE", "white", 2
+        elif cnt > 0:
+            color, edge, z = C_FUCHSIA, "white", 3
+        else:
+            color, edge, z = "#DDDDE3", "#C0C0C8", 1
         for polygon in _polys(feat["geometry"]):
             for ring in polygon:
                 xs = [pt[0] for pt in ring]
                 ys = [pt[1] for pt in ring]
-                axw.fill(xs, ys, color=color, edgecolor=edge,
-                         linewidth=0.35, zorder=2 if cnt else 1)
-        if cnt > 0 and our_key:
-            highlighted[our_key] = True
+                ax2.fill(xs, ys, color=color, edgecolor=edge,
+                         linewidth=0.35, zorder=z)
 
-    # Dot markers on top of the polygons for very small / island states
-    # so tiny countries (Singapore, Hong Kong) don't get lost.
-    for country, cnt in intl.items():
+    # Dot markers so tiny island states (Singapore, Hong Kong) don't
+    # disappear at world scale, plus small country labels next to dots.
+    for country, cnt in sorted(intl.items(),
+                               key=lambda kv: (kv[1] * -1, kv[0])):
         lat, lon = COUNTRY_LATLON.get(country, (0, 0))
-        axw.scatter([lon], [lat], s=100, color=C_FUCHSIA,
-                    edgecolor="white", linewidth=1.2, zorder=5)
+        ax2.scatter([lon], [lat], s=140, color=C_FUCHSIA,
+                    edgecolor="white", linewidth=1.4, zorder=6)
+        # Label offset — tuned by country to avoid dot overlap
+        dx, dy, ha = 2.5, 2.5, "left"
+        overrides = {
+            "Belgium":       (-3, 3.5, "right"),
+            "Italy":         (2.5, -2, "left"),
+            "Austria":       (3, 4, "left"),
+            "Burkina Faso":  (-3, -3, "right"),
+            "Peru":          (-3, 0, "right"),
+            "Hong Kong SAR China": (3, -3, "left"),
+            "Singapore":     (3, -4.5, "left"),
+            "Taiwan":        (3, 5, "left"),
+        }
+        if country in overrides:
+            dx, dy, ha = overrides[country]
+        display = DISPLAY.get(country, country)
+        ax2.text(lon + dx, lat + dy, display,
+                 fontsize=9, weight="700", color=C_INK,
+                 ha=ha, va="center", zorder=7)
 
-    # Small labeled callouts for our 8 countries in a compact column
-    # under the map so viewers can trace each dot back to a name.
-    labels_area = ax2.inset_axes([0.02, 0.005, 0.96, 0.10])
-    labels_area.set_facecolor(C_GROUND)
-    labels_area.set_xticks([]); labels_area.set_yticks([])
-    for s in labels_area.spines.values(): s.set_visible(False)
-    labels_area.grid(False)
-    intl_sorted = sorted(intl.keys())
-    lines = ", ".join(intl_sorted)
-    labels_area.text(0.5, 0.7,
-                     f"{sum(intl.values())} attendees · "
-                     f"{len(intl)} countries",
-                     ha="center", va="center", fontsize=10,
-                     color=C_INK, weight="700",
-                     transform=labels_area.transAxes)
-    labels_area.text(0.5, 0.15, lines,
-                     ha="center", va="center", fontsize=8,
-                     color=C_MUTED, style="italic", wrap=True,
-                     transform=labels_area.transAxes)
-
-for s in ax2.spines.values(): s.set_visible(False)
-ax2.set_xticks([]); ax2.set_yticks([]); ax2.grid(False)
+    # Small US anchor label near the North America bloc
+    ax2.text(-100, 40, f"United States\n{us_count}", ha="center",
+             va="center", fontsize=10, weight="700", color=C_NAVY,
+             zorder=5)
 
 fig.suptitle("Geographic reach", fontsize=17, weight="700",
              color=C_INK, y=0.98, x=0.06, ha="left")

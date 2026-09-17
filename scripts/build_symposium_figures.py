@@ -582,110 +582,132 @@ for r in ROWS:
         state_counts[s] += 1
 
 
-fig = plt.figure(figsize=(13, 9))
-# Three stacked rows so each map gets a proper horizontal aspect ratio:
-# US on top, top-cities bar in the middle, world map at the bottom.
-gs = fig.add_gridspec(3, 1, height_ratios=[3.2, 1.1, 2.6],
-                      hspace=0.35)
+fig = plt.figure(figsize=(13, 6.5))
+# Two-column layout: New England map on the left, two summary tiles on
+# the right (other US + international). Everything else (national US
+# choropleth, top-cities bar, world map) is dropped — a single tight NE
+# map with bubbles is the story.
+gs = fig.add_gridspec(2, 2, width_ratios=[2.6, 1],
+                      height_ratios=[1, 1],
+                      hspace=0.08, wspace=0.12)
 
-# --- ROW 1: US choropleth (full width) --------------------------------
-axm = fig.add_subplot(gs[0])
+# --- LEFT (spans both rows): Northeast US map with city bubbles -----
+# Zoom covers MD/DE/VA through ME so NYC, Washington/Baltimore area
+# attendees are included alongside the Boston core.
+NE_LON = (-80.5, -68.5)
+NE_LAT = (38.0, 45.5)
+NE_STATES_SHOWN = {
+    "ME", "NH", "VT", "MA", "CT", "RI", "NY", "NJ", "PA",
+    "MD", "DE", "DC", "VA", "WV", "OH",  # extras for map continuity
+}
+axm = fig.add_subplot(gs[:, 0])
 axm.set_facecolor(C_GROUND)
+axm.set_xlim(*NE_LON); axm.set_ylim(*NE_LAT)
+axm.set_aspect(1.3)
+axm.set_xticks([]); axm.set_yticks([])
+for s in axm.spines.values(): s.set_visible(False)
+axm.grid(False)
+axm.set_title("Attendees across the Northeast",
+              loc="left", fontsize=14, weight="700",
+              color=C_INK, pad=10)
 
-# Draw each state polygon; fill by attendee count with a fuchsia ramp.
+# Draw Northeast state polygons in a subtle neutral fill.
 gj = load_us_states()
 if gj is not None:
-    from matplotlib.colors import LinearSegmentedColormap
-    ramp = LinearSegmentedColormap.from_list(
-        "necb", [C_GROUND, "#EABAC5", C_FUCHSIA, C_FUCHSIA_DK]
-    )
-    max_cnt = max(state_counts.values()) if state_counts else 1
-
     def polys_of(geom):
         t = geom["type"]
         cs = geom["coordinates"]
         return [cs] if t == "Polygon" else cs
 
-    ZERO_FILL = "#DDDDE3"
+    NE_FILL = "#EDECE7"
+    NE_EDGE = "#BFBEB7"
     for feat in gj["features"]:
         name = feat["properties"].get("name", "")
         abbr = STATE_NAME_TO_ABBR.get(name, "")
-        cnt = state_counts.get(abbr, 0)
-        color = ramp(cnt / max_cnt) if cnt else ZERO_FILL
-        edge = "white" if cnt else "#C0C0C8"
+        if abbr not in NE_STATES_SHOWN:
+            continue
         for polygon in polys_of(feat["geometry"]):
             for ring in polygon:
                 xs = [pt[0] for pt in ring]
                 ys = [pt[1] for pt in ring]
-                axm.fill(xs, ys, color=color,
-                         edgecolor=edge, linewidth=0.6, zorder=1)
-        # Label state abbrev at centroid for states with attendees, but
-        # skip tiny Northeast states — they overlap and get called out
-        # separately via the callout box below.
-        SKIP_NE_INLINE = {"MA", "RI", "CT", "NH", "VT"}
-        if cnt > 0 and abbr and abbr not in SKIP_NE_INLINE:
-            first_ring = polys_of(feat["geometry"])[0][0]
-            cx = sum(pt[0] for pt in first_ring) / len(first_ring)
-            cy = sum(pt[1] for pt in first_ring) / len(first_ring)
-            fs = 8 if cnt < 10 else 10
-            col = "white" if cnt / max_cnt > 0.35 else C_INK
+                axm.fill(xs, ys, color=NE_FILL, edgecolor=NE_EDGE,
+                         linewidth=0.7, zorder=1)
+        # State labels (top-left of each state's bbox, muted)
+        first_ring = polys_of(feat["geometry"])[0][0]
+        cx = sum(pt[0] for pt in first_ring) / len(first_ring)
+        cy = sum(pt[1] for pt in first_ring) / len(first_ring)
+        if NE_LON[0] < cx < NE_LON[1] and NE_LAT[0] < cy < NE_LAT[1]:
             axm.text(cx, cy, abbr, ha="center", va="center",
-                     fontsize=fs, weight="800", color=col, zorder=3,
-                     alpha=0.95)
+                     fontsize=9, color=C_MUTED, weight="700",
+                     alpha=0.75, zorder=2)
 
-# Cont US bounds
-axm.set_xlim(-125, -66)
-axm.set_ylim(24, 50)
-axm.set_aspect(1.3)
-axm.set_xticks([]); axm.set_yticks([])
-for s in axm.spines.values(): s.set_visible(False)
-axm.grid(False)
-axm.set_title("Attendees across the United States", loc="left",
-              fontsize=13, weight="700", color=C_INK, pad=10)
+# City bubbles — cities aggregated to their (lat, lon), sized by count.
+# Greater Boston is one anchor since Cambridge/Somerville/etc. are all
+# within a couple of miles and would visually merge anyway.
+GREATER_BOSTON = {"Boston", "Cambridge", "Somerville", "Medford",
+                  "Brookline", "Belmont", "Malden", "Quincy",
+                  "Lexington"}
+gb_count = sum(c for k, (_, c) in city_dots.items() if k in GREATER_BOSTON)
 
-from matplotlib.patches import Rectangle
-# Northeast callout box — the small states MA/CT/RI/NH/VT get numbers
-# outside the map so they don't collide with each other on the choropleth.
-NE_STATES = ["MA", "CT", "RI", "NH", "VT"]
-callout_lines = []
-for s in NE_STATES:
-    c = state_counts.get(s, 0)
-    if c > 0:
-        callout_lines.append(f"{s}  {c}")
-callout_x, callout_y = -78, 30
-box_h = 1.3 * len(callout_lines) + 1
-axm.add_patch(Rectangle((callout_x - 1, callout_y - box_h + 1),
-                        12, box_h, facecolor=C_GROUND,
-                        edgecolor=C_RULE, linewidth=1.0, zorder=4))
-axm.text(callout_x, callout_y, "Northeast", fontsize=9,
-         color=C_INK, weight="700", ha="left", va="top", zorder=5)
-for i, line in enumerate(callout_lines):
-    axm.text(callout_x, callout_y - 1.4 - i * 1.3, line,
-             fontsize=9, color=C_INK, weight="600",
-             ha="left", va="top", zorder=5)
+# Build final dot list: (label, lat, lon, count).
+city_bubbles = [("Greater Boston", 42.36, -71.06, gb_count)]
+for city, ((lat, lon), cnt) in city_dots.items():
+    if city in GREATER_BOSTON:
+        continue
+    if NE_LON[0] < lon < NE_LON[1] and NE_LAT[0] < lat < NE_LAT[1]:
+        city_bubbles.append((city, lat, lon, cnt))
+# Sort by count descending so bigger dots draw on top
+city_bubbles.sort(key=lambda t: -t[3])
 
-# Colorbar-lite legend (three ticks) at bottom-left of the US axes.
-legend_x, legend_y = -122, 24.8
-lw, lh = 30, 1.2
-grad = np.linspace(0, 1, 200)
-for i, g in enumerate(grad):
-    axm.add_patch(Rectangle(
-        (legend_x + i * lw / len(grad), legend_y),
-        lw / len(grad) * 1.05, lh,
-        color=ramp(g) if g > 0 else "#F1EFEA",
-        edgecolor="none", zorder=2,
-    ))
-axm.text(legend_x, legend_y - 0.9, "0",
-         fontsize=8, color=C_MUTED, weight="600")
-axm.text(legend_x + lw / 2, legend_y - 0.9, f"{max_cnt // 2}",
-         fontsize=8, color=C_MUTED, weight="600", ha="center")
-axm.text(legend_x + lw, legend_y - 0.9, f"{max_cnt}",
-         fontsize=8, color=C_MUTED, weight="600", ha="right")
-axm.text(legend_x, legend_y + lh + 0.4, "attendees per state",
-         fontsize=8, color=C_INK, weight="700")
+for label, lat, lon, cnt in city_bubbles:
+    r = 60 + 60 * (cnt ** 0.55)  # marker size = area, tuned
+    axm.scatter([lon], [lat], s=r, color=C_FUCHSIA,
+                alpha=0.85, edgecolor="white", linewidth=1.6,
+                zorder=5)
+
+# Label the top few and any that fit; small ones stay silent.
+LABEL_MIN = 3
+label_positions = {
+    "Greater Boston":  (0.6, -0.25),
+    "Worcester":       (-0.8, 0.0),
+    "Providence":      (0.4, -0.3),
+    "New Haven":       (-0.7, -0.15),
+    "Lowell":          (0.4, 0.35),
+    "New York":        (-0.8, 0.0),
+    "Northampton":     (-1.2, 0.1),
+    "Washington":      (-1.0, -0.3),
+    "Baltimore":       (-1.0, 0.15),
+    "Bethesda":        (-1.0, -0.3),
+    "Philadelphia":    (-1.2, 0.0),
+    "Princeton":       (0.4, 0.0),
+}
+for label, lat, lon, cnt in city_bubbles:
+    if cnt < LABEL_MIN:
+        continue
+    dx, dy = label_positions.get(label, (0.4, 0.2))
+    ha = "left" if dx > 0 else "right"
+    axm.annotate(
+        f"{label} · {cnt}", xy=(lon, lat),
+        xytext=(lon + dx, lat + dy),
+        fontsize=10, color=C_INK, weight="700",
+        ha=ha, va="center", zorder=6,
+        arrowprops=dict(arrowstyle="-", color=C_MUTED,
+                        lw=0.7, alpha=0.7),
+    )
 
 
-# --- ROW 2: top cities bar (full width) -----------------------------
+# --- RIGHT (top): "Other US" summary tile ---------------------------
+# Compute other-US count = US total minus everything shown on the NE map.
+ne_state_counts = sum(state_counts.get(s, 0) for s in
+                      ["MA", "CT", "RI", "NH", "VT", "ME",
+                       "NY", "NJ", "PA", "MD", "DE", "DC"])
+other_us_count = us_count - ne_state_counts
+# Enumerate the far-flung states (outside those 12) for the caption.
+FARFLUNG_STATES = [s for s, c in state_counts.most_common()
+                   if s not in {"MA", "CT", "RI", "NH", "VT", "ME",
+                                "NY", "NJ", "PA", "MD", "DE", "DC"}
+                   and c > 0]
+
 axi = fig.add_subplot(gs[1])
 axi.set_facecolor(C_GROUND)
 # Compute per-state counts from zip codes when present.
@@ -710,45 +732,59 @@ def zip_to_state(zc):
     return None
 
 
-# Bottom row: horizontal bar of top cities (Greater Boston aggregated).
-GREATER_BOSTON = {"Boston", "Cambridge", "Somerville", "Medford",
-                  "Brookline", "Belmont", "Malden", "Quincy",
-                  "Lexington"}
-gb_count = sum(c for k, (_, c) in city_dots.items() if k in GREATER_BOSTON)
-city_others = [(k, c) for k, (_, c) in city_dots.items()
-               if k not in GREATER_BOSTON]
-city_others.sort(key=lambda kv: -kv[1])
-top_cities = [("Greater Boston", gb_count)] + city_others[:7]
+axi.set_facecolor(C_GROUND)
+axi.set_xlim(0, 100); axi.set_ylim(0, 100)
+axi.set_xticks([]); axi.set_yticks([])
+for s in axi.spines.values(): s.set_visible(False)
+axi.grid(False)
+# Card frame
+axi.add_patch(plt.matplotlib.patches.FancyBboxPatch(
+    (2, 8), 96, 84,
+    boxstyle="round,pad=0.02,rounding_size=1.5",
+    facecolor="#FFFFFF", edgecolor=C_RULE, linewidth=1.0,
+    transform=axi.transData, zorder=1,
+))
+axi.text(8, 82, "Other US", fontsize=13, weight="700",
+         color=C_INK, ha="left", va="center", zorder=2)
+axi.text(8, 55, f"{other_us_count}", fontsize=52, weight="800",
+         color=C_NAVY, ha="left", va="center", zorder=2)
+axi.text(58, 55, "attendees", fontsize=12, color=C_MUTED,
+         weight="600", ha="left", va="center", zorder=2)
+n_far = len(FARFLUNG_STATES)
+axi.text(8, 30, f"across {n_far} states outside\n"
+                f"the Northeast",
+         fontsize=10, color=C_INK, weight="600",
+         ha="left", va="top", zorder=2)
+axi.text(8, 14, ", ".join(FARFLUNG_STATES),
+         fontsize=8, color=C_MUTED, style="italic",
+         ha="left", va="center", zorder=2)
 
-# barh with cities descending, Greater Boston at the top of the plot
-labels = [name for name, _ in top_cities]
-counts = [c for _, c in top_cities]
-y_pos = np.arange(len(labels))[::-1]
-bars = axi.barh(y_pos, counts, color=C_FUCHSIA, height=0.72)
-for i, v in enumerate(counts):
-    axi.text(v + max(counts) * 0.01, y_pos[i], str(v),
-             va="center", ha="left", fontsize=10, weight="700",
-             color=C_INK)
-axi.set_yticks(y_pos)
-axi.set_yticklabels(labels, fontsize=10, color=C_INK)
-axi.set_xlim(0, max(counts) * 1.1)
-axi.set_title("Top cities represented", fontsize=11,
-              weight="700", color=C_INK, pad=6, loc="left")
-axi.tick_params(axis="both", length=0, pad=4)
-for s in ["top", "right", "bottom"]:
-    axi.spines[s].set_visible(False)
-axi.spines["left"].set_edgecolor(C_RULE)
-axi.grid(axis="x", visible=True, color=C_RULE, linewidth=0.4)
-
-# --- ROW 3: World map with international countries -------------------
-ax2 = fig.add_subplot(gs[2])
+# --- RIGHT (bottom): "International" summary tile -------------------
+ax2 = fig.add_subplot(gs[3])
 ax2.set_facecolor(C_GROUND)
-ax2.set_title(
-    f"International reach · "
-    f"{sum(intl.values())} attendees across {len(intl)} countries "
-    f"(plus {us_count} US)",
-    loc="left", fontsize=13, weight="700", color=C_INK, pad=10,
-)
+ax2.set_xlim(0, 100); ax2.set_ylim(0, 100)
+ax2.set_xticks([]); ax2.set_yticks([])
+for s in ax2.spines.values(): s.set_visible(False)
+ax2.grid(False)
+ax2.add_patch(plt.matplotlib.patches.FancyBboxPatch(
+    (2, 8), 96, 84,
+    boxstyle="round,pad=0.02,rounding_size=1.5",
+    facecolor="#FFFFFF", edgecolor=C_RULE, linewidth=1.0,
+    transform=ax2.transData, zorder=1,
+))
+ax2.text(8, 82, "International", fontsize=13, weight="700",
+         color=C_INK, ha="left", va="center", zorder=2)
+ax2.text(8, 55, f"{sum(intl.values())}", fontsize=52,
+         weight="800", color=C_FUCHSIA, ha="left", va="center",
+         zorder=2)
+ax2.text(58, 55, "attendees", fontsize=12, color=C_MUTED,
+         weight="600", ha="left", va="center", zorder=2)
+ax2.text(8, 30, f"across {len(intl)} countries",
+         fontsize=10, color=C_INK, weight="600",
+         ha="left", va="top", zorder=2)
+ax2.text(8, 14, ", ".join(sorted(intl.keys())),
+         fontsize=8, color=C_MUTED, style="italic",
+         ha="left", va="center", zorder=2, wrap=True)
 
 WORLD_GEOJSON = ROOT / "docs" / "review" / "build" / "world-countries.geojson"
 WORLD_URL = ("https://raw.githubusercontent.com/nvkelso/natural-earth-vector"
@@ -796,72 +832,7 @@ COUNTRY_LATLON = {
     "India": (20.6, 78.9), "Nigeria": (9.1, 8.7),
 }
 
-world = load_world()
-if world:
-    ax2.set_xlim(-170, 180); ax2.set_ylim(-58, 82)
-    ax2.set_aspect("auto")
-    ax2.set_xticks([]); ax2.set_yticks([])
-    for s in ax2.spines.values(): s.set_visible(False)
-    ax2.grid(False)
-
-    ne_country_lookup = {
-        NAME_TO_NE.get(k, k): k for k in COUNTRY_LATLON
-    }
-
-    def _polys(geom):
-        t = geom["type"]
-        cs = geom["coordinates"]
-        return [cs] if t == "Polygon" else cs
-
-    # Fill all countries in a soft grey; highlight ours in fuchsia and
-    # tint the US in a light navy for visual anchor.
-    for feat in world["features"]:
-        admin = feat["properties"].get("ADMIN", "")
-        our_key = ne_country_lookup.get(admin)
-        cnt = intl.get(our_key, 0) if our_key else 0
-        if admin == "United States of America":
-            color, edge, z = "#BFCADE", "white", 2
-        elif cnt > 0:
-            color, edge, z = C_FUCHSIA, "white", 3
-        else:
-            color, edge, z = "#DDDDE3", "#C0C0C8", 1
-        for polygon in _polys(feat["geometry"]):
-            for ring in polygon:
-                xs = [pt[0] for pt in ring]
-                ys = [pt[1] for pt in ring]
-                ax2.fill(xs, ys, color=color, edgecolor=edge,
-                         linewidth=0.35, zorder=z)
-
-    # Dot markers so tiny island states (Singapore, Hong Kong) don't
-    # disappear at world scale, plus small country labels next to dots.
-    for country, cnt in sorted(intl.items(),
-                               key=lambda kv: (kv[1] * -1, kv[0])):
-        lat, lon = COUNTRY_LATLON.get(country, (0, 0))
-        ax2.scatter([lon], [lat], s=140, color=C_FUCHSIA,
-                    edgecolor="white", linewidth=1.4, zorder=6)
-        # Label offset — tuned by country to avoid dot overlap
-        dx, dy, ha = 2.5, 2.5, "left"
-        overrides = {
-            "Belgium":       (-3, 3.5, "right"),
-            "Italy":         (2.5, -2, "left"),
-            "Austria":       (3, 4, "left"),
-            "Burkina Faso":  (-3, -3, "right"),
-            "Peru":          (-3, 0, "right"),
-            "Hong Kong SAR China": (3, -3, "left"),
-            "Singapore":     (3, -4.5, "left"),
-            "Taiwan":        (3, 5, "left"),
-        }
-        if country in overrides:
-            dx, dy, ha = overrides[country]
-        display = DISPLAY.get(country, country)
-        ax2.text(lon + dx, lat + dy, display,
-                 fontsize=9, weight="700", color=C_INK,
-                 ha=ha, va="center", zorder=7)
-
-    # Small US anchor label near the North America bloc
-    ax2.text(-100, 40, f"United States\n{us_count}", ha="center",
-             va="center", fontsize=10, weight="700", color=C_NAVY,
-             zorder=5)
+# (world map removed — simplified to summary tile above)
 
 fig.suptitle("Geographic reach", fontsize=17, weight="700",
              color=C_INK, y=0.98, x=0.06, ha="left")

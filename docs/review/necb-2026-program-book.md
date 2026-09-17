@@ -193,7 +193,7 @@ We are grateful to our sponsors, our host at Microsoft Research New England, ISC
 ### 11:15 AM – 12:15 PM · Invited talks
 
 ```{=typst}
-#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [], [#text(weight: 700, fill: c-navy)[Sahin Naqvi] #text(size: 0.85em, fill: c-muted)[· Boston Children's Hospital · Harvard Medical School]])]
+#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [], [#text(weight: 700, fill: c-navy)[Sahin Naqvi] #text(size: 0.85em, fill: c-muted)[· Boston Children's Hospital · Harvard Medical School]\ #text(size: 0.9em, style: "italic")[Measuring and modeling transcription factor dosage effects]])]
 #block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [], [#text(weight: 700, fill: c-navy)[Armita Nourmohammad] #text(size: 0.85em, fill: c-muted)[· Yale University]])]
 #block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [], [#text(weight: 700, fill: c-navy)[Yuri Pritykin] #text(size: 0.85em, fill: c-muted)[· Princeton University]])]
 ```
@@ -340,6 +340,18 @@ Single-cell data are often organized around low-dimensional geometric structures
 **Session:** Day 1 · Thu Oct 1, 2026 · 11:15 AM – 12:15 PM · Invited talks
 
 A fundamental goal of genetics is to understand how variation in biological sequences gives rise to differences in measurable characteristics called phenotypes. The mapping from genotype (DNA, RNA or protein sequence) to phenotype can be difficult to model and interpret because the space of possible sequences is enormous and combinations of mutations interact in complex ways. We describe how to use a Bayesian method called Gaussian process regression to learn genotype-phenotype maps. We demonstrate that Gaussian process regression with our priors yields better predictive performance on several datasets and show how the learned prior can be interpreted to provide clues into how phenotype arises from genotype biologically. We derive tractable analytical expressions for computing a broad class of statistics under these models that would ordinarily require predictions across the entire sequence space, and discuss how this new "kernel trick" can be used both to interpret the structure of the genotype-phenotype map and to navigate toward regions of sequence space with desirable properties.
+
+```{=typst}
+#pagebreak(weak: true)
+```
+
+### Invited talk · Measuring and modeling transcription factor dosage effects
+
+**Presenter:** Sahin Naqvi — Boston Children's Hospital · Harvard Medical School
+
+**Session:** Day 2 · Fri Oct 2, 2026 · 11:15 AM – 12:15 PM · Invited talks
+
+Transcription factors (TFs) dictate cellular and developmental gene expression programs by binding to specific DNA motifs within noncoding regulatory elements (REs) and modulating their activity. Quantitative changes in TF levels (dosage) underlie both common phenotypic variation and severe disease, but the mechanisms underlying this TF dosage sensitivity have remained poorly understood. I will describe our efforts to tackle this problem using experimental and computational approaches. First, we combined chemical genetic tools, stem cell models of human neural crest cells, and epigenomic mapping to quantify how REs and genes respond to precisely modulated TF dosage. We found that while many TF-dependent REs and genes are buffered against small changes in TF dosage, others are highly sensitive, linking altered TF dosage to specific developmental phenotypes. Second, we applied sequence-to-activity deep learning models to predict RE responses from DNA sequence, achieving near-experimental accuracy. These models revealed predictive sequence features that are undetectable by models of steady-state RE activity, and could interpret noncoding variants associated with variation in craniofacial shape. These results show that combining quantitative TF perturbations with deep learning can uncover additional layers of the cis-regulatory code, with implications for the development of cellular foundation models.
 
 # Selected Talks · Abstracts
 

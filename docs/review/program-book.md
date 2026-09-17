@@ -64,33 +64,15 @@ We are grateful to our sponsors, our host at Microsoft Research New England, ISC
 
 # By the Numbers
 
-![At a glance](/static/img/stats/06_at_a_glance.png){ width=95% }
+![](/static/img/stats/06_at_a_glance.png){ width=90% }
 
-```{=typst}
-#pagebreak(weak: true)
-```
+![](/static/img/stats/02_top_institutions.png){ width=90% }
 
-![Top institutions represented](/static/img/stats/02_top_institutions.png){ width=95% }
+![](/static/img/stats/03_career_stage.png){ width=90% }
 
-```{=typst}
-#pagebreak(weak: true)
-```
+![](/static/img/stats/04_country_reach.png){ width=90% }
 
-![Attendees by career stage](/static/img/stats/03_career_stage.png){ width=95% }
-
-```{=typst}
-#pagebreak(weak: true)
-```
-
-![Geographic reach](/static/img/stats/04_country_reach.png){ width=95% }
-
-```{=typst}
-#pagebreak(weak: true)
-```
-
-![Research themes across abstracts](/static/img/stats/05_abstract_topics.png){ width=95% }
-
-*Numbers reflect registrations, accepted abstracts, and program materials as of the program-book build.*
+![](/static/img/stats/05_abstract_topics.png){ width=90% }
 
 # Program at a Glance
 

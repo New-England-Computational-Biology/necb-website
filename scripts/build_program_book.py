@@ -1102,42 +1102,24 @@ def render_organizers(orgs) -> list[str]:
 
 
 def render_by_the_numbers() -> list[str]:
-    """Insert the presentation-style stat figures the chairs will show at
-    the opening. Registration-growth curve is intentionally skipped — the
-    other 5 (at-a-glance stat tiles, top institutions, career stage,
-    geographic reach, research themes) tell the story on their own.
-
-    Figures live at static/img/stats/*.png; if none are on disk the whole
-    section is skipped so the book still builds before the figures are
-    generated. Full-width and one-per-page so each has room to breathe."""
+    """Compact stat-figures spread. All 5 figures are emitted with no
+    captions and no forced page breaks; typst flows them onto as few
+    pages as fit, so a single-page or two-page spread is the norm.
+    Registration growth is intentionally skipped."""
     figs = [
-        ("stats/06_at_a_glance.png",      "At a glance"),
-        ("stats/02_top_institutions.png", "Top institutions represented"),
-        ("stats/03_career_stage.png",     "Attendees by career stage"),
-        ("stats/04_country_reach.png",    "Geographic reach"),
-        ("stats/05_abstract_topics.png",  "Research themes across abstracts"),
+        "stats/06_at_a_glance.png",
+        "stats/02_top_institutions.png",
+        "stats/03_career_stage.png",
+        "stats/04_country_reach.png",
+        "stats/05_abstract_topics.png",
     ]
-    available = [(p, c) for p, c in figs
-                 if (ROOT / "static" / "img" / p).exists()]
+    available = [p for p in figs if (ROOT / "static" / "img" / p).exists()]
     if not available:
         return []
     md = ["# By the Numbers", ""]
-    first = True
-    for path, caption in available:
-        if not first:
-            md += ["```{=typst}", "#pagebreak(weak: true)", "```", ""]
-        first = False
-        # Center + full-width image via pandoc-markdown; caption doubles
-        # as alt text so it also appears in the PDF outline / a11y layer.
-        md += [
-            f"![{caption}](/static/img/{path}){{ width=95% }}",
-            "",
-        ]
-    md += [
-        "*Numbers reflect registrations, accepted abstracts, and program "
-        "materials as of the program-book build.*",
-        "",
-    ]
+    for path in available:
+        # Empty alt text keeps pandoc from inserting a "Figure N:" caption.
+        md += [f"![](/static/img/{path}){{ width=90% }}", ""]
     return md
 
 

@@ -504,9 +504,27 @@ import json
 GEOJSON = ROOT / "docs" / "review" / "build" / "us-states.geojson"
 
 
+GEOJSON_URL = ("https://raw.githubusercontent.com/PublicaMundi/"
+               "MappingAPI/master/data/geojson/us-states.json")
+
+
 def load_us_states():
+    """Return the US states GeoJSON, fetching + caching on first call so
+    a fresh checkout builds without a manual download step."""
     if not GEOJSON.exists():
-        return None
+        try:
+            import urllib.request
+            print(f"fetching US states GeoJSON: {GEOJSON_URL}")
+            GEOJSON.parent.mkdir(parents=True, exist_ok=True)
+            with urllib.request.urlopen(GEOJSON_URL, timeout=30) as r:
+                data = r.read()
+            with open(GEOJSON, "wb") as f:
+                f.write(data)
+            print(f"  cached to {GEOJSON.relative_to(ROOT)}  "
+                  f"({len(data)/1024:.0f} KB)")
+        except Exception as e:
+            print(f"warning: could not fetch US states GeoJSON — {e}")
+            return None
     with open(GEOJSON) as f:
         return json.load(f)
 

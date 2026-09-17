@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Build docs/review/program-book.md from schedule + speakers + submissions.
 
-Downstream pipeline (unchanged): this script -> program-book.md ->
+Downstream pipeline (unchanged): this script -> necb-2026-program-book.md ->
 scripts/render_pdf.py -> PDF via pandoc+typst, styled by
 scripts/templates/packet.typ (fuchsia H1s, navy H2s, teal H3s, Charter
 body, Avenir Next display, US Letter 1in margins).
@@ -19,7 +19,7 @@ Inputs:
       + speakers and warns.)
 
 Output:
-  docs/review/program-book.md
+  docs/review/necb-2026-program-book.md
 """
 
 from __future__ import annotations
@@ -33,7 +33,7 @@ import yaml
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
 BUILD = ROOT / "docs" / "review" / "build"
-OUT = ROOT / "docs" / "review" / "program-book.md"
+OUT = ROOT / "docs" / "review" / "necb-2026-program-book.md"
 
 CSV_REG = BUILD / "submissions_paste.csv"
 CSV_LATE = BUILD / "submissions_paste_late.csv"

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Build a combined NECB 2026 program book.
 
-Takes the existing program-book.pdf (short 250-word abstract entries,
+Takes the existing necb-2026-program-book.pdf (short 250-word entries,
 schedule, speaker cards, TOC, etc.) and, for each abstract that also
 has an author-submitted one-page PDF in docs/review/build/pdfs/,
 inserts that page immediately after the short abstract's text — so
@@ -35,12 +35,13 @@ BUILD = ROOT / "docs" / "review" / "build"
 PDF_DIR = BUILD / "pdfs"
 # SOURCE is the just-rendered short book (from render_pdf.py --publish)
 # that this script reads to stitch author PDFs into. PUBLISH overwrites
-# that same canonical path so a single `program-book.pdf` URL always
-# points to the current full book — no separate `-full.pdf` artifact to
-# keep in sync.
-SOURCE = ROOT / "static" / "files" / "program-book.pdf"
-OUT = BUILD / "program-book-full.pdf"
-PUBLISH = ROOT / "static" / "files" / "program-book.pdf"
+# that same canonical path so a single per-edition URL always points to
+# the current full book — the necb-2026- prefix keeps future editions
+# on their own unique URL, no separate `-full.pdf` artifact to keep in
+# sync.
+SOURCE = ROOT / "static" / "files" / "necb-2026-program-book.pdf"
+OUT = BUILD / "necb-2026-program-book-full.pdf"
+PUBLISH = ROOT / "static" / "files" / "necb-2026-program-book.pdf"
 
 ABSTRACT_ID_RE = re.compile(r"^(A\d{3})\b")
 

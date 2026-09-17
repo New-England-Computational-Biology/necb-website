@@ -604,17 +604,19 @@ if gj is not None:
         cs = geom["coordinates"]
         return [cs] if t == "Polygon" else cs
 
+    ZERO_FILL = "#DDDDE3"
     for feat in gj["features"]:
         name = feat["properties"].get("name", "")
         abbr = STATE_NAME_TO_ABBR.get(name, "")
         cnt = state_counts.get(abbr, 0)
-        color = ramp(cnt / max_cnt) if cnt else "#F1EFEA"
+        color = ramp(cnt / max_cnt) if cnt else ZERO_FILL
+        edge = "white" if cnt else "#C0C0C8"
         for polygon in polys_of(feat["geometry"]):
             for ring in polygon:
                 xs = [pt[0] for pt in ring]
                 ys = [pt[1] for pt in ring]
                 axm.fill(xs, ys, color=color,
-                         edgecolor="white", linewidth=0.6, zorder=1)
+                         edgecolor=edge, linewidth=0.6, zorder=1)
         # Label state abbrev at centroid for states with attendees, but
         # skip tiny Northeast states — they overlap and get called out
         # separately via the callout box below.
@@ -736,43 +738,131 @@ for s in ["top", "right", "bottom"]:
 axi.spines["left"].set_edgecolor(C_RULE)
 axi.grid(axis="x", visible=True, color=C_RULE, linewidth=0.4)
 
-# --- RIGHT: international tiles (spans full height) -----------------
+# --- RIGHT: international world map (spans full height) ---------------
 ax2 = fig.add_subplot(gs[:, 1])
 ax2.set_facecolor(C_GROUND)
 ax2.set_title("International", loc="left",
               fontsize=13, weight="700", color=C_INK, pad=10)
-# Big US anchor number at the very top for scale
-ax2.text(0.5, 0.94, f"{us_count} US", ha="center", va="center",
-         fontsize=16, weight="700", color=C_NAVY,
-         transform=ax2.transAxes)
-ax2.text(0.5, 0.88, f"({us_count/data.shape[0]*100:.0f}% of registrations)",
-         ha="center", va="center", fontsize=9, color=C_MUTED,
-         transform=ax2.transAxes, style="italic")
 
-intl_sorted = sorted(intl.items(), key=lambda x: (-x[1], x[0]))
-ncols = 2
-for i, (country, cnt) in enumerate(intl_sorted):
-    r_i, c_i = divmod(i, ncols)
-    x = 0.25 + c_i * 0.5
-    y = 0.72 - r_i * 0.18
-    disc = plt.matplotlib.patches.Circle(
-        (x, y + 0.02), radius=0.05,
-        transform=ax2.transAxes, color=C_FUCHSIA, zorder=1,
-    )
-    ax2.add_patch(disc)
-    ax2.text(x, y + 0.02, ISO.get(country, "??"),
-             ha="center", va="center", fontsize=10, weight="800",
-             color="white", transform=ax2.transAxes, zorder=2)
-    ax2.text(x, y - 0.08, DISPLAY.get(country, country),
-             ha="center", va="center", fontsize=8, color=C_INK,
-             weight="600", transform=ax2.transAxes)
-    ax2.text(x, y - 0.13, f"{cnt}", ha="center", va="center",
-             fontsize=9, color=C_MUTED, weight="700",
-             transform=ax2.transAxes)
-ax2.text(0.5, 0.02, f"{sum(intl.values())} attendees · "
-         f"{len(intl)} countries",
-         transform=ax2.transAxes, ha="center", va="bottom",
-         fontsize=9, color=C_MUTED, style="italic")
+WORLD_GEOJSON = ROOT / "docs" / "review" / "build" / "world-countries.geojson"
+WORLD_URL = ("https://raw.githubusercontent.com/nvkelso/natural-earth-vector"
+             "/master/geojson/ne_110m_admin_0_countries.geojson")
+
+
+def load_world():
+    if not WORLD_GEOJSON.exists():
+        try:
+            import urllib.request
+            print(f"fetching world GeoJSON: {WORLD_URL}")
+            WORLD_GEOJSON.parent.mkdir(parents=True, exist_ok=True)
+            with urllib.request.urlopen(WORLD_URL, timeout=45) as r:
+                data = r.read()
+            with open(WORLD_GEOJSON, "wb") as f:
+                f.write(data)
+        except Exception as e:
+            print(f"warning: could not fetch world GeoJSON — {e}")
+            return None
+    with open(WORLD_GEOJSON) as f:
+        return json.load(f)
+
+
+# Match our country names to Natural Earth's "ADMIN" property.
+NAME_TO_NE = {
+    "Austria": "Austria", "Belgium": "Belgium",
+    "Burkina Faso": "Burkina Faso",
+    "Hong Kong SAR China": "Hong Kong S.A.R.",
+    "Italy": "Italy", "Peru": "Peru", "Singapore": "Singapore",
+    "Taiwan": "Taiwan", "United Kingdom": "United Kingdom",
+    "Canada": "Canada", "Germany": "Germany", "France": "France",
+    "Japan": "Japan", "China": "China", "India": "India",
+    "Nigeria": "Nigeria",
+}
+# Country-center coordinates for dot placement when polygon lookup is
+# unreliable (Hong Kong, Singapore, small states).
+COUNTRY_LATLON = {
+    "Austria": (47.5, 14.5), "Belgium": (50.6, 4.4),
+    "Burkina Faso": (12.4, -1.5), "Hong Kong SAR China": (22.3, 114.2),
+    "Italy": (41.9, 12.5), "Peru": (-9.2, -75.0),
+    "Singapore": (1.35, 103.8), "Taiwan": (23.7, 121.0),
+    "United Kingdom": (54.0, -2.5), "Canada": (56.1, -106.3),
+    "Germany": (51.2, 10.5), "France": (46.6, 2.2),
+    "Japan": (36.2, 138.3), "China": (35.9, 104.2),
+    "India": (20.6, 78.9), "Nigeria": (9.1, 8.7),
+}
+
+world = load_world()
+if world:
+    # US anchor sits at the top, not overlapping the map
+    ax2.text(0.5, 0.985, f"{us_count} US",
+             ha="center", va="top", fontsize=15, weight="700",
+             color=C_NAVY, transform=ax2.transAxes)
+    ax2.text(0.5, 0.945,
+             f"({us_count/data.shape[0]*100:.0f}% of registrations)",
+             ha="center", va="top", fontsize=9, color=C_MUTED,
+             transform=ax2.transAxes, style="italic")
+
+    # Map axes as an inset so we can size it independently.
+    axw = ax2.inset_axes([0, 0.10, 1, 0.80])
+    axw.set_facecolor(C_GROUND)
+    axw.set_xlim(-180, 180); axw.set_ylim(-58, 82)
+    axw.set_aspect("auto")
+    axw.set_xticks([]); axw.set_yticks([])
+    for s in axw.spines.values(): s.set_visible(False)
+    axw.grid(False)
+
+    ne_country_lookup = {
+        NAME_TO_NE.get(k, k): k for k in COUNTRY_LATLON
+    }
+
+    def _polys(geom):
+        t = geom["type"]
+        cs = geom["coordinates"]
+        return [cs] if t == "Polygon" else cs
+
+    # Fill all countries in a soft grey; then highlight ours.
+    highlighted = {}
+    for feat in world["features"]:
+        admin = feat["properties"].get("ADMIN", "")
+        our_key = ne_country_lookup.get(admin)
+        cnt = intl.get(our_key, 0) if our_key else 0
+        color = C_FUCHSIA if cnt > 0 else "#DDDDE3"
+        edge = "white" if cnt > 0 else "#C0C0C8"
+        for polygon in _polys(feat["geometry"]):
+            for ring in polygon:
+                xs = [pt[0] for pt in ring]
+                ys = [pt[1] for pt in ring]
+                axw.fill(xs, ys, color=color, edgecolor=edge,
+                         linewidth=0.35, zorder=2 if cnt else 1)
+        if cnt > 0 and our_key:
+            highlighted[our_key] = True
+
+    # Dot markers on top of the polygons for very small / island states
+    # so tiny countries (Singapore, Hong Kong) don't get lost.
+    for country, cnt in intl.items():
+        lat, lon = COUNTRY_LATLON.get(country, (0, 0))
+        axw.scatter([lon], [lat], s=100, color=C_FUCHSIA,
+                    edgecolor="white", linewidth=1.2, zorder=5)
+
+    # Small labeled callouts for our 8 countries in a compact column
+    # under the map so viewers can trace each dot back to a name.
+    labels_area = ax2.inset_axes([0.02, 0.005, 0.96, 0.10])
+    labels_area.set_facecolor(C_GROUND)
+    labels_area.set_xticks([]); labels_area.set_yticks([])
+    for s in labels_area.spines.values(): s.set_visible(False)
+    labels_area.grid(False)
+    intl_sorted = sorted(intl.keys())
+    lines = ", ".join(intl_sorted)
+    labels_area.text(0.5, 0.7,
+                     f"{sum(intl.values())} attendees · "
+                     f"{len(intl)} countries",
+                     ha="center", va="center", fontsize=10,
+                     color=C_INK, weight="700",
+                     transform=labels_area.transAxes)
+    labels_area.text(0.5, 0.15, lines,
+                     ha="center", va="center", fontsize=8,
+                     color=C_MUTED, style="italic", wrap=True,
+                     transform=labels_area.transAxes)
+
 for s in ax2.spines.values(): s.set_visible(False)
 ax2.set_xticks([]); ax2.set_yticks([]); ax2.grid(False)
 

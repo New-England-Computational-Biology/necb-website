@@ -175,7 +175,7 @@ We are grateful to our sponsors, our host at Microsoft Research New England, ISC
 ### Evening · MIT FutureFest Salon · The Future of Computational Biology
 
 ```{=typst}
-#text(size: 0.85em, weight: 600, fill: c-fuchsia)[#link("https://docs.google.com/forms/d/e/1FAIpQLSeSUbcTBKW20KU5dQcImliG1CRMctnpZOkBiJqHtHC3avCshA/viewform")[RSVP required →]]
+#text(size: 0.85em, weight: 600, fill: c-fuchsia)[#link("https://tinyurl.com/FutureFestSalon")[RSVP required →]]
 ```
 
 

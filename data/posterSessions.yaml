@@ -441,7 +441,7 @@ days:
         round: "late-breaking"
   - label: "Day 2 · Fri Oct 2, 2026"
     time: "2:15–4:15 PM"
-    count: 86
+    count: 87
     posters:
       - abstract_id: "A002"
         title: "BBB-Nuke: Transport-Aware Prediction of Blood-Brain Barrier Penetration in Small Molecules"
@@ -667,6 +667,11 @@ days:
         title: "Use of Computed Electrostatic and Geometric Information to Investigate Protein Functions and Functional Sites"
         presenter: "Tina Harati & Mary Jo Ondrechen"
         affiliation: "Northeastern University and The University of Illinois Chicago"
+        round: "regular"
+      - abstract_id: "A124"
+        title: "Genome-Scale Sub-Megabase Chromatin Tracing with DNA-MERFISH"
+        presenter: "Peter Ren"
+        affiliation: "Xiaowei Zhuang Lab; Howard Hughes Medical Institute, Department of Chemistry and Chemical Biology, a"
         round: "regular"
       - abstract_id: "A129"
         title: "Applications of AI to biomolecules for both answers and insight into enzyme function"

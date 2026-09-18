@@ -3,6 +3,9 @@ note: "Draft program — subject to change. Final program will be announced clos
 days:
   - label: "Day 1 · Thu Oct 1, 2026"
     sessions:
+      - time: "8:45–9:00 AM"
+        title: "Opening remarks"
+        kind: "session"
       - time: "9:00–9:45 AM"
         title: "Opening keynote"
         kind: "keynote"
@@ -44,6 +47,7 @@ days:
       - time: "1:15–2:15 PM"
         title: "Selected talks · Protein design & function"
         kind: "talks"
+        chair: "Wengong Jin (Northeastern · Broad)"
         talks:
           - abstract_id: "A076"
             title: "Generating proteins with computationally predicted functions and multiple states via multimodal diffusion"
@@ -156,6 +160,7 @@ days:
       - time: "4:15–5:15 PM"
         title: "Selected talks · AI methods & applications"
         kind: "talks"
+        chair: "Smita Krishnaswamy (Yale)"
         talks:
           - abstract_id: "A172"
             title: "ImageFlowNet forecasts disease progression in longitudinal medical images"
@@ -174,10 +179,13 @@ days:
             presenter: "Elizabeth B. Wood"
             affiliation: "JURA Bio"
       - time: "5:15–6:00 PM"
-        title: "Closing keynote · Poster awards"
+        title: "Closing keynote"
         kind: "keynote"
         speakers:
           - "Zhiping Weng"
+      - time: "6:00–6:15 PM"
+        title: "Closing remarks · Poster awards"
+        kind: "session"
       - time: "Evening"
         title: "Reception"
         kind: "social"

@@ -33,6 +33,7 @@
             <span class="program-time">{{ .time }}</span>
             <span class="program-title">
               {{ .title }}
+              {{ with .chair }}<span class="program-chair">Chair: {{ . }}</span>{{ end }}
               {{ with .speakers }}
               {{ if $hasBoth }}<span class="program-subhead">Invited talks</span>{{ end }}
               <ul class="program-speakers">

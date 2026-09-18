@@ -673,6 +673,16 @@ def render_schedule(program, speakers_yaml) -> list[str]:
         md += [f"## {day['label']}", ""]
         for sess in day["sessions"]:
             md += [f"### {sess['time']} · {sess['title']}", ""]
+            # Optional session chair (used for selected-talk sessions).
+            chair = (sess.get("chair") or "").strip()
+            if chair:
+                md += [
+                    "```{=typst}",
+                    f"#text(size: 0.85em, style: \"italic\", "
+                    f"fill: c-muted)[Chair: {_typ(chair)}]",
+                    "```",
+                    "",
+                ]
             speakers = sess.get("speakers") or []
             talks = sess.get("talks") or []
             if speakers:

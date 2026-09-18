@@ -24,7 +24,7 @@
         <ul class="poster-list">
           {{ range .posters }}
           <li class="poster-row">
-            <span class="poster-id">{{ .abstract_id }}</span>
+            <a class="poster-id" href="/files/abstracts/{{ .abstract_id }}.pdf" target="_blank" rel="noopener" title="Open abstract PDF">{{ .abstract_id }}</a>
             <span class="poster-title">
               {{ .title }}
               {{ if eq .round "late-breaking" }}<span class="poster-round-tag">late-breaking</span>{{ end }}

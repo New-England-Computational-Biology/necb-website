@@ -422,6 +422,15 @@ a:focus-visible { outline: 2px solid var(--c-accent); outline-offset: 2px; borde
   font-size: 0.78rem; font-style: italic;
   color: var(--c-text-muted);
 }
+.program-rsvp {
+  display: block; margin: 0.15rem 0 0.25rem;
+  font-size: 0.85rem; font-weight: 600;
+}
+.program-rsvp a { color: var(--c-primary); }
+.program-rsvp a:hover, .program-rsvp a:focus-visible {
+  color: var(--c-primary-dark);
+  text-decoration: underline;
+}
 .program-row--posters .program-title,
 .program-row--session .program-title { font-weight: 500; }
 

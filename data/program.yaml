@@ -96,6 +96,8 @@ days:
       - time: "Evening"
         title: "Evening event · The Future of Computational Biology"
         kind: "social"
+        register_url: "https://docs.google.com/forms/d/e/1FAIpQLSeSUbcTBKW20KU5dQcImliG1CRMctnpZOkBiJqHtHC3avCshA/viewform"
+        register_label: "RSVP required"
 
   - label: "Day 2 · Fri Oct 2, 2026"
     sessions:

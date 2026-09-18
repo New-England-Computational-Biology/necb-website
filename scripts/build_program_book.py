@@ -683,6 +683,17 @@ def render_schedule(program, speakers_yaml) -> list[str]:
                     "```",
                     "",
                 ]
+            # Optional RSVP link (used for the Day 1 evening event).
+            rsvp_url = (sess.get("register_url") or "").strip()
+            if rsvp_url:
+                rsvp_lbl = (sess.get("register_label") or "RSVP").strip()
+                md += [
+                    "```{=typst}",
+                    f"#text(size: 0.85em, weight: 600, fill: c-fuchsia)"
+                    f"[#link(\"{rsvp_url}\")[{_typ(rsvp_lbl)} →]]",
+                    "```",
+                    "",
+                ]
             speakers = sess.get("speakers") or []
             talks = sess.get("talks") or []
             if speakers:

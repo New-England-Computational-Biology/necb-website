@@ -34,6 +34,10 @@
             <span class="program-title">
               {{ .title }}
               {{ with .chair }}<span class="program-chair">Chair: {{ . }}</span>{{ end }}
+              {{ if .register_url }}
+              {{ $rsvp_label := .register_label | default "RSVP" }}
+              <span class="program-rsvp"><a href="{{ .register_url }}" target="_blank" rel="noopener">{{ $rsvp_label }} &rarr;</a></span>
+              {{ end }}
               {{ with .speakers }}
               {{ if $hasBoth }}<span class="program-subhead">Invited talks</span>{{ end }}
               <ul class="program-speakers">

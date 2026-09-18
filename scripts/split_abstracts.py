@@ -29,7 +29,9 @@ from pypdf import PdfReader, PdfWriter
 ROOT = Path(__file__).resolve().parent.parent
 BUILD = ROOT / "docs" / "review" / "build" / "abstracts"
 SOURCE = ROOT / "static" / "files" / "necb-2026-program-book.pdf"
-PUBLISH_DIR = ROOT / "static" / "files" / "abstracts"
+# Edition-specific published path so future NECB editions get their own
+# stable per-abstract URL space and old links stay valid indefinitely.
+PUBLISH_DIR = ROOT / "static" / "files" / "necb-2026-abstracts"
 
 ABSTRACT_ID_RE = re.compile(r"^(A\d{3})\b")
 

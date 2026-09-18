@@ -141,7 +141,7 @@ We are grateful to our sponsors, our host at Microsoft Research New England, ISC
 ### 1:15–2:15 PM · Selected talks · Protein design & function
 
 ```{=typst}
-#text(size: 0.85em, style: "italic", fill: c-muted)[Chair: Wengong Jin (Northeastern · Broad)]
+#text(size: 0.85em, style: "italic", fill: c-muted)[Chair: Wengong Jin (Northeastern)]
 ```
 
 ```{=typst}

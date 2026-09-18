@@ -47,7 +47,7 @@ days:
       - time: "1:15–2:15 PM"
         title: "Selected talks · Protein design & function"
         kind: "talks"
-        chair: "Wengong Jin (Northeastern · Broad)"
+        chair: "Wengong Jin (Northeastern)"
         talks:
           - abstract_id: "A076"
             title: "Generating proteins with computationally predicted functions and multiple states via multimodal diffusion"

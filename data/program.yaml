@@ -94,7 +94,7 @@ days:
         speakers:
           - "Sergey Ovchinnikov"
       - time: "Evening"
-        title: "Evening event · The Future of Computational Biology"
+        title: "MIT FutureFest Salon · The Future of Computational Biology"
         kind: "social"
         register_url: "https://docs.google.com/forms/d/e/1FAIpQLSeSUbcTBKW20KU5dQcImliG1CRMctnpZOkBiJqHtHC3avCshA/viewform"
         register_label: "RSVP required"

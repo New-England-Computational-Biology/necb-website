@@ -250,9 +250,6 @@ We are grateful to our sponsors, our host at Microsoft Research New England, ISC
 ### 6:00–6:15 PM · Closing remarks · Poster awards
 
 
-### Evening · Reception
-
-
 # Keynote Speakers
 
 ```{=typst}
@@ -2547,6 +2544,20 @@ RNA-binding proteins (RBPs) are a large class of proteins that bind RNA and play
 **Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
 
 Partial Order Optimum Likelihood (POOL) is a machine learning method that combines computed electrostatic and geometric information for high-performance prediction of catalytic residues in enzyme structures. But many proteins are not enzymes. We are developing new methods using POOL to study noncatalytic protein functions. Two of these methods target RNA binding proteins and pseudoenzymes. RNA binding proteins play vital roles in RNA metabolism and function, including splicing, translation, localization, stability and degradation. In addition to canonical RNA binding proteins where RNA binding is an aspect of their main function, dozens of moonlighting proteins have been found that combine an enzymatic function in sugar, lipid, or amino acid metabolism with an RNA binding function. We developed RNABinderFinder, a novel machine learning method that combines POOL results with additional sequence and structural information to identify RNA binding sites in canonical and moonlighting RNA binding proteins. Pseudoenzymes are proteins or domains that have three-dimensional folds and amino acid sequences that are similar to conventional catalytically active enzymes, but have no catalytic activity. They serve in allosteric regulation of active enzymes, signal integration, competitive inhibition or scaffolding protein complexes. Some proteins that were presumed to be catalytically inactive based on amino acid sequence analysis have been found to have an alternative catalytic function due to the use of other amino acids in the active site. Our new method using POOL distinguishes between active enzymes (canonical or noncanonical) and inactive pseudoenzymes within enzyme superfamilies.
+
+```{=typst}
+#pagebreak(weak: true)
+```
+
+### A124 · Genome-Scale Sub-Megabase Chromatin Tracing with DNA-MERFISH
+
+**Presenter:** Peter Ren — Xiaowei Zhuang Lab; Howard Hughes Medical Institute, Department of Chemistry and Chemical Biology, a
+
+**Authors:** Peter Ren, William F. Li, Cosmos Yuqi Wang, Xiaowei Zhuang
+
+**Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
+
+The 3D organization of the genome plays a critical role in gene transcription. While sub-megabase single-cell datasets collected using high-throughput chromosome conformation capture (Hi-C) have identified on the order of thousands of differential topologically-associated domain (TAD) boundaries and genomic loops at the pseudo-bulk level across cell types, these datasets are limited by a sparsity problem where incomplete single-cell contact maps often need to be filled through imputation heuristics before further analysis, preventing thorough quantification of cell-to-cell variations. On the other hand, imaging-based combinatorial chromatin tracing methods such as multiplexed error-robust fluorescence in situ hybridization (MERFISH) applied to DNA has been shown to reach up to ~80% detection efficiency in single cells at ~1 Mbp resolution, a regime too large to identify most TADs and loops. We aim to extend DNA-MERFISH towards targeting an order-of-magnitude larger number of genomic loci, thus reaching sub-megabase resolution. Using improved MERFISH single-cell chromatin traces, we aim to both identify novel cell-type-specific features relevant to biological function as well as quantify the degree of variation of domains and loops across single cells.
 
 ```{=typst}
 #pagebreak(weak: true)

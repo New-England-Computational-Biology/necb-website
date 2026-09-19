@@ -20,7 +20,7 @@ import openpyxl
 import pandas as pd
 
 ROOT = Path(__file__).resolve().parent.parent
-REG_XLSX = ROOT / "Registration Report - NECB 2026(1).xlsx"
+REG_XLSX = ROOT / "Registration Report - NECB 2026(2).xlsx"
 SUB_CSV = ROOT / "docs" / "review" / "build" / "submissions_paste.csv"
 SUB_LATE_CSV = ROOT / "docs" / "review" / "build" / "submissions_paste_late.csv"
 OUT = ROOT / "static" / "img" / "stats"

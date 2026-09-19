@@ -103,6 +103,9 @@ We are grateful to our sponsors, our host at Microsoft Research New England, ISC
 
 ## Day 1 · Thu Oct 1, 2026
 
+### 8:00 AM · Registration desk opens
+
+
 ### 8:45–9:00 AM · Opening remarks
 
 
@@ -180,6 +183,9 @@ We are grateful to our sponsors, our host at Microsoft Research New England, ISC
 
 
 ## Day 2 · Fri Oct 2, 2026
+
+### 8:00 AM · Registration desk opens
+
 
 ### 9:00–10:00 AM · Morning keynote
 

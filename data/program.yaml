@@ -3,6 +3,9 @@ note: "Draft program — subject to change. Final program will be announced clos
 days:
   - label: "Day 1 · Thu Oct 1, 2026"
     sessions:
+      - time: "8:00 AM"
+        title: "Registration desk opens"
+        kind: "session"
       - time: "8:45–9:00 AM"
         title: "Opening remarks"
         kind: "session"
@@ -101,6 +104,9 @@ days:
 
   - label: "Day 2 · Fri Oct 2, 2026"
     sessions:
+      - time: "8:00 AM"
+        title: "Registration desk opens"
+        kind: "session"
       - time: "9:00–10:00 AM"
         title: "Morning keynote"
         kind: "keynote"

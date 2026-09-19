@@ -51,7 +51,7 @@ params:
     # Blank strings hide that icon from the footer. Populate as accounts
     # come online; the footer auto-renders any set entry.
     twitter: "https://x.com/NewEngCompBio"
-    linkedin: ""
+    linkedin: "https://www.linkedin.com/in/new-england-computational-biology-75b814438/"
     bluesky: ""
     github: ""
 

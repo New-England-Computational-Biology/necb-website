@@ -570,6 +570,10 @@ a.talk-id:hover::after, a.talk-id:focus-visible::after {
 .poster-row:last-child { border-bottom: 0; }
 .poster-row:nth-child(even) { background: var(--c-bg-alt); }
 .poster-id {
+  /* Span both grid rows (id + presenter) so the "PDF" pill stacks
+     under the ID without inflating row 1 and pushing the presenter
+     line down. */
+  grid-row: 1 / span 2;
   font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
   font-size: 0.8rem;
   color: var(--c-primary);

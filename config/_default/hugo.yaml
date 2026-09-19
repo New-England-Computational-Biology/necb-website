@@ -42,8 +42,11 @@ params:
   ogImage: "img/og-image.png"
 
   social:
-    twitter: ""
+    # Blank strings hide that icon from the footer. Populate as accounts
+    # come online; the footer auto-renders any set entry.
+    twitter: "https://x.com/NewEngCompBio"
     linkedin: ""
+    bluesky: ""
     github: ""
 
 menus:

@@ -6,9 +6,20 @@
       trainees and researchers across New England. Prices rise gradually as the meeting approaches.
     </p>
 
+    {{ if site.Params.registrationClosed }}
+    <div class="registration-notice registration-notice--closed" role="status">
+      <strong>Registration is closed.</strong> NECB 2026 reached its 325-seat cap.
+      {{ with site.Params.waitlistURL }}
+        Add your name to the <a href="{{ . }}" target="_blank" rel="noopener">waitlist</a> to be notified if a spot opens up.
+      {{ else }}
+        A waitlist will open shortly.
+      {{ end }}
+    </div>
+    {{ else }}
     <div class="registration-notice" role="status">
       <strong>Registration is nearing capacity.</strong> If you plan to attend, please register soon &mdash; remaining seats will go quickly.
     </div>
+    {{ end }}
 
     {{ with site.Data.registration }}
     <div class="registration-card">
@@ -53,7 +64,13 @@
     </div>
 
     <div class="registration-cta">
-      {{ if site.Params.registrationURL }}
+      {{ if site.Params.registrationClosed }}
+        {{ with site.Params.waitlistURL }}
+        <a class="btn btn-primary" href="{{ . }}" target="_blank" rel="noopener">Join the waitlist</a>
+        {{ else }}
+        <span class="badge badge-soon">Registration closed</span>
+        {{ end }}
+      {{ else if site.Params.registrationURL }}
       <a class="btn btn-primary" href="{{ site.Params.registrationURL }}" target="_blank" rel="noopener">Register</a>
       {{ else if site.Params.registrationStatus }}
       <span class="badge badge-soon">{{ site.Params.registrationStatus }}</span>

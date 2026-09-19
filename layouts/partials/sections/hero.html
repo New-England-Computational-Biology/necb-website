@@ -12,7 +12,13 @@
       at the frontier of computation and the life sciences.
     </p>
     <div class="hero-cta">
-      {{ if site.Params.registrationURL }}
+      {{ if site.Params.registrationClosed }}
+        {{ with site.Params.waitlistURL }}
+          <a class="btn btn-primary" href="{{ . }}" target="_blank" rel="noopener">Join the waitlist</a>
+        {{ else }}
+          <span class="badge badge-soon">Registration closed</span>
+        {{ end }}
+      {{ else if site.Params.registrationURL }}
         <a class="btn btn-primary" href="{{ site.Params.registrationURL }}" target="_blank" rel="noopener">Register to attend</a>
       {{ else }}
         <span class="badge badge-soon">{{ site.Params.registrationStatus }}</span>

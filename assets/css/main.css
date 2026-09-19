@@ -1172,6 +1172,17 @@ a.poster-id:hover::after, a.poster-id:focus-visible::after {
   text-align: center;
 }
 .registration-notice strong { color: #613800; }
+.registration-notice--closed {
+  border-color: #f2c1c1;
+  background: #fdf3f3;
+  color: #7a2c2c;
+}
+.registration-notice--closed strong { color: #4c0e0e; }
+.registration-notice--closed a {
+  color: var(--c-primary);
+  font-weight: 700;
+  text-decoration: underline;
+}
 
 .registration-card {
   background: var(--c-card);

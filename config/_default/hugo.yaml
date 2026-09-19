@@ -35,6 +35,12 @@ params:
   format: "In-person only"
   registrationStatus: "Registration — coming soon"
   registrationURL: "https://iscb.swoogo.com/necb2026/begin"
+  # Set registrationClosed: true to swap the primary CTA from "Register"
+  # to "Join waitlist" and replace the capacity banner with a
+  # registration-closed notice. Waitlist form is a Google Form owned by
+  # the organizing committee.
+  registrationClosed: false
+  waitlistURL: ""
   abstractStatus: "Call for abstracts — coming soon"
   abstractURL: "https://www.iscb.org/application?formId=49"
   logo: "img/logo.svg"

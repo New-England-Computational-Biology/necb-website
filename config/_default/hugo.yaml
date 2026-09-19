@@ -66,6 +66,9 @@ menus:
     - name: Program
       url: "#program"
       weight: 30
+    - name: FutureFest
+      url: "#futurefest"
+      weight: 32
     - name: Speakers
       url: "#speakers"
       weight: 40

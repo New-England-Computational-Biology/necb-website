@@ -3153,20 +3153,6 @@ Tracking how antibody clonal families evolve across immunisation timepoints is c
 #pagebreak(weak: true)
 ```
 
-### A195 · Analysis of Heavy Metal Exposure at the Confluence of Oncology and Cardiovascular Disorders: A NHANES Study from 2021 to 2023
-
-**Presenter:** Gia Vakklaganti — Henry M. Gunn High School
-
-**Authors:** Gia Vakklaganti
-
-**Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
-
-Cardiovascular disease (CVD) and cancer constitute significant contributors to mortality globally; metals have been linked to biological pathways relevant to both diseases. However, metal profiles across cancer-CVD comorbidity groups are poorly characterized; they may provide insight into shared environmental factors relevant to cardio-oncology. This study examined blood lead (Pb), mercury (Hg), cadmium (Cd), selenium (Se), and manganese (Mn) and their associations with lipid biomarkers across cancer-CVD groups in the U.S adult population. Data from the 2021-2023 NHANES cycle were analyzed for metal content, demographic, and lipid profiles. First, comparing cancer to no cancer, and then four mutually exclusive disease groups: cancer only, CVD only, cancer + CVD, and neither. Groups were compared using Mann-Whitney U and Kruskal-Wallis tests with Benjamini-Hochberg false discovery rate (FDR) correction; within-group associations were compared using Spearman correlation. Participants with cancer had higher Pb, Cd, Hg, and HDL-cholesterol and lower LDL cholesterol compared to participants without cancer (p < 0.05). All five blood metals showed significant differences across four disease groups (p < 0.001). Pb and Cd were highest in the CVD-only group; Hg was highest in the cancer-only group, and Se and Mn were lowest in the cancer + CVD group. Generally, metal-lipid correlations were weak and specific to disease groups. Pb-Cd had the strongest metal correlation in the CVD-only group (p=0.44). Stratification by both conditions revealed heterogeneity in exposures and biomarkers not apparent in comparisons by cancer status alone; future longitudinal studies should investigate whether metal exposures are responsible for cancer-CVD development or progression
-
-```{=typst}
-#pagebreak(weak: true)
-```
-
 ### A197 · Timing the onset of homologous recombination deficiency before breast cancer diagnosis
 
 **Presenter:** Michail Andreopoulos — Department of Biomedical Informatics, Harvard Medical School

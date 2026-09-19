@@ -441,7 +441,7 @@ days:
         round: "late-breaking"
   - label: "Day 2 · Fri Oct 2, 2026"
     time: "2:15–4:15 PM"
-    count: 87
+    count: 86
     posters:
       - abstract_id: "A002"
         title: "BBB-Nuke: Transport-Aware Prediction of Blood-Brain Barrier Penetration in Small Molecules"
@@ -802,11 +802,6 @@ days:
         title: "An ILP Framework for Repertoire-Scale Antibody Lineage Tracking"
         presenter: "Faith Abiria Ocitti"
         affiliation: "Tufts University"
-        round: "regular"
-      - abstract_id: "A195"
-        title: "Analysis of Heavy Metal Exposure at the Confluence of Oncology and Cardiovascular Disorders: A NHANES Study from 2021 to 2023"
-        presenter: "Gia Vakklaganti"
-        affiliation: "Henry M. Gunn High School"
         round: "regular"
       - abstract_id: "A196"
         title: "Paired spatial transcriptomics reveals divergent malignant-state and ecosystem remodeling trajectories in recurrent glioblastoma"

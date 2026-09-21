@@ -20,6 +20,11 @@ ATT*.html
 # Rendered review artifacts (regenerable via scripts/render_pdf.py)
 /docs/review/build/
 
+# Rendered signage artifacts (regenerable via scripts/build_signage.py)
+/docs/print/build/
+/docs/print/qr/
+/docs/print/qr-info/
+
 # Submitted-abstract data — never commit
 /NECB-2026-Submission_*.csv
 /NECB2026_submissions*.zip

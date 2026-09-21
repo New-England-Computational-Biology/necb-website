@@ -1173,6 +1173,19 @@ def render_code_of_conduct() -> list[str]:
             "person."
         ),
         "",
+        "### Social media",
+        "",
+        (
+            "We encourage attendees to share highlights on Twitter/X and "
+            "LinkedIn during and after the meeting. Please respect any "
+            "presenter who indicates they'd prefer their work not be shared "
+            "publicly. You can tag and follow us at:"
+        ),
+        "",
+        "- Twitter/X: [\\@NewEngCompBio](https://x.com/NewEngCompBio)",
+        "- LinkedIn: [New England Computational Biology]"
+        "(https://www.linkedin.com/in/new-england-computational-biology-75b814438/)",
+        "",
     ]
 
 

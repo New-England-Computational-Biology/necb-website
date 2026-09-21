@@ -328,6 +328,13 @@ NECB 2026 follows the [ISCB Code of Conduct](https://www.iscb.org/iscb-policy-st
 
 Harassment, discrimination, and disrespectful behaviour of any kind are not welcome, in-person or online. Please report any concerns to the organizing committee at `newenglandcompbio@gmail.com`, or to any of the co-chairs in person.
 
+### Social media
+
+We encourage attendees to share highlights on Twitter/X and LinkedIn during and after the meeting. Please respect any presenter who indicates they'd prefer their work not be shared publicly. You can tag and follow us at:
+
+- Twitter/X: [\@NewEngCompBio](https://x.com/NewEngCompBio)
+- LinkedIn: [New England Computational Biology](https://www.linkedin.com/in/new-england-computational-biology-75b814438/)
+
 # Keynote & Invited Talks · Abstracts
 
 ### Invited talk · Vermeer: Autoregressive generative modeling of microscopy predicts protein localization

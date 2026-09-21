@@ -109,6 +109,23 @@ def main():
                  "scripts/build_program_book.py + render_pdf.py first")
 
     reader = PdfReader(str(SOURCE))
+
+    # Guard: refuse to re-combine an already-combined PDF. Each re-run
+    # would otherwise insert the extended-abstract pages ON TOP of the
+    # ones already there, ballooning the file (50 MB → 100 MB → 150 MB
+    # observed in Sep 20 2026). We flip a private metadata flag when
+    # we write, and error out here if we see it.
+    meta = reader.metadata or {}
+    if meta.get("/NECBCombined") == "true":
+        sys.exit(
+            f"error: {SOURCE.relative_to(ROOT)} is already a combined book "
+            f"(has /NECBCombined metadata). Re-render the short book first:\n"
+            f"    python3 scripts/build_program_book.py\n"
+            f"    python3 scripts/render_pdf.py docs/review/necb-2026-program-book.md \\\n"
+            f"        --template scripts/templates/program-book.typ --publish\n"
+            f"then re-run this script."
+        )
+
     aid_start = get_abstract_page_map(reader)
     print(f"outline: {len(aid_start)} abstract entries in {SOURCE.name}")
 
@@ -153,6 +170,7 @@ def main():
     writer.add_metadata({
         "/Title": "NECB 2026 · Program Book (Full)",
         "/Subject": "Program + extended abstracts, combined",
+        "/NECBCombined": "true",   # guard against re-combining
     })
 
     OUT.parent.mkdir(parents=True, exist_ok=True)

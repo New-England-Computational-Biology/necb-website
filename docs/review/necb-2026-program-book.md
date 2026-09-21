@@ -190,8 +190,7 @@ We are grateful to our sponsors, our host at Microsoft Research New England, ISC
 ### 9:00–10:00 AM · Morning keynote
 
 ```{=typst}
-#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [], [#text(weight: 700, fill: c-navy)[Caroline Uhler] #text(size: 0.85em, fill: c-muted)[· Broad Institute · MIT]])]
-#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [], [#text(weight: 700, fill: c-navy)[G.V. Shivashankar] #text(size: 0.85em, fill: c-muted)[· ETH Zurich · Paul Scherrer Institute]])]
+#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [], [#text(weight: 700, fill: c-navy)[Caroline Uhler] #text(size: 0.85em, fill: c-muted)[· Broad Institute · MIT]\ #text(size: 0.9em, style: "italic")[Multimodal Data Integration: From Biomarkers to Mechanisms]])]
 ```
 
 
@@ -259,7 +258,7 @@ We are grateful to our sponsors, our host at Microsoft Research New England, ISC
 # Keynote Speakers
 
 ```{=typst}
-#speaker-grid((speaker-mini(photo: "/static/img/people/sergey-ovchinnikov.jpg", name: "Sergey Ovchinnikov", affiliation: "MIT", bio: [MIT Department of Biology. His research develops deep learning methods for protein structure prediction and design, contributing to widely used tools such as ColabFold and modern approaches to evolutionary protein…]), speaker-mini(photo: "/static/img/people/gv-shivashankar.jpg", name: "G.V. Shivashankar", affiliation: "ETH Zurich · Paul Scherrer Institute", bio: [ETH Zurich and the Paul Scherrer Institute. His group studies how mechanical forces on the cell nucleus regulate chromatin organization and gene expression, linking mechanobiology to cell fate decisions.]), speaker-mini(photo: "/static/img/people/caroline-uhler.jpg", name: "Caroline Uhler", affiliation: "Broad Institute · MIT", bio: [Professor at MIT and Co-Director of the Eric and Wendy Schmidt Center at the Broad Institute. Her research bridges statistics, machine learning, and biology, with a focus on causal inference for gene regulation and…]), speaker-mini(photo: "/static/img/people/marc-vidal.jpg", name: "Marc Vidal", affiliation: "Dana-Farber Cancer Institute · Harvard Medical School", bio: [Professor of Genetics at Harvard Medical School and Founding Director of the Center for Cancer Systems Biology (CCSB) at Dana-Farber Cancer Institute.]), speaker-mini(photo: "/static/img/people/zhiping-weng.jpg", name: "Zhiping Weng", affiliation: "UMass Chan Medical School", bio: [Li Weibo Professor of Biomedical Research and founding Chair of the Department of Genomics and Computational Biology at UMass Chan Medical School.]),))
+#speaker-grid((speaker-mini(photo: "/static/img/people/sergey-ovchinnikov.jpg", name: "Sergey Ovchinnikov", affiliation: "MIT", bio: [MIT Department of Biology. His research develops deep learning methods for protein structure prediction and design, contributing to widely used tools such as ColabFold and modern approaches to evolutionary protein…]), speaker-mini(photo: "/static/img/people/caroline-uhler.jpg", name: "Caroline Uhler", affiliation: "Broad Institute · MIT", bio: [Professor at MIT and Co-Director of the Eric and Wendy Schmidt Center at the Broad Institute. Her research bridges statistics, machine learning, and biology, with a focus on causal inference for gene regulation and…]), speaker-mini(photo: "/static/img/people/marc-vidal.jpg", name: "Marc Vidal", affiliation: "Dana-Farber Cancer Institute · Harvard Medical School", bio: [Professor of Genetics at Harvard Medical School and Founding Director of the Center for Cancer Systems Biology (CCSB) at Dana-Farber Cancer Institute.]), speaker-mini(photo: "/static/img/people/zhiping-weng.jpg", name: "Zhiping Weng", affiliation: "UMass Chan Medical School", bio: [Li Weibo Professor of Biomedical Research and founding Chair of the Department of Genomics and Computational Biology at UMass Chan Medical School.]),))
 ```
 
 # Invited Speakers
@@ -368,6 +367,18 @@ Single-cell data are often organized around low-dimensional geometric structures
 **Session:** Day 1 · Thu Oct 1, 2026 · 11:15 AM – 12:15 PM · Invited talks
 
 A fundamental goal of genetics is to understand how variation in biological sequences gives rise to differences in measurable characteristics called phenotypes. The mapping from genotype (DNA, RNA or protein sequence) to phenotype can be difficult to model and interpret because the space of possible sequences is enormous and combinations of mutations interact in complex ways. We describe how to use a Bayesian method called Gaussian process regression to learn genotype-phenotype maps. We demonstrate that Gaussian process regression with our priors yields better predictive performance on several datasets and show how the learned prior can be interpreted to provide clues into how phenotype arises from genotype biologically. We derive tractable analytical expressions for computing a broad class of statistics under these models that would ordinarily require predictions across the entire sequence space, and discuss how this new "kernel trick" can be used both to interpret the structure of the genotype-phenotype map and to navigate toward regions of sequence space with desirable properties.
+
+```{=typst}
+#pagebreak(weak: true)
+```
+
+### Keynote · Multimodal Data Integration: From Biomarkers to Mechanisms
+
+**Presenter:** Caroline Uhler — Broad Institute · MIT
+
+**Session:** Day 2 · Fri Oct 2, 2026 · 9:00–10:00 AM · Morning keynote
+
+An exciting opportunity at the intersection of the biomedical sciences and machine learning stems from the growing availability of large-scale multi-modal data (imaging-based and sequencing-based, observational and perturbational, at the single-cell level, tissue-level, and organism-level). Traditional representation learning methods, although often highly successful in predictive tasks, do not generally elucidate underlying causal mechanisms. I will present a statistical and computational framework for causal representation learning and its applications towards identifying novel disease biomarkers as well as inferring gene regulation in different disease contexts.
 
 ```{=typst}
 #pagebreak(weak: true)

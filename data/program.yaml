@@ -112,7 +112,6 @@ days:
         kind: "keynote"
         speakers:
           - "Caroline Uhler"
-          - "G.V. Shivashankar"
       - time: "10:00–10:45 AM"
         title: "Selected talks · Genomics & immunology"
         kind: "talks"

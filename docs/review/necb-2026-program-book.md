@@ -460,7 +460,7 @@ Single-cell technologies increasingly enable profiling of biological systems acr
 
 **Presenter:** Anna Sappington — MIT, Harvard Medical School
 
-**Authors:** Bowen Jing, Anna Sappington, Mihir Bafna, Ravi Shah, Adrina Tang, Adam Klivans, Daniel J. Diaz, Bonnie Berger
+**Authors:** Bowen Jing, Anna Sappington, Mihir Bafna, Ravi Shah, Adrina Tang, Rohith Krishna, Adam Klivans, Daniel J. Diaz, Bonnie Berger
 
 **Session:** Day 1 · Thu Oct 1, 2026 · 1:15–2:15 PM
 
@@ -552,7 +552,7 @@ Large-scale deep learning models trained on extensive genomic datasets across di
 
 **Presenter:** Jacob Schreiber — UMass Chan Medical School
 
-**Authors:** Achsah Marlene Aruva, Zhiping Weng, Jacob Schreiber
+**Authors:** Christian Ramirez, Achsah Marlene Aruva, Zhiping Weng, Jacob Schreiber
 
 **Session:** Day 1 · Thu Oct 1, 2026 · 4:15–5:15 PM
 
@@ -662,7 +662,7 @@ Conclusions: These findings suggest tumors reshape rather than uniformly advance
 
 **Presenter:** Ross Stewart — Northeastern University
 
-**Authors:** Ross Stewart, Shantanu Jain, A. Felicia Adebanjo, Lea M. Starita, Predrag Radivojac
+**Authors:** Ross Stewart, Shantanu Jain, Shawn Fayer, Abbye McEwen, Pankhuri Gupta, Daniel Holmes, Jessica Simon, Jeremy Stone, Sriram Pendyala, A. Felicia Adebanjo, Allyssa Vandi, Raining Wang, Melinda Wheelock, Jordan Opsahl, Madeline Walsh, Aman Shihora, Dustin Maly, Lea M. Starita, Douglas Fowler, Predrag Radivojac
 
 **Session:** Day 2 · Fri Oct 2, 2026 · 1:15–2:15 PM
 
@@ -704,7 +704,7 @@ Forecasting disease progression from longitudinal medical images, or the process
 
 **Presenter:** Reyna Silveira — Harvard OpenBio Student Research Institute
 
-**Authors:** Reyna Silveira
+**Authors:** Reyna Silveira, Neil Zhao
 
 **Session:** Day 2 · Fri Oct 2, 2026 · 4:15–5:15 PM
 
@@ -792,7 +792,7 @@ Plant cell walls (PCWs) give mechanical strength, flexibility and protection to 
 
 **Presenter:** Muhammad Asif Ali — University of Illinois, Urbana-Champaign, USA
 
-**Authors:** Muhammad Asif Ali, Albert Jaewon Seo, Ernest Tan Yong Xin
+**Authors:** Muhammad Asif Ali, Albert Jaewon Seo, Ernest Tan Yong Xin, Elhan Ersoz, Gustavo Caetano-Anollés
 
 **Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
 
@@ -806,7 +806,7 @@ Vaccine and binder design relies heavily on the structural stability of target p
 
 **Presenter:** Anthony Lau — UMass Chan Medical School
 
-**Authors:** 
+**Authors:** Anthony Lau, Kyle Pinheiro, Wei Zhu, Harshit Sahay, Raluca Gordân
 
 **Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
 
@@ -838,7 +838,7 @@ The framework is evaluated in an end-to-end case study in which agent templates 
 
 **Presenter:** Sangram Prusty — Boston University
 
-**Authors:** John E. Straub
+**Authors:** Sangram Prusty, Ayan Majumder, John E. Straub
 
 **Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
 
@@ -852,7 +852,7 @@ Membrane proteins experience multiple coupled thermodynamic driving forces that 
 
 **Presenter:** Sonali Priyadarshini Nayak — Boston University
 
-**Authors:** Sonali Priyadarshini Nayak, John E. Straub
+**Authors:** Sonali Priyadarshini Nayak, Conor Abraham, John E. Straub
 
 **Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
 
@@ -936,7 +936,7 @@ Single-cell lineage tracing (scLT) enables reconstruction of developmental his- 
 
 **Presenter:** Zhi Qu — Department of Radiation Oncology, University of Rochester Medical Center, Rochester, NY
 
-**Authors:** Paul M Grandgenett, Michael A Hollingsworth
+**Authors:** Chi Zhang, Zhi Qu, Paul M Grandgenett, Mike Baine, Qian Du, Michael A Hollingsworth, Dandan Zheng
 
 **Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
 
@@ -950,7 +950,7 @@ Pancreatic ductal adenocarcinoma (PDAC) exhibits substantial molecular heterogen
 
 **Presenter:** Nezar Abdennur — UMass Chan Medical School
 
-**Authors:** 
+**Authors:** Nezar Abdennur, Conrad Bzura, Marek Wiewiorka, Vedat Yilmaz, Tomasz Gambin, Jacob Schreiber
 
 **Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
 
@@ -964,7 +964,7 @@ Autonomous agents are rapidly becoming credible collaborators in computational b
 
 **Presenter:** Neal Kewalramani — Boston University
 
-**Authors:** Neal Kewalramani, Jeff Sheridan, Ruben Dries
+**Authors:** Neal Kewalramani, Jeff Sheridan, Mark Crovella, Ruben Dries
 
 **Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
 
@@ -994,7 +994,7 @@ Alternative splicing of mRNA precursors is a fundamental mechanism to expand the
 
 **Presenter:** Julia James — University of Massachusetts Lowell
 
-**Authors:** Rachel Melamed
+**Authors:** Julia James, Rachel Melamed
 
 **Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
 
@@ -1008,7 +1008,7 @@ Pharmacogenomics identifies genetic variants that predict drug response, yet mos
 
 **Presenter:** Maryam KafiKang — University of Connecticut
 
-**Authors:** 
+**Authors:** Maryam KafiKang, Pavel Skums
 
 **Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
 
@@ -1028,7 +1028,7 @@ On simulated data, our primary model, CloneMLP-NPE, yields well-calibrated poste
 
 **Presenter:** Ruohan Wang — Brown University
 
-**Authors:** 
+**Authors:** Ruohan Wang, Yu Zhu, Zixiao Gao, Ying Ma#
 
 **Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
 
@@ -1084,7 +1084,7 @@ Modern data analysis increasingly requires identifying shared latent structure a
 
 **Presenter:** Jakob Mikhaylov — University of Massachusetts Lowell
 
-**Authors:** 
+**Authors:** Jakob Mikhaylov, Rachel Melamed
 
 **Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
 
@@ -1188,7 +1188,7 @@ Epithelial-to-mesenchymal transition (EMT) is a fundamental process in developme
 
 **Presenter:** Apoorva Sharma — University at Buffalo
 
-**Authors:** Sharma A
+**Authors:** Sharma A, Oral Biology
 
 **Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
 
@@ -1202,7 +1202,7 @@ A challenge in T cell biology research is unraveling the connection between T ce
 
 **Presenter:** Melissa Badendieck — Department of Biology & Biotechnology and Department of Chemistry & Biochemistry, Worcester Polytech
 
-**Authors:** 
+**Authors:** Melissa Badendieck, Shuling Lin, Lyah Esplana, Karl-Frédéric Vieux, Aya Narunsky
 
 **Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
 
@@ -1244,7 +1244,7 @@ While mass spectrometry proteomics can assign post-translational modifications (
 
 **Presenter:** Yuncheng Duan — UMass Chan Medical School
 
-**Authors:** Hana I. Wasserman, Miles A. Pufall
+**Authors:** Yuncheng Duan, Hana I. Wasserman, Annie Paik, Miles A. Pufall, Raluca Gordan
 
 **Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
 
@@ -1348,7 +1348,7 @@ Chart review of clinical notes was conducted using this model based on keyword s
 
 **Presenter:** Mary Likhite — UMass Chan Medical School
 
-**Authors:** Jill E. Moore
+**Authors:** Mary Likhite, Jill E. Moore
 
 **Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
 
@@ -1382,7 +1382,7 @@ Macrophage polarization is governed by signaling to transcription factors (TFs) 
 
 **Presenter:** Karna Mendonca — Northeastern University
 
-**Authors:** Karna Mendonca, Maria Clara de Paolis Kazula, Ross Stewart, Predrag Radivojac
+**Authors:** Karna Mendonca, Maria Clara de Paolis Kazula, Ross Stewart, Jannik Brinkmann, Predrag Radivojac
 
 **Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
 
@@ -1416,7 +1416,7 @@ By making annotation and storytelling native to a general-purpose visualization 
 
 **Presenter:** Kenia Viri — Salve Regina University
 
-**Authors:** Uma K. Paithankar, Roma Parika, Uyen K. Ho, Caroline Zielinski, Sarah San Vicente, Lecia Sequist, Moshe Sade-Feldman, Shannon L. Stott, Jillian F. Wise
+**Authors:** Kenia Viri, Uma K. Paithankar, Roma Parika, Sahbra Eldosougi, Uyen K. Ho, Caroline Zielinski, Sarah San Vicente, Jacy Fang, J.M. Shim, Timothy West, Jenna Barboza, Mason Perry, Sofia Neary, Isaac Rivera, Jackson Brenek, Jacqueline Tremblay, Lecia Sequist, Brian Nahed, Moshe Sade-Feldman, Shannon L. Stott, Jillian F. Wise
 
 **Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
 
@@ -1430,7 +1430,7 @@ Liquid biopsy is a minimally invasive approach for monitoring disease through ra
 
 **Presenter:** Grace Li — Krantz Family Center for Cancer Research, Mass General Brigham, Boston, MA, USA
 
-**Authors:** Grace Li, Ping Lu, Zuen Ren, Kazi Nazrul Islam, Moshe Sade-Feldman, Ioannis Sanidas, Peter J. Park, Leif W. Ellisen, Doga C. Gulhan
+**Authors:** Grace Li, Ping Lu, Allen Lynch, Zuen Ren, Kazi Nazrul Islam, Moshe Sade-Feldman, Ioannis Sanidas, Peter J. Park, Leif W. Ellisen, Vinay Vinswanadham, Doga C. Gulhan
 
 **Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
 
@@ -1458,7 +1458,7 @@ Ewing sarcoma (EwS) is a pediatric cancer driven by translocations between EWSR1
 
 **Presenter:** Yunmai Wang — Computational Biology and Biomedical Informatics, Yale University
 
-**Authors:** Yunmai Wang
+**Authors:** Yunmai Wang, Brian Ondov, Hua Xu
 
 **Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
 
@@ -1614,7 +1614,7 @@ Alzheimer's disease (AD) is a neurodegenerative disease with a strong genetic co
 
 **Presenter:** Lina Yan — UMass Chan Medical School
 
-**Authors:** Ryan W. Logan
+**Authors:** Chen Fu, Zixiu Li, Lina Yan, Peng Zhou, Ryan W. Logan, Chan Zhou
 
 **Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
 
@@ -1642,7 +1642,7 @@ Interleukin-4 (IL-4) and IL-13 are the central type 2 cytokines that drive T hel
 
 **Presenter:** Mingxin Liu — Department of Biotechnology, Brown University
 
-**Authors:** 
+**Authors:** Mingxin Liu, Temidire Adesiji
 
 **Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
 
@@ -1670,7 +1670,7 @@ Batch integration is a central preprocessing step in single-cell genomics, where
 
 **Presenter:** Conrad Bzura — Department of Genomics and Computational Biology, UMass Chan Medical School, Worcester, MA, USA
 
-**Authors:** 
+**Authors:** Conrad Bzura, Vedat Yilmaz, Nezar Abdennur
 
 **Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
 
@@ -1716,7 +1716,7 @@ Recent advances in spatially resolved transcriptomics (SRT) enabled measurement 
 
 **Presenter:** Saatvik Viniak — University of Illinois Chicago
 
-**Authors:** Rithwik Narendra, James E. Boyett, Brian T. Layden
+**Authors:** Saatvik Viniak, Rithwik Narendra, James E. Boyett, Brian T. Layden, Medha Priyadarshini
 
 **Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
 
@@ -1778,7 +1778,7 @@ Using published scWGS from ovarian cancer samples, we look to quantify amplifica
 
 **Presenter:** Mansooreh Ahmadian — University of Colorado Anschutz Medical Campus
 
-**Authors:** Pia J. Hauk, Sara J. Deakyne Davies, Todd Miller, Elena W Y Hsieh
+**Authors:** Mansooreh Ahmadian, Zhixin Lun, Pia J. Hauk, Sara J. Deakyne Davies, Todd Miller, Jordan Abbott, Elena W Y Hsieh
 
 **Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
 
@@ -1810,7 +1810,7 @@ Publicly funded research consortia have generated extensive multimodal biomedica
 
 **Presenter:** Curie Cha — Massachusetts General Hospital, Harvard Medical School, Broad Institute of MIT and Harvard
 
-**Authors:** 
+**Authors:** Curie Cha, Kit Gallagher, Vrishank Chandrasekhar, Ignacio Vazquez-Garcia
 
 **Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
 
@@ -2013,7 +2013,7 @@ Somatic copy number alterations (SCNAs) are prevalent in cancer and can drive ne
 
 **Presenter:** Matthew Funk — Department of Genomics and Computational Biology, UMass Chan Medical School
 
-**Authors:** 
+**Authors:** Matthew Funk, Yuhe Wang, Lingfei Wang
 
 **Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
 
@@ -2171,7 +2171,7 @@ Can 'AI Scientists' discover better drugs, or only automate steps a chemist alre
 
 **Presenter:** Chen Liao — Dartmouth College
 
-**Authors:** Hannah G. Thomas, Robert A. Cramer
+**Authors:** Chen Liao, Hannah G. Thomas, Robert A. Cramer
 
 **Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
 
@@ -2421,7 +2421,7 @@ Metastasis drives mortality and morbidity in cancer. While some patients develop
 
 **Presenter:** Lyah Esplana — Department of Chemistry and Biochemistry, Worcester Polytechnic Institute, Worcester, MA 01609
 
-**Authors:** 
+**Authors:** Lyah Esplana, Aya Narunsky
 
 **Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
 
@@ -2493,7 +2493,7 @@ To address these gaps, we developed a customized AlphaGenome model trained on si
 
 **Presenter:** Di Zhou — Tufts University
 
-**Authors:** Donna K. Slonim
+**Authors:** Di Zhou, Lenore Cowen, Kaiyi Wu, Xiaozhe Hu, Donna K. Slonim
 
 **Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
 
@@ -2535,7 +2535,7 @@ CRISPR-based epigenome editing technologies, including CRISPR interference (CRIS
 
 **Presenter:** Sujiyanto — University of Massachusetts Lowell
 
-**Authors:** 
+**Authors:** Rachel Melamed
 
 **Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
 
@@ -2549,7 +2549,7 @@ Understanding trajectories among diseases poses real clinical value. For example
 
 **Presenter:** Sharra MN Lewis — Worcester Polytechnic Institute
 
-**Authors:** 
+**Authors:** Sharra Lewis, Aya Narunsky
 
 **Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
 
@@ -2647,7 +2647,7 @@ Most documented sex-biased genes reside on sex chromosomes, yet whether sex diff
 
 **Presenter:** Andrew Steindl — Yale
 
-**Authors:** Andrew J. Steindl, João Felipe Rocha, Smita Krishnaswamy
+**Authors:** Andrew J. Steindl, João Felipe Rocha, Dhananjay Bhaskar, Smita Krishnaswamy
 
 **Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
 
@@ -2725,7 +2725,7 @@ These results reveal a surprising disconnect between explicit perturbation condi
 
 **Presenter:** Haneen Abderrazzaq — Northeastern University
 
-**Authors:** Haneen Abderrazzaq, Ross Stewart, Abbye E. McEwen, Silvia Casadei, Matthew W. Snyder, Nahum Smith, Alan F. Rubin, Steven E. Brenner, Douglas M. Fowler, Lea M. Starita, Predrag Radivojac
+**Authors:** Haneen Abderrazzaq, Mugdha Singh, Ross Stewart, Larry Babb, Malvika Tejura, Abbye E. McEwen, Timothy Bergquist, Silvia Casadei, Matthew W. Snyder, Nahum Smith, Alan F. Rubin, Steven E. Brenner, Douglas M. Fowler, Lea M. Starita, Vikas Pejaver, Anne O’Donnell-Luria, Predrag Radivojac
 
 **Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
 
@@ -2751,7 +2751,7 @@ Nuclear Magnetic Resonance (NMR) provides atomistic insights into the structures
 
 ### A186 · Sparse Autoencoders Recover Reproducible Structural Signal in Protein Language Model Latent Space Representations
 
-**Presenter:** Bridget Liu — Columbia University
+**Presenter:** Bridget Liu & Andrew Meng — Columbia University
 
 **Authors:** Vignesh Karthik, Andrew Meng, Yuna Stechert, Davud Skenderi, Lyla Prasad, Osheen Abraham, Leela Iyer, Adit Anand, AJ Sillato
 
@@ -2767,7 +2767,7 @@ Generative protein-design models produce candidate binders without revealing wha
 
 **Presenter:** Kevin Borisiak — Yale University, Department of Physics
 
-**Authors:** 
+**Authors:** Kevin Borisiak, Jakub Otwinowski, Armita Nourmohammad
 
 **Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
 
@@ -2837,7 +2837,7 @@ Circular RNAs (circRNAs) remain an underexplored layer of transcriptomic regulat
 
 **Presenter:** Tianhao Luo — Harvard Medical School
 
-**Authors:** 
+**Authors:** Tianhao Luo, Bao Li, Kun-Hsing Yu
 
 **Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
 
@@ -2925,7 +2925,7 @@ Inferring active regulators from perturbation readouts is a central problem in s
 
 **Presenter:** Ruqi Liao — Broad Institute · MIT
 
-**Authors:** Ruqi Liao, Hilary Finucane
+**Authors:** Ruqi Liao, Sarah Gurev, Ashley Gin, Yo Akiyama, Jim Wells, Sergey Ovchinnikov, Hilary Finucane
 
 **Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
 
@@ -3047,7 +3047,7 @@ Single-cell multiomic assays jointly profile gene expression and chromatin acces
 
 **Presenter:** Ziyan Rao — Department of Genomics and Computational Biology, UMass Chan Medical School
 
-**Authors:** 
+**Authors:** Ziyan Rao, Zhiping Weng
 
 **Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
 
@@ -3061,7 +3061,7 @@ Distal enhancers can regulate developmental genes over large genomic distances, 
 
 **Presenter:** Richard Bationo — Institute of Health Science Research
 
-**Authors:** 
+**Authors:** Richard Bationo
 
 **Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
 
@@ -3075,7 +3075,7 @@ The fight against malaria has led to the development of several control strategi
 
 **Presenter:** Hannah Lords — Bioinformatics Program, Boston University, Boston, MA 02215, USA
 
-**Authors:** Stacy Andersen, Michael Lustgarten, Andres Ardisson Korat, Thomas Perls
+**Authors:** Daniel DiCorpo, Zeyuan Song, Harold Bae, Stacy Andersen, Michael Lustgarten, Andres Ardisson Korat, Thomas Perls, Paola Sebastiani
 
 **Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
 
@@ -3113,7 +3113,7 @@ We compared the proposed framework against 13 existing dose-response log-logisti
 
 **Presenter:** Weiwei Lou — Tufts University
 
-**Authors:** 
+**Authors:** Weiwei Lou
 
 **Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
 
@@ -3216,7 +3216,7 @@ OMNIA demonstrates how graph autoencoding and GNN explainability resolve reprodu
 
 **Presenter:** Mariam Benazouz — University of Washington
 
-**Authors:** Sean D. Mooney, Lea M. Starita
+**Authors:** Mariam Benazouz, Sean D. Mooney, Predrag Radivojac, Douglas M. Fowler, Lea M. Starita
 
 **Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
 
@@ -3244,7 +3244,7 @@ Tamoxifen resistance develops in approximately 30% of breast cancer patients, li
 
 **Presenter:** Ryan Synk — University of Maryland
 
-**Authors:** Prashant Pandey, S. Cenk Sahinalp
+**Authors:** Ryan Synk, Prashant Pandey, S. Cenk Sahinalp, Ramani Duraiswami
 
 **Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
 
@@ -3272,7 +3272,7 @@ Pathological annotations often capture only visible lesions, whereas molecular a
 
 **Presenter:** Daniel Korkin — Student at Massachusetts Academy of Math and Science
 
-**Authors:** Daniel Korkin, Student at Massachusetts Academy of Math and Science, Dmitry Korkin, Bioinformatics and Computational Biology
+**Authors:** Daniel Korkin, Student at Massachusetts Academy of Math and Science, Dmitry Korkin, Bioinformatics and Computational Biology, Worcester Polytechnic
 
 **Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
 
@@ -3286,7 +3286,7 @@ Neglected tropical diseases (NTDs) disproportionately affect populations in low-
 
 **Presenter:** Hung-Pin Peng — Clinical Data Center, Office of Data Science, Taipei Medical University, Taipei, Taiwan
 
-**Authors:** Fei-Hung Hung
+**Authors:** Hung-Pin Peng, Hung-Ju Chang, Fei-Hung Hung
 
 **Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
 
@@ -3326,7 +3326,7 @@ Here, we propose a computational framework that fine-tunes visual recognition mo
 
 **Presenter:** Elliot Tower — University of Edinburgh
 
-**Authors:** 
+**Authors:** Elliot Tower
 
 **Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
 

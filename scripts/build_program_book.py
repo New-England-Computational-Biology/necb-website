@@ -385,10 +385,35 @@ def _split_authors(raw: str) -> list[str]:
         # or fewer rarely include 'Observatory', 'Institute',
         # 'University', 'Department' etc.; affiliation openers commonly
         # do at position 2 or 3.
-        first_three_tokens = low.split()[:3]
+        #
+        # Important: apply this check only to the segment *before* the
+        # first strong name/affiliation separator (';', ' — ', ' – ',
+        # ' - ', ','). Otherwise a line like 'Anthony Lau; Department of
+        # Genomics …' fails because 'Department' lands in token 3, and
+        # the whole author (with all their co-authors on subsequent
+        # lines) gets dropped.
+        seg_for_check = low
+        found_sep = False
+        seg_seps = ("; ", ";", " — ", " – ", " -- ", " - ", ", ", ",")
+        for _s in seg_seps:
+            _i = low.find(_s)
+            if _i > 0:
+                seg_for_check = low[:_i]
+                found_sep = True
+                break
+        seg_tokens = seg_for_check.split()
+        # Always check only the first 2 tokens for institution keywords.
+        # Names of 2 tokens rarely contain 'Institute'/'Department'/etc.,
+        # while pure-affiliation lines almost always have the keyword at
+        # position 1 or 2 ('Department of ...', 'Vanderbilt Institute...',
+        # 'Broad Institute of...'). This preserves 'Yuncheng Duan
+        # Department of Genomics ...' style rows where the raw CSV
+        # concatenates name + affiliation with just a space; downstream
+        # _clean trims the trailing institution tail.
+        check_tokens = seg_tokens[:2]
         if any(
             any(kw in tok.rstrip(",.:;") for kw in INSTITUTION_WORDS)
-            for tok in first_three_tokens
+            for tok in check_tokens
         ):
             continue
         lines.append(chunk)

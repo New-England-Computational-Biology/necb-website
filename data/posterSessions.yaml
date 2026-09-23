@@ -780,7 +780,7 @@ days:
         round: "regular"
       - abstract_id: "A186"
         title: "Sparse Autoencoders Recover Reproducible Structural Signal in Protein Language Model Latent Space Representations"
-        presenter: "Bridget Liu"
+        presenter: "Bridget Liu & Andrew Meng"
         affiliation: "Columbia University"
         round: "regular"
       - abstract_id: "A187"

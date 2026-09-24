@@ -288,7 +288,24 @@ def _split_authors(raw: str) -> list[str]:
         "unit", "foundation", "initiative", "consortium", "network",
         "biobank", "medical", "interdisciplinary",
         "licenciatura",  # A024 specifically has this in a Spanish institution
+        # Academic/scientific keywords that occur inside long compound
+        # affiliations tacked onto names ("Samia Nawaz Environmental and
+        # Plant Biology Department, Ohio University …"). Adding these
+        # lets the downstream truncation catch the beginning of the
+        # affiliation earlier, before the sentence-terminating word like
+        # "Department". Kept lowercase; matched by substring in the
+        # token, so 'Bioinformatics' and 'Biomedical' both hit.
+        "biology", "biological", "biomedical", "biotechnology",
+        "sciences", "science", "chemistry", "physics", "engineering",
+        "informatics", "environmental", "genomics", "molecular",
+        "cellular", "immunobiology", "research", "academy",
     )
+    # Connector words to back up through when we find an institution
+    # keyword. Names never end in these, so trimming them from the tail
+    # is safe.
+    NAME_TAIL_CONNECTORS = {
+        "and", "&", "of", "for", "in", "at", "the", "with", "on", "by",
+    }
     # 'Name (1,2)' or 'Name[1,2]' style numeric affiliation markers.
     # Both remove the whole marker group so downstream comma-splitting
     # yields individual authors instead of tangling the marker into a
@@ -452,16 +469,23 @@ def _split_authors(raw: str) -> list[str]:
             nm = nm[:m.start()].rstrip()
         # If the residual name has more than 2 words and one of the
         # later words is an institution keyword ('Yuncheng Duan
-        # Department of Genomics …'), truncate at that word so only
-        # the leading name portion survives. Truncates AT the keyword
-        # position (not before) so 'Hana I. Wasserman Program …' keeps
-        # 'Hana I. Wasserman'; edge case 'Wonyl Choi Boston University'
-        # would keep 'Wonyl Choi Boston' but those are patched at the
-        # CSV source when they show up.
+        # Department of Genomics …'), truncate BEFORE that word so only
+        # the leading name portion survives. Then back up through
+        # connector words ("and", "of", "for", …) and other academic
+        # keywords so 'Samia Nawaz Environmental and Plant Biology
+        # Department' collapses to 'Samia Nawaz' instead of 'Samia
+        # Nawaz Environmental and Plant Biology'.
         words = nm.split()
         for i in range(2, len(words)):
-            if words[i].lower().rstrip(",.:;") in INSTITUTION_WORDS:
-                nm = " ".join(words[:i]).rstrip(",")
+            tok = words[i].lower().rstrip(",.:;")
+            if tok in INSTITUTION_WORDS:
+                j = i
+                while j > 2 and (
+                    words[j - 1].lower().rstrip(",.:;") in NAME_TAIL_CONNECTORS
+                    or words[j - 1].lower().rstrip(",.:;") in INSTITUTION_WORDS
+                ):
+                    j -= 1
+                nm = " ".join(words[:j]).rstrip(",")
                 break
         # Strip honorific title prefixes (A182: "Dr. Amanda Storm").
         parts = nm.split()
@@ -507,7 +531,7 @@ def _split_authors(raw: str) -> list[str]:
         # of Michigan - Ann Arbor' splits on ',' (earlier) rather than
         # on ' - ' (later) which would leak the university into the name.
         seg = ln
-        seps = (" (", " — ", " – ", " -- ", " - ", " : ", ":",
+        seps = (" (", " — ", " – ", " -- ", " - ", " / ", " : ", ":",
                 "- ", "; ", ";", ",")
         earliest = None
         earliest_sep = None
@@ -523,6 +547,14 @@ def _split_authors(raw: str) -> list[str]:
         nm = _clean(seg)
         if nm and nm not in names:
             names.append(nm)
+    # Drop residual entries that are clearly not real author names:
+    # anything with 6+ words after cleaning is virtually always an
+    # affiliation fragment or an acknowledgement sentence that survived
+    # (see A080's "I would like to acknowledge my mentor" or A206's
+    # "Student at Massachusetts Academy of Math"). The longest genuine
+    # names in the corpus top out at 5 tokens (e.g. "Maria Clara de
+    # Paolis Kazula").
+    names = [n for n in names if len(n.split()) <= 5]
     # Move the presenting author to the head of the list so
     # presenter_name() picks them.
     if presenter_idx is not None and 0 <= presenter_idx < len(names):

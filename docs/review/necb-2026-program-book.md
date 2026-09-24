@@ -1056,7 +1056,7 @@ Optical pooled screens (OPS) link CRISPR perturbations to imaging phenotypes at 
 
 **Presenter:** Eva Fast — Pfizer
 
-**Authors:** Rebecca Weiss, Ruth Marise Elgamal, Mary Piper, Stephen Christensen, Sydney Lavoie, Hendrik Luuk, Eva Fast, Pfizer Research and Development
+**Authors:** Rebecca Weiss, Ruth Marise Elgamal, Mary Piper, Stephen Christensen, Sydney Lavoie, Hendrik Luuk, Eva Fast
 
 **Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
 
@@ -1098,7 +1098,7 @@ Neuroblastoma is a pediatric cancer that occurs in infancy, with an average age 
 
 **Presenter:** Bengi Ruken Yavuz — Cancer Innovation Laboratory, National Cancer Institute
 
-**Authors:** Bengi Ruken Yavuz / Cancer Innovation, Hyunbum Jang / Cancer Innovation, Ruth Nussinov / Cancer Innovation
+**Authors:** Bengi Ruken Yavuz, Hyunbum Jang, Ruth Nussinov
 
 **Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
 
@@ -1188,7 +1188,7 @@ Epithelial-to-mesenchymal transition (EMT) is a fundamental process in developme
 
 **Presenter:** Apoorva Sharma — University at Buffalo
 
-**Authors:** Sharma A, Oral Biology
+**Authors:** Sharma A
 
 **Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
 
@@ -1368,7 +1368,7 @@ Together, these findings suggest that promoter-promoter contacts represent a str
 
 **Presenter:** Mehak Kapoor — Iowa State University
 
-**Authors:** Bioinformatics and Computational Biology, USDA-ARS-NADC
+**Authors:** USDA-ARS-NADC
 
 **Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
 
@@ -1628,7 +1628,7 @@ Opioid use disorder (OUD) is characterized by compulsive drug seeking and impair
 
 **Presenter:** Stergiani Telliou — Massachusetts General Hospital/ Harvard Medical School
 
-**Authors:** Stergiani Telliou, Cutaneous Biology Research
+**Authors:** Stergiani Telliou
 
 **Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
 
@@ -2143,7 +2143,7 @@ Pancreatic ductal adenocarcinoma (PDAC) has a five-year survival rate of nearly 
 
 **Presenter:** Samia Nawaz — Ohio University
 
-**Authors:** Samia Nawaz Environmental and Plant Biology, Ahmed Faik Environmental and Plant Biology
+**Authors:** Samia Nawaz, Ahmed Faik
 
 **Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
 
@@ -3272,7 +3272,7 @@ Pathological annotations often capture only visible lesions, whereas molecular a
 
 **Presenter:** Daniel Korkin — Student at Massachusetts Academy of Math and Science
 
-**Authors:** Daniel Korkin, Student at Massachusetts Academy of Math and Science, Dmitry Korkin, Bioinformatics and Computational Biology, Worcester Polytechnic
+**Authors:** Daniel Korkin, Student at Massachusetts, Dmitry Korkin, Worcester Polytechnic
 
 **Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
 

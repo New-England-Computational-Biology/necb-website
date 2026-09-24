@@ -441,7 +441,7 @@ days:
         round: "late-breaking"
   - label: "Day 2 · Fri Oct 2, 2026"
     time: "2:15–4:15 PM"
-    count: 86
+    count: 85
     posters:
       - abstract_id: "A002"
         title: "BBB-Nuke: Transport-Aware Prediction of Blood-Brain Barrier Penetration in Small Molecules"
@@ -502,11 +502,6 @@ days:
         title: "Embedding kernels for sequence-function relationships"
         presenter: "Waverly Carabba"
         affiliation: "Tufts University"
-        round: "regular"
-      - abstract_id: "A031"
-        title: "PATCH: Panel Aware Hierarchical Conformal Cell Typing for Spatial Proteomics under Marker-Panel Shift"
-        presenter: "Tianhao Luo"
-        affiliation: "Harvard Medical School"
         round: "regular"
       - abstract_id: "A037"
         title: "Aging-associated Mechanisms of Aggressiveness in HPV(-) Head and Neck Cancer"

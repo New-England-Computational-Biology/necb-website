@@ -2833,20 +2833,6 @@ Circular RNAs (circRNAs) remain an underexplored layer of transcriptomic regulat
 #pagebreak(weak: true)
 ```
 
-### A031 · PATCH: Panel Aware Hierarchical Conformal Cell Typing for Spatial Proteomics under Marker-Panel Shift
-
-**Presenter:** Tianhao Luo — Harvard Medical School
-
-**Authors:** Tianhao Luo, Bao Li, Kun-Hsing Yu
-
-**Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
-
-Spatial-proteomics cell phenotyping returns a point label and no statement of how far to trust it. Panels differ by laboratory and platform, so a classifier calibrated on one cohort meets cells whose defining markers were never imaged, and labels them anyway. Batch correction and reweighting cannot repair this: those features are absent, not shifted. We instead make the admissible label space depend on the panel: a type is admissible only when the panel contains the markers that define it. The rule reads the panel alone, needing no labels or calibration data. PATCH is a hierarchical conformal predictor over that space. It drops nodes whose markers are missing, backs each cell off to the finest identifiable ancestor, and abstains when none exists. Every label returned is one the panel supports, for every cell and panel, in domain and out. Before any target label exists, a label-free per-marker Kolmogorov-Smirnov screen ranks how far a new cohort will under-cover; a 500-cell labeled slice then restores that coverage where reweighting cannot. Removing the panel filter alone, a third of returned labels name types the panel cannot distinguish and half of all cells receive one; tuned for coverage, it reaches 0.896 against PATCH's 0.540 with a quarter still unidentifiable. PATCH emits no inadmissible label anywhere we measured: that comparison, sixty synthetic panels, forty gene-panel drops on single-cell RNA. Coverage we report as a measurement on one protocol: 0.930 in domain (mean set size 2.72, 2x10^5 cells) and 0.257-0.825 across eleven shifted cohorts, empty rate zero.
-
-```{=typst}
-#pagebreak(weak: true)
-```
-
 ### A060 · Sequence-Conditioned Generation of Genome-Targeting Integrases with a Genomic Foundation Model
 
 **Presenter:** Tanggis Bohnuud — Basecamp Research

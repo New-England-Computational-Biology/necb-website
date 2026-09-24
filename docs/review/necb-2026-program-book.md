@@ -1910,7 +1910,7 @@ Translating genome-wide association study (GWAS) signals into causal variant mec
 
 **Presenter:** Jici Jiang — Northeastern University
 
-**Authors:** Jici Jiang
+**Authors:** Jici Jiang, Predrag Radivojac, Benjamin M. Gyori
 
 **Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
 

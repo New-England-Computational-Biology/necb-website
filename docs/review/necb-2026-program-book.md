@@ -1596,7 +1596,7 @@ Perturbational transcriptomics is a powerful tool for understanding gene functio
 #pagebreak(weak: true)
 ```
 
-### A042 · Understanding the effect of genetic variants on
+### A042 · Understand the Effect of Genetic Variants on Alzheimer's Disease
 
 **Presenter:** Nguyen Tran — The University of Massachusetts Lowell
 

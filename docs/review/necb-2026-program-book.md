@@ -108,6 +108,12 @@ We are grateful to our sponsors, our host at Microsoft Research New England, ISC
 
 ### 8:45–9:00 AM · Opening remarks
 
+```{=typst}
+#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [], [#text(weight: 700, fill: c-navy)[Luca Pinello]])]
+#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [], [#text(weight: 700, fill: c-navy)[Predrag (Pedja) Radivojac]])]
+#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [], [#text(weight: 700, fill: c-navy)[Kevin Yang]])]
+```
+
 
 ### 9:00–9:45 AM · Opening keynote
 
@@ -117,6 +123,10 @@ We are grateful to our sponsors, our host at Microsoft Research New England, ISC
 
 
 ### 9:45–10:45 AM · Selected talks · Single-cell & spatial
+
+```{=typst}
+#text(size: 0.85em, style: "italic", fill: c-muted)[Chair: Ignacio Vazquez-Garcia (MGH/HMS/Broad)]
+```
 
 ```{=typst}
 #block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [#text(font: "Menlo", size: 8pt, fill: c-fuchsia, weight: 600)[A111]], [#text(weight: 600)[Spatial transcriptome and whole-genome characterization of single nuclei in human tissues]\ #text(size: 0.85em, fill: c-muted)[Claudia Chu · Broad Institute · Harvard]])]
@@ -254,6 +264,12 @@ We are grateful to our sponsors, our host at Microsoft Research New England, ISC
 
 ### 6:00–6:15 PM · Closing remarks · Poster awards
 
+```{=typst}
+#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [], [#text(weight: 700, fill: c-navy)[Luca Pinello]])]
+#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [], [#text(weight: 700, fill: c-navy)[Predrag (Pedja) Radivojac]])]
+#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [], [#text(weight: 700, fill: c-navy)[Kevin Yang]])]
+```
+
 
 # Keynote Speakers
 
@@ -295,7 +311,7 @@ We are grateful to our sponsors, our host at Microsoft Research New England, ISC
 - **Heng Li**, *Dana-Farber Cancer Institute · Harvard Medical School*
 - **Ying Ma**, *Brown University*
 - **Jeremy Simon**, *Dana-Farber Cancer Institute*
-- **Ignacio Vázquez-García**, *Massachusetts General Hospital · Harvard Medical School · Broad Institute*
+- **Ignacio Vazquez-Garcia**, *Massachusetts General Hospital · Harvard Medical School · Broad Institute*
 
 ### Coordinators
 
@@ -3303,26 +3319,6 @@ Together, ensemble convergence provides a reproducibility-oriented criterion for
 Biological pathways contain rich mechanistic knowledge about molecular interactions; however, much of this information exists primarily in static images rather than structured, machine-readable representations. Although some databases provide pathway annotations in structured formats, many regulatory and signaling relationships explicitly depicted in pathway diagrams are not fully captured in these representations. Existing methods for automated parsing of biological pathway diagrams largely focus on local relationship extraction rather than modeling the global structure of pathway diagrams as a whole, and therefore struggle to resolve complex topological patterns such as branching structures and feedback loops.
 
 Here, we propose a computational framework that fine-tunes visual recognition models on manually labeled KEGG pathway diagrams to recognize key visual elements, including line segments, oriented junction points, and biological symbols, and subsequently assembles these elements into a graph representation, thereby recovering molecular relationships directly from pathway image. For visual element recognition, our framework achieves a structural average precision (sAP15) of 81.4% for line segment detection, representing the best performance among the compared methods. It also achieves OKS AP50 scores of 0.95 and 1.00 for junction and symbol recognition, respectively, for which no directly comparable baseline is currently available. This work provides a scalable computational approach for extracting molecular relationships directly from pathway diagrams, with the potential to augment existing pathway resources and support downstream computational analyses.
-
-```{=typst}
-#pagebreak(weak: true)
-```
-
-### A212 · Only Two of Ten Nucleic Acid Foundation Models Encode Base-Pairing Partners
-
-**Presenter:** Elliot Tower — University of Edinburgh
-
-**Authors:** Elliot Tower
-
-**Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
-
-Claims that RNA language models encode secondary structure rest on evaluations that do not control for composition. Stems are GC-rich and loops are AU-rich, so any composition-sensitive embedding inherits that enrichment as apparent structure awareness.
-
-We apply a three-rung ladder to ten nucleic acid foundation models, five RNA-pretrained and five DNA-pretrained, across 47 Rfam families. Rung 1 asks whether mutating a base to its Watson-Crick complement perturbs stems more than loops; nine of ten models do, and a nucleotide-stratified null absorbs most of it. Rung 2 tightens the null to preserve dinucleotide composition, leaving ERNIE-RNA with 30 families and RiNALMo with 15, every other model below nine. Rung 3 asks whether a mutation perturbs its own base-pairing partner more than that partner's stem neighbors, against a null permuting partner assignments within each stem.
-
-Two models resolve which position pairs with which. RiNALMo reaches 0.872 per-pair precision and ERNIE-RNA 0.888, where that null puts chance at 0.102 and 0.124. Choosing the readout layer on held-out families leaves these at 0.882 and 0.885 and places the other eight at or below their own chance rates. Pretraining domain does not order those eight: Evo at 7B parameters sits with the DNA-pretrained models.
-
-A randomly initialized ERNIE-RNA clears every rung, reaching 0.490 against chance 0.241. Its architecture holds a hardcoded Watson-Crick table in a buffer that weight randomization does not reach. Ablating it drops the untrained model to its own chance rate while the trained model retains most of its excess.
 
 ```{=typst}
 #pagebreak(weak: true)

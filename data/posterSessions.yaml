@@ -441,7 +441,7 @@ days:
         round: "late-breaking"
   - label: "Day 2 · Fri Oct 2, 2026"
     time: "2:15–4:15 PM"
-    count: 85
+    count: 84
     posters:
       - abstract_id: "A002"
         title: "BBB-Nuke: Transport-Aware Prediction of Blood-Brain Barrier Penetration in Small Molecules"
@@ -847,11 +847,6 @@ days:
         title: "A Computational Framework for Recovering Molecular Relationships from Biological Pathway Diagrams"
         presenter: "Xiwen Zhao"
         affiliation: "Northeastern University"
-        round: "late-breaking"
-      - abstract_id: "A212"
-        title: "Only Two of Ten Nucleic Acid Foundation Models Encode Base-Pairing Partners"
-        presenter: "Elliot Tower"
-        affiliation: "University of Edinburgh"
         round: "late-breaking"
       - abstract_id: "A213"
         title: "Bayesian Negative Binomial Softmax Regression for Compositional Sequencing Count Data"

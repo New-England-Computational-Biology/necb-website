@@ -109,9 +109,7 @@ We are grateful to our sponsors, our host at Microsoft Research New England, ISC
 ### 8:45–9:00 AM · Opening remarks
 
 ```{=typst}
-#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [], [#text(weight: 700, fill: c-navy)[Luca Pinello]])]
-#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [], [#text(weight: 700, fill: c-navy)[Predrag (Pedja) Radivojac]])]
-#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [], [#text(weight: 700, fill: c-navy)[Kevin Yang]])]
+#text(size: 0.85em, style: "italic", fill: c-muted)[Luca Pinello (MGH/HMS/Broad) · Pedja Radivojac (Northeastern) · Kevin Yang (Microsoft Research)]
 ```
 
 
@@ -265,9 +263,7 @@ We are grateful to our sponsors, our host at Microsoft Research New England, ISC
 ### 6:00–6:15 PM · Closing remarks · Poster awards
 
 ```{=typst}
-#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [], [#text(weight: 700, fill: c-navy)[Luca Pinello]])]
-#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [], [#text(weight: 700, fill: c-navy)[Predrag (Pedja) Radivojac]])]
-#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [], [#text(weight: 700, fill: c-navy)[Kevin Yang]])]
+#text(size: 0.85em, style: "italic", fill: c-muted)[Luca Pinello (MGH/HMS/Broad) · Pedja Radivojac (Northeastern) · Kevin Yang (Microsoft Research)]
 ```
 
 

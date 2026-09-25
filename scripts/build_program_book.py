@@ -740,6 +740,17 @@ def render_schedule(program, speakers_yaml) -> list[str]:
                     "```",
                     "",
                 ]
+            # Optional one-line list of people (e.g. opening remarks),
+            # styled like the chair line.
+            people = (sess.get("people") or "").strip()
+            if people:
+                md += [
+                    "```{=typst}",
+                    f"#text(size: 0.85em, style: \"italic\", "
+                    f"fill: c-muted)[{_typ(people)}]",
+                    "```",
+                    "",
+                ]
             # Optional RSVP link (used for the Day 1 evening event).
             rsvp_url = (sess.get("register_url") or "").strip()
             if rsvp_url:

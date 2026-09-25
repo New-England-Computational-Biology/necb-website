@@ -9,10 +9,7 @@ days:
       - time: "8:45–9:00 AM"
         title: "Opening remarks"
         kind: "session"
-        speakers:
-          - "Luca Pinello"
-          - "Predrag (Pedja) Radivojac"
-          - "Kevin Yang"
+        people: "Luca Pinello (MGH/HMS/Broad) · Pedja Radivojac (Northeastern) · Kevin Yang (Microsoft Research)"
       - time: "9:00–9:45 AM"
         title: "Opening keynote"
         kind: "keynote"
@@ -198,7 +195,4 @@ days:
       - time: "6:00–6:15 PM"
         title: "Closing remarks · Poster awards"
         kind: "session"
-        speakers:
-          - "Luca Pinello"
-          - "Predrag (Pedja) Radivojac"
-          - "Kevin Yang"
+        people: "Luca Pinello (MGH/HMS/Broad) · Pedja Radivojac (Northeastern) · Kevin Yang (Microsoft Research)"

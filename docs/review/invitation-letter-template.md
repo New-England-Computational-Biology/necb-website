@@ -43,7 +43,7 @@ they may contact us at newenglandcompbio@gmail.com.
 
 Sincerely,
 
-**Ignacio Vázquez-García, Ph.D.**
+**Ignacio Vazquez-Garcia, Ph.D.**
 Co-Chair, NECB 2026 Organizing Committee
 Assistant Investigator, Massachusetts General Hospital
 Assistant Professor, Harvard Medical School
@@ -55,7 +55,7 @@ Tel: {{signatory_phone}}   ← required by some universities (e.g. HKU) for trav
 
 ## Signing options
 
-- **Ignacio Vázquez-García** (MGH · HMS · Broad) — default
+- **Ignacio Vazquez-Garcia** (MGH · HMS · Broad) — default
 - **Luca Pinello** (MGH · HMS · Broad) — co-chair alternative
 - **Predrag Radivojac** (Northeastern) — co-chair alternative
 - **Kevin Yang** (Microsoft Research New England) — venue host, useful for

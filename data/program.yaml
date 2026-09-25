@@ -21,7 +21,7 @@ days:
       - time: "9:45–10:45 AM"
         title: "Selected talks · Single-cell & spatial"
         kind: "talks"
-        chair: "Ignacio Vázquez-García (MGH/HMS/Broad)"
+        chair: "Ignacio Vazquez-Garcia (MGH/HMS/Broad)"
         talks:
           - abstract_id: "A111"
             title: "Spatial transcriptome and whole-genome characterization of single nuclei in human tissues"

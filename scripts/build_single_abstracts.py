@@ -83,7 +83,10 @@ def build_markdown():
         for sess in day.get("sessions", []):
             for t in sess.get("talks") or []:
                 aid = t["abstract_id"]
-                if aid in withdrawn or aid in talk_seen: continue
+                # program.yaml is the source of truth for talks; don't
+                # filter against withdrawals (A185 was poster-withdrawn
+                # when it was promoted to a talk).
+                if aid in talk_seen: continue
                 talk_seen.add(aid)
                 sub = subs.get(aid)
                 if not sub: continue

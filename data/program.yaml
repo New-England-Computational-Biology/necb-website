@@ -9,6 +9,10 @@ days:
       - time: "8:45–9:00 AM"
         title: "Opening remarks"
         kind: "session"
+        speakers:
+          - "Luca Pinello"
+          - "Predrag (Pedja) Radivojac"
+          - "Kevin Yang"
       - time: "9:00–9:45 AM"
         title: "Opening keynote"
         kind: "keynote"
@@ -17,6 +21,7 @@ days:
       - time: "9:45–10:45 AM"
         title: "Selected talks · Single-cell & spatial"
         kind: "talks"
+        chair: "Ignacio Vázquez-García (MGH/HMS/Broad)"
         talks:
           - abstract_id: "A111"
             title: "Spatial transcriptome and whole-genome characterization of single nuclei in human tissues"
@@ -193,3 +198,7 @@ days:
       - time: "6:00–6:15 PM"
         title: "Closing remarks · Poster awards"
         kind: "session"
+        speakers:
+          - "Luca Pinello"
+          - "Predrag (Pedja) Radivojac"
+          - "Kevin Yang"

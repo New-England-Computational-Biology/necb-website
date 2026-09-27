@@ -7,7 +7,7 @@ windows:
     deadline: "By Sep 21, 2026"
   - key: "late"
     label: "Late"
-    deadline: "By Sep 25, 2026"
+    deadline: "By Sep 28, 2026 · 3:00 PM ET"
 
 categories:
   - label: "Trainee"

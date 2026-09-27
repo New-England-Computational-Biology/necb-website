@@ -1,7 +1,7 @@
 <section class="section" id="program">
   <div class="container">
     <h2 class="section-title">Program at a Glance</h2>
-    <p class="section-sub">{{ site.Data.program.note }}</p>
+    {{ with site.Data.program.note }}<p class="section-sub">{{ . }}</p>{{ end }}
     <p class="section-sub program-book-link">
       For the full schedule, keynote and invited speaker bios, and all accepted abstracts, see the
       <a href="/files/necb-2026-program-book.pdf" target="_blank" rel="noopener">program book (PDF)</a>.
@@ -12,12 +12,15 @@
     {{ $speakerAffils := dict }}
     {{ $speakerTitles := dict }}
     {{ $speakerAbstracts := dict }}
+    {{ $speakerTiers := dict }}
     {{ range site.Data.speakers.keynotes.members }}
+      {{ $speakerTiers = merge $speakerTiers (dict .name "keynote") }}
       {{ if .short_affiliation }}{{ $speakerAffils = merge $speakerAffils (dict .name .short_affiliation) }}{{ end }}
       {{ if .talk_title }}{{ $speakerTitles = merge $speakerTitles (dict .name .talk_title) }}{{ end }}
       {{ if .talk_abstract }}{{ $speakerAbstracts = merge $speakerAbstracts (dict .name .talk_abstract) }}{{ end }}
     {{ end }}
     {{ range site.Data.speakers.invited.members }}
+      {{ $speakerTiers = merge $speakerTiers (dict .name "invited") }}
       {{ if .short_affiliation }}{{ $speakerAffils = merge $speakerAffils (dict .name .short_affiliation) }}{{ end }}
       {{ if .talk_title }}{{ $speakerTitles = merge $speakerTitles (dict .name .talk_title) }}{{ end }}
       {{ if .talk_abstract }}{{ $speakerAbstracts = merge $speakerAbstracts (dict .name .talk_abstract) }}{{ end }}
@@ -46,6 +49,16 @@
                 {{ $name := . }}
                 {{ $affil := index $speakerAffils $name }}
                 {{ $title := index $speakerTitles $name }}
+                {{/* Abstract PDF from scripts/build_single_abstracts.py:
+                     keynote-<lastname>.pdf / invited-<lastname>.pdf */}}
+                {{ $tier := index $speakerTiers $name }}
+                {{ $pdf := "" }}
+                {{ with $tier }}
+                  {{ $slug := printf "%s-%s" . (urlize (index (last 1 (split $name " ")) 0)) }}
+                  {{ if fileExists (printf "static/files/necb-2026-abstracts/%s.pdf" $slug) }}
+                    {{ $pdf = printf "/files/necb-2026-abstracts/%s.pdf" $slug }}
+                  {{ end }}
+                {{ end }}
                 <li>
                   {{ if $title }}
                   <details class="program-talk-row">
@@ -53,9 +66,16 @@
                       <span class="talk-presenter-line">{{ $name }}{{ with $affil }} · <span class="program-speaker-affil">{{ . }}</span>{{ end }}</span>
                       <span class="talk-toggle-icon" aria-hidden="true">+</span>
                     </summary>
+                    {{ if $pdf }}
+                    <div class="program-talk-detail">
+                      <a class="talk-id" href="{{ $pdf }}" target="_blank" rel="noopener" title="Open abstract PDF">{{ if eq $tier "keynote" }}Keynote{{ else }}Invited{{ end }}</a>
+                      <span class="talk-title">{{ $title }}</span>
+                    </div>
+                    {{ else }}
                     <div class="program-talk-detail program-talk-detail--speaker">
                       <span class="talk-title">{{ $title }}</span>
                     </div>
+                    {{ end }}
                   </details>
                   {{ else }}
                   {{ $name }}{{ with $affil }} · <span class="program-speaker-affil">{{ . }}</span>{{ end }}

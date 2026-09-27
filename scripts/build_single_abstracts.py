@@ -48,6 +48,42 @@ PDF_DIR = BUILD / "pdfs"                                    # extended pages
 PUBLISH_DIR = ROOT / "static" / "files" / "necb-2026-abstracts"
 
 ABSTRACT_ID_RE = re.compile(r"^(A\d{3})\b")
+SPEAKER_TIERS = {"keynotes": "Keynote", "invited": "Invited talk"}
+
+
+def speaker_slug(tier: str, name: str) -> str:
+    """keynote-uhler / invited-petti: the PDF name the website links to
+    (layouts/partials/sections/program.html builds the same slug)."""
+    last = re.sub(r"[^a-z0-9-]", "", name.split()[-1].lower())
+    return f"{'keynote' if tier == 'keynotes' else 'invited'}-{last}"
+
+
+def speaker_entries(program, speakers):
+    """(slug, markdown) per keynote/invited speaker with a talk title, in
+    program order; same layout as the program book's speaker abstracts."""
+    tiers = {}
+    for tier in SPEAKER_TIERS:
+        for m in speakers.get(tier, {}).get("members", []):
+            tiers[m["name"]] = (tier, m)
+    out = []
+    for day in program["days"]:
+        for sess in day.get("sessions", []):
+            for name in sess.get("speakers") or []:
+                if name not in tiers:
+                    continue
+                tier, m = tiers[name]
+                title = (m.get("talk_title") or "").strip()
+                if not title:
+                    continue
+                aff = (m.get("affiliation") or "").strip()
+                md = [f"# {SPEAKER_TIERS[tier]} · {title}", "",
+                      f"**Presenter:** {name}{(' — ' + aff) if aff else ''}", "",
+                      f"**Session:** {day['label']} · {sess['time']} · {sess['title']}", ""]
+                abstract = (m.get("talk_abstract") or "").strip()
+                if abstract:
+                    md += [abstract, ""]
+                out.append((speaker_slug(tier, name), md))
+    return out
 
 
 def _abstract_h1_wrapper(md_lines: list[str], aid: str, title: str) -> list[str]:
@@ -66,6 +102,9 @@ def _abstract_h1_wrapper(md_lines: list[str], aid: str, title: str) -> list[str]
         # one before non-stick entries).
         out.append(line)
     return out
+
+
+SPEAKER_SLUGS: list[str] = []
 
 
 def build_markdown():
@@ -113,8 +152,17 @@ def build_markdown():
                                 stick_to_prev=True)
         md += _abstract_h1_wrapper(block, aid, sub["title"])
 
+    # Keynote / invited speaker abstracts go last; split_and_stitch maps
+    # their "Keynote · …" / "Invited talk · …" outline entries to these
+    # slugs in order.
+    global SPEAKER_SLUGS
+    speakers = speaker_entries(program, load_yaml("speakers.yaml"))
+    SPEAKER_SLUGS = [slug for slug, _ in speakers]
+    for _, block in speakers:
+        md += block
+
     MD_OUT.write_text("\n".join(md) + "\n")
-    return [aid for aid, *_ in talk_entries + poster_entries]
+    return [aid for aid, *_ in talk_entries + poster_entries] + SPEAKER_SLUGS
 
 
 def render_bundle():
@@ -166,10 +214,14 @@ def split_and_stitch(bundle_pdf: Path, publish: bool):
     walk_outline(reader.outline, items)
     # Ordered abstract entries with start pages
     entries = []
+    speaker_slugs = iter(SPEAKER_SLUGS)
     for it in items:
-        m = ABSTRACT_ID_RE.match(str(it.title))
-        if not m: continue
-        entries.append((m.group(1), reader.get_destination_page_number(it)))
+        title = str(it.title)
+        m = ABSTRACT_ID_RE.match(title)
+        if m:
+            entries.append((m.group(1), reader.get_destination_page_number(it)))
+        elif title.startswith(tuple(f"{t} · " for t in SPEAKER_TIERS.values())):
+            entries.append((next(speaker_slugs), reader.get_destination_page_number(it)))
     # Compute end pages
     ranges = []
     n = len(reader.pages)
@@ -179,8 +231,9 @@ def split_and_stitch(bundle_pdf: Path, publish: bool):
 
     out_dir = BUILD / "abstracts"
     out_dir.mkdir(parents=True, exist_ok=True)
-    for old in out_dir.glob("A*.pdf"):
-        old.unlink()
+    for pattern in ("A*.pdf", "keynote-*.pdf", "invited-*.pdf"):
+        for old in out_dir.glob(pattern):
+            old.unlink()
 
     for aid, start, end in ranges:
         writer = PdfWriter()
@@ -203,8 +256,9 @@ def split_and_stitch(bundle_pdf: Path, publish: bool):
 
     if publish:
         PUBLISH_DIR.mkdir(parents=True, exist_ok=True)
-        for old in PUBLISH_DIR.glob("A*.pdf"):
-            old.unlink()
+        for pattern in ("A*.pdf", "keynote-*.pdf", "invited-*.pdf"):
+            for old in PUBLISH_DIR.glob(pattern):
+                old.unlink()
         for aid, *_ in ranges:
             shutil.copy2(out_dir / f"{aid}.pdf",
                          PUBLISH_DIR / f"{aid}.pdf")

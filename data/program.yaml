@@ -41,6 +41,7 @@ days:
       - time: "11:15 AM – 12:15 PM"
         title: "Invited talks"
         kind: "talks"
+        chair: "Smita Krishnaswamy (Yale)"
         speakers:
           - "Alex Lu"
           - "Rong Ma"
@@ -168,7 +169,6 @@ days:
       - time: "4:15–5:15 PM"
         title: "Selected talks · AI methods & applications"
         kind: "talks"
-        chair: "Smita Krishnaswamy (Yale)"
         talks:
           - abstract_id: "A172"
             title: "ImageFlowNet forecasts disease progression in longitudinal medical images"

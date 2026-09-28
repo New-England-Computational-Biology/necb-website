@@ -76,6 +76,7 @@ days:
       - time: "4:15–5:15 PM"
         title: "Selected talks · Genomics & regulation"
         kind: "talks"
+        chair: "Zain Patel (MGH/HMS/Broad)"
         talks:
           - abstract_id: "A079"
             title: "GlintID: Interpretable Modeling of Combinatorial Regulatory Logic"

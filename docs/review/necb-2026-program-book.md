@@ -173,6 +173,10 @@ We are grateful to our sponsors, our host at Microsoft Research New England, ISC
 ### 4:15–5:15 PM · Selected talks · Genomics & regulation
 
 ```{=typst}
+#text(size: 0.85em, style: "italic", fill: c-muted)[Chair: Zain Patel (MGH/HMS/Broad)]
+```
+
+```{=typst}
 #block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [#text(font: "Menlo", size: 8pt, fill: c-fuchsia, weight: 600)[A079]], [#text(weight: 600)[GlintID: Interpretable Modeling of Combinatorial Regulatory Logic]\ #text(size: 0.85em, fill: c-muted)[Arush Ramteke · New York University]])]
 #block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [#text(font: "Menlo", size: 8pt, fill: c-fuchsia, weight: 600)[A088]], [#text(weight: 600)[Kidzoi Enables Cell-Type-Specific Regulatory Variant Effect Prediction in the Kidney]\ #text(size: 0.85em, fill: c-muted)[Arif Ahmad Rather · Boston Children's Hospital · Harvard Medical School]])]
 #block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [#text(font: "Menlo", size: 8pt, fill: c-fuchsia, weight: 600)[A035]], [#text(weight: 600)[Cherimoya: Lightweight modeling of genomic modalities enables organism-wide analyses]\ #text(size: 0.85em, fill: c-muted)[Jacob Schreiber · UMass Chan Medical School]])]
@@ -1906,7 +1910,7 @@ Colorectal cancer (CRC) is the second leading cause of cancer-related mortality 
 
 ### A175 · SIMBA+: Interpreting GWAS through single-cell multiomic graphs identifies disease-relevant genes and cell states
 
-**Presenter:** Junxi Feng — University of California, San Diego
+**Presenter:** Jayoung Ryu — New York University
 
 **Authors:** Jayoung Ryu, Junxi Feng, Elizabeth Dorons, Karthik Guruvayurappan, Anatori Prieto, Zixuan Eleanor Zhang, Kushal Dey, Steven Gazal, Martin Jinye Zhang, Luca Pinello
 

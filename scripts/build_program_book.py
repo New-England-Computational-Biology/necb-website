@@ -206,6 +206,12 @@ def load_poster_day_map() -> dict[str, tuple[str, str]]:
     return m
 
 
+# Posters whose presenter is not the submitter (posterSessions.yaml
+# `presenter_changed: true`): their curated affiliation beats the CSV's,
+# which is the submitter's.
+PRESENTER_CHANGED: set[str] = set()
+
+
 def load_poster_presenter_map() -> dict[str, tuple[str, str]]:
     """Map abstract_id -> (presenter_name, affiliation) for accepted
     posters. Used as a fallback when the submissions CSV has an empty
@@ -222,6 +228,8 @@ def load_poster_presenter_map() -> dict[str, tuple[str, str]]:
                     p.get("presenter", "").strip(),
                     p.get("affiliation", "").strip(),
                 )
+                if p.get("presenter_changed"):
+                    PRESENTER_CHANGED.add(aid)
     return m
 
 
@@ -927,7 +935,7 @@ def render_abstract(aid: str, sub: dict, session_label: str | None = None,
     csv_affil = (sub.get("affiliation") or "").strip()
     if presenter_hint and presenter_hint[0]:
         presenter, hint_affil = presenter_hint
-        affil = csv_affil or hint_affil
+        affil = hint_affil if aid in PRESENTER_CHANGED else (csv_affil or hint_affil)
         md.append(f"**Presenter:** {presenter} — {affil}")
     else:
         presenter = presenter_name(sub["authors"]) if author_field else "(presenter TBD)"

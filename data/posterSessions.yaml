@@ -351,8 +351,9 @@ days:
         round: "regular"
       - abstract_id: "A175"
         title: "SIMBA+: Interpreting GWAS through single-cell multiomic graphs identifies disease-relevant genes and cell states"
-        presenter: "Junxi Feng"
-        affiliation: "University of California, San Diego"
+        presenter: "Jayoung Ryu"
+        affiliation: "New York University"
+        presenter_changed: true   # submitted by Junxi Feng; first author presents
         round: "regular"
       - abstract_id: "A176"
         title: "Reconstructing Early Tumor Evolution in BRCA Carriers Using Long Read Single-Cell RNA-sequencing"

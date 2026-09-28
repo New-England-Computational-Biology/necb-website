@@ -14,6 +14,13 @@
         in Kendall Square: about a 5-minute walk from the Kendall/MIT stop on the MBTA Red Line.
         Registration opens at 8:00 AM both days.
       </p>
+      {{ with site.Params.venueMapEmbedURL }}
+      <div class="venue-map">
+        <iframe src="{{ . | safeURL }}" title="Walking route from Kendall/MIT station to {{ site.Params.venueName }}"
+                loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+      <p class="venue-note">A: Kendall/MIT (Red Line) · B: {{ site.Params.venueName }}</p>
+      {{ end }}
     </div>
   </div>
 </section>

@@ -31,6 +31,8 @@ params:
   conferenceLocation: "Cambridge, MA"
   venueName: "Microsoft Research New England"
   venueAddress: "One Memorial Drive, Cambridge, MA 02142"
+  # Walking route Kendall/MIT (A) -> venue (B); keyless Google Maps embed
+  venueMapEmbedURL: "https://www.google.com/maps/embed?origin=mfe&pb=!1m6!4m5!3e2!4m1!2sKendall%2FMIT+Station,+Cambridge,+MA!4m1!2sMicrosoft+Research+New+England,+One+Memorial+Drive,+Cambridge,+MA+02142"
   venueMapURL: "https://www.google.com/maps/search/?api=1&query=Microsoft+Research+New+England,+One+Memorial+Drive,+Cambridge,+MA+02142"
   attendeeCap: 350
   format: "In-person only"
@@ -89,7 +91,7 @@ menus:
       weight: 50
     - name: Venue
       url: "#venue"
-      weight: 35
+      weight: 60
     - name: Accommodation
       url: "#accommodation"
       weight: 70

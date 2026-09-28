@@ -31,6 +31,7 @@ params:
   conferenceLocation: "Cambridge, MA"
   venueName: "Microsoft Research New England"
   venueAddress: "One Memorial Drive, Cambridge, MA 02142"
+  venueMapURL: "https://www.google.com/maps/search/?api=1&query=Microsoft+Research+New+England,+One+Memorial+Drive,+Cambridge,+MA+02142"
   attendeeCap: 350
   format: "In-person only"
   registrationStatus: "Registration — coming soon"
@@ -88,7 +89,7 @@ menus:
       weight: 50
     - name: Venue
       url: "#venue"
-      weight: 60
+      weight: 35
     - name: Accommodation
       url: "#accommodation"
       weight: 70

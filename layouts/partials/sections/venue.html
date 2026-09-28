@@ -3,15 +3,16 @@
     <h2 class="section-title">Venue</h2>
     <div class="venue-card">
       <h3 class="venue-name">{{ site.Params.venueName }}</h3>
-      <p class="venue-loc">{{ with site.Params.venueAddress }}{{ . }}{{ else }}Cambridge, Massachusetts{{ end }}</p>
+      <p class="venue-loc">{{ with site.Params.venueAddress }}{{ . }}{{ else }}Cambridge, Massachusetts{{ end }}
+        {{ with site.Params.venueMapURL }} · <a href="{{ . }}" target="_blank" rel="noopener">Get directions</a>{{ end }}</p>
       <ul class="venue-facts">
         <li><strong>Format:</strong> {{ site.Params.format }}</li>
         <li><strong>Dates:</strong> {{ site.Params.conferenceDate }}</li>
       </ul>
       <p>
-        The symposium will be held at <strong>Microsoft Research New England</strong>, in the
-        heart of Kendall Square — a short walk from the MBTA Red Line and easily accessible
-        from across the Boston area and beyond.
+        The symposium is at <strong>Microsoft Research New England</strong>, One Memorial Drive,
+        in Kendall Square: about a 5-minute walk from the Kendall/MIT stop on the MBTA Red Line.
+        Registration opens at 8:00 AM both days.
       </p>
     </div>
   </div>

@@ -826,8 +826,9 @@ days:
         round: "late-breaking"
       - abstract_id: "A202"
         title: "LOCALE: Local-Alignment Embeddings for Noise-Robust DNA Search at SRA Scale"
-        presenter: "Ryan Synk"
-        affiliation: "University of Maryland"
+        presenter: "Prashant Pandey"
+        affiliation: "Northeastern University"
+        presenter_changed: true   # submitted by Ryan Synk; co-author presents (per Pedja)
         round: "late-breaking"
       - abstract_id: "A205"
         title: "SIGMA: interface-aware spectral graph learning for metabolic transitions across pathological tissue boundaries"

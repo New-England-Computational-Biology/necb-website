@@ -6,6 +6,10 @@
       <span><strong>{{ site.Params.conferenceDate }}</strong></span>
       <span class="dot" aria-hidden="true">·</span>
       <span>{{ site.Params.venueName }}</span>
+      {{ with site.Params.venueAddress }}
+      <span class="dot" aria-hidden="true">·</span>
+      <span><a href="#venue">{{ . }}</a></span>
+      {{ end }}
     </p>
     <p class="hero-pitch">
       Join researchers across New England for a two-day, in-person, student-friendly symposium

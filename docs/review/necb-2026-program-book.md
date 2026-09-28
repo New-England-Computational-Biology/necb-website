@@ -3244,7 +3244,7 @@ Tamoxifen resistance develops in approximately 30% of breast cancer patients, li
 
 ### A202 · LOCALE: Local-Alignment Embeddings for Noise-Robust DNA Search at SRA Scale
 
-**Presenter:** Ryan Synk — University of Maryland
+**Presenter:** Prashant Pandey — Northeastern University
 
 **Authors:** Ryan Synk, Prashant Pandey, S. Cenk Sahinalp, Ramani Duraiswami
 

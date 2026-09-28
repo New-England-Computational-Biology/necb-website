@@ -199,19 +199,20 @@ We are grateful to our sponsors, our host at Microsoft Research New England, ISC
 ### 8:00 AM · Registration desk opens
 
 
-### 9:00–10:00 AM · Morning keynote
+### 9:00–9:45 AM · Morning keynote
 
 ```{=typst}
 #block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [], [#text(weight: 700, fill: c-navy)[Caroline Uhler] #text(size: 0.85em, fill: c-muted)[· Broad Institute · MIT]\ #text(size: 0.9em, style: "italic")[Multimodal Data Integration: From Biomarkers to Mechanisms]])]
 ```
 
 
-### 10:00–10:45 AM · Selected talks · Genomics & immunology
+### 9:45–10:45 AM · Selected talks · Genomics & immunology
 
 ```{=typst}
 #block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [#text(font: "Menlo", size: 8pt, fill: c-fuchsia, weight: 600)[A034]], [#text(weight: 600)[Learned Immune Architectures of Durable Antibody Responses Across Vaccines]\ #text(size: 0.85em, fill: c-muted)[Stephanie P. Hao · Boston University]])]
 #block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [#text(font: "Menlo", size: 8pt, fill: c-fuchsia, weight: 600)[A100]], [#text(weight: 600)[From human genetics evidence to therapeutic insights at scale: a calibrated language-model specialist for target discovery in immunology]\ #text(size: 0.85em, fill: c-muted)[Mahasweta Bhattacharya · Sanofi Research]])]
 #block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [#text(font: "Menlo", size: 8pt, fill: c-fuchsia, weight: 600)[A021]], [#text(weight: 600)[Advancing Peptide-HLA Class I Prediction with Active Learning Frameworks for Improved Cancer Vaccine Design]\ #text(size: 0.85em, fill: c-muted)[Jessika Baral · Harvard Medical School · Broad Institute]])]
+#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [#text(font: "Menlo", size: 8pt, fill: c-fuchsia, weight: 600)[A118]], [#text(weight: 600)[Scaling CAR-T Targeting of HLA-presented Intracellular Antigens with AI-Driven Experimentation]\ #text(size: 0.85em, fill: c-muted)[Elizabeth B. Wood · JURA Bio]])]
 ```
 
 
@@ -249,7 +250,6 @@ We are grateful to our sponsors, our host at Microsoft Research New England, ISC
 #block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [#text(font: "Menlo", size: 8pt, fill: c-fuchsia, weight: 600)[A172]], [#text(weight: 600)[ImageFlowNet forecasts disease progression in longitudinal medical images]\ #text(size: 0.85em, fill: c-muted)[Chen Liu · Yale University]])]
 #block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [#text(font: "Menlo", size: 8pt, fill: c-fuchsia, weight: 600)[A148]], [#text(weight: 600)[Beyond single-organ pathology: Mapping a unified toxicogenomic network of heavy metal cardiotoxicity and neurotoxicity]\ #text(size: 0.85em, fill: c-muted)[Reyna Silveira · Harvard OpenBio Student Research Institute]])]
 #block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [#text(font: "Menlo", size: 8pt, fill: c-fuchsia, weight: 600)[A180]], [#text(weight: 600)[Can AI Agents Design Proteins? Agentic vs. Human-Directed De Novo Minibinder Design for a KRAS Neoantigen]\ #text(size: 0.85em, fill: c-muted)[Yilan Wang · Harvard Medical School]])]
-#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [#text(font: "Menlo", size: 8pt, fill: c-fuchsia, weight: 600)[A118]], [#text(weight: 600)[Scaling CAR-T Targeting of HLA-presented Intracellular Antigens with AI-Driven Experimentation]\ #text(size: 0.85em, fill: c-muted)[Elizabeth B. Wood · JURA Bio]])]
 ```
 
 
@@ -388,7 +388,7 @@ A fundamental goal of genetics is to understand how variation in biological sequ
 
 **Presenter:** Caroline Uhler — Broad Institute · MIT
 
-**Session:** Day 2 · Fri Oct 2, 2026 · 9:00–10:00 AM · Morning keynote
+**Session:** Day 2 · Fri Oct 2, 2026 · 9:00–9:45 AM · Morning keynote
 
 An exciting opportunity at the intersection of the biomedical sciences and machine learning stems from the growing availability of large-scale multi-modal data (imaging-based and sequencing-based, observational and perturbational, at the single-cell level, tissue-level, and organism-level). Traditional representation learning methods, although often highly successful in predictive tasks, do not generally elucidate underlying causal mechanisms. I will present a statistical and computational framework for causal representation learning and its applications towards identifying novel disease biomarkers as well as inferring gene regulation in different disease contexts.
 
@@ -594,7 +594,7 @@ For humans and a handful of model organisms, a sufficient quantity of experiment
 
 **Authors:** Stephanie P. Hao, Pawel F. Przytycki
 
-**Session:** Day 2 · Fri Oct 2, 2026 · 10:00–10:45 AM
+**Session:** Day 2 · Fri Oct 2, 2026 · 9:45–10:45 AM
 
 Vaccination is one of the most effective public health interventions. However, vaccine efficacy varies widely among individuals, as immunity arises from complex interplay between genetic, pathogen, and immunological factors. To date, most systems vaccinology studies have remained pathogen-specific, precluding the discovery of potential shared immune architectures underlying durable antibody responses. To address this gap, we leveraged transcriptomic data from 1,032 participants receiving influenza, hepatitis B, or yellow fever vaccines to develop an interpretable machine learning framework for comparative analysis across diverse vaccine platforms. Pathogen-specific models using Blood Transcriptional Module-based feature aggregation accurately predicted high antibody responders and consistently outperformed gene-level models. Distinct predictive immune architectures identified across vaccines were further resolved for dominant hierarchical immune programs using surrogate decision trees. This approach identified the dominant decision boundaries underlying each vaccine model, highlighting leukocyte migration and Th2 differentiation in Hepatitis B, CD4+ T cells, M2 macrophages, and c-MYC signaling in Influenza, and B-cell receptor signaling with B-cell developmental pathways in Yellow Fever. Cross-pathogen concordance analyses further identified four shared transcriptional modules, suggesting partially conserved immune architectures across diverse vaccines. Interestingly, one concordant module converged on mitochondrial immunometabolic pathways and was consistently elevated in high responders, which suggests a shared role for cellular energy metabolism in supporting durable antibody responses. Together, these findings provide new insights into the immune mechanisms underlying durable vaccine responses and establish an interpretable machine learning framework that enables the discovery of shared and vaccine-specific immune architectures and may inform the rational design of next-generation vaccines.
 
@@ -608,7 +608,7 @@ Vaccination is one of the most effective public health interventions. However, v
 
 **Authors:** Mahasweta Bhattacharya
 
-**Session:** Day 2 · Fri Oct 2, 2026 · 10:00–10:45 AM
+**Session:** Day 2 · Fri Oct 2, 2026 · 9:45–10:45 AM
 
 Genetically validated targets are twice as likely to succeed in clinical trials, yet systematically decoding target mechanism of action in each genetic locus to translate GWAS associations into actionable insights requires multi-omic integration—a complex, time-intensive process. Our AI-ready data ecosystem integrating human genetics, proteomics, and transcriptomics across 500 indications enables scalable, mechanism-driven target discovery through multi-specialist agentic AI frameworks. Here, we demonstrate a genetics specialist LLM agent, which synthesizes genetic evidences into interpretable biological rationale. We built the genetics specialist using Claude 4.5 Sonnet via LangChain, operating as a defined scientific persona. The specialist integrates Mendelian randomization, molecular QTL actionability, tissue specificity, and variant pathogenicity to identify the most likely effector gene for a disease. Hallucinations were mitigated via: temperature = 0.1, max tokens = 2048, and prompt constraints requiring cited evidence and variant annotations. Across 800 gene-indication pairs spanning 100 immune indications, the genetics specialist enriched for approved targets ~20% more effectively than Open Targets genetic association, with consistent results across five independent runs. The agent provided mechanistic rationale complementing algorithmic gene ranking, with confidence scores reflecting evidence strength. For approved IL12B in Crohn's disease (confidence: 0.65), it identified the shared p40 subunit of IL-12/IL-23 with colocalization in immune tissues. Notably, the agent's top call was ITGA4 (confidence: 0.85), prioritized via 17 colocalization events predominantly in Th17 cells in two cohorts (largest: 20,873 cases). From eQTL directionality (risk allele elevates ITGA4 expression), the agent inferred an antagonist strategy—concordant with approved anti-α4 therapies. Biological rationales were reviewed by expert geneticists, confirming robust reasoning by the genetics specialist. The genetics specialist achieved robust enrichment for immune indications while providing interpretable mechanistic rationale, demonstrating that LLMs can accelerate expert-level evidence synthesis while maintaining rigor. This genetics-first approach establishes a validated foundation for a multi-specialist framework, extending to transcriptomics and proteomics specialists enabling systematic multi-omic target discovery—delivering auditable biological arguments at scale.
 
@@ -622,9 +622,23 @@ Genetically validated targets are twice as likely to succeed in clinical trials,
 
 **Authors:** Jessika Baral, Luis Correa-Medero, Marta Wilbrink, Cleo Forman, Timothy Zhu, Kasidet Manakongtreecheep, Emma C. Duggan, Carl R. Klauser, Sisi Sarkizova, Matthew Bakalar, Steven A. Carr, Luca Pinello, Jennifer G. Abelin, Wengong Jin, Catherine Wu, Nir Hacohen
 
-**Session:** Day 2 · Fri Oct 2, 2026 · 10:00–10:45 AM
+**Session:** Day 2 · Fri Oct 2, 2026 · 9:45–10:45 AM
 
 Despite the success of immune checkpoint blockade therapies, many patients relapse due to insufficient repertoires of tumor-reactive T cells, highlighting the need for immunogenic targets. Cancer vaccines offer a promising personalized approach for treatment by targeting neoantigens, tumor-specific peptides presented by patient-specific human leukocyte antigen (HLA) complexes. Existing peptide-HLA (pHLA) prediction algorithms have enabled cancer vaccine development, but recent studies show that most peptides failed to elicit effective T-cell responses, underscoring the need for more accurate binding and immunogenicity predictors. Current approaches remain constrained by predictive power, incomplete peptide representation, and noisy labels of negatives. To address these challenges, we developed HLAGaia, a deep learning pHLA binding predictor trained on over 16 million peptides with a 50:1 nonbinder:binder ratio. HLAGaia outperformed five state-of-the-art classifiers, including BigMHC and NetMHCPan, on held-out test data with median cumulative PPV (mPPV) of 0.88. We then used an active learning framework to iteratively prioritize pHLA pairs with the highest predictive uncertainty for experimental testing using a high-throughput E. coli-based binding assay developed in our lab, HLAPlex. This enabled efficient exploration and ground-truth labeling of a combinatorially large interaction space. Retraining with relabeled peptides improved detection of allele-specific binding motifs and increased mPPV by 12.4% on a held-out test dataset. Through integrating model training with large-scale experimental validation, we provide a more effective tool for neoantigen selection and a framework for how AI-driven approaches can improve precision medicine through continuous, data-guided algorithm development.
+
+```{=typst}
+#pagebreak(weak: true)
+```
+
+### A118 · Scaling CAR-T Targeting of HLA-presented Intracellular Antigens with AI-Driven Experimentation
+
+**Presenter:** Elizabeth B. Wood — JURA Bio
+
+**Authors:** Xiao-Bing Cui, Kerry Dobbs, Andrei Slabodkin, Alan N. Amin, Mattia G. Gollub, Kristina Gurung, Eli N. Weinstein, Elizabeth B. Wood
+
+**Session:** Day 2 · Fri Oct 2, 2026 · 9:45–10:45 AM
+
+The majority of cancer-driving proteins are intracellular, and so can only be recognized by immunotherapies through short peptide fragments displayed on the human leukocyte antigen (HLA). We developed a lab-in-the-loop system to learn the rules of scFv-pHLA protein-protein interactions on human cells. We use generative models of proteins and of screens to design, synthesize, and test interactions between tens of millions of scFvs and 100 pHLAs in a single multiplexed experiment, producing large scale training datasets. Transformers trained on the data predict unseen interactions and exhibit reliable scaling laws, with steady model improvements against seen and unseen pHLAs as experiments continue. Overall, AI-driven experimentation enables models to systematically learn to design TCR mimicking antibodies.
 
 ```{=typst}
 #pagebreak(weak: true)
@@ -735,20 +749,6 @@ Environmental exposure to toxic heavy metals, particularly lead and cadmium, pos
 **Session:** Day 2 · Fri Oct 2, 2026 · 4:15–5:15 PM
 
 Agentic AI—large language model (LLM) agents that autonomously plan, write code, and operate scientific software—is rapidly entering biology, yet it remains unclear whether such agents can match human experts on real generative protein-design tasks. We present, to our knowledge, the first head-to-head benchmark of agentic versus human-directed de novo protein binder design on a therapeutically relevant target: a minibinder to the KRAS G12D neoantigen peptide VVGADGVGK presented on HLA-A*11:01, one of the hardest peptide–MHC design challenges. We compare three modes of LLM integration along a spectrum of human control: (1) human-directed design with an LLM as a coding assistant; (2) a fully autonomous Claude Code agent given only the target and broad objectives; and (3) an agent operating under continuous expert supervision and harness engineering. Using a custom in silico evaluation suite spanning structure and sequence quality, Rosetta interface energetics, and AlphaFold-based specificity metrics, the human campaign produced 17 high-confidence hits, while the minimally supervised and human-supervised agent campaigns yielded 41 and 6 top candidates, respectively. Agents cheaply explored large parallel design spaces and, when supervised, recovered human-like binding geometry and G12D-specific salt bridges. However, unsupervised agents made domain-specific errors—incorrect target sequences, poor hotspot choices, and miscalibrated specificity thresholds—that expert oversight corrected. Our results show that agentic AI can accelerate protein design, but domain expertise remains essential for correct binding orientation, calibrated evaluation, and viable candidate selection.
-
-```{=typst}
-#pagebreak(weak: true)
-```
-
-### A118 · Scaling CAR-T Targeting of HLA-presented Intracellular Antigens with AI-Driven Experimentation
-
-**Presenter:** Elizabeth B. Wood — JURA Bio
-
-**Authors:** Xiao-Bing Cui, Kerry Dobbs, Andrei Slabodkin, Alan N. Amin, Mattia G. Gollub, Kristina Gurung, Eli N. Weinstein, Elizabeth B. Wood
-
-**Session:** Day 2 · Fri Oct 2, 2026 · 4:15–5:15 PM
-
-The majority of cancer-driving proteins are intracellular, and so can only be recognized by immunotherapies through short peptide fragments displayed on the human leukocyte antigen (HLA). We developed a lab-in-the-loop system to learn the rules of scFv-pHLA protein-protein interactions on human cells. We use generative models of proteins and of screens to design, synthesize, and test interactions between tens of millions of scFvs and 100 pHLAs in a single multiplexed experiment, producing large scale training datasets. Transformers trained on the data predict unseen interactions and exhibit reliable scaling laws, with steady model improvements against seen and unseen pHLAs as experiments continue. Overall, AI-driven experimentation enables models to systematically learn to design TCR mimicking antibodies.
 
 # Poster Presentations · Abstracts
 

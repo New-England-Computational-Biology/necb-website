@@ -18,9 +18,10 @@ import matplotlib.dates as mdates
 import numpy as np
 import openpyxl
 import pandas as pd
+import yaml
 
 ROOT = Path(__file__).resolve().parent.parent
-REG_XLSX = ROOT / "Registration Report - NECB 2026(2).xlsx"
+REG_XLSX = ROOT / "Registration Report - NECB 2026(6).xlsx"
 SUB_CSV = ROOT / "docs" / "review" / "build" / "submissions_paste.csv"
 SUB_LATE_CSV = ROOT / "docs" / "review" / "build" / "submissions_paste_late.csv"
 OUT = ROOT / "static" / "img" / "stats"
@@ -74,6 +75,20 @@ def savefig(fig, name):
     print(f"wrote {OUT.relative_to(ROOT)}/{name}.png")
 
 
+# --- accepted abstracts (live program) ---------------------------------
+# Talks + posters currently on the site; figures only count these
+_prog = yaml.safe_load((ROOT / "data" / "program.yaml").read_text())
+_posters = yaml.safe_load((ROOT / "data" / "posterSessions.yaml").read_text())
+_sessions = [s for d in _prog["days"] for s in d["sessions"]]
+talk_ids = {t["abstract_id"] for s in _sessions for t in (s.get("talks") or [])
+            if t.get("abstract_id")}
+n_speakers = sum(len(s.get("speakers") or []) for s in _sessions
+                 if s["kind"] in ("keynote", "talks"))
+poster_ids = {p["abstract_id"] for d in _posters["days"]
+              for sess in (d.get("sessions") or [d]) for p in (sess.get("posters") or [])}
+accepted_ids = talk_ids | poster_ids
+
+
 # --- load registration data ----------------------------------------------
 
 wb = openpyxl.load_workbook(str(REG_XLSX), data_only=True)
@@ -81,6 +96,7 @@ ws = wb["Sheet1"]
 rows = list(ws.iter_rows(values_only=True))
 h = rows[0]
 data = pd.DataFrame(rows[1:], columns=h)
+data = data[data["Registration Status"] != "Cancelled"].reset_index(drop=True)
 
 ALIASES = {
     "MGH": "Massachusetts General Hospital",
@@ -118,7 +134,7 @@ ax.annotate("Extended cap · 325", xy=(dates[0], 325), xytext=(dates[0], 330),
 
 final = int(cumu.values[-1])
 ax.scatter([dates[-1]], [final], s=120, color=C_FUCHSIA_DK, zorder=5)
-ax.annotate(f"  {final} attendees\n  as of Sep 15", xy=(dates[-1], final),
+ax.annotate(f"  {final} attendees\n  as of Sep 28", xy=(dates[-1], final),
             xytext=(-125, -18), textcoords="offset points",
             fontsize=11, weight="600", color=C_FUCHSIA_DK)
 
@@ -126,7 +142,7 @@ ax.set_title("Registration growth · Jul – Sep 2026")
 ax.set_ylabel("Cumulative registrations")
 ax.xaxis.set_major_formatter(mdates.DateFormatter("%b %d"))
 ax.xaxis.set_major_locator(mdates.WeekdayLocator(interval=2))
-ax.set_ylim(0, 360)
+ax.set_ylim(0, 400)
 ax.set_xlim(dates[0] - pd.Timedelta(days=1),
             dates[-1] + pd.Timedelta(days=2))
 plt.setp(ax.get_xticklabels(), rotation=0, ha="center")
@@ -146,7 +162,7 @@ def load_sub_affils():
             continue
         with open(path) as f:
             for row in __import__("csv").reader(f):
-                if len(row) < 4 or not row[0].startswith("A"):
+                if len(row) < 4 or row[0] not in accepted_ids:
                     continue
                 aff = (row[3] or "").strip()
                 if not aff or aff == "—":
@@ -925,6 +941,7 @@ try:
     sub_late = (load_subs(SUB_LATE_CSV) if SUB_LATE_CSV.exists()
                 else pd.DataFrame(columns=sub_reg.columns))
     subs = pd.concat([sub_reg, sub_late], ignore_index=True)
+    subs = subs[subs["aid"].isin(accepted_ids)]
 except Exception as e:
     print("skipping topics fig — CSV parse failed:", e)
     subs = pd.DataFrame(columns=["keywords"])
@@ -1055,10 +1072,10 @@ n_institutions = data["Affiliation_clean"].nunique()
 
 stats = [
     (f"{data.shape[0]}",    "registered\nattendees"),
-    ("~200",                 "accepted\nabstracts"),
-    ("23",                   "selected\ntalks"),
-    ("11",                   "keynote & invited\nspeakers"),
-    ("175",                  "poster\npresentations"),
+    (f"{len(accepted_ids)}", "accepted\nabstracts"),
+    (f"{len(talk_ids)}",     "selected\ntalks"),
+    (f"{n_speakers}",        "keynote & invited\nspeakers"),
+    (f"{len(poster_ids)}",   "poster\npresentations"),
     (f"{n_countries}",       "countries\nrepresented"),
     (f"{n_institutions}",    "institutions"),
     ("Oct 1–2",              "2026 · Cambridge,\nMassachusetts"),

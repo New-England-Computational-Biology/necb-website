@@ -839,7 +839,7 @@ axi.text(7, 38, f"across {n_far} states outside\nthe Northeast",
          fontsize=9.5, color=C_INK, weight="600",
          ha="left", va="top", zorder=2, linespacing=1.3)
 axi.text(7, 18,
-         "\n".join(_tw.wrap(", ".join(FARFLUNG_STATES), width=28)),
+         "\n".join(_tw.wrap(", ".join(FARFLUNG_STATES), width=40)),
          fontsize=8, color=C_MUTED, style="italic",
          ha="left", va="top", zorder=2, linespacing=1.3)
 
@@ -861,14 +861,15 @@ ax2.text(7, 85, "International", fontsize=13, weight="700",
 ax2.text(7, 62, f"{sum(intl.values())}", fontsize=44,
          weight="800", color=C_FUCHSIA, ha="left", va="center",
          zorder=2)
-ax2.text(30, 62, "attendees", fontsize=12, color=C_MUTED,
+ax2.text(52, 62, "attendees", fontsize=12, color=C_MUTED,
          weight="600", ha="left", va="center", zorder=2)
 ax2.text(7, 38, f"across {len(intl)} countries",
          fontsize=9.5, color=C_INK, weight="600",
          ha="left", va="top", zorder=2, linespacing=1.3)
-_intl_display = [DISPLAY.get(c, c) for c in sorted(intl.keys())]
+# non-breaking spaces keep multi-word names (Hong Kong) on one line
+_intl_display = [DISPLAY.get(c, c).replace(" ", "\u00a0") for c in sorted(intl.keys())]
 ax2.text(7, 26,
-         "\n".join(_tw.wrap(", ".join(_intl_display), width=28)),
+         "\n".join(_tw.wrap(", ".join(_intl_display), width=40)),
          fontsize=8, color=C_MUTED, style="italic",
          ha="left", va="top", zorder=2, linespacing=1.3)
 

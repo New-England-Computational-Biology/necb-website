@@ -8,11 +8,11 @@
 
     {{ if site.Params.registrationClosed }}
     <div class="registration-notice registration-notice--closed" role="status">
-      <strong>Registration is closed.</strong> NECB 2026 has reached capacity.
+      <strong>Registration is closed.</strong>
       {{ with site.Params.waitlistURL }}
-        Add your name to the <a href="{{ . }}" target="_blank" rel="noopener">waitlist</a> to be notified if a spot opens up.
+        NECB 2026 has reached capacity. Add your name to the <a href="{{ . }}" target="_blank" rel="noopener">waitlist</a> to be notified if a spot opens up.
       {{ else }}
-        A waitlist will open shortly.
+        Registration for NECB 2026 closed on Mon Sep 28, 2026. On-site registration is not available.
       {{ end }}
     </div>
     {{ else }}

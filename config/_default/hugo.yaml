@@ -40,7 +40,9 @@ params:
   # registration-closed notice. Waitlist form is a Google Form owned by
   # the organizing committee.
   registrationClosed: true
-  waitlistURL: "https://forms.gle/LiPMGD5vPndxYfjd6"
+  # Waitlist closed with final registration (Sep 28); set a form URL here
+  # to bring back the "Join the waitlist" buttons.
+  waitlistURL: ""
   abstractStatus: "Call for abstracts — coming soon"
   abstractURL: "https://www.iscb.org/application?formId=49"
   logo: "img/logo.svg"

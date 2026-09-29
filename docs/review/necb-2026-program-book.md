@@ -1065,20 +1065,6 @@ Single-cell RNA sequencing (scRNA-seq) and spatial transcriptomics (ST) enable h
 #pagebreak(weak: true)
 ```
 
-### A075 · scBrieflow: a single-cell analysis platform for understanding morphological readout of optical pooled screens
-
-**Presenter:** Ege Topkoc — Whitehead Institute
-
-**Authors:** Ege Topkoc, [Please note
-
-**Session:** Day 1 · Thu Oct 1, 2026 · 2:15–4:15 PM
-
-Optical pooled screens (OPS) link CRISPR perturbations to imaging phenotypes at single-cell resolution, but outputs are conventionally collapsed to per-gene averages early in analysis, discarding single-cell heterogeneity. We present scBrieflow, a standardized, config-driven pipeline repurposing scverse tools alongside Harmony batch correction for imaging-derived morphology, treating cells-by-features as the morphology analog of AnnData's traditional cells-by-genes structure. Built on brieflow's feature-extraction output, scBrieflow creates an AnnData object per screen and applies flag-don't-delete QC, feature filtering, NTC-referenced normalization, and six embedding methods: PCA, Harmony, and four batch-conditional deep generative models (VAE, contrastiveVI, CPA, SAMS-VAE), outputting a final AnnData object and HTML report. As a validation case study, nuclear DAPI intensity resolves G1/S/G2M cell-cycle phases via non-parametric peak-reflection deconvolution, chosen for generalizing across screens where two-component methods collapse the S-phase plateau. Where available, an independent proliferation marker, like Cyclin B1 or Ki67, correlates with DNA content. Phase structure is preserved after Harmony batch correction across all four screens (55,000–270,000 control cells each). To compare embeddings without circularity, we score every candidate against gene sets defined independently of any embedding, like CORUM complexes, essential-gene panels, and guide-to-gene concordance. By complex recovery across perturbed populations (2.7–11.3M cells per screen, 5,000–20,000+ perturbations), we find no universal best embedding: Harmony-corrected PCA is matched by uncorrected PCA on every screen (within 0.02 AUROC), while deep embeddings outperform Harmony on the largest screen and underperform on the second-largest. scBrieflow provides a reproducible foundation for embedding selection and genome-scale perturbation-phenotype quantification.
-
-```{=typst}
-#pagebreak(weak: true)
-```
-
 ### A081 · Benchmarking LLM-based cell type annotation for standardized reanalysis of public single-cell RNA-seq data
 
 **Presenter:** Eva Fast — Pfizer
@@ -2405,6 +2391,20 @@ Gene fusions are pivotal drivers of oncogenesis, yet the contribution of long no
 **Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
 
 Patient-level cancer treatment-response prediction remains challenging because clinical response data are limited and matched pre- and post-treatment molecular profiles are rarely available. We introduce PerturbRx, a treatment-conditioned representation learning framework that leverages large-scale single-cell perturbation data to learn latent transitions for patient drug-response prediction. PerturbRx first learns a drug- and dose-conditioned transition predictor in a shared pretrained latent space using context-matched but unpaired control and perturbed populations from the Tahoe-100M single-cell perturbation atlas. The pretrained predictor is then frozen and applied to pretreatment patient transcriptomic profiles to generate patient- and drug-conditioned latent transitions without requiring matched post-treatment measurements. On Tahoe-100M, PerturbRx outperformed identity, global-transition, linear, MLP, and conditional autoencoder baselines in predicting treatment-induced latent transitions, achieving a maximum mean discrepancy (MMD) of 0.0682 and a transition cosine similarity of 0.6715. For patient response prediction on a TCGA benchmark comprising 508 treatment episodes from 462 patients, PerturbRx achieved the highest overall performance among the four evaluated drug-response methods, with an AUROC of 0.692 ± 0.055 and an AUPRC of 0.787 ± 0.055. These results suggest that perturbation-pretrained latent transitions provide useful representations for patient-level drug-response prediction and offer a practical strategy for transferring single-cell perturbation information to settings where only pretreatment patient profiles are available.
+
+```{=typst}
+#pagebreak(weak: true)
+```
+
+### A075 · scBrieflow: a single-cell analysis platform for understanding morphological readout of optical pooled screens
+
+**Presenter:** Ege Topkoc — Whitehead Institute
+
+**Authors:** Ege Topkoc, [Please note
+
+**Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
+
+Optical pooled screens (OPS) link CRISPR perturbations to imaging phenotypes at single-cell resolution, but outputs are conventionally collapsed to per-gene averages early in analysis, discarding single-cell heterogeneity. We present scBrieflow, a standardized, config-driven pipeline repurposing scverse tools alongside Harmony batch correction for imaging-derived morphology, treating cells-by-features as the morphology analog of AnnData's traditional cells-by-genes structure. Built on brieflow's feature-extraction output, scBrieflow creates an AnnData object per screen and applies flag-don't-delete QC, feature filtering, NTC-referenced normalization, and six embedding methods: PCA, Harmony, and four batch-conditional deep generative models (VAE, contrastiveVI, CPA, SAMS-VAE), outputting a final AnnData object and HTML report. As a validation case study, nuclear DAPI intensity resolves G1/S/G2M cell-cycle phases via non-parametric peak-reflection deconvolution, chosen for generalizing across screens where two-component methods collapse the S-phase plateau. Where available, an independent proliferation marker, like Cyclin B1 or Ki67, correlates with DNA content. Phase structure is preserved after Harmony batch correction across all four screens (55,000–270,000 control cells each). To compare embeddings without circularity, we score every candidate against gene sets defined independently of any embedding, like CORUM complexes, essential-gene panels, and guide-to-gene concordance. By complex recovery across perturbed populations (2.7–11.3M cells per screen, 5,000–20,000+ perturbations), we find no universal best embedding: Harmony-corrected PCA is matched by uncorrected PCA on every screen (within 0.02 AUROC), while deep embeddings outperform Harmony on the largest screen and underperform on the second-largest. scBrieflow provides a reproducible foundation for embedding selection and genome-scale perturbation-phenotype quantification.
 
 ```{=typst}
 #pagebreak(weak: true)

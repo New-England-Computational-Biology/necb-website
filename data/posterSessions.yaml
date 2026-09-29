@@ -2,7 +2,7 @@ note: "Poster sessions run 2:15–4:15 PM on both days. Each poster goes on the 
 days:
   - label: "Day 1 · Thu Oct 1, 2026"
     time: "2:15–4:15 PM"
-    count: 87
+    count: 86
     posters:
       - abstract_id: "A009"
         title: "Integrating pharmacogenomics and cheminformatics with diverse disease phenotypes for cell type-guided drug discovery"
@@ -158,11 +158,6 @@ days:
         title: "CrossHONA: Cross-species HOmologous and Non-homologous gene-aware framework for transcriptomics integration and Annotation"
         presenter: "Ruohan Wang"
         affiliation: "Brown University"
-        round: "regular"
-      - abstract_id: "A075"
-        title: "scBrieflow: a single-cell analysis platform for understanding morphological readout of optical pooled screens"
-        presenter: "Ege Topkoc"
-        affiliation: "Whitehead Institute"
         round: "regular"
       - abstract_id: "A078"
         title: "Sn-seq analysis reveals distinct pathway programs in Gpr149+ vs GPR149- Medium Spiny Neurons in Parkinsons Disease"
@@ -442,7 +437,7 @@ days:
         round: "late-breaking"
   - label: "Day 2 · Fri Oct 2, 2026"
     time: "2:15–4:15 PM"
-    count: 84
+    count: 85
     posters:
       - abstract_id: "A002"
         title: "BBB-Nuke: Transport-Aware Prediction of Blood-Brain Barrier Penetration in Small Molecules"
@@ -563,6 +558,11 @@ days:
         title: "PerturbRx: Treatment-Conditioned Latent Transitions for Patient Drug Response Prediction"
         presenter: "Yoshitaka Inoue"
         affiliation: "University of Minnesota"
+        round: "regular"
+      - abstract_id: "A075"
+        title: "scBrieflow: a single-cell analysis platform for understanding morphological readout of optical pooled screens"
+        presenter: "Ege Topkoc"
+        affiliation: "Whitehead Institute"
         round: "regular"
       - abstract_id: "A077"
         title: "Statistical detection of drivers of hematopoietic differentiation from lentiviral integration site datasets"

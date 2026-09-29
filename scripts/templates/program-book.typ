@@ -114,10 +114,10 @@
 // H1 'Poster Presentations · Abstracts' heading).
 #let day-banner(label, page_break: true) = {
   if page_break { pagebreak(weak: true) }
-  align(center)[
+  align(left)[
     #text(font: "Avenir Next", size: 18pt, weight: 700, fill: c-fuchsia)[#label]
-    #v(4pt, weak: true)
-    #line(length: 40%, stroke: 1pt + c-fuchsia)
+    #v(8pt, weak: true)
+    #line(length: 36pt, stroke: 2.5pt + c-fuchsia)
   ]
   v(14pt)
 }

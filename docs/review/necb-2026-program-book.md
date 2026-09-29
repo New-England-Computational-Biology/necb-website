@@ -328,7 +328,7 @@ We are grateful to our sponsors, our host at Microsoft Research New England, ISC
 
 ### Friends of the Conference
 
-Jason Buenrostro.
+Jason Buenrostro, Erik Garrison.
 
 ### Founding Chairs
 

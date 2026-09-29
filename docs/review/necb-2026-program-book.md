@@ -1,6 +1,9 @@
 ```{=typst}
-#v(1.4in)
+#v(0.9in)
 #align(left)[
+  // logo mark: six nodes (the New England states) joined by a hub
+  #image("/static/img/necb-mark.svg", width: 0.95in)
+  #v(18pt)
   // eyebrow
   #block[
     #box(fill: c-fuchsia, radius: 999pt, width: 0.35em, height: 0.35em, [])

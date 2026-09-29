@@ -105,6 +105,10 @@ We are grateful to our sponsors, our host at Microsoft Research New England, ISC
 
 ### 8:00 AM · Registration desk opens
 
+```{=typst}
+#text(size: 0.85em, style: "italic", fill: c-muted)[Bring a government-issued photo ID matching your registered name for building security.]
+```
+
 
 ### 8:45–9:00 AM · Opening remarks
 
@@ -201,6 +205,10 @@ We are grateful to our sponsors, our host at Microsoft Research New England, ISC
 ## Day 2 · Fri Oct 2, 2026
 
 ### 8:00 AM · Registration desk opens
+
+```{=typst}
+#text(size: 0.85em, style: "italic", fill: c-muted)[Bring a government-issued photo ID matching your registered name for building security.]
+```
 
 
 ### 9:00–9:45 AM · Morning keynote

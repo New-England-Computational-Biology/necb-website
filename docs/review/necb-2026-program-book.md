@@ -2818,20 +2818,6 @@ Genomic foundation models are increasingly positioned as general-purpose systems
 #pagebreak(weak: true)
 ```
 
-### A196 · Paired spatial transcriptomics reveals divergent malignant-state and ecosystem remodeling trajectories in recurrent glioblastoma
-
-**Presenter:** Ali Mohammed Pirani — MD Anderson Cancer Center
-
-**Authors:** Ali Mohammed Pirani, Gayatri Kumar kumar, Pravesh Gupta, Benjamin Whitfield, Lisa M. Norberg, Frederick Lang, Vinay Puduvalli, Krishna Bhat, Jason Huse
-
-**Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
-
-Recurrent glioblastoma (GBM) develops within a tissue ecosystem altered by surgery, radiation, temozolomide, injury, hypoxia, and inflammation, yet how malignant-state evolution relates to spatial microenvironmental remodeling remains poorly understood. We profiled a GLASS Consortium cohort using 10x Visium HD spatial transcriptomics, including 27 matched primary/recurrent GBM pairs and one additional primary tumor. At 16-µm resolution, we integrated copy number based malignancy inference, cell-type deconvolution, lineage and functional-state scoring, and non-negative matrix factorization to resolve malignant, non-malignant, and mixed tumor microenvironment compartments. Spatial neighborhood enrichment was then used to quantify patient-level changes in cellular and transcriptional program organization. Rather than converging on a uniform recurrent phenotype, matched tumors followed divergent trajectories along a mesenchymal (MES) versus astrocytic/progenitor (AC/progenitor) remodeling axis. Some recurrences showed coordinated gain of MES programs and loss of AC/progenitor programs, whereas others showed the reciprocal trajectory, with additional tumors remaining intermediate or mixed. These opposing transcriptional trajectories were accompanied by reciprocal spatial reorganization involving malignant-state neighborhoods and myeloid, vascular/stromal, and glial programs. Across patients, the magnitude and direction of malignant-state remodeling tracked the extent and topology of spatial ecosystem remodeling, revealing strong patient-level changes that were obscured by cohort-level primary-versus-recurrent comparisons. Spatial changes prominently involved interactions with activated macrophage/myeloid and extracellular-matrix-associated programs, while changes in program abundance did not simply equate to increased spatial self-clustering. Together, these findings support a model in which recurrent GBM follows multiple patient-specific evolutionary trajectories, with malignant transcriptional adaptation and spatial ecosystem remodeling occurring as coordinated features of recurrence.
-
-```{=typst}
-#pagebreak(weak: true)
-```
-
 ### A008 · A fast and memory-efficient framework for similarity networks in biology
 
 **Presenter:** Sean R. Johnson — New England Biolabs

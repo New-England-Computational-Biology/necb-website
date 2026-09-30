@@ -109,7 +109,7 @@ We are grateful to our sponsors, our host at Microsoft Research New England, ISC
 ### 8:00 AM · Registration desk opens
 
 ```{=typst}
-#text(size: 0.85em, style: "italic", fill: c-muted)[Bring a government-issued photo ID matching your registered name for building security.]
+#text(size: 0.85em, style: "italic", fill: c-muted)[Bring a photo ID for building security.]
 ```
 
 
@@ -214,7 +214,7 @@ We are grateful to our sponsors, our host at Microsoft Research New England, ISC
 ### 8:00 AM · Registration desk opens
 
 ```{=typst}
-#text(size: 0.85em, style: "italic", fill: c-muted)[Bring a government-issued photo ID matching your registered name for building security.]
+#text(size: 0.85em, style: "italic", fill: c-muted)[Bring a photo ID for building security.]
 ```
 
 

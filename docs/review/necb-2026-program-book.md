@@ -266,6 +266,10 @@ We are grateful to our sponsors, our host at Microsoft Research New England, ISC
 ### 4:15–5:15 PM · Selected talks · AI methods & applications
 
 ```{=typst}
+#text(size: 0.85em, style: "italic", fill: c-muted)[Chair: Kevin Yang (Microsoft Research)]
+```
+
+```{=typst}
 #block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [#text(font: "Menlo", size: 8pt, fill: c-fuchsia, weight: 600)[A172]], [#text(weight: 600)[ImageFlowNet forecasts disease progression in longitudinal medical images]\ #text(size: 0.85em, fill: c-muted)[Chen Liu · Yale University]])]
 #block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [#text(font: "Menlo", size: 8pt, fill: c-fuchsia, weight: 600)[A148]], [#text(weight: 600)[Beyond single-organ pathology: Mapping a unified toxicogenomic network of heavy metal cardiotoxicity and neurotoxicity]\ #text(size: 0.85em, fill: c-muted)[Reyna Silveira · Harvard OpenBio Student Research Institute]])]
 #block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [#text(font: "Menlo", size: 8pt, fill: c-fuchsia, weight: 600)[A180]], [#text(weight: 600)[Can AI Agents Design Proteins? Agentic vs. Human-Directed De Novo Minibinder Design for a KRAS Neoantigen]\ #text(size: 0.85em, fill: c-muted)[Yilan Wang · Harvard Medical School]])]

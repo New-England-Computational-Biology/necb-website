@@ -178,6 +178,7 @@ days:
       - time: "4:15–5:15 PM"
         title: "Selected talks · AI methods & applications"
         kind: "talks"
+        chair: "Kevin Yang (Microsoft Research)"
         talks:
           - abstract_id: "A172"
             title: "ImageFlowNet forecasts disease progression in longitudinal medical images"

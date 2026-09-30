@@ -100,11 +100,13 @@ days:
         kind: "keynote"
         speakers:
           - "Sergey Ovchinnikov"
-      - time: "Evening"
-        title: "MIT FutureFest Salon · The Future of Computational Biology"
+      - time: "6:00–9:00 PM"
+        title: "MIT FutureFest Salon · Mind, Body and Soul"
         kind: "social"
         register_url: "https://tinyurl.com/FutureFestSalon"
         register_label: "RSVP required"
+        doc_url: "https://tinyurl.com/FutureFestSalonDoc"
+        doc_label: "Table assignments & topics"
 
   - label: "Day 2 · Fri Oct 2, 2026"
     sessions:

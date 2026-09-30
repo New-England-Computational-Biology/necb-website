@@ -198,10 +198,14 @@ We are grateful to our sponsors, our host at Microsoft Research New England, ISC
 ```
 
 
-### Evening · MIT FutureFest Salon · The Future of Computational Biology
+### 6:00–9:00 PM · MIT FutureFest Salon · Mind, Body and Soul
 
 ```{=typst}
 #text(size: 0.85em, weight: 600, fill: c-fuchsia)[#link("https://tinyurl.com/FutureFestSalon")[RSVP required →]]
+```
+
+```{=typst}
+#text(size: 0.85em, weight: 600, fill: c-fuchsia)[#link("https://tinyurl.com/FutureFestSalonDoc")[Table assignments & topics →]]
 ```
 
 

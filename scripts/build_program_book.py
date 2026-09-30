@@ -773,6 +773,17 @@ def render_schedule(program, speakers_yaml) -> list[str]:
                     "```",
                     "",
                 ]
+            # Optional companion link (e.g. the Salon planning doc).
+            doc_url = (sess.get("doc_url") or "").strip()
+            if doc_url:
+                doc_lbl = (sess.get("doc_label") or "Details").strip()
+                md += [
+                    "```{=typst}",
+                    f"#text(size: 0.85em, weight: 600, fill: c-fuchsia)"
+                    f"[#link(\"{doc_url}\")[{_typ(doc_lbl)} →]]",
+                    "```",
+                    "",
+                ]
             speakers = sess.get("speakers") or []
             talks = sess.get("talks") or []
             if speakers:

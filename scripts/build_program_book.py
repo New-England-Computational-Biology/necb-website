@@ -622,7 +622,7 @@ def render_cover() -> list[str]:
         "#v(0.9in)",
         "#align(left)[",
         "  // logo mark: six nodes (the New England states) joined by a hub",
-        "  #image(\"/static/img/necb-mark.svg\", width: 0.95in)",
+        "  #image(\"/static/img/logo/necb-mark.svg\", height: 1.05in)",
         "  #v(18pt)",
         "  // eyebrow",
         "  #block[",

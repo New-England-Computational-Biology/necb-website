@@ -2650,20 +2650,6 @@ Pericentromeric satellite HSATII, a repetitive element (RE), is silenced in norm
 #pagebreak(weak: true)
 ```
 
-### A132 · A Spatial Multi-Omics Framework Linking Tumor Cell Composition, Niche Architecture, and Regulatory Drivers in the Tumor Microenvironment
-
-**Presenter:** Rima Zinjuwadia — White Collar Technologies Inc.
-
-**Authors:** Rima Zinjuwadia
-
-**Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
-
-The tumor microenvironment (TME) is organized into spatially distinct niches whose immune composition shapes disease progression and treatment response, but the regulatory programs and intercellular signals that establish this organization are not well characterized at spatial resolution. We present an integrated computational framework linking cell-type composition, spatial niche architecture, and regulatory network inference within the TME, extending recently developed spatial gene-regulatory-network approaches from tumor-boundary analysis to niche- and subtype-comparative immune architecture. We applied this framework to publicly available spatial transcriptomics and matched single-cell RNA-seq data from breast cancer patients spanning three molecular subtypes: triple-negative, HER2-positive, and luminal. We deconvolve cell-type composition at each spatial spot, define immune-infiltrated and immune-excluded niches through spatial neighborhood analysis, and classify tumor-boundary and non-malignant regions using copy-number-based malignant cell identification. Within malignant cells stratified by niche and region type, we apply transcription-factor regulon inference and ligand-receptor signaling analysis, using open, reproducible computational tools throughout. This approach identifies candidate regulatory drivers and intercellular signals associated with immune exclusion and tests whether these drivers are shared across molecular subtypes or subtype-specific, validating candidates against established tumor-immune biology. We present the resulting niche-specific regulatory candidates, evaluate their concordance with known immune biology, and discuss their relevance as immunotherapy biomarker candidates. Our findings illustrate how integrating deconvolution, spatial niche mapping, and regulatory inference can connect tumor spatial architecture to its underlying molecular drivers, with implications for understanding subtype-specific immune evasion mechanisms in breast cancer.
-
-```{=typst}
-#pagebreak(weak: true)
-```
-
 ### A135 · Beyond Sex Chromosomes: Sex Differences in Transcriptional Signatures of Aged Brain and Alzheimer’s Disease
 
 **Presenter:** Danielle Firer — MIT

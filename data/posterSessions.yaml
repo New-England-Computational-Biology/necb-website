@@ -437,7 +437,7 @@ days:
         round: "late-breaking"
   - label: "Day 2 · Fri Oct 2, 2026"
     time: "2:15–4:15 PM"
-    count: 84
+    count: 83
     posters:
       - abstract_id: "A002"
         title: "BBB-Nuke: Transport-Aware Prediction of Blood-Brain Barrier Penetration in Small Molecules"
@@ -683,11 +683,6 @@ days:
         title: "Understanding and Correcting Representation-Specific Failure Modes in SE(3) Flow-Matching Protein Backbone Generation"
         presenter: "Michael Widener"
         affiliation: "Northeastern University / Boston College"
-        round: "regular"
-      - abstract_id: "A132"
-        title: "A Spatial Multi-Omics Framework Linking Tumor Cell Composition, Niche Architecture, and Regulatory Drivers in the Tumor Microenvironment"
-        presenter: "Rima Zinjuwadia"
-        affiliation: "White Collar Technologies Inc"
         round: "regular"
       - abstract_id: "A133"
         title: "Identifying pathogenic tandem repeat expansions at novel loci in short-read and long-read rare disease datasets"

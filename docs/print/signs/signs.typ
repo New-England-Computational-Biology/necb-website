@@ -41,7 +41,7 @@
 
 // --- Food & drinks
 #sign("Coffee break · 10:45 AM", [Coffee & tea], [Help yourself], size: 120pt)
-#sign("Lunch · 12:15 PM", [Lunch], [One boxed lunch per person, please], note: [Attendees first; organizers and volunteers after the line clears.], size: 120pt)
+#sign("Lunch · 12:15 PM", [Lunch], [One boxed lunch per person, please], size: 120pt)
 #sign("Lunch · 12:15 PM", [Vegetarian], [Vegetarian boxed lunches], size: 120pt)
 #sign("Lunch", [Dietary needs], [Gluten-free · vegan · allergies], note: [If you listed a dietary requirement at registration, please pick up here.], size: 120pt)
 #sign("All day", [Water], [Stay hydrated], size: 120pt)

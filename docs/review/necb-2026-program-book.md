@@ -36,6 +36,14 @@
     Two days of talks, posters, and conversations at the frontier of computation and the life sciences, hosted by Microsoft Research New England in Cambridge, MA.
   ]
 ]
+// host + partner strip pinned to the bottom of the cover
+#place(bottom + left, dy: -0.15in, grid(
+  columns: (auto, auto), column-gutter: 0.5in, row-gutter: 6pt,
+  text(font: "IBM Plex Mono", size: 7.5pt, fill: c-muted)[#lower[Hosted and sponsored by]],
+  text(font: "IBM Plex Mono", size: 7.5pt, fill: c-muted)[#lower[In partnership with]],
+  box(height: 0.42in, align(horizon, image("/static/img/sponsors/microsoft.svg", height: 0.24in))),
+  box(height: 0.42in, align(horizon, image("/static/img/partners/iscb-logo.png", height: 0.42in))),
+))
 #pagebreak(weak: true)
 ```
 
@@ -362,11 +370,11 @@ NECB 2026 follows the [ISCB Code of Conduct](https://www.iscb.org/iscb-policy-st
 
 Harassment, discrimination, and disrespectful behaviour of any kind are not welcome, in-person or online. Please report any concerns to the organizing committee at `newenglandcompbio@gmail.com`, or to any of the co-chairs in person.
 
-### Social media
+# Social Media
 
-We encourage attendees to share highlights on Twitter/X and LinkedIn during and after the meeting. Please respect any presenter who indicates they'd prefer their work not be shared publicly. You can tag and follow us at:
+We encourage attendees to share highlights on X and LinkedIn during and after the meeting, using **#NECB2026**. Please respect any presenter who indicates they'd prefer their work not be shared publicly. You can tag and follow us at:
 
-- Twitter/X: [\@NewEngCompBio](https://x.com/NewEngCompBio)
+- X: [\@NewEngCompBio](https://x.com/NewEngCompBio)
 - LinkedIn: [New England Computational Biology](https://www.linkedin.com/in/new-england-computational-biology-75b814438/)
 
 # Keynote & Invited Talks · Abstracts

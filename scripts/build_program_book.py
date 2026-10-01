@@ -658,6 +658,14 @@ def render_cover() -> list[str]:
         "New England in Cambridge, MA.",
         "  ]",
         "]",
+        "// host + partner strip pinned to the bottom of the cover",
+        "#place(bottom + left, dy: -0.15in, grid(",
+        "  columns: (auto, auto), column-gutter: 0.5in, row-gutter: 6pt,",
+        "  text(font: \"IBM Plex Mono\", size: 7.5pt, fill: c-muted)[#lower[Hosted and sponsored by]],",
+        "  text(font: \"IBM Plex Mono\", size: 7.5pt, fill: c-muted)[#lower[In partnership with]],",
+        "  box(height: 0.42in, align(horizon, image(\"/static/img/sponsors/microsoft.svg\", height: 0.24in))),",
+        "  box(height: 0.42in, align(horizon, image(\"/static/img/partners/iscb-logo.png\", height: 0.42in))),",
+        "))",
         "#pagebreak(weak: true)",
         "```",
         "",
@@ -1261,16 +1269,21 @@ def render_code_of_conduct() -> list[str]:
             "person."
         ),
         "",
-        "### Social media",
+    ]
+
+
+def render_social_media() -> list[str]:
+    return [
+        "# Social Media",
         "",
         (
-            "We encourage attendees to share highlights on Twitter/X and "
-            "LinkedIn during and after the meeting. Please respect any "
-            "presenter who indicates they'd prefer their work not be shared "
-            "publicly. You can tag and follow us at:"
+            "We encourage attendees to share highlights on X and LinkedIn "
+            "during and after the meeting, using **#NECB2026**. Please "
+            "respect any presenter who indicates they'd prefer their work "
+            "not be shared publicly. You can tag and follow us at:"
         ),
         "",
-        "- Twitter/X: [\\@NewEngCompBio](https://x.com/NewEngCompBio)",
+        "- X: [\\@NewEngCompBio](https://x.com/NewEngCompBio)",
         "- LinkedIn: [New England Computational Biology]"
         "(https://www.linkedin.com/in/new-england-computational-biology-75b814438/)",
         "",
@@ -1313,6 +1326,7 @@ def main():
     lines += render_invited_bios(speakers)
     lines += render_organizers(orgs)
     lines += render_code_of_conduct()
+    lines += render_social_media()
     lines += render_keynote_invited_abstracts(speakers, program)
     talks_md, talks_missing = render_talks(program, subs)
     lines += talks_md

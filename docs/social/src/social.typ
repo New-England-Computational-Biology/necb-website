@@ -41,5 +41,9 @@
   // square profile image; the mark sits inside the circular crop
   let s = if v == "avatar" { 400pt } else { 300pt }
   set page(width: s, height: s, margin: 0pt, fill: white)
-  place(center + horizon, image("/static/img/logo/necb-mark.svg", height: s * 0.58))
+  // mark with "necb" over "2026" below, kept inside the circular crop
+  place(center + horizon, dy: s * 0.01, stack(dir: ttb, spacing: s * 0.035,
+    align(center, image("/static/img/logo/necb-mark.svg", height: s * 0.34)),
+    align(center, text(size: s * 0.15, weight: 800, tracking: -0.035em, fill: navy, top-edge: "cap-height", bottom-edge: "baseline")[necb]),
+    align(center, text(size: s * 0.1, weight: 800, tracking: -0.02em, fill: fuchsia, top-edge: "cap-height", bottom-edge: "baseline")[2026])))
 }

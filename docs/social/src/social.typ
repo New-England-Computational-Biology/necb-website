@@ -19,7 +19,7 @@
 } else if v == "linkedin" {
   set page(width: 1584pt, height: 396pt, margin: 0pt, fill: white)
   place(image("art-li.png", width: 640pt, height: 396pt))
-  place(dx: 700pt, dy: 0pt, box(height: 396pt, align(horizon, stack(spacing: 30pt, lockup(700pt), info(19pt)))))
+  place(dx: 690pt, dy: 0pt, box(height: 396pt, align(horizon, stack(spacing: 30pt, lockup(830pt), info(22.5pt)))))
 } else if v == "og" {
   // link-preview card (Open Graph / Twitter), 1200 x 630
   set page(width: 1200pt, height: 630pt, margin: 0pt, fill: white)

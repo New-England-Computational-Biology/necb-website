@@ -15,7 +15,7 @@
 #if v == "x" {
   set page(width: 1500pt, height: 500pt, margin: 0pt, fill: white)
   place(image("art-x.png", width: 690pt, height: 500pt))
-  place(dx: 745pt, dy: 0pt, box(height: 500pt, align(horizon, stack(spacing: 38pt, lockup(660pt), info(19pt)))))
+  place(dx: 715pt, dy: 0pt, box(height: 500pt, align(horizon, stack(spacing: 40pt, lockup(725pt), info(20.5pt)))))
 } else if v == "linkedin" {
   set page(width: 1584pt, height: 396pt, margin: 0pt, fill: white)
   place(image("art-li.png", width: 640pt, height: 396pt))

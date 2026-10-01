@@ -3,8 +3,8 @@
 
 Downstream pipeline (unchanged): this script -> necb-2026-program-book.md ->
 scripts/render_pdf.py -> PDF via pandoc+typst, styled by
-scripts/templates/packet.typ (fuchsia H1s, navy H2s, teal H3s, Charter
-body, Avenir Next display, US Letter 1in margins).
+scripts/templates/packet.typ (fuchsia H1s, navy H2s, teal H3s, Inter
+body, Inter display, US Letter 1in margins).
 
 Inputs:
   data/program.yaml
@@ -591,7 +591,7 @@ def render_toc() -> list[str]:
         "```{=typst}",
         "#pagebreak(weak: true)",
         "#block(above: 0pt, below: 16pt)[",
-        "  #set text(font: \"Avenir Next\", size: 18pt, weight: 700, fill: c-fuchsia)",
+        "  #set text(font: \"Inter\", size: 18pt, weight: 700, fill: c-fuchsia)",
         "  Contents",
         "  #v(6pt, weak: true)",
         "  #line(length: 100%, stroke: 1.8pt + c-fuchsia)",
@@ -607,59 +607,65 @@ def render_toc() -> list[str]:
 
 
 def render_cover() -> list[str]:
-    """Minimal cover for now — a wordmark title, subtitle, dates, and
-    venue. Kept text-only until we have a proper cover asset.
+    """Cover: eyebrow, Luca's horizontal logo with "2026" beside the
+    necb wordmark, then dates, venue and a short pitch.
 
     Followed by a Welcome page (H1) with the co-chair message on its
     own page so the cover reads as a clean title sheet.
     """
     return [
-        # Modeled on the hero section at the top of the website:
-        # small teal eyebrow, big three-line fuchsia wordmark title
-        # (the year lives on its own line, no year separator), a navy
+        # Mirrors the website hero: mono eyebrow, logo lockup, navy
         # meta line with the dates + venue, and a short pitch.
         "```{=typst}",
-        "#v(0.9in)",
+        "#v(1.6in)",
         "#align(left)[",
-        "  // logo mark: six nodes (the New England states) joined by a hub",
-        "  #image(\"/static/img/necb-mark.svg\", width: 0.95in)",
-        "  #v(18pt)",
         "  // eyebrow",
         "  #block[",
         "    #box(fill: c-fuchsia, radius: 999pt, width: 0.35em, "
         "height: 0.35em, [])",
         "    #h(0.4em)",
-        "    #text(font: \"Avenir Next\", size: 9pt, weight: 600, fill: c-teal, "
-        "tracking: 1pt)[",
-        "      #upper[Inaugural Symposium · Cambridge, MA]",
+        "    #text(font: \"IBM Plex Mono\", size: 9pt, weight: 500, fill: c-teal, "
+        "tracking: 0.5pt)[",
+        "      #lower[Inaugural Symposium · Cambridge, MA]",
         "    ]",
         "  ]",
-        "  #v(10pt)",
-        "  // title stack",
-        "  #text(font: \"Avenir Next\", size: 38pt, weight: 700, fill: c-fuchsia)[",
-        "    New England \\",
-        "    Computational \\",
-        "    Biology  ",
-        "    #text(size: 32pt, fill: c-navy)[2026]",
-        "  ]",
-        "  #v(14pt)",
+        "  #v(16pt)",
+        "  // logo lockup: Luca's horizontal logo with 2026 right after the",
+        "  // necb wordmark (necb ends at x = 324 of 643, baseline y = 69 of 116)",
+        "  #let lw = 4.3in",
+        "  #let lh = lw * 116 / 643",
+        "  #box(width: lw, height: lh, {",
+        "    place(image(\"/static/img/logo/necb-horizontal.svg\", width: lw, height: lh))",
+        "    place(dx: lw * 324 / 643 + lw * 0.024, dy: lh * 69 / 116,",
+        "      text(font: \"Inter\", weight: 800, size: lw * 0.1, tracking: -0.03em,",
+        "        fill: c-fuchsia, top-edge: \"baseline\", bottom-edge: \"baseline\")[2026])",
+        "  })",
+        "  #v(26pt)",
         "  // meta",
-        "  #text(font: \"Avenir Next\", size: 11pt, weight: 600, fill: c-navy)[",
+        "  #text(font: \"Inter\", size: 11pt, weight: 600, fill: c-navy)[",
         "    October 1–2, 2026",
         "  ]",
-        "  #text(font: \"Avenir Next\", size: 11pt, fill: c-muted)[",
+        "  #text(font: \"Inter\", size: 11pt, fill: c-muted)[",
         "    #h(0.3em) · #h(0.3em) Microsoft Research New England",
         "  ]",
         "  #v(20pt)",
         "  // pitch",
         "  #block(width: 4in)[",
-        "    #set text(font: \"Charter\", size: 10.5pt, fill: c-ink)",
+        "    #set text(font: \"Inter\", size: 10.5pt, fill: c-ink)",
         "    #set par(leading: 0.6em, justify: false)",
         "    Two days of talks, posters, and conversations at the frontier of "
         "computation and the life sciences, hosted by Microsoft Research "
         "New England in Cambridge, MA.",
         "  ]",
         "]",
+        "// host + partner strip pinned to the bottom of the cover",
+        "#place(bottom + left, dy: -0.15in, grid(",
+        "  columns: (auto, auto), column-gutter: 0.5in, row-gutter: 6pt,",
+        "  text(font: \"IBM Plex Mono\", size: 7.5pt, fill: c-muted)[#lower[Hosted and sponsored by]],",
+        "  text(font: \"IBM Plex Mono\", size: 7.5pt, fill: c-muted)[#lower[In partnership with]],",
+        "  box(height: 0.42in, align(horizon, image(\"/static/img/sponsors/microsoft.svg\", height: 0.24in))),",
+        "  box(height: 0.42in, align(horizon, image(\"/static/img/partners/iscb-logo.png\", height: 0.42in))),",
+        "))",
         "#pagebreak(weak: true)",
         "```",
         "",
@@ -838,7 +844,7 @@ def render_schedule(program, speakers_yaml) -> list[str]:
                         "#block(above: 5pt, below: 5pt, breakable: false)["
                         "#grid(columns: (0.4in, 1fr), column-gutter: 6pt, "
                         "align: (right + top, left + top), "
-                        "[#text(font: \"Menlo\", size: 8pt, fill: c-fuchsia, "
+                        "[#text(font: \"IBM Plex Mono\", size: 8pt, fill: c-fuchsia, "
                         f"weight: 600)[{aid}]], "
                         f"[#text(weight: 600)[{title}]\\ "
                         "#text(size: 0.85em, fill: c-muted)["
@@ -1142,7 +1148,7 @@ def _round_banner(label: str, force_break: bool = False) -> list[str]:
         lines.append("#pagebreak(weak: true)")
     lines += [
         "#block(above: 12pt, below: 10pt)[",
-        "  #set text(font: \"Avenir Next\", size: 10pt, weight: 700,",
+        "  #set text(font: \"Inter\", size: 10pt, weight: 700,",
         "    fill: c-navy, tracking: 1.5pt)",
         f"  #upper[{label}]",
         "  #v(3pt, weak: true)",
@@ -1263,16 +1269,21 @@ def render_code_of_conduct() -> list[str]:
             "person."
         ),
         "",
-        "### Social media",
+    ]
+
+
+def render_social_media() -> list[str]:
+    return [
+        "# Social Media",
         "",
         (
-            "We encourage attendees to share highlights on Twitter/X and "
-            "LinkedIn during and after the meeting. Please respect any "
-            "presenter who indicates they'd prefer their work not be shared "
-            "publicly. You can tag and follow us at:"
+            "We encourage attendees to share highlights on X and LinkedIn "
+            "during and after the meeting, using **#NECB2026**. Please "
+            "respect any presenter who indicates they'd prefer their work "
+            "not be shared publicly. You can tag and follow us at:"
         ),
         "",
-        "- Twitter/X: [\\@NewEngCompBio](https://x.com/NewEngCompBio)",
+        "- X: [\\@NewEngCompBio](https://x.com/NewEngCompBio)",
         "- LinkedIn: [New England Computational Biology]"
         "(https://www.linkedin.com/in/new-england-computational-biology-75b814438/)",
         "",
@@ -1315,6 +1326,7 @@ def main():
     lines += render_invited_bios(speakers)
     lines += render_organizers(orgs)
     lines += render_code_of_conduct()
+    lines += render_social_media()
     lines += render_keynote_invited_abstracts(speakers, program)
     talks_md, talks_missing = render_talks(program, subs)
     lines += talks_md

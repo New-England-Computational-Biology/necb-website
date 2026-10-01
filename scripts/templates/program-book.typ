@@ -31,7 +31,7 @@
       #text(fill: c-muted)[  ·  ]
       #h2.body
     ] else { [] }
-    set text(font: "Avenir Next", size: 8pt, fill: c-muted)
+    set text(font: "Inter", size: 8pt, fill: c-muted)
     grid(
       columns: (1fr, auto),
       align: (left + horizon, right + horizon),
@@ -44,7 +44,7 @@
   footer: context {
     let n = here().page()
     if n > 1 {
-      set text(font: "Avenir Next", size: 8pt, fill: c-muted)
+      set text(font: "Inter", size: 8pt, fill: c-muted)
       grid(
         columns: (1fr, auto),
         align: (left, right),
@@ -55,7 +55,7 @@
   },
 )
 
-#set text(font: "Charter", size: 9.8pt, fill: c-ink, lang: "en")
+#set text(font: "Inter", size: 9.2pt, fill: c-ink, lang: "en")
 // Full-justify body prose (abstracts, welcome, bios). Grids/headings
 // have their own alignment so this only affects free-flow paragraphs.
 #set par(leading: 0.6em, spacing: 0.9em, justify: true, linebreaks: "optimized")
@@ -64,7 +64,7 @@
 #set terms(hanging-indent: 1.3em)
 
 #show link: it => text(fill: c-navy, it)
-#show raw: it => text(font: "Menlo", size: 0.88em, fill: c-fuchsia, it)
+#show raw: it => text(font: "IBM Plex Mono", size: 0.88em, fill: c-fuchsia, it)
 
 // --- headings -------------------------------------------------------------
 // Every H1 opens a new page (cover, then each Part).
@@ -73,7 +73,7 @@
   context { if h1-seen.get().first() > 0 { pagebreak(weak: true) } }
   h1-seen.step()
   block(above: 0pt, below: 14pt)[
-    #set text(font: "Avenir Next", size: 18pt, weight: 700, fill: c-fuchsia)
+    #set text(font: "Inter", size: 18pt, weight: 700, fill: c-fuchsia)
     #it.body
     #v(6pt, weak: true)
     #line(length: 100%, stroke: 1.8pt + c-fuchsia)
@@ -90,7 +90,7 @@
   []
 } else {
   block(above: 16pt, below: 7pt, sticky: true)[
-    #set text(font: "Avenir Next", size: 12pt, weight: 700, fill: c-navy)
+    #set text(font: "Inter", size: 12pt, weight: 700, fill: c-navy)
     #it.body
   ]
 }
@@ -102,7 +102,7 @@
 // spacing to the page-top margin, so we don't lose vertical real
 // estate there.
 #show heading.where(level: 3): it => block(above: 12pt, below: 6pt, sticky: true)[
-  #set text(font: "Avenir Next", size: 11pt, weight: 700, fill: c-teal)
+  #set text(font: "Inter", size: 11pt, weight: 700, fill: c-teal)
   #it.body
 ]
 
@@ -115,7 +115,7 @@
 #let day-banner(label, page_break: true) = {
   if page_break { pagebreak(weak: true) }
   align(left)[
-    #text(font: "Avenir Next", size: 18pt, weight: 700, fill: c-fuchsia)[#label]
+    #text(font: "Inter", size: 18pt, weight: 700, fill: c-fuchsia)[#label]
     #v(8pt, weak: true)
     #line(length: 36pt, stroke: 2.5pt + c-fuchsia)
   ]
@@ -123,7 +123,7 @@
 }
 
 #show heading.where(level: 4): it => block(above: 8pt, below: 3pt, sticky: true)[
-  #set text(font: "Avenir Next", size: 9.5pt, weight: 700, fill: c-navy)
+  #set text(font: "Inter", size: 9.5pt, weight: 700, fill: c-navy)
   #it.body
 ]
 
@@ -143,7 +143,7 @@
   fill: (x, y) => if y == 0 { c-navy } else if calc.odd(y) { c-zebra } else { white },
 )
 #show table.cell.where(y: 0): set text(
-  font: "Avenir Next", size: 9pt, weight: 600, fill: white,
+  font: "Inter", size: 9pt, weight: 600, fill: white,
 )
 #show figure: set block(breakable: true)
 #show figure.where(kind: table): set figure.caption(position: top)
@@ -175,8 +175,8 @@
   #align(center)[
     #if photo != none { headshot(photo, size: 0.8in) }
     #v(3pt, weak: true)
-    #text(font: "Avenir Next", size: 9.5pt, weight: 700, fill: c-navy)[#name]\
-    #text(font: "Avenir Next", size: 7pt, fill: c-teal)[#affiliation]
+    #text(font: "Inter", size: 9.5pt, weight: 700, fill: c-navy)[#name]\
+    #text(font: "Inter", size: 7pt, fill: c-teal)[#affiliation]
   ]
   #v(2pt, weak: true)
   #set text(size: 7.5pt, fill: c-ink)

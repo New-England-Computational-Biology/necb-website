@@ -16,6 +16,11 @@
   {{/* Favicon */}}
   <link rel="icon" type="image/svg+xml" href="{{ "img/favicon.svg" | relURL }}">
 
+  {{/* Fonts: Inter (headings, matches the logo wordmark) + IBM Plex Mono (labels, matches the tagline) */}}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap">
+
   {{/* Styles */}}
   {{ $css := resources.Get "css/main.css" | resources.Minify | resources.Fingerprint }}
   <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">

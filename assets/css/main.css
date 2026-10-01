@@ -20,8 +20,9 @@
   --c-card:           #FFFFFF;
   --c-shadow:         0 1px 2px rgba(15,23,42,.05), 0 8px 24px rgba(15,23,42,.06);
 
-  --font-ui:      system-ui, -apple-system, "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  --font-display: system-ui, -apple-system, "SF Pro Display", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-ui:      "Inter", system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Inter", system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-mono:    "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
 
   --radius-sm: 6px;
   --radius:    12px;
@@ -96,10 +97,10 @@ a:focus-visible { outline: 2px solid var(--c-accent); outline-offset: 2px; borde
   flex-shrink: 0; white-space: nowrap;
 }
 .brand-text { display: flex; flex-direction: column; line-height: 1; }
-.brand-name { color: var(--c-primary); }
-.brand-year { color: var(--c-accent); font-weight: 800; font-size: 0.82em; letter-spacing: 0.04em; margin-top: 0.1rem; }
-.brand-mark { width: 34px; height: 34px; align-self: center; margin-right: 0.45rem; }
-.brand:hover .brand-name { color: var(--c-primary-dark); }
+.brand-name { color: var(--c-accent); font-size: 1.3em; letter-spacing: -0.03em; }
+.brand-year { color: var(--c-primary); font-family: var(--font-mono); font-weight: 500; font-size: 0.72em; letter-spacing: 0.04em; margin-top: 0.05rem; }
+.brand-mark { height: 38px; width: auto; align-self: center; margin-right: 0.5rem; }
+.brand:hover .brand-name { color: var(--c-accent-dark); }
 
 .primary-nav ul {
   list-style: none; margin: 0; padding: 0;
@@ -154,9 +155,10 @@ a:focus-visible { outline: 2px solid var(--c-accent); outline-offset: 2px; borde
 .hero-eyebrow {
   display: inline-flex; align-items: center; gap: 0.5rem;
   color: var(--c-teal);
-  font-size: 0.8rem; letter-spacing: 0.14em;
-  text-transform: uppercase; font-weight: 600;
-  margin: 0 0 0.8rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem; letter-spacing: 0.06em;
+  text-transform: lowercase; font-weight: 500;
+  margin: 0 0 1.1rem;
 }
 .hero-eyebrow .dot {
   width: 6px; height: 6px; border-radius: 50%;
@@ -172,6 +174,29 @@ a:focus-visible { outline: 2px solid var(--c-accent); outline-offset: 2px; borde
   text-wrap: balance;
 }
 .hero-year { color: var(--c-accent); }
+.hero-logo { margin: 0 0 1.4rem; line-height: 0; }
+/* "2026" sits right after the "necb" wordmark, on its baseline and above
+   the tagline. Offsets are fractions of the logo's 643 x 116 viewBox
+   ("necb" ends at x = 324, baseline at y = 69), in container units so it
+   scales with the logo. */
+.hero-logo-lockup {
+  position: relative; display: inline-block;
+  width: min(760px, 90vw);
+  container-type: inline-size;
+}
+.hero-logo-lockup img { width: 100%; height: auto; display: block; }
+.hero-logo-year {
+  position: absolute;
+  left: calc(324 / 643 * 100% + 2.4cqw);
+  bottom: calc((116 - 69) / 116 * 100%);
+  font-family: var(--font-display); font-weight: 800;
+  font-size: 10cqw; line-height: 0.73;
+  letter-spacing: -0.03em; color: var(--c-primary);
+}
+.visually-hidden {
+  position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
 .hero-meta {
   font-size: 1.05rem;
   display: flex; flex-wrap: wrap;
@@ -1082,7 +1107,8 @@ a.poster-id:hover::after, a.poster-id:focus-visible::after {
   display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;
   align-items: start;
 }
-.footer-logo { display: inline-flex; align-items: center; gap: 0.5rem; }
+.footer-logo { display: block; }
+.footer-logo img { width: 240px; height: auto; display: block; }
 .footer-brand strong { color: #fff; font-size: 1.1rem; font-family: var(--font-display); }
 .footer-brand p { margin: 0.5rem 0 0; font-size: 0.92rem; }
 .footer-nav {

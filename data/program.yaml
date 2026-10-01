@@ -13,6 +13,7 @@ days:
       - time: "9:00–9:45 AM"
         title: "Opening keynote"
         kind: "keynote"
+        people: "Host: Pedja Radivojac (Northeastern)"
         speakers:
           - "Marc Vidal"
       - time: "9:45–10:45 AM"
@@ -98,6 +99,7 @@ days:
       - time: "5:15–6:00 PM"
         title: "Afternoon keynote"
         kind: "keynote"
+        people: "Host: Kevin Yang (Microsoft Research)"
         speakers:
           - "Sergey Ovchinnikov"
       - time: "6:00–9:00 PM"

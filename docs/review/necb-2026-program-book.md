@@ -131,6 +131,10 @@ We are grateful to our sponsors, our host at Microsoft Research New England, ISC
 ### 9:00–9:45 AM · Opening keynote
 
 ```{=typst}
+#text(size: 0.85em, style: "italic", fill: c-muted)[Host: Pedja Radivojac (Northeastern)]
+```
+
+```{=typst}
 #block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [], [#text(weight: 700, fill: c-navy)[Marc Vidal] #text(size: 0.85em, fill: c-muted)[· Dana-Farber Cancer Institute · Harvard Medical School]])]
 ```
 
@@ -200,6 +204,10 @@ We are grateful to our sponsors, our host at Microsoft Research New England, ISC
 
 
 ### 5:15–6:00 PM · Afternoon keynote
+
+```{=typst}
+#text(size: 0.85em, style: "italic", fill: c-muted)[Host: Kevin Yang (Microsoft Research)]
+```
 
 ```{=typst}
 #block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [], [#text(weight: 700, fill: c-navy)[Sergey Ovchinnikov] #text(size: 0.85em, fill: c-muted)[· MIT]])]

@@ -174,16 +174,24 @@ a:focus-visible { outline: 2px solid var(--c-accent); outline-offset: 2px; borde
   text-wrap: balance;
 }
 .hero-year { color: var(--c-accent); }
-.hero-logo {
-  display: flex; align-items: flex-start; gap: 0.9rem;
-  margin: 0 0 1.4rem;
+.hero-logo { margin: 0 0 1.4rem; line-height: 0; }
+/* "2026" sits right after the "necb" wordmark, on its baseline and above
+   the tagline. Offsets are fractions of the logo's 643 x 116 viewBox
+   ("necb" ends at x = 324, baseline at y = 69), in container units so it
+   scales with the logo. */
+.hero-logo-lockup {
+  position: relative; display: inline-block;
+  width: min(600px, 86vw);
+  container-type: inline-size;
 }
-.hero-logo img { width: min(560px, 78vw); height: auto; }
+.hero-logo-lockup img { width: 100%; height: auto; display: block; }
 .hero-logo-year {
+  position: absolute;
+  left: calc(324 / 643 * 100% + 2.4cqw);
+  bottom: calc((116 - 69) / 116 * 100%);
   font-family: var(--font-display); font-weight: 800;
-  font-size: clamp(1.8rem, 4.6vw, 3.4rem); line-height: 1;
+  font-size: 10cqw; line-height: 0.73;
   letter-spacing: -0.03em; color: var(--c-primary);
-  margin-top: 0.15em;
 }
 .visually-hidden {
   position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px;

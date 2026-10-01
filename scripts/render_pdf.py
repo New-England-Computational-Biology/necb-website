@@ -115,7 +115,7 @@ def render(source: Path, keep_typst: bool, publish: bool,
     typ_path.write_text(typst_src)
 
     subprocess.run(
-        ["typst", "compile", "--root", str(ROOT), str(typ_path), str(pdf_path)],
+        ["typst", "compile", "--root", str(ROOT), "--font-path", str(ROOT / "scripts" / "templates" / "fonts"), str(typ_path), str(pdf_path)],
         check=True,
     )
 

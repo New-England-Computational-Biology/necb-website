@@ -8,13 +8,13 @@
   #block[
     #box(fill: c-fuchsia, radius: 999pt, width: 0.35em, height: 0.35em, [])
     #h(0.4em)
-    #text(font: "Avenir Next", size: 9pt, weight: 600, fill: c-teal, tracking: 1pt)[
+    #text(font: "Inter", size: 9pt, weight: 600, fill: c-teal, tracking: 1pt)[
       #upper[Inaugural Symposium · Cambridge, MA]
     ]
   ]
   #v(10pt)
   // title stack
-  #text(font: "Avenir Next", size: 38pt, weight: 700, fill: c-fuchsia)[
+  #text(font: "Inter", size: 38pt, weight: 700, fill: c-fuchsia)[
     New England \
     Computational \
     Biology  
@@ -22,16 +22,16 @@
   ]
   #v(14pt)
   // meta
-  #text(font: "Avenir Next", size: 11pt, weight: 600, fill: c-navy)[
+  #text(font: "Inter", size: 11pt, weight: 600, fill: c-navy)[
     October 1–2, 2026
   ]
-  #text(font: "Avenir Next", size: 11pt, fill: c-muted)[
+  #text(font: "Inter", size: 11pt, fill: c-muted)[
     #h(0.3em) · #h(0.3em) Microsoft Research New England
   ]
   #v(20pt)
   // pitch
   #block(width: 4in)[
-    #set text(font: "Charter", size: 10.5pt, fill: c-ink)
+    #set text(font: "Inter", size: 10.5pt, fill: c-ink)
     #set par(leading: 0.6em, justify: false)
     Two days of talks, posters, and conversations at the frontier of computation and the life sciences, hosted by Microsoft Research New England in Cambridge, MA.
   ]
@@ -53,7 +53,7 @@ We are grateful to our sponsors, our host at Microsoft Research New England, ISC
 ```{=typst}
 #pagebreak(weak: true)
 #block(above: 0pt, below: 16pt)[
-  #set text(font: "Avenir Next", size: 18pt, weight: 700, fill: c-fuchsia)
+  #set text(font: "Inter", size: 18pt, weight: 700, fill: c-fuchsia)
   Contents
   #v(6pt, weak: true)
   #line(length: 100%, stroke: 1.8pt + c-fuchsia)
@@ -134,10 +134,10 @@ We are grateful to our sponsors, our host at Microsoft Research New England, ISC
 ```
 
 ```{=typst}
-#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [#text(font: "Menlo", size: 8pt, fill: c-fuchsia, weight: 600)[A111]], [#text(weight: 600)[Spatial transcriptome and whole-genome characterization of single nuclei in human tissues]\ #text(size: 0.85em, fill: c-muted)[Claudia Chu · Broad Institute · Harvard]])]
-#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [#text(font: "Menlo", size: 8pt, fill: c-fuchsia, weight: 600)[A093]], [#text(weight: 600)[FlowMap: Geometry-Consistent Embedding of RNA Velocity for Interpretable Cellular Trajectories]\ #text(size: 0.85em, fill: c-muted)[Jingyuan Hu · Harvard T.H. Chan School of Public Health]])]
-#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [#text(font: "Menlo", size: 8pt, fill: c-fuchsia, weight: 600)[A056]], [#text(weight: 600)[Consistent and scalable detection and comparison of spatial patterns]\ #text(size: 0.85em, fill: c-muted)[Jiayu Su · Broad Institute]])]
-#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [#text(font: "Menlo", size: 8pt, fill: c-fuchsia, weight: 600)[A145]], [#text(weight: 600)[GeoSinkhorn Flow: Geometry-Aware Flow Matching for Conditional Dynamics in Single-Cell Data Phenoscapes]\ #text(size: 0.85em, fill: c-muted)[Ke Xu · Yale University]])]
+#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [#text(font: "IBM Plex Mono", size: 8pt, fill: c-fuchsia, weight: 600)[A111]], [#text(weight: 600)[Spatial transcriptome and whole-genome characterization of single nuclei in human tissues]\ #text(size: 0.85em, fill: c-muted)[Claudia Chu · Broad Institute · Harvard]])]
+#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [#text(font: "IBM Plex Mono", size: 8pt, fill: c-fuchsia, weight: 600)[A093]], [#text(weight: 600)[FlowMap: Geometry-Consistent Embedding of RNA Velocity for Interpretable Cellular Trajectories]\ #text(size: 0.85em, fill: c-muted)[Jingyuan Hu · Harvard T.H. Chan School of Public Health]])]
+#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [#text(font: "IBM Plex Mono", size: 8pt, fill: c-fuchsia, weight: 600)[A056]], [#text(weight: 600)[Consistent and scalable detection and comparison of spatial patterns]\ #text(size: 0.85em, fill: c-muted)[Jiayu Su · Broad Institute]])]
+#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [#text(font: "IBM Plex Mono", size: 8pt, fill: c-fuchsia, weight: 600)[A145]], [#text(weight: 600)[GeoSinkhorn Flow: Geometry-Aware Flow Matching for Conditional Dynamics in Single-Cell Data Phenoscapes]\ #text(size: 0.85em, fill: c-muted)[Ke Xu · Yale University]])]
 ```
 
 
@@ -167,10 +167,10 @@ We are grateful to our sponsors, our host at Microsoft Research New England, ISC
 ```
 
 ```{=typst}
-#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [#text(font: "Menlo", size: 8pt, fill: c-fuchsia, weight: 600)[A076]], [#text(weight: 600)[Generating proteins with computationally predicted functions and multiple states via multimodal diffusion]\ #text(size: 0.85em, fill: c-muted)[Anna Sappington · MIT CSAIL]])]
-#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [#text(font: "Menlo", size: 8pt, fill: c-fuchsia, weight: 600)[A126]], [#text(weight: 600)[Deconvolving mutation effects on protein stability and function with disentangled protein language models]\ #text(size: 0.85em, fill: c-muted)[Kerr Ding · Georgia Institute of Technology]])]
-#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [#text(font: "Menlo", size: 8pt, fill: c-fuchsia, weight: 600)[A152]], [#text(weight: 600)[De novo design of hydroxylation enzymes]\ #text(size: 0.85em, fill: c-muted)[Indrek Kalvet · University of Washington]])]
-#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [#text(font: "Menlo", size: 8pt, fill: c-fuchsia, weight: 600)[A039]], [#text(weight: 600)[Natural compensatory variation reveals how protein language models represent pathogenic epistasis and their ability to generate druggable targets via compensation]\ #text(size: 0.85em, fill: c-muted)[Shivam Gandhi · Harvard Medical School]])]
+#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [#text(font: "IBM Plex Mono", size: 8pt, fill: c-fuchsia, weight: 600)[A076]], [#text(weight: 600)[Generating proteins with computationally predicted functions and multiple states via multimodal diffusion]\ #text(size: 0.85em, fill: c-muted)[Anna Sappington · MIT CSAIL]])]
+#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [#text(font: "IBM Plex Mono", size: 8pt, fill: c-fuchsia, weight: 600)[A126]], [#text(weight: 600)[Deconvolving mutation effects on protein stability and function with disentangled protein language models]\ #text(size: 0.85em, fill: c-muted)[Kerr Ding · Georgia Institute of Technology]])]
+#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [#text(font: "IBM Plex Mono", size: 8pt, fill: c-fuchsia, weight: 600)[A152]], [#text(weight: 600)[De novo design of hydroxylation enzymes]\ #text(size: 0.85em, fill: c-muted)[Indrek Kalvet · University of Washington]])]
+#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [#text(font: "IBM Plex Mono", size: 8pt, fill: c-fuchsia, weight: 600)[A039]], [#text(weight: 600)[Natural compensatory variation reveals how protein language models represent pathogenic epistasis and their ability to generate druggable targets via compensation]\ #text(size: 0.85em, fill: c-muted)[Shivam Gandhi · Harvard Medical School]])]
 ```
 
 
@@ -184,10 +184,10 @@ We are grateful to our sponsors, our host at Microsoft Research New England, ISC
 ```
 
 ```{=typst}
-#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [#text(font: "Menlo", size: 8pt, fill: c-fuchsia, weight: 600)[A079]], [#text(weight: 600)[GlintID: Interpretable Modeling of Combinatorial Regulatory Logic]\ #text(size: 0.85em, fill: c-muted)[Arush Ramteke · New York University]])]
-#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [#text(font: "Menlo", size: 8pt, fill: c-fuchsia, weight: 600)[A088]], [#text(weight: 600)[Kidzoi Enables Cell-Type-Specific Regulatory Variant Effect Prediction in the Kidney]\ #text(size: 0.85em, fill: c-muted)[Arif Ahmad Rather · Boston Children's Hospital · Harvard Medical School]])]
-#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [#text(font: "Menlo", size: 8pt, fill: c-fuchsia, weight: 600)[A035]], [#text(weight: 600)[Cherimoya: Lightweight modeling of genomic modalities enables organism-wide analyses]\ #text(size: 0.85em, fill: c-muted)[Jacob Schreiber · UMass Chan Medical School]])]
-#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [#text(font: "Menlo", size: 8pt, fill: c-fuchsia, weight: 600)[A185]], [#text(weight: 600)[PhilharmonicDB: Inferring Functional Modules Across the Tree of Life]\ #text(size: 0.85em, fill: c-muted)[Lenore Cowen · Tufts University]])]
+#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [#text(font: "IBM Plex Mono", size: 8pt, fill: c-fuchsia, weight: 600)[A079]], [#text(weight: 600)[GlintID: Interpretable Modeling of Combinatorial Regulatory Logic]\ #text(size: 0.85em, fill: c-muted)[Arush Ramteke · New York University]])]
+#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [#text(font: "IBM Plex Mono", size: 8pt, fill: c-fuchsia, weight: 600)[A088]], [#text(weight: 600)[Kidzoi Enables Cell-Type-Specific Regulatory Variant Effect Prediction in the Kidney]\ #text(size: 0.85em, fill: c-muted)[Arif Ahmad Rather · Boston Children's Hospital · Harvard Medical School]])]
+#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [#text(font: "IBM Plex Mono", size: 8pt, fill: c-fuchsia, weight: 600)[A035]], [#text(weight: 600)[Cherimoya: Lightweight modeling of genomic modalities enables organism-wide analyses]\ #text(size: 0.85em, fill: c-muted)[Jacob Schreiber · UMass Chan Medical School]])]
+#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [#text(font: "IBM Plex Mono", size: 8pt, fill: c-fuchsia, weight: 600)[A185]], [#text(weight: 600)[PhilharmonicDB: Inferring Functional Modules Across the Tree of Life]\ #text(size: 0.85em, fill: c-muted)[Lenore Cowen · Tufts University]])]
 ```
 
 
@@ -228,10 +228,10 @@ We are grateful to our sponsors, our host at Microsoft Research New England, ISC
 ### 9:45–10:45 AM · Selected talks · Genomics & immunology
 
 ```{=typst}
-#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [#text(font: "Menlo", size: 8pt, fill: c-fuchsia, weight: 600)[A034]], [#text(weight: 600)[Learned Immune Architectures of Durable Antibody Responses Across Vaccines]\ #text(size: 0.85em, fill: c-muted)[Stephanie P. Hao · Boston University]])]
-#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [#text(font: "Menlo", size: 8pt, fill: c-fuchsia, weight: 600)[A100]], [#text(weight: 600)[From human genetics evidence to therapeutic insights at scale: a calibrated language-model specialist for target discovery in immunology]\ #text(size: 0.85em, fill: c-muted)[Mahasweta Bhattacharya · Sanofi Research]])]
-#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [#text(font: "Menlo", size: 8pt, fill: c-fuchsia, weight: 600)[A021]], [#text(weight: 600)[Advancing Peptide-HLA Class I Prediction with Active Learning Frameworks for Improved Cancer Vaccine Design]\ #text(size: 0.85em, fill: c-muted)[Jessika Baral · Harvard Medical School · Broad Institute]])]
-#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [#text(font: "Menlo", size: 8pt, fill: c-fuchsia, weight: 600)[A118]], [#text(weight: 600)[Scaling CAR-T Targeting of HLA-presented Intracellular Antigens with AI-Driven Experimentation]\ #text(size: 0.85em, fill: c-muted)[Elizabeth B. Wood · JURA Bio]])]
+#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [#text(font: "IBM Plex Mono", size: 8pt, fill: c-fuchsia, weight: 600)[A034]], [#text(weight: 600)[Learned Immune Architectures of Durable Antibody Responses Across Vaccines]\ #text(size: 0.85em, fill: c-muted)[Stephanie P. Hao · Boston University]])]
+#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [#text(font: "IBM Plex Mono", size: 8pt, fill: c-fuchsia, weight: 600)[A100]], [#text(weight: 600)[From human genetics evidence to therapeutic insights at scale: a calibrated language-model specialist for target discovery in immunology]\ #text(size: 0.85em, fill: c-muted)[Mahasweta Bhattacharya · Sanofi Research]])]
+#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [#text(font: "IBM Plex Mono", size: 8pt, fill: c-fuchsia, weight: 600)[A021]], [#text(weight: 600)[Advancing Peptide-HLA Class I Prediction with Active Learning Frameworks for Improved Cancer Vaccine Design]\ #text(size: 0.85em, fill: c-muted)[Jessika Baral · Harvard Medical School · Broad Institute]])]
+#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [#text(font: "IBM Plex Mono", size: 8pt, fill: c-fuchsia, weight: 600)[A118]], [#text(weight: 600)[Scaling CAR-T Targeting of HLA-presented Intracellular Antigens with AI-Driven Experimentation]\ #text(size: 0.85em, fill: c-muted)[Elizabeth B. Wood · JURA Bio]])]
 ```
 
 
@@ -253,10 +253,10 @@ We are grateful to our sponsors, our host at Microsoft Research New England, ISC
 ### 1:15–2:15 PM · Selected talks · Clinical & translational
 
 ```{=typst}
-#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [#text(font: "Menlo", size: 8pt, fill: c-fuchsia, weight: 600)[A156]], [#text(weight: 600)[Pan-cancer risk assessment with an EHR foundation model that predicts what happens next and when]\ #text(size: 0.85em, fill: c-muted)[Asif Khan · Harvard Medical School · Massachusetts General Hospital]])]
-#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [#text(font: "Menlo", size: 8pt, fill: c-fuchsia, weight: 600)[A105]], [#text(weight: 600)[Tissue-of-origin aging clocks reveal composite aging states across cancers]\ #text(size: 0.85em, fill: c-muted)[Payton Bock · Boston University]])]
-#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [#text(font: "Menlo", size: 8pt, fill: c-fuchsia, weight: 600)[A038]], [#text(weight: 600)[Joint Calibration of Multiple Evidence Sources Improves Clinical Variant Classification over Independent Calibration]\ #text(size: 0.85em, fill: c-muted)[Ross Stewart · Northeastern University]])]
-#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [#text(font: "Menlo", size: 8pt, fill: c-fuchsia, weight: 600)[A110]], [#text(weight: 600)[PPI-seq: A Massively Parallel System to Decode Genetic Variant Impacts on Protein Interactions]\ #text(size: 0.85em, fill: c-muted)[Justin Delano · Harvard Medical School]])]
+#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [#text(font: "IBM Plex Mono", size: 8pt, fill: c-fuchsia, weight: 600)[A156]], [#text(weight: 600)[Pan-cancer risk assessment with an EHR foundation model that predicts what happens next and when]\ #text(size: 0.85em, fill: c-muted)[Asif Khan · Harvard Medical School · Massachusetts General Hospital]])]
+#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [#text(font: "IBM Plex Mono", size: 8pt, fill: c-fuchsia, weight: 600)[A105]], [#text(weight: 600)[Tissue-of-origin aging clocks reveal composite aging states across cancers]\ #text(size: 0.85em, fill: c-muted)[Payton Bock · Boston University]])]
+#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [#text(font: "IBM Plex Mono", size: 8pt, fill: c-fuchsia, weight: 600)[A038]], [#text(weight: 600)[Joint Calibration of Multiple Evidence Sources Improves Clinical Variant Classification over Independent Calibration]\ #text(size: 0.85em, fill: c-muted)[Ross Stewart · Northeastern University]])]
+#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [#text(font: "IBM Plex Mono", size: 8pt, fill: c-fuchsia, weight: 600)[A110]], [#text(weight: 600)[PPI-seq: A Massively Parallel System to Decode Genetic Variant Impacts on Protein Interactions]\ #text(size: 0.85em, fill: c-muted)[Justin Delano · Harvard Medical School]])]
 ```
 
 
@@ -270,9 +270,9 @@ We are grateful to our sponsors, our host at Microsoft Research New England, ISC
 ```
 
 ```{=typst}
-#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [#text(font: "Menlo", size: 8pt, fill: c-fuchsia, weight: 600)[A172]], [#text(weight: 600)[ImageFlowNet forecasts disease progression in longitudinal medical images]\ #text(size: 0.85em, fill: c-muted)[Chen Liu · Yale University]])]
-#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [#text(font: "Menlo", size: 8pt, fill: c-fuchsia, weight: 600)[A148]], [#text(weight: 600)[Beyond single-organ pathology: Mapping a unified toxicogenomic network of heavy metal cardiotoxicity and neurotoxicity]\ #text(size: 0.85em, fill: c-muted)[Reyna Silveira · Harvard OpenBio Student Research Institute]])]
-#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [#text(font: "Menlo", size: 8pt, fill: c-fuchsia, weight: 600)[A180]], [#text(weight: 600)[Can AI Agents Design Proteins? Agentic vs. Human-Directed De Novo Minibinder Design for a KRAS Neoantigen]\ #text(size: 0.85em, fill: c-muted)[Yilan Wang · Harvard Medical School]])]
+#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [#text(font: "IBM Plex Mono", size: 8pt, fill: c-fuchsia, weight: 600)[A172]], [#text(weight: 600)[ImageFlowNet forecasts disease progression in longitudinal medical images]\ #text(size: 0.85em, fill: c-muted)[Chen Liu · Yale University]])]
+#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [#text(font: "IBM Plex Mono", size: 8pt, fill: c-fuchsia, weight: 600)[A148]], [#text(weight: 600)[Beyond single-organ pathology: Mapping a unified toxicogenomic network of heavy metal cardiotoxicity and neurotoxicity]\ #text(size: 0.85em, fill: c-muted)[Reyna Silveira · Harvard OpenBio Student Research Institute]])]
+#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [#text(font: "IBM Plex Mono", size: 8pt, fill: c-fuchsia, weight: 600)[A180]], [#text(weight: 600)[Can AI Agents Design Proteins? Agentic vs. Human-Directed De Novo Minibinder Design for a KRAS Neoantigen]\ #text(size: 0.85em, fill: c-muted)[Yilan Wang · Harvard Medical School]])]
 ```
 
 
@@ -781,7 +781,7 @@ Agentic AI—large language model (LLM) agents that autonomously plan, write cod
 
 ```{=typst}
 #block(above: 12pt, below: 10pt)[
-  #set text(font: "Avenir Next", size: 10pt, weight: 700,
+  #set text(font: "Inter", size: 10pt, weight: 700,
     fill: c-navy, tracking: 1.5pt)
   #upper[Regular round]
   #v(3pt, weak: true)
@@ -1962,7 +1962,7 @@ We’ve identified multiple cases of extreme somatic STR expansions in brain tis
 ```{=typst}
 #pagebreak(weak: true)
 #block(above: 12pt, below: 10pt)[
-  #set text(font: "Avenir Next", size: 10pt, weight: 700,
+  #set text(font: "Inter", size: 10pt, weight: 700,
     fill: c-navy, tracking: 1.5pt)
   #upper[Late-breaking]
   #v(3pt, weak: true)
@@ -2096,7 +2096,7 @@ CD74 deletion abolishes IFN-γ–driven allograft rejection (median survival >10
 
 ```{=typst}
 #block(above: 12pt, below: 10pt)[
-  #set text(font: "Avenir Next", size: 10pt, weight: 700,
+  #set text(font: "Inter", size: 10pt, weight: 700,
     fill: c-navy, tracking: 1.5pt)
   #upper[Regular round]
   #v(3pt, weak: true)
@@ -3191,7 +3191,7 @@ Mutations in BRCA1 and BRCA2 genes, whether inherited or somatically acquired, c
 ```{=typst}
 #pagebreak(weak: true)
 #block(above: 12pt, below: 10pt)[
-  #set text(font: "Avenir Next", size: 10pt, weight: 700,
+  #set text(font: "Inter", size: 10pt, weight: 700,
     fill: c-navy, tracking: 1.5pt)
   #upper[Late-breaking]
   #v(3pt, weak: true)

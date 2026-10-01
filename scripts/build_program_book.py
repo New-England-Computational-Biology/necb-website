@@ -3,8 +3,8 @@
 
 Downstream pipeline (unchanged): this script -> necb-2026-program-book.md ->
 scripts/render_pdf.py -> PDF via pandoc+typst, styled by
-scripts/templates/packet.typ (fuchsia H1s, navy H2s, teal H3s, Charter
-body, Avenir Next display, US Letter 1in margins).
+scripts/templates/packet.typ (fuchsia H1s, navy H2s, teal H3s, Inter
+body, Inter display, US Letter 1in margins).
 
 Inputs:
   data/program.yaml
@@ -591,7 +591,7 @@ def render_toc() -> list[str]:
         "```{=typst}",
         "#pagebreak(weak: true)",
         "#block(above: 0pt, below: 16pt)[",
-        "  #set text(font: \"Avenir Next\", size: 18pt, weight: 700, fill: c-fuchsia)",
+        "  #set text(font: \"Inter\", size: 18pt, weight: 700, fill: c-fuchsia)",
         "  Contents",
         "  #v(6pt, weak: true)",
         "  #line(length: 100%, stroke: 1.8pt + c-fuchsia)",
@@ -629,14 +629,14 @@ def render_cover() -> list[str]:
         "    #box(fill: c-fuchsia, radius: 999pt, width: 0.35em, "
         "height: 0.35em, [])",
         "    #h(0.4em)",
-        "    #text(font: \"Avenir Next\", size: 9pt, weight: 600, fill: c-teal, "
+        "    #text(font: \"Inter\", size: 9pt, weight: 600, fill: c-teal, "
         "tracking: 1pt)[",
         "      #upper[Inaugural Symposium · Cambridge, MA]",
         "    ]",
         "  ]",
         "  #v(10pt)",
         "  // title stack",
-        "  #text(font: \"Avenir Next\", size: 38pt, weight: 700, fill: c-fuchsia)[",
+        "  #text(font: \"Inter\", size: 38pt, weight: 700, fill: c-fuchsia)[",
         "    New England \\",
         "    Computational \\",
         "    Biology  ",
@@ -644,16 +644,16 @@ def render_cover() -> list[str]:
         "  ]",
         "  #v(14pt)",
         "  // meta",
-        "  #text(font: \"Avenir Next\", size: 11pt, weight: 600, fill: c-navy)[",
+        "  #text(font: \"Inter\", size: 11pt, weight: 600, fill: c-navy)[",
         "    October 1–2, 2026",
         "  ]",
-        "  #text(font: \"Avenir Next\", size: 11pt, fill: c-muted)[",
+        "  #text(font: \"Inter\", size: 11pt, fill: c-muted)[",
         "    #h(0.3em) · #h(0.3em) Microsoft Research New England",
         "  ]",
         "  #v(20pt)",
         "  // pitch",
         "  #block(width: 4in)[",
-        "    #set text(font: \"Charter\", size: 10.5pt, fill: c-ink)",
+        "    #set text(font: \"Inter\", size: 10.5pt, fill: c-ink)",
         "    #set par(leading: 0.6em, justify: false)",
         "    Two days of talks, posters, and conversations at the frontier of "
         "computation and the life sciences, hosted by Microsoft Research "
@@ -838,7 +838,7 @@ def render_schedule(program, speakers_yaml) -> list[str]:
                         "#block(above: 5pt, below: 5pt, breakable: false)["
                         "#grid(columns: (0.4in, 1fr), column-gutter: 6pt, "
                         "align: (right + top, left + top), "
-                        "[#text(font: \"Menlo\", size: 8pt, fill: c-fuchsia, "
+                        "[#text(font: \"IBM Plex Mono\", size: 8pt, fill: c-fuchsia, "
                         f"weight: 600)[{aid}]], "
                         f"[#text(weight: 600)[{title}]\\ "
                         "#text(size: 0.85em, fill: c-muted)["
@@ -1142,7 +1142,7 @@ def _round_banner(label: str, force_break: bool = False) -> list[str]:
         lines.append("#pagebreak(weak: true)")
     lines += [
         "#block(above: 12pt, below: 10pt)[",
-        "  #set text(font: \"Avenir Next\", size: 10pt, weight: 700,",
+        "  #set text(font: \"Inter\", size: 10pt, weight: 700,",
         "    fill: c-navy, tracking: 1.5pt)",
         f"  #upper[{label}]",
         "  #v(3pt, weak: true)",

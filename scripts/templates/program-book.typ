@@ -55,7 +55,7 @@
   },
 )
 
-#set text(font: "Inter", size: 9.8pt, fill: c-ink, lang: "en")
+#set text(font: "Inter", size: 9.2pt, fill: c-ink, lang: "en")
 // Full-justify body prose (abstracts, welcome, bios). Grids/headings
 // have their own alignment so this only affects free-flow paragraphs.
 #set par(leading: 0.6em, spacing: 0.9em, justify: true, linebreaks: "optimized")

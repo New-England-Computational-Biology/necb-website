@@ -9,16 +9,22 @@
   place(dx: w * 324 / 643 + w * 0.024, dy: h * 69 / 116,
     text(weight: 800, size: w * 0.1, tracking: -0.03em, fill: fuchsia, top-edge: "baseline", bottom-edge: "baseline")[2026])
 }) }
+// Art with a long fade to white towards the right (into the logo side).
+#let art(file, w, h, start: 35%) = box(width: w, height: h, {
+  place(image(file, width: w, height: h))
+  place(rect(width: w, height: h, stroke: none, fill: gradient.linear(
+    (white.transparentize(100%), 0%), (white.transparentize(100%), start), (white, 100%))))
+})
 #let info(s) = stack(spacing: s * 0.55,
   text(size: s, weight: 600, fill: navy)[October 1–2, 2026 #text(fill: muted, weight: 400)[· Microsoft Research New England · Cambridge, MA]],
   text(font: "IBM Plex Mono", size: s * 0.92, weight: 500, fill: fuchsia)[newenglandcompbio.org #h(0.6em)·#h(0.6em) \@NewEngCompBio #h(0.6em)·#h(0.6em) \#NECB2026])
 #if v == "x" {
   set page(width: 1500pt, height: 500pt, margin: 0pt, fill: white)
-  place(image("art-x.png", width: 690pt, height: 500pt))
+  place(art("art-x.png", 690pt, 500pt))
   place(dx: 715pt, dy: 0pt, box(height: 500pt, align(horizon, stack(spacing: 40pt, lockup(725pt), info(20.5pt)))))
 } else if v == "linkedin" {
   set page(width: 1584pt, height: 396pt, margin: 0pt, fill: white)
-  place(image("art-li.png", width: 640pt, height: 396pt))
+  place(art("art-li.png", 640pt, 396pt))
   place(dx: 690pt, dy: 0pt, box(height: 396pt, align(horizon, stack(spacing: 30pt, lockup(830pt), info(22.5pt)))))
 } else if v == "og" {
   // link-preview card (Open Graph / Twitter), 1200 x 630

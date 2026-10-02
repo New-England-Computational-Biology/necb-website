@@ -125,7 +125,7 @@ def build_markdown():
                 # program.yaml is the source of truth for talks; don't
                 # filter against withdrawals (A185 was poster-withdrawn
                 # when it was promoted to a talk).
-                if aid in talk_seen: continue
+                if aid in talk_seen or t.get("hide_abstract"): continue
                 talk_seen.add(aid)
                 sub = subs.get(aid)
                 if not sub: continue

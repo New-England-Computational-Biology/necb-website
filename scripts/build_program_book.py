@@ -1038,6 +1038,8 @@ def render_talks(program, subs) -> tuple[list[str], list[str]]:
         for sess in day["sessions"]:
             for t in sess.get("talks") or []:
                 aid = t["abstract_id"]
+                if t.get("hide_abstract"):  # presenter asked not to share it
+                    continue
                 sub = subs.get(aid)
                 if sub is None:
                     missing.append(aid)

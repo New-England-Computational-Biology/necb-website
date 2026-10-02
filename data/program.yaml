@@ -133,6 +133,7 @@ days:
             affiliation: "Sanofi Research"
           - abstract_id: "A021"
             title: "Advancing Peptide-HLA Class I Prediction with Active Learning Frameworks for Improved Cancer Vaccine Design"
+            hide_abstract: true   # presenter asked that the abstract not be shared
             presenter: "Jessika Baral"
             affiliation: "Harvard Medical School · Broad Institute"
       - time: "10:45–11:15 AM"

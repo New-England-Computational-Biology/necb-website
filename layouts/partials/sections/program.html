@@ -98,7 +98,7 @@
                       <span class="talk-toggle-icon" aria-hidden="true">+</span>
                     </summary>
                     <div class="program-talk-detail">
-                      <a class="talk-id" href="/files/necb-2026-abstracts/{{ .abstract_id }}.pdf" target="_blank" rel="noopener" title="Open abstract PDF">{{ .abstract_id }}</a>
+                      {{ if .hide_abstract }}<span class="talk-id">{{ .abstract_id }}</span>{{ else }}<a class="talk-id" href="/files/necb-2026-abstracts/{{ .abstract_id }}.pdf" target="_blank" rel="noopener" title="Open abstract PDF">{{ .abstract_id }}</a>{{ end }}
                       <span class="talk-title">{{ .title }}</span>
                     </div>
                   </details>

@@ -666,20 +666,6 @@ Genetically validated targets are twice as likely to succeed in clinical trials,
 #pagebreak(weak: true)
 ```
 
-### A021 · Advancing Peptide-HLA Class I Prediction with Active Learning Frameworks for Improved Cancer Vaccine Design
-
-**Presenter:** Jessika Baral — Harvard Medical School, Broad Institute, MGH
-
-**Authors:** Jessika Baral, Luis Correa-Medero, Marta Wilbrink, Cleo Forman, Timothy Zhu, Kasidet Manakongtreecheep, Emma C. Duggan, Carl R. Klauser, Sisi Sarkizova, Matthew Bakalar, Steven A. Carr, Luca Pinello, Jennifer G. Abelin, Wengong Jin, Catherine Wu, Nir Hacohen
-
-**Session:** Day 2 · Fri Oct 2, 2026 · 9:45–10:45 AM
-
-Despite the success of immune checkpoint blockade therapies, many patients relapse due to insufficient repertoires of tumor-reactive T cells, highlighting the need for immunogenic targets. Cancer vaccines offer a promising personalized approach for treatment by targeting neoantigens, tumor-specific peptides presented by patient-specific human leukocyte antigen (HLA) complexes. Existing peptide-HLA (pHLA) prediction algorithms have enabled cancer vaccine development, but recent studies show that most peptides failed to elicit effective T-cell responses, underscoring the need for more accurate binding and immunogenicity predictors. Current approaches remain constrained by predictive power, incomplete peptide representation, and noisy labels of negatives. To address these challenges, we developed HLAGaia, a deep learning pHLA binding predictor trained on over 16 million peptides with a 50:1 nonbinder:binder ratio. HLAGaia outperformed five state-of-the-art classifiers, including BigMHC and NetMHCPan, on held-out test data with median cumulative PPV (mPPV) of 0.88. We then used an active learning framework to iteratively prioritize pHLA pairs with the highest predictive uncertainty for experimental testing using a high-throughput E. coli-based binding assay developed in our lab, HLAPlex. This enabled efficient exploration and ground-truth labeling of a combinatorially large interaction space. Retraining with relabeled peptides improved detection of allele-specific binding motifs and increased mPPV by 12.4% on a held-out test dataset. Through integrating model training with large-scale experimental validation, we provide a more effective tool for neoantigen selection and a framework for how AI-driven approaches can improve precision medicine through continuous, data-guided algorithm development.
-
-```{=typst}
-#pagebreak(weak: true)
-```
-
 ### A156 · Pan-cancer risk assessment with an EHR foundation model that predicts what happens next and when
 
 **Presenter:** Asif Khan — Harvard Medical School

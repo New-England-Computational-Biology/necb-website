@@ -244,6 +244,10 @@ We are grateful to our sponsors, our host at Microsoft Research New England, ISC
 ### 9:45–10:45 AM · Selected talks · Genomics & immunology
 
 ```{=typst}
+#text(size: 0.85em, style: "italic", fill: c-muted)[Chair: João Felipe Rocha (Yale)]
+```
+
+```{=typst}
 #block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [#text(font: "IBM Plex Mono", size: 8pt, fill: c-fuchsia, weight: 600)[A034]], [#text(weight: 600)[Learned Immune Architectures of Durable Antibody Responses Across Vaccines]\ #text(size: 0.85em, fill: c-muted)[Stephanie P. Hao · Boston University]])]
 #block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [#text(font: "IBM Plex Mono", size: 8pt, fill: c-fuchsia, weight: 600)[A100]], [#text(weight: 600)[From human genetics evidence to therapeutic insights at scale: a calibrated language-model specialist for target discovery in immunology]\ #text(size: 0.85em, fill: c-muted)[Mahasweta Bhattacharya · Sanofi Research]])]
 #block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [#text(font: "IBM Plex Mono", size: 8pt, fill: c-fuchsia, weight: 600)[A021]], [#text(weight: 600)[Advancing Peptide-HLA Class I Prediction with Active Learning Frameworks for Improved Cancer Vaccine Design]\ #text(size: 0.85em, fill: c-muted)[Jessika Baral · Harvard Medical School · Broad Institute]])]

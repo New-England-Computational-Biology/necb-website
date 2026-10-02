@@ -119,6 +119,7 @@ days:
       - time: "9:00–9:45 AM"
         title: "Morning keynote"
         kind: "keynote"
+        people: "Host: Smita Krishnaswamy (Yale)"
         speakers:
           - "Caroline Uhler"
       - time: "9:45–10:45 AM"
@@ -148,6 +149,7 @@ days:
       - time: "11:15 AM – 12:15 PM"
         title: "Invited talks"
         kind: "talks"
+        chair: "Ignacio Vazquez-Garcia (MGH/HMS/Broad)"
         speakers:
           - "Sahin Naqvi"
           - "Armita Nourmohammad"
@@ -158,6 +160,7 @@ days:
       - time: "1:15–2:15 PM"
         title: "Selected talks · Clinical & translational"
         kind: "talks"
+        chair: "Erik Garrison (UTHSC)"
         talks:
           - abstract_id: "A156"
             title: "Pan-cancer risk assessment with an EHR foundation model that predicts what happens next and when"

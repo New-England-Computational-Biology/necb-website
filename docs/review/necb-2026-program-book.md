@@ -237,6 +237,10 @@ We are grateful to our sponsors, our host at Microsoft Research New England, ISC
 ### 9:00–9:45 AM · Morning keynote
 
 ```{=typst}
+#text(size: 0.85em, style: "italic", fill: c-muted)[Host: Smita Krishnaswamy (Yale)]
+```
+
+```{=typst}
 #block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [], [#text(weight: 700, fill: c-navy)[Caroline Uhler] #text(size: 0.85em, fill: c-muted)[· Broad Institute · MIT]\ #text(size: 0.9em, style: "italic")[Multimodal Data Integration: From Biomarkers to Mechanisms]])]
 ```
 
@@ -261,6 +265,10 @@ We are grateful to our sponsors, our host at Microsoft Research New England, ISC
 ### 11:15 AM – 12:15 PM · Invited talks
 
 ```{=typst}
+#text(size: 0.85em, style: "italic", fill: c-muted)[Chair: Ignacio Vazquez-Garcia (MGH/HMS/Broad)]
+```
+
+```{=typst}
 #block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [], [#text(weight: 700, fill: c-navy)[Sahin Naqvi] #text(size: 0.85em, fill: c-muted)[· Boston Children's Hospital · Harvard Medical School]\ #text(size: 0.9em, style: "italic")[Measuring and modeling transcription factor dosage effects]])]
 #block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [], [#text(weight: 700, fill: c-navy)[Armita Nourmohammad] #text(size: 0.85em, fill: c-muted)[· Yale University]])]
 #block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [], [#text(weight: 700, fill: c-navy)[Yuri Pritykin] #text(size: 0.85em, fill: c-muted)[· Princeton University]])]
@@ -271,6 +279,10 @@ We are grateful to our sponsors, our host at Microsoft Research New England, ISC
 
 
 ### 1:15–2:15 PM · Selected talks · Clinical & translational
+
+```{=typst}
+#text(size: 0.85em, style: "italic", fill: c-muted)[Chair: Erik Garrison (UTHSC)]
+```
 
 ```{=typst}
 #block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [#text(font: "IBM Plex Mono", size: 8pt, fill: c-fuchsia, weight: 600)[A156]], [#text(weight: 600)[Pan-cancer risk assessment with an EHR foundation model that predicts what happens next and when]\ #text(size: 0.85em, fill: c-muted)[Asif Khan · Harvard Medical School · Massachusetts General Hospital]])]

@@ -42,7 +42,7 @@ function createFeedbackForm() {
 
   // --- Program and logistics
   form.addGridItem()
-    .setTitle('How would you rate each part of the symposium?')
+    .setTitle('How would you rate each part of NECB?')
     .setRows([
       'Keynote talks',
       'Invited talks',
@@ -53,6 +53,7 @@ function createFeedbackForm() {
       'Food and coffee',
       'Registration and check-in',
       'Website and program book',
+      'MIT FutureFest Salon',
     ])
     .setColumns(['Excellent', 'Good', 'Fair', 'Poor', 'N/A']);
 

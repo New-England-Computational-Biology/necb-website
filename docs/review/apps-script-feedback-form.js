@@ -1,7 +1,7 @@
 /**
  * NECB 2026 · post-event feedback form.
  *
- * Creates a Google Form (anonymous, ~3 minutes) and a linked response sheet,
+ * Creates a Google Form (~3 minutes, collects respondents' email) and a linked response sheet,
  * then logs the public link to paste into the feedback email
  * (docs/review/feedback-email.md).
  *
@@ -21,9 +21,10 @@ function createFeedbackForm() {
     .setDescription(
       'Thank you for joining the New England Computational Biology Symposium ' +
       '(October 1–2, 2026, Microsoft Research New England). This takes about ' +
-      '3 minutes and is anonymous unless you choose to leave your email. ' +
+      '3 minutes. ' +
       'Your answers will shape NECB 2027.')
-    .setCollectEmail(false)
+    // Ask every respondent for their email (Settings → Responses → Collect email addresses).
+    .setCollectEmail(true)
     .setLimitOneResponsePerUser(false)
     .setAllowResponseEdits(false)
     .setProgressBar(true)
@@ -103,14 +104,6 @@ function createFeedbackForm() {
       'Help organize',
       'Sponsor or host',
     ]);
-
-  form.addTextItem()
-    .setTitle('Email (optional)')
-    .setHelpText('Only if you would like us to follow up, e.g. about getting involved.')
-    .setValidation(FormApp.createTextValidation()
-      .requireTextIsEmail()
-      .setHelpText('Please enter a valid email address.')
-      .build());
 
   // Responses land in a new spreadsheet next to the form.
   const ss = SpreadsheetApp.create('NECB 2026 · Feedback (responses)');

@@ -193,6 +193,7 @@ days:
       - time: "5:15–6:00 PM"
         title: "Closing keynote"
         kind: "keynote"
+        people: "Host: Dmitry Korkin (WPI)"
         speakers:
           - "Zhiping Weng"
       - time: "6:00–6:15 PM"

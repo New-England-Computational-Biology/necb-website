@@ -1284,6 +1284,17 @@ a.poster-id:hover::after, a.poster-id:focus-visible::after {
   font-size: 0.85rem;
   color: var(--c-text-muted);
 }
+.futurefest-recap {
+  padding-top: 1rem;
+  border-top: 1px solid var(--c-border);
+}
+.futurefest-recap-lead { margin: 0.15rem 0 0.8rem; font-size: 0.95rem; line-height: 1.5; }
+.futurefest-themes {
+  display: grid; grid-template-columns: auto 1fr;
+  gap: 0.4rem 1rem; margin: 0; font-size: 0.95rem;
+}
+.futurefest-themes dt { font-weight: 700; color: var(--c-accent); }
+.futurefest-themes dd { margin: 0; color: var(--c-text); }
 @media (max-width: 640px) {
   .futurefest-card { padding: 1.4rem 1.15rem; }
   .futurefest-meta { grid-template-columns: 1fr; gap: 0.85rem; }

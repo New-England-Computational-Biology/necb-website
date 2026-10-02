@@ -255,7 +255,6 @@ We are grateful to our sponsors, our host at Microsoft Research New England, ISC
 #block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [#text(font: "IBM Plex Mono", size: 8pt, fill: c-fuchsia, weight: 600)[A034]], [#text(weight: 600)[Learned Immune Architectures of Durable Antibody Responses Across Vaccines]\ #text(size: 0.85em, fill: c-muted)[Stephanie P. Hao · Boston University]])]
 #block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [#text(font: "IBM Plex Mono", size: 8pt, fill: c-fuchsia, weight: 600)[A100]], [#text(weight: 600)[From human genetics evidence to therapeutic insights at scale: a calibrated language-model specialist for target discovery in immunology]\ #text(size: 0.85em, fill: c-muted)[Mahasweta Bhattacharya · Sanofi Research]])]
 #block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [#text(font: "IBM Plex Mono", size: 8pt, fill: c-fuchsia, weight: 600)[A021]], [#text(weight: 600)[Advancing Peptide-HLA Class I Prediction with Active Learning Frameworks for Improved Cancer Vaccine Design]\ #text(size: 0.85em, fill: c-muted)[Jessika Baral · Harvard Medical School · Broad Institute]])]
-#block(above: 5pt, below: 5pt, breakable: false)[#grid(columns: (0.4in, 1fr), column-gutter: 6pt, align: (right + top, left + top), [#text(font: "IBM Plex Mono", size: 8pt, fill: c-fuchsia, weight: 600)[A118]], [#text(weight: 600)[Scaling CAR-T Targeting of HLA-presented Intracellular Antigens with AI-Driven Experimentation]\ #text(size: 0.85em, fill: c-muted)[Elizabeth B. Wood · JURA Bio]])]
 ```
 
 
@@ -680,20 +679,6 @@ Genetically validated targets are twice as likely to succeed in clinical trials,
 **Session:** Day 2 · Fri Oct 2, 2026 · 9:45–10:45 AM
 
 Despite the success of immune checkpoint blockade therapies, many patients relapse due to insufficient repertoires of tumor-reactive T cells, highlighting the need for immunogenic targets. Cancer vaccines offer a promising personalized approach for treatment by targeting neoantigens, tumor-specific peptides presented by patient-specific human leukocyte antigen (HLA) complexes. Existing peptide-HLA (pHLA) prediction algorithms have enabled cancer vaccine development, but recent studies show that most peptides failed to elicit effective T-cell responses, underscoring the need for more accurate binding and immunogenicity predictors. Current approaches remain constrained by predictive power, incomplete peptide representation, and noisy labels of negatives. To address these challenges, we developed HLAGaia, a deep learning pHLA binding predictor trained on over 16 million peptides with a 50:1 nonbinder:binder ratio. HLAGaia outperformed five state-of-the-art classifiers, including BigMHC and NetMHCPan, on held-out test data with median cumulative PPV (mPPV) of 0.88. We then used an active learning framework to iteratively prioritize pHLA pairs with the highest predictive uncertainty for experimental testing using a high-throughput E. coli-based binding assay developed in our lab, HLAPlex. This enabled efficient exploration and ground-truth labeling of a combinatorially large interaction space. Retraining with relabeled peptides improved detection of allele-specific binding motifs and increased mPPV by 12.4% on a held-out test dataset. Through integrating model training with large-scale experimental validation, we provide a more effective tool for neoantigen selection and a framework for how AI-driven approaches can improve precision medicine through continuous, data-guided algorithm development.
-
-```{=typst}
-#pagebreak(weak: true)
-```
-
-### A118 · Scaling CAR-T Targeting of HLA-presented Intracellular Antigens with AI-Driven Experimentation
-
-**Presenter:** Elizabeth B. Wood — JURA Bio
-
-**Authors:** Xiao-Bing Cui, Kerry Dobbs, Andrei Slabodkin, Alan N. Amin, Mattia G. Gollub, Kristina Gurung, Eli N. Weinstein, Elizabeth B. Wood
-
-**Session:** Day 2 · Fri Oct 2, 2026 · 9:45–10:45 AM
-
-The majority of cancer-driving proteins are intracellular, and so can only be recognized by immunotherapies through short peptide fragments displayed on the human leukocyte antigen (HLA). We developed a lab-in-the-loop system to learn the rules of scFv-pHLA protein-protein interactions on human cells. We use generative models of proteins and of screens to design, synthesize, and test interactions between tens of millions of scFvs and 100 pHLAs in a single multiplexed experiment, producing large scale training datasets. Transformers trained on the data predict unseen interactions and exhibit reliable scaling laws, with steady model improvements against seen and unseen pHLAs as experiments continue. Overall, AI-driven experimentation enables models to systematically learn to design TCR mimicking antibodies.
 
 ```{=typst}
 #pagebreak(weak: true)

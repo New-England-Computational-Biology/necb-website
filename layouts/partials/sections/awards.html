@@ -1,0 +1,38 @@
+{{- /* Look up talks and posters by abstract ID. */ -}}
+{{- $items := dict -}}
+{{- range site.Data.program.days -}}
+  {{- range .sessions -}}
+    {{- range .talks -}}{{- $items = merge $items (dict .abstract_id .) -}}{{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- range site.Data.posterSessions.days -}}
+  {{- range .posters -}}{{- $items = merge $items (dict .abstract_id .) -}}{{- end -}}
+{{- end -}}
+<section class="section section-alt" id="awards">
+  <div class="container">
+    <h2 class="section-title">Awards</h2>
+    <p class="section-sub">{{ site.Data.awards.intro }}</p>
+
+    <div class="awards">
+      {{ range site.Data.awards.groups }}
+      <div class="awards-group">
+        <h3 class="awards-group-title">{{ .title }}</h3>
+        {{ range .days }}
+        <span class="futurefest-eyebrow">{{ .label }}</span>
+        <ul class="awards-list">
+          {{ range .ids }}
+          {{ with index $items . }}
+          <li class="awards-row">
+            {{ if .hide_abstract }}<span class="poster-id">{{ .abstract_id }}</span>{{ else }}<a class="poster-id" href="/files/necb-2026-abstracts/{{ .abstract_id }}.pdf" target="_blank" rel="noopener" title="Open abstract PDF">{{ .abstract_id }}</a>{{ end }}
+            <span class="awards-who"><strong>{{ .presenter }}</strong>{{ with .affiliation }} · {{ . }}{{ end }}</span>
+            <span class="awards-title">{{ .title }}</span>
+          </li>
+          {{ end }}
+          {{ end }}
+        </ul>
+        {{ end }}
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>

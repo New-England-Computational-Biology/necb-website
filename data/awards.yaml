@@ -1,0 +1,16 @@
+# NECB 2026 awards, by abstract ID. Details (presenter, title, affiliation)
+# come from program.yaml and posterSessions.yaml.
+intro: "Congratulations to the NECB 2026 talk and poster award winners!"
+groups:
+  - title: "Selected talk awards"
+    days:
+      - label: "Thursday, October 1"
+        ids: [A035, A056]
+      - label: "Friday, October 2"
+        ids: [A021, A172]
+  - title: "Poster awards"
+    days:
+      - label: "Thursday, October 1"
+        ids: [A099, A201, A115]
+      - label: "Friday, October 2"
+        ids: [A114, A206, A140]

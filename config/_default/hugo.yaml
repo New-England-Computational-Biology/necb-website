@@ -61,9 +61,6 @@ params:
 
 menus:
   main:
-    - name: Awards
-      url: "#awards"
-      weight: 5
     - name: About
       url: "#about"
       weight: 10
@@ -73,6 +70,9 @@ menus:
     - name: Program
       url: "#program"
       weight: 30
+    - name: Awards
+      url: "#awards"
+      weight: 43
     - name: FutureFest
       url: "#futurefest"
       weight: 42.5

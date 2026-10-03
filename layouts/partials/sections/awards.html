@@ -8,7 +8,7 @@
 {{- range site.Data.posterSessions.days -}}
   {{- range .posters -}}{{- $items = merge $items (dict .abstract_id .) -}}{{- end -}}
 {{- end -}}
-<section class="section section-alt" id="awards">
+<section class="section" id="awards">
   <div class="container">
     <h2 class="section-title">Awards</h2>
     <p class="section-sub">{{ site.Data.awards.intro }}</p>

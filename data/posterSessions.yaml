@@ -437,7 +437,7 @@ days:
         round: "late-breaking"
   - label: "Day 2 · Fri Oct 2, 2026"
     time: "2:15–4:15 PM"
-    count: 83
+    count: 82
     posters:
       - abstract_id: "A002"
         title: "BBB-Nuke: Transport-Aware Prediction of Blood-Brain Barrier Penetration in Small Molecules"
@@ -844,11 +844,6 @@ days:
         title: "Bayesian Negative Binomial Softmax Regression for Compositional Sequencing Count Data"
         presenter: "Seong-Hwan Jun"
         affiliation: "University of Rochester"
-        round: "late-breaking"
-      - abstract_id: "A215"
-        title: "Selection of oncogenic and CNS-associated programs during breast cancer brain metastasis evolution"
-        presenter: "Philipp Hähnel"
-        affiliation: "Mass General Brigham"
         round: "late-breaking"
       - abstract_id: "A219"
         title: "Rethinking Large-scale phylogenomics with EukPhylo v.1.0"

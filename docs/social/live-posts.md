@@ -75,3 +75,14 @@ Times follow the program. X versions stay under 280 characters. Posts describe s
 **X:** That's a wrap on the first #NECB2026! 🎉 Congratulations to our poster and talk award winners, and thank you to everyone who joined us. See you next year!
 
 **LinkedIn:** That's a wrap on the inaugural New England Computational Biology Symposium! Congratulations to our poster and talk award winners [names], and thank you to our speakers, presenters, reviewers, volunteers, our host Microsoft Research New England and our partner ISCB. Over 360 of you made this happen. See you at NECB 2027! #NECB2026
+
+### 13. Thank you · group photo (after the event)
+**X:** Thank you to everyone who made the first #NECB2026 happen! 🎉 Over 360 researchers, 190+ abstracts, 168 posters and two days of great science and conversation. Thank you @MSFTResearch for hosting and @iscb for partnering. See you at NECB 2027!
+
+**LinkedIn:** Thank you to everyone who made the inaugural New England Computational Biology Symposium such a success! 🎉
+
+Over 360 researchers from across New England, from undergraduates to faculty and industry scientists, joined us at Microsoft Research New England in Cambridge for two days of keynotes, invited and selected talks, 168 posters and a lively MIT FutureFest Salon.
+
+Thank you to our keynote and invited speakers, our presenters, reviewers, session chairs and award judges, our student volunteers, our host Microsoft Research New England and our partner ISCB. Congratulations again to our talk and poster award winners.
+
+We can't wait to see you at NECB 2027! #NECB2026 #CompBio #ComputationalBiology

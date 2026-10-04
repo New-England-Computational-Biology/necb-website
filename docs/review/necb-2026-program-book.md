@@ -3328,26 +3328,6 @@ High-throughput sequencing assays generate count vectors that are inherently com
 #pagebreak(weak: true)
 ```
 
-### A215 · Selection of oncogenic and CNS-associated programs during breast cancer brain metastasis evolution
-
-**Presenter:** Philipp Hähnel — Mass General Brigham
-
-**Authors:** Philipp Hähnel, Consuelo Torrini, Robert Porter, Naema Nayyar, Ugonma Chukwueke, Britney S. Zhang, Emily M Sullivan, Arul S Menon, David Gritsch, Clara Alves-Pereira, Corey M Gill, Joana L Mora, Alexander Kaplan, Mia Bertalan, Juliana M. Larson, Elizabeth J Summers, Laurel Valente, Edwin Nieblas-Bedolla, Matthew Lastrapes, Anita Giobbie-Hurder, Alexa Hui, Shweta Kukreja, Paloma Cejas, Henry Long, Franziska M Ippen, Nancy Lin, Rachel Abelman, Leif Ellisen, Anat Stemmer-Rachamimov, Craig M Horbinski, Evangelia D Razis, Josep Tabernero, Joan Seoane, Sun Ha Paek, Sung-Hye Park, Lisa Rogers, Rafal Peksa, Jacek Jassem, Renata Duchnowska, Frits A Thorsen, Terje Sundstrøm, Tareq Juratli, Andre Sagerer, Farshad Nassiri, Gelareh Zadeh, Anna Berghoff, Matthias Preusser, Matthew P Frosch, Maria Martinez-Lage, Sandro Santagata, A. John Iafrate, Gavin P Dunn, Daniel P Cahill, Scott L Carter, Esther Rheinbay, Priscilla K Brastianos
-
-**Session:** Day 2 · Fri Oct 2, 2026 · 2:15–4:15 PM
-
-Breast cancer brain metastases (BCBM) are enriched in HER2+ and HR− subtype-specific tumors which are associated with distinct genomic programs and metastatic risk. We hypothesized that BCBM arise through layered evolutionary selection, in which oncogenic pathways establish malignant growth capacity while neural-adaptive programs facilitate colonization of the central nervous system (CNS). To test this model, we performed whole-exome sequencing on 311 BCBM from 257 patients, including patient-matched primary tumors, extracranial metastases. Tumors were further compared with 920 primary breast cancers from TCGA using propensity matching for age, genetic ancestry, HR and HER2 status.
-
-BCBM demonstrated increased genomic instability and enrichment of pathways associated with metastatic fitness, including cell-cycle dysregulation, RTK-RAS and Hippo signaling. Somatic alterations converged on two classes of neural-adaptive processes: neuronal migration and cytoskeletal remodeling, as well as synaptic and calcium signaling. These findings suggest that BCBM are defined by coordinated selection of programs that may alter tumor-cell morphology, motility, signaling, and interactions within the CNS microenvironment.
-
-To define when these alterations emerged during metastatic evolution, we reconstructed tumor phylogenies across matched primary tumors, brain metastases, and extracranial metastases. Canonical proliferation drivers typically represented early events shared across tumor sites, whereas neuronal- and synaptic program alterations emerged later. Yet, those alterations frequently preexisted within the tumor, suggesting that neural-adaptive features arise during metastatic lineage evolution, before or during CNS colonization.
-
-These findings support a model in which BCBM emerge from tumor lineages that co-select canonical oncogenic pathways and neural-adaptive programs that enable growth and persistence within the CNS.
-
-```{=typst}
-#pagebreak(weak: true)
-```
-
 ### A219 · Rethinking Large-scale phylogenomics with EukPhylo v.1.0.
 
 **Presenter:** Godwin Ani — UMass Amherst and Smith College

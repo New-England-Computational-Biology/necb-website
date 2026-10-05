@@ -73,6 +73,9 @@ menus:
     - name: Awards
       url: "#awards"
       weight: 43
+    - name: Photos
+      url: "#gallery"
+      weight: 43.5
     - name: FutureFest
       url: "#futurefest"
       weight: 42.5
@@ -84,7 +87,7 @@ menus:
       weight: 42
     - name: Register
       url: "#registration"
-      weight: 43
+      weight: 44
     - name: Submit
       url: "#submissions"
       weight: 45

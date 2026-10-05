@@ -37,7 +37,8 @@ necb-website/
 │       ├── footer.html
 │       └── sections/             # one HTML partial per page section
 ├── assets/css/main.css           # all styling, palette C ("Modern Bio-Tech")
-├── static/img/                   # logo, favicon
+├── static/img/                   # logo, favicon, gallery cover
+├── static/gallery/               # Lightroom Classic HTML gallery export, served at /gallery/
 ├── static/js/nav.js              # mobile nav toggle
 ├── .github/workflows/deploy.yml  # builds with Hugo + publishes to GitHub Pages
 ├── static/CNAME                  # custom domain (newenglandcompbio.org)
@@ -58,6 +59,17 @@ Most edits are in `data/*.yaml` — no HTML required.
 | Hero copy or section text | `layouts/partials/sections/*.html` |
 | Colors / styling | `assets/css/main.css` (CSS variables at the top) |
 | Logo / favicon | `static/img/logo.svg`, `static/img/favicon.svg` |
+| Photo gallery | re-export from Lightroom into `static/gallery/` (see below) |
+
+### Photo gallery
+
+`static/gallery/` is a self-contained HTML gallery exported from Lightroom Classic
+(Web module). It is copied verbatim by Hugo and served at `/gallery/`; the homepage
+"Photos" section (`layouts/partials/sections/gallery.html`) links to it. To update:
+re-export from Lightroom and replace the folder (`rsync -a --delete <export>/ static/gallery/`).
+In Lightroom › Web › Site Info, "Web or Mail Link" must include the scheme
+(`https://pinellolab.org`), otherwise the author link 404s. The cover image lives
+separately at `static/img/gallery/cover.jpg`; update the photo count in the partial if it changes.
 
 When ISCB registration is ready: set `params.registrationURL` in `config/_default/hugo.yaml` — the hero button switches from the "coming soon" badge to a real Register link automatically.
 
